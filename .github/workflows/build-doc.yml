@@ -25,15 +25,6 @@ jobs:
         shell: bash
         run: |
           pip install -r ./docs/requirements.txt
-          sudo apt-get install build-essential  # install make
-
-      - name: Build pdf
-        uses: xu-cheng/texlive-action/full@v1
-        with:
-          run: |
-            cd docs
-            make latex
-            make -C build/latex
 
       - name: Build doc
         shell: bash
@@ -42,7 +33,16 @@ jobs:
           python3 -m pip install -r ./requirements.txt
           make html
           touch build/html/.nojekyll
-          cp build/latex/notes.pdf build/html/_static/
+
+          make latex
+
+      - name: Build pdf
+        uses: xu-cheng/texlive-action/full@v1
+        with:
+          run: |
+            cd docs/build/latex
+            latexmk
+            cp -v notes.pdf ../html/_static/
 
       - name: Deploy
         if: github.event_name == 'push'
