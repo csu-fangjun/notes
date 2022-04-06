@@ -41,7 +41,7 @@ jobs:
         with:
           run: |
             cd docs/build/latex
-            latexmk
+            latexmk -pdf -dvi -ps- notes.tex
             cp -v notes.pdf ../html/_static/
 
       - name: Deploy
