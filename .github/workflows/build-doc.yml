@@ -22,7 +22,7 @@ jobs:
         shell: bash
         run: |
           pip install -r ./docs/requirements.txt
-          apt-get install build-essential  # install make
+          sudo apt-get install build-essential  # install make
 
       - name: Build pdf
         uses: xu-cheng/texlive-action/full@v1
