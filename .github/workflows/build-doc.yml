@@ -23,6 +23,14 @@ jobs:
         run: |
           pip install -r ./docs/requirements.txt
 
+      - name: Build pdf
+        uses: xu-cheng/texlive-action/full@v1
+        with:
+          run: |
+            cd docs
+            make latex
+            make -C build/latex
+
       - name: Build doc
         shell: bash
         run: |
@@ -30,6 +38,7 @@ jobs:
           python3 -m pip install -r ./requirements.txt
           make html
           touch build/html/.nojekyll
+          cp build/latex/notes.pdf build/html/_static/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
