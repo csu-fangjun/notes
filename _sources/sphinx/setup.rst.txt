@@ -57,4 +57,4 @@ Answer yes.
    which generates lots of ``tex`` files in ``./build/latex``.
    Switch to ``build/latex`` and run ``make``. Assume that
    you have installed the software to compile ``tex`` files.
-   If will generate ``notes.pdf``.
+   It will generate ``notes.pdf``.
