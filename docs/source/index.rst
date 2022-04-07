@@ -9,8 +9,10 @@ Welcome to notes's documentation!
 Download this website in a single `pdf file <./_static/notes.pdf>`_.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
 
    sphinx/index
+   git/index
+   docker/index
 
