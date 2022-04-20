@@ -15,4 +15,5 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    sphinx/index
    git/index
    docker/index
+   github/index
    torch/index
