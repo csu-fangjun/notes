@@ -1,0 +1,6 @@
+DDP
+===
+
+.. toctree::
+
+    ddp/init
