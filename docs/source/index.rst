@@ -21,3 +21,4 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    python/index
    bash/index
    cuda/index
+   torch/index
