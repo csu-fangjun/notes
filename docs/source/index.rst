@@ -17,4 +17,7 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    docker/index
    github/index
    latex/index
-
+   kaldi/index
+   python/index
+   bash/index
+   cuda/index
