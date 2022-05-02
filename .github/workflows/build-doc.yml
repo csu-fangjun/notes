@@ -3,6 +3,7 @@ on:
   push:
     branches:
     - master
+    - 2022-04
   pull_request:
     branches:
     - master
@@ -44,8 +45,14 @@ jobs:
             latexmk -pdf -dvi -ps- notes.tex
             cp -v notes.pdf ../html/_static/
 
+      - name: Upload pdf
+        uses: actions/upload-artifact@v2
+        with:
+          name: notes.pdf
+          path: docs/build/latex/notes.pdf
+
       - name: Deploy
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' and github.ref == 'ref/head/master'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
