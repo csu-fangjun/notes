@@ -6,4 +6,5 @@ java
 
     install
     hello_world
+    reference
 
