@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub actions &mdash; notes  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>GitHub actions</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/github/actions.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="github-actions">
+<h1>GitHub actions<a class="headerlink" href="#github-actions" title="Permalink to this headline">¶</a></h1>
+<section id="run-github-actions-locally">
+<h2>Run GitHub actions locally<a class="headerlink" href="#run-github-actions-locally" title="Permalink to this headline">¶</a></h2>
+<p>It is time-consuming to use GitHub action to test whether the current
+workflow is working. <a class="reference external" href="https://github.com/nektos/act">https://github.com/nektos/act</a> provides a tool
+to test workflows locally. Refer to the above repository for installation.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The script <a class="reference external" href="https://github.com/nektos/act/blob/master/install.sh">https://github.com/nektos/act/blob/master/install.sh</a> is
+worth reading.</p>
+</div>
+</section>
+<section id="hello-world">
+<h2>Hello world<a class="headerlink" href="#hello-world" title="Permalink to this headline">¶</a></h2>
+<p>The following shows an exmaple workflow.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/actions/env.yml</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">My first workflow</span>
+<span class="nt">on</span><span class="p">:</span>
+  <span class="nt">push</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">master</span><span class="p p-Indicator">]</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+  <span class="nt">foo_job</span><span class="p">:</span>
+    <span class="nt">runs-on</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+    <span class="nt">steps</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Test 1</span>
+        <span class="nt">env</span><span class="p">:</span>
+          <span class="nt">FOO</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hello</span>
+          <span class="nt">BAR</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">world</span>
+        <span class="nt">shell</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bash</span>
+        <span class="nt">run</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+          <span class="no">echo &quot;foo is ${FOO}&quot;</span>
+          <span class="no">echo &quot;BAR is ${BAR}&quot;</span>
+</pre></div>
+</div>
+</div>
+<p>Every workflow has an optional name and some conditions on which it will run.
+A workflow consists of a list of jobs. A job is run on an environment specified by
+<code class="docutils literal notranslate"><span class="pre">runs-on</span></code>. Inside a job there are a list of steps.</p>
+<p>The following shows how to use <code class="docutils literal notranslate"><span class="pre">act</span></code> to run the above workflow locally.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ act -l -W ./actions/
+Stage  Job ID   Job name  Workflow name      Workflow file  Events
+0      foo_job  foo_job   My first workflow  env.yml        push
+
+$ act -W ./actions/
+[My first workflow/foo_job] 🚀  Start image=node:16-buster-slim
+[My first workflow/foo_job]   🐳  docker pull image=node:16-buster-slim platform= username= forcePull=false
+[My first workflow/foo_job]   🐳  docker create image=node:16-buster-slim platform= entrypoint=[&quot;/usr/bin/tail&quot; &quot;-f&quot; &quot;/dev/null&quot;] cmd=[]
+[My first workflow/foo_job]   🐳  docker run image=node:16-buster-slim platform= entrypoint=[&quot;/usr/bin/tail&quot; &quot;-f&quot; &quot;/dev/null&quot;] cmd=[]
+[My first workflow/foo_job]   🐳  docker exec cmd=[mkdir -m 0777 -p /var/run/act] user=root workdir=
+[My first workflow/foo_job] ⭐  Run Test 1
+[My first workflow/foo_job]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/0.sh] user= workdir=
+| foo is hello
+| BAR is world
+[My first workflow/foo_job]   ✅  Success - Test 1
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

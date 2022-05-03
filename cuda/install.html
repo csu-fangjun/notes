@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation &mdash; notes  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="torch" href="../torch/index.html" />
+    <link rel="prev" title="CUDA" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">CUDA</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cuda-10-1-243">CUDA 10.1.243</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cuda-11-0-3">CUDA 11.0.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cuda-11-3-1">CUDA 11.3.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cuda-11-5-2">CUDA 11.5.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cuda-11-6-1">CUDA 11.6.1</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">CUDA</a> &raquo;</li>
+      <li>Installation</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/cuda/install.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<section id="cuda-10-1-243">
+<h2>CUDA 10.1.243<a class="headerlink" href="#cuda-10-1-243" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cuda_10.1.243_418.87.00_linux.run --silent --toolkit --installpath<span class="o">=</span>/ceph-data4/fangjun/software/cuda-10.1.243 --no-opengl-libs --no-drm --no-man-page
+
+<span class="c1"># Install cuDNN</span>
+<span class="nb">cd</span> /ceph-data4/fangjun/software/cuda-10.1.243
+tar xvf /ceph-sh0/fangjun/cudnn/cudnn-10.1-linux-x64-v8.0.4.30.tgz --strip-components<span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+
+<span class="nb">export</span> <span class="nv">CUDA_HOME</span><span class="o">=</span>/ceph-data4/fangjun/software/cuda-10.1.243
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>/bin:<span class="nv">$PATH</span>
+<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>/lib64:<span class="nv">$LD_LIBRARY_PATH</span>
+
+<span class="c1"># See /ceph-fj/fangjun/py38/lib/python3.8/site-packages/torch/share/cmake/Caffe2/Modules_CUDA_fix/upstream/FindCUDA.cmake</span>
+<span class="nb">export</span> <span class="nv">CUDA_TOOLKIT_ROOT_DIR</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>
+<span class="nb">export</span> <span class="nv">CUDA_TOOLKIT_ROOT</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>
+<span class="nb">export</span> <span class="nv">CUDA_BIN_PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>
+<span class="nb">export</span> <span class="nv">CUDA_PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>
+<span class="nb">export</span> <span class="nv">CUDA_INC_PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>/targets/x86_64-linux
+</pre></div>
+</div>
+</section>
+<section id="cuda-11-0-3">
+<h2>CUDA 11.0.3<a class="headerlink" href="#cuda-11-0-3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cuda_11.0.3_450.51.06_linux.run --silent --toolkit --installpath<span class="o">=</span>/ceph-data4/fangjun/software/cuda-11.0.3 --no-opengl-libs --no-drm --no-man-page
+
+<span class="c1"># Install cuDNN</span>
+<span class="nb">cd</span> /ceph-data4/fangjun/software/cuda-11.0.3
+tar xvf /ceph-sh0/fangjun/cudnn/cudnn-11.0-linux-x64-v8.0.4.30.tgz --strip-components<span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+</section>
+<section id="cuda-11-3-1">
+<h2>CUDA 11.3.1<a class="headerlink" href="#cuda-11-3-1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cuda_11.3.1_465.19.01_linux.run --silent --toolkit --installpath<span class="o">=</span>/ceph-data4/fangjun/software/cuda-11.3.1 --no-opengl-libs --no-drm --no-man-page
+<span class="nb">cd</span> /ceph-data4/fangjun/software/cuda-11.3.1
+tar xvf /ceph-sh0/fangjun/cudnn/cudnn-11.3-linux-x64-v8.2.1.32.tgz --strip-components<span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+</section>
+<section id="cuda-11-5-2">
+<h2>CUDA 11.5.2<a class="headerlink" href="#cuda-11-5-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cuda_11.5.2_495.29.05_linux.run --silent --toolkit --installpath<span class="o">=</span>/ceph-data4/fangjun/software/cuda-11.5.2 --no-opengl-libs --no-drm --no-man-page
+<span class="nb">cd</span> /ceph-data4/fangjun/software/cuda-11.5.2
+tar xvf /ceph-sh0/fangjun/cudnn/cudnn-linux-x86_64-8.3.2.44_cuda11.5-archive.tar.xz --strip-components<span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+</section>
+<section id="cuda-11-6-1">
+<h2>CUDA 11.6.1<a class="headerlink" href="#cuda-11-6-1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cuda_11.6.1_510.47.03_linux.run --silent --toolkit --installpath<span class="o">=</span>/ceph-data4/fangjun/software/cuda-11.6.1 --no-opengl-libs --no-drm --no-man-page
+<span class="nb">cd</span> /ceph-data4/fangjun/software/cuda-11.6.1
+tar xvf /ceph-sh0/fangjun/cudnn/cudnn-11.3-linux-x64-v8.2.1.32.tgz --strip-components<span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="CUDA" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../torch/index.html" class="btn btn-neutral float-right" title="torch" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
