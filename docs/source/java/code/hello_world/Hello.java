@@ -6,7 +6,7 @@
 //
 //  Note:
 //   - "javac Hello.java" generates a file "Hello.class"
-//   - "java Hello" takes the input "Hello.class" and executes it
+//   - "java Hello" takes as input "Hello.class" and executes it
 //
 class Hello {
   public static void main(String[] args) {
