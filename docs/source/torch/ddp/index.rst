@@ -3,4 +3,4 @@ DDP
 
 .. toctree::
 
-    ddp/init
+    init
