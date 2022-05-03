@@ -16,7 +16,7 @@ Create a script with filename ``google-java-format``:
 
   #!/usr/bin/env bash
 
-  java -jar /path/to/google-java-format-1.15.0-all-deps.jar
+  java -jar /ceph-sh0/fangjun/download/google-java-format-1.15.0-all-deps.jar $@
 
 ``chmod +x google-java-format`` and add the path to ``PATH``.
 

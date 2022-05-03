@@ -94,13 +94,44 @@
 <span class="c1">//</span>
 <span class="c1">//  Note:</span>
 <span class="c1">//   - &quot;javac Hello.java&quot; generates a file &quot;Hello.class&quot;</span>
-<span class="c1">//   - &quot;java Hello&quot; takes the input &quot;Hello.class&quot; and executes it</span>
+<span class="c1">//   - &quot;java Hello&quot; takes as input &quot;Hello.class&quot; and executes it</span>
 <span class="c1">//</span>
 <span class="kd">class</span> <span class="nc">Hello</span> <span class="p">{</span>
   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span> <span class="c1">// There is no &#39;;&#39; here</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">EqualTest.java</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">EqualTest</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+
+  <span class="kd">public</span> <span class="nf">EqualTest</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">i</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="p">(</span><span class="n">Object</span> <span class="n">anObject</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="o">==</span> <span class="n">anObject</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">anObject</span> <span class="k">instanceof</span> <span class="n">EqualTest</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">i</span> <span class="o">==</span> <span class="p">((</span><span class="n">EqualTest</span><span class="p">)</span> <span class="n">anObject</span><span class="p">).</span><span class="na">i</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">EqualTest</span> <span class="n">e1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EqualTest</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+    <span class="n">EqualTest</span> <span class="n">e2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EqualTest</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e1</span> <span class="o">==</span> <span class="n">e2</span><span class="p">);</span> <span class="c1">// false, compare the reference</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e1</span> <span class="o">!=</span> <span class="n">e2</span><span class="p">);</span> <span class="c1">// true</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">e2</span><span class="p">));</span> <span class="c1">// true, compare the contained value</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
