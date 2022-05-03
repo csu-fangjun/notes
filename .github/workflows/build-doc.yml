@@ -27,7 +27,7 @@ jobs:
         run: |
           pip install -r ./docs/requirements.txt
 
-      - name: Build pdf
+      - name: Build pdf and html
         uses: xu-cheng/texlive-action/full@v1
         with:
           run: |
@@ -35,18 +35,14 @@ jobs:
             apk add python3 py3-pip && \
             python3 -m pip install -r ./docs/requirements.txt && \
             cd docs && \
+            make html &&
+            touch build/html/.nojekyll
             make latex && \
             mkdir -pv build/html/_static && \
             cd build/latex && \
             latexmk -pdf -dvi -ps- notes.tex && \
             cp -v notes.pdf ../html/_static/
 
-      - name: Build html
-        shell: bash
-        run: |
-          cd docs
-          make html
-          touch build/html/.nojekyll
 
       - name: Upload pdf
         uses: actions/upload-artifact@v2

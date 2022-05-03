@@ -15,7 +15,6 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    sphinx/index
    git/index
    docker/index
-   github/index
    latex/index
    kaldi/index
    python/index
@@ -24,3 +23,5 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    torch/index
    python/index
    java/index
+
+   .. github/index
