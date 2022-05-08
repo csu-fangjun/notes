@@ -14,8 +14,8 @@ Then, in some html file, use:
 Selector
 --------
 
-- tag name or element name: e.g., ``p``
-- ID:, e.g., `#my-id`
+- tag name or element name: e.g., ``p`` selects ``<p>``; ``h1`` selects ``<h1>``.
+- ID:, e.g., `#my-id` selects ``<a id="my-id">`` or ``<p id="my-id">``
 - class: e.g., ``.my-class``
 
 
