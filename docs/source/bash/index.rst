@@ -5,4 +5,5 @@ bash
 .. toctree::
 
     sort
+    echo
 
