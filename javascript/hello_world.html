@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GitHub &mdash; notes  documentation</title>
+  <title>Hello world &mdash; notes  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -17,7 +17,9 @@
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="TODOs" href="todo.html" />
+    <link rel="prev" title="javascript" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -36,7 +38,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
@@ -48,7 +50,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">javascript</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="todo.html">TODOs</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
 </ul>
 
@@ -66,9 +72,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>GitHub</li>
+          <li><a href="index.html">javascript</a> &raquo;</li>
+      <li>Hello world</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/github/index.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/javascript/hello_world.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -76,23 +83,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="github">
-<h1>GitHub<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="actions.html">GitHub actions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="actions.html#run-github-actions-locally">Run GitHub actions locally</a></li>
-<li class="toctree-l2"><a class="reference internal" href="actions.html#hello-world">Hello world</a></li>
-</ul>
-</li>
-</ul>
+  <section id="hello-world">
+<h1>Hello world<a class="headerlink" href="#hello-world" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;3 + 5&#39;</span><span class="p">))</span>
+</pre></div>
 </div>
+<p>To write multi-line javascript, use shift + Enter for a new line.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="s2">&quot;use strict&quot;</span><span class="p">;</span>
+  <span class="cm">/* Start of your code */</span>
+  <span class="kd">function</span> <span class="nx">greetMe</span><span class="p">(</span><span class="nx">yourName</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Hello &#39;</span> <span class="o">+</span> <span class="nx">yourName</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">greetMe</span><span class="p">(</span><span class="s1">&#39;World&#39;</span><span class="p">);</span>
+  <span class="cm">/* End of your code */</span>
+<span class="p">})();</span>
+</pre></div>
+</div>
+<p>It is case sensitive. Statements are separated by <code class="docutils literal notranslate"><span class="pre">;</span></code>. Comments are the same as in C/C++.</p>
 </section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="javascript" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="todo.html" class="btn btn-neutral float-right" title="TODOs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

@@ -23,5 +23,7 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    torch/index
    python/index
    java/index
+   javascript/index
+   html/index
 
    .. github/index
