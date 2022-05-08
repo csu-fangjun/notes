@@ -18,6 +18,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="References" href="references.html" />
     <link rel="prev" title="HTML" href="index.html" /> 
 </head>
 
@@ -52,11 +53,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">HTML</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Hello world</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#comments">comments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#images">images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ordered-lists">ordered lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unordered-lists">unordered lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#links">links</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="references.html">References</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../css/hello_world.html">Hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/references.html">References</a></li>
 </ul>
 
         </div>
@@ -101,11 +109,45 @@
 </pre></div>
 </div>
 </div>
+<section id="comments">
+<h2>comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- this is a comment --&gt;</span>
+</pre></div>
+</div>
+</section>
 <section id="images">
 <h2>images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;a.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;yyy&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">img</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;foo/bar/b.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;yyy&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">img</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../../c.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;yyy&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">img</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="ordered-lists">
+<h2>ordered lists<a class="headerlink" href="#ordered-lists" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> The following points <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> First <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> Second <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="unordered-lists">
+<h2>unordered lists<a class="headerlink" href="#unordered-lists" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> The following points <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> foo <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> bar <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="links">
+<h2>links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.google.com&quot;</span><span class="p">&gt;</span>some text<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </section>
@@ -116,6 +158,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="HTML" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="references.html" class="btn btn-neutral float-right" title="References" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
