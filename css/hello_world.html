@@ -54,6 +54,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">css</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Hello world</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#comment">comment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#selector">Selector</a></li>
 </ul>
 </li>
@@ -89,6 +90,11 @@
              
   <section id="hello-world">
 <h1>Hello world<a class="headerlink" href="#hello-world" title="Permalink to this headline">¶</a></h1>
+<section id="comment">
+<h2>comment<a class="headerlink" href="#comment" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="c">/* this is a comment */</span>
+</pre></div>
+</div>
 <div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span> <span class="p">{</span> <span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span> <span class="p">}</span>
 </pre></div>
 </div>
@@ -96,13 +102,17 @@
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;abc/foo.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="p">&gt;</span>
 </pre></div>
 </div>
+</section>
 <section id="selector">
 <h2>Selector<a class="headerlink" href="#selector" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>tag name or element name: e.g., <code class="docutils literal notranslate"><span class="pre">p</span></code> selects <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code>; <code class="docutils literal notranslate"><span class="pre">h1</span></code> selects <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code>.</p></li>
-<li><p>ID:, e.g., <cite>#my-id</cite> selects <code class="docutils literal notranslate"><span class="pre">&lt;a</span> <span class="pre">id=&quot;my-id&quot;&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;p</span> <span class="pre">id=&quot;my-id&quot;&gt;</span></code></p></li>
-<li><p>class: e.g., <code class="docutils literal notranslate"><span class="pre">.my-class</span></code></p></li>
+<li><p>ID:, e.g., <code class="docutils literal notranslate"><span class="pre">#my-id</span></code> selects <code class="docutils literal notranslate"><span class="pre">&lt;a</span> <span class="pre">id=&quot;my-id&quot;&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;p</span> <span class="pre">id=&quot;my-id&quot;&gt;</span></code></p></li>
+<li><p>class: e.g., <code class="docutils literal notranslate"><span class="pre">.my-class</span></code> selects <code class="docutils literal notranslate"><span class="pre">&lt;a</span> <span class="pre">class=&quot;my-class&quot;&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;p</span> <span class="pre">class=&quot;my-class&quot;&gt;</span></code></p></li>
+<li><p>attribute: e.g., <code class="docutils literal notranslate"><span class="pre">img[src]</span></code> selects <code class="docutils literal notranslate"><span class="pre">&lt;img</span> <span class="pre">src=&quot;a.png&quot;&gt;</span></code> but not <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code></p></li>
 </ul>
+<p>See <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics#different_types_of_selectors">https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics#different_types_of_selectors</a>
+and <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors">https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors</a> for more.</p>
 <p>Example with multiple rules:</p>
 <p>Example with multiple selectors:</p>
 </section>
