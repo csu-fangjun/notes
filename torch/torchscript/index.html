@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DDP &mdash; notes  documentation</title>
+  <title>TorchScript &mdash; notes  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Initialization" href="init.html" />
-    <link rel="prev" title="torch" href="../index.html" /> 
+    <link rel="next" title="Hello" href="hello.html" />
+    <link rel="prev" title="Initialization" href="../ddp/init.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,11 +47,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../bash/index.html">bash</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cuda/index.html">CUDA</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">torch</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">DDP</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="init.html">Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ddp/index.html">DDP</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">TorchScript</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hello.html">Hello</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../torchscript/index.html">TorchScript</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
@@ -76,9 +76,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">torch</a> &raquo;</li>
-      <li>DDP</li>
+      <li>TorchScript</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/torch/ddp/index.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/torch/torchscript/index.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -86,11 +86,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="ddp">
-<h1>DDP<a class="headerlink" href="#ddp" title="Permalink to this headline">¶</a></h1>
+  <section id="torchscript">
+<h1>TorchScript<a class="headerlink" href="#torchscript" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="init.html">Initialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hello.html">Hello</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hello.html#torch-jit-script-as-a-decorator"><code class="docutils literal notranslate"><span class="pre">torch.jit.script</span></code> as a decorator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hello.html#torch-jit-script-as-a-function"><code class="docutils literal notranslate"><span class="pre">torch.jit.script</span></code> as a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hello.html#torchscript-a-module">torchscript a module</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
@@ -99,8 +104,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../index.html" class="btn btn-neutral float-left" title="torch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="init.html" class="btn btn-neutral float-right" title="Initialization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../ddp/init.html" class="btn btn-neutral float-left" title="Initialization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="hello.html" class="btn btn-neutral float-right" title="Hello" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

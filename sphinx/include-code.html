@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Install &mdash; notes  documentation</title>
+  <title>How to include code from a file &mdash; notes  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Hello world" href="hello_world.html" />
-    <link rel="prev" title="java" href="index.html" /> 
+    <link rel="next" title="git" href="../git/index.html" />
+    <link rel="prev" title="Setup" href="setup.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,7 +39,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Sphinx</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="setup.html">Setup</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">How to include code from a file</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
@@ -48,16 +52,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">java</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Install</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#formatter">formatter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#jdk">JDK</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="hello_world.html">Hello world</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference.html">Reference</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
@@ -77,10 +72,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">java</a> &raquo;</li>
-      <li>Install</li>
+          <li><a href="index.html">Sphinx</a> &raquo;</li>
+      <li>How to include code from a file</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/java/install.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/sphinx/include-code.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -88,44 +83,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="install">
-<h1>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h1>
-<section id="formatter">
-<h2>formatter<a class="headerlink" href="#formatter" title="Permalink to this headline">¶</a></h2>
-<p>Install <a class="reference external" href="https://github.com/google/google-java-format">https://github.com/google/google-java-format</a></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://github.com/google/google-java-format/releases/download/v1.15.0/google-java-format-1.15.0-all-deps.jar
-</pre></div>
-</div>
-<p>Create a script with filename <code class="docutils literal notranslate"><span class="pre">google-java-format</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/usr/bin/env bash
-
-java -jar /ceph-sh0/fangjun/download/google-java-format-1.15.0-all-deps.jar $@
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">google-java-format</span></code> and add the path to <code class="docutils literal notranslate"><span class="pre">PATH</span></code>.</p>
-</section>
-<section id="jdk">
-<h2>JDK<a class="headerlink" href="#jdk" title="Permalink to this headline">¶</a></h2>
-<p>Go to <a class="reference external" href="https://www.oracle.com/java/technologies/downloads/#java17">https://www.oracle.com/java/technologies/downloads/#java17</a> and download</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.tar.gz
-mkdir /ceph-fj/fangjun/software/
-tar xvf jdk-17_linux-x64_bin.tar.gz -C /ceph-fj/fangjun/software
-</pre></div>
-</div>
-<p>And then set the following environment variables:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span>/ceph-fj/fangjun/software/jdk-17.0.3
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$JAVA_HOME</span>
-</pre></div>
-</div>
-</section>
+  <section id="how-to-include-code-from-a-file">
+<h1>How to include code from a file<a class="headerlink" href="#how-to-include-code-from-a-file" title="Permalink to this headline">¶</a></h1>
+<p>See <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-literalinclude">https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-literalinclude</a>.</p>
+<ol class="arabic simple">
+<li><p>Show line number: <code class="docutils literal notranslate"><span class="pre">:linenos:</span></code>. By default, line number counts from 0.
+To add an offset, e.g., 10, to the line number, use <code class="docutils literal notranslate"><span class="pre">:lineno-start:</span> <span class="pre">10</span></code>.
+Note: It still includes all the contents of the file.</p></li>
+<li><p>To emphasize a line, specified lines, or specified line ranges, use:
+<code class="docutils literal notranslate"><span class="pre">:emphasize-lines:</span> <span class="pre">10</span></code>, <code class="docutils literal notranslate"><span class="pre">:emphasize-lines:</span> <span class="pre">10,12,14</span></code>, and <code class="docutils literal notranslate"><span class="pre">:emphasize-lines:</span> <span class="pre">12,15-18</span></code>
+Note: emphasize means to change the background color.</p></li>
+<li><p>Set the language, e.g., <code class="docutils literal notranslate"><span class="pre">:language:</span> <span class="pre">python</span></code>.</p></li>
+<li><p>Set the caption, e.g., <code class="docutils literal notranslate"><span class="pre">:caption:</span> <span class="pre">hello</span> <span class="pre">world</span></code>.</p></li>
+<li><p>To include a function from the python file, use <code class="docutils literal notranslate"><span class="pre">:pyobject:</span> <span class="pre">my_func</span></code></p></li>
+<li><p>To include specified lines, use <code class="docutils literal notranslate"><span class="pre">:lines:1,3,5-10,15-</span></code>. Note that if using this option,
+line number counts from 0. Use <code class="docutils literal notranslate"><span class="pre">:lineno-start:</span> <span class="pre">xx</span></code> to change the offset for display.</p></li>
+</ol>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="java" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="hello_world.html" class="btn btn-neutral float-right" title="Hello world" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="setup.html" class="btn btn-neutral float-left" title="Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../git/index.html" class="btn btn-neutral float-right" title="git" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
