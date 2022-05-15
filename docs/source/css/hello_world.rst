@@ -34,7 +34,7 @@ and `<https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selecto
 Example with multiple rules:
 
 .. code-block:: css
-   :capiton: Example with multiple rules
+   :caption: Example with multiple rules
 
    p {
      color: red;
