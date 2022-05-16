@@ -8,4 +8,6 @@ TorchScript
     load-in-cpp
     array_ref
     scalar-type
+    type-meta
+    device
 
