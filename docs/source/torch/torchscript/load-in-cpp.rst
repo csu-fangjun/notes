@@ -3,12 +3,18 @@
 Load in C++
 ===========
 
+See `<https://pytorch.org/tutorials/advanced/cpp_export.html>`_.
+
 Load the saved ``foo.pt`` in C++  from :ref:`export and ignore methods`.
 
 .. literalinclude:: ./code/load-in-cpp/Makefile
    :language: makefile
    :linenos:
    :caption: ./code/load-in-cpp/Makefile
+
+.. note::
+
+   ``torch::jit::script::Module`` is deprecated, use ``torch::jit::Module`` instead.
 
 .. literalinclude:: ./code/load-in-cpp/main.cc
    :language: cpp
