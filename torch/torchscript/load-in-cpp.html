@@ -18,7 +18,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Python" href="../../python/index.html" />
+    <link rel="next" title="ArrayRef" href="array_ref.html" />
     <link rel="prev" title="Hello" href="hello.html" /> 
 </head>
 
@@ -51,6 +51,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">TorchScript</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="hello.html">Hello</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Load in C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="array_ref.html">ArrayRef</a></li>
 </ul>
 </li>
 </ul>
@@ -90,6 +91,7 @@
              
   <section id="load-in-c">
 <span id="load-in-cpp"></span><h1>Load in C++<a class="headerlink" href="#load-in-c" title="Permalink to this headline">¶</a></h1>
+<p>See <a class="reference external" href="https://pytorch.org/tutorials/advanced/cpp_export.html">https://pytorch.org/tutorials/advanced/cpp_export.html</a>.</p>
 <p>Load the saved <code class="docutils literal notranslate"><span class="pre">foo.pt</span></code> in C++  from <a class="reference internal" href="hello.html#export-and-ignore-methods"><span class="std std-ref">Export and ignore methods</span></a>.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">./code/load-in-cpp/Makefile</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
@@ -136,6 +138,10 @@
 <span class="linenos">41</span>	<span class="k">$(</span>RM<span class="k">)</span> main.o main
 </pre></div>
 </div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">torch::jit::script::Module</span></code> is deprecated, use <code class="docutils literal notranslate"><span class="pre">torch::jit::Module</span></code> instead.</p>
 </div>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">./code/load-in-cpp/main.cc</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
@@ -194,7 +200,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="hello.html" class="btn btn-neutral float-left" title="Hello" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../../python/index.html" class="btn btn-neutral float-right" title="Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="array_ref.html" class="btn btn-neutral float-right" title="ArrayRef" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
