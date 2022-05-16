@@ -10,4 +10,5 @@ TorchScript
     scalar-type
     type-meta
     device
+    tensor-options
 
