@@ -25,9 +25,20 @@ void TestConstructor2() {
 
   torch::TensorOptions opt5 = torch::requires_grad(true);
   std::cout << opt5 << "\n";
+  // TensorOptions(dtype=float (default), device=cpu (default), layout=Strided
+  // (default), requires_grad=true, pinned_memory=false (default),
+  // memory_format=(nullopt))
 
   torch::TensorOptions opt6 = torch::dtype<float>();
   std::cout << torch::toString(opt6) << "\n";
+  // TensorOptions(dtype=float, device=cpu (default), layout=Strided (default),
+  // requires_grad=false (default), pinned_memory=false (default),
+  // memory_format=(nullopt))
+
+  std::cout << "default:" << torch::TensorOptions() << "\n";
+  // default:TensorOptions(dtype=float (default), device=cpu (default),
+  // layout=Strided (default), requires_grad=false (default),
+  // pinned_memory=false (default), memory_format=(nullopt))
 }
 
 void TestMethods() {

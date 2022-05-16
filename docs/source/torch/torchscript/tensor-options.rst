@@ -10,7 +10,7 @@ Constructors (not recommended)
    :language: c++
    :linenos:
    :lines: 3-15
-   :caption: ./code/tensor-options/main.cc (Constructors)
+   :caption: ./code/tensor-options/main.cc (Not recommended constructors)
 
 Constructors (Recommended)
 --------------------------
@@ -18,8 +18,8 @@ Constructors (Recommended)
 .. literalinclude:: ./code/tensor-options/main.cc
    :language: c++
    :linenos:
-   :lines: 17-31
-   :caption: ./code/tensor-options/main.cc (Constructors)
+   :lines: 17-42
+   :caption: ./code/tensor-options/main.cc (Recommended constructors)
 
 Methods
 -------
@@ -27,5 +27,5 @@ Methods
 .. literalinclude:: ./code/tensor-options/main.cc
    :language: c++
    :linenos:
-   :lines: 33-47
-   :caption: ./code/device/main.cc (Constructors)
+   :lines: 44-58
+   :caption: ./code/tensor-options/main.cc (Methods)
