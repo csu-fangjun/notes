@@ -11,4 +11,6 @@ TorchScript
     type-meta
     device
     tensor-options
+    tensor-creation
+    tensor
 
