@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TorchScript &mdash; notes  documentation</title>
+  <title>Tensor Creation &mdash; notes  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Hello" href="hello.html" />
-    <link rel="prev" title="Initialization" href="../ddp/init.html" /> 
+    <link rel="next" title="Tensor" href="tensor.html" />
+    <link rel="prev" title="TensorOptions" href="tensor-options.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -48,7 +48,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cuda/index.html">CUDA</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">torch</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ddp/index.html">DDP</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">TorchScript</a><ul>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">TorchScript</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="hello.html">Hello</a></li>
 <li class="toctree-l3"><a class="reference internal" href="load-in-cpp.html">Load in C++</a></li>
 <li class="toctree-l3"><a class="reference internal" href="array_ref.html">ArrayRef</a></li>
@@ -56,7 +56,10 @@
 <li class="toctree-l3"><a class="reference internal" href="type-meta.html">TypeMeta</a></li>
 <li class="toctree-l3"><a class="reference internal" href="device.html">torch::Device</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tensor-options.html">TensorOptions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tensor-creation.html">Tensor Creation</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Tensor Creation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tensordatacontainer">TensorDataContainer</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="tensor.html">Tensor</a></li>
 </ul>
 </li>
@@ -84,9 +87,10 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">torch</a> &raquo;</li>
-      <li>TorchScript</li>
+          <li><a href="index.html">TorchScript</a> &raquo;</li>
+      <li>Tensor Creation</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/torch/torchscript/index.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/torch/torchscript/tensor-creation.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -94,74 +98,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="torchscript">
-<h1>TorchScript<a class="headerlink" href="#torchscript" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="hello.html">Hello</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="hello.html#torch-jit-script-as-a-decorator"><code class="docutils literal notranslate"><span class="pre">torch.jit.script</span></code> as a decorator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hello.html#torch-jit-script-as-a-function"><code class="docutils literal notranslate"><span class="pre">torch.jit.script</span></code> as a function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hello.html#torchscript-a-module">torchscript a module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="hello.html#export-and-ignore-methods">Export and ignore methods</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="load-in-cpp.html">Load in C++</a></li>
-<li class="toctree-l1"><a class="reference internal" href="array_ref.html">ArrayRef</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="array_ref.html#constructors">Constructors</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="array_ref.html#data-members">Data members</a></li>
-<li class="toctree-l3"><a class="reference internal" href="array_ref.html#default-constructed">Default constructed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="array_ref.html#from-a-single-element">From a single element</a></li>
-<li class="toctree-l3"><a class="reference internal" href="array_ref.html#from-an-initializer-list">From an initializer list</a></li>
-<li class="toctree-l3"><a class="reference internal" href="array_ref.html#other-types-of-constructors">Other types of constructors</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="scalar-type.html">ScalarType</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="scalar-type.html#members">Members</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="scalar-type.html#some-aliases">Some aliases</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="scalar-type.html#scalartype-to-cpp-type">ScalarType to CPP type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="scalar-type.html#cpp-type-to-scalartype">CPP type to ScalarType</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="type-meta.html">TypeMeta</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="type-meta.html#constructors">Constructors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="type-meta.html#operations-with-scalartype">Operations with ScalarType</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="device.html">torch::Device</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="device.html#devicetype">DeviceType</a></li>
-<li class="toctree-l2"><a class="reference internal" href="device.html#device">Device</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tensor-options.html">TensorOptions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tensor-options.html#constructors-not-recommended">Constructors (not recommended)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tensor-options.html#constructors-recommended">Constructors (Recommended)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tensor-options.html#methods">Methods</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tensor-creation.html">Tensor Creation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tensor-creation.html#tensordatacontainer">TensorDataContainer</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tensor.html">Tensor</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tensor.html#common-methods">Common methods</a></li>
-</ul>
-</li>
-</ul>
+  <section id="tensor-creation">
+<h1>Tensor Creation<a class="headerlink" href="#tensor-creation" title="Permalink to this headline">¶</a></h1>
+<p>See</p>
+<section id="tensordatacontainer">
+<h2>TensorDataContainer<a class="headerlink" href="#tensordatacontainer" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>data is <strong>copied</strong> to the returned tensor!</p>
 </div>
+<p>See</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/torch/csrc/api/include/torch/detail/TensorDataContainer.h">https://github.com/pytorch/pytorch/blob/master/torch/csrc/api/include/torch/detail/TensorDataContainer.h</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/tools/autograd/templates/variable_factories.h">https://github.com/pytorch/pytorch/blob/master/tools/autograd/templates/variable_factories.h</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/Utils.cpp">https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/Utils.cpp</a></p></li>
+</ul>
+</div></blockquote>
+<p>Support the following data types:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>From a <code class="docutils literal notranslate"><span class="pre">std::vector&lt;T&gt;</span></code></p></li>
+<li><p>From a scalar</p></li>
+<li><p>From an initializer list</p></li>
+<li><p>From an <code class="docutils literal notranslate"><span class="pre">ArrayRef&lt;T&gt;</span></code>.</p></li>
+</ul>
+</div></blockquote>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../ddp/init.html" class="btn btn-neutral float-left" title="Initialization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="hello.html" class="btn btn-neutral float-right" title="Hello" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tensor-options.html" class="btn btn-neutral float-left" title="TensorOptions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tensor.html" class="btn btn-neutral float-right" title="Tensor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

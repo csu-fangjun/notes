@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tensor &mdash; notes  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Python" href="../../python/index.html" />
+    <link rel="prev" title="Tensor Creation" href="tensor-creation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">torch</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ddp/index.html">DDP</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">TorchScript</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="hello.html">Hello</a></li>
+<li class="toctree-l3"><a class="reference internal" href="load-in-cpp.html">Load in C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="array_ref.html">ArrayRef</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scalar-type.html">ScalarType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type-meta.html">TypeMeta</a></li>
+<li class="toctree-l3"><a class="reference internal" href="device.html">torch::Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tensor-options.html">TensorOptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tensor-creation.html">Tensor Creation</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Tensor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#common-methods">Common methods</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">css</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">torch</a> &raquo;</li>
+          <li><a href="index.html">TorchScript</a> &raquo;</li>
+      <li>Tensor</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/torch/torchscript/tensor.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tensor">
+<h1>Tensor<a class="headerlink" href="#tensor" title="Permalink to this headline">¶</a></h1>
+<p>See</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/core/TensorBase.h">https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/core/TensorBase.h</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/templates/TensorBody.h">https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/templates/TensorBody.h</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/c10/core/TensorImpl.h">https://github.com/pytorch/pytorch/blob/master/c10/core/TensorImpl.h</a></p></li>
+</ul>
+</div></blockquote>
+<section id="common-methods">
+<h2>Common methods<a class="headerlink" href="#common-methods" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/tensor/main.cc (Not recommended constructors)</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">TestCommonMethods</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="w">  </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">rand</span><span class="p">({</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">});</span><span class="w"></span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">dim</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w">              </span><span class="c1">// 3-d tensor</span>
+<span class="linenos"> 5</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">ndimension</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">dim</span><span class="p">());</span><span class="w"> </span><span class="c1">// same</span>
+<span class="linenos"> 6</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">numel</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">is_contiguous</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">contiguous</span><span class="p">().</span><span class="n">is_contiguous</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="w">  </span><span class="n">t</span><span class="p">.</span><span class="n">fill_</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"> </span><span class="c1">// fill all entries to 0</span>
+<span class="linenos">11</span><span class="w">  </span><span class="n">t</span><span class="p">.</span><span class="n">zero_</span><span class="p">();</span><span class="w">   </span><span class="c1">// zero out all entries</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="w">  </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">kInt</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">14</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">is_floating_point</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">15</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">is_signed</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">18</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">size</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">19</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">size</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">20</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">sizes</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">ArrayRef</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="o">&gt;</span><span class="p">({</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">}));</span><span class="w"></span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="w">  </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">contiguous</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">23</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">stride</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">24</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">stride</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">25</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">stride</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">26</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">strides</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">ArrayRef</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="o">&gt;</span><span class="p">({</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">}));</span><span class="w"></span>
+<span class="linenos">27</span>
+<span class="linenos">28</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">defined</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">29</span><span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">30</span><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">31</span><span class="w">    </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">defined</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">32</span><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">33</span><span class="w">    </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">defined</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">34</span><span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">35</span><span class="w">    </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">defined</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">36</span><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">37</span>
+<span class="linenos">38</span><span class="w">  </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">kShort</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">39</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">itemsize</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int16_t</span><span class="p">));</span><span class="w"></span>
+<span class="linenos">40</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">nbytes</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">numel</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">itemsize</span><span class="p">());</span><span class="w"></span>
+<span class="linenos">41</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">itemsize</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">element_size</span><span class="p">());</span><span class="w"> </span><span class="c1">// same</span>
+<span class="linenos">42</span>
+<span class="linenos">43</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">scalar_type</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">kShort</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">44</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">dtype</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">caffe2</span><span class="o">::</span><span class="n">TypeMeta</span><span class="o">::</span><span class="n">Make</span><span class="o">&lt;</span><span class="kt">int16_t</span><span class="o">&gt;</span><span class="p">());</span><span class="w"></span>
+<span class="linenos">45</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">dtype</span><span class="p">().</span><span class="n">toScalarType</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">kShort</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">46</span>
+<span class="linenos">47</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">device</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">Device</span><span class="p">(</span><span class="s">&quot;cpu&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="linenos">48</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">device</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">Device</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">kCPU</span><span class="p">));</span><span class="w"></span>
+<span class="linenos">49</span>
+<span class="linenos">50</span><span class="w">  </span><span class="c1">// Note: t.device() return an instance of torch::Device</span>
+<span class="linenos">51</span><span class="w">  </span><span class="c1">// t.get_device() returns the device index.</span>
+<span class="linenos">52</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">get_device</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">device</span><span class="p">().</span><span class="n">index</span><span class="p">());</span><span class="w"></span>
+<span class="linenos">53</span>
+<span class="linenos">54</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">is_cpu</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">55</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">is_cuda</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">56</span>
+<span class="linenos">57</span><span class="w">  </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">kInt</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">58</span><span class="w">  </span><span class="kt">int32_t</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">data_ptr</span><span class="o">&lt;</span><span class="kt">int32_t</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">59</span><span class="w">  </span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">60</span>
+<span class="linenos">61</span><span class="w">  </span><span class="n">torch</span><span class="o">::</span><span class="n">TensorAccessor</span><span class="o">&lt;</span><span class="kt">int32_t</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">acc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">accessor</span><span class="o">&lt;</span><span class="kt">int32_t</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">62</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">acc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span><span class="w"></span>
+<span class="linenos">63</span><span class="w">  </span><span class="n">p</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-2</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">64</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">acc</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-2</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">65</span>
+<span class="linenos">66</span><span class="w">  </span><span class="n">acc</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">67</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">68</span>
+<span class="linenos">69</span><span class="w">  </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">kFloat</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">70</span><span class="w">  </span><span class="n">t</span><span class="p">.</span><span class="n">set_requires_grad</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">71</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">requires_grad</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">72</span>
+<span class="linenos">73</span><span class="w">  </span><span class="n">t</span><span class="p">.</span><span class="n">set_requires_grad</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">74</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">requires_grad</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">75</span>
+<span class="linenos">76</span><span class="w">  </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">cuda</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">77</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">device</span><span class="p">().</span><span class="n">type</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">kCUDA</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">78</span><span class="w">  </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">cpu</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">79</span>
+<span class="linenos">80</span><span class="w">  </span><span class="n">torch</span><span class="o">::</span><span class="n">TensorOptions</span><span class="w"> </span><span class="n">opts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">options</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">81</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">opts</span><span class="p">.</span><span class="n">device</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">device</span><span class="p">());</span><span class="w"></span>
+<span class="linenos">82</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tensor-creation.html" class="btn btn-neutral float-left" title="Tensor Creation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../python/index.html" class="btn btn-neutral float-right" title="Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
