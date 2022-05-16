@@ -8,4 +8,5 @@ This page describes how this website is setup.
 
     setup
     include-code
+    link
 

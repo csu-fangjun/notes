@@ -13,6 +13,14 @@ def test_adder():
     print(adder.graph)
     print("-" * 10)
     print(adder.code)
+    adder.save("adder.pt")
+
+    my_adder = torch.jit.load("adder.pt")
+
+    assert isinstance(my_adder, torch.jit._script.RecursiveScriptModule)
+    assert isinstance(my_adder, torch.jit.ScriptModule)
+    assert not isinstance(my_adder, torch.jit.ScriptFunction)
+    print(my_adder(torch.tensor([3])))
 
 
 """
@@ -24,6 +32,8 @@ graph(%x.1 : int):
 ----------
 def adder(x: int) -> int:
   return torch.add(x, 1)
+
+4
 """
 
 
