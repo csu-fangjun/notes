@@ -7,4 +7,5 @@ TorchScript
     hello
     load-in-cpp
     array_ref
+    scalar-type
 

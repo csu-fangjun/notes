@@ -1,12 +1,11 @@
 ArrayRef
 ========
 
-See ``c10/utils/ArrayRef.h``.
+See `c10/utils/ArrayRef.h <https://github.com/pytorch/pytorch/blob/master/c10/util/ArrayRef.h>`_.
 
 .. caution::
 
    ``IntArrayRef`` is an alias to ``ArrayRef<int64_t>``.
-
 
 ``ArrayRef<T>`` contains only two members: A const data pointer and a size.
 It is trivially copyable and assignable.
