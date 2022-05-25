@@ -29,6 +29,7 @@ static void FromScalar() {
   torch::Tensor t2 = torch::tensor(0.5);
   TORCH_CHECK(t2.scalar_type() == torch::kFloat);
 }
+
 static void FromInitializerList() {
   torch::Tensor t1 = torch::tensor({1, 2, 3});
   torch::Tensor t2 = torch::tensor(std::vector<int32_t>{1, 2, 3});

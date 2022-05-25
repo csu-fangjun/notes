@@ -13,4 +13,9 @@ TorchScript
     tensor-options
     tensor-creation
     tensor
+    intrusive-ptr
+    optional
+    packed-sequence
+    ivalue
+
 
