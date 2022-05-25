@@ -25,5 +25,6 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    javascript/index
    html/index
    css/index
+   pybind11/index
 
 .. github/index

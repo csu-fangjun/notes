@@ -5,4 +5,8 @@ Python
 
     asyncio/index
     argv
+    todo
+    time
+    numbers
+    str
 
