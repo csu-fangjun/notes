@@ -25,3 +25,38 @@ Support the following data types:
   - From an initializer list
   - From an ``ArrayRef<T>``.
 
+From std::vector
+----------------
+
+.. literalinclude:: ./code/tensor-creation/main.cc
+   :language: c++
+   :linenos:
+   :lines: 3-23
+   :caption: ./code/tensor-creation/main.cc
+
+From scalar
+-----------
+
+.. literalinclude:: ./code/tensor-creation/main.cc
+   :language: c++
+   :linenos:
+   :lines: 25-31
+   :caption: ./code/tensor-creation/main.cc
+
+From initializer list
+---------------------
+
+.. literalinclude:: ./code/tensor-creation/main.cc
+   :language: c++
+   :linenos:
+   :lines: 33-45
+   :caption: ./code/tensor-creation/main.cc
+
+From ArrayRef
+-------------
+
+.. literalinclude:: ./code/tensor-creation/main.cc
+   :language: c++
+   :linenos:
+   :lines: 47-56
+   :caption: ./code/tensor-creation/main.cc
