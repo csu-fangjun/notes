@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>hello_pb2.py &mdash; notes  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Protocol Buffers</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>hello_pb2.py</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/protobuf/hello/hello-pb2.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="hello-pb2-py">
+<h1>hello_pb2.py<a class="headerlink" href="#hello-pb2-py" title="Permalink to this headline">¶</a></h1>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/hello_pb2.py</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="linenos"> 2</span><span class="c1"># Generated by the protocol buffer compiler.  DO NOT EDIT!</span>
+<span class="linenos"> 3</span><span class="c1"># source: hello.proto</span>
+<span class="linenos"> 4</span><span class="sd">&quot;&quot;&quot;Generated protocol buffer code.&quot;&quot;&quot;</span>
+<span class="linenos"> 5</span><span class="kn">from</span> <span class="nn">google.protobuf.internal</span> <span class="kn">import</span> <span class="n">builder</span> <span class="k">as</span> <span class="n">_builder</span>
+<span class="linenos"> 6</span><span class="kn">from</span> <span class="nn">google.protobuf</span> <span class="kn">import</span> <span class="n">descriptor</span> <span class="k">as</span> <span class="n">_descriptor</span>
+<span class="linenos"> 7</span><span class="kn">from</span> <span class="nn">google.protobuf</span> <span class="kn">import</span> <span class="n">descriptor_pool</span> <span class="k">as</span> <span class="n">_descriptor_pool</span>
+<span class="linenos"> 8</span><span class="kn">from</span> <span class="nn">google.protobuf</span> <span class="kn">import</span> <span class="n">symbol_database</span> <span class="k">as</span> <span class="n">_symbol_database</span>
+<span class="linenos"> 9</span><span class="c1"># @@protoc_insertion_point(imports)</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="n">_sym_db</span> <span class="o">=</span> <span class="n">_symbol_database</span><span class="o">.</span><span class="n">Default</span><span class="p">()</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="n">DESCRIPTOR</span> <span class="o">=</span> <span class="n">_descriptor_pool</span><span class="o">.</span><span class="n">Default</span><span class="p">()</span><span class="o">.</span><span class="n">AddSerializedFile</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\n\x0b</span><span class="s1">hello.proto</span><span class="se">\x12\x08</span><span class="s1">tutorial</span><span class="se">\&quot;\xdb\x01\n\x06</span><span class="s1">Person</span><span class="se">\x12\x0c\n\x04</span><span class="s1">name</span><span class="se">\x18\x01</span><span class="s1"> </span><span class="se">\x01</span><span class="s1">(</span><span class="se">\t\x12\n\n\x02</span><span class="s1">id</span><span class="se">\x18\x02</span><span class="s1"> </span><span class="se">\x01</span><span class="s1">(</span><span class="se">\x05\x12\r\n\x05\x65</span><span class="s1">mail</span><span class="se">\x18\x03</span><span class="s1"> </span><span class="se">\x01</span><span class="s1">(</span><span class="se">\t\x12</span><span class="s1">,</span><span class="se">\n\x06</span><span class="s1">phones</span><span class="se">\x18\x04</span><span class="s1"> </span><span class="se">\x03</span><span class="s1">(</span><span class="se">\x0b\x32\x1c</span><span class="s1">.tutorial.Person.PhoneNumber</span><span class="se">\x1a</span><span class="s1">M</span><span class="se">\n\x0b</span><span class="s1">PhoneNumber</span><span class="se">\x12\x0e\n\x06</span><span class="s1">number</span><span class="se">\x18\x01</span><span class="s1"> </span><span class="se">\x01</span><span class="s1">(</span><span class="se">\t\x12</span><span class="s1">.</span><span class="se">\n\x04</span><span class="s1">type</span><span class="se">\x18\x02</span><span class="s1"> </span><span class="se">\x01</span><span class="s1">(</span><span class="se">\x0e\x32\x1a</span><span class="s1">.tutorial.Person.PhoneType:</span><span class="se">\x04</span><span class="s1">HOME</span><span class="se">\&quot;</span><span class="s1">+</span><span class="se">\n\t</span><span class="s1">PhoneType</span><span class="se">\x12\n\n\x06</span><span class="s1">MOBILE</span><span class="se">\x10\x00\x12\x08\n\x04</span><span class="s1">HOME</span><span class="se">\x10\x01\x12\x08\n\x04</span><span class="s1">WORK</span><span class="se">\x10\x02\&quot;</span><span class="s1">/</span><span class="se">\n\x0b\x41\x64\x64</span><span class="s1">ressBook</span><span class="se">\x12</span><span class="s1"> </span><span class="se">\n\x06</span><span class="s1">people</span><span class="se">\x18\x01</span><span class="s1"> </span><span class="se">\x03</span><span class="s1">(</span><span class="se">\x0b\x32\x10</span><span class="s1">.tutorial.Person&#39;</span><span class="p">)</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="n">_builder</span><span class="o">.</span><span class="n">BuildMessageAndEnumDescriptors</span><span class="p">(</span><span class="n">DESCRIPTOR</span><span class="p">,</span> <span class="nb">globals</span><span class="p">())</span>
+<span class="linenos">19</span><span class="n">_builder</span><span class="o">.</span><span class="n">BuildTopDescriptorsAndMessages</span><span class="p">(</span><span class="n">DESCRIPTOR</span><span class="p">,</span> <span class="s1">&#39;hello_pb2&#39;</span><span class="p">,</span> <span class="nb">globals</span><span class="p">())</span>
+<span class="linenos">20</span><span class="k">if</span> <span class="n">_descriptor</span><span class="o">.</span><span class="n">_USE_C_DESCRIPTORS</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span>  <span class="n">DESCRIPTOR</span><span class="o">.</span><span class="n">_options</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="linenos">23</span>  <span class="n">_PERSON</span><span class="o">.</span><span class="n">_serialized_start</span><span class="o">=</span><span class="mi">26</span>
+<span class="linenos">24</span>  <span class="n">_PERSON</span><span class="o">.</span><span class="n">_serialized_end</span><span class="o">=</span><span class="mi">245</span>
+<span class="linenos">25</span>  <span class="n">_PERSON_PHONENUMBER</span><span class="o">.</span><span class="n">_serialized_start</span><span class="o">=</span><span class="mi">123</span>
+<span class="linenos">26</span>  <span class="n">_PERSON_PHONENUMBER</span><span class="o">.</span><span class="n">_serialized_end</span><span class="o">=</span><span class="mi">200</span>
+<span class="linenos">27</span>  <span class="n">_PERSON_PHONETYPE</span><span class="o">.</span><span class="n">_serialized_start</span><span class="o">=</span><span class="mi">202</span>
+<span class="linenos">28</span>  <span class="n">_PERSON_PHONETYPE</span><span class="o">.</span><span class="n">_serialized_end</span><span class="o">=</span><span class="mi">245</span>
+<span class="linenos">29</span>  <span class="n">_ADDRESSBOOK</span><span class="o">.</span><span class="n">_serialized_start</span><span class="o">=</span><span class="mi">247</span>
+<span class="linenos">30</span>  <span class="n">_ADDRESSBOOK</span><span class="o">.</span><span class="n">_serialized_end</span><span class="o">=</span><span class="mi">294</span>
+<span class="linenos">31</span><span class="c1"># @@protoc_insertion_point(module_scope)</span>
+</pre></div>
+</div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
