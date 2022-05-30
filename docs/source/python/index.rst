@@ -9,3 +9,5 @@ Python
     time
     numbers
     str
+    enum/index
+    socket/index

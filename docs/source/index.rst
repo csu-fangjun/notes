@@ -27,5 +27,6 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    css/index
    pybind11/index
    protobuf/index
+   grpc/index
 
 .. github/index
