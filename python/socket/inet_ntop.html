@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>inet_ntop &mdash; notes  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="TODOs" href="todo.html" />
+    <link rel="prev" title="inet_pton" href="inet_pton.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../torch/index.html">torch</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../asyncio/index.html">asyncio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../argv.html">argv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo.html">TODO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../time.html">time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numbers.html">Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../str.html">str</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../enum/index.html">enum</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">socket</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="address-family.html">AddressFamily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="socket-kind.html">SocketKind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sockaddr_in.html">struct sockaddr_in</a></li>
+<li class="toctree-l3"><a class="reference internal" href="address-info.html">AddressInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="inet_pton.html">inet_pton</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">inet_ntop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="todo.html">TODOs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grpc/index.html">gRPC</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Python</a> &raquo;</li>
+          <li><a href="index.html">socket</a> &raquo;</li>
+      <li>inet_ntop</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/python/socket/inet_ntop.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="inet-ntop">
+<h1>inet_ntop<a class="headerlink" href="#inet-ntop" title="Permalink to this headline">¶</a></h1>
+<p>Network address to representation format.</p>
+<p>See <a class="reference external" href="https://man7.org/linux/man-pages/man3/inet_ntop.3.html">https://man7.org/linux/man-pages/man3/inet_ntop.3.html</a></p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/inet_ntop.c</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;arpa/inet.h&gt;</span><span class="cp"></span>
+<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">  </span><span class="k">struct</span> <span class="nc">in_addr</span><span class="w"> </span><span class="n">addr</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">addr</span><span class="p">.</span><span class="n">s_addr</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">  </span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">192</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">168</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">  </span><span class="n">p</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">buf</span><span class="p">[</span><span class="n">INET_ADDRSTRLEN</span><span class="p">];</span><span class="w"></span>
+<span class="linenos">12</span><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">inet_ntop</span><span class="p">(</span><span class="n">AF_INET</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">addr</span><span class="p">.</span><span class="n">s_addr</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">buf</span><span class="p">));</span><span class="w"></span>
+<span class="linenos">13</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">14</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%p, %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="n">ret</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">15</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">16</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">17</span><span class="cp">#if 0</span><span class="c"></span>
+<span class="linenos">18</span><span class="c">192.168.1.2</span>
+<span class="linenos">19</span><span class="c">0x7ffc808b5e80, 0x7ffc808b5e80</span>
+<span class="linenos">20</span><span class="cp">#endif</span>
+</pre></div>
+</div>
+</div>
+<p>Its implementation can be found at
+<a class="reference external" href="https://github.com/bminor/glibc/blob/master/resolv/inet_ntop.c">https://github.com/bminor/glibc/blob/master/resolv/inet_ntop.c</a></p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">./code/inet_ntop_impl.c</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="c1">// https://github.com/bminor/glibc/blob/master/resolv/inet_ntop.c</span>
+<span class="linenos">  2</span><span class="cm">/*</span>
+<span class="linenos">  3</span><span class="cm"> * Copyright (c) 1996-1999 by Internet Software Consortium.</span>
+<span class="linenos">  4</span><span class="cm"> *</span>
+<span class="linenos">  5</span><span class="cm"> * Permission to use, copy, modify, and distribute this software for any</span>
+<span class="linenos">  6</span><span class="cm"> * purpose with or without fee is hereby granted, provided that the above</span>
+<span class="linenos">  7</span><span class="cm"> * copyright notice and this permission notice appear in all copies.</span>
+<span class="linenos">  8</span><span class="cm"> *</span>
+<span class="linenos">  9</span><span class="cm"> * THE SOFTWARE IS PROVIDED &quot;AS IS&quot; AND INTERNET SOFTWARE CONSORTIUM DISCLAIMS</span>
+<span class="linenos"> 10</span><span class="cm"> * ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES</span>
+<span class="linenos"> 11</span><span class="cm"> * OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL INTERNET SOFTWARE</span>
+<span class="linenos"> 12</span><span class="cm"> * CONSORTIUM BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL</span>
+<span class="linenos"> 13</span><span class="cm"> * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR</span>
+<span class="linenos"> 14</span><span class="cm"> * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS</span>
+<span class="linenos"> 15</span><span class="cm"> * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS</span>
+<span class="linenos"> 16</span><span class="cm"> * SOFTWARE.</span>
+<span class="linenos"> 17</span><span class="cm"> */</span><span class="w"></span>
+<span class="linenos"> 18</span>
+<span class="linenos"> 19</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sys/param.h&gt;</span><span class="cp"></span>
+<span class="linenos"> 20</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sys/types.h&gt;</span><span class="cp"></span>
+<span class="linenos"> 21</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sys/socket.h&gt;</span><span class="cp"></span>
+<span class="linenos"> 22</span>
+<span class="linenos"> 23</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;netinet/in.h&gt;</span><span class="cp"></span>
+<span class="linenos"> 24</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;arpa/inet.h&gt;</span><span class="cp"></span>
+<span class="linenos"> 25</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;arpa/nameser.h&gt;</span><span class="cp"></span>
+<span class="linenos"> 26</span>
+<span class="linenos"> 27</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;errno.h&gt;</span><span class="cp"></span>
+<span class="linenos"> 28</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="linenos"> 29</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span><span class="cp"></span>
+<span class="linenos"> 30</span>
+<span class="linenos"> 31</span><span class="cp">#ifdef SPRINTF_CHAR</span>
+<span class="linenos"> 32</span><span class="cp"># define SPRINTF(x) strlen(sprintf</span><span class="cm">/**/</span><span class="cp">x)</span>
+<span class="linenos"> 33</span><span class="cp">#else</span>
+<span class="linenos"> 34</span><span class="cp"># define SPRINTF(x) ((size_t)sprintf x)</span>
+<span class="linenos"> 35</span><span class="cp">#endif</span>
+<span class="linenos"> 36</span>
+<span class="linenos"> 37</span><span class="cm">/*</span>
+<span class="linenos"> 38</span><span class="cm"> * WARNING: Don&#39;t even consider trying to compile this on a system where</span>
+<span class="linenos"> 39</span><span class="cm"> * sizeof(int) &lt; 4.  sizeof(int) &gt; 4 is fine; all the world&#39;s not a VAX.</span>
+<span class="linenos"> 40</span><span class="cm"> */</span><span class="w"></span>
+<span class="linenos"> 41</span>
+<span class="linenos"> 42</span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="nf">inet_ntop4</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">u_char</span><span class="w"> </span><span class="o">*</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="p">,</span><span class="w"> </span><span class="kt">socklen_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 43</span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="nf">inet_ntop6</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">u_char</span><span class="w"> </span><span class="o">*</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="p">,</span><span class="w"> </span><span class="kt">socklen_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 44</span>
+<span class="linenos"> 45</span><span class="cm">/* char *</span>
+<span class="linenos"> 46</span><span class="cm"> * inet_ntop(af, src, dst, size)</span>
+<span class="linenos"> 47</span><span class="cm"> *	convert a network format address to presentation format.</span>
+<span class="linenos"> 48</span><span class="cm"> * return:</span>
+<span class="linenos"> 49</span><span class="cm"> *	pointer to presentation format address (`dst&#39;), or NULL (see errno).</span>
+<span class="linenos"> 50</span><span class="cm"> * author:</span>
+<span class="linenos"> 51</span><span class="cm"> *	Paul Vixie, 1996.</span>
+<span class="linenos"> 52</span><span class="cm"> */</span><span class="w"></span>
+<span class="linenos"> 53</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<span class="linenos"> 54</span><span class="nf">inet_ntop</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">af</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="p">,</span><span class="w"> </span><span class="kt">socklen_t</span><span class="w"> </span><span class="n">size</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 55</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 56</span><span class="w">	</span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">af</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 57</span><span class="w">	</span><span class="k">case</span><span class="w"> </span><span class="nl">AF_INET</span><span class="p">:</span><span class="w"></span>
+<span class="linenos"> 58</span><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">inet_ntop4</span><span class="p">(</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="n">dst</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">));</span><span class="w"></span>
+<span class="linenos"> 59</span><span class="w">	</span><span class="k">case</span><span class="w"> </span><span class="nl">AF_INET6</span><span class="p">:</span><span class="w"></span>
+<span class="linenos"> 60</span><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">inet_ntop6</span><span class="p">(</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="n">dst</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">));</span><span class="w"></span>
+<span class="linenos"> 61</span><span class="w">	</span><span class="k">default</span><span class="o">:</span><span class="w"></span>
+<span class="linenos"> 62</span><span class="w">		</span><span class="n">__set_errno</span><span class="w"> </span><span class="p">(</span><span class="n">EAFNOSUPPORT</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 63</span><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 64</span><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 65</span><span class="w">	</span><span class="cm">/* NOTREACHED */</span><span class="w"></span>
+<span class="linenos"> 66</span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 67</span><span class="n">libc_hidden_def</span><span class="w"> </span><span class="p">(</span><span class="n">inet_ntop</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 68</span>
+<span class="linenos"> 69</span><span class="cm">/* const char *</span>
+<span class="linenos"> 70</span><span class="cm"> * inet_ntop4(src, dst, size)</span>
+<span class="linenos"> 71</span><span class="cm"> *	format an IPv4 address</span>
+<span class="linenos"> 72</span><span class="cm"> * return:</span>
+<span class="linenos"> 73</span><span class="cm"> *	`dst&#39; (as a const)</span>
+<span class="linenos"> 74</span><span class="cm"> * notes:</span>
+<span class="linenos"> 75</span><span class="cm"> *	(1) uses no statics</span>
+<span class="linenos"> 76</span><span class="cm"> *	(2) takes a u_char* not an in_addr as input</span>
+<span class="linenos"> 77</span><span class="cm"> * author:</span>
+<span class="linenos"> 78</span><span class="cm"> *	Paul Vixie, 1996.</span>
+<span class="linenos"> 79</span><span class="cm"> */</span><span class="w"></span>
+<span class="linenos"> 80</span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<span class="linenos"> 81</span><span class="n">inet_ntop4</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">u_char</span><span class="w"> </span><span class="o">*</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="p">,</span><span class="w"> </span><span class="kt">socklen_t</span><span class="w"> </span><span class="n">size</span><span class="p">)</span><span class="w"></span>
+<span class="linenos"> 82</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 83</span><span class="w">	</span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">fmt</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;%u.%u.%u.%u&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 84</span><span class="w">	</span><span class="kt">char</span><span class="w"> </span><span class="n">tmp</span><span class="p">[</span><span class="k">sizeof</span><span class="w"> </span><span class="s">&quot;255.255.255.255&quot;</span><span class="p">];</span><span class="w"></span>
+<span class="linenos"> 85</span>
+<span class="linenos"> 86</span><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">SPRINTF</span><span class="p">((</span><span class="n">tmp</span><span class="p">,</span><span class="w"> </span><span class="n">fmt</span><span class="p">,</span><span class="w"> </span><span class="n">src</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">src</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">src</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="n">src</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">size</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 87</span><span class="w">		</span><span class="n">__set_errno</span><span class="w"> </span><span class="p">(</span><span class="n">ENOSPC</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 88</span><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 89</span><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 90</span><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">strcpy</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span><span class="w"> </span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 91</span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 92</span>
+<span class="linenos"> 93</span><span class="cm">/* const char *</span>
+<span class="linenos"> 94</span><span class="cm"> * inet_ntop6(src, dst, size)</span>
+<span class="linenos"> 95</span><span class="cm"> *	convert IPv6 binary address into presentation (printable) format</span>
+<span class="linenos"> 96</span><span class="cm"> * author:</span>
+<span class="linenos"> 97</span><span class="cm"> *	Paul Vixie, 1996.</span>
+<span class="linenos"> 98</span><span class="cm"> */</span><span class="w"></span>
+<span class="linenos"> 99</span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<span class="linenos">100</span><span class="n">inet_ntop6</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">u_char</span><span class="w"> </span><span class="o">*</span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">dst</span><span class="p">,</span><span class="w"> </span><span class="kt">socklen_t</span><span class="w"> </span><span class="n">size</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">101</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">102</span><span class="w">	</span><span class="cm">/*</span>
+<span class="linenos">103</span><span class="cm">	 * Note that int32_t and int16_t need only be &quot;at least&quot; large enough</span>
+<span class="linenos">104</span><span class="cm">	 * to contain a value of the specified size.  On some systems, like</span>
+<span class="linenos">105</span><span class="cm">	 * Crays, there is no such thing as an integer variable with 16 bits.</span>
+<span class="linenos">106</span><span class="cm">	 * Keep this in mind if you think this function should have been coded</span>
+<span class="linenos">107</span><span class="cm">	 * to use pointer overlays.  All the world&#39;s not a VAX.</span>
+<span class="linenos">108</span><span class="cm">	 */</span><span class="w"></span>
+<span class="linenos">109</span><span class="w">	</span><span class="kt">char</span><span class="w"> </span><span class="n">tmp</span><span class="p">[</span><span class="k">sizeof</span><span class="w"> </span><span class="s">&quot;ffff:ffff:ffff:ffff:ffff:ffff:255.255.255.255&quot;</span><span class="p">],</span><span class="w"> </span><span class="o">*</span><span class="n">tp</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">110</span><span class="w">	</span><span class="k">struct</span> <span class="p">{</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="n">len</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="n">best</span><span class="p">,</span><span class="w"> </span><span class="n">cur</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">111</span><span class="w">	</span><span class="n">u_int</span><span class="w"> </span><span class="n">words</span><span class="p">[</span><span class="n">NS_IN6ADDRSZ</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">NS_INT16SZ</span><span class="p">];</span><span class="w"></span>
+<span class="linenos">112</span><span class="w">	</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">113</span>
+<span class="linenos">114</span><span class="w">	</span><span class="cm">/*</span>
+<span class="linenos">115</span><span class="cm">	 * Preprocess:</span>
+<span class="linenos">116</span><span class="cm">	 *	Copy the input (bytewise) array into a wordwise array.</span>
+<span class="linenos">117</span><span class="cm">	 *	Find the longest run of 0x00&#39;s in src[] for :: shorthanding.</span>
+<span class="linenos">118</span><span class="cm">	 */</span><span class="w"></span>
+<span class="linenos">119</span><span class="w">	</span><span class="n">memset</span><span class="p">(</span><span class="n">words</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;\0&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="n">words</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">120</span><span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NS_IN6ADDRSZ</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">121</span><span class="w">		</span><span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">src</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">src</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
+<span class="linenos">122</span><span class="w">	</span><span class="n">best</span><span class="p">.</span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">123</span><span class="w">	</span><span class="n">cur</span><span class="p">.</span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">124</span><span class="w">	</span><span class="n">best</span><span class="p">.</span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">125</span><span class="w">	</span><span class="n">cur</span><span class="p">.</span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">126</span><span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">NS_IN6ADDRSZ</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">NS_INT16SZ</span><span class="p">);</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">127</span><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">128</span><span class="w">			</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cur</span><span class="p">.</span><span class="n">base</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">129</span><span class="w">				</span><span class="n">cur</span><span class="p">.</span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">cur</span><span class="p">.</span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">130</span><span class="w">			</span><span class="k">else</span><span class="w"></span>
+<span class="linenos">131</span><span class="w">				</span><span class="n">cur</span><span class="p">.</span><span class="n">len</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">132</span><span class="w">		</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">133</span><span class="w">			</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cur</span><span class="p">.</span><span class="n">base</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">134</span><span class="w">				</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">best</span><span class="p">.</span><span class="n">base</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">cur</span><span class="p">.</span><span class="n">len</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">best</span><span class="p">.</span><span class="n">len</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">135</span><span class="w">					</span><span class="n">best</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cur</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">136</span><span class="w">				</span><span class="n">cur</span><span class="p">.</span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">137</span><span class="w">			</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">138</span><span class="w">		</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">139</span><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">140</span><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cur</span><span class="p">.</span><span class="n">base</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">141</span><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">best</span><span class="p">.</span><span class="n">base</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">cur</span><span class="p">.</span><span class="n">len</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">best</span><span class="p">.</span><span class="n">len</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">142</span><span class="w">			</span><span class="n">best</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cur</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">143</span><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">144</span><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">best</span><span class="p">.</span><span class="n">base</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">-1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">best</span><span class="p">.</span><span class="n">len</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">145</span><span class="w">		</span><span class="n">best</span><span class="p">.</span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">146</span>
+<span class="linenos">147</span><span class="w">	</span><span class="cm">/*</span>
+<span class="linenos">148</span><span class="cm">	 * Format the result.</span>
+<span class="linenos">149</span><span class="cm">	 */</span><span class="w"></span>
+<span class="linenos">150</span><span class="w">	</span><span class="n">tp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">151</span><span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">NS_IN6ADDRSZ</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">NS_INT16SZ</span><span class="p">);</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">152</span><span class="w">		</span><span class="cm">/* Are we inside the best run of 0x00&#39;s? */</span><span class="w"></span>
+<span class="linenos">153</span><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">best</span><span class="p">.</span><span class="n">base</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">-1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">best</span><span class="p">.</span><span class="n">base</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
+<span class="linenos">154</span><span class="w">		    </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">best</span><span class="p">.</span><span class="n">base</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">best</span><span class="p">.</span><span class="n">len</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">155</span><span class="w">			</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">best</span><span class="p">.</span><span class="n">base</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">156</span><span class="w">				</span><span class="o">*</span><span class="n">tp</span><span class="o">++</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;:&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">157</span><span class="w">			</span><span class="k">continue</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">158</span><span class="w">		</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">159</span><span class="w">		</span><span class="cm">/* Are we following an initial run of 0x00s or any real hex? */</span><span class="w"></span>
+<span class="linenos">160</span><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<span class="linenos">161</span><span class="w">			</span><span class="o">*</span><span class="n">tp</span><span class="o">++</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;:&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">162</span><span class="w">		</span><span class="cm">/* Is this address an encapsulated IPv4? */</span><span class="w"></span>
+<span class="linenos">163</span><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">best</span><span class="p">.</span><span class="n">base</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
+<span class="linenos">164</span><span class="w">		    </span><span class="p">(</span><span class="n">best</span><span class="p">.</span><span class="n">len</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">best</span><span class="p">.</span><span class="n">len</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">words</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mh">0xffff</span><span class="p">)))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">165</span><span class="w">			</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">inet_ntop4</span><span class="p">(</span><span class="n">src</span><span class="o">+</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="n">tp</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">tp</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tmp</span><span class="p">)))</span><span class="w"></span>
+<span class="linenos">166</span><span class="w">				</span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">167</span><span class="w">			</span><span class="n">tp</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">tp</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">168</span><span class="w">			</span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">169</span><span class="w">		</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">170</span><span class="w">		</span><span class="n">tp</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">SPRINTF</span><span class="p">((</span><span class="n">tp</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span><span class="w"></span>
+<span class="linenos">171</span><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">172</span><span class="w">	</span><span class="cm">/* Was it a trailing run of 0x00&#39;s? */</span><span class="w"></span>
+<span class="linenos">173</span><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">best</span><span class="p">.</span><span class="n">base</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">-1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">best</span><span class="p">.</span><span class="n">base</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">best</span><span class="p">.</span><span class="n">len</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"></span>
+<span class="linenos">174</span><span class="w">	    </span><span class="p">(</span><span class="n">NS_IN6ADDRSZ</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">NS_INT16SZ</span><span class="p">))</span><span class="w"></span>
+<span class="linenos">175</span><span class="w">		</span><span class="o">*</span><span class="n">tp</span><span class="o">++</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;:&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">176</span><span class="w">	</span><span class="o">*</span><span class="n">tp</span><span class="o">++</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;\0&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">177</span>
+<span class="linenos">178</span><span class="w">	</span><span class="cm">/*</span>
+<span class="linenos">179</span><span class="cm">	 * Check for overflow, copy, and we&#39;re done.</span>
+<span class="linenos">180</span><span class="cm">	 */</span><span class="w"></span>
+<span class="linenos">181</span><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="kt">socklen_t</span><span class="p">)(</span><span class="n">tp</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tmp</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">size</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">182</span><span class="w">		</span><span class="n">__set_errno</span><span class="w"> </span><span class="p">(</span><span class="n">ENOSPC</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">183</span><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">184</span><span class="w">	</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">185</span><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">strcpy</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span><span class="w"> </span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">186</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="inet_pton.html" class="btn btn-neutral float-left" title="inet_pton" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="todo.html" class="btn btn-neutral float-right" title="TODOs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

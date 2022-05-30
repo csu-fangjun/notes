@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello &mdash; notes  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="socket" href="../socket/index.html" />
+    <link rel="prev" title="enum" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../torch/index.html">torch</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../asyncio/index.html">asyncio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../argv.html">argv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo.html">TODO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../time.html">time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numbers.html">Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../str.html">str</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">enum</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Hello</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#enum">Enum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flag">Flag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#auto">auto</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../socket/index.html">socket</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grpc/index.html">gRPC</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Python</a> &raquo;</li>
+          <li><a href="index.html">enum</a> &raquo;</li>
+      <li>Hello</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/python/enum/hello.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="hello">
+<h1>Hello<a class="headerlink" href="#hello" title="Permalink to this headline">¶</a></h1>
+<p>See <a class="reference external" href="https://docs.python.org/3.11/howto/enum.html">https://docs.python.org/3.11/howto/enum.html</a></p>
+<section id="enum">
+<h2>Enum<a class="headerlink" href="#enum" title="Permalink to this headline">¶</a></h2>
+<p>Note:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>It is iterable, i.e., supports <code class="docutils literal notranslate"><span class="pre">__iter__</span></code></p></li>
+<li><p>name and value</p></li>
+<li><p>alias and <code class="docutils literal notranslate"><span class="pre">&#64;unique</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__members__</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str</span></code> and <code class="docutils literal notranslate"><span class="pre">repr</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">auto</span></code></p></li>
+</ul>
+</div></blockquote>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/hello/ex1.py</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">class</span> <span class="nc">Color</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<span class="linenos"> 5</span>    <span class="n">RED</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos"> 6</span>    <span class="n">GREEN</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos"> 7</span>    <span class="n">BLUE</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="linenos"> 8</span>    <span class="c1">#  BLUE = 4 # TypeError: Attempted to reuse key: &#39;BLUE&#39;</span>
+<span class="linenos"> 9</span>    <span class="n">ALIAS_FOR_RED</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Use @unique to disallow this</span>
+<span class="linenos">10</span>    <span class="n">MAX_COLOR</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># Note the naming convention</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="p">,</span> <span class="n">Color</span><span class="p">)</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="k">assert</span> <span class="nb">str</span><span class="p">(</span><span class="n">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="o">==</span> <span class="s2">&quot;Color.RED&quot;</span>
+<span class="linenos">16</span><span class="k">assert</span> <span class="nb">str</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">)))</span> <span class="o">==</span> <span class="s2">&quot;&lt;Color.RED: 1&gt;&quot;</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="k">assert</span> <span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;RED&quot;</span>
+<span class="linenos">19</span><span class="k">assert</span> <span class="n">Color</span><span class="o">.</span><span class="n">BLUE</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">3</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">Color</span><span class="p">))</span>
+<span class="linenos">22</span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">Color</span><span class="p">)[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="linenos">23</span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">Color</span><span class="p">:</span>
+<span class="linenos">24</span>    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">27</span><span class="sd">[&lt;Color.RED: 1&gt;, &lt;Color.GREEN: 2&gt;, &lt;Color.BLUE: 3&gt;, &lt;Color.MAX_COLOR: 4&gt;]</span>
+<span class="linenos">28</span><span class="sd">&lt;enum &#39;Color&#39;&gt;</span>
+<span class="linenos">29</span><span class="sd">Color.RED &lt;enum &#39;Color&#39;&gt;</span>
+<span class="linenos">30</span><span class="sd">Color.GREEN &lt;enum &#39;Color&#39;&gt;</span>
+<span class="linenos">31</span><span class="sd">Color.BLUE &lt;enum &#39;Color&#39;&gt;</span>
+<span class="linenos">32</span><span class="sd">Color.MAX_COLOR &lt;enum &#39;Color&#39;&gt;</span>
+<span class="linenos">33</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">34</span>
+<span class="linenos">35</span><span class="k">assert</span> <span class="n">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">Color</span><span class="o">.</span><span class="n">RED</span>
+<span class="linenos">36</span><span class="k">assert</span> <span class="n">Color</span><span class="p">[</span><span class="s2">&quot;RED&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">Color</span><span class="o">.</span><span class="n">RED</span>
+<span class="linenos">37</span><span class="k">assert</span> <span class="n">Color</span><span class="p">[</span><span class="s2">&quot;ALIAS_FOR_RED&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">Color</span><span class="o">.</span><span class="n">RED</span>
+<span class="linenos">38</span>
+<span class="linenos">39</span><span class="nb">print</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">__members__</span><span class="p">)</span>
+<span class="linenos">40</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">41</span><span class="sd">{&#39;RED&#39;: &lt;Color.RED: 1&gt;, &#39;GREEN&#39;: &lt;Color.GREEN: 2&gt;, &#39;BLUE&#39;: &lt;Color.BLUE: 3&gt;, &#39;ALIAS_FOR_RED&#39;: &lt;Color.RED: 1&gt;, &#39;MAX_COLOR&#39;: &lt;Color.MAX_COLOR: 4&gt;}</span>
+<span class="linenos">42</span><span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="flag">
+<h2>Flag<a class="headerlink" href="#flag" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">./code/hello/ex2.py</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Flag</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">class</span> <span class="nc">Weekday</span><span class="p">(</span><span class="n">Flag</span><span class="p">):</span>
+<span class="linenos"> 5</span>    <span class="n">MONDAY</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span>
+<span class="linenos"> 6</span>    <span class="n">TUESDAY</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span>
+<span class="linenos"> 7</span>    <span class="n">WEDNESDAY</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span>
+<span class="linenos"> 8</span>    <span class="n">THURSDAY</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span>
+<span class="linenos"> 9</span>    <span class="n">FRIDAY</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span>
+<span class="linenos">10</span>    <span class="n">SATURDAY</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">5</span>
+<span class="linenos">11</span>    <span class="n">SUNDAY</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">6</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="k">assert</span> <span class="n">Weekday</span><span class="o">.</span><span class="n">MONDAY</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="linenos">15</span><span class="k">assert</span> <span class="n">Weekday</span><span class="o">.</span><span class="n">TUESDAY</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="linenos">16</span><span class="k">assert</span> <span class="n">Weekday</span><span class="o">.</span><span class="n">WEDNESDAY</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">4</span>
+<span class="linenos">17</span><span class="k">assert</span> <span class="n">Weekday</span><span class="o">.</span><span class="n">THURSDAY</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">8</span>
+<span class="linenos">18</span><span class="k">assert</span> <span class="n">Weekday</span><span class="o">.</span><span class="n">FRIDAY</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">16</span>
+<span class="linenos">19</span><span class="k">assert</span> <span class="n">Weekday</span><span class="o">.</span><span class="n">SATURDAY</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">32</span>
+<span class="linenos">20</span><span class="k">assert</span> <span class="n">Weekday</span><span class="o">.</span><span class="n">SUNDAY</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">64</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="n">weekend</span> <span class="o">=</span> <span class="n">Weekday</span><span class="o">.</span><span class="n">SATURDAY</span> <span class="o">|</span> <span class="n">Weekday</span><span class="o">.</span><span class="n">SUNDAY</span>
+<span class="linenos">23</span><span class="nb">print</span><span class="p">(</span><span class="n">weekend</span><span class="p">)</span>  <span class="c1"># Weekday.SUNDAY|SATURDAY</span>
+<span class="linenos">24</span><span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">weekend</span><span class="p">))</span>  <span class="c1"># &lt;Weekday.SUNDAY|SATURDAY: 96&gt;</span>
+<span class="linenos">25</span><span class="k">assert</span> <span class="n">Weekday</span><span class="o">.</span><span class="n">SATURDAY</span> <span class="ow">in</span> <span class="n">weekend</span>
+<span class="linenos">26</span><span class="k">assert</span> <span class="n">Weekday</span><span class="o">.</span><span class="n">SUNDAY</span> <span class="ow">in</span> <span class="n">weekend</span>
+<span class="linenos">27</span><span class="k">assert</span> <span class="n">Weekday</span><span class="o">.</span><span class="n">MONDAY</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">weekend</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="auto">
+<h2>auto<a class="headerlink" href="#auto" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">./code/hello/ex3.py</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span><span class="p">,</span> <span class="n">Flag</span><span class="p">,</span> <span class="n">auto</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">class</span> <span class="nc">Weekday</span><span class="p">(</span><span class="n">Flag</span><span class="p">):</span>
+<span class="linenos"> 5</span>    <span class="n">MONDAY</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>  <span class="c1"># start from 1</span>
+<span class="linenos"> 6</span>    <span class="n">TUESDAY</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+<span class="linenos"> 7</span>    <span class="n">WEDNESDAY</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+<span class="linenos"> 8</span>    <span class="n">THURSDAY</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+<span class="linenos"> 9</span>    <span class="n">FRIDAY</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+<span class="linenos">10</span>    <span class="n">SATURDAY</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="linenos">11</span>    <span class="n">SUNDAY</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="k">assert</span> <span class="n">Weekday</span><span class="o">.</span><span class="n">MONDAY</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="linenos">15</span><span class="k">assert</span> <span class="n">Weekday</span><span class="o">.</span><span class="n">TUESDAY</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="linenos">16</span><span class="k">assert</span> <span class="n">Weekday</span><span class="o">.</span><span class="n">WEDNESDAY</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">4</span>
+<span class="linenos">17</span><span class="k">assert</span> <span class="n">Weekday</span><span class="o">.</span><span class="n">THURSDAY</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">8</span>
+<span class="linenos">18</span><span class="k">assert</span> <span class="n">Weekday</span><span class="o">.</span><span class="n">FRIDAY</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">16</span>
+<span class="linenos">19</span><span class="k">assert</span> <span class="n">Weekday</span><span class="o">.</span><span class="n">SATURDAY</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">128</span>
+<span class="linenos">20</span><span class="k">assert</span> <span class="n">Weekday</span><span class="o">.</span><span class="n">SUNDAY</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">256</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span><span class="k">class</span> <span class="nc">Color</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<span class="linenos">24</span>    <span class="n">RED</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>  <span class="c1"># start from 1</span>
+<span class="linenos">25</span>    <span class="n">GREEN</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+<span class="linenos">26</span>    <span class="n">BLUE</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+<span class="linenos">27</span>    <span class="n">YELLOW</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="linenos">28</span>    <span class="n">WHITE</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+<span class="linenos">29</span>
+<span class="linenos">30</span>
+<span class="linenos">31</span><span class="k">assert</span> <span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="linenos">32</span><span class="k">assert</span> <span class="n">Color</span><span class="o">.</span><span class="n">GREEN</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="linenos">33</span><span class="k">assert</span> <span class="n">Color</span><span class="o">.</span><span class="n">BLUE</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">3</span>
+<span class="linenos">34</span><span class="k">assert</span> <span class="n">Color</span><span class="o">.</span><span class="n">YELLOW</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">10</span>
+<span class="linenos">35</span><span class="k">assert</span> <span class="n">Color</span><span class="o">.</span><span class="n">WHITE</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">11</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="enum" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../socket/index.html" class="btn btn-neutral float-right" title="socket" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

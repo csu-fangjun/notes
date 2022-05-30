@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>struct sockaddr_in &mdash; notes  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="AddressInfo" href="address-info.html" />
+    <link rel="prev" title="SocketKind" href="socket-kind.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../torch/index.html">torch</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../asyncio/index.html">asyncio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../argv.html">argv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../todo.html">TODO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../time.html">time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numbers.html">Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../str.html">str</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../enum/index.html">enum</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">socket</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="address-family.html">AddressFamily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="socket-kind.html">SocketKind</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">struct sockaddr_in</a></li>
+<li class="toctree-l3"><a class="reference internal" href="address-info.html">AddressInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="inet_pton.html">inet_pton</a></li>
+<li class="toctree-l3"><a class="reference internal" href="inet_ntop.html">inet_ntop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="todo.html">TODOs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grpc/index.html">gRPC</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Python</a> &raquo;</li>
+          <li><a href="index.html">socket</a> &raquo;</li>
+      <li>struct sockaddr_in</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/python/socket/sockaddr_in.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="struct-sockaddr-in">
+<h1>struct sockaddr_in<a class="headerlink" href="#struct-sockaddr-in" title="Permalink to this headline">¶</a></h1>
+<dl class="simple">
+<dt>See also</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://www.gta.ufrj.br/ensino/eel878/sockets/sockaddr_inman.html">https://www.gta.ufrj.br/ensino/eel878/sockets/sockaddr_inman.html</a></p></li>
+<li><p><a class="reference external" href="https://man7.org/linux/man-pages/man7/ip.7.html">https://man7.org/linux/man-pages/man7/ip.7.html</a></p></li>
+</ul>
+</dd>
+</dl>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/sockaddr_in.h</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">// https://github.com/lattera/glibc/blob/master/bits/sockaddr.h</span>
+<span class="linenos"> 2</span><span class="cm">/* POSIX.1g specifies this type name for the `sa_family&#39; member.  */</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="k">typedef</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">sa_family_t</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="cp">#define __SOCKADDR_COMMON(sa_prefix) sa_family_t sa_prefix##family</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="c1">// https://github.com/lattera/glibc/blob/master/bits/socket.h</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="k">struct</span> <span class="nc">sockaddr</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">  </span><span class="n">__SOCKADDR_COMMON</span><span class="p">(</span><span class="n">sa_</span><span class="p">);</span><span class="w"> </span><span class="cm">/* Common data: address family and length.  */</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">sa_data</span><span class="p">[</span><span class="mi">14</span><span class="p">];</span><span class="w">       </span><span class="cm">/* Address data.  */</span><span class="w"></span>
+<span class="linenos">12</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="c1">// https://github.com/lattera/glibc/blob/master/inet/netinet/in.h</span>
+<span class="linenos">15</span><span class="k">struct</span> <span class="nc">sockaddr_in</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">16</span><span class="w">  </span><span class="n">__SOCKADDR_COMMON</span><span class="p">(</span><span class="n">sin_</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">17</span><span class="w">  </span><span class="n">in_port_t</span><span class="w"> </span><span class="n">sin_port</span><span class="p">;</span><span class="w">      </span><span class="cm">/* Port number.  */</span><span class="w"></span>
+<span class="linenos">18</span><span class="w">  </span><span class="k">struct</span> <span class="nc">in_addr</span><span class="w"> </span><span class="n">sin_addr</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Internet address.  */</span><span class="w"></span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="w">  </span><span class="cm">/* Pad to size of `struct sockaddr&#39;.  */</span><span class="w"></span>
+<span class="linenos">21</span><span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">sin_zero</span><span class="p">[</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="nc">sockaddr</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">__SOCKADDR_COMMON_SIZE</span><span class="w"> </span><span class="o">-</span><span class="w"></span>
+<span class="linenos">22</span><span class="w">                         </span><span class="k">sizeof</span><span class="p">(</span><span class="n">in_port_t</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="nc">in_addr</span><span class="p">)];</span><span class="w"></span>
+<span class="linenos">23</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">24</span>
+<span class="linenos">25</span><span class="k">typedef</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">in_addr_t</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">26</span><span class="k">struct</span> <span class="nc">in_addr</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">27</span><span class="w">  </span><span class="n">in_addr_t</span><span class="w"> </span><span class="n">s_addr</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">28</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">29</span>
+<span class="linenos">30</span><span class="cm">/* Address to accept any incoming messages.  */</span><span class="w"></span>
+<span class="linenos">31</span><span class="cp">#define INADDR_ANY ((in_addr_t)0x00000000)</span>
+<span class="linenos">32</span><span class="cm">/* Address to send to all hosts.  */</span><span class="w"></span>
+<span class="linenos">33</span><span class="cp">#define INADDR_BROADCAST ((in_addr_t)0xffffffff)</span>
+<span class="linenos">34</span><span class="cm">/* Address indicating an error return.  */</span><span class="w"></span>
+<span class="linenos">35</span><span class="cp">#define INADDR_NONE ((in_addr_t)0xffffffff)</span>
+<span class="linenos">36</span>
+<span class="linenos">37</span><span class="cm">/* Network number for local host loopback.  */</span><span class="w"></span>
+<span class="linenos">38</span><span class="cp">#define IN_LOOPBACKNET 127</span>
+<span class="linenos">39</span><span class="cm">/* Address to loopback in software to local host.  */</span><span class="w"></span>
+<span class="linenos">40</span><span class="cp">#ifndef INADDR_LOOPBACK</span>
+<span class="linenos">41</span><span class="cp">#define INADDR_LOOPBACK ((in_addr_t)0x7f000001) </span><span class="cm">/* Inet 127.0.0.1.  */</span><span class="cp"></span>
+<span class="linenos">42</span><span class="cp">#endif</span>
+</pre></div>
+</div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="socket-kind.html" class="btn btn-neutral float-left" title="SocketKind" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="address-info.html" class="btn btn-neutral float-right" title="AddressInfo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
