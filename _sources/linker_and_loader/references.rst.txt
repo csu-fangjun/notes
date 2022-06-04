@@ -3,12 +3,17 @@ References
 
 - A ToC of the 20 part linker essay
 
-  `<https://lwn.net/Articles/276782/>`-, which is written by
+  `<https://lwn.net/Articles/276782/>`_, which is written by
   `Ian Lance Taylor <https://www.airs.com/blog/archives/38>`_
 
   1. `Introduction, personal history, first half of what's-a-linker <https://lwn.net/Articles/276782/>`_
   2. `What's-a-linker: Dynamic linking, linker data types, linker operation <https://www.airs.com/blog/archives/39>`_
-  3. `Address spaces, Object file formats <https://www.airs.com/blog/archives/40>`
+  3. `Address spaces, Object file formats <https://www.airs.com/blog/archives/40>`_
+  4. `Shared Libraries <https://www.airs.com/blog/archives/41>`_
+  5. `More Shared Libraries -- specifically, linker implementation; ELF Symbols <https://www.airs.com/blog/archives/42>`_
+
+- `<https://www.ucw.cz/~hubicka/>`_, author of the gold linker
+
 
 - Rod Evans: Surfing With a Linker Alien `<http://www.linker-aliens.org/blogs/rie/>`_
 
