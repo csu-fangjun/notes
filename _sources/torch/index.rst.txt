@@ -5,4 +5,5 @@ torch
 
     ddp/index
     torchscript/index
+    logical-op.rst
 
