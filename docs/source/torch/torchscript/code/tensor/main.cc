@@ -83,7 +83,86 @@ static void TestCommonMethods() {
   TORCH_CHECK(opts.device() == t.device());
 }
 
+static void TestSlice() {
+  auto t = torch::tensor({1, 2, 3, 4, 5}, torch::kInt);
+  torch::TensorAccessor<int32_t, 1> acc = t.accessor<int32_t, 1>();
+
+  // t2 = t[1:3]
+  torch::Tensor t2 = t.slice(/*dim*/ 0, /*start*/ 1,
+                             /*end, exclusive*/ 3); // memory is shared
+  torch::TensorAccessor<int32_t, 1> acc2 = t2.accessor<int32_t, 1>();
+  TORCH_CHECK(acc2[0] == 2);
+  TORCH_CHECK(acc2[1] == 3);
+
+  acc2[0] = 10; // also changes t since the memory is shared
+  TORCH_CHECK(acc[1] == 10);
+}
+
+// https://pytorch.org/docs/stable/generated/torch.topk.html
+static void TestTopK() {
+  auto t = torch::tensor({1, 0, 3, -1}, torch::kInt).to(torch::kFloat);
+  torch::Tensor values, indexes;
+  std::tie(values, indexes) =
+      t.topk(/*k*/ 2, /*dim*/ 0, /*largest*/ true, /*sorted*/ true);
+  auto values_acc = values.accessor<float, 1>();
+  auto indexes_acc = indexes.accessor<int64_t, 1>(); // Note: it is int64_t
+
+  TORCH_CHECK(values.numel() == 2); // k in topk is 2
+  TORCH_CHECK(values_acc[0] == 3);  // the largest value is 3, at t[2]
+  TORCH_CHECK(values_acc[1] == 1);  // the second largest value is 1, at t[0]
+                                    //
+  TORCH_CHECK(indexes_acc[0] == 2); // the largest value is t[2]
+  TORCH_CHECK(indexes_acc[1] == 0); // the second largest value is t[0]
+}
+
+static void TestFloorDivide() {
+  auto t = torch::tensor({1, 0, 3, 5, 9}, torch::kInt);
+  auto p = torch::floor_divide(t, 2);
+  auto acc = p.accessor<int32_t, 1>();
+  TORCH_CHECK(acc[0] == 1 / 2);
+  TORCH_CHECK(acc[1] == 0 / 2);
+  TORCH_CHECK(acc[2] == 3 / 2);
+  TORCH_CHECK(acc[3] == 5 / 2);
+  TORCH_CHECK(acc[4] == 9 / 2);
+}
+
+// https://pytorch.org/docs/stable/generated/torch.div.html
+static void TestDiv() {
+  auto t = torch::tensor({1, 0, 3, 5, 9}, torch::kInt);
+  // the rounding mode is supported in torch >= 1.8.0
+  auto p = torch::div(t, 2, /*rounding_mode*/ "trunc");
+  auto acc = p.accessor<int32_t, 1>();
+  TORCH_CHECK(acc[0] == 1 / 2);
+  TORCH_CHECK(acc[1] == 0 / 2);
+  TORCH_CHECK(acc[2] == 3 / 2);
+  TORCH_CHECK(acc[3] == 5 / 2);
+  TORCH_CHECK(acc[4] == 9 / 2);
+}
+
+// https://pytorch.org/docs/1.6.0/generated/torch.remainder.html
+static void TestRemainder() {
+  auto t = torch::tensor({1, 3, 8}, torch::kInt);
+  auto p = torch::remainder(t, 3);
+  auto acc = p.accessor<int32_t, 1>();
+  TORCH_CHECK(acc[0] == 1);
+  TORCH_CHECK(acc[1] == 0);
+  TORCH_CHECK(acc[2] == 2);
+}
+
+static void TestEmpty() {
+  auto t = torch::empty({3}, torch::kInt);
+  TORCH_CHECK(t.scalar_type() == torch::kInt);
+  TORCH_CHECK(t.numel() == 3);
+}
+
 int main() {
-  TestCommonMethods();
+  // TestCommonMethods();
+  TestSlice();
+  TestTopK();
+  TestFloorDivide(); // deprecated
+  TestDiv();         // rounding_mode is in torch>=1.8.0
+  TestRemainder();
+  TestEmpty();
+
   return 0;
 }

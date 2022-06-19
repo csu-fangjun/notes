@@ -1,0 +1,6 @@
+Quantization
+============
+
+.. toctree::
+
+    references.rst

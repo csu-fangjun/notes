@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 import socket
 import threading
+from concurrent.futures import ThreadPoolExecutor
 
 # nc localhost 6006
+pool = ThreadPoolExecutor(max_workers=3)
 
 
 def run_server():
@@ -18,7 +20,7 @@ def run_server():
         assert isinstance(addr[0], str)
         assert isinstance(addr[1], int)
         print("Connected from", addr)  # Connected from ('127.0.0.1', 54266)
-        threading.Thread(target=handle_client, args=(client_sock,)).start()
+        pool.submit(handle_client, client_sock)
 
 
 def handle_client(sock: socket.socket):
