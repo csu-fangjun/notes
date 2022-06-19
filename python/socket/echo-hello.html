@@ -65,6 +65,7 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Echo Server and Client</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#server">Server</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#client">Client</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#server2">Server2</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="todo.html">TODOs</a></li>
@@ -82,6 +83,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../lwn_net/index.html">lwn.net</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../linker_and_loader/index.html">Linker and Loader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cmake/index.html">cmake</a></li>
 </ul>
 
         </div>
@@ -127,29 +129,30 @@
 <span class="linenos"> 9</span>    <span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">family</span><span class="o">=</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
 <span class="linenos">10</span>    <span class="n">sock</span><span class="o">.</span><span class="n">setsockopt</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">SOL_SOCKET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SO_REUSEADDR</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="linenos">11</span>    <span class="n">sock</span><span class="o">.</span><span class="n">bind</span><span class="p">((</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">6006</span><span class="p">))</span>
-<span class="linenos">12</span>    <span class="n">sock</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># backlog is 2</span>
-<span class="linenos">13</span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="linenos">14</span>        <span class="n">client_sock</span><span class="p">,</span> <span class="n">addr</span> <span class="o">=</span> <span class="n">sock</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
-<span class="linenos">15</span>        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">client_sock</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">)</span>
-<span class="linenos">16</span>        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span>
-<span class="linenos">17</span>        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">addr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">str</span><span class="p">)</span>
-<span class="linenos">18</span>        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">addr</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nb">int</span><span class="p">)</span>
-<span class="linenos">19</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connected from&quot;</span><span class="p">,</span> <span class="n">addr</span><span class="p">)</span>  <span class="c1"># Connected from (&#39;127.0.0.1&#39;, 54266)</span>
-<span class="linenos">20</span>        <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">handle_client</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">client_sock</span><span class="p">,))</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<span class="linenos">21</span>
+<span class="linenos">12</span>    <span class="c1">#  sock.setblocking(False) # It returns socket.BlockingIOError</span>
+<span class="linenos">13</span>    <span class="n">sock</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># backlog is 2</span>
+<span class="linenos">14</span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="linenos">15</span>        <span class="n">client_sock</span><span class="p">,</span> <span class="n">addr</span> <span class="o">=</span> <span class="n">sock</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
+<span class="linenos">16</span>        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">client_sock</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">)</span>
+<span class="linenos">17</span>        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span>
+<span class="linenos">18</span>        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">addr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">str</span><span class="p">)</span>
+<span class="linenos">19</span>        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">addr</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nb">int</span><span class="p">)</span>
+<span class="linenos">20</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connected from&quot;</span><span class="p">,</span> <span class="n">addr</span><span class="p">)</span>  <span class="c1"># Connected from (&#39;127.0.0.1&#39;, 54266)</span>
+<span class="linenos">21</span>        <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">handle_client</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">client_sock</span><span class="p">,))</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 <span class="linenos">22</span>
-<span class="linenos">23</span><span class="k">def</span> <span class="nf">handle_client</span><span class="p">(</span><span class="n">sock</span><span class="p">:</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">):</span>
-<span class="linenos">24</span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="linenos">25</span>        <span class="n">data</span> <span class="o">=</span> <span class="n">sock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
-<span class="linenos">26</span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
-<span class="linenos">27</span>            <span class="k">break</span>
-<span class="linenos">28</span>        <span class="n">sock</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
-<span class="linenos">29</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Disconnected from&quot;</span><span class="p">,</span> <span class="n">sock</span><span class="o">.</span><span class="n">getpeername</span><span class="p">())</span>
-<span class="linenos">30</span>    <span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="linenos">31</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span><span class="k">def</span> <span class="nf">handle_client</span><span class="p">(</span><span class="n">sock</span><span class="p">:</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">):</span>
+<span class="linenos">25</span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="linenos">26</span>        <span class="n">data</span> <span class="o">=</span> <span class="n">sock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+<span class="linenos">27</span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
+<span class="linenos">28</span>            <span class="k">break</span>
+<span class="linenos">29</span>        <span class="n">sock</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+<span class="linenos">30</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Disconnected from&quot;</span><span class="p">,</span> <span class="n">sock</span><span class="o">.</span><span class="n">getpeername</span><span class="p">())</span>
+<span class="linenos">31</span>    <span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="linenos">32</span>
-<span class="linenos">33</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-<span class="linenos">34</span>    <span class="n">run_server</span><span class="p">()</span>
+<span class="linenos">33</span>
+<span class="linenos">34</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="linenos">35</span>    <span class="n">run_server</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -167,6 +170,52 @@
 <span class="linenos">6</span>        <span class="n">b</span> <span class="o">=</span> <span class="n">sock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
 <span class="linenos">7</span>        <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
 <span class="linenos">8</span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="server2">
+<h2>Server2<a class="headerlink" href="#server2" title="Permalink to this headline">¶</a></h2>
+<p>With <code class="docutils literal notranslate"><span class="pre">concurrent.futures.ThreadPoolExecutor</span></code>.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">./code/echo-hello/server2.py</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/usr/bin/env python3</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">socket</span>
+<span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">threading</span>
+<span class="linenos"> 4</span><span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="c1"># nc localhost 6006</span>
+<span class="linenos"> 7</span><span class="n">pool</span> <span class="o">=</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="k">def</span> <span class="nf">run_server</span><span class="p">():</span>
+<span class="linenos">11</span>    <span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">family</span><span class="o">=</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
+<span class="linenos">12</span>    <span class="n">sock</span><span class="o">.</span><span class="n">setsockopt</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">SOL_SOCKET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SO_REUSEADDR</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos">13</span>    <span class="n">sock</span><span class="o">.</span><span class="n">bind</span><span class="p">((</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">6006</span><span class="p">))</span>
+<span class="linenos">14</span>    <span class="c1">#  sock.setblocking(False) # It returns socket.BlockingIOError</span>
+<span class="linenos">15</span>    <span class="n">sock</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># backlog is 2</span>
+<span class="linenos">16</span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="linenos">17</span>        <span class="n">client_sock</span><span class="p">,</span> <span class="n">addr</span> <span class="o">=</span> <span class="n">sock</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
+<span class="linenos">18</span>        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">client_sock</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">)</span>
+<span class="linenos">19</span>        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span>
+<span class="linenos">20</span>        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">addr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">str</span><span class="p">)</span>
+<span class="linenos">21</span>        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">addr</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nb">int</span><span class="p">)</span>
+<span class="linenos">22</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connected from&quot;</span><span class="p">,</span> <span class="n">addr</span><span class="p">)</span>  <span class="c1"># Connected from (&#39;127.0.0.1&#39;, 54266)</span>
+<span class="linenos">23</span>        <span class="n">pool</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">handle_client</span><span class="p">,</span> <span class="n">client_sock</span><span class="p">)</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span><span class="k">def</span> <span class="nf">handle_client</span><span class="p">(</span><span class="n">sock</span><span class="p">:</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">):</span>
+<span class="linenos">27</span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="linenos">28</span>        <span class="n">data</span> <span class="o">=</span> <span class="n">sock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+<span class="linenos">29</span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
+<span class="linenos">30</span>            <span class="k">break</span>
+<span class="linenos">31</span>        <span class="n">sock</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+<span class="linenos">32</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Disconnected from&quot;</span><span class="p">,</span> <span class="n">sock</span><span class="o">.</span><span class="n">getpeername</span><span class="p">())</span>
+<span class="linenos">33</span>    <span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos">34</span>
+<span class="linenos">35</span>
+<span class="linenos">36</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="linenos">37</span>    <span class="n">run_server</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>

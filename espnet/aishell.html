@@ -18,6 +18,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="cmake" href="../cmake/index.html" />
     <link rel="prev" title="espnet" href="index.html" /> 
 </head>
 
@@ -63,6 +64,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
 </ul>
 
         </div>
@@ -97,7 +99,9 @@
 <p>The first one was added on 2019-02-01.</p>
 <p><code class="docutils literal notranslate"><span class="pre">asr_train.py</span></code> is in <code class="docutils literal notranslate"><span class="pre">espnet/bin/asr_train.py</span></code>, which invokes
 <code class="docutils literal notranslate"><span class="pre">espnet.asr.pytorch_backend.asr.train</span></code>.</p>
-<p>The model is from <code class="docutils literal notranslate"><span class="pre">espnet.asr.pytorch_backend..e2e_asr.E2E</span></code>.</p>
+<p>The model is from <code class="docutils literal notranslate"><span class="pre">espnet.nets.pytorch_backend.e2e_asr.E2E</span></code>.</p>
+<p>The encoder type <cite>vggblstm</cite>, 3 layers, hidden dim, 1024, proj dim 1024,
+subsampling <code class="docutils literal notranslate"><span class="pre">1_2_2_1_1</span></code>.</p>
 <p>Command is:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>asr_train.py <span class="se">\</span>
   --config conf/train.yaml <span class="se">\</span>
@@ -122,6 +126,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="espnet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../cmake/index.html" class="btn btn-neutral float-right" title="cmake" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

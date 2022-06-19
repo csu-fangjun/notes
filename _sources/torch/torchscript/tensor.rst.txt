@@ -15,3 +15,57 @@ Common methods
    :linenos:
    :lines: 3-84
    :caption: ./code/tensor/main.cc (Not recommended constructors)
+
+slice
+^^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 86-99
+   :caption: torch::slice
+
+topk
+^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 101-116
+   :caption: torch::topk
+
+floor_divide
+^^^^^^^^^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 118-127
+   :caption: torch::floor_divide
+
+div
+^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 129-140
+   :caption: torch::div
+
+remainder
+^^^^^^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 143-150
+   :caption: torch::remainder
+
+empty
+^^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 152-156
+   :caption: torch::empty

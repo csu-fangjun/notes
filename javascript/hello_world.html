@@ -50,7 +50,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">javascript</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Hello world</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Hello world</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#array">array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#class">class</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="todo.html">TODOs</a></li>
 </ul>
 </li>
@@ -62,6 +66,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
 </ul>
 
         </div>
@@ -109,6 +114,66 @@
 </pre></div>
 </div>
 <p>It is case sensitive. Statements are separated by <code class="docutils literal notranslate"><span class="pre">;</span></code>. Comments are the same as in C/C++.</p>
+<section id="array">
+<h2>array<a class="headerlink" href="#array" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/hello_world/array.js</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span> <span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">,</span> <span class="mf">3</span> <span class="p">];</span>
+<span class="linenos"> 2</span><span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos"> 3</span>  <span class="kd">let</span> <span class="nx">s</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
+<span class="linenos"> 4</span>  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">x</span> <span class="k">of</span> <span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos"> 5</span>    <span class="nx">s</span> <span class="o">+=</span> <span class="nx">x</span><span class="p">;</span>
+<span class="linenos"> 6</span>  <span class="p">}</span>
+<span class="linenos"> 7</span>  <span class="k">return</span> <span class="nx">s</span><span class="p">;</span>
+<span class="linenos"> 8</span><span class="p">}</span>
+<span class="linenos"> 9</span><span class="c1">// Sum of the array [1,2,3] is 6</span>
+<span class="linenos">10</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Sum of the array [&#39;</span> <span class="o">+</span> <span class="nx">a</span> <span class="o">+</span> <span class="s1">&#39;] is &#39;</span> <span class="o">+</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">a</span><span class="p">));</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="kd">function</span> <span class="nx">sum2</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos">13</span>  <span class="kd">let</span> <span class="nx">s</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
+<span class="linenos">14</span>  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">!=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos">15</span>    <span class="nx">s</span> <span class="o">+=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="linenos">16</span>  <span class="p">}</span>
+<span class="linenos">17</span>  <span class="k">return</span> <span class="nx">s</span><span class="p">;</span>
+<span class="linenos">18</span><span class="p">}</span>
+<span class="linenos">19</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum2</span><span class="p">(</span><span class="nx">a</span><span class="p">));</span> <span class="c1">// 6</span>
+</pre></div>
+</div>
+</div>
+<p>Note that there are two ways to iterate an array:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">for(let</span> <span class="pre">x</span> <span class="pre">of</span> <span class="pre">array)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for(let</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">0;</span> <span class="pre">i</span> <span class="pre">!=</span> <span class="pre">array.length;</span> <span class="pre">++i)</span> <span class="pre">{</span> <span class="pre">...</span> <span class="pre">}</span></code></p></li>
+</ul>
+</div></blockquote>
+<p>To run the above code, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node array.js
+</pre></div>
+</div>
+</section>
+<section id="class">
+<h2>class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">./code/hello_world/class.js</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">class</span> <span class="nx">Point</span> <span class="p">{</span>
+<span class="linenos"> 2</span>  <span class="kr">constructor</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos"> 3</span>    <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span>
+<span class="linenos"> 4</span>    <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">y</span><span class="p">;</span>
+<span class="linenos"> 5</span>  <span class="p">}</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span>  <span class="nx">distance</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span> <span class="p">}</span>
+<span class="linenos"> 8</span><span class="p">}</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="kd">let</span> <span class="nx">p</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">Point</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">1</span><span class="p">);</span>
+<span class="linenos">11</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">distance</span><span class="p">());</span> <span class="c1">// 1.4142135623730951</span>
+</pre></div>
+</div>
+</div>
+<p>It defines a <code class="docutils literal notranslate"><span class="pre">Point</span></code> class with two fields <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>. <code class="docutils literal notranslate"><span class="pre">Point</span></code> has
+two methods: a constructor and a method <code class="docutils literal notranslate"><span class="pre">distance()</span></code>.</p>
+<p>Note that class names are by convention capitalized.</p>
+</section>
 </section>
 
 
