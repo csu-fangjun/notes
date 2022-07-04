@@ -118,8 +118,8 @@
 <div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nv">USE_CXX11_ABI</span> <span class="o">:=</span> <span class="k">$(</span>shell python3 -c <span class="s1">&#39;import torch; print(int(torch.compiled_with_cxx11_abi()))&#39;</span><span class="k">)</span>
 <span class="linenos"> 2</span><span class="nv">TORCH_INSTALL_DIR</span> <span class="o">:=</span> <span class="k">$(</span>shell python3 -c <span class="s1">&#39;import os; import torch; print(os.path.dirname(torch.__file__))&#39;</span><span class="k">)</span>
 <span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="k">$(</span><span class="nv">info</span> <span class="nv">USE_CXX11_ABI</span> <span class="k">$(</span><span class="nv">USE_CXX11_ABI</span><span class="k">))</span>
-<span class="linenos"> 5</span><span class="k">$(</span><span class="nv">info</span> <span class="nv">TORCH_INSTALL_DIR</span> <span class="k">$(</span><span class="nv">TORCH_INSTALL_DIR</span><span class="k">))</span>
+<span class="linenos"> 4</span><span class="k">$(</span><span class="nv">info</span> <span class="nv">USE_CXX11_ABI</span> <span class="k">$(</span><span class="nv">USE_CXX11_ABI</span><span class="k">))</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="k">$(</span><span class="nv">info</span> <span class="nv">TORCH_INSTALL_DIR</span> <span class="k">$(</span><span class="nv">TORCH_INSTALL_DIR</span><span class="k">))</span><span class="w"></span>
 <span class="linenos"> 6</span>
 <span class="linenos"> 7</span><span class="nv">CXXFLAGS</span> <span class="o">:=</span> -I<span class="k">$(</span>TORCH_INSTALL_DIR<span class="k">)</span>/include
 <span class="linenos"> 8</span><span class="nv">CXXFLAGS</span> <span class="o">+=</span> -I<span class="k">$(</span>TORCH_INSTALL_DIR<span class="k">)</span>/include/torch/csrc/api/include
@@ -136,7 +136,7 @@
 <span class="linenos">19</span><span class="nv">LDFLAGS</span> <span class="o">+=</span> -Wl,-rpath,<span class="k">$(</span>TORCH_INSTALL_DIR<span class="k">)</span>/lib
 <span class="linenos">20</span>
 <span class="linenos">21</span><span class="nv">HAS_CUDA</span> <span class="o">:=</span> <span class="k">$(</span>shell python3 -c <span class="s1">&#39;import torch; print(&quot;yes&quot; if torch.cuda.is_available() else &quot;no&quot;)&#39;</span><span class="k">)</span>
-<span class="linenos">22</span><span class="k">$(</span><span class="nv">info</span> <span class="nv">has</span> <span class="nv">cuda</span> <span class="k">$(</span><span class="nv">HAS_CUDA</span><span class="k">))</span>
+<span class="linenos">22</span><span class="k">$(</span><span class="nv">info</span> <span class="nv">has</span> <span class="nv">cuda</span> <span class="k">$(</span><span class="nv">HAS_CUDA</span><span class="k">))</span><span class="w"></span>
 <span class="linenos">23</span>
 <span class="linenos">24</span><span class="cp">ifeq ($(HAS_CUDA),yes)</span>
 <span class="linenos">25</span><span class="nv">CUDA_HOME</span> <span class="o">:=</span> <span class="k">$(</span>shell which nvcc <span class="p">|</span> xargs dirname <span class="p">|</span> xargs dirname<span class="k">)</span>

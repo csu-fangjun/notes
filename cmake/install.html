@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>cmake &mdash; notes  documentation</title>
+  <title>Install &mdash; notes  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tutorials" href="tutorials.html" />
-    <link rel="prev" title="aishell" href="../espnet/aishell.html" /> 
+    <link rel="prev" title="Tutorials" href="tutorials.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -58,9 +57,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">cmake</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">cmake</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Install</a></li>
 </ul>
 </li>
 </ul>
@@ -79,9 +78,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>cmake</li>
+          <li><a href="index.html">cmake</a> &raquo;</li>
+      <li>Install</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/cmake/index.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/cmake/install.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -89,13 +89,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="cmake">
-<h1>cmake<a class="headerlink" href="#cmake" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
-</ul>
+  <section id="install">
+<h1>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h1>
+<p>Go to <a class="reference external" href="https://github.com/Kitware/CMake/releases">https://github.com/Kitware/CMake/releases</a> for download.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>wget https://github.com/Kitware/CMake/releases/download/v3.10.3/cmake-3.10.3-Linux-x86_64.sh
+chmod +x ./cmake-3.10.3-Linux-x86_64.sh
+./cmake-3.10.3-Linux-x86_64.sh --help
+ mkdir /path/to/software/cmake-3.10.3
+./cmake-3.10.3-Linux-x86_64.sh --prefix=/path/to/software/cmake-3.10.3 --skip-license
+export PATH=/path/to/software/cmake-3.10.3/bin:$PATH
+</pre></div>
 </div>
 </section>
 
@@ -103,8 +106,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../espnet/aishell.html" class="btn btn-neutral float-left" title="aishell" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="tutorials.html" class="btn btn-neutral float-right" title="Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tutorials.html" class="btn btn-neutral float-left" title="Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
