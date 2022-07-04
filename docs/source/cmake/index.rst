@@ -4,4 +4,5 @@ cmake
 .. toctree::
 
     tutorials
+    install
 

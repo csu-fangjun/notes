@@ -49,8 +49,79 @@ static void TestVectorOfTensor2() {
   TORCH_CHECK(torch::allclose(b[1], x));
 }
 
+static void TestVectorOfTensor3() {
+  torch::jit::Module m("m");
+  m.define(R"(
+    def forward(self, x: List[torch.Tensor]):
+      return x[0] + x[1]
+  )");
+
+  std::vector<torch::Tensor> v;
+  v.push_back(torch::tensor({1, 2}));
+  v.push_back(torch::tensor({3, 4}));
+  c10::List<torch::Tensor> ilist(v);
+
+  c10::impl::GenericList generic_list = c10::impl::toList(ilist);
+
+  c10::List<torch::Tensor> l2 =
+      c10::impl::toTypedList<torch::Tensor>(generic_list);
+
+  TORCH_CHECK(torch::allclose(l2[0], v[0]));
+  TORCH_CHECK(torch::allclose(l2[1], v[1]));
+
+  auto r = m.run_method("forward", generic_list);
+  TORCH_CHECK(torch::allclose(r.toTensor(), v[0] + v[1]));
+
+  // Note: We can pass a vector directly
+  r = m.run_method("forward", v);
+  TORCH_CHECK(torch::allclose(r.toTensor(), v[0] + v[1]));
+
+  r = m.run_method("forward", ilist); // also OK
+  TORCH_CHECK(torch::allclose(r.toTensor(), v[0] + v[1]));
+}
+
+static void TestVectorOfTensor4() {
+  torch::jit::Module m("m");
+  m.define(R"(
+    def forward(self, x: Tuple[List[torch.Tensor]]):
+      return x[0][0] + x[0][1]
+  )");
+
+  std::vector<torch::Tensor> v;
+  v.push_back(torch::tensor({1, 2}));
+  v.push_back(torch::tensor({3, 4}));
+  auto t = torch::ivalue::Tuple::create(v);
+
+  auto r = m.run_method("forward", t);
+  TORCH_CHECK(torch::allclose(r.toTensor(), v[0] + v[1]));
+}
+
+static void TestVectorOfTensor5() {
+  torch::jit::Module m("m");
+  m.define(R"(
+    def forward(self, x: Tuple[List[List[torch.Tensor]], List[torch.Tensor]]):
+      return x[0][0][0] + x[0][0][1] + x[1][0] + x[1][1]
+  )");
+
+  std::vector<torch::Tensor> v;
+  v.push_back(torch::tensor({1, 2}));
+  v.push_back(torch::tensor({3, 4}));
+
+  std::vector<std::vector<torch::Tensor>> vv;
+  vv.push_back(v);
+  vv.push_back(v);
+
+  auto t = torch::ivalue::Tuple::create(vv, v);
+
+  auto r = m.run_method("forward", t);
+  TORCH_CHECK(torch::allclose(r.toTensor(), v[0] + v[1] + v[0] + v[1]));
+}
+
 int main() {
   TestVectorOfTensor();
   TestVectorOfTensor2();
+  TestVectorOfTensor3();
+  TestVectorOfTensor4();
+  TestVectorOfTensor5();
   return 0;
 }

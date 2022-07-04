@@ -3,7 +3,7 @@ on:
   push:
     branches:
     - master
-    - 2022-05
+    - 2022-06
   pull_request:
     branches:
     - master
