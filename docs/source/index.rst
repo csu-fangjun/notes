@@ -32,5 +32,6 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    linker_and_loader/index
    espnet/index
    cmake/index
+   e6870/index
 
 .. github/index
