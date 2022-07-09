@@ -12,7 +12,7 @@ pack_padded_sequence
 .. literalinclude:: ./code/packed-sequence/main.cc
    :language: c++
    :linenos:
-   :lines: 3-16
+   :lines: 3-38
    :caption: ./code/packed-sequence/main.cc
 
 The output is
