@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sort &mdash; notes  documentation</title>
+  <title>ffmeg &mdash; notes  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="echo" href="echo.html" />
-    <link rel="prev" title="bash" href="index.html" /> 
+    <link rel="next" title="CUDA" href="../cuda/index.html" />
+    <link rel="prev" title="echo" href="echo.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,9 +45,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">bash</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">sort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sort.html">sort</a></li>
 <li class="toctree-l2"><a class="reference internal" href="echo.html">echo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ffmpeg.html">ffmeg</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ffmeg</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#convert-format">Convert format</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
@@ -82,9 +85,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">bash</a> &raquo;</li>
-      <li>sort</li>
+      <li>ffmeg</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/bash/sort.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/bash/ffmpeg.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -92,21 +95,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="sort">
-<h1>sort<a class="headerlink" href="#sort" title="Permalink to this headline">¶</a></h1>
-<p>Sort files in the folder <code class="docutils literal notranslate"><span class="pre">t</span></code>. The filename has the patter <code class="docutils literal notranslate"><span class="pre">xxx.n.txt</span></code>,
-where <code class="docutils literal notranslate"><span class="pre">n</span></code> is some numerical value. Also, exclude <code class="docutils literal notranslate"><span class="pre">xxx.100.txt</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>find ./t -name &quot;xxx*.txt&quot; ! -name &quot;xxx.100.txt&quot; -print0 | sort -z -t. -k2 -n | xargs -r0
+  <section id="ffmeg">
+<h1>ffmeg<a class="headerlink" href="#ffmeg" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ffprobe</span> <span class="n">xxx</span><span class="o">.</span><span class="n">opus</span>
 </pre></div>
 </div>
+<section id="convert-format">
+<h2>Convert format<a class="headerlink" href="#convert-format" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>opus to wav</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ffmpeg -i input.opus output.wav
+
+ffmpeg -i input.opus -acodec pcm_s16le -ac <span class="m">1</span> -ar <span class="m">16000</span> output.wav
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Extract part of a file</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># extract 30 seconds starting at offset 1 minute</span>
+ffmpeg -i input.opus -ss <span class="m">60</span> -t <span class="m">30</span> output.wav
+<span class="c1"># or use HH:MM:SS format</span>
+ffmpeg -i input.opus -ss <span class="m">0</span>:01:00 -t <span class="m">0</span>:00:30 output.wav
+</pre></div>
+</div>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="bash" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="echo.html" class="btn btn-neutral float-right" title="echo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="echo.html" class="btn btn-neutral float-left" title="echo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../cuda/index.html" class="btn btn-neutral float-right" title="CUDA" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
