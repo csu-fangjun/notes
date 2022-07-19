@@ -26,3 +26,7 @@ Convert format
    # or use HH:MM:SS format
    ffmpeg -i input.opus -ss 0:01:00 -t 0:00:30 output.wav
 
+References
+----------
+
+See `<https://gist.github.com/whizkydee/804d7e290f46c73f55a84db8a8936d74>`_
