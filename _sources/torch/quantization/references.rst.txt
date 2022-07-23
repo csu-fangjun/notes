@@ -6,6 +6,18 @@ The main implementation is in
 
 `<https://github.com/pytorch/pytorch/tree/master/aten/src/ATen/native/quantized>`_
 
+- Introducing Quantized Tensor
+
+  `<https://github.com/pytorch/pytorch/wiki/Introducing-Quantized-Tensor>`_
+
+- Model Quantization for PyTorch (Proposal) #18318
+
+  `<https://github.com/pytorch/pytorch/issues/18318>`_
+
+- torch_quantization_design_proposal
+
+  `<https://github.com/pytorch/pytorch/wiki/torch_quantization_design_proposal>`_
+
 Links
 -----
 
@@ -19,7 +31,6 @@ Links
 
 - `<https://pytorch.org/blog/introduction-to-quantization-on-pytorch/>`_
 
-- `<https://github.com/pytorch/pytorch/wiki/Introducing-Quantized-Tensor>`_
 
 - `<https://pytorch.org/docs/stable/quantization.html>`_
 

@@ -54,7 +54,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../notes.html">Note</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Quantization</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="internals.html">Internals</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">torch.quantize_per_tensor</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">torch.quantize_per_tensor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#compress-ration">Compress ration</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="quantize_per_tensor_dynamic.html">quantize_per_tensor_dynamic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="quantize_per_channel.html">torch.quantize_per_channel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="references.html">References</a></li>
@@ -139,11 +142,38 @@
 <span class="sd">    tensor([10.,  2.], size=(2,), dtype=torch.qint8,</span>
 <span class="sd">           quantization_scheme=torch.per_tensor_affine, scale=0.1, zero_point=1)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">assert</span> <span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="o">==</span> <span class="mi">10</span>
+    <span class="k">assert</span> <span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="o">==</span> <span class="mi">10</span>  <span class="c1"># q[0].item() will dequantize() to a float</span>
     <span class="k">assert</span> <span class="n">q</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="o">==</span> <span class="mi">2</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()))</span>
+    <span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.5</span>  <span class="c1"># Note: it will quantize 2.5 and store it in q</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">int_repr</span><span class="p">())</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    tensor([26, 21], dtype=torch.int8)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 </pre></div>
 </div>
+<section id="compress-ration">
+<h2>Compress ration<a class="headerlink" href="#compress-ration" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_size</span><span class="p">():</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">quantize_per_tensor</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">zero_point</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">qint8</span><span class="p">)</span>
+    <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="s2">&quot;float32.pt&quot;</span><span class="p">)</span>
+    <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="s2">&quot;int8.pt&quot;</span><span class="p">)</span>
+    <span class="n">float_size</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="s2">&quot;float32.pt&quot;</span><span class="p">)</span>
+    <span class="n">int8_size</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="s2">&quot;int8.pt&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;float_size:&quot;</span><span class="p">,</span> <span class="n">float_size</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;int8_size:&quot;</span><span class="p">,</span> <span class="n">int8_size</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ratio: </span><span class="si">{</span><span class="n">float_size</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">int8_size</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">float_size</span><span class="o">/</span><span class="n">int8_size</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;float32.pt&quot;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;int8.pt&quot;</span><span class="p">)</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    float_size: 40747</span>
+<span class="sd">    int8_size: 10795</span>
+<span class="sd">    ratio: 40747/10795: 3.775</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
