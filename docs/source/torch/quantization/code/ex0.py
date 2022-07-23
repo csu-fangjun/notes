@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import torch
+import os
 
 
 # https://pytorch.org/docs/stable/generated/torch.quantize_per_tensor.html
@@ -37,9 +38,14 @@ def test_quantize_per_tensor():
     tensor([10.,  2.], size=(2,), dtype=torch.qint8,
            quantization_scheme=torch.per_tensor_affine, scale=0.1, zero_point=1)
     """
-    assert q[0].item() == 10
+    assert q[0].item() == 10  # q[0].item() will dequantize() to a float
     assert q[1].item() == 2
     print(type(q[0].item()))
+    q[0] = 2.5  # Note: it will quantize 2.5 and store it in q
+    print(q.int_repr())
+    """
+    tensor([26, 21], dtype=torch.int8)
+    """
 
 
 def test_quantize_per_channel_2d():
@@ -104,9 +110,29 @@ def test_quantize_per_channel_2d():
     """
 
 
+def test_size():
+    r = torch.rand(100, 100, dtype=torch.float32)
+    q = torch.quantize_per_tensor(r, scale=0.1, zero_point=0, dtype=torch.qint8)
+    torch.save(r, "float32.pt")
+    torch.save(q, "int8.pt")
+    float_size = os.path.getsize("float32.pt")
+    int8_size = os.path.getsize("int8.pt")
+    print("float_size:", float_size)
+    print("int8_size:", int8_size)
+    print(f"ratio: {float_size}/{int8_size}: {float_size/int8_size:.3f}")
+    os.remove("float32.pt")
+    os.remove("int8.pt")
+    """
+    float_size: 40747
+    int8_size: 10795
+    ratio: 40747/10795: 3.775
+    """
+
+
 def main():
     test_quantize_per_tensor()
     test_quantize_per_channel_2d()
+    test_size()
 
 
 if __name__ == "__main__":
