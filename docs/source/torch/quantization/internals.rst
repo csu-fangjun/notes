@@ -4,6 +4,11 @@ Internals
 `<https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/core/QuantizerBase.h>`_
 defines the base class ``Quantizer``.
 
+`<https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/quantized/Quantizer.h>`_
+defines the subclasses of ``Quantizer``, such as
+
+  - ``PerTensorAffineQuantizer`` - qscheme is ``kPerTensorAffine``.
+
 QScheme
 -------
 
@@ -14,8 +19,15 @@ See `<https://github.com/pytorch/pytorch/blob/master/c10/core/QScheme.h>`_
    :linenos:
    :caption: ./code/qscheme/main.cc
 
-AffineQuantizer
----------------
+PerTensorAffineQuantizer
+------------------------
+
+It has 4 important methods:
+
+  - ``QScheme qscheme() const``, always returns ``kPerTensorAffine``.
+  - ``double scale() const``
+  - ``int64_t zero_point() const``
+  - ``ScalarType scalar_type() const``
 
 It uses `quantize_tensor_per_tensor_affine_cpu <https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/native/quantized/cpu/kernels/QuantizedOpKernels.cpp#L3199>`_ when `FBGEMM <https://github.com/pytorch/FBGEMM>`_
 is available.
