@@ -54,10 +54,12 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Quantization</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Internals</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#qscheme">QScheme</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#affinequantizer">AffineQuantizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pertensoraffinequantizer">PerTensorAffineQuantizer</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="quantize_per_tensor.html">torch.quantize_per_tensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quantize_per_tensor_dynamic.html">quantize_per_tensor_dynamic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quantize_per_channel.html">torch.quantize_per_channel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="references.html">References</a></li>
 </ul>
 </li>
@@ -108,6 +110,13 @@
 <h1>Internals<a class="headerlink" href="#internals" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/core/QuantizerBase.h">https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/core/QuantizerBase.h</a>
 defines the base class <code class="docutils literal notranslate"><span class="pre">Quantizer</span></code>.</p>
+<p><a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/quantized/Quantizer.h">https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/quantized/Quantizer.h</a>
+defines the subclasses of <code class="docutils literal notranslate"><span class="pre">Quantizer</span></code>, such as</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PerTensorAffineQuantizer</span></code> - qscheme is <code class="docutils literal notranslate"><span class="pre">kPerTensorAffine</span></code>.</p></li>
+</ul>
+</div></blockquote>
 <section id="qscheme">
 <h2>QScheme<a class="headerlink" href="#qscheme" title="Permalink to this headline">¶</a></h2>
 <p>See <a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/c10/core/QScheme.h">https://github.com/pytorch/pytorch/blob/master/c10/core/QScheme.h</a></p>
@@ -139,8 +148,17 @@ defines the base class <code class="docutils literal notranslate"><span class="p
 </div>
 </div>
 </section>
-<section id="affinequantizer">
-<h2>AffineQuantizer<a class="headerlink" href="#affinequantizer" title="Permalink to this headline">¶</a></h2>
+<section id="pertensoraffinequantizer">
+<h2>PerTensorAffineQuantizer<a class="headerlink" href="#pertensoraffinequantizer" title="Permalink to this headline">¶</a></h2>
+<p>It has 4 important methods:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">QScheme</span> <span class="pre">qscheme()</span> <span class="pre">const</span></code>, always returns <code class="docutils literal notranslate"><span class="pre">kPerTensorAffine</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">scale()</span> <span class="pre">const</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int64_t</span> <span class="pre">zero_point()</span> <span class="pre">const</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ScalarType</span> <span class="pre">scalar_type()</span> <span class="pre">const</span></code></p></li>
+</ul>
+</div></blockquote>
 <p>It uses <a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/native/quantized/cpu/kernels/QuantizedOpKernels.cpp#L3199">quantize_tensor_per_tensor_affine_cpu</a> when <a class="reference external" href="https://github.com/pytorch/FBGEMM">FBGEMM</a>
 is available.</p>
 <p>Otherwise, it uses <a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/native/quantized/cpu/kernels/QuantizedOpKernels.cpp#L3533">quantize_tensor_per_tensor_affine_cpu</a>.</p>
