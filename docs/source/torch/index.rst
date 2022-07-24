@@ -9,4 +9,6 @@ torch
     logical-op
     notes
     quantization/index
+    android/index
+    onnx/index
 
