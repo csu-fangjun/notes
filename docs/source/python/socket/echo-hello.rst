@@ -21,7 +21,7 @@ Client
    :caption: ./code/echo-hello/client.py
 
 Server2
-------
+-------
 
 With ``concurrent.futures.ThreadPoolExecutor``.
 

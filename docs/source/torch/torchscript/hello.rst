@@ -34,6 +34,16 @@ torchscript a module
    :emphasize-lines: 12-13,15
    :caption: ./code/3-ex.py
 
+trace a module
+--------------
+
+.. literalinclude:: ./code/trace/ex0.py
+   :language: python
+   :linenos:
+   :caption: ./code/trace/ex0.py
+
+
+
 .. _export and ignore methods:
 
 Export and ignore methods
@@ -56,4 +66,6 @@ See :ref:`Load in CPP` to load the saved file.
    :linenos:
    :lines: 6-60
    :caption: ./code/4-ex.py
+
+
 

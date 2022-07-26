@@ -32,7 +32,7 @@ It has 4 important methods:
 It uses `quantize_tensor_per_tensor_affine_cpu <https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/native/quantized/cpu/kernels/QuantizedOpKernels.cpp#L3199>`_ when `FBGEMM <https://github.com/pytorch/FBGEMM>`_
 is available.
 
-Otherwise, it uses `quantize_tensor_per_tensor_affine_cpu <https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/native/quantized/cpu/kernels/QuantizedOpKernels.cpp#L3533>`_.
+Otherwise, it uses `<https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/native/quantized/cpu/kernels/QuantizedOpKernels.cpp#L3533>`_.
 
   - For arm, it uses `quantize_tensor_arm <https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/native/quantized/cpu/kernels/QuantizedOpKernels.cpp#L3274>`_. It is a template with many specializations.
 
@@ -40,7 +40,7 @@ Otherwise, it uses `quantize_tensor_per_tensor_affine_cpu <https://github.com/py
 
     - If `FBGEMM <https://github.com/pytorch/FBGEMM>`_ is available, it uses
       `quantize_val <https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/native/quantized/AffineQuantizerBase.cpp#L39>`_
-    - Otherwise, it uses `quantize_val <https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/native/quantized/AffineQuantizerBase.cpp#L100>`_
+    - Otherwise, it uses `<https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/native/quantized/AffineQuantizerBase.cpp#L100>`_
 
       .. code-block:: c++
 

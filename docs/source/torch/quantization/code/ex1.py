@@ -28,6 +28,8 @@ def main():
 
     assert model_int8.fc.bias().is_quantized is False
     assert model_int8.fc.bias().dtype == torch.float32
+    assert isinstance(model_int8.fc, torch.nn.quantized.dynamic.Linear)
+    print(type(model_int8.fc))
 
     x = torch.tensor([[1.0]], dtype=torch.float32)
     y = m(x)
