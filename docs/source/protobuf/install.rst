@@ -75,18 +75,20 @@ Install with cmake
    cd $HOME/software/protobuf-3.20.1-cmake
    tree . > tree-cmake-log.txt
 
-.. literalinclude:: ./code/cmake-configure-shared-lib.log
-   :linenos:
-   :caption: ./code/cmake-configure-shared-lib.log
 
-.. literalinclude:: ./code/make-shared.log
-   :linenos:
-   :caption: ./code/make-shared.log
+..
+  .. literalinclude:: ./code/cmake-configure-shared-lib.log
+     :linenos:
+     :caption: ./code/cmake-configure-shared-lib.log
 
-.. literalinclude:: ./code/make-shared-install.log
-   :linenos:
-   :caption: ./code/make-shared-install.log
+  .. literalinclude:: ./code/make-shared.log
+     :linenos:
+     :caption: ./code/make-shared.log
 
-.. literalinclude:: ./code/tree-cmake-log.txt
-   :linenos:
-   :caption: ./code/tree-cmake-log.txt
+  .. literalinclude:: ./code/make-shared-install.log
+     :linenos:
+     :caption: ./code/make-shared-install.log
+
+  .. literalinclude:: ./code/tree-cmake-log.txt
+     :linenos:
+     :caption: ./code/tree-cmake-log.txt
