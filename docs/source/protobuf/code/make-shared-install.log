@@ -1,0 +1,187 @@
+Consolidate compiler generated dependencies of target libprotobuf
+[ 20%] Built target libprotobuf
+Consolidate compiler generated dependencies of target libprotoc
+[ 41%] Built target libprotoc
+Consolidate compiler generated dependencies of target protoc
+[ 41%] Built target protoc
+Consolidate compiler generated dependencies of target gmock
+[ 41%] Built target gmock
+Consolidate compiler generated dependencies of target gmock_main
+[ 42%] Built target gmock_main
+Consolidate compiler generated dependencies of target libprotobuf-lite
+[ 50%] Built target libprotobuf-lite
+Consolidate compiler generated dependencies of target lite-test
+[ 53%] Built target lite-test
+Consolidate compiler generated dependencies of target tests
+[ 96%] Built target tests
+Consolidate compiler generated dependencies of target test_plugin
+[ 97%] Built target test_plugin
+Consolidate compiler generated dependencies of target lite-arena-test
+[100%] Built target lite-arena-test
+Install the project...
+-- Install configuration: ""
+-- Installing: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/lib/libprotobuf-lite.so.3.20.1.0
+-- Installing: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/lib/libprotobuf-lite.so.31
+-- Set runtime path of "/ceph-fj/fangjun/software/protobuf-3.20.1-cmake/lib/libprotobuf-lite.so.3.20.1.0" to "$ORIGIN"
+-- Installing: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/lib/libprotobuf-lite.so
+-- Installing: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/lib/libprotobuf.so.3.20.1.0
+-- Installing: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/lib/libprotobuf.so.31
+-- Set runtime path of "/ceph-fj/fangjun/software/protobuf-3.20.1-cmake/lib/libprotobuf.so.3.20.1.0" to "$ORIGIN"
+-- Installing: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/lib/libprotobuf.so
+-- Installing: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/lib/libprotoc.so.3.20.1.0
+-- Installing: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/lib/libprotoc.so.31
+-- Set runtime path of "/ceph-fj/fangjun/software/protobuf-3.20.1-cmake/lib/libprotoc.so.3.20.1.0" to "$ORIGIN"
+-- Installing: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/lib/libprotoc.so
+-- Installing: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/bin/protoc-3.20.1.0
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/bin/protoc
+-- Set runtime path of "/ceph-fj/fangjun/software/protobuf-3.20.1-cmake/bin/protoc-3.20.1.0" to "$ORIGIN/../lib"
+-- Installing: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/lib/pkgconfig/protobuf.pc
+-- Installing: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/lib/pkgconfig/protobuf-lite.pc
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/any.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/any.pb.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/api.pb.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/arena.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/arena_impl.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/arenastring.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/arenaz_sampler.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/code_generator.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/command_line_interface.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/cpp/cpp_file.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/cpp/cpp_generator.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/cpp/cpp_helpers.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/cpp/cpp_names.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/csharp/csharp_doc_comment.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/csharp/csharp_generator.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/csharp/csharp_names.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/csharp/csharp_options.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/importer.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/java/java_generator.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/java/java_kotlin_generator.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/java/java_names.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/js/js_generator.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/objectivec/objectivec_generator.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/objectivec/objectivec_helpers.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/parser.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/php/php_generator.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/plugin.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/plugin.pb.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/python/python_generator.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/python/python_pyi_generator.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/python/python_helpers.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/ruby/ruby_generator.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/descriptor.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/descriptor.pb.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/descriptor_database.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/duration.pb.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/dynamic_message.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/empty.pb.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/explicitly_constructed.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/extension_set.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/extension_set_inl.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/field_access_listener.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/field_mask.pb.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/generated_enum_reflection.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/generated_enum_util.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/generated_message_bases.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/generated_message_reflection.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/generated_message_tctable_decl.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/generated_message_tctable_impl.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/generated_message_util.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/has_bits.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/implicit_weak_message.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/inlined_string_field.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/io/coded_stream.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/io/gzip_stream.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/io/io_win32.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/io/printer.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/io/strtod.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/io/tokenizer.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/io/zero_copy_stream.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/io/zero_copy_stream_impl.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/io/zero_copy_stream_impl_lite.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/map.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/map_entry.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/map_entry_lite.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/map_field.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/map_field_inl.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/map_field_lite.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/map_type_handler.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/message.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/message_lite.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/metadata.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/metadata_lite.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/parse_context.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/port.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/port_def.inc
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/port_undef.inc
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/reflection.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/reflection_ops.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/repeated_field.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/repeated_ptr_field.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/service.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/source_context.pb.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/struct.pb.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/stubs/bytestream.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/stubs/callback.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/stubs/casts.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/stubs/common.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/stubs/hash.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/stubs/logging.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/stubs/macros.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/stubs/map_util.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/stubs/mutex.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/stubs/once.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/stubs/platform_macros.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/stubs/port.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/stubs/status.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/stubs/stl_util.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/stubs/stringpiece.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/stubs/strutil.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/stubs/template_util.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/text_format.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/timestamp.pb.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/type.pb.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/unknown_field_set.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/util/delimited_message_util.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/util/field_comparator.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/util/field_mask_util.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/util/json_util.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/util/message_differencer.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/util/time_util.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/util/type_resolver.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/util/type_resolver_util.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/wire_format.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/wire_format_lite.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/wrappers.pb.h
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/any.proto
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/api.proto
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/plugin.proto
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/descriptor.proto
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/duration.proto
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/empty.proto
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/field_mask.proto
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/source_context.proto
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/struct.proto
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/timestamp.proto
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/type.proto
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/wrappers.proto
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/any.proto
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/api.proto
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/compiler/plugin.proto
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/descriptor.proto
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/duration.proto
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/empty.proto
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/field_mask.proto
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/source_context.proto
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/struct.proto
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/timestamp.proto
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/type.proto
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/include/google/protobuf/wrappers.proto
+-- Old export file "/ceph-fj/fangjun/software/protobuf-3.20.1-cmake/lib/cmake/protobuf/protobuf-targets.cmake" will be replaced.  Removing files [/ceph-fj/fangjun/software/protobuf-3.20.1-cmake/lib/cmake/protobuf/protobuf-targets-noconfig.cmake].
+-- Installing: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/lib/cmake/protobuf/protobuf-targets.cmake
+-- Installing: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/lib/cmake/protobuf/protobuf-targets-noconfig.cmake
+-- Up-to-date: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/lib/cmake/protobuf
+-- Installing: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/lib/cmake/protobuf/protobuf-config-version.cmake
+-- Installing: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/lib/cmake/protobuf/protobuf-config.cmake
+-- Installing: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/lib/cmake/protobuf/protobuf-module.cmake
+-- Installing: /ceph-fj/fangjun/software/protobuf-3.20.1-cmake/lib/cmake/protobuf/protobuf-options.cmake

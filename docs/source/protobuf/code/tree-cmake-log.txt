@@ -1,0 +1,174 @@
+.
+|-- bin
+|   |-- protoc -> protoc-3.20.1.0
+|   `-- protoc-3.20.1.0
+|-- include
+|   `-- google
+|       `-- protobuf
+|           |-- any.h
+|           |-- any.pb.h
+|           |-- any.proto
+|           |-- api.pb.h
+|           |-- api.proto
+|           |-- arena.h
+|           |-- arena_impl.h
+|           |-- arenastring.h
+|           |-- arenaz_sampler.h
+|           |-- compiler
+|           |   |-- code_generator.h
+|           |   |-- command_line_interface.h
+|           |   |-- cpp
+|           |   |   |-- cpp_file.h
+|           |   |   |-- cpp_generator.h
+|           |   |   |-- cpp_helpers.h
+|           |   |   `-- cpp_names.h
+|           |   |-- csharp
+|           |   |   |-- csharp_doc_comment.h
+|           |   |   |-- csharp_generator.h
+|           |   |   |-- csharp_names.h
+|           |   |   `-- csharp_options.h
+|           |   |-- importer.h
+|           |   |-- java
+|           |   |   |-- java_generator.h
+|           |   |   |-- java_kotlin_generator.h
+|           |   |   `-- java_names.h
+|           |   |-- js
+|           |   |   `-- js_generator.h
+|           |   |-- objectivec
+|           |   |   |-- objectivec_generator.h
+|           |   |   `-- objectivec_helpers.h
+|           |   |-- parser.h
+|           |   |-- php
+|           |   |   `-- php_generator.h
+|           |   |-- plugin.h
+|           |   |-- plugin.pb.h
+|           |   |-- plugin.proto
+|           |   |-- python
+|           |   |   |-- python_generator.h
+|           |   |   |-- python_helpers.h
+|           |   |   `-- python_pyi_generator.h
+|           |   `-- ruby
+|           |       `-- ruby_generator.h
+|           |-- descriptor.h
+|           |-- descriptor.pb.h
+|           |-- descriptor.proto
+|           |-- descriptor_database.h
+|           |-- duration.pb.h
+|           |-- duration.proto
+|           |-- dynamic_message.h
+|           |-- empty.pb.h
+|           |-- empty.proto
+|           |-- explicitly_constructed.h
+|           |-- extension_set.h
+|           |-- extension_set_inl.h
+|           |-- field_access_listener.h
+|           |-- field_mask.pb.h
+|           |-- field_mask.proto
+|           |-- generated_enum_reflection.h
+|           |-- generated_enum_util.h
+|           |-- generated_message_bases.h
+|           |-- generated_message_reflection.h
+|           |-- generated_message_tctable_decl.h
+|           |-- generated_message_tctable_impl.h
+|           |-- generated_message_util.h
+|           |-- has_bits.h
+|           |-- implicit_weak_message.h
+|           |-- inlined_string_field.h
+|           |-- io
+|           |   |-- coded_stream.h
+|           |   |-- gzip_stream.h
+|           |   |-- io_win32.h
+|           |   |-- printer.h
+|           |   |-- strtod.h
+|           |   |-- tokenizer.h
+|           |   |-- zero_copy_stream.h
+|           |   |-- zero_copy_stream_impl.h
+|           |   `-- zero_copy_stream_impl_lite.h
+|           |-- map.h
+|           |-- map_entry.h
+|           |-- map_entry_lite.h
+|           |-- map_field.h
+|           |-- map_field_inl.h
+|           |-- map_field_lite.h
+|           |-- map_type_handler.h
+|           |-- message.h
+|           |-- message_lite.h
+|           |-- metadata.h
+|           |-- metadata_lite.h
+|           |-- parse_context.h
+|           |-- port.h
+|           |-- port_def.inc
+|           |-- port_undef.inc
+|           |-- reflection.h
+|           |-- reflection_ops.h
+|           |-- repeated_field.h
+|           |-- repeated_ptr_field.h
+|           |-- service.h
+|           |-- source_context.pb.h
+|           |-- source_context.proto
+|           |-- struct.pb.h
+|           |-- struct.proto
+|           |-- stubs
+|           |   |-- bytestream.h
+|           |   |-- callback.h
+|           |   |-- casts.h
+|           |   |-- common.h
+|           |   |-- hash.h
+|           |   |-- logging.h
+|           |   |-- macros.h
+|           |   |-- map_util.h
+|           |   |-- mutex.h
+|           |   |-- once.h
+|           |   |-- platform_macros.h
+|           |   |-- port.h
+|           |   |-- status.h
+|           |   |-- stl_util.h
+|           |   |-- stringpiece.h
+|           |   |-- strutil.h
+|           |   `-- template_util.h
+|           |-- text_format.h
+|           |-- timestamp.pb.h
+|           |-- timestamp.proto
+|           |-- type.pb.h
+|           |-- type.proto
+|           |-- unknown_field_set.h
+|           |-- util
+|           |   |-- delimited_message_util.h
+|           |   |-- field_comparator.h
+|           |   |-- field_mask_util.h
+|           |   |-- json_util.h
+|           |   |-- message_differencer.h
+|           |   |-- time_util.h
+|           |   |-- type_resolver.h
+|           |   `-- type_resolver_util.h
+|           |-- wire_format.h
+|           |-- wire_format_lite.h
+|           |-- wrappers.pb.h
+|           `-- wrappers.proto
+|-- lib
+|   |-- cmake
+|   |   `-- protobuf
+|   |       |-- protobuf-config-version.cmake
+|   |       |-- protobuf-config.cmake
+|   |       |-- protobuf-module.cmake
+|   |       |-- protobuf-options.cmake
+|   |       |-- protobuf-targets-noconfig.cmake
+|   |       `-- protobuf-targets.cmake
+|   |-- libprotobuf-lite.a
+|   |-- libprotobuf-lite.so -> libprotobuf-lite.so.31
+|   |-- libprotobuf-lite.so.3.20.1.0
+|   |-- libprotobuf-lite.so.31 -> libprotobuf-lite.so.3.20.1.0
+|   |-- libprotobuf.a
+|   |-- libprotobuf.so -> libprotobuf.so.31
+|   |-- libprotobuf.so.3.20.1.0
+|   |-- libprotobuf.so.31 -> libprotobuf.so.3.20.1.0
+|   |-- libprotoc.a
+|   |-- libprotoc.so -> libprotoc.so.31
+|   |-- libprotoc.so.3.20.1.0
+|   |-- libprotoc.so.31 -> libprotoc.so.3.20.1.0
+|   `-- pkgconfig
+|       |-- protobuf-lite.pc
+|       `-- protobuf.pc
+`-- tree-cmake-log.txt
+
+20 directories, 151 files
