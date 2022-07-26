@@ -45,6 +45,6 @@ Example with multiple rules:
 Example with multiple selectors:
 
 .. code-block:: css
-   :capiton: Example with multiple selectors
+   :caption: Example with multiple selectors
 
    p, li, h1 { color: red; }

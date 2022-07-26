@@ -141,26 +141,27 @@
 <span class="linenos">19</span><span class="nv">LDFLAGS</span> <span class="o">+=</span> -Wl,-rpath,<span class="k">$(</span>TORCH_INSTALL_DIR<span class="k">)</span>/lib
 <span class="linenos">20</span>
 <span class="linenos">21</span><span class="nv">HAS_CUDA</span> <span class="o">:=</span> <span class="k">$(</span>shell python3 -c <span class="s1">&#39;import torch; print(&quot;yes&quot; if torch.cuda.is_available() else &quot;no&quot;)&#39;</span><span class="k">)</span>
-<span class="linenos">22</span><span class="k">$(</span><span class="nv">info</span> <span class="nv">has</span> <span class="nv">cuda</span> <span class="k">$(</span><span class="nv">HAS_CUDA</span><span class="k">))</span><span class="w"></span>
-<span class="linenos">23</span>
-<span class="linenos">24</span><span class="cp">ifeq ($(HAS_CUDA),yes)</span>
-<span class="linenos">25</span><span class="nv">CUDA_HOME</span> <span class="o">:=</span> <span class="k">$(</span>shell which nvcc <span class="p">|</span> xargs dirname <span class="p">|</span> xargs dirname<span class="k">)</span>
-<span class="linenos">26</span><span class="nv">CXXFLAGS</span> <span class="o">+=</span> -I<span class="k">$(</span>CUDA_HOME<span class="k">)</span>/include
-<span class="linenos">27</span><span class="nv">LDFLAGS</span> <span class="o">+=</span> -L<span class="k">$(</span>CUDA_HOME<span class="k">)</span>/lib64
-<span class="linenos">28</span><span class="nv">LDFLAGS</span> <span class="o">+=</span> -lcudart -lc10_cuda -ltorch_cuda
-<span class="linenos">29</span><span class="nv">LDFLAGS</span> <span class="o">+=</span> -Wl,-rpath,<span class="k">$(</span>CUDA_HOME<span class="k">)</span>/lib64
-<span class="linenos">30</span><span class="cp">endif</span>
-<span class="linenos">31</span>
-<span class="linenos">32</span><span class="nf">.PHONY</span><span class="o">:</span> <span class="n">clean</span>
-<span class="linenos">33</span>
-<span class="linenos">34</span><span class="nf">main</span><span class="o">:</span> <span class="n">main</span>.<span class="n">o</span>
-<span class="linenos">35</span>	<span class="k">$(</span>CXX<span class="k">)</span> -o <span class="nv">$@</span> $&lt; <span class="k">$(</span>LDFLAGS<span class="k">)</span>
-<span class="linenos">36</span>
-<span class="linenos">37</span><span class="nf">main.o</span><span class="o">:</span> <span class="n">main</span>.<span class="n">cc</span>
-<span class="linenos">38</span>	<span class="k">$(</span>CXX<span class="k">)</span> <span class="k">$(</span>CXXFLAGS<span class="k">)</span> -c -o <span class="nv">$@</span> $&lt;
-<span class="linenos">39</span>
-<span class="linenos">40</span><span class="nf">clean</span><span class="o">:</span>
-<span class="linenos">41</span>	<span class="k">$(</span>RM<span class="k">)</span> main.o main
+<span class="linenos">22</span><span class="nv">HAS_CUDA</span> <span class="o">:=</span> yes
+<span class="linenos">23</span><span class="k">$(</span><span class="nv">info</span> <span class="nv">has</span> <span class="nv">cuda</span> <span class="k">$(</span><span class="nv">HAS_CUDA</span><span class="k">))</span><span class="w"></span>
+<span class="linenos">24</span>
+<span class="linenos">25</span><span class="cp">ifeq ($(HAS_CUDA),yes)</span>
+<span class="linenos">26</span><span class="nv">CUDA_HOME</span> <span class="o">:=</span> <span class="k">$(</span>shell which nvcc <span class="p">|</span> xargs dirname <span class="p">|</span> xargs dirname<span class="k">)</span>
+<span class="linenos">27</span><span class="nv">CXXFLAGS</span> <span class="o">+=</span> -I<span class="k">$(</span>CUDA_HOME<span class="k">)</span>/include
+<span class="linenos">28</span><span class="nv">LDFLAGS</span> <span class="o">+=</span> -L<span class="k">$(</span>CUDA_HOME<span class="k">)</span>/lib64
+<span class="linenos">29</span><span class="nv">LDFLAGS</span> <span class="o">+=</span> -lcudart -lc10_cuda -ltorch_cuda
+<span class="linenos">30</span><span class="nv">LDFLAGS</span> <span class="o">+=</span> -Wl,-rpath,<span class="k">$(</span>CUDA_HOME<span class="k">)</span>/lib64
+<span class="linenos">31</span><span class="cp">endif</span>
+<span class="linenos">32</span>
+<span class="linenos">33</span><span class="nf">.PHONY</span><span class="o">:</span> <span class="n">clean</span>
+<span class="linenos">34</span>
+<span class="linenos">35</span><span class="nf">main</span><span class="o">:</span> <span class="n">main</span>.<span class="n">o</span>
+<span class="linenos">36</span>	<span class="k">$(</span>CXX<span class="k">)</span> -o <span class="nv">$@</span> $&lt; <span class="k">$(</span>LDFLAGS<span class="k">)</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span><span class="nf">main.o</span><span class="o">:</span> <span class="n">main</span>.<span class="n">cc</span>
+<span class="linenos">39</span>	<span class="k">$(</span>CXX<span class="k">)</span> <span class="k">$(</span>CXXFLAGS<span class="k">)</span> -c -o <span class="nv">$@</span> $&lt;
+<span class="linenos">40</span>
+<span class="linenos">41</span><span class="nf">clean</span><span class="o">:</span>
+<span class="linenos">42</span>	<span class="k">$(</span>RM<span class="k">)</span> main.o main
 </pre></div>
 </div>
 </div>

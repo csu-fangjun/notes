@@ -8,7 +8,7 @@ Install client API
 
    pip install huggingface_hub
 
-.. code-block:: python3
+.. code-block::
 
   (py38) kuangfangjun:t$ python3
   Python 3.8.0 (default, Oct 28 2019, 16:14:01)

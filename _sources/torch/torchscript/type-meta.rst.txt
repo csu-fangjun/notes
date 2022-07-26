@@ -15,7 +15,7 @@ See
    :caption: ./code/type-meta/main.cc (Check size)
 
 Constructors
-----------
+------------
 
 .. literalinclude:: ./code/type-meta/main.cc
    :language: c++

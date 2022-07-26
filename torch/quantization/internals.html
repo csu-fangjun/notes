@@ -126,8 +126,8 @@ defines the subclasses of <code class="docutils literal notranslate"><span class
 <section id="qscheme">
 <h2>QScheme<a class="headerlink" href="#qscheme" title="Permalink to this headline">¶</a></h2>
 <p>See <a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/c10/core/QScheme.h">https://github.com/pytorch/pytorch/blob/master/c10/core/QScheme.h</a></p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">./code/qscheme/main.cc</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">./code/qscheme/main.cc</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;torch/script.h&quot;</span><span class="cp"></span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">TestQScheme</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -167,7 +167,7 @@ defines the subclasses of <code class="docutils literal notranslate"><span class
 </div></blockquote>
 <p>It uses <a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/native/quantized/cpu/kernels/QuantizedOpKernels.cpp#L3199">quantize_tensor_per_tensor_affine_cpu</a> when <a class="reference external" href="https://github.com/pytorch/FBGEMM">FBGEMM</a>
 is available.</p>
-<p>Otherwise, it uses <a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/native/quantized/cpu/kernels/QuantizedOpKernels.cpp#L3533">quantize_tensor_per_tensor_affine_cpu</a>.</p>
+<p>Otherwise, it uses <a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/native/quantized/cpu/kernels/QuantizedOpKernels.cpp#L3533">https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/native/quantized/cpu/kernels/QuantizedOpKernels.cpp#L3533</a>.</p>
 <blockquote>
 <div><ul>
 <li><p>For arm, it uses <a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/native/quantized/cpu/kernels/QuantizedOpKernels.cpp#L3274">quantize_tensor_arm</a>. It is a template with many specializations.</p></li>
@@ -175,7 +175,7 @@ is available.</p>
 <ul>
 <li><p>If <a class="reference external" href="https://github.com/pytorch/FBGEMM">FBGEMM</a> is available, it uses
 <a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/native/quantized/AffineQuantizerBase.cpp#L39">quantize_val</a></p></li>
-<li><p>Otherwise, it uses <a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/native/quantized/AffineQuantizerBase.cpp#L100">quantize_val</a></p>
+<li><p>Otherwise, it uses <a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/native/quantized/AffineQuantizerBase.cpp#L100">https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/native/quantized/AffineQuantizerBase.cpp#L100</a></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
 <span class="n">T</span><span class="w"> </span><span class="n">quantize_val</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">scale</span><span class="p">,</span><span class="w"> </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">zero_point</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="c1">// std::nearbyint results in nearest integer value according to the current</span>
