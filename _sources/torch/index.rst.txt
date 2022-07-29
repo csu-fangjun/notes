@@ -4,6 +4,7 @@ torch
 .. toctree::
 
     load-and-save
+    gather
     ddp/index
     torchscript/index
     logical-op
