@@ -5,5 +5,6 @@ onnx
 
     install
     hello
+    multiple-models
     references
 
