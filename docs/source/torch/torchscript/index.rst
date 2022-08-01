@@ -4,6 +4,7 @@ TorchScript
 .. toctree::
     :maxdepth: 4
 
+    doxygen
     hello
     load-in-cpp
     array_ref
@@ -17,5 +18,7 @@ TorchScript
     optional
     packed-sequence
     ivalue
+    method
+    type
 
 
