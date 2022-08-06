@@ -91,6 +91,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../huggingface/index.html">huggingface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../e6870/index.html">EECS E6870 Speech Recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../llvm/index.html">LLVM</a></li>
 </ul>
 
         </div>
@@ -154,12 +155,13 @@
 <span class="linenos">25</span><span class="w">  </span><span class="n">TORCH_CHECK</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">equal</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">));</span><span class="w"></span>
 <span class="linenos">26</span>
 <span class="linenos">27</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">torch</span><span class="o">::</span><span class="n">jit</span><span class="o">::</span><span class="n">Graph</span><span class="o">&gt;</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">method</span><span class="p">.</span><span class="n">graph</span><span class="p">();</span><span class="w"></span>
-<span class="linenos">28</span><span class="p">}</span><span class="w"></span>
-<span class="linenos">29</span>
-<span class="linenos">30</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">31</span><span class="w">  </span><span class="n">TestHello</span><span class="p">();</span><span class="w"></span>
-<span class="linenos">32</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">33</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">28</span><span class="w">  </span><span class="c1">// see graph/main.cc</span>
+<span class="linenos">29</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">30</span>
+<span class="linenos">31</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">32</span><span class="w">  </span><span class="n">TestHello</span><span class="p">();</span><span class="w"></span>
+<span class="linenos">33</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="linenos">34</span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
