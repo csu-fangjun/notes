@@ -35,5 +35,6 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    huggingface/index
    e6870/index
    ncnn/index
+   llvm/index
 
 .. github/index
