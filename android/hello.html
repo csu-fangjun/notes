@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Basics &mdash; notes  documentation</title>
+  <title>hello &mdash; notes  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Installation" href="install.html" />
-    <link rel="prev" title="Android" href="index.html" /> 
+    <link rel="prev" title="cmake" href="cmake.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -64,10 +63,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Android</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cmake.html">cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hello.html">hello</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">hello</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#x86">x86</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -87,9 +89,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">Android</a> &raquo;</li>
-      <li>Basics</li>
+      <li>hello</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/android/basics.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/android/hello.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -97,26 +99,82 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="basics">
-<h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h1>
-<p>There are two tools: <code class="docutils literal notranslate"><span class="pre">NDK</span></code> and <code class="docutils literal notranslate"><span class="pre">SDK</span></code>. Each tool has a version.</p>
-<p>Android has a concept of <code class="docutils literal notranslate"><span class="pre">Android</span> <span class="pre">native</span> <span class="pre">API</span> <span class="pre">level</span></code>.</p>
-<p>There are three environment variables to set:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_NDK_ROOT</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_SDK_ROOT</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_HOME</span></code></p></li>
+  <section id="hello">
+<h1>hello<a class="headerlink" href="#hello" title="Permalink to this headline">¶</a></h1>
+<p>In this note, we describe how to build an executable, how to create
+an emulator, and how to run the executable in the emulator via <code class="docutils literal notranslate"><span class="pre">adb</span> <span class="pre">push</span></code>,
+<code class="docutils literal notranslate"><span class="pre">adb</span> <span class="pre">shell</span></code>.</p>
+<section id="x86">
+<h2>x86<a class="headerlink" href="#x86" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ANDROID_NDK_ROOT</span><span class="o">=</span>/ceph-fj/fangjun/software/android-ndk
+cmake -DCMAKE_TOOLCHAIN_FILE<span class="o">=</span><span class="nv">$ANDROID_NDK_ROOT</span>/build/cmake/android.toolchain.cmake -DANDROID_ABI<span class="o">=</span>x86 ..
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Other values:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-DANDROID_ABI=&quot;arm64-v8a&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-DANDROID_ABI=&quot;armeabi-v7a&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-DANDROID_ARM_NEON=ON</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-DANDROID_PLATFORM=android-21</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-DANDROID_PLATFORM=android-24</span></code></p></li>
 </ul>
-</div></blockquote>
+</dd>
+</dl>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sdkmanager --list <span class="p">|</span> grep system-images <span class="p">|</span> grep x86 <span class="p">|</span> grep android-28
+$ sdkmanager <span class="s2">&quot;system-images;android-28;default;x86&quot;</span>
+
+$ which avdmanager
+/ceph-fj/fangjun/software/android-sdk/cmdline-tools/latest/bin/avdmanage
+
+$ avdmanager create avd --help
+$ -k --package  : Package path of the system image <span class="k">for</span> this AVD
+<span class="c1">#                 (e.g., &#39;system-images;android-19;google_apis;x86&#39;).</span>
+<span class="c1"># -n --name     : Name of the new AVD [required]</span>
+<span class="c1"># -b --abi      : The ABI to use for the AVD. The default is to auto-select</span>
+<span class="c1">#                 the ABI if the platform has only one ABI for its system images</span>
+<span class="c1"># -g --tag      : The sys-img tag to use for the AVD. The default is to</span>
+<span class="c1">#                 auto-select if the platform has only one tag for its system</span>
+<span class="c1">#                 images</span>
+$ avdmanager create avd -k <span class="s2">&quot;system-images;android-28;default;x86&quot;</span> -n hello -b x86 -g default
+<span class="c1"># Use the default option [no] when it prompts:</span>
+<span class="c1">#  Do you wish to create a custom hardware profile? [no]</span>
+<span class="c1">#</span>
+$ avdmanager delete avd -n hello <span class="c1"># to delete it</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ avdmanager list avd
+Available Android Virtual Devices:
+    Name: hello
+    Path: /root/fangjun/.android/avd/hello.avd
+  Target: Default Android System Image
+          Based on: Android <span class="m">9</span>.0 <span class="o">(</span>Pie<span class="o">)</span> Tag/ABI: default/x86
+  Sdcard: <span class="m">512</span> MB
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>emulator -avd hello -no-window  -no-accel <span class="c1"># then, open a new terminal</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># push the binary from code/hello/build/hello</span>
+
+adb push ./code/hello/build/hello /sdcard <span class="c1"># not able to use chmod +x in it</span>
+adb push ./code/hello/build/hello /data/local
+adb shell /data/local/hello
+adb shell
+generic_x86:/ <span class="c1">#</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>generic_x86:/ <span class="c1"># ./data/local/hello</span>
+hello world
+</pre></div>
+</div>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Android" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="install.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="cmake.html" class="btn btn-neutral float-left" title="cmake" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

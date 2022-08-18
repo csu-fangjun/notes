@@ -18,6 +18,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="cmake" href="cmake.html" />
     <link rel="prev" title="Basics" href="basics.html" /> 
 </head>
 
@@ -65,10 +66,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Android</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="basics.html">Basics</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Installation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#install-ndk-on-linux">Install NDK on Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-ndk-on-linux-not-recommmended">Install NDK on Linux (not recommmended)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#install-sdk-on-linux">Install SDK on Linux</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="cmake.html">cmake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hello.html">hello</a></li>
 </ul>
 </li>
 </ul>
@@ -100,8 +103,9 @@
              
   <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<section id="install-ndk-on-linux">
-<h2>Install NDK on Linux<a class="headerlink" href="#install-ndk-on-linux" title="Permalink to this headline">¶</a></h2>
+<section id="install-ndk-on-linux-not-recommmended">
+<h2>Install NDK on Linux (not recommmended)<a class="headerlink" href="#install-ndk-on-linux-not-recommmended" title="Permalink to this headline">¶</a></h2>
+<p>(Use the following SDK to install NDK)</p>
 <p>See <a class="reference external" href="https://developer.android.com/ndk/downloads/index.html">https://developer.android.com/ndk/downloads/index.html</a></p>
 <p>See <a class="reference external" href="https://www.cryptopp.com/wiki/Android_Setup_(Command_Line)">https://www.cryptopp.com/wiki/Android_Setup_(Command_Line)</a> for details.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://dl.google.com/android/repository/android-ndk-r25-linux.zip
@@ -146,13 +150,6 @@ Error: Could not determine SDK root.
 Error: Either specify it explicitly with --sdk_root<span class="o">=</span> or move this package into its expected location: &lt;sdk&gt;/cmdline-tools/latest/
 </pre></div>
 </div>
-<p>Set the following environment variable:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ANDROID_SDK_ROOT</span><span class="o">=</span>/ceph-fj/fangjun/software/android-sdk/cmdline-tools
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$ANDROID_SDK_ROOT</span>/latest/bin:<span class="nv">$PATH</span>
-
-<span class="nb">export</span> <span class="nv">ANDROID_HOME</span><span class="o">=</span>/ceph-fj/fangjun/software/android-sdk/cmdline-tools
-</pre></div>
-</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sdkmanager --update
 sdkmanager --list
 
@@ -163,6 +160,47 @@ sdkmanager <span class="s2">&quot;platforms;android-28&quot;</span> <span class=
 <span class="c1"># build-tools, emulator, licenses, patcher, platform-tools, platforms, tools</span>
 </pre></div>
 </div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sdkmanager --list_installed
+Installed packages:<span class="o">=====================]</span> <span class="m">100</span>% Fetch remote repository...
+  Path                 <span class="p">|</span> Version <span class="p">|</span> Description                    <span class="p">|</span> Location
+  -------              <span class="p">|</span> ------- <span class="p">|</span> -------                        <span class="p">|</span> -------
+  build-tools<span class="p">;</span><span class="m">28</span>.0.3   <span class="p">|</span> <span class="m">28</span>.0.3  <span class="p">|</span> Android SDK Build-Tools <span class="m">28</span>.0.3 <span class="p">|</span> build-tools/28.0.3
+  emulator             <span class="p">|</span> <span class="m">31</span>.3.10 <span class="p">|</span> Android Emulator               <span class="p">|</span> emulator
+  patcher<span class="p">;</span>v4           <span class="p">|</span> <span class="m">1</span>       <span class="p">|</span> SDK Patch Applier v4           <span class="p">|</span> patcher/v4
+  platform-tools       <span class="p">|</span> <span class="m">33</span>.0.2  <span class="p">|</span> Android SDK Platform-Tools     <span class="p">|</span> platform-tools
+  platforms<span class="p">;</span>android-28 <span class="p">|</span> <span class="m">6</span>       <span class="p">|</span> Android SDK Platform <span class="m">28</span>        <span class="p">|</span> platforms/android-28
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sdkmanager</span> <span class="o">--</span><span class="n">help</span>
+<span class="n">yes</span> <span class="o">|</span> <span class="n">sdkmanager</span> <span class="o">--</span><span class="n">licenses</span>  <span class="c1"># to accept or licenses, the decision is saved in a cache file.</span>
+</pre></div>
+</div>
+<p>Set the following environment variables:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ANDROID_SDK_ROOT</span><span class="o">=</span>/ceph-fj/fangjun/software/android-sdk
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$ANDROID_SDK_ROOT</span>/cmdline-tools/latest/bin:<span class="nv">$PATH</span>
+
+<span class="nb">export</span> <span class="nv">ANDROID_HOME</span><span class="o">=</span>/ceph-fj/fangjun/software/android-sdk
+
+<span class="c1"># for emulator</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$ANDROID_SDK_ROOT</span>/emulator:<span class="nv">$PATH</span>
+
+<span class="c1"># for adb</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$ANDROID_SDK_ROOT</span>/platform-tools:<span class="nv">$PATH</span>
+
+<span class="c1"># We installed 28.0.3 before</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$ANDROID_SDK_ROOT</span>/build-tools/28.0.3:<span class="nv">$PATH</span> <span class="c1"># change it for different versions</span>
+</pre></div>
+</div>
+<p>Now install NDK using <code class="docutils literal notranslate"><span class="pre">sdkmanager</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># sdkmanager --list | grep ndk</span>
+sdkmanager <span class="s2">&quot;ndk;21.0.6113669&quot;</span>
+<span class="c1"># it will download android-ndk-r21 and will generate</span>
+<span class="c1">#  android-sdk/ndk/21.0.6113669</span>
+
+<span class="nb">export</span> <span class="nv">ANROID_NDK_HOME</span><span class="o">=</span><span class="nv">$ANDROID_SDK_ROOT</span>/ndk/21.0.6113669
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$ANDROID_NDK_ROOT</span>:<span class="nv">$PATH</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -171,6 +209,7 @@ sdkmanager <span class="s2">&quot;platforms;android-28&quot;</span> <span class=
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="basics.html" class="btn btn-neutral float-left" title="Basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cmake.html" class="btn btn-neutral float-right" title="cmake" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -5,3 +5,5 @@ Android
 
     basics
     install
+    cmake
+    hello
