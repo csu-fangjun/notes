@@ -1,8 +1,10 @@
 Installation
 ============
 
-Install NDK on Linux
---------------------
+Install NDK on Linux (not recommmended)
+----------------------------------------
+
+(Use the following SDK to install NDK)
 
 See `<https://developer.android.com/ndk/downloads/index.html>`_
 
@@ -61,14 +63,6 @@ If we don't run ``mv cmdline-tools latest``, it will throw the following error
   Error: Could not determine SDK root.
   Error: Either specify it explicitly with --sdk_root= or move this package into its expected location: <sdk>/cmdline-tools/latest/
 
-Set the following environment variable:
-
-.. code-block:: bash
-
-   export ANDROID_SDK_ROOT=/ceph-fj/fangjun/software/android-sdk/cmdline-tools
-   export PATH=$ANDROID_SDK_ROOT/latest/bin:$PATH
-
-   export ANDROID_HOME=/ceph-fj/fangjun/software/android-sdk/cmdline-tools
 
 .. code-block:: bash
 
@@ -80,3 +74,51 @@ Set the following environment variable:
    # It will create the following directories inside /ceph-fj/fangjun/software/android-sdk/
    #
    # build-tools, emulator, licenses, patcher, platform-tools, platforms, tools
+
+.. code-block:: bash
+
+  $ sdkmanager --list_installed
+  Installed packages:=====================] 100% Fetch remote repository...
+    Path                 | Version | Description                    | Location
+    -------              | ------- | -------                        | -------
+    build-tools;28.0.3   | 28.0.3  | Android SDK Build-Tools 28.0.3 | build-tools/28.0.3
+    emulator             | 31.3.10 | Android Emulator               | emulator
+    patcher;v4           | 1       | SDK Patch Applier v4           | patcher/v4
+    platform-tools       | 33.0.2  | Android SDK Platform-Tools     | platform-tools
+    platforms;android-28 | 6       | Android SDK Platform 28        | platforms/android-28
+
+.. code-block::
+
+   sdkmanager --help
+   yes | sdkmanager --licenses  # to accept or licenses, the decision is saved in a cache file.
+
+Set the following environment variables:
+
+.. code-block:: bash
+
+   export ANDROID_SDK_ROOT=/ceph-fj/fangjun/software/android-sdk
+   export PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$PATH
+
+   export ANDROID_HOME=/ceph-fj/fangjun/software/android-sdk
+
+   # for emulator
+   export PATH=$ANDROID_SDK_ROOT/emulator:$PATH
+
+   # for adb
+   export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH
+
+   # We installed 28.0.3 before
+   export PATH=$ANDROID_SDK_ROOT/build-tools/28.0.3:$PATH # change it for different versions
+
+Now install NDK using ``sdkmanager``:
+
+.. code-block:: bash
+
+   # sdkmanager --list | grep ndk
+   sdkmanager "ndk;21.0.6113669"
+   # it will download android-ndk-r21 and will generate
+   #  android-sdk/ndk/21.0.6113669
+
+   export ANROID_NDK_HOME=$ANDROID_SDK_ROOT/ndk/21.0.6113669
+   export PATH=$ANDROID_NDK_ROOT:$PATH
+
