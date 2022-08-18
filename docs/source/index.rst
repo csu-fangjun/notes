@@ -36,5 +36,6 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    e6870/index
    ncnn/index
    llvm/index
+   android/index
 
 .. github/index
