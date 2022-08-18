@@ -1,0 +1,7 @@
+Android
+=======
+
+.. toctree::
+
+    basics
+    install
