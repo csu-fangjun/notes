@@ -5,6 +5,17 @@ In this note, we describe how to build an executable, how to create
 an emulator, and how to run the executable in the emulator via ``adb push``,
 ``adb shell``.
 
+
+.. literalinclude:: ./code/hello/hello.cc
+   :language: c++
+   :linenos:
+   :caption: ./code/hello/hello.cc
+
+.. literalinclude:: ./code/hello/CMakeLists.txt
+   :language: cmake
+   :linenos:
+   :caption: ./code/hello/CMakeLists
+
 x86
 ---
 
