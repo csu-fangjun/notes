@@ -12,4 +12,6 @@ torch
     quantization/index
     android/index
     onnx/index
+    lstm
+
 
