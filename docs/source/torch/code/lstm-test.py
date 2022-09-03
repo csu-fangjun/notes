@@ -5,7 +5,7 @@ import torch.nn as nn
 
 
 """
-self.lstm = ScaledLSTM(
+self.lstm = LSTM(
     input_size=2,
     hidden_size=5,
     num_layers=1,
