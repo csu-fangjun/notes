@@ -7,3 +7,5 @@ Android
     install
     cmake
     hello
+    android_mk
+    adb

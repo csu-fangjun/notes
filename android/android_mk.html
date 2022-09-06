@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Basics &mdash; notes  documentation</title>
+  <title>Android.mk &mdash; notes  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Installation" href="install.html" />
-    <link rel="prev" title="Android" href="index.html" /> 
+    <link rel="next" title="adb" href="adb.html" />
+    <link rel="prev" title="hello" href="hello.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -64,11 +64,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Android</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cmake.html">cmake</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hello.html">hello</a></li>
-<li class="toctree-l2"><a class="reference internal" href="android_mk.html">Android.mk</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Android.mk</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hello">hello</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="adb.html">adb</a></li>
 </ul>
 </li>
@@ -89,9 +92,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">Android</a> &raquo;</li>
-      <li>Basics</li>
+      <li>Android.mk</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/android/basics.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/android/android_mk.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -99,26 +102,63 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="basics">
-<h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h1>
-<p>There are two tools: <code class="docutils literal notranslate"><span class="pre">NDK</span></code> and <code class="docutils literal notranslate"><span class="pre">SDK</span></code>. Each tool has a version.</p>
-<p>Android has a concept of <code class="docutils literal notranslate"><span class="pre">Android</span> <span class="pre">native</span> <span class="pre">API</span> <span class="pre">level</span></code>.</p>
-<p>There are three environment variables to set:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_NDK_ROOT</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_SDK_ROOT</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_HOME</span></code></p></li>
-</ul>
-</div></blockquote>
+  <section id="android-mk">
+<h1>Android.mk<a class="headerlink" href="#android-mk" title="Permalink to this headline">¶</a></h1>
+<p>See <a class="reference external" href="https://developer.android.com/ndk/guides/android_mk">https://developer.android.com/ndk/guides/android_mk</a></p>
+<section id="hello">
+<h2>hello<a class="headerlink" href="#hello" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/android_mk/hello/jni/foo.cc</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="linenos">2</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;hello world</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">./code/android_mk/hello/jni/Android.mk</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nv">LOCAL_PATH</span> <span class="o">:=</span> <span class="k">$(</span>call my-dir<span class="k">)</span>
+<span class="linenos">2</span><span class="cp">include $(CLEAR_VARS)</span>
+<span class="linenos">3</span><span class="nv">LOCAL_MODULE</span>    <span class="o">:=</span> foo
+<span class="linenos">4</span><span class="nv">LOCAL_SRC_FILES</span> <span class="o">:=</span> foo.cc
+<span class="linenos">5</span><span class="c"># include $(BUILD_SHARED_LIBRARY)</span>
+<span class="linenos">6</span><span class="cp">include $(BUILD_EXECUTABLE)</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">./code/android_mk/hello/jni/Application.mk</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nv">APP_ABI</span> <span class="o">:=</span> x86
+<span class="linenos">2</span><span class="nv">APP_STL</span> <span class="o">:=</span> c++_shared
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">APP_STL</span> <span class="pre">:=</span> <span class="pre">c++_shared</span></code> is to fix the following errors:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ld</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="n">undefined</span> <span class="n">symbol</span><span class="p">:</span> <span class="n">std</span><span class="p">::</span><span class="n">__ndk1</span><span class="p">::</span><span class="n">cout</span>
+</pre></div>
+</div>
+<p>To compile:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> code/android_mk/hello
+ndk-build
+</pre></div>
+</div>
+<p>It will generate two directories in <code class="docutils literal notranslate"><span class="pre">hello</span></code>: <code class="docutils literal notranslate"><span class="pre">libs</span></code> and <code class="docutils literal notranslate"><span class="pre">obj</span></code>..</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>adb push libs/x86/foo /data/local
+adb push libs/x86/libc++_shared.so /data/local
+adb shell
+<span class="nb">cd</span> /data/local
+<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>.
+./foo
+</pre></div>
+</div>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Android" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="install.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="hello.html" class="btn btn-neutral float-left" title="hello" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="adb.html" class="btn btn-neutral float-right" title="adb" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

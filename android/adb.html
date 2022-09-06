@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Basics &mdash; notes  documentation</title>
+  <title>adb &mdash; notes  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Installation" href="install.html" />
-    <link rel="prev" title="Android" href="index.html" /> 
+    <link rel="prev" title="Android.mk" href="android_mk.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -64,12 +63,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Android</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cmake.html">cmake</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hello.html">hello</a></li>
 <li class="toctree-l2"><a class="reference internal" href="android_mk.html">Android.mk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="adb.html">adb</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">adb</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-on-macos">install on macos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-on-windows">install on windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-on-linux">install on Linux</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -89,9 +93,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">Android</a> &raquo;</li>
-      <li>Basics</li>
+      <li>adb</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/android/basics.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/android/adb.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -99,26 +103,33 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="basics">
-<h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h1>
-<p>There are two tools: <code class="docutils literal notranslate"><span class="pre">NDK</span></code> and <code class="docutils literal notranslate"><span class="pre">SDK</span></code>. Each tool has a version.</p>
-<p>Android has a concept of <code class="docutils literal notranslate"><span class="pre">Android</span> <span class="pre">native</span> <span class="pre">API</span> <span class="pre">level</span></code>.</p>
-<p>There are three environment variables to set:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_NDK_ROOT</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_SDK_ROOT</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_HOME</span></code></p></li>
-</ul>
-</div></blockquote>
+  <section id="adb">
+<h1>adb<a class="headerlink" href="#adb" title="Permalink to this headline">¶</a></h1>
+<section id="install-on-macos">
+<h2>install on macos<a class="headerlink" href="#install-on-macos" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://dl.google.com/android/repository/platform-tools-latest-darwin.zip
+<span class="c1"># unzip it and you will find the binary `adb`</span>
+</pre></div>
+</div>
+</section>
+<section id="install-on-windows">
+<h2>install on windows<a class="headerlink" href="#install-on-windows" title="Permalink to this headline">¶</a></h2>
+<p>Go to <a class="reference external" href="https://adbshell.com/downloads">https://adbshell.com/downloads</a> to download it.</p>
+</section>
+<section id="install-on-linux">
+<h2>install on Linux<a class="headerlink" href="#install-on-linux" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip
+<span class="c1"># unzip it</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Android" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="install.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="android_mk.html" class="btn btn-neutral float-left" title="Android.mk" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
