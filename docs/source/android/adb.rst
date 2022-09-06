@@ -1,0 +1,23 @@
+adb
+===
+
+install on macos
+-----------------
+
+.. code-block:: bash
+
+   wget https://dl.google.com/android/repository/platform-tools-latest-darwin.zip
+   # unzip it and you will find the binary `adb`
+
+install on windows
+------------------
+
+Go to `<https://adbshell.com/downloads>`_ to download it.
+
+install on Linux
+----------------
+
+.. code-block:: bash
+
+   wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip
+   # unzip it
