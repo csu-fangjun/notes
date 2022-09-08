@@ -37,5 +37,6 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    ncnn/index
    llvm/index
    android/index
+   qemu/index
 
 .. github/index

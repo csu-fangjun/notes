@@ -1,0 +1,8 @@
+qemu
+====
+
+.. toctree::
+
+    install
+
+
