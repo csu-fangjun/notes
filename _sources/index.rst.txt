@@ -38,5 +38,6 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    llvm/index
    android/index
    qemu/index
+   sox/index
 
 .. github/index
