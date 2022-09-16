@@ -25,11 +25,11 @@ class Foo(nn.Module):
     def __init__(self):
         super().__init__()
         self.lstm = nn.LSTM(
-            input_size=2,
+            input_size=3,
             hidden_size=5,
             num_layers=1,
             bias=True,
-            proj_size=2,
+            proj_size=4,
         )
 
     def forward(self, x, h0, c0):
@@ -49,8 +49,8 @@ class Foo(nn.Module):
 @torch.no_grad()
 def main():
     f = Foo()
-    dim_in = 2
-    dim_proj = 2
+    dim_in = 3
+    dim_proj = 4
     dim_hidden = 5
     x = torch.rand(1, 1, dim_in)
     h0 = torch.rand(1, 1, dim_proj)
@@ -72,6 +72,9 @@ def main():
     b_hi, b_hf, b_hg, b_ho = b_hh.split(5, dim=0)
 
     print(y, hx, cx)
+    print(y.shape)
+    print(hx.shape)
+    print(cx.shape)
 
     i_gate = (x @ w_ii.t() + b_ii + h0 @ w_hi.t() + b_hi).sigmoid()
     f_gate = (x @ w_if.t() + b_if + h0 @ w_hf.t() + b_hf).sigmoid()

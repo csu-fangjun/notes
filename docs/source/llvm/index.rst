@@ -9,4 +9,5 @@ LLVM
   ninja
   doc
   ir
+  install-gcc
 

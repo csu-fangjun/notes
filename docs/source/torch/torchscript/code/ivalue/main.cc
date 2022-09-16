@@ -117,11 +117,48 @@ static void TestVectorOfTensor5() {
   TORCH_CHECK(torch::allclose(r.toTensor(), v[0] + v[1] + v[0] + v[1]));
 }
 
+static void TestVectorOfTensor6() {
+  // List[List[Tensor]]
+  std::vector<torch::Tensor> v;
+  v.push_back(torch::tensor({1, 2}));
+  v.push_back(torch::tensor({3, 4}));
+
+  c10::List<torch::Tensor> ilist(v);
+  torch::IValue ivalue(ilist);
+  TORCH_CHECK(ivalue.tagKind() == "GenericList");
+
+  c10::List<c10::List<torch::Tensor>> ilist2(ilist);
+  ilist2.push_back(ilist);
+  ilist2.push_back(ilist);
+
+  torch::IValue ivalue2(ilist2);
+  TORCH_CHECK(ivalue2.tagKind() == "GenericList");
+
+  c10::List<torch::IValue> a0 = ivalue2.toList();
+  c10::List<c10::List<torch::Tensor>> a1 =
+      c10::impl::toTypedList<c10::List<torch::Tensor>>(a0);
+
+  c10::ArrayRef<torch::IValue> a = ivalue2.toListRef();
+
+  torch::List<torch::Tensor> b =
+      c10::impl::toTypedList<torch::Tensor>(a[0].toList());
+  for (int32_t i = 0; i != b.size(); ++i) {
+    std::cout << b[i] << "\n";
+  }
+  std::vector<std::vector<torch::Tensor>> v2{v};
+  torch::List<torch::List<torch::Tensor>> c;
+  for (auto k : v2) {
+    c10::List<torch::Tensor> dd{torch::ArrayRef<torch::Tensor>(k)};
+    c.push_back(std::move(dd));
+  }
+}
+
 int main() {
   TestVectorOfTensor();
   TestVectorOfTensor2();
   TestVectorOfTensor3();
   TestVectorOfTensor4();
   TestVectorOfTensor5();
+  TestVectorOfTensor6();
   return 0;
 }

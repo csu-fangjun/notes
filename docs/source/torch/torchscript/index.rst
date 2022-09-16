@@ -20,5 +20,9 @@ TorchScript
     ivalue
     method
     type
+    trace
+    node
+    symbol
+    graph
 
 

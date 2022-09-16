@@ -155,6 +155,54 @@ static void TestEmpty() {
   TORCH_CHECK(t.numel() == 3);
 }
 
+static void TestStack() {
+  auto t = torch::empty({6, 5}, torch::kInt);
+  auto a = torch::stack({t, t}, /*dim*/ 1);
+  TORCH_CHECK(a.sizes() == torch::ArrayRef<int64_t>({6, 2, 5}));
+
+  a = torch::stack({t, t}, /*dim*/ 0);
+  TORCH_CHECK(a.sizes() == torch::ArrayRef<int64_t>({2, 6, 5}));
+
+  a = torch::stack({t, t}, /*dim*/ 2);
+  TORCH_CHECK(a.sizes() == torch::ArrayRef<int64_t>({6, 5, 2}));
+}
+
+static void TestUnbind() {
+  auto t = torch::empty({4, 6, 5}, torch::kInt);
+  std::vector<torch::Tensor> v = torch::unbind(t, /*dim*/ 1);
+  TORCH_CHECK(v.size() == t.size(1));
+  for (int32_t i = 0; i != v.size(); ++i) {
+    TORCH_CHECK(v[i].sizes() == torch::ArrayRef<int64_t>({4, 5}));
+  }
+}
+
+static void TestFull() {
+  auto t = torch::full({2, 3}, 10, torch::kInt);
+  const int32_t *p = t.data_ptr<int32_t>();
+  for (int32_t i = 0; i != t.numel(); ++i) {
+    TORCH_CHECK(p[i] == 10);
+  }
+}
+
+static void TestSplit() {
+  auto t = torch::arange(6).reshape({2, 3});
+  std::vector<torch::Tensor> s = t.split(1);
+  TORCH_CHECK(s.size() == 2);
+  TORCH_CHECK(s[0].sizes() == torch::ArrayRef<int64_t>({1, 3}));
+  TORCH_CHECK(s[1].sizes() == torch::ArrayRef<int64_t>({1, 3}));
+
+  s = t.split(1, /*dim*/ 1);
+  TORCH_CHECK(s.size() == 3);
+  TORCH_CHECK(s[0].sizes() == torch::ArrayRef<int64_t>({2, 1}));
+  TORCH_CHECK(s[1].sizes() == torch::ArrayRef<int64_t>({2, 1}));
+  TORCH_CHECK(s[2].sizes() == torch::ArrayRef<int64_t>({2, 1}));
+}
+
+static void TestZeros() {
+  auto t = torch::zeros({2, 3}, torch::kFloat);
+  std::cout << t << "\n";
+}
+
 int main() {
   // TestCommonMethods();
   TestSlice();
@@ -163,6 +211,11 @@ int main() {
   TestDiv();         // rounding_mode is in torch>=1.8.0
   TestRemainder();
   TestEmpty();
+  TestStack();
+  TestUnbind();
+  TestFull();
+  TestSplit();
+  TestZeros();
 
   return 0;
 }

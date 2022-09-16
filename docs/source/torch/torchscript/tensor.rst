@@ -69,3 +69,39 @@ empty
    :linenos:
    :lines: 152-156
    :caption: torch::empty
+
+stack
+^^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 158-168
+   :caption: torch::stack
+
+unbind
+^^^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 170-177
+   :caption: torch::unbind
+
+full
+^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 179-185
+   :caption: torch::full
+
+split
+^^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 187-199
+   :caption: torch::split

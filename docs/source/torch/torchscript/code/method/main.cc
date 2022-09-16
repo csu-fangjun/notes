@@ -25,7 +25,7 @@ static void TestHello() {
   TORCH_CHECK(torch::equal(z, x + y));
 
   std::shared_ptr<torch::jit::Graph> g = method.graph();
-  // see graph/main.cc
+  // see node/main.cc
 }
 
 int main() {
