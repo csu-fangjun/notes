@@ -1,0 +1,24 @@
+
+{ "bizCode": "MNN", "extraInfo": 
+{ "version": "2.1.1" }
+, "oplists": 
+[ 
+{ "main_type": "Input", "main": 
+{ "dtype": "DT_FLOAT", "dformat": "NCHW" }
+, "name": "x.1", "outputIndexes": 
+[ 0 ]
+, "type": "Input", "defaultDimentionFormat": "NHWC" }
+, 
+{ "inputIndexes": 
+[ 0 ]
+, "main_type": "Relu", "main": 
+{ "slope": 0.0 }
+, "name": "2", "outputIndexes": 
+[ 1 ]
+, "type": "ReLU", "defaultDimentionFormat": "NCHW" }
+ ]
+, "outputName": 
+[ "2" ]
+, "preferForwardType": "CPU", "sourceType": "TORCH", "tensorName": 
+[ "x.1", "2" ]
+, "tensorNumber": 0, "usage": "INFERENCE", "mnn_uuid": "d24b26b1-14c8-42cb-9ce1-2a9b867714e9" }
