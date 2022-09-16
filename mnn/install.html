@@ -18,6 +18,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Hello" href="hello.html" />
     <link rel="prev" title="MNN" href="index.html" /> 
 </head>
 
@@ -66,7 +67,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">MNN</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Install</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Install</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#python">Python</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hello.html">Hello</a></li>
 </ul>
 </li>
 </ul>
@@ -107,61 +112,26 @@ cmake  -DMNN_BUILD_CONVERTER<span class="o">=</span>ON -DMNN_SUPPORT_DEPRECATED_
 make -j <span class="m">10</span>
 </pre></div>
 </div>
-<p>Some changes:</p>
-<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/CMakeLists.txt b/CMakeLists.txt</span><span class="w"></span>
-<span class="gh">index 10071c7c..bab93ac9 100644</span><span class="w"></span>
-<span class="gd">--- a/CMakeLists.txt</span><span class="w"></span>
-<span class="gi">+++ b/CMakeLists.txt</span><span class="w"></span>
-<span class="gu">@@ -40,8 +40,8 @@ option(MNN_BUILD_DEMO &quot;Build demo/exec or not&quot; OFF)</span><span class="w"></span>
-<span class="w"> </span>option(MNN_BUILD_TOOLS &quot;Build tools/cpp or not&quot; ON)<span class="w"></span>
-<span class="w"> </span>option(MNN_BUILD_QUANTOOLS &quot;Build Quantized Tools or not&quot; OFF)<span class="w"></span>
-<span class="w"> </span>option(MNN_EVALUATION &quot;Build Evaluation Tools or not&quot; OFF)<span class="w"></span>
-<span class="gd">-option(MNN_BUILD_CONVERTER &quot;Build Converter&quot; OFF)</span><span class="w"></span>
-<span class="gd">-option(MNN_SUPPORT_DEPRECATED_OP &quot;Enable MNN&#39;s tflite quantized op&quot; ON)</span><span class="w"></span>
-<span class="gi">+option(MNN_BUILD_CONVERTER &quot;Build Converter&quot; ON)</span><span class="w"></span>
-<span class="gi">+option(MNN_SUPPORT_DEPRECATED_OP &quot;Enable MNN&#39;s tflite quantized op&quot; OFF)</span><span class="w"></span>
-<span class="w"> </span>option(MNN_DEBUG_MEMORY &quot;MNN Debug Memory Access&quot; OFF)<span class="w"></span>
-<span class="w"> </span>option(MNN_DEBUG_TENSOR_SIZE &quot;Enable Tensor Size&quot; OFF)<span class="w"></span>
-<span class="w"> </span>option(MNN_GPU_TRACE &quot;Enable MNN Gpu Debug&quot; OFF)<span class="w"></span>
-<span class="gu">@@ -444,6 +444,8 @@ if (NOT MSVC)</span><span class="w"></span>
-<span class="w"> </span>    set(CMAKE_C_FLAGS &quot;${CMAKE_C_FLAGS} -fstrict-aliasing -ffunction-sections -fdata-sections -ffast-math&quot;)<span class="w"></span>
-<span class="w"> </span>endif()<span class="w"></span>
-
-<span class="gi">+set(CMAKE_CXX_FLAGS &quot;${CMAKE_CXX_FLAGS}  -D_GLIBCXX_USE_CXX11_ABI=0 &quot;)</span><span class="w"></span>
-<span class="gi">+</span><span class="w"></span>
-<span class="w"> </span># Metal<span class="w"></span>
-<span class="w"> </span>set(MNN_DEPS &quot;&quot;)<span class="w"></span>
-<span class="w"> </span>set(MNN_EXTRA_DEPENDS &quot;&quot;)<span class="w"></span>
-
-<span class="gh">diff --git a/tools/converter/CMakeLists.txt b/tools/converter/CMakeLists.txt</span><span class="w"></span>
-<span class="gh">index a00b7596..d5dff481 100644</span><span class="w"></span>
-<span class="gd">--- a/tools/converter/CMakeLists.txt</span><span class="w"></span>
-<span class="gi">+++ b/tools/converter/CMakeLists.txt</span><span class="w"></span>
-<span class="gu">@@ -2,7 +2,7 @@ IF(MNN_BUILD_CONVERTER)</span><span class="w"></span>
-<span class="w"> </span>  SET( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/../../)<span class="w"></span>
-<span class="w"> </span>  option(TF_CONVERT_ORIGIN &quot;Fall Back to Origin Model Converter&quot; OFF)<span class="w"></span>
-<span class="w"> </span>  option(TFMODEL_OPTIMIZE &quot;Enable tensorflow model optimizer&quot; OFF)<span class="w"></span>
-<span class="gd">-  option(MNN_BUILD_TORCH &quot;Build Converter support TorchScript.&quot; OFF)</span><span class="w"></span>
-<span class="gi">+  option(MNN_BUILD_TORCH &quot;Build Converter support TorchScript.&quot; ON)</span><span class="w"></span>
-<span class="w"> </span>  IF(MNN_BUILD_PROTOBUFFER)<span class="w"></span>
-<span class="w"> </span>      SET(Protobuf_LIBRARIES libprotobuf)<span class="w"></span>
-<span class="w"> </span>      include_directories(${CMAKE_CURRENT_LIST_DIR}/../../3rd_party/protobuf/src)<span class="w"></span>
-
-<span class="gh">diff --git a/tools/converter/source/torch/CMakeLists.txt b/tools/converter/source/torch/CMakeLists.txt</span><span class="w"></span>
-<span class="gh">index e8eca41e..9b9abf85 100644</span><span class="w"></span>
-<span class="gd">--- a/tools/converter/source/torch/CMakeLists.txt</span><span class="w"></span>
-<span class="gi">+++ b/tools/converter/source/torch/CMakeLists.txt</span><span class="w"></span>
-<span class="gu">@@ -1,7 +1,7 @@</span><span class="w"></span>
-<span class="w"> </span>file(GLOB TORCH_SRC ${CMAKE_CURRENT_LIST_DIR}/*.cpp ${CMAKE_CURRENT_LIST_DIR}/*.hpp)<span class="w"></span>
-<span class="w"> </span>add_library(MNNConverterTorch OBJECT ${TORCH_SRC})<span class="w"></span>
-
-<span class="gd">-IF (CMAKE_SYSTEM_NAME MATCHES &quot;Linux&quot; AND &quot;${CMAKE_CXX_COMPILER_ID}&quot; STREQUAL &quot;GNU&quot;)</span><span class="w"></span>
-<span class="gi">+IF (NOT CMAKE_SYSTEM_NAME MATCHES &quot;Linux&quot; AND &quot;${CMAKE_CXX_COMPILER_ID}&quot; STREQUAL &quot;GNU&quot;)</span><span class="w"></span>
-<span class="w"> </span>    SET(LIB_TORCH_PATH &quot;${CMAKE_CURRENT_BINARY_DIR}/libtorch/share/cmake&quot;)<span class="w"></span>
-<span class="w"> </span>    IF (EXISTS &quot;/etc/redhat-release&quot;)<span class="w"></span>
-<span class="w"> </span>        # redhat force _GLIBCXX_USE_CXX11_ABI=0<span class="w"></span>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">CPLUS_INCLUDE_PATH</span></code> and <code class="docutils literal notranslate"><span class="pre">C_INCLUDE_PATH</span></code> to add additional paths
+for searching.</p>
+</div>
+<section id="python">
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference external" href="https://mnn-docs.readthedocs.io/en/latest/compile/pymnn.html">https://mnn-docs.readthedocs.io/en/latest/compile/pymnn.html</a></p>
+<p>To build a python package, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> pymnn/pip_package/
+python3 ./build_deps.py
+python3 setup.py bdist_wheel --version <span class="m">2</span>.1.1
+<span class="c1"># We can get the version from include/MNN/MNNDefine.h</span>
+<span class="c1"># or we can give it an arbitrary version string.</span>
+pip install ./dist/MNN-2.1.1-cp38-cp38-linux_x86_64.whl
+<span class="nb">cd</span> <span class="nv">$HOME</span>
+python3 -c <span class="s2">&quot;import MNN; print(dir(MNN))&quot;</span>
 </pre></div>
 </div>
+</section>
 </section>
 
 
@@ -169,6 +139,7 @@ make -j <span class="m">10</span>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="MNN" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="hello.html" class="btn btn-neutral float-right" title="Hello" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
