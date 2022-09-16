@@ -39,5 +39,6 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    android/index
    qemu/index
    sox/index
+   mnn/index
 
 .. github/index

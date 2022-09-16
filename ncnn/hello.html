@@ -70,6 +70,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
 </ul>
 
         </div>
@@ -136,6 +137,16 @@ cmake -DCMAKE_PREFIX_PATH<span class="o">=</span>/ceph-fj/fangjun/software/proto
 <span class="linenos">24</span>     bool success = message-&gt;ParseFromCodedStream(&amp;codedstr);
 </pre></div>
 </div>
+</div>
+<p>To install the Python package:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ncnn
+mkdir build
+<span class="nb">cd</span> build
+cmake ..
+make -j
+<span class="nb">cd</span> ..
+pip install .
+</pre></div>
 </div>
 </section>
 

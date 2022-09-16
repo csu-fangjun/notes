@@ -15,3 +15,17 @@ We have to make the following changes:
 .. literalinclude:: ./code/hello/7b4e77.diff
    :linenos:
    :caption: ./code/hello/7b4e77.diff
+
+
+To install the Python package:
+
+.. code-block:: bash
+
+   cd ncnn
+   mkdir build
+   cd build
+   cmake ..
+   make -j
+   cd ..
+   pip install .
+

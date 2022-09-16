@@ -7,3 +7,4 @@ ncnn
 
    hello
    mat
+   pnnx/index
