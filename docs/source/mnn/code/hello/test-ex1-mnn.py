@@ -9,7 +9,7 @@ def main():
     interpreter = MNN.Interpreter("ex1.mnn")
 
     config = {}
-    #  config["precision"] = "high"  # low, high, normal
+    config["precision"] = "low"  # low, high, normal
     config["backend"] = "CPU"
     #  config["thread"] = 1
     session = interpreter.createSession(config)

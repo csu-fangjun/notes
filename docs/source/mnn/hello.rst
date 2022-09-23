@@ -51,6 +51,23 @@ To convert ``ex1.json`` back to a ``.mnn`` file, use:
 
   MNNRevert2Buffer ex1.json ex11.mnn
 
+To show the information of the model:
+
+.. code-block:: bash
+
+   MNNConvert --framework MNN --modelFile ./ex1.mnn --info
+
+It prints:
+
+.. code-block:: bash
+
+  Model default dimensionFormat is NCHW
+  Model Inputs:
+  [ x.1 ]: dimensionFormat: NCHW, size: [ ], type is float
+  Model Outputs:
+  [ 2 ]
+  Model Version: 2.1.1
+
 To run it with ``MNN`` in Python:
 
 .. literalinclude:: ./code/hello/test-ex1-mnn.py
@@ -66,3 +83,4 @@ It prints:
   input_tensor.getNumpyData() [ 1.  -2.5  3.2]
   output_tensor.getNumpyData() [1.  0.  3.2]
   output_data.getNumpyData() [1.  0.  3.2]
+
