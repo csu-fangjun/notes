@@ -4,4 +4,5 @@ websocketpp
 .. toctree::
 
     install
+    hello
 
