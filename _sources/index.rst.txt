@@ -43,5 +43,6 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    simd/index
    asio/index
    websocketpp/index
+   os/index
 
 .. github/index

@@ -1,0 +1,7 @@
+Operating systems
+=================
+
+.. toctree::
+
+    macos
+
