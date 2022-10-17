@@ -4,3 +4,4 @@ asio
 .. toctree::
 
     install
+    hello

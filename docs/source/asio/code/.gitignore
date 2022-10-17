@@ -1,0 +1,7 @@
+# ignore all
+*
+
+# Unignore all with extensions
+!*.cc
+!Makefile
+
