@@ -37,3 +37,18 @@ Hello
    :language: cpp
    :linenos:
    :caption: ./code/6-timer-async-thread-with-synchronization.cc
+
+.. literalinclude:: ./code/7-daytime-sync-client.cc
+   :language: cpp
+   :linenos:
+   :caption: ./code/7-daytime-sync-client.cc
+
+.. literalinclude:: ./code/8-daytime-sync-server.cc
+   :language: cpp
+   :linenos:
+   :caption: ./code/8-daytime-sync-server.cc
+
+.. literalinclude:: ./code/9-daytime-async-server.cc
+   :language: cpp
+   :linenos:
+   :caption: ./code/9-daytime-async-server.cc
