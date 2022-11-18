@@ -105,3 +105,30 @@ split
    :linenos:
    :lines: 187-199
    :caption: torch::split
+
+zeros
+^^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 201-203
+   :caption: torch::zeros
+
+cat
+^^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 206-211
+   :caption: torch::cat
+
+division
+^^^^^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 213-231
+   :caption: test division

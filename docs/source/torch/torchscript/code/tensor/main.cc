@@ -203,6 +203,33 @@ static void TestZeros() {
   std::cout << t << "\n";
 }
 
+static void TestCat() {
+  auto t = torch::arange(24).reshape({2, 3, 4});
+  std::vector<torch::Tensor> v(5, t);
+  auto p = torch::cat(v, /*dim*/ 1);
+  TORCH_CHECK(p.sizes() == torch::ArrayRef<int64_t>({2, 3 * 5, 4}));
+}
+
+static void TestDivision() {
+  auto t = torch::arange(4).to(torch::kInt);
+  auto b = t / 2;
+  TORCH_CHECK(b.scalar_type() == torch::kFloat);
+
+  const float *p = b.data_ptr<float>();
+  TORCH_CHECK(p[0] == 0 / 2.);
+  TORCH_CHECK(p[1] == 1 / 2.);
+  TORCH_CHECK(p[2] == 2 / 2.);
+  TORCH_CHECK(p[3] == 3 / 2.);
+
+  auto c = b.to(torch::kInt);
+
+  const int32_t *q = c.data_ptr<int32_t>();
+  TORCH_CHECK(q[0] == 0 / 2);
+  TORCH_CHECK(q[1] == 1 / 2);
+  TORCH_CHECK(q[2] == 2 / 2);
+  TORCH_CHECK(q[3] == 3 / 2);
+}
+
 int main() {
   // TestCommonMethods();
   TestSlice();
@@ -216,6 +243,8 @@ int main() {
   TestFull();
   TestSplit();
   TestZeros();
+  TestCat();
+  TestDivision();
 
   return 0;
 }
