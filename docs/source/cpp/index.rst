@@ -3,7 +3,10 @@ C++
 
 .. toctree::
 
+    cppcon
+    meetingcpp
     move-constructor
     getline
-    cpp20/index
+    ratio
+    chrono
 
