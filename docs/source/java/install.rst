@@ -38,3 +38,9 @@ And then set the following environment variables:
 
   export JAVA_HOME=/ceph-fj/fangjun/software/jdk-17.0.3
   export PATH=$JAVA_HOME/bin:$JAVA_HOME
+
+The source code of ``JDK`` can be download from
+
+.. code-block:: bash
+
+   git clone https://github.com/openjdk/jdk.git

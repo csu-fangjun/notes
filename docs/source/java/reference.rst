@@ -1,6 +1,7 @@
 Reference
 =========
 
+- `<https://www.w3schools.com/java/default.asp>`_
 - `<https://docs.oracle.com/javase/tutorial/>`_
 - `<https://docs.oracle.com/en/java/javase/17/docs/api/index.html>`_
 
