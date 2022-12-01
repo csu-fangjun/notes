@@ -4,6 +4,10 @@
 #include "mat.h"
 #include "net.h"
 
+void TestNet();
+void TestParamDict();
+void TestDataReader();
+
 template <typename T = float>
 void print_mat_1d(ncnn::Mat &m, int start_w, int end_w) {
   const T *p = m;
@@ -74,6 +78,9 @@ static void TestRelu() {
 
 int main() {
   TestRelu();
+  TestNet();
+  TestParamDict();
+  TestDataReader();
   return 0;
   int c = 1;
   int h = 6;
