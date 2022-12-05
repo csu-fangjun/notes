@@ -67,6 +67,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">qemu</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Install</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#qemu-arm">qemu-arm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qemu-aarch64">qemu-aarch64</a></li>
 </ul>
 </li>
 </ul>
@@ -114,14 +115,15 @@
 <h2>qemu-arm<a class="headerlink" href="#qemu-arm" title="Permalink to this headline">¶</a></h2>
 <p>Refer to <a class="reference external" href="https://github.com/Tencent/ncnn/blob/master/.github/workflows/linux-arm-cpu-gcc.yml">https://github.com/Tencent/ncnn/blob/master/.github/workflows/linux-arm-cpu-gcc.yml</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># To generate only qemu-arm</span>
-./configure --prefix<span class="o">=</span>/ceph-fj/fangjun/software/qemu/ --target-list<span class="o">=</span>arm-linux-user --disable-system
+./configure --prefix<span class="o">=</span>/ceph-fj/fangjun/software/qemu/ --target-list<span class="o">=</span>arm-linux-user,aarch64-linux-user --disable-system
 make -j10
 
-<span class="c1"># It genertates the executable: ./build/qemu-arm</span>
+<span class="c1"># It genertates the executable: ./build/qemu-arm and ./build/qemu-aarch64</span>
 
 <span class="c1"># If we run `make install`, it will generate</span>
 <span class="c1">#</span>
 <span class="c1"># /ceph-fj/fangjun/software/qemu/bin/qemu-arm</span>
+<span class="c1"># /ceph-fj/fangjun/software/qemu/bin/qemu-aarch64</span>
 <span class="c1">#</span>
 <span class="c1"># Add it to PATH and use it!</span>
 </pre></div>
@@ -157,6 +159,42 @@ tar xvf /path/to/gcc-arm-8.3-2019.03-x86_64-arm-linux-gnueabihf.tar.xz
 </div>
 <p>Now we can restart:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./build/qemu-arm -B 0x10000000 /path/to/sherpa-ncnn
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/ceph-fj/fangjun/software/qemu/bin:<span class="nv">$PATH</span>
+<span class="nb">export</span> <span class="nv">QEMU_LD_PREFIX</span><span class="o">=</span>/ceph-fj/fangjun/software/gcc-arm-8.3-2019.03-x86_64-arm-linux-gnueabihf/arm-linux-gnueabihf/libc
+
+qemu-arm -B 0x10000000 ./build-arm-linux-gnueabihf/bin/sherpa-ncnn <span class="se">\</span>
+  ./sherpa-ncnn-2022-09-05/tokens.txt <span class="se">\</span>
+  ./sherpa-ncnn-2022-09-05/bar/encoder_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.param <span class="se">\</span>
+  ./sherpa-ncnn-2022-09-05/bar/encoder_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.bin <span class="se">\</span>
+  ./sherpa-ncnn-2022-09-05/bar/decoder_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.param <span class="se">\</span>
+  ./sherpa-ncnn-2022-09-05/bar/decoder_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.bin <span class="se">\</span>
+  ./sherpa-ncnn-2022-09-05/bar/joiner_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.param <span class="se">\</span>
+  ./sherpa-ncnn-2022-09-05/bar/joiner_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.bin <span class="se">\</span>
+  ./test_wavs/1221-135766-0002.wav
+</pre></div>
+</div>
+</section>
+<section id="qemu-aarch64">
+<h2>qemu-aarch64<a class="headerlink" href="#qemu-aarch64" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://releases.linaro.org/components/toolchain/binaries/latest-7/aarch64-linux-gnu/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz
+<span class="nb">cd</span> /ceph-fj/fangjun/software
+tar xvf /path/to/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/ceph-fj/fangjun/software/qemu/bin:<span class="nv">$PATH</span>
+<span class="nb">export</span> <span class="nv">QEMU_LD_PREFIX</span><span class="o">=</span>/ceph-fj/fangjun/software/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/aarch64-linux-gnu/libc
+
+qemu-aarch64 -B 0x10000000 ./build-aarch64-linux-gnu/bin/sherpa-ncnn <span class="se">\</span>
+  ./sherpa-ncnn-2022-09-05/tokens.txt <span class="se">\</span>
+  ./sherpa-ncnn-2022-09-05/bar/encoder_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.param <span class="se">\</span>
+  ./sherpa-ncnn-2022-09-05/bar/encoder_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.bin <span class="se">\</span>
+  ./sherpa-ncnn-2022-09-05/bar/decoder_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.param <span class="se">\</span>
+  ./sherpa-ncnn-2022-09-05/bar/decoder_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.bin <span class="se">\</span>
+  ./sherpa-ncnn-2022-09-05/bar/joiner_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.param <span class="se">\</span>
+  ./sherpa-ncnn-2022-09-05/bar/joiner_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.bin <span class="se">\</span>
+  ./test_wavs/1221-135766-0002.wav
 </pre></div>
 </div>
 </section>
