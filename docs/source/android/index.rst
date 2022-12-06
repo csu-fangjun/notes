@@ -3,6 +3,7 @@ Android
 
 .. toctree::
 
+    kotlin/index
     basics
     install
     cmake
