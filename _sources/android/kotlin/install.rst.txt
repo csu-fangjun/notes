@@ -63,5 +63,10 @@ Usage 2
 
    # It can be run using:
    java -jar hello.jar
+   kotlin -classpath ./hello.jar HelloKt
 
 
+kotlinc-jvm
+-----------
+
+To run kotlin inside an interactive shell.

@@ -67,7 +67,10 @@
 <li class="toctree-l2"><a class="reference internal" href="ninja.html">ninja</a></li>
 <li class="toctree-l2"><a class="reference internal" href="doc.html">Documentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ir.html">Intermediate representation</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Install GCC</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Install GCC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-conda">Using conda</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
@@ -123,6 +126,13 @@ make install
 <span class="nb">export</span> <span class="nv">CPLUS_INCLUDE_PATH</span><span class="o">=</span><span class="nv">$gcc_dir</span>/include
 </pre></div>
 </div>
+<section id="using-conda">
+<h2>Using conda<a class="headerlink" href="#using-conda" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge <span class="nv">gcc</span><span class="o">==</span><span class="m">9</span>.5.0
+conda install -c conda-forge <span class="nv">gxx</span><span class="o">==</span><span class="m">9</span>.5.0
+</pre></div>
+</div>
+</section>
 </section>
 
 
