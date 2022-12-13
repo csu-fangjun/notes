@@ -1,7 +1,8 @@
-KFBANK_INSTALL_DIR := /ceph-fj/fangjun/open-source/kaldi-native-fbank/build/install/
+KFBANK_INSTALL_DIR := /ceph-fj/fangjun/open-source/kaldi-native-fbank/build/install
 CXXFLAGS := -I $(JAVA_HOME)/include
 CXXFLAGS += -I $(JAVA_HOME)/include/linux
 CXXFLAGS += -I $(KFBANK_INSTALL_DIR)/include
+CXXFLAGS += -Wall
 
 LDFLAGS := -L $(KFBANK_INSTALL_DIR)/lib -lkaldi-native-fbank-core
 LDFLAGS += -Wl,-rpath,$(KFBANK_INSTALL_DIR)/lib

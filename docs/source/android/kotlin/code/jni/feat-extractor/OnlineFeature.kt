@@ -31,25 +31,44 @@ data class FbankOptions(
   var htk_compat: Boolean = false,
   var use_log_fbank: Boolean = true,
   var use_power: Boolean = true,
-) {
-  init {
-    mel_opts.num_bins = 23
-  }
-}
+)
 
-class FbankComputer(var opts: FbankOptions) {
-  var ptr: Long
+
+class OnlineFbank(var opts: FbankOptions) {
+  private var ptr: Long
 
   init {
     ptr = new(opts)
+    println("ptr: $ptr")
   }
 
   protected fun finalize() {
     delete(ptr)
   }
 
+  val dim: Int
+      get() = dim(ptr)
+
+  val frameShiftInSeconds: Float
+      get() = frameShiftInSeconds(ptr)
+
+  val numFramesReady: Int
+      get() = numFramesReady(ptr)
+
+  fun isLastFrame(i: Int) :Boolean = isLastFrame(ptr, i)
+  fun inputFinished() = inputFinished(ptr)
+  fun acceptWaveform(samples: FloatArray) = acceptWaveform(ptr, samples, opts.frame_opts.samp_freq)
+  fun getFrame(i: Int): FloatArray = getFrame(ptr, i)
+
   private external fun new(opts: FbankOptions): Long
   private external fun delete(ptr: Long)
+  private external fun dim(ptr: Long): Int
+  private external fun frameShiftInSeconds(ptr: Long): Float
+  private external fun numFramesReady(ptr: Long): Int
+  private external fun isLastFrame(ptr: Long, i: Int): Boolean
+  private external fun inputFinished(ptr: Long)
+  private external fun acceptWaveform(ptr: Long, samples: FloatArray, sample_rate: Float)
+  private external fun getFrame(ptr: Long, i: Int): FloatArray
 
   companion object {
     init {

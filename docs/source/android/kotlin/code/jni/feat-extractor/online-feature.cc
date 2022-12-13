@@ -2,8 +2,8 @@
 #include "kaldi-native-fbank/csrc/online-feature.h"
 #include <iostream>
 
-JNIEXPORT jlong JNICALL Java_FbankComputer_new(JNIEnv *env, jobject /*obj*/,
-                                               jobject opts) {
+JNIEXPORT jlong JNICALL Java_OnlineFbank_new(JNIEnv *env, jobject /*obj*/,
+                                             jobject opts) {
   jclass cls = env->GetObjectClass(opts);
   jfieldID fid;
 
@@ -98,12 +98,64 @@ JNIEXPORT jlong JNICALL Java_FbankComputer_new(JNIEnv *env, jobject /*obj*/,
   fid = env->GetFieldID(mel_opts_cls, "htk_mode", "Z");
   fbank_opts.mel_opts.htk_mode = env->GetBooleanField(mel_opts, fid);
 
-  auto computer = new knf::FbankComputer(fbank_opts);
+  auto online_fbank = new knf::OnlineFbank(fbank_opts);
 
-  return (jlong)computer;
+  return (jlong)online_fbank;
 }
 
-JNIEXPORT void JNICALL Java_FbankComputer_delete(JNIEnv *env, jobject obj,
-                                                 jlong ptr) {
-  delete reinterpret_cast<knf::FbankComputer *>(ptr);
+JNIEXPORT void JNICALL Java_OnlineFbank_delete(JNIEnv *env, jobject obj,
+                                               jlong ptr) {
+  delete reinterpret_cast<knf::OnlineFbank *>(ptr);
+}
+
+JNIEXPORT jint JNICALL Java_OnlineFbank_dim(JNIEnv *env, jobject obj,
+                                            jlong ptr) {
+  return reinterpret_cast<const knf::OnlineFbank *>(ptr)->Dim();
+}
+
+JNIEXPORT jfloat JNICALL Java_OnlineFbank_frameShiftInSeconds(JNIEnv *env,
+                                                              jobject obj,
+                                                              jlong ptr) {
+  return reinterpret_cast<const knf::OnlineFbank *>(ptr)->FrameShiftInSeconds();
+}
+
+JNIEXPORT jint JNICALL Java_OnlineFbank_numFramesReady(JNIEnv *env, jobject obj,
+                                                       jlong ptr) {
+  return reinterpret_cast<const knf::OnlineFbank *>(ptr)->NumFramesReady();
+}
+
+JNIEXPORT jboolean JNICALL Java_OnlineFbank_isLastFrame(JNIEnv *env,
+                                                        jobject obj, jlong ptr,
+                                                        jint i) {
+  return reinterpret_cast<const knf::OnlineFbank *>(ptr)->IsLastFrame(i);
+}
+
+JNIEXPORT void JNICALL Java_OnlineFbank_inputFinished(JNIEnv *env, jobject obj,
+                                                      jlong ptr) {
+  reinterpret_cast<knf::OnlineFbank *>(ptr)->InputFinished();
+}
+
+JNIEXPORT void JNICALL Java_OnlineFbank_acceptWaveform(JNIEnv *env, jobject obj,
+                                                       jlong ptr,
+                                                       jfloatArray samples,
+                                                       jfloat sample_rate) {
+  jfloat *p = env->GetFloatArrayElements(samples, nullptr);
+  jsize n = env->GetArrayLength(samples);
+
+  reinterpret_cast<knf::OnlineFbank *>(ptr)->AcceptWaveform(sample_rate, p, n);
+
+  env->ReleaseFloatArrayElements(samples, p, JNI_ABORT);
+}
+
+JNIEXPORT jfloatArray JNICALL Java_OnlineFbank_getFrame(JNIEnv *env,
+                                                        jobject obj, jlong ptr,
+                                                        jint i) {
+  auto online_fbank = reinterpret_cast<const knf::OnlineFbank *>(ptr);
+  auto frame = online_fbank->GetFrame(i);
+  auto n = online_fbank->Dim();
+
+  jfloatArray ans = env->NewFloatArray(n);
+  env->SetFloatArrayRegion(ans, 0, n, frame);
+
+  return ans;
 }
