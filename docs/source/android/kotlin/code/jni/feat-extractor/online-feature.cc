@@ -1,6 +1,5 @@
 #include "online-feature.h"
 #include "kaldi-native-fbank/csrc/online-feature.h"
-#include <iostream>
 
 JNIEXPORT jlong JNICALL Java_OnlineFbank_new(JNIEnv *env, jobject /*obj*/,
                                              jobject opts) {

@@ -72,7 +72,7 @@ class OnlineFbank(var opts: FbankOptions) {
 
   companion object {
     init {
-      System.loadLibrary("online-feature")
+      System.loadLibrary("sherpa-ncnn")
     }
   }
 }
