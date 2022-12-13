@@ -151,10 +151,30 @@ JNIEXPORT jfloatArray JNICALL Java_OnlineFbank_getFrame(JNIEnv *env,
                                                         jint i) {
   auto online_fbank = reinterpret_cast<const knf::OnlineFbank *>(ptr);
   auto frame = online_fbank->GetFrame(i);
-  auto n = online_fbank->Dim();
+  auto dim = online_fbank->Dim();
 
-  jfloatArray ans = env->NewFloatArray(n);
-  env->SetFloatArrayRegion(ans, 0, n, frame);
+  jfloatArray ans = env->NewFloatArray(dim);
+  env->SetFloatArrayRegion(ans, 0, dim, frame);
+
+  return ans;
+}
+
+JNIEXPORT jfloatArray JNICALL Java_OnlineFbank_getFrames(JNIEnv *env,
+                                                         jobject /*obj*/,
+                                                         jlong ptr, jint start,
+                                                         jint n) {
+  auto online_fbank = reinterpret_cast<const knf::OnlineFbank *>(ptr);
+  auto dim = online_fbank->Dim();
+
+  if (start + n > online_fbank->NumFramesReady()) {
+    return nullptr;
+  }
+
+  jfloatArray ans = env->NewFloatArray(n * dim);
+  for (int32_t i = 0; i != n; ++i) {
+    auto frame = online_fbank->GetFrame(start + i);
+    env->SetFloatArrayRegion(ans, i * dim, dim, frame);
+  }
 
   return ans;
 }

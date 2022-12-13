@@ -38,6 +38,11 @@ JNIEXPORT jfloatArray JNICALL Java_OnlineFbank_getFrame(JNIEnv *env,
                                                         jobject obj, jlong ptr,
                                                         jint i);
 
+JNIEXPORT jfloatArray JNICALL Java_OnlineFbank_getFrames(JNIEnv *env,
+                                                         jobject /*obj*/,
+                                                         jlong ptr, jint start,
+                                                         jint n);
+
 #ifdef __cplusplus
 }
 #endif

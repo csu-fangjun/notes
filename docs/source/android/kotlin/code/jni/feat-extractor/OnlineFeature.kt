@@ -39,7 +39,6 @@ class OnlineFbank(var opts: FbankOptions) {
 
   init {
     ptr = new(opts)
-    println("ptr: $ptr")
   }
 
   protected fun finalize() {
@@ -59,6 +58,7 @@ class OnlineFbank(var opts: FbankOptions) {
   fun inputFinished() = inputFinished(ptr)
   fun acceptWaveform(samples: FloatArray) = acceptWaveform(ptr, samples, opts.frame_opts.samp_freq)
   fun getFrame(i: Int): FloatArray = getFrame(ptr, i)
+  fun getFrames(start: Int, n: Int): FloatArray = getFrames(ptr, start, n)
 
   private external fun new(opts: FbankOptions): Long
   private external fun delete(ptr: Long)
@@ -69,6 +69,7 @@ class OnlineFbank(var opts: FbankOptions) {
   private external fun inputFinished(ptr: Long)
   private external fun acceptWaveform(ptr: Long, samples: FloatArray, sample_rate: Float)
   private external fun getFrame(ptr: Long, i: Int): FloatArray
+  private external fun getFrames(ptr: Long, start: Int, n: Int): FloatArray
 
   companion object {
     init {
