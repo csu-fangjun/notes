@@ -4,6 +4,8 @@ Hello jni
 References:
 
   - `<https://matt-moore.medium.com/kotlin-jni-for-native-code-835e93af7ddf>`_
+  - `<https://docs.oracle.com/javase/7/docs/technotes/guides/jni/spec/functions.html>`_
+  - `<https://developer.android.com/training/articles/perf-jni.html#primitive-arrays>`_
 
 .. literalinclude:: ./code/jni/hello/Makefile
    :language: makefile
@@ -23,6 +25,10 @@ describe the specification:
 .. literalinclude:: ./code/jni/hello/hello.h
    :language: c++
    :caption: ./code/jni/hello/hello.h
+
+The first argument must be ``JNIEnv *env``. Since it is a non-static kotlin method,
+the second argument is a reference to the object. Otherwise, it is a reference
+to the class.
 
 .. literalinclude:: ./code/jni/hello/hello.cc
    :language: c++
