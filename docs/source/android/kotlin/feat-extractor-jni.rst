@@ -16,6 +16,14 @@ for kotlin.
    :language: c++
    :caption: ./code/jni/feat-extractor/online-feature.cc
 
+.. literalinclude:: ./code/jni/feat-extractor/sherpa-ncnn.h
+   :language: c++
+   :caption: ./code/jni/feat-extractor/sherpa-ncnn.h
+
+.. literalinclude:: ./code/jni/feat-extractor/sherpa-ncnn.cc
+   :language: c++
+   :caption: ./code/jni/feat-extractor/sherpa-ncnn.cc
+
 .. literalinclude:: ./code/jni/feat-extractor/Main.kt
    :language: java
    :caption: ./code/jni/feat-extractor/Main.kt
@@ -23,3 +31,11 @@ for kotlin.
 .. literalinclude:: ./code/jni/feat-extractor/OnlineFeature.kt
    :language: java
    :caption: ./code/jni/feat-extractor/OnlineFeature.kt
+
+.. literalinclude:: ./code/jni/feat-extractor/WaveReader.kt
+   :language: java
+   :caption: ./code/jni/feat-extractor/WaveReader.kt
+
+.. literalinclude:: ./code/jni/feat-extractor/Model.kt
+   :language: java
+   :caption: ./code/jni/feat-extractor/Model.kt
