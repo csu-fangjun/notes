@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Binding kaldi-native-fbank for kotlin &mdash; notes  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Basics" href="../basics.html" />
+    <link rel="prev" title="Hello jni" href="hello-jni.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Android</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">kotlin</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hello-jni.html">Hello jni</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Binding kaldi-native-fbank for kotlin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../basics.html">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cmake.html">cmake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hello.html">hello</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../android_mk.html">Android.mk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adb.html">adb</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../os/index.html">Operating systems</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Android</a> &raquo;</li>
+          <li><a href="index.html">kotlin</a> &raquo;</li>
+      <li>Binding kaldi-native-fbank for kotlin</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/android/kotlin/feat-extractor-jni.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="binding-kaldi-native-fbank-for-kotlin">
+<h1>Binding kaldi-native-fbank for kotlin<a class="headerlink" href="#binding-kaldi-native-fbank-for-kotlin" title="Permalink to this headline">¶</a></h1>
+<p>This note shows how to bind <a class="reference external" href="https://github.com/csukuangfj/kaldi-native-fbank">https://github.com/csukuangfj/kaldi-native-fbank</a>
+for kotlin.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/jni/feat-extractor/Makefile</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">KFBANK_INSTALL_DIR</span> <span class="o">:=</span> /ceph-fj/fangjun/open-source/kaldi-native-fbank/build/install
+<span class="nv">CXXFLAGS</span> <span class="o">:=</span> -I <span class="k">$(</span>JAVA_HOME<span class="k">)</span>/include
+<span class="nv">CXXFLAGS</span> <span class="o">+=</span> -I <span class="k">$(</span>JAVA_HOME<span class="k">)</span>/include/linux
+<span class="nv">CXXFLAGS</span> <span class="o">+=</span> -I <span class="k">$(</span>KFBANK_INSTALL_DIR<span class="k">)</span>/include
+<span class="nv">CXXFLAGS</span> <span class="o">+=</span> -Wall
+
+<span class="nv">LDFLAGS</span> <span class="o">:=</span> -L <span class="k">$(</span>KFBANK_INSTALL_DIR<span class="k">)</span>/lib -lkaldi-native-fbank-core
+<span class="nv">LDFLAGS</span> <span class="o">+=</span> -Wl,-rpath,<span class="k">$(</span>KFBANK_INSTALL_DIR<span class="k">)</span>/lib
+
+<span class="nf">all</span><span class="o">:</span> <span class="n">main</span>.<span class="n">jar</span> <span class="n">libonline</span>-<span class="n">feature</span>.<span class="n">so</span>
+
+<span class="nf">main.jar</span><span class="o">:</span> <span class="n">Main</span>.<span class="n">kt</span> <span class="n">OnlineFeature</span>.<span class="n">kt</span>
+	kotlinc-jvm -include-runtime -d main.jar Main.kt OnlineFeature.kt
+
+<span class="nf">libonline-feature.so</span><span class="o">:</span> <span class="n">online</span>-<span class="n">feature</span>.<span class="n">cc</span> <span class="n">online</span>-<span class="n">feature</span>.<span class="n">h</span>
+	<span class="k">$(</span>CXX<span class="k">)</span> -o <span class="nv">$@</span> -shared -fPIC <span class="k">$(</span>CXXFLAGS<span class="k">)</span> online-feature.cc <span class="k">$(</span>LDFLAGS<span class="k">)</span>
+
+<span class="nf">run</span><span class="o">:</span> <span class="n">all</span>
+	java -jar main.jar
+
+<span class="nf">clean</span><span class="o">:</span>
+	<span class="k">$(</span>RM<span class="k">)</span> main.jar libonline-feature.so
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">./code/jni/feat-extractor/online-feature.h</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef ONLINE_FEATURE_H_</span>
+<span class="cp">#define ONLINE_FEATURE_H_</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;jni.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#ifdef __cplusplus</span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="cp">#endif</span>
+
+<span class="n">JNIEXPORT</span><span class="w"> </span><span class="n">jlong</span><span class="w"> </span><span class="n">JNICALL</span><span class="w"> </span><span class="n">Java_OnlineFbank_new</span><span class="p">(</span><span class="n">JNIEnv</span><span class="w"> </span><span class="o">*</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">jobject</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                             </span><span class="n">jobject</span><span class="w"> </span><span class="n">opts</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">JNIEXPORT</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">JNICALL</span><span class="w"> </span><span class="n">Java_OnlineFbank_delete</span><span class="p">(</span><span class="n">JNIEnv</span><span class="w"> </span><span class="o">*</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">jobject</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                               </span><span class="n">jlong</span><span class="w"> </span><span class="n">ptr</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">JNIEXPORT</span><span class="w"> </span><span class="n">jint</span><span class="w"> </span><span class="n">JNICALL</span><span class="w"> </span><span class="n">Java_OnlineFbank_dim</span><span class="p">(</span><span class="n">JNIEnv</span><span class="w"> </span><span class="o">*</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">jobject</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                            </span><span class="n">jlong</span><span class="w"> </span><span class="n">ptr</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">JNIEXPORT</span><span class="w"> </span><span class="n">jfloat</span><span class="w"> </span><span class="n">JNICALL</span><span class="w"> </span><span class="n">Java_OnlineFbank_frameShiftInSeconds</span><span class="p">(</span><span class="n">JNIEnv</span><span class="w"> </span><span class="o">*</span><span class="n">env</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                              </span><span class="n">jobject</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                              </span><span class="n">jlong</span><span class="w"> </span><span class="n">ptr</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">JNIEXPORT</span><span class="w"> </span><span class="n">jint</span><span class="w"> </span><span class="n">JNICALL</span><span class="w"> </span><span class="n">Java_OnlineFbank_numFramesReady</span><span class="p">(</span><span class="n">JNIEnv</span><span class="w"> </span><span class="o">*</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">jobject</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                       </span><span class="n">jlong</span><span class="w"> </span><span class="n">ptr</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">JNIEXPORT</span><span class="w"> </span><span class="n">jboolean</span><span class="w"> </span><span class="n">JNICALL</span><span class="w"> </span><span class="n">Java_OnlineFbank_isLastFrame</span><span class="p">(</span><span class="n">JNIEnv</span><span class="w"> </span><span class="o">*</span><span class="n">env</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                        </span><span class="n">jobject</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="n">jlong</span><span class="w"> </span><span class="n">ptr</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                        </span><span class="n">jint</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">JNIEXPORT</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">JNICALL</span><span class="w"> </span><span class="n">Java_OnlineFbank_inputFinished</span><span class="p">(</span><span class="n">JNIEnv</span><span class="w"> </span><span class="o">*</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">jobject</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                      </span><span class="n">jlong</span><span class="w"> </span><span class="n">ptr</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">JNIEXPORT</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">JNICALL</span><span class="w"> </span><span class="n">Java_OnlineFbank_acceptWaveform</span><span class="p">(</span><span class="n">JNIEnv</span><span class="w"> </span><span class="o">*</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">jobject</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                       </span><span class="n">jlong</span><span class="w"> </span><span class="n">ptr</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                       </span><span class="n">jfloatArray</span><span class="w"> </span><span class="n">samples</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                       </span><span class="n">jfloat</span><span class="w"> </span><span class="n">sample_rate</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">JNIEXPORT</span><span class="w"> </span><span class="n">jfloatArray</span><span class="w"> </span><span class="n">JNICALL</span><span class="w"> </span><span class="n">Java_OnlineFbank_getFrame</span><span class="p">(</span><span class="n">JNIEnv</span><span class="w"> </span><span class="o">*</span><span class="n">env</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                        </span><span class="n">jobject</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="n">jlong</span><span class="w"> </span><span class="n">ptr</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                        </span><span class="n">jint</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="w"></span>
+
+<span class="cp">#ifdef __cplusplus</span>
+<span class="p">}</span><span class="w"></span>
+<span class="cp">#endif</span>
+
+<span class="cp">#endif </span><span class="c1">// ONLINE_FEATURE_H_</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">./code/jni/feat-extractor/online-feature.cc</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;online-feature.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;kaldi-native-fbank/csrc/online-feature.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="n">JNIEXPORT</span><span class="w"> </span><span class="n">jlong</span><span class="w"> </span><span class="n">JNICALL</span><span class="w"> </span><span class="n">Java_OnlineFbank_new</span><span class="p">(</span><span class="n">JNIEnv</span><span class="w"> </span><span class="o">*</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">jobject</span><span class="w"> </span><span class="cm">/*obj*/</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                             </span><span class="n">jobject</span><span class="w"> </span><span class="n">opts</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">jclass</span><span class="w"> </span><span class="n">cls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetObjectClass</span><span class="p">(</span><span class="n">opts</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">jfieldID</span><span class="w"> </span><span class="n">fid</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// https://docs.oracle.com/javase/7/docs/technotes/guides/jni/spec/types.html</span>
+<span class="w">  </span><span class="c1">// https://courses.cs.washington.edu/courses/cse341/99wi/java/tutorial/native1.1/implementing/field.html</span>
+
+<span class="w">  </span><span class="n">knf</span><span class="o">::</span><span class="n">FbankOptions</span><span class="w"> </span><span class="n">fbank_opts</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;use_energy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Z&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">use_energy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetBooleanField</span><span class="p">(</span><span class="n">opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;energy_floor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;F&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">energy_floor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFloatField</span><span class="p">(</span><span class="n">opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;raw_energy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Z&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">raw_energy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetBooleanField</span><span class="p">(</span><span class="n">opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;htk_compat&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Z&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">htk_compat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetBooleanField</span><span class="p">(</span><span class="n">opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;use_log_fbank&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Z&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">use_log_fbank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetBooleanField</span><span class="p">(</span><span class="n">opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;use_power&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Z&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">use_power</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetBooleanField</span><span class="p">(</span><span class="n">opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;frame_opts&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;LFrameExtractionOptions;&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">jobject</span><span class="w"> </span><span class="n">frame_opts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetObjectField</span><span class="p">(</span><span class="n">opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">jclass</span><span class="w"> </span><span class="n">frame_opts_cls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetObjectClass</span><span class="p">(</span><span class="n">frame_opts</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">frame_opts_cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;samp_freq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;F&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">frame_opts</span><span class="p">.</span><span class="n">samp_freq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFloatField</span><span class="p">(</span><span class="n">frame_opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">frame_opts_cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;frame_shift_ms&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;F&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">frame_opts</span><span class="p">.</span><span class="n">frame_shift_ms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFloatField</span><span class="p">(</span><span class="n">frame_opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">frame_opts_cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;frame_length_ms&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;F&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">frame_opts</span><span class="p">.</span><span class="n">frame_length_ms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFloatField</span><span class="p">(</span><span class="n">frame_opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">frame_opts_cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;dither&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;F&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">frame_opts</span><span class="p">.</span><span class="n">dither</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFloatField</span><span class="p">(</span><span class="n">frame_opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">frame_opts_cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;preemph_coeff&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;F&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">frame_opts</span><span class="p">.</span><span class="n">preemph_coeff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFloatField</span><span class="p">(</span><span class="n">frame_opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">frame_opts_cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;remove_dc_offset&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Z&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">frame_opts</span><span class="p">.</span><span class="n">remove_dc_offset</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">      </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetBooleanField</span><span class="p">(</span><span class="n">frame_opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">frame_opts_cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;window_type&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ljava/lang/String;&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">jstring</span><span class="w"> </span><span class="n">window_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">jstring</span><span class="p">)</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetObjectField</span><span class="p">(</span><span class="n">frame_opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p_window_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetStringUTFChars</span><span class="p">(</span><span class="n">window_type</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">frame_opts</span><span class="p">.</span><span class="n">window_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p_window_type</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">ReleaseStringUTFChars</span><span class="p">(</span><span class="n">window_type</span><span class="p">,</span><span class="w"> </span><span class="n">p_window_type</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">frame_opts_cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;round_to_power_of_two&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Z&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">frame_opts</span><span class="p">.</span><span class="n">round_to_power_of_two</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">      </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetBooleanField</span><span class="p">(</span><span class="n">frame_opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">frame_opts_cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;blackman_coeff&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;F&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">frame_opts</span><span class="p">.</span><span class="n">blackman_coeff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFloatField</span><span class="p">(</span><span class="n">frame_opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">frame_opts_cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;snip_edges&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Z&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">frame_opts</span><span class="p">.</span><span class="n">snip_edges</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetBooleanField</span><span class="p">(</span><span class="n">frame_opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">frame_opts_cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;max_feature_vectors&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;I&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">frame_opts</span><span class="p">.</span><span class="n">max_feature_vectors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetIntField</span><span class="p">(</span><span class="n">frame_opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mel_opts&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;LMelBanksOptions;&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">jobject</span><span class="w"> </span><span class="n">mel_opts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetObjectField</span><span class="p">(</span><span class="n">opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">jclass</span><span class="w"> </span><span class="n">mel_opts_cls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetObjectClass</span><span class="p">(</span><span class="n">mel_opts</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">mel_opts_cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;num_bins&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;I&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">mel_opts</span><span class="p">.</span><span class="n">num_bins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetIntField</span><span class="p">(</span><span class="n">mel_opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">mel_opts_cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;low_freq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;F&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">mel_opts</span><span class="p">.</span><span class="n">low_freq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFloatField</span><span class="p">(</span><span class="n">mel_opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">mel_opts_cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;high_freq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;F&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">mel_opts</span><span class="p">.</span><span class="n">high_freq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFloatField</span><span class="p">(</span><span class="n">mel_opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">mel_opts_cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;vtln_low&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;F&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">mel_opts</span><span class="p">.</span><span class="n">vtln_low</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFloatField</span><span class="p">(</span><span class="n">mel_opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">mel_opts_cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;vtln_high&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;F&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">mel_opts</span><span class="p">.</span><span class="n">vtln_high</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFloatField</span><span class="p">(</span><span class="n">mel_opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">mel_opts_cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;debug_mel&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Z&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">mel_opts</span><span class="p">.</span><span class="n">debug_mel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetBooleanField</span><span class="p">(</span><span class="n">mel_opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFieldID</span><span class="p">(</span><span class="n">mel_opts_cls</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;htk_mode&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Z&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="n">mel_opts</span><span class="p">.</span><span class="n">htk_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetBooleanField</span><span class="p">(</span><span class="n">mel_opts</span><span class="p">,</span><span class="w"> </span><span class="n">fid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">online_fbank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">knf</span><span class="o">::</span><span class="n">OnlineFbank</span><span class="p">(</span><span class="n">fbank_opts</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">jlong</span><span class="p">)</span><span class="n">online_fbank</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">JNIEXPORT</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">JNICALL</span><span class="w"> </span><span class="n">Java_OnlineFbank_delete</span><span class="p">(</span><span class="n">JNIEnv</span><span class="w"> </span><span class="o">*</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">jobject</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                               </span><span class="n">jlong</span><span class="w"> </span><span class="n">ptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">delete</span><span class="w"> </span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">knf</span><span class="o">::</span><span class="n">OnlineFbank</span><span class="w"> </span><span class="o">*&gt;</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">JNIEXPORT</span><span class="w"> </span><span class="n">jint</span><span class="w"> </span><span class="n">JNICALL</span><span class="w"> </span><span class="n">Java_OnlineFbank_dim</span><span class="p">(</span><span class="n">JNIEnv</span><span class="w"> </span><span class="o">*</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">jobject</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                            </span><span class="n">jlong</span><span class="w"> </span><span class="n">ptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">knf</span><span class="o">::</span><span class="n">OnlineFbank</span><span class="w"> </span><span class="o">*&gt;</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">Dim</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">JNIEXPORT</span><span class="w"> </span><span class="n">jfloat</span><span class="w"> </span><span class="n">JNICALL</span><span class="w"> </span><span class="n">Java_OnlineFbank_frameShiftInSeconds</span><span class="p">(</span><span class="n">JNIEnv</span><span class="w"> </span><span class="o">*</span><span class="n">env</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                              </span><span class="n">jobject</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                              </span><span class="n">jlong</span><span class="w"> </span><span class="n">ptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">knf</span><span class="o">::</span><span class="n">OnlineFbank</span><span class="w"> </span><span class="o">*&gt;</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">FrameShiftInSeconds</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">JNIEXPORT</span><span class="w"> </span><span class="n">jint</span><span class="w"> </span><span class="n">JNICALL</span><span class="w"> </span><span class="n">Java_OnlineFbank_numFramesReady</span><span class="p">(</span><span class="n">JNIEnv</span><span class="w"> </span><span class="o">*</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">jobject</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                       </span><span class="n">jlong</span><span class="w"> </span><span class="n">ptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">knf</span><span class="o">::</span><span class="n">OnlineFbank</span><span class="w"> </span><span class="o">*&gt;</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">NumFramesReady</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">JNIEXPORT</span><span class="w"> </span><span class="n">jboolean</span><span class="w"> </span><span class="n">JNICALL</span><span class="w"> </span><span class="n">Java_OnlineFbank_isLastFrame</span><span class="p">(</span><span class="n">JNIEnv</span><span class="w"> </span><span class="o">*</span><span class="n">env</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                        </span><span class="n">jobject</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="n">jlong</span><span class="w"> </span><span class="n">ptr</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                        </span><span class="n">jint</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">knf</span><span class="o">::</span><span class="n">OnlineFbank</span><span class="w"> </span><span class="o">*&gt;</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">IsLastFrame</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">JNIEXPORT</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">JNICALL</span><span class="w"> </span><span class="n">Java_OnlineFbank_inputFinished</span><span class="p">(</span><span class="n">JNIEnv</span><span class="w"> </span><span class="o">*</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">jobject</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                      </span><span class="n">jlong</span><span class="w"> </span><span class="n">ptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">knf</span><span class="o">::</span><span class="n">OnlineFbank</span><span class="w"> </span><span class="o">*&gt;</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">InputFinished</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">JNIEXPORT</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">JNICALL</span><span class="w"> </span><span class="n">Java_OnlineFbank_acceptWaveform</span><span class="p">(</span><span class="n">JNIEnv</span><span class="w"> </span><span class="o">*</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">jobject</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                       </span><span class="n">jlong</span><span class="w"> </span><span class="n">ptr</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                       </span><span class="n">jfloatArray</span><span class="w"> </span><span class="n">samples</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                       </span><span class="n">jfloat</span><span class="w"> </span><span class="n">sample_rate</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">jfloat</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetFloatArrayElements</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">jsize</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetArrayLength</span><span class="p">(</span><span class="n">samples</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">knf</span><span class="o">::</span><span class="n">OnlineFbank</span><span class="w"> </span><span class="o">*&gt;</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">AcceptWaveform</span><span class="p">(</span><span class="n">sample_rate</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">ReleaseFloatArrayElements</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">JNI_ABORT</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">JNIEXPORT</span><span class="w"> </span><span class="n">jfloatArray</span><span class="w"> </span><span class="n">JNICALL</span><span class="w"> </span><span class="n">Java_OnlineFbank_getFrame</span><span class="p">(</span><span class="n">JNIEnv</span><span class="w"> </span><span class="o">*</span><span class="n">env</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                        </span><span class="n">jobject</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="n">jlong</span><span class="w"> </span><span class="n">ptr</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                                        </span><span class="n">jint</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">online_fbank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">knf</span><span class="o">::</span><span class="n">OnlineFbank</span><span class="w"> </span><span class="o">*&gt;</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">online_fbank</span><span class="o">-&gt;</span><span class="n">GetFrame</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">online_fbank</span><span class="o">-&gt;</span><span class="n">Dim</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">jfloatArray</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">NewFloatArray</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">env</span><span class="o">-&gt;</span><span class="n">SetFloatArrayRegion</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">frame</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">ans</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">./code/jni/feat-extractor/Main.kt</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">fbank_opts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FbankOptions</span><span class="p">()</span><span class="w"></span>
+<span class="w">  </span><span class="n">fbank_opts</span><span class="p">.</span><span class="na">mel_opts</span><span class="p">.</span><span class="na">num_bins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">80</span><span class="w"></span>
+
+<span class="w">	</span><span class="kd">var</span><span class="w"> </span><span class="n">online_fbank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OnlineFbank</span><span class="p">(</span><span class="n">fbank_opts</span><span class="p">)</span><span class="w"></span>
+<span class="w">	</span><span class="n">println</span><span class="p">(</span><span class="n">online_fbank</span><span class="p">.</span><span class="na">opts</span><span class="p">)</span><span class="w"></span>
+<span class="w">	</span><span class="n">println</span><span class="p">(</span><span class="n">online_fbank</span><span class="p">.</span><span class="na">dim</span><span class="p">)</span><span class="w"></span>
+<span class="w">	</span><span class="n">println</span><span class="p">(</span><span class="n">online_fbank</span><span class="p">.</span><span class="na">frameShiftInSeconds</span><span class="p">)</span><span class="w"></span>
+<span class="w">	</span><span class="n">println</span><span class="p">(</span><span class="n">online_fbank</span><span class="p">.</span><span class="na">numFramesReady</span><span class="p">)</span><span class="w"></span>
+<span class="w">	</span><span class="n">println</span><span class="p">(</span><span class="n">online_fbank</span><span class="p">.</span><span class="na">isLastFrame</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="w"></span>
+
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">samples</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FloatArray</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">16000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">it</span><span class="p">.</span><span class="na">toFloat</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">16000</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="n">online_fbank</span><span class="p">.</span><span class="na">acceptWaveform</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span><span class="w"></span>
+<span class="w">	</span><span class="n">println</span><span class="p">(</span><span class="n">online_fbank</span><span class="p">.</span><span class="na">numFramesReady</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">online_fbank</span><span class="p">.</span><span class="na">acceptWaveform</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span><span class="w"></span>
+<span class="w">	</span><span class="n">println</span><span class="p">(</span><span class="n">online_fbank</span><span class="p">.</span><span class="na">numFramesReady</span><span class="p">)</span><span class="w"></span>
+<span class="w">	</span><span class="kd">var</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">online_fbank</span><span class="p">.</span><span class="na">getFrame</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;$i, &quot;</span><span class="p">)}</span><span class="w"></span>
+<span class="w">  </span><span class="n">println</span><span class="p">()</span><span class="w"></span>
+<span class="w">	</span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">online_fbank</span><span class="p">.</span><span class="na">getFrame</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;$i, &quot;</span><span class="p">)}</span><span class="w"></span>
+<span class="w">  </span><span class="n">println</span><span class="p">()</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">./code/jni/feat-extractor/OnlineFeature.kt</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="w"> </span><span class="kd">class</span> <span class="nf">FrameExtractionOptions</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">samp_freq</span><span class="p">:</span><span class="w"> </span><span class="n">Float</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">16000.0f</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">frame_shift_ms</span><span class="p">:</span><span class="w"> </span><span class="n">Float</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.0f</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">frame_length_ms</span><span class="p">:</span><span class="w"> </span><span class="n">Float</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">25.0f</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">dither</span><span class="p">:</span><span class="w"> </span><span class="n">Float</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">preemph_coeff</span><span class="p">:</span><span class="w"> </span><span class="n">Float</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.97f</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">remove_dc_offset</span><span class="p">:</span><span class="w"> </span><span class="n">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">window_type</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;povey&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">round_to_power_of_two</span><span class="p">:</span><span class="w"> </span><span class="n">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">blackman_coeff</span><span class="p">:</span><span class="w"> </span><span class="n">Float</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.42f</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">snip_edges</span><span class="p">:</span><span class="w"> </span><span class="n">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">max_feature_vectors</span><span class="p">:</span><span class="w"> </span><span class="n">Int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
+
+<span class="n">data</span><span class="w"> </span><span class="kd">class</span> <span class="nf">MelBanksOptions</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">num_bins</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">low_freq</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Float</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">20.0f</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">high_freq</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Float</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">vtln_low</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Float</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100.0f</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">vtln_high</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Float</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mf">500.0f</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">debug_mel</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">htk_mode</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
+
+<span class="n">data</span><span class="w"> </span><span class="kd">class</span> <span class="nf">FbankOptions</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">frame_opts</span><span class="p">:</span><span class="w"> </span><span class="n">FrameExtractionOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FrameExtractionOptions</span><span class="p">(),</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">mel_opts</span><span class="p">:</span><span class="w"> </span><span class="n">MelBanksOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MelBanksOptions</span><span class="p">(),</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">use_energy</span><span class="p">:</span><span class="w"> </span><span class="n">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">energy_floor</span><span class="p">:</span><span class="w"> </span><span class="n">Float</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">raw_energy</span><span class="p">:</span><span class="w"> </span><span class="n">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">htk_compat</span><span class="p">:</span><span class="w"> </span><span class="n">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">use_log_fbank</span><span class="p">:</span><span class="w"> </span><span class="n">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">use_power</span><span class="p">:</span><span class="w"> </span><span class="n">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
+
+
+<span class="kd">class</span> <span class="nf">OnlineFbank</span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="n">opts</span><span class="p">:</span><span class="w"> </span><span class="n">FbankOptions</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">ptr</span><span class="p">:</span><span class="w"> </span><span class="n">Long</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">init</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">(</span><span class="n">opts</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;ptr: $ptr&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="kd">protected</span><span class="w"> </span><span class="n">fun</span><span class="w"> </span><span class="nf">finalize</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">delete</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">val</span><span class="w"> </span><span class="n">dim</span><span class="p">:</span><span class="w"> </span><span class="n">Int</span><span class="w"></span>
+<span class="w">      </span><span class="nf">get</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dim</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">val</span><span class="w"> </span><span class="n">frameShiftInSeconds</span><span class="p">:</span><span class="w"> </span><span class="n">Float</span><span class="w"></span>
+<span class="w">      </span><span class="nf">get</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">frameShiftInSeconds</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">val</span><span class="w"> </span><span class="n">numFramesReady</span><span class="p">:</span><span class="w"> </span><span class="n">Int</span><span class="w"></span>
+<span class="w">      </span><span class="nf">get</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numFramesReady</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fun</span><span class="w"> </span><span class="nf">isLastFrame</span><span class="p">(</span><span class="n">i</span><span class="p">:</span><span class="w"> </span><span class="n">Int</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="n">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">isLastFrame</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">fun</span><span class="w"> </span><span class="nf">inputFinished</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">inputFinished</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">fun</span><span class="w"> </span><span class="nf">acceptWaveform</span><span class="p">(</span><span class="n">samples</span><span class="p">:</span><span class="w"> </span><span class="n">FloatArray</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">acceptWaveform</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span><span class="w"> </span><span class="n">samples</span><span class="p">,</span><span class="w"> </span><span class="n">opts</span><span class="p">.</span><span class="na">frame_opts</span><span class="p">.</span><span class="na">samp_freq</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">fun</span><span class="w"> </span><span class="nf">getFrame</span><span class="p">(</span><span class="n">i</span><span class="p">:</span><span class="w"> </span><span class="n">Int</span><span class="p">):</span><span class="w"> </span><span class="n">FloatArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getFrame</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">external</span><span class="w"> </span><span class="n">fun</span><span class="w"> </span><span class="nf">new</span><span class="p">(</span><span class="n">opts</span><span class="p">:</span><span class="w"> </span><span class="n">FbankOptions</span><span class="p">):</span><span class="w"> </span><span class="n">Long</span><span class="w"></span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">external</span><span class="w"> </span><span class="n">fun</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="n">ptr</span><span class="p">:</span><span class="w"> </span><span class="n">Long</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">external</span><span class="w"> </span><span class="n">fun</span><span class="w"> </span><span class="nf">dim</span><span class="p">(</span><span class="n">ptr</span><span class="p">:</span><span class="w"> </span><span class="n">Long</span><span class="p">):</span><span class="w"> </span><span class="n">Int</span><span class="w"></span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">external</span><span class="w"> </span><span class="n">fun</span><span class="w"> </span><span class="nf">frameShiftInSeconds</span><span class="p">(</span><span class="n">ptr</span><span class="p">:</span><span class="w"> </span><span class="n">Long</span><span class="p">):</span><span class="w"> </span><span class="n">Float</span><span class="w"></span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">external</span><span class="w"> </span><span class="n">fun</span><span class="w"> </span><span class="nf">numFramesReady</span><span class="p">(</span><span class="n">ptr</span><span class="p">:</span><span class="w"> </span><span class="n">Long</span><span class="p">):</span><span class="w"> </span><span class="n">Int</span><span class="w"></span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">external</span><span class="w"> </span><span class="n">fun</span><span class="w"> </span><span class="nf">isLastFrame</span><span class="p">(</span><span class="n">ptr</span><span class="p">:</span><span class="w"> </span><span class="n">Long</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">:</span><span class="w"> </span><span class="n">Int</span><span class="p">):</span><span class="w"> </span><span class="n">Boolean</span><span class="w"></span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">external</span><span class="w"> </span><span class="n">fun</span><span class="w"> </span><span class="nf">inputFinished</span><span class="p">(</span><span class="n">ptr</span><span class="p">:</span><span class="w"> </span><span class="n">Long</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">external</span><span class="w"> </span><span class="n">fun</span><span class="w"> </span><span class="nf">acceptWaveform</span><span class="p">(</span><span class="n">ptr</span><span class="p">:</span><span class="w"> </span><span class="n">Long</span><span class="p">,</span><span class="w"> </span><span class="n">samples</span><span class="p">:</span><span class="w"> </span><span class="n">FloatArray</span><span class="p">,</span><span class="w"> </span><span class="n">sample_rate</span><span class="p">:</span><span class="w"> </span><span class="n">Float</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">external</span><span class="w"> </span><span class="n">fun</span><span class="w"> </span><span class="nf">getFrame</span><span class="p">(</span><span class="n">ptr</span><span class="p">:</span><span class="w"> </span><span class="n">Long</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">:</span><span class="w"> </span><span class="n">Int</span><span class="p">):</span><span class="w"> </span><span class="n">FloatArray</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">companion</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">init</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">loadLibrary</span><span class="p">(</span><span class="s">&quot;online-feature&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="hello-jni.html" class="btn btn-neutral float-left" title="Hello jni" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../basics.html" class="btn btn-neutral float-right" title="Basics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

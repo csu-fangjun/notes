@@ -18,7 +18,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Basics" href="../basics.html" />
+    <link rel="next" title="Binding kaldi-native-fbank for kotlin" href="feat-extractor-jni.html" />
     <link rel="prev" title="Install" href="install.html" /> 
 </head>
 
@@ -67,6 +67,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">kotlin</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="install.html">Install</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Hello jni</a></li>
+<li class="toctree-l3"><a class="reference internal" href="feat-extractor-jni.html">Binding kaldi-native-fbank for kotlin</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../basics.html">Basics</a></li>
@@ -118,6 +119,8 @@
 <blockquote>
 <div><ul class="simple">
 <li><p><a class="reference external" href="https://matt-moore.medium.com/kotlin-jni-for-native-code-835e93af7ddf">https://matt-moore.medium.com/kotlin-jni-for-native-code-835e93af7ddf</a></p></li>
+<li><p><a class="reference external" href="https://docs.oracle.com/javase/7/docs/technotes/guides/jni/spec/functions.html">https://docs.oracle.com/javase/7/docs/technotes/guides/jni/spec/functions.html</a></p></li>
+<li><p><a class="reference external" href="https://developer.android.com/training/articles/perf-jni.html#primitive-arrays">https://developer.android.com/training/articles/perf-jni.html#primitive-arrays</a></p></li>
 </ul>
 </div></blockquote>
 <div class="literal-block-wrapper docutils container" id="id1">
@@ -174,10 +177,12 @@ in kotlin.</p></li>
 </pre></div>
 </div>
 </div>
+<p>The first argument must be <code class="docutils literal notranslate"><span class="pre">JNIEnv</span> <span class="pre">*env</span></code>. Since it is a non-static kotlin method,
+the second argument is a reference to the object. Otherwise, it is a reference
+to the class.</p>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">./code/jni/hello/hello.cc</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;hello.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
 <span class="n">JNIEXPORT</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">JNICALL</span><span class="w"> </span><span class="n">Java_NativeSample_sayHello</span><span class="p">(</span><span class="n">JNIEnv</span><span class="w"> </span><span class="o">*</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">jobject</span><span class="w"> </span><span class="n">obj</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;hello world</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
@@ -257,7 +262,7 @@ in kotlin.</p></li>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="install.html" class="btn btn-neutral float-left" title="Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../basics.html" class="btn btn-neutral float-right" title="Basics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="feat-extractor-jni.html" class="btn btn-neutral float-right" title="Binding kaldi-native-fbank for kotlin" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
