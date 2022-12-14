@@ -37,7 +37,7 @@ fun main() {
     model.decodeSamples(samples)
     model.inputFinished()
     var text = model.text
-    println("text: $text")
+    println("result: $text")
   } else {
     println("empty wave")
   }

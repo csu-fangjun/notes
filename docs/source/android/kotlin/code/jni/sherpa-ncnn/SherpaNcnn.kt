@@ -58,14 +58,13 @@ class SherpaNcnn(var modelConfig: ModelConfig, var fbankConfig: FbankOptions, va
   fun inputFinished() = inputFinished(ptr)
 
 	var text: String = ""
-			// get() = String(getText(ptr), charset("UTF-8"))
-	    get() = getText(ptr).decodeToString()
+	    get() = getText(ptr)
 
   private external fun new(modelConfig: ModelConfig, fbankConfig: FbankOptions, tokens: String): Long
   private external fun delete(ptr: Long)
   private external fun decodeSamples(ptr: Long, samples: FloatArray, sample_rate: Float)
   private external fun inputFinished(ptr: Long)
-  private external fun getText(ptr: Long): ByteArray
+  private external fun getText(ptr: Long): String
 
   companion object {
     init {

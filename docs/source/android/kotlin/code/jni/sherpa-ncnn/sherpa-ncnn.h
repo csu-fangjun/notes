@@ -23,9 +23,8 @@ JNIEXPORT void JNICALL Java_SherpaNcnn_inputFinished(JNIEnv *env,
                                                      jobject /*obj*/,
                                                      jlong ptr);
 
-JNIEXPORT jbyteArray JNICALL Java_SherpaNcnn_getText(JNIEnv *env,
-                                                     jobject /*obj*/,
-                                                     jlong ptr);
+JNIEXPORT jstring JNICALL Java_SherpaNcnn_getText(JNIEnv *env, jobject /*obj*/,
+                                                  jlong ptr);
 #ifdef __cplusplus
 }
 #endif

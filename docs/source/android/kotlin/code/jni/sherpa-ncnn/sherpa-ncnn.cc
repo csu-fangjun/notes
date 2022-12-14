@@ -1,5 +1,7 @@
 #include "sherpa-ncnn.h"
 
+#include <iostream>
+
 #include "sherpa-ncnn/csrc/decode.h"
 #include "sherpa-ncnn/csrc/features.h"
 #include "sherpa-ncnn/csrc/model.h"
@@ -267,17 +269,10 @@ JNIEXPORT void JNICALL Java_SherpaNcnn_inputFinished(JNIEnv *env,
   reinterpret_cast<sherpa_ncnn::SherpaNcnn *>(ptr)->InputFinished();
 }
 
-JNIEXPORT jbyteArray JNICALL Java_SherpaNcnn_getText(JNIEnv *env,
-                                                     jobject /*obj*/,
-                                                     jlong ptr) {
+JNIEXPORT jstring JNICALL Java_SherpaNcnn_getText(JNIEnv *env, jobject /*obj*/,
+                                                  jlong ptr) {
   // see
   // https://stackoverflow.com/questions/11621449/send-c-string-to-java-via-jni
   auto text = reinterpret_cast<sherpa_ncnn::SherpaNcnn *>(ptr)->GetText();
-
-  int n = text.size();
-  jbyte *p = (jbyte *)text.c_str();
-  jbyteArray bytes = env->NewByteArray(n);
-  env->SetByteArrayRegion(bytes, 0, n, p);
-
-  return bytes;
+  return env->NewStringUTF(text.c_str());
 }
