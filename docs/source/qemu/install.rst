@@ -14,14 +14,15 @@ Refer to `<https://github.com/Tencent/ncnn/blob/master/.github/workflows/linux-a
 .. code-block:: bash
 
    # To generate only qemu-arm
-   ./configure --prefix=/ceph-fj/fangjun/software/qemu/ --target-list=arm-linux-user --disable-system
+   ./configure --prefix=/ceph-fj/fangjun/software/qemu/ --target-list=arm-linux-user,aarch64-linux-user --disable-system
    make -j10
 
-   # It genertates the executable: ./build/qemu-arm
+   # It genertates the executable: ./build/qemu-arm and ./build/qemu-aarch64
 
    # If we run `make install`, it will generate
    #
    # /ceph-fj/fangjun/software/qemu/bin/qemu-arm
+   # /ceph-fj/fangjun/software/qemu/bin/qemu-aarch64
    #
    # Add it to PATH and use it!
 
@@ -72,3 +73,41 @@ Now we can restart:
 
   ./build/qemu-arm -B 0x10000000 /path/to/sherpa-ncnn
 
+.. code-block:: bash
+
+  export PATH=/ceph-fj/fangjun/software/qemu/bin:$PATH
+  export QEMU_LD_PREFIX=/ceph-fj/fangjun/software/gcc-arm-8.3-2019.03-x86_64-arm-linux-gnueabihf/arm-linux-gnueabihf/libc
+
+  qemu-arm -B 0x10000000 ./build-arm-linux-gnueabihf/bin/sherpa-ncnn \
+    ./sherpa-ncnn-2022-09-05/tokens.txt \
+    ./sherpa-ncnn-2022-09-05/bar/encoder_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.param \
+    ./sherpa-ncnn-2022-09-05/bar/encoder_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.bin \
+    ./sherpa-ncnn-2022-09-05/bar/decoder_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.param \
+    ./sherpa-ncnn-2022-09-05/bar/decoder_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.bin \
+    ./sherpa-ncnn-2022-09-05/bar/joiner_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.param \
+    ./sherpa-ncnn-2022-09-05/bar/joiner_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.bin \
+    ./test_wavs/1221-135766-0002.wav
+
+qemu-aarch64
+------------
+
+.. code-block:: bash
+
+  wget https://releases.linaro.org/components/toolchain/binaries/latest-7/aarch64-linux-gnu/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz
+  cd /ceph-fj/fangjun/software
+  tar xvf /path/to/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz
+
+.. code-block:: bash
+
+  export PATH=/ceph-fj/fangjun/software/qemu/bin:$PATH
+  export QEMU_LD_PREFIX=/ceph-fj/fangjun/software/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/aarch64-linux-gnu/libc
+
+  qemu-aarch64 -B 0x10000000 ./build-aarch64-linux-gnu/bin/sherpa-ncnn \
+    ./sherpa-ncnn-2022-09-05/tokens.txt \
+    ./sherpa-ncnn-2022-09-05/bar/encoder_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.param \
+    ./sherpa-ncnn-2022-09-05/bar/encoder_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.bin \
+    ./sherpa-ncnn-2022-09-05/bar/decoder_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.param \
+    ./sherpa-ncnn-2022-09-05/bar/decoder_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.bin \
+    ./sherpa-ncnn-2022-09-05/bar/joiner_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.param \
+    ./sherpa-ncnn-2022-09-05/bar/joiner_jit_trace-v2-iter-468000-avg-16-pnnx.ncnn.bin \
+    ./test_wavs/1221-135766-0002.wav
