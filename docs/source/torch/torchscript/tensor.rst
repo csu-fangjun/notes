@@ -132,3 +132,39 @@ division
    :linenos:
    :lines: 213-231
    :caption: test division
+
+default constructed
+^^^^^^^^^^^^^^^^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 233-235
+   :caption: test default constructed
+
+copy
+^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 238-248
+   :caption: test rowwise copy
+
+default addmm
+^^^^^^^^^^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 250-264
+   :caption: test default constructed
+
+elementwise operation
+^^^^^^^^^^^^^^^^^^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 266-277
+   :caption: test elementwise operation

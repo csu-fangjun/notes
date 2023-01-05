@@ -3,6 +3,7 @@ Python
 
 .. toctree::
 
+    install
     asyncio/index
     argv
     todo

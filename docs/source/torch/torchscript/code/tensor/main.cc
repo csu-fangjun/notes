@@ -230,6 +230,52 @@ static void TestDivision() {
   TORCH_CHECK(q[3] == 3 / 2);
 }
 
+void TestDefaultConstructed() {
+  torch::Tensor t;
+  TORCH_CHECK(t.size(0) == 0);
+}
+
+void TestCopy() {
+  auto t0 = torch::tensor({1, 2, 3, 4, 5, 6}, torch::kFloat).reshape({2, 3});
+  auto t = torch::empty({4, 3}, torch::kFloat);
+
+  t.slice(/*dim*/ 0, 0, 1) = t0.slice(0, 0, 1);
+  t.slice(/*dim*/ 0, 1, 2) = t0.slice(0, 1, 2);
+  t.slice(/*dim*/ 0, 2, 3) = t0.slice(0, 0, 1) + 10;
+  t.slice(/*dim*/ 0, 3, 4) = t0.slice(0, 1, 2) + 10;
+
+  std::cout << t << "\n";
+}
+
+void TestAddmm() {
+  std::cout << "---TestAddmm---\n";
+  // 1 2 3
+  // 4 5 6
+  torch::Tensor m =
+      torch::tensor({1, 2, 3, 4, 5, 6}, torch::kFloat).reshape({2, 3});
+
+  torch::Tensor v = torch::tensor({1, 1, -1}, torch::kFloat).unsqueeze(1);
+
+  // 10 20 30
+  torch::Tensor a = torch::tensor({10, 20}, torch::kFloat).unsqueeze(1);
+  a.addmm_(m, v);
+  std::cout << a << "\n";
+  std::cout << a.squeeze(1) << "\n";
+}
+
+void TestElementwiseOp() {
+  std::cout << "---TestElementwiseOp---\n";
+  torch::Tensor a = torch::tensor({1, 2, 3, 40}, torch::kFloat).reshape({2, 2});
+  torch::Tensor b =
+      torch::tensor({10, 20, 30, 4}, torch::kFloat).reshape({2, 2});
+  torch::Tensor c = a * b;
+  torch::Tensor d = a / b;
+  torch::Tensor e = 1.0 / a;
+  std::cout << c << "\n"; // [[10, 40], [90, 160]]
+  std::cout << d << "\n"; // [[0.1, 0.1], [0.1, 10]]
+  std::cout << e << "\n"; // [[1.0, 0.5], [0.3333, 0.0250]], float32
+}
+
 int main() {
   // TestCommonMethods();
   TestSlice();
@@ -245,6 +291,10 @@ int main() {
   TestZeros();
   TestCat();
   TestDivision();
+  TestDefaultConstructed();
+  TestCopy();
+  TestAddmm();
+  TestElementwiseOp();
 
   return 0;
 }

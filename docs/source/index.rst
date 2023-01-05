@@ -46,5 +46,6 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    websocketpp/index
    os/index
    encoding/index
+   ios/index
 
 .. github/index
