@@ -39,5 +39,9 @@ Default IP of Raspberry pi
           TX packets 5359  bytes 454586 (443.9 KiB)
           TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
-We can use wireshark to capture its network traffic and find its address.
+We can use Wireshark to capture its network traffic and find its address.
 Then we can assign a static address, e.g., ``169.254.49.181`` to our own computer.
+
+``169.254.0.0/16`` IPv4 link local addresses.
+
+
