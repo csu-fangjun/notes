@@ -23,3 +23,21 @@ How to connect it to Windows with direct ethernet connection
 6. Use a network cable to connect the windows machine with Raspberry pi.
 
 7. We can see the IP address of the Raspberry pi from the packets captured by wireshark.
+
+Default IP of Raspberry pi
+--------------------------
+
+.. code-block::
+
+  pi@raspberrypi:~ $ ifconfig
+  eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+          inet 169.254.49.182  netmask 255.255.0.0  broadcast 169.254.255.255
+          inet6 fe80::11f:baaf:1325:9f1e  prefixlen 64  scopeid 0x20<link>
+          ether dc:a6:32:cc:76:1c  txqueuelen 1000  (Ethernet)
+          RX packets 275806  bytes 67146923 (64.0 MiB)
+          RX errors 0  dropped 0  overruns 0  frame 0
+          TX packets 5359  bytes 454586 (443.9 KiB)
+          TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+We can use wireshark to capture its network traffic and find its address.
+Then we can assign a static address, e.g., ``169.254.49.181`` to our own computer.
