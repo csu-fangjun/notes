@@ -19,6 +19,10 @@ alsa-utils
 
 See `<https://github.com/alsa-project/alsa-utils>`_
 
+.. code-block:: bash
+
+  sudo apt-get install alsa-utils
+
 It contains source code for ``arecord``, ``areplay``, etc.
 
 aplay
