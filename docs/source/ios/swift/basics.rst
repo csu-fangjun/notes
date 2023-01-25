@@ -82,3 +82,11 @@ It will generate an executable ``./1-hello``.
 .. literalinclude:: ./code/10-enum.swift
    :language: swift
    :caption: ./code/10-enum.swift
+
+.. literalinclude:: ./code/11-memory-layout.swift
+   :language: swift
+   :caption: ./code/11-memory-layout.swift
+
+.. literalinclude:: ./code/12-weak-reference.swift
+   :language: swift
+   :caption: ./code/12-weak-reference.swift
