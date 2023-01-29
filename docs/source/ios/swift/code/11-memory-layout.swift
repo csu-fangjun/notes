@@ -19,6 +19,12 @@ assert(MemoryLayout<Example>.size == 9)
 assert(MemoryLayout<Example>.stride == 16)
 assert(MemoryLayout<Example>.alignment == 8)
 
+let ex = Example(foo: 10, bar: true)
+assert(MemoryLayout.size(ofValue: ex) == 9)
+assert(MemoryLayout.stride(ofValue: ex) == 16)
+assert(MemoryLayout.alignment(ofValue: ex) == 8)
+
+
 struct Example2 {
   let bar: Bool // 1
   let foo: Int // 8

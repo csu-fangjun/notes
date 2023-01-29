@@ -11,6 +11,14 @@ See
 
   `<https://www.swift.org/getting-started>`_
 
+- Size, Stride, Alignment
+
+  `<https://swiftunboxed.com/internals/size-stride-alignment/>`_
+
+- Swift And C: Everything You Need to Know on Types, Pointers and more
+
+  `<https://www.uraimo.com/2016/04/07/swift-and-c-everything-you-need-to-know/>`_
+
 .. code-block:: bash
 
   swift --version
@@ -90,3 +98,15 @@ It will generate an executable ``./1-hello``.
 .. literalinclude:: ./code/12-weak-reference.swift
    :language: swift
    :caption: ./code/12-weak-reference.swift
+
+- `<https://developer.apple.com/documentation/swift/unsafemutablerawpointer>`_
+
+.. literalinclude:: ./code/13-pointers.swift
+   :language: swift
+   :caption: ./code/13-pointers.swift
+
+- `<https://developer.apple.com/documentation/swift/unsafemutablepointer>`_
+
+.. literalinclude:: ./code/14-typed-pointers.swift
+   :language: swift
+   :caption: ./code/14-typed-pointers.swift
