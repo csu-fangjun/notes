@@ -18,3 +18,11 @@ How to setup date
   # or use
   sudo date -s "$(wget --no-cache -S -O /dev/null bing.com 2>&1 | \
     sed -n -e '/  *Date: */ {' -e s///p -e q -e '}')"
+
+Python proxy server
+-------------------
+
+.. code-block::  bash
+
+  https://github.com/csukuangfj/python-proxy-server
+
