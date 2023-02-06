@@ -6,4 +6,3 @@ ncnn
 .. toctree::
 
    hello
-   mat
