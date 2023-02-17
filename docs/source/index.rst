@@ -49,5 +49,6 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    ios/index
    embedded_systems/index
    ssh/index
+   onnx/index
 
 .. github/index
