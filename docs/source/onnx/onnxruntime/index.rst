@@ -3,6 +3,7 @@ onnxruntime
 
 .. toctree::
 
+    install
     basics
 
 

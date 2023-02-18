@@ -4,5 +4,5 @@ LDFLAGS := -L /Users/fangjun/open-source/sherpa-onnx/onnxruntime-osx-x86_64-1.12
 LDFLAGS += -l onnxruntime
 LDFLAGS += -Wl,-rpath,/Users/fangjun/open-source/sherpa-onnx/onnxruntime-osx-x86_64-1.12.1/lib
 
-main: main.cc
-	$(CXX) $(CXXFLAGS) -o $@ $< $(LDFLAGS)
+main: main.cc c-api-test.cc cpp-api-test.cc
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
