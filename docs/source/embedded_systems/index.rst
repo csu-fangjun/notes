@@ -6,3 +6,4 @@ Embedded systems
     m3axpi
     raspberry_pi
     alsa
+    ./nano-pi.rst
