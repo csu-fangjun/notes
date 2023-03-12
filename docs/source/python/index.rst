@@ -12,3 +12,4 @@ Python
     str
     enum/index
     socket/index
+    numpy/index
