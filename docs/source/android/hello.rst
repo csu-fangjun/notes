@@ -71,6 +71,7 @@ Other values:
   emulator -avd hello -no-window  -no-accel # then, open a new terminal
 
 .. code-block:: bash
+
   $ adb devices
 
   * daemon not running; starting now at tcp:5037
