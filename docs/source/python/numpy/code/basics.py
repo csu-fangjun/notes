@@ -51,6 +51,31 @@ def test_array_creation():
     g = np.empty((1, 2), dtype=np.int32)
     assert g.dtype == np.int32
 
+    h = np.arange(3)
+    assert h.dtype == np.int64
+
+    # start=0, end=3
+    i = np.arange(3, dtype=np.int32)
+    assert i.dtype == np.int32
+    np.testing.assert_equal(i, np.array([0, 1, 2]))
+
+    # start=1, end=3
+    k = np.arange(1, 3)
+    np.testing.assert_equal(k, np.array([1, 2]))
+
+    # start=1, end=8, step=3
+    m = np.arange(1, 8, 3)
+    np.testing.assert_equal(m, np.array([1, 4, 7]))
+
+    # 4 numbers in the range [2, 5]
+    n = np.linspace(2, 5, 4)
+    assert n.dtype == np.float64
+    np.testing.assert_equal(n, np.array([2, 3, 4, 5]))
+
+    # note: The last number is included
+    m = np.linspace(2, 5, 3)
+    np.testing.assert_equal(m, np.array([2, 3.5, 5]))
+
 
 def main():
     test_attr()
