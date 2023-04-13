@@ -168,3 +168,21 @@ elementwise operation
    :linenos:
    :lines: 266-277
    :caption: test elementwise operation
+
+torch.roll
+^^^^^^^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 279-306
+   :caption: torch.roll
+
+torch.mean
+^^^^^^^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 208-321
+   :caption: torch.mean

@@ -14,6 +14,48 @@ See `<https://pytorch.org/tutorials/beginner/Intro_to_TorchScript_tutorial.html>
    :emphasize-lines: 6,8,10-11,13,16
    :caption: ./code/1-ex.py
 
+``torch.Value`` has the following attributes (output of ``dir()``):
+
+.. code-block:: bash
+
+  ['__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__',
+  '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__',
+  '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__',
+  '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__',
+  '__str__', '__subclasshook__', 'copyMetadata', 'debugName', 'inferTypeFrom',
+  'isCompleteTensor', 'node', 'offset', 'replaceAllUsesAfterNodeWith',
+  'replaceAllUsesWith', 'requiresGrad', 'requires_grad', 'setDebugName',
+  'setType', 'setTypeAs', 'toIValue', 'type', 'unique', 'uses']
+
+.. literalinclude:: ./code/1-ex.py
+   :language: python
+   :linenos:
+   :lines: 40-74
+   :emphasize-lines: 6,8,10-11,13,16
+   :caption: ./code/1-ex.py
+
+``torch.Node`` has the following attributes (output from ``dir()``):
+
+.. code-block:: bash
+
+    ['__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__',
+    '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__init__',
+    '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__',
+    '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__',
+    '__str__', '__subclasshook__', 'addBlock', 'addInput', 'addOutput',
+    'attributeNames', 'blocks', 'c', 'c_', 'cconv', 'copyAttributes', 'copyMetadata',
+    'destroy', 'eraseOutput', 'f', 'f_', 'findAllNodes', 'findNode', 'fs',
+    'fs_', 'g', 'g_', 'getModuleHierarchy', 'gs', 'gs_', 'hasAttribute',
+    'hasAttributes', 'hasMultipleOutputs', 'hasUses', 'i', 'i_', 'input',
+    'inputs', 'inputsAt', 'inputsSize', 'insertAfter', 'insertBefore', 'is',
+    'isAfter', 'isBefore', 'isNondeterministic', 'is_', 'ival', 'ival_', 'kind',
+    'kindOf', 'matches', 'moveAfter', 'moveBefore', 'mustBeNone', 'namedInput',
+    'output', 'outputs', 'outputsAt', 'outputsSize', 'owningBlock', 'prev',
+    'pyname', 'pyobj', 'removeAllInputs', 'removeAttribute', 'removeInput',
+    'replaceAllUsesWith', 'replaceInput', 'replaceInputWith', 's', 's_', 'scalar_args',
+    'schema', 'scopeName', 'sourceRange', 'ss', 'ss_', 't', 't_', 'ts', 'ts_',
+    'ty_', 'tys_', 'z', 'z_', 'zs', 'zs_']
+
 ``torch.jit.script`` as a function
 ----------------------------------
 

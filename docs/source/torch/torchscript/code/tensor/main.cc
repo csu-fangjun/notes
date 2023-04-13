@@ -276,6 +276,50 @@ void TestElementwiseOp() {
   std::cout << e << "\n"; // [[1.0, 0.5], [0.3333, 0.0250]], float32
 }
 
+void TestRoll() {
+  // 1 2 3
+  // 4 5 6
+  torch::Tensor a =
+      torch::tensor({1, 2, 3, 4, 5, 6}, torch::kFloat).reshape({2, 3});
+  torch::Tensor b = a.roll(1 /*shift right 1 column*/, 1 /*dim*/);
+  // Now b is
+  // 3 2 1
+  // 6 4 5
+
+  // ----------
+  // 1 2 3 4
+  // 5 6 7 8
+  //
+  // 9 10 11 12
+  // 13 14 15 16
+  a = torch::tensor({1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16},
+                    torch::kInt)
+          .reshape({2, 2, 4});
+  b = a.roll(1 /*shift right 1 column*/, 2 /*dim*/);
+  // now b is
+  // 4 1 2 3
+  // 8 5 6 7
+  //
+  // 12 9 10 11
+  // 16 13 14 15
+  std::cout << b;
+}
+
+void TestMean() {
+  // 1 2 3
+  // 4 5 6
+  torch::Tensor a =
+      torch::tensor({1, 2, 3, 4, 5, 6}, torch::kFloat).reshape({2, 3});
+  torch::Tensor b = a.mean(1 /*dim*/, true /*keep_dim*/);
+  std::cout << b;
+  // Now b is:
+  // 2
+  // 5
+  //----------
+  b = a.mean(1 /*dim*/, false /*keep_dim*/);
+  std::cout << b << "\n";
+}
+
 int main() {
   // TestCommonMethods();
   TestSlice();
@@ -295,6 +339,8 @@ int main() {
   TestCopy();
   TestAddmm();
   TestElementwiseOp();
+  TestRoll();
+  TestMean();
 
   return 0;
 }

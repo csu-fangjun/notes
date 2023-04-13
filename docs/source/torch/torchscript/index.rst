@@ -24,5 +24,7 @@ TorchScript
     node
     symbol
     graph
+    passes
+    ops
 
 

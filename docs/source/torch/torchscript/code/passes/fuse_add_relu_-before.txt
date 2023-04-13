@@ -1,0 +1,11 @@
+graph(%self : __torch__.Foo,
+      %x : Float(3, strides=[1], requires_grad=0, device=cpu),
+      %y : Float(3, strides=[1], requires_grad=0, device=cpu)):
+  %5 : int = prim::Constant[value=1]() # ./fuse_add_relu_.py:8:0
+  %input : Float(3, strides=[1], requires_grad=0, device=cpu) = aten::add(%x, %y, %5) # ./fuse_add_relu_.py:8:0
+  %a : Float(3, strides=[1], requires_grad=0, device=cpu) = aten::relu_(%input) # /Users/fangjun/py38/lib/python3.8/site-packages/torch/nn/functional.py:1455:0
+  %8 : Long(requires_grad=0, device=cpu) = prim::Constant[value={10}]() # ./fuse_add_relu_.py:9:0
+  %9 : int = prim::Constant[value=1]() # ./fuse_add_relu_.py:9:0
+  %10 : Float(3, strides=[1], requires_grad=0, device=cpu) = aten::add(%a, %8, %9) # ./fuse_add_relu_.py:9:0
+  return (%10)
+
