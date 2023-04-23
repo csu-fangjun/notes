@@ -13,3 +13,4 @@ Python
     enum/index
     socket/index
     numpy/index
+    pip
