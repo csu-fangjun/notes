@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python notes &mdash; notes  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="onnxruntime" href="onnxruntime/index.html" />
+    <link rel="prev" title="Basics" href="basics.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">onnx</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Basics</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Python notes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tensorproto">TensorProto</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tensorshapeproto">TensorShapeProto</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#valueinfoproto">ValueInfoProto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="onnxruntime/index.html">onnxruntime</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">onnx</a> &raquo;</li>
+      <li>Python notes</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/onnx/python-notes.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="python-notes">
+<h1>Python notes<a class="headerlink" href="#python-notes" title="Permalink to this headline">¶</a></h1>
+<p>See <a class="reference external" href="https://onnx.ai/onnx/api/index.html#l-python-onnx-api">https://onnx.ai/onnx/api/index.html#l-python-onnx-api</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install onnx
+</pre></div>
+</div>
+<p>The data structure is defined in a protocol buffer file</p>
+<blockquote>
+<div><p><a class="reference external" href="https://github.com/onnx/onnx/blob/main/onnx/onnx.proto">https://github.com/onnx/onnx/blob/main/onnx/onnx.proto</a></p>
+</div></blockquote>
+<p>See <a class="reference external" href="https://protobuf.dev/reference/python/python-generated/">https://protobuf.dev/reference/python/python-generated/</a>
+for Python APIs for protocol buffers.</p>
+<section id="tensorproto">
+<h2>TensorProto<a class="headerlink" href="#tensorproto" title="Permalink to this headline">¶</a></h2>
+<p>It is defined in <a class="reference external" href="https://github.com/onnx/onnx/blob/main/onnx/onnx.proto#L483">https://github.com/onnx/onnx/blob/main/onnx/onnx.proto#L483</a></p>
+<p><a class="reference external" href="https://github.com/onnx/onnx/blob/main/onnx/mapping.py">https://github.com/onnx/onnx/blob/main/onnx/mapping.py</a>
+defines a mapping to map datatypes from onnx to numpy.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/tensor-proto.py</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/usr/bin/env python3</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">onnx</span>
+<span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="k">def</span> <span class="nf">test_dtype</span><span class="p">():</span>
+<span class="linenos"> 7</span>    <span class="c1"># the following line is not portable as it uses the internal implementation detail</span>
+<span class="linenos"> 8</span>    <span class="c1">#  assert onnx.mapping.TENSOR_TYPE_TO_NP_TYPE[onnx.TensorProto.FLOAT] == np.float32</span>
+<span class="linenos"> 9</span>    <span class="k">assert</span> <span class="n">onnx</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">tensor_dtype_to_np_dtype</span><span class="p">(</span><span class="n">onnx</span><span class="o">.</span><span class="n">TensorProto</span><span class="o">.</span><span class="n">FLOAT</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span>
+<span class="linenos">10</span>    <span class="k">assert</span> <span class="n">onnx</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">tensor_dtype_to_np_dtype</span><span class="p">(</span><span class="n">onnx</span><span class="o">.</span><span class="n">TensorProto</span><span class="o">.</span><span class="n">INT8</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">int8</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span>    <span class="c1"># We can convert a dtype to a string</span>
+<span class="linenos">13</span>    <span class="k">assert</span> <span class="p">(</span>
+<span class="linenos">14</span>        <span class="n">onnx</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">tensor_dtype_to_string</span><span class="p">(</span><span class="n">onnx</span><span class="o">.</span><span class="n">TensorProto</span><span class="o">.</span><span class="n">FLOAT</span><span class="p">)</span>
+<span class="linenos">15</span>        <span class="o">==</span> <span class="s2">&quot;TensorProto.FLOAT&quot;</span>
+<span class="linenos">16</span>    <span class="p">)</span>
+<span class="linenos">17</span>    <span class="k">assert</span> <span class="n">onnx</span><span class="o">.</span><span class="n">TensorProto</span><span class="o">.</span><span class="n">DataType</span><span class="o">.</span><span class="n">Name</span><span class="p">(</span><span class="n">onnx</span><span class="o">.</span><span class="n">TensorProto</span><span class="o">.</span><span class="n">FLOAT</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;FLOAT&quot;</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="k">def</span> <span class="nf">test_make_tensor</span><span class="p">():</span>
+<span class="linenos">21</span>    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="linenos">22</span>    <span class="n">t</span> <span class="o">=</span> <span class="n">onnx</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">make_tensor</span><span class="p">(</span>
+<span class="linenos">23</span>        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;my&quot;</span><span class="p">,</span>
+<span class="linenos">24</span>        <span class="n">data_type</span><span class="o">=</span><span class="n">onnx</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">np_dtype_to_tensor_dtype</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">dtype</span><span class="p">),</span>
+<span class="linenos">25</span>        <span class="n">dims</span><span class="o">=</span><span class="n">v</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
+<span class="linenos">26</span>        <span class="n">vals</span><span class="o">=</span><span class="n">v</span><span class="p">,</span>
+<span class="linenos">27</span>    <span class="p">)</span>
+<span class="linenos">28</span>    <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="linenos">29</span>
+<span class="linenos">30</span>    <span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">31</span><span class="sd">    dims: 2</span>
+<span class="linenos">32</span><span class="sd">    dims: 2</span>
+<span class="linenos">33</span><span class="sd">    data_type: 7</span>
+<span class="linenos">34</span><span class="sd">    int64_data: 1</span>
+<span class="linenos">35</span><span class="sd">    int64_data: 2</span>
+<span class="linenos">36</span><span class="sd">    int64_data: 3</span>
+<span class="linenos">37</span><span class="sd">    int64_data: 4</span>
+<span class="linenos">38</span><span class="sd">    name: &quot;my&quot;</span>
+<span class="linenos">39</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">40</span>
+<span class="linenos">41</span>
+<span class="linenos">42</span><span class="k">def</span> <span class="nf">test_build_tensor_manually</span><span class="p">():</span>
+<span class="linenos">43</span>    <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="linenos">44</span>    <span class="n">t</span> <span class="o">=</span> <span class="n">onnx</span><span class="o">.</span><span class="n">TensorProto</span><span class="p">()</span>
+<span class="linenos">45</span>    <span class="n">t</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;my-tensor&quot;</span>
+<span class="linenos">46</span>    <span class="n">t</span><span class="o">.</span><span class="n">data_type</span> <span class="o">=</span> <span class="n">onnx</span><span class="o">.</span><span class="n">TensorProto</span><span class="o">.</span><span class="n">FLOAT</span>
+<span class="linenos">47</span>    <span class="n">t</span><span class="o">.</span><span class="n">dims</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="linenos">48</span>    <span class="n">t</span><span class="o">.</span><span class="n">float_data</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="linenos">49</span>    <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="linenos">50</span>    <span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">51</span><span class="sd">    dims: 5</span>
+<span class="linenos">52</span><span class="sd">    data_type: 1</span>
+<span class="linenos">53</span><span class="sd">    float_data: 0.0</span>
+<span class="linenos">54</span><span class="sd">    float_data: 1.0</span>
+<span class="linenos">55</span><span class="sd">    float_data: 2.0</span>
+<span class="linenos">56</span><span class="sd">    float_data: 3.0</span>
+<span class="linenos">57</span><span class="sd">    float_data: 4.0</span>
+<span class="linenos">58</span><span class="sd">    name: &quot;my-tensor&quot;</span>
+<span class="linenos">59</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">60</span>
+<span class="linenos">61</span>
+<span class="linenos">62</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos">63</span>    <span class="n">test_dtype</span><span class="p">()</span>
+<span class="linenos">64</span>    <span class="n">test_make_tensor</span><span class="p">()</span>
+<span class="linenos">65</span>    <span class="n">test_build_tensor_manually</span><span class="p">()</span>
+<span class="linenos">66</span>
+<span class="linenos">67</span>
+<span class="linenos">68</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="linenos">69</span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="tensorshapeproto">
+<h2>TensorShapeProto<a class="headerlink" href="#tensorshapeproto" title="Permalink to this headline">¶</a></h2>
+<p>It is defined in
+<a class="reference external" href="https://github.com/onnx/onnx/blob/main/onnx/onnx.proto#L661">https://github.com/onnx/onnx/blob/main/onnx/onnx.proto#L661</a>.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">./code/tensor-shape-proto.py</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/usr/bin/env python3</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">onnx</span>
+<span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos"> 7</span>    <span class="n">shape_proto</span> <span class="o">=</span> <span class="n">onnx</span><span class="o">.</span><span class="n">TensorShapeProto</span><span class="p">()</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>    <span class="c1"># shape_proto.dim is a list of messages, so we need to use add()</span>
+<span class="linenos">10</span>    <span class="n">dim</span> <span class="o">=</span> <span class="n">shape_proto</span><span class="o">.</span><span class="n">dim</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+<span class="linenos">11</span>    <span class="n">dim</span><span class="o">.</span><span class="n">dim_value</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span>    <span class="n">dim2</span> <span class="o">=</span> <span class="n">shape_proto</span><span class="o">.</span><span class="n">dim</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+<span class="linenos">14</span>    <span class="n">dim2</span><span class="o">.</span><span class="n">dim_param</span> <span class="o">=</span> <span class="s2">&quot;N&quot;</span>
+<span class="linenos">15</span>    <span class="nb">print</span><span class="p">(</span><span class="n">shape_proto</span><span class="p">)</span>
+<span class="linenos">16</span>    <span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">17</span><span class="sd">    dim {</span>
+<span class="linenos">18</span><span class="sd">      dim_value: 10</span>
+<span class="linenos">19</span><span class="sd">    }</span>
+<span class="linenos">20</span><span class="sd">    dim {</span>
+<span class="linenos">21</span><span class="sd">      dim_param: &quot;N&quot;</span>
+<span class="linenos">22</span><span class="sd">    }</span>
+<span class="linenos">23</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span>    <span class="c1"># Only one of dim_value and dim_param can be set</span>
+<span class="linenos">26</span>    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">shape_proto</span><span class="o">.</span><span class="n">dim</span><span class="p">:</span>
+<span class="linenos">27</span>        <span class="n">which</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">WhichOneof</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+<span class="linenos">28</span>        <span class="k">if</span> <span class="n">which</span> <span class="o">==</span> <span class="s2">&quot;dim_value&quot;</span><span class="p">:</span>
+<span class="linenos">29</span>            <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">dim_value</span><span class="p">)</span>  <span class="c1"># 10</span>
+<span class="linenos">30</span>        <span class="k">elif</span> <span class="n">which</span> <span class="o">==</span> <span class="s2">&quot;dim_param&quot;</span><span class="p">:</span>
+<span class="linenos">31</span>            <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">dim_param</span><span class="p">)</span>  <span class="c1"># N</span>
+<span class="linenos">32</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">33</span>            <span class="k">assert</span> <span class="n">which</span> <span class="ow">is</span> <span class="kc">None</span>
+<span class="linenos">34</span>
+<span class="linenos">35</span>
+<span class="linenos">36</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="linenos">37</span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>One thing to note is that it contains a <code class="docutils literal notranslate"><span class="pre">oneof</span></code> field.
+Also note it can contain symbolic names for shapes.</p>
+<div class="highlight-proto notranslate"><div class="highlight"><pre><span></span><span class="kd">message</span><span class="w"> </span><span class="nc">TensorShapeProto</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">message</span><span class="w"> </span><span class="nc">Dimension</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">oneof</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kt">int64</span><span class="w"> </span><span class="na">dim_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">      </span><span class="kt">string</span><span class="w"> </span><span class="na">dim_param</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">   </span><span class="c1">// namespace Shape</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="c1">// Standard denotation can optionally be used to denote tensor</span>
+<span class="w">    </span><span class="c1">// dimensions with standard semantic descriptions to ensure</span>
+<span class="w">    </span><span class="c1">// that operations are applied to the correct axis of a tensor.</span>
+<span class="w">    </span><span class="c1">// Refer to https://github.com/onnx/onnx/blob/main/docs/DimensionDenotation.md#denotation-definition</span>
+<span class="w">    </span><span class="c1">// for pre-defined dimension denotations.</span>
+<span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="na">denotation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">  </span><span class="p">};</span>
+<span class="w">  </span><span class="k">repeated</span><span class="w"> </span><span class="n">Dimension</span><span class="w"> </span><span class="na">dim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="valueinfoproto">
+<h1>ValueInfoProto<a class="headerlink" href="#valueinfoproto" title="Permalink to this headline">¶</a></h1>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="basics.html" class="btn btn-neutral float-left" title="Basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="onnxruntime/index.html" class="btn btn-neutral float-right" title="onnxruntime" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

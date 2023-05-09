@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALSA &mdash; notes  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="nano-pi" href="nano-pi.html" />
+    <link rel="prev" title="Raspberry PI" href="raspberry_pi.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Embedded systems</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="m3axpi.html">m3axpi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raspberry_pi.html">Raspberry PI</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ALSA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#usb-microphone-for-raspberry-pi">USB microphone for raspberry pi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alsa-utils">alsa-utils</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#aplay">aplay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arecord">arecord</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cross-compiling-alsa-lib">Cross compiling alsa-lib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#introduction-to-sound-programming-with-alsa">Introduction to Sound Programming with ALSA</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nano-pi.html">nano-pi</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Embedded systems</a> &raquo;</li>
+      <li>ALSA</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/embedded_systems/alsa.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="alsa">
+<h1>ALSA<a class="headerlink" href="#alsa" title="Permalink to this headline">¶</a></h1>
+<p>Advanced Linux Sound Architecture (ALSA).</p>
+<section id="usb-microphone-for-raspberry-pi">
+<h2>USB microphone for raspberry pi<a class="headerlink" href="#usb-microphone-for-raspberry-pi" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pi@raspberrypi:~ $ arecord -l
+**** List of CAPTURE Hardware Devices ****
+card <span class="m">3</span>: UACDemoV10 <span class="o">[</span>UACDemoV1.0<span class="o">]</span>, device <span class="m">0</span>: USB Audio <span class="o">[</span>USB Audio<span class="o">]</span>
+  Subdevices: <span class="m">1</span>/1
+  Subdevice <span class="c1">#0: subdevice #0</span>
+</pre></div>
+</div>
+</section>
+<section id="alsa-utils">
+<h2>alsa-utils<a class="headerlink" href="#alsa-utils" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference external" href="https://github.com/alsa-project/alsa-utils">https://github.com/alsa-project/alsa-utils</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install alsa-utils
+</pre></div>
+</div>
+<p>It contains source code for <code class="docutils literal notranslate"><span class="pre">arecord</span></code>, <code class="docutils literal notranslate"><span class="pre">areplay</span></code>, etc.</p>
+<section id="aplay">
+<h3>aplay<a class="headerlink" href="#aplay" title="Permalink to this headline">¶</a></h3>
+<p>List playback devices:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aplay -l
+
+**** List of PLAYBACK Hardware Devices ****
+card <span class="m">1</span>: vc4hdmi0 <span class="o">[</span>vc4-hdmi-0<span class="o">]</span>, device <span class="m">0</span>: MAI PCM i2s-hifi-0 <span class="o">[</span>MAI PCM i2s-hifi-0<span class="o">]</span>
+  Subdevices: <span class="m">1</span>/1
+  Subdevice <span class="c1">#0: subdevice #0</span>
+card <span class="m">2</span>: vc4hdmi1 <span class="o">[</span>vc4-hdmi-1<span class="o">]</span>, device <span class="m">0</span>: MAI PCM i2s-hifi-0 <span class="o">[</span>MAI PCM i2s-hifi-0<span class="o">]</span>
+  Subdevices: <span class="m">1</span>/1
+  Subdevice <span class="c1">#0: subdevice #0</span>
+</pre></div>
+</div>
+<p>To play <code class="docutils literal notranslate"><span class="pre">foo.wav</span></code> on card 1, device 0, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aplay -D hw:1,0 foo.wav
+</pre></div>
+</div>
+</section>
+<section id="arecord">
+<h3>arecord<a class="headerlink" href="#arecord" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat /proc/asound/pcm
+<span class="m">00</span>-00: bcm2835 Headphones : bcm2835 Headphones : playback <span class="m">8</span>
+<span class="m">01</span>-00: MAI PCM i2s-hifi-0 : MAI PCM i2s-hifi-0 : playback <span class="m">1</span>
+<span class="m">02</span>-00: MAI PCM i2s-hifi-0 : MAI PCM i2s-hifi-0 : playback <span class="m">1</span>
+<span class="m">03</span>-00: USB Audio : USB Audio : capture <span class="m">1</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>arecord -l
+**** List of CAPTURE Hardware Devices ****
+card <span class="m">3</span>: UACDemoV10 <span class="o">[</span>UACDemoV1.0<span class="o">]</span>, device <span class="m">0</span>: USB Audio <span class="o">[</span>USB Audio<span class="o">]</span>
+  Subdevices: <span class="m">1</span>/1
+  Subdevice <span class="c1">#0: subdevice #0</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat  /proc/asound/card3/stream0
+
+Jieli Technology UACDemoV1.0 at usb-0000:01:00.0-1.4, full speed : USB Audio
+
+Capture:
+  Status: Stop
+  Interface <span class="m">1</span>
+    Altset <span class="m">1</span>
+    Format: S16_LE
+    Channels: <span class="m">1</span>
+    Endpoint: 0x83 <span class="o">(</span><span class="m">3</span> IN<span class="o">)</span> <span class="o">(</span>ASYNC<span class="o">)</span>
+    Rates: <span class="m">48000</span>
+    Bits: <span class="m">16</span>
+    Channel map: MONO
+</pre></div>
+</div>
+</section>
+</section>
+<section id="cross-compiling-alsa-lib">
+<h2>Cross compiling alsa-lib<a class="headerlink" href="#cross-compiling-alsa-lib" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference external" href="https://github.com/alsa-project/alsa-lib/blob/master/INSTALL">https://github.com/alsa-project/alsa-lib/blob/master/INSTALL</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone --depth <span class="m">1</span> https://github.com/alsa-project/alsa-lib
+<span class="nb">cd</span> alsa-lib
+<span class="nv">CC</span><span class="o">=</span>aarch64-linux-gnu-gcc ./gitcompile --host<span class="o">=</span>aarch64-linux-gnu
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">/bin/bash:</span> <span class="pre">plantuml:</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">found</span></code>: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">plantuml</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>alsa-lib$ find . -name <span class="s2">&quot;*.so&quot;</span>
+
+./src/.libs/libasound.so
+./src/topology/.libs/libatopology.so
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>alsa-lib$ find . -name asoundlib.h
+./include/asoundlib.h
+</pre></div>
+</div>
+<p>Then copy the <code class="docutils literal notranslate"><span class="pre">include</span></code> directory to raspberry pi and rename include
+to <code class="docutils literal notranslate"><span class="pre">alsa</span></code>. Also, copy <code class="docutils literal notranslate"><span class="pre">libasound.so</span></code> to raspberry pi.</p>
+<p>We can pass <code class="docutils literal notranslate"><span class="pre">-I/path/to/alsa/parent</span></code> and <code class="docutils literal notranslate"><span class="pre">-lasound</span></code> to  <code class="docutils literal notranslate"><span class="pre">g++</span></code>
+on raspberry pi.</p>
+</section>
+<section id="introduction-to-sound-programming-with-alsa">
+<h2>Introduction to Sound Programming with ALSA<a class="headerlink" href="#introduction-to-sound-programming-with-alsa" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install libasound2-dev libasound2
+</pre></div>
+</div>
+<dl class="simple">
+<dt>See</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://www.linuxjournal.com/article/6735">https://www.linuxjournal.com/article/6735</a>.</p></li>
+<li><p><a class="reference external" href="https://www.alsa-project.org/alsa-doc/alsa-lib/index.html">https://www.alsa-project.org/alsa-doc/alsa-lib/index.html</a></p></li>
+<li><p><a class="reference external" href="https://vovkos.github.io/doxyrest/samples/alsa/index.html">https://vovkos.github.io/doxyrest/samples/alsa/index.html</a>, which
+has more detailed doc for APIs.</p></li>
+<li><p><a class="reference external" href="http://equalarea.com/paul/alsa-audio.html">A Tutorial on Using the ALSA Audio API</a></p></li>
+<li><p><a class="reference external" href="https://vovkos.github.io/doxyrest/samples/alsa/page_pcm.html">PCM (digital audio) interface</a></p></li>
+</ul>
+</dd>
+</dl>
+<ul class="simple">
+<li><p><a class="reference external" href="https://vovkos.github.io/doxyrest/samples/alsa/group_PCM.html#doxid-group-p-c-m-1ga8340c7dc0ac37f37afe5e7c21d6c528b">snd_pcm_open</a></p></li>
+<li><p><a class="reference external" href="https://vovkos.github.io/doxyrest/samples/alsa/group_Error.html#doxid-group-error-1ga182bbadf2349e11602bc531e8cf22f7e">snd_strerror</a></p></li>
+<li><p><a class="reference external" href="https://vovkos.github.io/doxyrest/samples/alsa/group_Control.html?highlight=snd_device_name_hint#doxid-group-control-1gadf4ce9117fcfa454c523ed6e6bd8b353">snd_device_name_hint</a></p></li>
+<li><p><a class="reference external" href="https://vovkos.github.io/doxyrest/samples/alsa/group_PCM_HW_Params.html#doxid-group-p-c-m-h-w-params-1ga6e53d09a9c7cc3f2a692c0af99886237">snd_pcm_hw_params_malloc</a></p></li>
+<li><p><a class="reference external" href="https://vovkos.github.io/doxyrest/samples/alsa/group_PCM_HW_Params.html#doxid-group-p-c-m-h-w-params-1ga6e53d09a9c7cc3f2a692c0af99886237">snd_pcm_hw_params_free</a></p></li>
+<li><p><a class="reference external" href="https://vovkos.github.io/doxyrest/samples/alsa/group_PCM_HW_Params.html#doxid-group-p-c-m-h-w-params-1ga6e2dd8efbb7a4084bd05e6cc458d84f7">snd_pcm_hw_params_any</a></p></li>
+<li><p><a class="reference external" href="https://vovkos.github.io/doxyrest/samples/alsa/group_PCM_HW_Params.html#doxid-group-p-c-m-h-w-params-1ga4c8f1c632931923531ca68ee048a8de8">snd_pcm_hw_params_set_access</a></p></li>
+<li><p><a class="reference external" href="https://vovkos.github.io/doxyrest/samples/alsa/group_PCM_HW_Params.html#doxid-group-p-c-m-h-w-params-1ga6014e0e1ec7934f8c745290e83e59199">snd_pcm_hw_params_set_format</a></p></li>
+<li><p><a class="reference external" href="https://vovkos.github.io/doxyrest/samples/alsa/group_PCM_HW_Params.html#doxid-group-p-c-m-h-w-params-1ga6014e0e1ec7934f8c745290e83e59199">snd_pcm_hw_params_set_rate_near</a></p></li>
+<li><p><a class="reference external" href="https://vovkos.github.io/doxyrest/samples/alsa/group_PCM_HW_Params.html#doxid-group-p-c-m-h-w-params-1ga3a5b2a05c5d9869cc743dac71c0d270a">snd_pcm_hw_params_set_channels</a></p></li>
+<li><p><a class="reference external" href="https://vovkos.github.io/doxyrest/samples/alsa/group_PCM.html#doxid-group-p-c-m-1ga1ca0dc120a484965e26cabf966502330">snd_pcm_hw_params</a></p></li>
+<li><p><a class="reference external" href="https://vovkos.github.io/doxyrest/samples/alsa/group_PCM.html#doxid-group-p-c-m-1ga5a0c0da6d0d35a3ac9f6a97567ac3b63">snd_async_add_pcm_handler</a>, which calls <code class="docutils literal notranslate"><span class="pre">snd_pcm_prepare</span></code> automatically.</p></li>
+<li><p><a class="reference external" href="https://vovkos.github.io/doxyrest/samples/alsa/group_PCM.html#doxid-group-p-c-m-1ga788d05de75f2d536f8443cb0306754d0">snd_pcm_prepare</a></p></li>
+<li><p><a class="reference external" href="https://vovkos.github.io/doxyrest/samples/alsa/group_PCM.html#doxid-group-p-c-m-1ga6bdb88b68a9d9e66015d770f600c6aea">snd_pcm_start</a></p></li>
+<li><p><a class="reference external" href="https://vovkos.github.io/doxyrest/samples/alsa/group_PCM.html#doxid-group-p-c-m-1ga7000ca6010a1a2739daddff8e2fbb440">snd_pcm_drop</a></p></li>
+<li><p><a class="reference external" href="https://vovkos.github.io/doxyrest/samples/alsa/group_PCM.html#doxid-group-p-c-m-1ga49afc5b8527f30c33fafa476533c9f86">snd_pcm_drain</a></p></li>
+<li><p><a class="reference external" href="https://vovkos.github.io/doxyrest/samples/alsa/group_PCM.html#doxid-group-p-c-m-1ga4c2c7bd26cf221268d59dc3bbeb9c048">snd_pcm_readi</a></p></li>
+<li><p><a class="reference external" href="https://vovkos.github.io/doxyrest/samples/alsa/group_PCM.html#doxid-group-p-c-m-1gafea175455f1a405f633a43484ded3d8a">snd_pcm_readn</a></p></li>
+<li><p><a class="reference external" href="https://vovkos.github.io/doxyrest/samples/alsa/enum_snd_pcm_format_t.html#doxid-group-p-c-m-1gaa14b7f26877a812acbb39811364177f8">snd_pcm_format_t</a></p></li>
+<li><p><a class="reference external" href="https://vovkos.github.io/doxyrest/samples/alsa/group_PCM_HW_Params.html#doxid-group-p-c-m-h-w-params-1ga06b83cb9a788f99b7b09b570b4355cee">snd_pcm_hw_params_alloca</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="raspberry_pi.html" class="btn btn-neutral float-left" title="Raspberry PI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="nano-pi.html" class="btn btn-neutral float-right" title="nano-pi" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

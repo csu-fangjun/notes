@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basics &mdash; notes  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Package" href="package.html" />
+    <link rel="prev" title="Swift" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../encoding/index.html">encoding</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">ios</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../call_cpp.html">Call cpp</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Swift</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="package.html">Package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../objective_c/index.html">Objective C</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../csharp/index.html">csharp</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">ios</a> &raquo;</li>
+          <li><a href="index.html">Swift</a> &raquo;</li>
+      <li>Basics</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/ios/swift/basics.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="basics">
+<h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h1>
+<p>See</p>
+<ul>
+<li><p>A Swift Tour</p>
+<p><a class="reference external" href="https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html#//apple_ref/doc/uid/TP40014097-CH2-ID1">https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html#//apple_ref/doc/uid/TP40014097-CH2-ID1</a></p>
+</li>
+<li><p>Getting Started</p>
+<p><a class="reference external" href="https://www.swift.org/getting-started">https://www.swift.org/getting-started</a></p>
+</li>
+<li><p>Size, Stride, Alignment</p>
+<p><a class="reference external" href="https://swiftunboxed.com/internals/size-stride-alignment/">https://swiftunboxed.com/internals/size-stride-alignment/</a></p>
+</li>
+<li><p>Swift And C: Everything You Need to Know on Types, Pointers and more</p>
+<p><a class="reference external" href="https://www.uraimo.com/2016/04/07/swift-and-c-everything-you-need-to-know/">https://www.uraimo.com/2016/04/07/swift-and-c-everything-you-need-to-know/</a></p>
+</li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>swift --version
+swift-driver version: <span class="m">1</span>.62.15 Apple Swift version <span class="m">5</span>.7.2 <span class="o">(</span>swiftlang-5.7.2.135.5 clang-1400.0.29.51<span class="o">)</span>
+Target: x86_64-apple-macosx13.0
+</pre></div>
+</div>
+<p>To start the REPL commandline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>swift repl
+</pre></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/1-hello.swift</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="c1">// swiftc ./1-hello.swift</span>
+
+<span class="bp">print</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">)</span>
+<span class="c1">// Note:</span>
+<span class="c1">// 1. It is not println but it still prints a new line</span>
+<span class="c1">// 2. There is no semicolon</span>
+<span class="c1">// 3. There is no main(), like Python</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>swiftc ./1-hello.swift
+</pre></div>
+</div>
+<p>It will generate an executable <code class="docutils literal notranslate"><span class="pre">./1-hello</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">otool</span> <span class="o">-</span><span class="n">L</span> <span class="o">./</span><span class="mi">1</span><span class="o">-</span><span class="n">hello</span>
+
+<span class="o">./</span><span class="mi">1</span><span class="o">-</span><span class="n">hello</span><span class="p">:</span>
+  <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">libobjc</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">dylib</span> <span class="p">(</span><span class="n">compatibility</span> <span class="n">version</span> <span class="mf">1.0.0</span><span class="p">,</span> <span class="n">current</span> <span class="n">version</span> <span class="mf">228.0.0</span><span class="p">)</span>
+  <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">libSystem</span><span class="o">.</span><span class="n">B</span><span class="o">.</span><span class="n">dylib</span> <span class="p">(</span><span class="n">compatibility</span> <span class="n">version</span> <span class="mf">1.0.0</span><span class="p">,</span> <span class="n">current</span> <span class="n">version</span> <span class="mf">1319.0.0</span><span class="p">)</span>
+  <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">swift</span><span class="o">/</span><span class="n">libswiftCore</span><span class="o">.</span><span class="n">dylib</span> <span class="p">(</span><span class="n">compatibility</span> <span class="n">version</span> <span class="mf">1.0.0</span><span class="p">,</span> <span class="n">current</span> <span class="n">version</span> <span class="mf">5.7.1</span><span class="p">)</span>
+
+<span class="n">ls</span> <span class="o">-</span><span class="n">lh</span> <span class="mi">1</span><span class="o">-</span><span class="n">hello</span>
+
+<span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">1</span> <span class="n">fangjun</span>  <span class="n">staff</span>    <span class="mi">33</span><span class="n">K</span> <span class="n">Jan</span> <span class="mi">21</span> <span class="mi">11</span><span class="p">:</span><span class="mi">55</span> <span class="mi">1</span><span class="o">-</span><span class="n">hello</span>
+</pre></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">./code/2-variables.swift</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nv">myVariable</span> <span class="p">=</span> <span class="mi">42</span>
+<span class="n">myVariable</span> <span class="p">=</span> <span class="mi">50</span>
+<span class="kd">let</span> <span class="nv">myConstant</span> <span class="p">=</span> <span class="mi">43</span>
+<span class="bp">print</span><span class="p">(</span><span class="s">&quot;myVariable is </span><span class="si">\(</span><span class="n">myVariable</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="bp">print</span><span class="p">(</span><span class="s">&quot;myConstant is </span><span class="si">\(</span><span class="n">myConstant</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+
+<span class="kd">let</span> <span class="nv">implicitInteger</span> <span class="p">=</span> <span class="mi">1</span>
+<span class="kd">let</span> <span class="nv">implicitDouble</span> <span class="p">=</span> <span class="mf">1.0</span>
+<span class="kd">let</span> <span class="nv">explicitDouble</span><span class="p">:</span> <span class="nb">Double</span> <span class="p">=</span> <span class="mi">1</span>
+
+<span class="kd">let</span> <span class="nv">label</span> <span class="p">=</span> <span class="s">&quot;The width is &quot;</span>
+<span class="kd">let</span> <span class="nv">width</span> <span class="p">=</span> <span class="mi">100</span>
+<span class="kd">var</span> <span class="nv">widthLabel</span> <span class="p">=</span> <span class="n">label</span> <span class="o">+</span> <span class="nb">String</span><span class="p">(</span><span class="n">width</span><span class="p">)</span>
+<span class="n">widthLabel</span> <span class="p">=</span> <span class="s">&quot;</span><span class="si">\(</span><span class="n">label</span><span class="si">)\(</span><span class="n">width</span><span class="si">)</span><span class="s">&quot;</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">widthLabel</span><span class="p">)</span>
+
+
+<span class="c1">// &quot;&quot;&quot;</span>
+<span class="kd">let</span> <span class="nv">s</span> <span class="p">=</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="s">  abc</span>
+<span class="s">  def</span>
+<span class="s">  &quot;&quot;&quot;</span>
+<span class="c1">// Note: there are leading spaces before the ending &quot;&quot;&quot;</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">./code/3-array-dict.swift</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nv">fruits</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;strawberries&quot;</span><span class="p">,</span> <span class="s">&quot;limes&quot;</span><span class="p">,</span> <span class="s">&quot;apples&quot;</span><span class="p">]</span>
+<span class="n">fruits</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="s">&quot;grapes&quot;</span>
+
+<span class="bp">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span> <span class="c1">// [&quot;strawberries&quot;, &quot;grapes&quot;, &quot;apples&quot;]</span>
+
+<span class="n">fruits</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;blueberries&quot;</span><span class="p">)</span>
+
+<span class="kd">var</span> <span class="nv">occupations</span> <span class="p">=</span> <span class="p">[</span>
+  <span class="s">&quot;Tom&quot;</span><span class="p">:</span> <span class="s">&quot;Captain&quot;</span><span class="p">,</span>
+  <span class="s">&quot;Jerry&quot;</span><span class="p">:</span> <span class="s">&quot;Mechanic&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">occupations</span><span class="p">)</span> <span class="c1">// [&quot;Tom&quot;: &quot;Captain&quot;, &quot;Jerry&quot;: &quot;Mechanic&quot;]</span>
+<span class="n">occupations</span><span class="p">[</span><span class="s">&quot;Tom&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="s">&quot;Teacher&quot;</span>
+
+<span class="kd">let</span> <span class="nv">emptyArray</span><span class="p">:</span> <span class="p">[</span><span class="nb">String</span><span class="p">]</span> <span class="p">=</span> <span class="p">[]</span>
+<span class="kd">let</span> <span class="nv">emptyDict</span><span class="p">:</span> <span class="p">[</span><span class="nb">String</span><span class="p">:</span> <span class="nb">Float</span><span class="p">]</span> <span class="p">=</span> <span class="p">[:]</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">./code/4-if.swift</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nv">individualScores</span> <span class="p">=</span> <span class="p">[</span><span class="mi">75</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+<span class="kd">var</span> <span class="nv">teamScore</span> <span class="p">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">score</span> <span class="k">in</span> <span class="n">individualScores</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="mi">50</span> <span class="p">{</span>
+    <span class="n">teamScore</span> <span class="o">+=</span> <span class="mi">3</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">teamScore</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">teamScore</span><span class="p">)</span> <span class="c1">// 11</span>
+
+<span class="kd">var</span> <span class="nv">optionalString</span><span class="p">:</span> <span class="nb">String</span><span class="p">?</span> <span class="p">=</span> <span class="s">&quot;Hello&quot;</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">optionalString</span> <span class="p">==</span> <span class="kc">nil</span><span class="p">)</span> <span class="c1">// false</span>
+
+<span class="kd">var</span> <span class="nv">optionalName</span><span class="p">:</span> <span class="nb">String</span><span class="p">?</span> <span class="p">=</span> <span class="s">&quot;Tom&quot;</span>
+<span class="kd">var</span> <span class="nv">greeting</span> <span class="p">=</span> <span class="s">&quot;Hello!&quot;</span>
+<span class="k">if</span> <span class="kd">let</span> <span class="nv">name</span> <span class="p">=</span> <span class="n">optionalName</span> <span class="p">{</span>
+  <span class="n">greeting</span> <span class="p">=</span> <span class="s">&quot;Hello,</span><span class="si">\(</span><span class="n">name</span><span class="si">)</span><span class="s">&quot;</span>
+<span class="p">}</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">greeting</span><span class="p">)</span> <span class="c1">// Hello,Tom</span>
+
+<span class="kd">let</span> <span class="nv">nickname</span><span class="p">:</span> <span class="nb">String</span><span class="p">?</span> <span class="p">=</span> <span class="kc">nil</span>
+<span class="kd">let</span> <span class="nv">fullName</span><span class="p">:</span> <span class="nb">String</span> <span class="p">=</span> <span class="s">&quot;Tom Green&quot;</span>
+<span class="kd">let</span> <span class="nv">informalGreeting</span> <span class="p">=</span> <span class="s">&quot;Hi, </span><span class="si">\(</span><span class="n">nickname</span> <span class="p">??</span> <span class="n">fullName</span><span class="si">)</span><span class="s">&quot;</span> <span class="c1">// Hi, Tom Green</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">informalGreeting</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="kd">let</span> <span class="nv">nickname</span> <span class="p">{</span>
+  <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Hey, </span><span class="si">\(</span><span class="n">nickname</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">./code/5-switch.swift</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nv">vegetable</span> <span class="p">=</span> <span class="s">&quot;red pepper&quot;</span>
+<span class="k">switch</span> <span class="n">vegetable</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="s">&quot;celery&quot;</span><span class="p">:</span>
+    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;celery&quot;</span><span class="p">)</span>
+  <span class="k">case</span> <span class="s">&quot;cucumber&quot;</span><span class="p">,</span> <span class="s">&quot;watercress&quot;</span><span class="p">:</span>
+    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;cucumber or watercress&quot;</span><span class="p">)</span>
+  <span class="k">case</span> <span class="kd">let</span> <span class="nv">x</span> <span class="k">where</span> <span class="n">x</span><span class="p">.</span><span class="n">hasSuffix</span><span class="p">(</span><span class="s">&quot;pepper&quot;</span><span class="p">):</span>
+    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span>
+  <span class="k">default</span><span class="p">:</span>
+    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Everything tastes good in soup.&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// 1. no need to use break</span>
+<span class="c1">// 2. default is mandatory so that it is exhaustive</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">./code/6-for.swift</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nv">interestingNumbers</span> <span class="p">=</span> <span class="p">[</span>
+  <span class="s">&quot;Prime&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span>
+  <span class="s">&quot;Fibonacci&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+  <span class="s">&quot;Square&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">],</span>
+<span class="p">]</span>
+<span class="kd">var</span> <span class="nv">largest</span> <span class="p">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="p">(</span><span class="kc">_</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span> <span class="k">in</span> <span class="n">interestingNumbers</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="n">number</span> <span class="k">in</span> <span class="n">numbers</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="n">largest</span> <span class="p">{</span>
+      <span class="n">largest</span> <span class="p">=</span> <span class="n">number</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">largest</span><span class="p">)</span> <span class="c1">// 25</span>
+
+<span class="kd">var</span> <span class="nv">total</span> <span class="p">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mf">0.</span><span class="p">.&lt;</span><span class="mi">4</span> <span class="p">{</span>
+  <span class="n">total</span> <span class="o">+=</span> <span class="n">i</span>
+<span class="p">}</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span> <span class="c1">// 6</span>
+
+<span class="n">total</span> <span class="p">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mf">0.</span><span class="p">..</span><span class="mi">4</span> <span class="p">{</span>
+  <span class="n">total</span> <span class="o">+=</span> <span class="n">i</span>
+<span class="p">}</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span> <span class="c1">// 10</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">./code/7-while.swift</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nv">n</span> <span class="p">=</span> <span class="mi">2</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">100</span> <span class="p">{</span>
+  <span class="n">n</span> <span class="o">*=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="c1">// 128</span>
+
+<span class="kd">var</span> <span class="nv">m</span> <span class="p">=</span> <span class="mi">2</span>
+<span class="k">repeat</span> <span class="p">{</span>
+  <span class="n">m</span> <span class="o">*=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">m</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="bp">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="c1">// 128</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">./code/8-func.swift</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span> <span class="nf">greet</span><span class="p">(</span><span class="n">person</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">day</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s">&quot;Hello </span><span class="si">\(</span><span class="n">person</span><span class="si">)</span><span class="s">, today is </span><span class="si">\(</span><span class="n">day</span><span class="si">)</span><span class="s">&quot;</span>
+<span class="p">}</span>
+
+<span class="bp">print</span><span class="p">(</span><span class="n">greet</span><span class="p">(</span><span class="n">person</span><span class="p">:</span> <span class="s">&quot;Bob&quot;</span><span class="p">,</span> <span class="n">day</span><span class="p">:</span> <span class="s">&quot;Tuesday&quot;</span><span class="p">))</span>
+<span class="c1">// print(greet(&quot;Bob&quot;, day: &quot;Tuesday&quot;)) // error: missing argument label &#39;person:&#39; in call</span>
+
+<span class="kd">func</span> <span class="nf">greet2</span><span class="p">(</span><span class="kc">_</span> <span class="n">person</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">on</span> <span class="n">day</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s">&quot;Hello </span><span class="si">\(</span><span class="n">person</span><span class="si">)</span><span class="s">, today is </span><span class="si">\(</span><span class="n">day</span><span class="si">)</span><span class="s">&quot;</span>
+<span class="p">}</span>
+<span class="c1">// print(greet2(person: &quot;Bob&quot;, day: &quot;Tuesday&quot;)) // error: incorrect argument labels in call (have &#39;person:day:&#39;, expected &#39;_:on:&#39;)</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">greet2</span><span class="p">(</span><span class="s">&quot;Bob&quot;</span><span class="p">,</span> <span class="n">on</span><span class="p">:</span> <span class="s">&quot;Tuesday&quot;</span><span class="p">))</span>
+
+<span class="kd">func</span> <span class="nf">calculateStatistics</span><span class="p">(</span><span class="n">scores</span><span class="p">:</span> <span class="p">[</span><span class="nb">Int</span><span class="p">])</span> <span class="p">-&gt;</span> <span class="p">(</span><span class="bp">min</span><span class="p">:</span> <span class="nb">Int</span><span class="p">,</span> <span class="bp">max</span><span class="p">:</span> <span class="nb">Int</span><span class="p">,</span> <span class="n">sum</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nv">min</span> <span class="p">=</span> <span class="n">scores</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="kd">var</span> <span class="nv">max</span> <span class="p">=</span> <span class="n">scores</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+  <span class="kd">var</span> <span class="nv">sum</span> <span class="p">=</span> <span class="mi">0</span>
+
+  <span class="k">for</span> <span class="n">score</span> <span class="k">in</span> <span class="n">scores</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="bp">max</span> <span class="p">{</span>
+      <span class="bp">max</span> <span class="p">=</span> <span class="n">score</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="bp">min</span> <span class="p">{</span>
+      <span class="bp">min</span> <span class="p">=</span> <span class="n">score</span>
+    <span class="p">}</span>
+
+    <span class="n">sum</span> <span class="o">+=</span> <span class="n">score</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="p">(</span><span class="bp">min</span><span class="p">,</span> <span class="bp">max</span><span class="p">,</span> <span class="n">sum</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="kd">let</span> <span class="nv">statistics</span> <span class="p">=</span> <span class="n">calculateStatistics</span><span class="p">(</span><span class="n">scores</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">statistics</span><span class="p">.</span><span class="n">sum</span><span class="p">)</span> <span class="c1">// 120</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">statistics</span><span class="p">.</span><span class="mi">2</span><span class="p">)</span> <span class="c1">// 120</span>
+
+<span class="kd">func</span> <span class="nf">returnFifteen</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">Int</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nv">y</span> <span class="p">=</span> <span class="mi">10</span>
+  <span class="kd">func</span> <span class="nf">add</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">y</span> <span class="o">+=</span> <span class="mi">5</span>
+  <span class="p">}</span>
+  <span class="n">add</span><span class="p">()</span>
+  <span class="k">return</span> <span class="n">y</span>
+<span class="p">}</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">returnFifteen</span><span class="p">())</span> <span class="c1">// 15</span>
+
+<span class="kd">func</span> <span class="nf">makeIncrementer</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="p">((</span><span class="nb">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">func</span> <span class="nf">addOne</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">1</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="n">addOne</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nv">increment</span> <span class="p">=</span> <span class="n">makeIncrementer</span><span class="p">()</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">increment</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span> <span class="c1">// 8</span>
+
+<span class="kd">func</span> <span class="nf">hasAnyElement</span><span class="p">(</span><span class="n">list</span><span class="p">:</span> <span class="p">[</span><span class="nb">Int</span><span class="p">],</span> <span class="n">condition</span><span class="p">:</span> <span class="p">(</span><span class="nb">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="n">item</span> <span class="k">in</span> <span class="n">list</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">condition</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="kc">false</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="nf">lessThanTen</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">10</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nv">numbers</span> <span class="p">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">hasAnyElement</span><span class="p">(</span><span class="n">list</span><span class="p">:</span> <span class="n">numbers</span><span class="p">,</span> <span class="n">condition</span><span class="p">:</span> <span class="n">lessThanTen</span><span class="p">))</span> <span class="c1">// true</span>
+
+<span class="c1">// the closure has to be put in {}</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">hasAnyElement</span><span class="p">(</span><span class="n">list</span><span class="p">:</span> <span class="n">numbers</span><span class="p">,</span> <span class="n">condition</span><span class="p">:</span> <span class="p">{(</span><span class="n">number</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="k">in</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">}))</span> <span class="c1">// false</span>
+
+<span class="c1">// we can omit the input argument type and return type</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">hasAnyElement</span><span class="p">(</span><span class="n">list</span><span class="p">:</span> <span class="n">numbers</span><span class="p">,</span> <span class="n">condition</span><span class="p">:</span> <span class="p">{</span><span class="n">number</span> <span class="k">in</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">}))</span> <span class="c1">// false</span>
+
+<span class="bp">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">.</span><span class="bp">map</span><span class="p">({</span> <span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Int</span> <span class="k">in</span>
+  <span class="kd">let</span> <span class="nv">result</span> <span class="p">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">number</span>
+  <span class="k">return</span> <span class="n">result</span>
+<span class="p">}))</span> <span class="c1">// [60, 57, 21, 36]</span>
+
+<span class="kd">let</span> <span class="nv">mappedNumber</span> <span class="p">=</span> <span class="n">numbers</span><span class="p">.</span><span class="bp">map</span><span class="p">({</span><span class="n">number</span> <span class="k">in</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">number</span><span class="p">})</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">mappedNumber</span><span class="p">)</span> <span class="c1">// [60, 57, 21, 36]</span>
+
+<span class="kd">var</span> <span class="nv">sortedNumbers</span> <span class="p">=</span> <span class="n">numbers</span><span class="p">.</span><span class="bp">sorted</span> <span class="p">{</span><span class="nv">$0</span> <span class="o">&gt;</span> <span class="nv">$1</span><span class="p">}</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">sortedNumbers</span><span class="p">)</span> <span class="c1">// [20, 19, 12, 7]</span>
+
+<span class="n">sortedNumbers</span> <span class="p">=</span> <span class="n">numbers</span><span class="p">.</span><span class="bp">sorted</span> <span class="p">{</span><span class="nv">$0</span> <span class="o">&lt;</span> <span class="nv">$1</span><span class="p">}</span> <span class="c1">// also ok</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">sortedNumbers</span><span class="p">)</span> <span class="c1">// [7, 12, 19, 20]</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">./code/9-class.swift</span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Shape</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nv">numberOfSides</span> <span class="p">=</span> <span class="mi">0</span>
+  <span class="kd">func</span> <span class="nf">simpleDescription</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">&quot;A shape with </span><span class="si">\(</span><span class="n">numberOfSides</span><span class="si">)</span><span class="s"> sides.&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nv">shape</span> <span class="p">=</span> <span class="n">Shape</span><span class="p">()</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">shape</span><span class="p">.</span><span class="n">numberOfSides</span><span class="p">)</span> <span class="c1">// 0</span>
+<span class="n">shape</span><span class="p">.</span><span class="n">numberOfSides</span> <span class="p">=</span> <span class="mi">4</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">shape</span><span class="p">.</span><span class="n">numberOfSides</span><span class="p">)</span> <span class="c1">// 4</span>
+<span class="kd">var</span> <span class="nv">simpleDescription</span> <span class="p">=</span> <span class="n">shape</span><span class="p">.</span><span class="n">simpleDescription</span><span class="p">()</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">simpleDescription</span><span class="p">)</span> <span class="c1">// A shape with 4 sides</span>
+
+<span class="c1">// with constructor</span>
+<span class="kd">class</span> <span class="nc">NamedShape</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nv">numberOfSides</span> <span class="p">=</span> <span class="mi">0</span>
+  <span class="kd">var</span> <span class="nv">name</span><span class="p">:</span> <span class="nb">String</span>
+
+  <span class="kd">init</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">numberOfSides</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">numberOfSides</span> <span class="p">=</span> <span class="n">numberOfSides</span>
+  <span class="p">}</span>
+
+  <span class="kd">func</span> <span class="nf">simpleDescription</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">&quot;</span><span class="si">\(</span><span class="n">name</span><span class="si">)</span><span class="s">: A shape with </span><span class="si">\(</span><span class="n">numberOfSides</span><span class="si">)</span><span class="s"> sides&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nv">namedShape</span> <span class="p">=</span> <span class="n">NamedShape</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">numberOfSides</span><span class="p">:</span> <span class="mi">10</span><span class="p">)</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">namedShape</span><span class="p">.</span><span class="n">simpleDescription</span><span class="p">())</span>
+
+<span class="kd">class</span> <span class="nc">Square</span><span class="p">:</span> <span class="n">NamedShape</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nv">sideLength</span><span class="p">:</span> <span class="nb">Double</span>
+
+  <span class="kd">init</span><span class="p">(</span><span class="n">sideLength</span><span class="p">:</span> <span class="nb">Double</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">sideLength</span> <span class="p">=</span> <span class="n">sideLength</span>
+    <span class="kc">super</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="n">numberOfSides</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">func</span> <span class="nf">area</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">Double</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">sideLength</span> <span class="o">*</span> <span class="n">sideLength</span>
+  <span class="p">}</span>
+
+  <span class="kr">override</span> <span class="kd">func</span> <span class="nf">simpleDescription</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">&quot;A square with side length </span><span class="si">\(</span><span class="n">sideLength</span><span class="si">)</span><span class="s">&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nv">square</span> <span class="p">=</span> <span class="n">Square</span><span class="p">(</span><span class="n">sideLength</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="s">&quot;MySquare&quot;</span><span class="p">)</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">square</span><span class="p">.</span><span class="n">simpleDescription</span><span class="p">())</span> <span class="c1">// A square with side length 10.0</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">square</span><span class="p">.</span><span class="n">area</span><span class="p">())</span> <span class="c1">// 100.0</span>
+
+<span class="c1">// property getter/setter</span>
+
+<span class="kd">class</span> <span class="nc">EquilateralTriangle</span><span class="p">:</span> <span class="n">NamedShape</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nv">sideLength</span><span class="p">:</span> <span class="nb">Double</span> <span class="p">=</span> <span class="mf">0.0</span>
+
+  <span class="kd">init</span><span class="p">(</span><span class="n">sideLength</span><span class="p">:</span> <span class="nb">Double</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">sideLength</span> <span class="p">=</span> <span class="n">sideLength</span>
+    <span class="kc">super</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="n">numberOfSides</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">var</span> <span class="nv">perimeter</span><span class="p">:</span> <span class="nb">Double</span> <span class="p">{</span>
+    <span class="kr">get</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="mf">3.0</span> <span class="o">*</span> <span class="n">sideLength</span>
+    <span class="p">}</span>
+    <span class="kr">set</span> <span class="p">{</span>
+      <span class="c1">// note: the new value has the implicit name newValue</span>
+      <span class="n">sideLength</span> <span class="p">=</span> <span class="n">newValue</span> <span class="o">/</span> <span class="mf">3.0</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kr">override</span> <span class="kd">func</span> <span class="nf">simpleDescription</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">&quot;An equilateral triangle with side of length </span><span class="si">\(</span><span class="n">sideLength</span><span class="si">)</span><span class="s">.&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nv">triangle</span> <span class="p">=</span> <span class="n">EquilateralTriangle</span><span class="p">(</span><span class="n">sideLength</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="s">&quot;MyTriangle&quot;</span><span class="p">)</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">triangle</span><span class="p">.</span><span class="n">perimeter</span><span class="p">)</span> <span class="c1">// 30.0</span>
+<span class="n">triangle</span><span class="p">.</span><span class="n">perimeter</span> <span class="p">=</span> <span class="mi">15</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">triangle</span><span class="p">.</span><span class="n">perimeter</span><span class="p">)</span> <span class="c1">// 15.0</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">triangle</span><span class="p">.</span><span class="n">sideLength</span><span class="p">)</span> <span class="c1">// 5.0</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">./code/10-enum.swift</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="kd">enum</span> <span class="nc">Rank</span><span class="p">:</span> <span class="nb">Int</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="n">ace</span> <span class="p">=</span> <span class="mi">1</span>
+  <span class="k">case</span> <span class="n">two</span><span class="p">,</span> <span class="n">three</span><span class="p">,</span> <span class="n">four</span><span class="p">,</span> <span class="n">five</span><span class="p">,</span> <span class="n">six</span><span class="p">,</span> <span class="n">seven</span><span class="p">,</span> <span class="n">eight</span><span class="p">,</span> <span class="n">nine</span><span class="p">,</span> <span class="n">ten</span>
+  <span class="k">case</span> <span class="n">jack</span><span class="p">,</span> <span class="n">queen</span><span class="p">,</span> <span class="n">king</span>
+
+  <span class="kd">func</span> <span class="nf">simpleDescription</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="kc">self</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="p">.</span><span class="n">ace</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">&quot;ace&quot;</span>
+      <span class="k">case</span> <span class="p">.</span><span class="n">jack</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">&quot;jack&quot;</span>
+      <span class="k">case</span> <span class="p">.</span><span class="n">queen</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">&quot;queen&quot;</span>
+      <span class="k">case</span> <span class="p">.</span><span class="n">king</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">&quot;king&quot;</span>
+      <span class="k">default</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">String</span><span class="p">(</span><span class="kc">self</span><span class="p">.</span><span class="n">rawValue</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">let</span> <span class="nv">ace</span> <span class="p">=</span> <span class="n">Rank</span><span class="p">.</span><span class="n">ace</span>
+<span class="kd">let</span> <span class="nv">aceRawValue</span> <span class="p">=</span> <span class="n">ace</span><span class="p">.</span><span class="n">rawValue</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">ace</span><span class="p">)</span> <span class="c1">// ace</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">aceRawValue</span><span class="p">)</span> <span class="c1">// 1</span>
+
+<span class="kd">let</span> <span class="nv">two</span> <span class="p">=</span> <span class="n">Rank</span><span class="p">(</span><span class="n">rawValue</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">two</span> <span class="p">??</span> <span class="s">&quot;zwei&quot;</span><span class="p">)</span> <span class="c1">// two</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">./code/11-memory-layout.swift</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="bp">assert</span><span class="p">(</span><span class="n">MemoryLayout</span><span class="p">&lt;</span><span class="nb">Bool</span><span class="p">&gt;.</span><span class="n">size</span> <span class="p">==</span> <span class="mi">1</span><span class="p">)</span>
+<span class="bp">assert</span><span class="p">(</span><span class="n">MemoryLayout</span><span class="p">&lt;</span><span class="nb">Bool</span><span class="p">&gt;.</span><span class="bp">stride</span> <span class="p">==</span> <span class="mi">1</span><span class="p">)</span>
+<span class="bp">assert</span><span class="p">(</span><span class="n">MemoryLayout</span><span class="p">&lt;</span><span class="nb">Bool</span><span class="p">&gt;.</span><span class="n">alignment</span> <span class="p">==</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="bp">assert</span><span class="p">(</span><span class="n">MemoryLayout</span><span class="p">&lt;</span><span class="nb">Int</span><span class="p">&gt;.</span><span class="n">size</span> <span class="p">==</span> <span class="mi">8</span><span class="p">)</span>
+<span class="bp">assert</span><span class="p">(</span><span class="n">MemoryLayout</span><span class="p">&lt;</span><span class="nb">Int</span><span class="p">&gt;.</span><span class="bp">stride</span> <span class="p">==</span> <span class="mi">8</span><span class="p">)</span>
+<span class="bp">assert</span><span class="p">(</span><span class="n">MemoryLayout</span><span class="p">&lt;</span><span class="nb">Int</span><span class="p">&gt;.</span><span class="n">alignment</span> <span class="p">==</span> <span class="mi">8</span><span class="p">)</span>
+
+<span class="bp">assert</span><span class="p">(</span><span class="n">MemoryLayout</span><span class="p">&lt;</span><span class="nb">Int32</span><span class="p">&gt;.</span><span class="n">size</span> <span class="p">==</span> <span class="mi">4</span><span class="p">)</span>
+<span class="bp">assert</span><span class="p">(</span><span class="n">MemoryLayout</span><span class="p">&lt;</span><span class="nb">Int32</span><span class="p">&gt;.</span><span class="bp">stride</span> <span class="p">==</span> <span class="mi">4</span><span class="p">)</span>
+<span class="bp">assert</span><span class="p">(</span><span class="n">MemoryLayout</span><span class="p">&lt;</span><span class="nb">Int32</span><span class="p">&gt;.</span><span class="n">alignment</span> <span class="p">==</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="c1">// Like C/C++</span>
+<span class="kd">struct</span> <span class="nc">Example</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nv">foo</span><span class="p">:</span> <span class="nb">Int</span> <span class="c1">// 8</span>
+  <span class="kd">let</span> <span class="nv">bar</span><span class="p">:</span> <span class="nb">Bool</span> <span class="c1">// 1</span>
+<span class="p">}</span>
+<span class="bp">assert</span><span class="p">(</span><span class="n">MemoryLayout</span><span class="p">&lt;</span><span class="n">Example</span><span class="p">&gt;.</span><span class="n">size</span> <span class="p">==</span> <span class="mi">9</span><span class="p">)</span>
+<span class="bp">assert</span><span class="p">(</span><span class="n">MemoryLayout</span><span class="p">&lt;</span><span class="n">Example</span><span class="p">&gt;.</span><span class="bp">stride</span> <span class="p">==</span> <span class="mi">16</span><span class="p">)</span>
+<span class="bp">assert</span><span class="p">(</span><span class="n">MemoryLayout</span><span class="p">&lt;</span><span class="n">Example</span><span class="p">&gt;.</span><span class="n">alignment</span> <span class="p">==</span> <span class="mi">8</span><span class="p">)</span>
+
+<span class="kd">let</span> <span class="nv">ex</span> <span class="p">=</span> <span class="n">Example</span><span class="p">(</span><span class="n">foo</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="n">bar</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+<span class="bp">assert</span><span class="p">(</span><span class="n">MemoryLayout</span><span class="p">.</span><span class="n">size</span><span class="p">(</span><span class="n">ofValue</span><span class="p">:</span> <span class="n">ex</span><span class="p">)</span> <span class="p">==</span> <span class="mi">9</span><span class="p">)</span>
+<span class="bp">assert</span><span class="p">(</span><span class="n">MemoryLayout</span><span class="p">.</span><span class="bp">stride</span><span class="p">(</span><span class="n">ofValue</span><span class="p">:</span> <span class="n">ex</span><span class="p">)</span> <span class="p">==</span> <span class="mi">16</span><span class="p">)</span>
+<span class="bp">assert</span><span class="p">(</span><span class="n">MemoryLayout</span><span class="p">.</span><span class="n">alignment</span><span class="p">(</span><span class="n">ofValue</span><span class="p">:</span> <span class="n">ex</span><span class="p">)</span> <span class="p">==</span> <span class="mi">8</span><span class="p">)</span>
+
+
+<span class="kd">struct</span> <span class="nc">Example2</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nv">bar</span><span class="p">:</span> <span class="nb">Bool</span> <span class="c1">// 1</span>
+  <span class="kd">let</span> <span class="nv">foo</span><span class="p">:</span> <span class="nb">Int</span> <span class="c1">// 8</span>
+<span class="p">}</span>
+<span class="bp">assert</span><span class="p">(</span><span class="n">MemoryLayout</span><span class="p">&lt;</span><span class="n">Example2</span><span class="p">&gt;.</span><span class="n">size</span> <span class="p">==</span> <span class="mi">16</span><span class="p">)</span>
+<span class="bp">assert</span><span class="p">(</span><span class="n">MemoryLayout</span><span class="p">&lt;</span><span class="n">Example2</span><span class="p">&gt;.</span><span class="bp">stride</span> <span class="p">==</span> <span class="mi">16</span><span class="p">)</span>
+<span class="bp">assert</span><span class="p">(</span><span class="n">MemoryLayout</span><span class="p">&lt;</span><span class="n">Example2</span><span class="p">&gt;.</span><span class="n">alignment</span> <span class="p">==</span> <span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text">./code/12-weak-reference.swift</span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Author</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nv">name</span><span class="p">:</span> <span class="nb">String</span>
+  <span class="c1">// weak reference is required</span>
+  <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">post</span><span class="p">:</span> <span class="n">Post</span><span class="p">?</span>
+
+  <span class="kd">init</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span><span class="kc">self</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span><span class="p">}</span>
+  <span class="kd">deinit</span> <span class="p">{</span><span class="bp">print</span><span class="p">(</span><span class="s">&quot;Author deinit&quot;</span><span class="p">)}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Post</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nv">title</span><span class="p">:</span> <span class="nb">String</span>
+
+  <span class="kd">var</span> <span class="nv">author</span><span class="p">:</span> <span class="n">Author</span><span class="p">?</span>
+  <span class="kd">init</span><span class="p">(</span><span class="n">title</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span><span class="kc">self</span><span class="p">.</span><span class="n">title</span> <span class="p">=</span> <span class="n">title</span><span class="p">}</span>
+  <span class="kd">deinit</span> <span class="p">{</span><span class="bp">print</span><span class="p">(</span><span class="s">&quot;Post deinit&quot;</span><span class="p">)}</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nv">author</span><span class="p">:</span> <span class="n">Author</span><span class="p">?</span> <span class="p">=</span> <span class="n">Author</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;John Snow&quot;</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nv">post</span><span class="p">:</span> <span class="n">Post</span><span class="p">?</span> <span class="p">=</span> <span class="n">Post</span><span class="p">(</span><span class="n">title</span><span class="p">:</span> <span class="s">&quot;foo bar&quot;</span><span class="p">)</span>
+<span class="n">post</span><span class="p">?.</span><span class="n">author</span> <span class="p">=</span> <span class="n">author</span>
+<span class="n">author</span><span class="p">?.</span><span class="n">post</span> <span class="p">=</span> <span class="n">post</span>
+
+<span class="bp">print</span><span class="p">(</span><span class="n">author</span><span class="p">?.</span><span class="n">post</span><span class="p">)</span> <span class="c1">// Optional(main.Post)</span>
+<span class="n">post</span> <span class="p">=</span> <span class="kc">nil</span> <span class="c1">// Post deinit</span>
+<span class="bp">print</span><span class="p">(</span><span class="n">author</span><span class="p">?.</span><span class="n">post</span><span class="p">)</span> <span class="c1">// nil</span>
+<span class="n">author</span> <span class="p">=</span> <span class="kc">nil</span> <span class="c1">// Author deinit</span>
+</pre></div>
+</div>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://developer.apple.com/documentation/swift/unsafemutablerawpointer">https://developer.apple.com/documentation/swift/unsafemutablerawpointer</a></p></li>
+</ul>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text">./code/13-pointers.swift</span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="c1">// Unsafe[Mutable][Raw][Buffer]Pointer[Type]</span>
+<span class="c1">//</span>
+<span class="c1">// Mutable: means you can change the value</span>
+<span class="c1">// Raw: means it points to a blob of bytes</span>
+<span class="c1">// Buffer: means it works like a collection</span>
+<span class="c1">// Type: means generic typed pointers</span>
+<span class="c1">//</span>
+<span class="c1">// UnsafePointer&lt;T&gt;</span>
+<span class="c1">// UnsafeMutablePointer&lt;T&gt;</span>
+<span class="c1">//</span>
+<span class="c1">// UnsafeRawPointer</span>
+<span class="c1">// UnsafeMutableRawPointer</span>
+<span class="c1">//</span>
+<span class="c1">// UnsafeRawBufferPointer</span>
+<span class="c1">// UnsafeMutableRawBufferPointer</span>
+<span class="c1">//</span>
+<span class="c1">// UnsafeBufferPointer&lt;T&gt;</span>
+<span class="c1">// UnsafeMutableBufferPointer&lt;T&gt;</span>
+
+<span class="kd">let</span> <span class="nv">count</span> <span class="p">=</span> <span class="mi">2</span>
+<span class="kd">let</span> <span class="nv">stride</span> <span class="p">=</span> <span class="n">MemoryLayout</span><span class="p">&lt;</span><span class="nb">Int</span><span class="p">&gt;.</span><span class="bp">stride</span>
+<span class="kd">let</span> <span class="nv">alignment</span> <span class="p">=</span> <span class="n">MemoryLayout</span><span class="p">&lt;</span><span class="nb">Int</span><span class="p">&gt;.</span><span class="n">alignment</span>
+<span class="kd">let</span> <span class="nv">byteCount</span> <span class="p">=</span> <span class="bp">count</span> <span class="o">*</span> <span class="bp">stride</span>
+
+<span class="kd">let</span> <span class="nv">pointer</span> <span class="p">=</span> <span class="n">UnsafeMutableRawPointer</span><span class="p">.</span><span class="n">allocate</span><span class="p">(</span><span class="n">byteCount</span><span class="p">:</span> <span class="n">byteCount</span><span class="p">,</span> <span class="n">alignment</span><span class="p">:</span> <span class="n">alignment</span><span class="p">)</span>
+
+<span class="k">defer</span> <span class="p">{</span>
+  <span class="n">pointer</span><span class="p">.</span><span class="n">deallocate</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="n">pointer</span><span class="p">.</span><span class="n">storeBytes</span><span class="p">(</span><span class="n">of</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="k">as</span><span class="p">:</span> <span class="nb">Int</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span>
+<span class="n">pointer</span><span class="p">.</span><span class="n">advanced</span><span class="p">(</span><span class="n">by</span><span class="p">:</span> <span class="bp">stride</span><span class="p">).</span><span class="n">storeBytes</span><span class="p">(</span><span class="n">of</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="k">as</span><span class="p">:</span> <span class="nb">Int</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span>
+<span class="bp">assert</span><span class="p">(</span><span class="n">pointer</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="k">as</span><span class="p">:</span> <span class="nb">Int</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span> <span class="p">==</span> <span class="mi">30</span><span class="p">)</span>
+<span class="bp">assert</span><span class="p">(</span><span class="n">pointer</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">fromByteOffset</span><span class="p">:</span> <span class="bp">stride</span><span class="p">,</span> <span class="k">as</span><span class="p">:</span> <span class="nb">Int</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span> <span class="p">==</span> <span class="mi">3</span><span class="p">)</span>
+<span class="bp">assert</span><span class="p">(</span><span class="n">pointer</span><span class="p">.</span><span class="n">advanced</span><span class="p">(</span><span class="n">by</span><span class="p">:</span> <span class="bp">stride</span><span class="p">).</span><span class="n">load</span><span class="p">(</span><span class="k">as</span><span class="p">:</span> <span class="nb">Int</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span> <span class="p">==</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="kd">let</span> <span class="nv">bufferPointer</span> <span class="p">=</span> <span class="n">UnsafeRawBufferPointer</span><span class="p">(</span><span class="n">start</span><span class="p">:</span> <span class="n">pointer</span><span class="p">,</span> <span class="bp">count</span><span class="p">:</span> <span class="n">byteCount</span><span class="p">)</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">byte</span><span class="p">)</span> <span class="k">in</span> <span class="n">bufferPointer</span><span class="p">.</span><span class="n">enumerated</span><span class="p">()</span> <span class="p">{</span>
+  <span class="bp">print</span><span class="p">(</span><span class="s">&quot;byte </span><span class="si">\(</span><span class="n">index</span><span class="si">)</span><span class="s"> -&gt; </span><span class="si">\(</span><span class="n">byte</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="cm">/*</span>
+<span class="cm">byte 0 -&gt; 30</span>
+<span class="cm">byte 1 -&gt; 0</span>
+<span class="cm">byte 2 -&gt; 0</span>
+<span class="cm">byte 3 -&gt; 0</span>
+<span class="cm">byte 4 -&gt; 0</span>
+<span class="cm">byte 5 -&gt; 0</span>
+<span class="cm">byte 6 -&gt; 0</span>
+<span class="cm">byte 7 -&gt; 0</span>
+<span class="cm">byte 8 -&gt; 3</span>
+<span class="cm">byte 9 -&gt; 0</span>
+<span class="cm">byte 10 -&gt; 0</span>
+<span class="cm">byte 11 -&gt; 0</span>
+<span class="cm">byte 12 -&gt; 0</span>
+<span class="cm">byte 13 -&gt; 0</span>
+<span class="cm">byte 14 -&gt; 0</span>
+<span class="cm">byte 15 -&gt; 0</span>
+<span class="cm">*/</span>
+</pre></div>
+</div>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://developer.apple.com/documentation/swift/unsafemutablepointer">https://developer.apple.com/documentation/swift/unsafemutablepointer</a></p></li>
+</ul>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text">./code/14-typed-pointers.swift</span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nv">count</span> <span class="p">=</span> <span class="mi">2</span>
+<span class="kd">let</span> <span class="nv">stride</span> <span class="p">=</span> <span class="n">MemoryLayout</span><span class="p">&lt;</span><span class="nb">Int</span><span class="p">&gt;.</span><span class="bp">stride</span>
+<span class="kd">let</span> <span class="nv">pointer</span> <span class="p">=</span> <span class="nb">UnsafeMutablePointer</span><span class="p">&lt;</span><span class="nb">Int</span><span class="p">&gt;.</span><span class="n">allocate</span><span class="p">(</span><span class="n">capacity</span><span class="p">:</span> <span class="bp">count</span><span class="p">)</span>
+<span class="n">pointer</span><span class="p">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">repeating</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">count</span><span class="p">:</span> <span class="bp">count</span><span class="p">)</span>
+
+<span class="k">defer</span> <span class="p">{</span>
+  <span class="n">pointer</span><span class="p">.</span><span class="n">deinitialize</span><span class="p">(</span><span class="bp">count</span><span class="p">:</span> <span class="bp">count</span><span class="p">)</span>
+  <span class="n">pointer</span><span class="p">.</span><span class="n">deallocate</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="n">pointer</span><span class="p">.</span><span class="n">pointee</span> <span class="p">=</span> <span class="mi">42</span>
+<span class="n">pointer</span><span class="p">.</span><span class="n">advanced</span><span class="p">(</span><span class="n">by</span><span class="p">:</span> <span class="mi">1</span><span class="p">).</span><span class="n">pointee</span> <span class="p">=</span> <span class="mi">6</span>
+
+<span class="kd">let</span> <span class="nv">bufferPointer</span> <span class="p">=</span> <span class="nb">UnsafeBufferPointer</span><span class="p">(</span><span class="n">start</span><span class="p">:</span> <span class="n">pointer</span><span class="p">,</span> <span class="bp">count</span><span class="p">:</span> <span class="bp">count</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="n">bufferPointer</span><span class="p">.</span><span class="n">enumerated</span><span class="p">()</span> <span class="p">{</span>
+  <span class="bp">print</span><span class="p">(</span><span class="s">&quot;value </span><span class="si">\(</span><span class="n">index</span><span class="si">)</span><span class="s"> -&gt; </span><span class="si">\(</span><span class="n">value</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="cm">/*</span>
+<span class="cm">value 0 -&gt; 42</span>
+<span class="cm">value 1 -&gt; 6</span>
+<span class="cm">*/</span>
+</pre></div>
+</div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Swift" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="package.html" class="btn btn-neutral float-right" title="Package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

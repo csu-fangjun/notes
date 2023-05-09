@@ -1,0 +1,47 @@
+Raspberry PI
+============
+
+How to connect it to Windows with direct ethernet connection
+------------------------------------------------------------
+
+1. Change the firewall on Windows to allow port for DHCP.
+   The DHCP server uses port 67, supporting both TCP and UDP
+
+2. Download a DHCP server from `<https://www.dhcpserver.de/cms/download/>`_.
+   I have uploaded it to `<https://huggingface.co/csukuangfj/dhcp-server-for-windows>`_
+
+3. Change the IP address of the network interface on Windows to ``192.168.1.2``.
+
+4. Download and install wireshark. Start it to capture the traffic of the network
+   interface, on which we will run the DHCP server. We can use the filter ``dhcp``
+   to filter out packets.
+
+5. Start the ``dhcpwiz.exe`` to configure the DHCP server. Wet set the starting
+   address to ``192.168.1.100``. Note: Don't put ``192.168.1.2`` into the pool
+   since it has already been occupied.
+
+6. Use a network cable to connect the windows machine with Raspberry pi.
+
+7. We can see the IP address of the Raspberry pi from the packets captured by wireshark.
+
+Default IP of Raspberry pi
+--------------------------
+
+.. code-block::
+
+  pi@raspberrypi:~ $ ifconfig
+  eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+          inet 169.254.49.182  netmask 255.255.0.0  broadcast 169.254.255.255
+          inet6 fe80::11f:baaf:1325:9f1e  prefixlen 64  scopeid 0x20<link>
+          ether dc:a6:32:cc:76:1c  txqueuelen 1000  (Ethernet)
+          RX packets 275806  bytes 67146923 (64.0 MiB)
+          RX errors 0  dropped 0  overruns 0  frame 0
+          TX packets 5359  bytes 454586 (443.9 KiB)
+          TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+We can use Wireshark to capture its network traffic and find its address.
+Then we can assign a static address, e.g., ``169.254.49.181`` to our own computer.
+
+``169.254.0.0/16`` IPv4 link local addresses.
+
+

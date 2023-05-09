@@ -3,6 +3,7 @@ Python
 
 .. toctree::
 
+    install
     asyncio/index
     argv
     todo
@@ -11,3 +12,5 @@ Python
     str
     enum/index
     socket/index
+    numpy/index
+    pip

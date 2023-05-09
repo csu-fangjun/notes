@@ -1,0 +1,9 @@
+onnxruntime
+===========
+
+.. toctree::
+
+    install
+    basics
+
+

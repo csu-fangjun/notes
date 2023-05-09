@@ -25,3 +25,10 @@ pad
    # add 2 seconds of silence at the begining and 3 seconds of silence
    # at the end.
    sox in.wav out.wav pad 2 3
+
+raw
+---
+.. code-block:: bash
+
+  sox -t raw -r 16000 -e signed -b 16 -c 1 test.raw -r 48000 out.wav
+

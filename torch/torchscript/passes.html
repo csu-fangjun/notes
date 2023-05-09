@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>passes &mdash; notes  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ops" href="ops.html" />
+    <link rel="prev" title="graph" href="graph.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">torch</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../load-and-save.html">torch.load and torch.save</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gather.html">torch.gather</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ddp/index.html">DDP</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">TorchScript</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html">doxygen doc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hello.html">Hello</a></li>
+<li class="toctree-l3"><a class="reference internal" href="load-in-cpp.html">Load in C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="array_ref.html">ArrayRef</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scalar-type.html">ScalarType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type-meta.html">TypeMeta</a></li>
+<li class="toctree-l3"><a class="reference internal" href="device.html">torch::Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tensor-options.html">TensorOptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tensor-creation.html">Tensor Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tensor.html">Tensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intrusive-ptr.html">intrusive_ptr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="optional.html">optional</a></li>
+<li class="toctree-l3"><a class="reference internal" href="packed-sequence.html">PackedSequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ivalue.html">ivalue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="method.html">method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type.html">type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trace.html">trace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="node.html">Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="symbol.html">symbol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph.html">graph</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">passes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#jit-pass-fuse-add-relu">_jit_pass_fuse_add_relu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jit-pass-fuse-linear">_jit_pass_fuse_linear</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ops.html">ops</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../logical-op.html">Logical operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notes.html">Note</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quantization/index.html">Quantization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../android/index.html">android</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lstm.html">nn.LSTM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../csharp/index.html">csharp</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">torch</a> &raquo;</li>
+          <li><a href="index.html">TorchScript</a> &raquo;</li>
+      <li>passes</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/torch/torchscript/passes.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="passes">
+<h1>passes<a class="headerlink" href="#passes" title="Permalink to this headline">¶</a></h1>
+<section id="jit-pass-fuse-add-relu">
+<h2>_jit_pass_fuse_add_relu<a class="headerlink" href="#jit-pass-fuse-add-relu" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/torch/csrc/jit/passes/fuse_relu.cpp">https://github.com/pytorch/pytorch/blob/master/torch/csrc/jit/passes/fuse_relu.cpp</a></p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/passes/fuse_add_relu.py</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/usr/bin/env python3</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="linenos"> 7</span>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+<span class="linenos"> 8</span>        <span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
+<span class="linenos"> 9</span>        <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">10</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos">13</span>    <span class="n">f</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">()</span>
+<span class="linenos">14</span>    <span class="n">m</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">jit</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>
+<span class="linenos">15</span>    <span class="n">g</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">graph</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;fuse_add_relu-before.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="linenos">18</span>        <span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span>    <span class="n">torch</span><span class="o">.</span><span class="n">_C</span><span class="o">.</span><span class="n">_jit_pass_fuse_add_relu</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;fuse_add_relu-after.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="linenos">23</span>        <span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="linenos">27</span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">./code/passes/fuse_add_relu-before.txt</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">graph</span><span class="p">(</span><span class="o">%</span><span class="bp">self</span> <span class="p">:</span> <span class="n">__torch__</span><span class="o">.</span><span class="n">Foo</span><span class="p">,</span>
+<span class="linenos"> 2</span>      <span class="o">%</span><span class="n">x</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">),</span>
+<span class="linenos"> 3</span>      <span class="o">%</span><span class="n">y</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">)):</span>
+<span class="linenos"> 4</span>  <span class="o">%</span><span class="mi">5</span> <span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">prim</span><span class="p">::</span><span class="n">Constant</span><span class="p">[</span><span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">]()</span> <span class="c1"># ./fuse_add_relu.py:8:0</span>
+<span class="linenos"> 5</span>  <span class="o">%</span><span class="nb">input</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">)</span> <span class="o">=</span> <span class="n">aten</span><span class="p">::</span><span class="n">add</span><span class="p">(</span><span class="o">%</span><span class="n">x</span><span class="p">,</span> <span class="o">%</span><span class="n">y</span><span class="p">,</span> <span class="o">%</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># ./fuse_add_relu.py:8:0</span>
+<span class="linenos"> 6</span>  <span class="o">%</span><span class="n">a</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">)</span> <span class="o">=</span> <span class="n">aten</span><span class="p">::</span><span class="n">relu</span><span class="p">(</span><span class="o">%</span><span class="nb">input</span><span class="p">)</span> <span class="c1"># /Users/fangjun/py38/lib/python3.8/site-packages/torch/nn/functional.py:1457:0</span>
+<span class="linenos"> 7</span>  <span class="o">%</span><span class="mi">8</span> <span class="p">:</span> <span class="n">Long</span><span class="p">(</span><span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">)</span> <span class="o">=</span> <span class="n">prim</span><span class="p">::</span><span class="n">Constant</span><span class="p">[</span><span class="n">value</span><span class="o">=</span><span class="p">{</span><span class="mi">10</span><span class="p">}]()</span> <span class="c1"># ./fuse_add_relu.py:9:0</span>
+<span class="linenos"> 8</span>  <span class="o">%</span><span class="mi">9</span> <span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">prim</span><span class="p">::</span><span class="n">Constant</span><span class="p">[</span><span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">]()</span> <span class="c1"># ./fuse_add_relu.py:9:0</span>
+<span class="linenos"> 9</span>  <span class="o">%</span><span class="mi">10</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">)</span> <span class="o">=</span> <span class="n">aten</span><span class="p">::</span><span class="n">add</span><span class="p">(</span><span class="o">%</span><span class="n">a</span><span class="p">,</span> <span class="o">%</span><span class="mi">8</span><span class="p">,</span> <span class="o">%</span><span class="mi">9</span><span class="p">)</span> <span class="c1"># ./fuse_add_relu.py:9:0</span>
+<span class="linenos">10</span>  <span class="k">return</span> <span class="p">(</span><span class="o">%</span><span class="mi">10</span><span class="p">)</span>
+<span class="linenos">11</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">./code/passes/fuse_add_relu-after.txt</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">graph</span><span class="p">(</span><span class="o">%</span><span class="bp">self</span> <span class="p">:</span> <span class="n">__torch__</span><span class="o">.</span><span class="n">Foo</span><span class="p">,</span>
+<span class="linenos"> 2</span>      <span class="o">%</span><span class="n">x</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">),</span>
+<span class="linenos"> 3</span>      <span class="o">%</span><span class="n">y</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">)):</span>
+<span class="linenos"> 4</span>  <span class="o">%</span><span class="mi">5</span> <span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">prim</span><span class="p">::</span><span class="n">Constant</span><span class="p">[</span><span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">]()</span> <span class="c1"># ./fuse_add_relu.py:8:0</span>
+<span class="linenos"> 5</span>  <span class="o">%</span><span class="mi">11</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">)</span> <span class="o">=</span> <span class="n">aten</span><span class="p">::</span><span class="n">_add_relu</span><span class="p">(</span><span class="o">%</span><span class="n">x</span><span class="p">,</span> <span class="o">%</span><span class="n">y</span><span class="p">,</span> <span class="o">%</span><span class="mi">5</span><span class="p">)</span>
+<span class="linenos"> 6</span>  <span class="o">%</span><span class="mi">8</span> <span class="p">:</span> <span class="n">Long</span><span class="p">(</span><span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">)</span> <span class="o">=</span> <span class="n">prim</span><span class="p">::</span><span class="n">Constant</span><span class="p">[</span><span class="n">value</span><span class="o">=</span><span class="p">{</span><span class="mi">10</span><span class="p">}]()</span> <span class="c1"># ./fuse_add_relu.py:9:0</span>
+<span class="linenos"> 7</span>  <span class="o">%</span><span class="mi">9</span> <span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">prim</span><span class="p">::</span><span class="n">Constant</span><span class="p">[</span><span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">]()</span> <span class="c1"># ./fuse_add_relu.py:9:0</span>
+<span class="linenos"> 8</span>  <span class="o">%</span><span class="mi">10</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">)</span> <span class="o">=</span> <span class="n">aten</span><span class="p">::</span><span class="n">add</span><span class="p">(</span><span class="o">%</span><span class="mi">11</span><span class="p">,</span> <span class="o">%</span><span class="mi">8</span><span class="p">,</span> <span class="o">%</span><span class="mi">9</span><span class="p">)</span> <span class="c1"># ./fuse_add_relu.py:9:0</span>
+<span class="linenos"> 9</span>  <span class="k">return</span> <span class="p">(</span><span class="o">%</span><span class="mi">10</span><span class="p">)</span>
+<span class="linenos">10</span>
+</pre></div>
+</div>
+</div>
+<section id="in-place-relu">
+<h3>in_place <a href="#id10"><span class="problematic" id="id11">relu_</span></a><a class="headerlink" href="#in-place-relu" title="Permalink to this headline">¶</a></h3>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">./code/passes/<a href="#id12"><span class="problematic" id="id13">fuse_add_relu_</span></a>.py</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/usr/bin/env python3</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="linenos"> 7</span>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+<span class="linenos"> 8</span>        <span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos"> 9</span>        <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">10</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos">13</span>    <span class="n">f</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">()</span>
+<span class="linenos">14</span>    <span class="n">m</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">jit</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>
+<span class="linenos">15</span>    <span class="n">g</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">graph</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;fuse_add_relu_-before.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="linenos">18</span>        <span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span>    <span class="n">torch</span><span class="o">.</span><span class="n">_C</span><span class="o">.</span><span class="n">_jit_pass_fuse_add_relu</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;fuse_add_relu_-after.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="linenos">23</span>        <span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="linenos">27</span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">./code/passes/<a href="#id14"><span class="problematic" id="id15">fuse_add_relu_</span></a>-before.txt</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">graph</span><span class="p">(</span><span class="o">%</span><span class="bp">self</span> <span class="p">:</span> <span class="n">__torch__</span><span class="o">.</span><span class="n">Foo</span><span class="p">,</span>
+<span class="linenos"> 2</span>      <span class="o">%</span><span class="n">x</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">),</span>
+<span class="linenos"> 3</span>      <span class="o">%</span><span class="n">y</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">)):</span>
+<span class="linenos"> 4</span>  <span class="o">%</span><span class="mi">5</span> <span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">prim</span><span class="p">::</span><span class="n">Constant</span><span class="p">[</span><span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">]()</span> <span class="c1"># ./fuse_add_relu_.py:8:0</span>
+<span class="linenos"> 5</span>  <span class="o">%</span><span class="nb">input</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">)</span> <span class="o">=</span> <span class="n">aten</span><span class="p">::</span><span class="n">add</span><span class="p">(</span><span class="o">%</span><span class="n">x</span><span class="p">,</span> <span class="o">%</span><span class="n">y</span><span class="p">,</span> <span class="o">%</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># ./fuse_add_relu_.py:8:0</span>
+<span class="linenos"> 6</span>  <span class="o">%</span><span class="n">a</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">)</span> <span class="o">=</span> <span class="n">aten</span><span class="p">::</span><span class="n">relu_</span><span class="p">(</span><span class="o">%</span><span class="nb">input</span><span class="p">)</span> <span class="c1"># /Users/fangjun/py38/lib/python3.8/site-packages/torch/nn/functional.py:1455:0</span>
+<span class="linenos"> 7</span>  <span class="o">%</span><span class="mi">8</span> <span class="p">:</span> <span class="n">Long</span><span class="p">(</span><span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">)</span> <span class="o">=</span> <span class="n">prim</span><span class="p">::</span><span class="n">Constant</span><span class="p">[</span><span class="n">value</span><span class="o">=</span><span class="p">{</span><span class="mi">10</span><span class="p">}]()</span> <span class="c1"># ./fuse_add_relu_.py:9:0</span>
+<span class="linenos"> 8</span>  <span class="o">%</span><span class="mi">9</span> <span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">prim</span><span class="p">::</span><span class="n">Constant</span><span class="p">[</span><span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">]()</span> <span class="c1"># ./fuse_add_relu_.py:9:0</span>
+<span class="linenos"> 9</span>  <span class="o">%</span><span class="mi">10</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">)</span> <span class="o">=</span> <span class="n">aten</span><span class="p">::</span><span class="n">add</span><span class="p">(</span><span class="o">%</span><span class="n">a</span><span class="p">,</span> <span class="o">%</span><span class="mi">8</span><span class="p">,</span> <span class="o">%</span><span class="mi">9</span><span class="p">)</span> <span class="c1"># ./fuse_add_relu_.py:9:0</span>
+<span class="linenos">10</span>  <span class="k">return</span> <span class="p">(</span><span class="o">%</span><span class="mi">10</span><span class="p">)</span>
+<span class="linenos">11</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">./code/passes/<a href="#id16"><span class="problematic" id="id17">fuse_add_relu_</span></a>-after.txt</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">graph</span><span class="p">(</span><span class="o">%</span><span class="bp">self</span> <span class="p">:</span> <span class="n">__torch__</span><span class="o">.</span><span class="n">Foo</span><span class="p">,</span>
+<span class="linenos"> 2</span>      <span class="o">%</span><span class="n">x</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">),</span>
+<span class="linenos"> 3</span>      <span class="o">%</span><span class="n">y</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">)):</span>
+<span class="linenos"> 4</span>  <span class="o">%</span><span class="mi">5</span> <span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">prim</span><span class="p">::</span><span class="n">Constant</span><span class="p">[</span><span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">]()</span> <span class="c1"># ./fuse_add_relu_.py:8:0</span>
+<span class="linenos"> 5</span>  <span class="o">%</span><span class="mi">11</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">)</span> <span class="o">=</span> <span class="n">aten</span><span class="p">::</span><span class="n">_add_relu</span><span class="p">(</span><span class="o">%</span><span class="n">x</span><span class="p">,</span> <span class="o">%</span><span class="n">y</span><span class="p">,</span> <span class="o">%</span><span class="mi">5</span><span class="p">)</span>
+<span class="linenos"> 6</span>  <span class="o">%</span><span class="mi">8</span> <span class="p">:</span> <span class="n">Long</span><span class="p">(</span><span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">)</span> <span class="o">=</span> <span class="n">prim</span><span class="p">::</span><span class="n">Constant</span><span class="p">[</span><span class="n">value</span><span class="o">=</span><span class="p">{</span><span class="mi">10</span><span class="p">}]()</span> <span class="c1"># ./fuse_add_relu_.py:9:0</span>
+<span class="linenos"> 7</span>  <span class="o">%</span><span class="mi">9</span> <span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">prim</span><span class="p">::</span><span class="n">Constant</span><span class="p">[</span><span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">]()</span> <span class="c1"># ./fuse_add_relu_.py:9:0</span>
+<span class="linenos"> 8</span>  <span class="o">%</span><span class="mi">10</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">)</span> <span class="o">=</span> <span class="n">aten</span><span class="p">::</span><span class="n">add</span><span class="p">(</span><span class="o">%</span><span class="mi">11</span><span class="p">,</span> <span class="o">%</span><span class="mi">8</span><span class="p">,</span> <span class="o">%</span><span class="mi">9</span><span class="p">)</span> <span class="c1"># ./fuse_add_relu_.py:9:0</span>
+<span class="linenos"> 9</span>  <span class="k">return</span> <span class="p">(</span><span class="o">%</span><span class="mi">10</span><span class="p">)</span>
+<span class="linenos">10</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="jit-pass-fuse-linear">
+<h2>_jit_pass_fuse_linear<a class="headerlink" href="#jit-pass-fuse-linear" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/torch/csrc/jit/passes/fuse_linear.cpp">https://github.com/pytorch/pytorch/blob/master/torch/csrc/jit/passes/fuse_linear.cpp</a></p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">./code/passes/fuse_linear.py</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/usr/bin/env python3</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="linenos"> 7</span>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">w</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+<span class="linenos"> 8</span>        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="o">.</span><span class="n">t</span><span class="p">())</span> <span class="o">+</span> <span class="n">b</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos">12</span>    <span class="n">f</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">()</span>
+<span class="linenos">13</span>    <span class="n">m</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">jit</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>
+<span class="linenos">14</span>    <span class="n">g</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">graph</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;fuse_linear-before.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="linenos">17</span>        <span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span>    <span class="n">torch</span><span class="o">.</span><span class="n">_C</span><span class="o">.</span><span class="n">_jit_pass_fuse_linear</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;fuse_linear-after.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="linenos">22</span>        <span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="linenos">26</span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">./code/passes/fuse_linear-before.txt</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">graph</span><span class="p">(</span><span class="o">%</span><span class="bp">self</span> <span class="p">:</span> <span class="n">__torch__</span><span class="o">.</span><span class="n">Foo</span><span class="p">,</span>
+<span class="linenos"> 2</span>      <span class="o">%</span><span class="n">x</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">),</span>
+<span class="linenos"> 3</span>      <span class="o">%</span><span class="n">w</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">),</span>
+<span class="linenos"> 4</span>      <span class="o">%</span><span class="n">b</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">)):</span>
+<span class="linenos"> 5</span>  <span class="o">%</span><span class="mi">6</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">)</span> <span class="o">=</span> <span class="n">aten</span><span class="p">::</span><span class="n">t</span><span class="p">(</span><span class="o">%</span><span class="n">w</span><span class="p">)</span> <span class="c1"># ./fuse_linear.py:8:0</span>
+<span class="linenos"> 6</span>  <span class="o">%</span><span class="mi">7</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">)</span> <span class="o">=</span> <span class="n">aten</span><span class="p">::</span><span class="n">matmul</span><span class="p">(</span><span class="o">%</span><span class="n">x</span><span class="p">,</span> <span class="o">%</span><span class="mi">6</span><span class="p">)</span> <span class="c1"># ./fuse_linear.py:8:0</span>
+<span class="linenos"> 7</span>  <span class="o">%</span><span class="mi">8</span> <span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">prim</span><span class="p">::</span><span class="n">Constant</span><span class="p">[</span><span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">]()</span> <span class="c1"># ./fuse_linear.py:8:0</span>
+<span class="linenos"> 8</span>  <span class="o">%</span><span class="mi">9</span> <span class="p">:</span> <span class="n">Float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">cpu</span><span class="p">)</span> <span class="o">=</span> <span class="n">aten</span><span class="p">::</span><span class="n">add</span><span class="p">(</span><span class="o">%</span><span class="mi">7</span><span class="p">,</span> <span class="o">%</span><span class="n">b</span><span class="p">,</span> <span class="o">%</span><span class="mi">8</span><span class="p">)</span> <span class="c1"># ./fuse_linear.py:8:0</span>
+<span class="linenos"> 9</span>  <span class="k">return</span> <span class="p">(</span><span class="o">%</span><span class="mi">9</span><span class="p">)</span>
+<span class="linenos">10</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">./code/passes/fuse_linear-after.txt</span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>graph(%self : __torch__.Foo,
+<span class="linenos"> 2</span>      %x : Float(3, strides=[1], requires_grad=0, device=cpu),
+<span class="linenos"> 3</span>      %w : Float(3, 3, strides=[3, 1], requires_grad=0, device=cpu),
+<span class="linenos"> 4</span>      %b : Float(3, strides=[1], requires_grad=0, device=cpu)):
+<span class="linenos"> 5</span>  %11 : Tensor? = prim::Constant()
+<span class="linenos"> 6</span>  %13 : Float(3, strides=[1], requires_grad=0, device=cpu) = aten::linear(%x, %w, %11) # ./fuse_linear.py:8:0
+<span class="linenos"> 7</span>  %8 : int = prim::Constant[value=1]() # ./fuse_linear.py:8:0
+<span class="linenos"> 8</span>  %9 : Float(3, strides=[1], requires_grad=0, device=cpu) = aten::add(%13, %b, %8) # ./fuse_linear.py:8:0
+<span class="linenos"> 9</span>  return (%9)
+<span class="linenos">10</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="graph.html" class="btn btn-neutral float-left" title="graph" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ops.html" class="btn btn-neutral float-right" title="ops" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

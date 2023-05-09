@@ -18,6 +18,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="lldb" href="lldb.html" />
     <link rel="prev" title="Operating systems" href="index.html" /> 
 </head>
 
@@ -38,6 +39,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
@@ -70,9 +72,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Operating systems</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">macos</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">macos</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#port-scan">Port scan</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="lldb.html">lldb</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
 </ul>
 
         </div>
@@ -106,6 +118,13 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat result.txt <span class="p">|</span> pbcopy
 </pre></div>
 </div>
+<section id="port-scan">
+<h2>Port scan<a class="headerlink" href="#port-scan" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install masscan
+sudo masscan -p <span class="m">1</span>-10000 <span class="m">137</span>.184.92.35
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -113,6 +132,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="Operating systems" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="lldb.html" class="btn btn-neutral float-right" title="lldb" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

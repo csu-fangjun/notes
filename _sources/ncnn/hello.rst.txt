@@ -29,3 +29,23 @@ To install the Python package:
    cd ..
    pip install .
 
+test-net
+--------
+
+.. literalinclude:: ./code/hello/test-net.cc
+   :language: c++
+   :caption: ./code/hello/test-net.cc
+
+test-param-dict
+---------------
+
+.. literalinclude:: ./code/hello/test-param-dict.cc
+   :language: c++
+   :caption: ./code/hello/test-param-dict.cc
+
+test-data-reader
+----------------
+
+.. literalinclude:: ./code/hello/test-data-reader.cc
+   :language: c++
+   :caption: ./code/hello/test-data-reader.cc

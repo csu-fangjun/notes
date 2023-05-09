@@ -18,7 +18,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ncnn::Mat" href="mat.html" />
+    <link rel="next" title="LLVM" href="../llvm/index.html" />
     <link rel="prev" title="ncnn" href="index.html" /> 
 </head>
 
@@ -39,6 +39,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
@@ -62,8 +63,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">ncnn</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Hello</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mat.html">ncnn::Mat</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Hello</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#test-net">test-net</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-param-dict">test-param-dict</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-data-reader">test-data-reader</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
@@ -75,6 +80,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
 </ul>
 
         </div>
@@ -152,6 +163,356 @@ make -j
 pip install .
 </pre></div>
 </div>
+<section id="test-net">
+<h2>test-net<a class="headerlink" href="#test-net" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">./code/hello/test-net.cc</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;datareader.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;layer/relu.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;layer_type.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;net.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fstream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="cp">#ifndef MY_CHECK</span>
+<span class="cp">#define MY_CHECK(x, y)                                                         \</span>
+<span class="cp">  do {                                                                         \</span>
+<span class="cp">    if (x != y) {                                                              \</span>
+<span class="cp">      NCNN_LOGE(#x &quot; != &quot; #y);                                                 \</span>
+<span class="cp">      exit(EXIT_FAILURE);                                                      \</span>
+<span class="cp">    }                                                                          \</span>
+<span class="cp">  } while (0)</span>
+<span class="cp">#endif</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">DataReaderFromEmpty</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">ncnn</span><span class="o">::</span><span class="n">DataReader</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">scan</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">read</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">memset</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="n">ncnn</span><span class="o">::</span><span class="n">Layer</span><span class="w"> </span><span class="o">*</span><span class="nf">MyLayerCreator</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="cm">/*userdata*/</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ncnn</span><span class="o">::</span><span class="n">ReLU</span><span class="p">();</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">MyLayerDestoryer</span><span class="p">(</span><span class="n">ncnn</span><span class="o">::</span><span class="n">Layer</span><span class="w"> </span><span class="o">*</span><span class="n">layer</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="cm">/*userdata*/</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">delete</span><span class="w"> </span><span class="n">layer</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+
+<span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">TestCustomLayer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sa">R</span><span class="s">&quot;</span><span class="dl">(</span><span class="s"></span>
+<span class="s">7767517</span>
+<span class="s">2 2</span>
+<span class="s">Input        data                            0 1 data</span>
+<span class="s">MyLayer      my_layer                        1 1 data out</span>
+<span class="dl">)</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">ofstream</span><span class="w"> </span><span class="n">of</span><span class="p">(</span><span class="s">&quot;filename.param&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">of</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">of</span><span class="p">.</span><span class="n">close</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">ncnn</span><span class="o">::</span><span class="n">Net</span><span class="w"> </span><span class="n">net</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">net</span><span class="p">.</span><span class="n">register_custom_layer</span><span class="p">(</span><span class="s">&quot;MyLayer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">MyLayerCreator</span><span class="p">,</span><span class="w"> </span><span class="n">MyLayerDestoryer</span><span class="p">,</span><span class="w"></span>
+<span class="w">                            </span><span class="k">nullptr</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// This is the first custom layer, so its index is 0</span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">net</span><span class="p">.</span><span class="n">custom_layer_to_index</span><span class="p">(</span><span class="s">&quot;MyLayer&quot;</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">DataReaderFromEmpty</span><span class="w"> </span><span class="n">dr</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// return 0 on success</span>
+<span class="w">  </span><span class="c1">// What does load_param() do?</span>
+<span class="w">  </span><span class="c1">// If we need to set options, we have to set it before calling load_param()</span>
+<span class="w">  </span><span class="c1">// (1) Read the magic number</span>
+<span class="w">  </span><span class="c1">// (2) Allocate space for layers and blobs</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">net</span><span class="p">.</span><span class="n">load_param</span><span class="p">(</span><span class="s">&quot;filename.param&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// load_model() is optional if there are no parameters to read</span>
+<span class="w">  </span><span class="c1">// ret = net.load_model(dr);</span>
+<span class="w">  </span><span class="c1">// MY_CHECK(ret, 0);</span>
+
+<span class="w">  </span><span class="n">ncnn</span><span class="o">::</span><span class="n">Mat</span><span class="w"> </span><span class="n">m</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int32_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">total</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="kt">float</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="n">total</span><span class="p">())</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int32_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">total</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">ncnn</span><span class="o">::</span><span class="n">Extractor</span><span class="w"> </span><span class="n">ex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">net</span><span class="p">.</span><span class="n">create_extractor</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">ex</span><span class="p">.</span><span class="n">input</span><span class="p">(</span><span class="s">&quot;data&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">ncnn</span><span class="o">::</span><span class="n">Mat</span><span class="w"> </span><span class="n">out</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">ex</span><span class="p">.</span><span class="n">extract</span><span class="p">(</span><span class="s">&quot;out&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">out</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">out</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int32_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">out</span><span class="p">.</span><span class="n">total</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cm">/*</span>
+<span class="cm">ncnn::Net uses pimpl</span>
+
+<span class="cm">std::vector&lt;Layer*&gt; layers;</span>
+<span class="cm">std::vector&lt;Blob&gt; blobs;</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">TestNet</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">TestCustomLayer</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">NCNN_LOGE</span><span class="p">(</span><span class="s">&quot;Test net</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="cm">/*</span>
+<span class="cm">  77675157 -&gt;  magic number</span>
+<span class="cm">  3 3 -&gt; layer_count, blob_count</span>
+
+<span class="cm">Input            data                             0 1 data</span>
+<span class="cm">-&gt;</span>
+<span class="cm">layer type: Input</span>
+<span class="cm">Layer name: data</span>
+<span class="cm">bottom count: 0</span>
+<span class="cm">top count: 1</span>
+<span class="cm">It uses ncnn::create_layer(layer_type) to create a layer</span>
+
+<span class="cm">If create_layer() returns a nullptr, it invokes</span>
+<span class="cm">create_custom_layer(layer_type)</span>
+
+<span class="cm">note: create_layer() is a global function, while create_custom_layer()</span>
+<span class="cm">is a method of `ncnn::Net`.</span>
+
+<span class="cm">It will also invoke layer-&gt;load_param(paramdict);</span>
+
+<span class="cm">Input layer has index 0 since it is the first row</span>
+<span class="cm">0 1 data -&gt; data is the output blob of Input layer. It has index 0 since</span>
+<span class="cm">it is the first blob</span>
+
+
+<span class="cm">   */</span><span class="w"></span>
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sa">R</span><span class="s">&quot;</span><span class="dl">(</span><span class="s"></span>
+<span class="s">7767517</span>
+<span class="s">3 3</span>
+<span class="s">Input            data                             0 1 data</span>
+<span class="s">Convolution      conv0_fwd                        1 1 data conv0_fwd 0=3 1=3 11=3 2=1 12=1 3=1 13=1 4=0 14=0 5=1 6=81</span>
+<span class="s">InnerProduct     dense0_fwd                       1 1 conv0_fwd output 0=1 1=1 2=151875</span>
+<span class="dl">)</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">ofstream</span><span class="w"> </span><span class="n">of</span><span class="p">(</span><span class="s">&quot;filename.param&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">of</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">of</span><span class="p">.</span><span class="n">close</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">ncnn</span><span class="o">::</span><span class="n">Net</span><span class="w"> </span><span class="n">net</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">DataReaderFromEmpty</span><span class="w"> </span><span class="n">dr</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// return 0 on success</span>
+<span class="w">  </span><span class="c1">// What does load_param() do?</span>
+<span class="w">  </span><span class="c1">// If we need to set options, we have to set it before calling load_param()</span>
+<span class="w">  </span><span class="c1">// (1) Read the magic number</span>
+<span class="w">  </span><span class="c1">// (2) Allocate space for layers and blobs</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">net</span><span class="p">.</span><span class="n">load_param</span><span class="p">(</span><span class="s">&quot;filename.param&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">net</span><span class="p">.</span><span class="n">load_model</span><span class="p">(</span><span class="n">dr</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">net</span><span class="p">.</span><span class="n">blobs</span><span class="p">().</span><span class="n">size</span><span class="p">(),</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">net</span><span class="p">.</span><span class="n">layers</span><span class="p">().</span><span class="n">size</span><span class="p">(),</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// test layer 0</span>
+<span class="w">  </span><span class="c1">// every layer has a type</span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">net</span><span class="p">.</span><span class="n">layers</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Input&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">net</span><span class="p">.</span><span class="n">layers</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">typeindex</span><span class="p">,</span><span class="w"> </span><span class="n">ncnn</span><span class="o">::</span><span class="n">LayerType</span><span class="o">::</span><span class="n">Input</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// every layer has a name</span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">net</span><span class="p">.</span><span class="n">layers</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;data&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// every layer has an input vector</span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">net</span><span class="p">.</span><span class="n">layers</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">bottoms</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// every layer has an output vector</span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">net</span><span class="p">.</span><span class="n">layers</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">tops</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// indexes in tops are indexes into the global blobs vector</span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">net</span><span class="p">.</span><span class="n">layers</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">tops</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// every blob has a name</span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">net</span><span class="p">.</span><span class="n">blobs</span><span class="p">()[</span><span class="mi">0</span><span class="p">].</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;data&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// every blob has a producer (layer index)</span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">net</span><span class="p">.</span><span class="n">blobs</span><span class="p">()[</span><span class="mi">0</span><span class="p">].</span><span class="n">producer</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// producer is layer 0</span>
+
+<span class="w">  </span><span class="c1">// every blob has a consumer (layer index)</span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">net</span><span class="p">.</span><span class="n">blobs</span><span class="p">()[</span><span class="mi">0</span><span class="p">].</span><span class="n">consumer</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// consumer is layer 1</span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="test-param-dict">
+<h2>test-param-dict<a class="headerlink" href="#test-param-dict" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">./code/hello/test-param-dict.cc</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;paramdict.h&quot;</span><span class="cp"></span>
+<span class="cp">#ifndef MY_CHECK</span>
+<span class="cp">#define MY_CHECK(x, y)                                                         \</span>
+<span class="cp">  do {                                                                         \</span>
+<span class="cp">    if (x != y) {                                                              \</span>
+<span class="cp">      NCNN_LOGE(#x &quot; != &quot; #y);                                                 \</span>
+<span class="cp">      exit(EXIT_FAILURE);                                                      \</span>
+<span class="cp">    }                                                                          \</span>
+<span class="cp">  } while (0)</span>
+<span class="cp">#endif</span>
+
+<span class="cm">/*</span>
+<span class="cm">It has an array of struct.</span>
+<span class="cm">The size of the array is 32, so the maximum number of parameters is 32</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">TestParamDict</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">NCNN_LOGE</span><span class="p">(</span><span class="s">&quot;Test param dict</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">ncnn</span><span class="o">::</span><span class="n">ParamDict</span><span class="w"> </span><span class="n">pd</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// int 2</span>
+<span class="w">  </span><span class="n">pd</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">pd</span><span class="p">.</span><span class="n">type</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">pd</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// float 3</span>
+<span class="w">  </span><span class="n">pd</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">10.5f</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">pd</span><span class="p">.</span><span class="n">type</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// Caution: The type of the default value (the second argument) is very</span>
+<span class="w">  </span><span class="c1">// important. It determines which overload to invoke</span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">pd</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">0.f</span><span class="p">),</span><span class="w"> </span><span class="mf">10.5</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// mat 4</span>
+<span class="w">  </span><span class="n">ncnn</span><span class="o">::</span><span class="n">Mat</span><span class="w"> </span><span class="n">m</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.25</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">pd</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">pd</span><span class="p">.</span><span class="n">type</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">pd</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">ncnn</span><span class="o">::</span><span class="n">Mat</span><span class="p">())[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="mf">10.25</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="test-data-reader">
+<h2>test-data-reader<a class="headerlink" href="#test-data-reader" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">./code/hello/test-data-reader.cc</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;datareader.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;paramdict.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="cp">#ifndef MY_CHECK</span>
+<span class="cp">#define MY_CHECK(x, y)                                                         \</span>
+<span class="cp">  do {                                                                         \</span>
+<span class="cp">    if (x != y) {                                                              \</span>
+<span class="cp">      NCNN_LOGE(#x &quot; != &quot; #y);                                                 \</span>
+<span class="cp">      exit(EXIT_FAILURE);                                                      \</span>
+<span class="cp">    }                                                                          \</span>
+<span class="cp">  } while (0)</span>
+<span class="cp">#endif</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ParamDict2</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">ncnn</span><span class="o">::</span><span class="n">ParamDict</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">load_param2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ncnn</span><span class="o">::</span><span class="n">DataReader</span><span class="w"> </span><span class="o">&amp;</span><span class="n">dr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">load_param</span><span class="p">(</span><span class="n">dr</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">load_param_bin2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ncnn</span><span class="o">::</span><span class="n">DataReader</span><span class="w"> </span><span class="o">&amp;</span><span class="n">dr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">load_param_bin</span><span class="p">(</span><span class="n">dr</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">TestDataReader</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">NCNN_LOGE</span><span class="p">(</span><span class="s">&quot;Test data reader</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">fp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fopen</span><span class="p">(</span><span class="s">&quot;a.bin&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;wb&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fwrite</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.25</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">fwrite</span><span class="p">(</span><span class="o">&amp;</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fopen</span><span class="p">(</span><span class="s">&quot;a.bin&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;rb&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">ncnn</span><span class="o">::</span><span class="n">DataReaderFromStdio</span><span class="w"> </span><span class="n">dr</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">q</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">dr</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="o">&amp;</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">p</span><span class="p">));</span><span class="w"></span>
+<span class="w">  </span><span class="n">dr</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="o">&amp;</span><span class="n">q</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">q</span><span class="p">));</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// datareader with param dict</span>
+<span class="w">  </span><span class="n">fp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fopen</span><span class="p">(</span><span class="s">&quot;a.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;w&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fprintf</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;0=100 1=1.250000 -23303=5,0.125,0.25,0.50,0.625,1.0&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fopen</span><span class="p">(</span><span class="s">&quot;a.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;r&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">ncnn</span><span class="o">::</span><span class="n">DataReaderFromStdio</span><span class="w"> </span><span class="n">dr2</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">ParamDict2</span><span class="w"> </span><span class="n">pd</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">pd</span><span class="p">.</span><span class="n">load_param2</span><span class="p">(</span><span class="n">dr2</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">pd</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">pd</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">0.f</span><span class="p">),</span><span class="w"> </span><span class="mf">1.25</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">ncnn</span><span class="o">::</span><span class="n">Mat</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pd</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">ncnn</span><span class="o">::</span><span class="n">Mat</span><span class="p">());</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="mf">0.125</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="mf">0.25</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="mf">0.50</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="w"> </span><span class="mf">0.625</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// for binary</span>
+<span class="w">  </span><span class="c1">//</span>
+<span class="w">  </span><span class="c1">//     binary 0</span>
+<span class="w">  </span><span class="c1">//     binary 100</span>
+<span class="w">  </span><span class="c1">//     binary 1</span>
+<span class="w">  </span><span class="c1">//     binary 1.250000</span>
+<span class="w">  </span><span class="c1">//     binary 3 | array_bit</span>
+<span class="w">  </span><span class="c1">//     binary 5</span>
+<span class="w">  </span><span class="c1">//     binary 0.1</span>
+<span class="w">  </span><span class="c1">//     binary 0.2</span>
+<span class="w">  </span><span class="c1">//     binary 0.4</span>
+<span class="w">  </span><span class="c1">//     binary 0.8</span>
+<span class="w">  </span><span class="c1">//     binary 1.0</span>
+<span class="w">  </span><span class="c1">//     binary -233(EOP)</span>
+<span class="w">  </span><span class="n">fp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fopen</span><span class="p">(</span><span class="s">&quot;a.bin&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;wb&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">fwrite</span><span class="p">(</span><span class="o">&amp;</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">id</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">fwrite</span><span class="p">(</span><span class="o">&amp;</span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">val</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">val2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.25</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">fwrite</span><span class="p">(</span><span class="o">&amp;</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">id</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fwrite</span><span class="p">(</span><span class="o">&amp;</span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">val2</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-23303</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">fwrite</span><span class="p">(</span><span class="o">&amp;</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">id</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">w</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">fwrite</span><span class="p">(</span><span class="o">&amp;</span><span class="n">len</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">len</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fwrite</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">),</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">eop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-233</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">fwrite</span><span class="p">(</span><span class="o">&amp;</span><span class="n">eop</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">eop</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">fp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fopen</span><span class="p">(</span><span class="s">&quot;a.bin&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;rb&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">ncnn</span><span class="o">::</span><span class="n">DataReaderFromStdio</span><span class="w"> </span><span class="n">dr3</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">ParamDict2</span><span class="w"> </span><span class="n">pd3</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">pd3</span><span class="p">.</span><span class="n">load_param_bin2</span><span class="p">(</span><span class="n">dr3</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">pd</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// ncnn does not know that param 1 is a float. The user has to specify that!</span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">pd</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">0.f</span><span class="p">),</span><span class="w"> </span><span class="mf">1.25</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">ncnn</span><span class="o">::</span><span class="n">Mat</span><span class="w"> </span><span class="n">m2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pd</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">ncnn</span><span class="o">::</span><span class="n">Mat</span><span class="p">());</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">m2</span><span class="p">.</span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">m2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="mf">0.125</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">m2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="mf">0.25</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">m2</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="mf">0.50</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">m2</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="w"> </span><span class="mf">0.625</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MY_CHECK</span><span class="p">(</span><span class="n">m2</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</section>
 </section>
 
 
@@ -159,7 +520,7 @@ pip install .
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="ncnn" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="mat.html" class="btn btn-neutral float-right" title="ncnn::Mat" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../llvm/index.html" class="btn btn-neutral float-right" title="LLVM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

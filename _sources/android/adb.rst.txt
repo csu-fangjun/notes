@@ -21,3 +21,10 @@ install on Linux
 
    wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip
    # unzip it
+
+run binaries
+------------
+
+.. code-block:: bash
+
+  adb push ./hello-world /data/local/tmp/
