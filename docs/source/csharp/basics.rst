@@ -86,3 +86,106 @@ it will show the locations:
 
   path-to-application:
     The path to an application .dll file to execute.
+
+global usings
+-------------
+
+Requires C# >= 10.0
+
+Create a file, e.g., ``GlobalUsings.cs``:
+
+.. code-bock:: c#
+
+  global using LanguageFeatures.Models;
+  global using Microsoft.AspNetCore.Mvc;
+
+nullable types
+--------------
+
+.. code-block:: bash
+
+  Product? p = products[0];
+  string val;
+  if (p != null) {
+    val = p.Name;
+  } else {
+    val = "No value";
+  }
+  return View(new string[] { val });
+
+  string? val = products[0]?.Name;
+  if (val != null) {
+    return View(new string[] { val });
+  }
+  return View(new string[] { "No Value" });
+
+  return View(new string[] { products[0]?.Name ?? "No Value" });
+
+  return View(new string[] { products[0]!.Name });
+
+Dictionary
+----------
+
+.. code-block::
+
+  Dictionary<string, Product> products = new Dictionary<string, Product> {
+    { "Kayak", new Product { Name = "Kayak", Price = 275M } },
+    { "Lifejacket",  new Product{ Name = "Lifejacket", Price = 48.95M } }
+  };
+
+  Dictionary<string, Product> products = new Dictionary<string, Product> {
+    ["Kayak"] = new Product { Name = "Kayak", Price = 275M },
+    ["Lifejacket"] = new Product { Name = "Lifejacket", Price = 48.95M }
+  };
+
+  Dictionary<string, Product> products = new() {
+    ["Kayak"] = new Product { Name = "Kayak", Price = 275M },
+    ["Lifejacket"] = new Product { Name = "Lifejacket", Price = 48.95M }
+  };
+
+foreach
+-------
+
+.. code-block::
+
+  public class ShoppingCart : IEnumerable<Product?> {
+    public IEnumerable<Product?>? Products { get; set; }
+
+    public IEnumerator<Product?> GetEnumerator() => Products?.GetEnumerator() ?? Enumerable.Empty<Product?>().GetEnumerator();
+
+    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+  }
+
+my first page
+-------------
+.. code-block:: html
+
+  @model MyMessage
+  @{
+      Layout = null;
+  }
+  <!DOCTYPE html>
+
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width"/>
+      <title>Hello my page</title>
+      <style>
+      </style>
+  </head>
+  <body>
+      <h1> please fill the form</h1>
+      <form asp-action="Index" method="post">
+          <div>
+              <label asp-for="Id">Id</label>
+              <input asp-for="Id"/>
+          </div>
+          <div>
+              <label asp-for="Name">Name</label>
+              <input asp-for="Name"/>
+          </div>
+          <button type="submit">sumbit</button>
+          <a asp-action="Index">clear</a>
+      </form>
+  </body>
+  </html>
