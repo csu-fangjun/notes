@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>m3axpi &mdash; notes  documentation</title>
+  <title>Blazor &mdash; notes  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Raspberry PI" href="raspberry_pi.html" />
-    <link rel="prev" title="Embedded systems" href="index.html" /> 
+    <link rel="next" title="Hello" href="hello.html" />
+    <link rel="prev" title="dotnet" href="dotnet.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -74,21 +74,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Embedded systems</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">m3axpi</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#how-to-setup-date">How to setup date</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#python-proxy-server">Python proxy server</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="raspberry_pi.html">Raspberry PI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="alsa.html">ALSA</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nano-pi.html">nano-pi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visionfive.html">star visionfive 2</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">csharp</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nuget.html">nuget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dotnet.html">dotnet</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Blazor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hello.html">Hello</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -105,10 +101,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Embedded systems</a> &raquo;</li>
-      <li>m3axpi</li>
+          <li><a href="index.html">csharp</a> &raquo;</li>
+      <li>Blazor</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/embedded_systems/m3axpi.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/csharp/blazor.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -116,40 +112,78 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="m3axpi">
-<h1>m3axpi<a class="headerlink" href="#m3axpi" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p><a class="reference external" href="https://wiki.sipeed.com/hardware/zh/maixIII/ax-pi/basic_usage.html">https://wiki.sipeed.com/hardware/zh/maixIII/ax-pi/basic_usage.html</a></p></li>
-</ul>
-<section id="how-to-setup-date">
-<h2>How to setup date<a class="headerlink" href="#how-to-setup-date" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># If network is not available, then setup the http proxy</span>
-<span class="c1">#</span>
-<span class="c1"># export http_proxy=http://localhost:6009</span>
-<span class="c1"># export HTTP_PROXY=http://localhost:6009</span>
-sudo date -s <span class="s2">&quot;</span><span class="k">$(</span>wget --no-cache -S -O /dev/null google.com <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> <span class="se">\</span>
-  sed -n -e <span class="s1">&#39;/  *Date: */ {&#39;</span> -e s///p -e q -e <span class="s1">&#39;}&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
+  <section id="blazor">
+<h1>Blazor<a class="headerlink" href="#blazor" title="Permalink to this headline">¶</a></h1>
+<p>Create a page:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dotnet new razorcomponent -n Todo -o Pages
+</pre></div>
+</div>
+<p>First TODO page:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>public class TodoItem {
+  public string? Title {get; set;}
+  public bool IsDone {get; set;} = false;
+}
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>@page &quot;/todo&quot;
 
-<span class="c1"># or use</span>
-sudo date -s <span class="s2">&quot;</span><span class="k">$(</span>wget --no-cache -S -O /dev/null bing.com <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> <span class="se">\</span>
-  sed -n -e <span class="s1">&#39;/  *Date: */ {&#39;</span> -e s///p -e q -e <span class="s1">&#39;}&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
+&lt;h3&gt;Todo (@todos.Count(todo =&gt; !todo.IsDone))&lt;/h3&gt;
+
+&lt;ul&gt;
+  @foreach (var todo in todos)
+  {
+    &lt;li&gt;
+      &lt;input type=&quot;checkbox&quot; @bind=&quot;todo.IsDone&quot; /&gt;
+      &lt;input @bind=&quot;todo.Title&quot; /&gt;
+    &lt;/li&gt;
+  }
+&lt;/ul&gt;
+
+&lt;input placeholder=&quot;something to do&quot; @bind=&quot;newTodo&quot; @bind:event=&quot;oninput&quot; /&gt;
+&lt;button @onclick=&quot;AddItem&quot;&gt;Add&lt;/button&gt;
+&lt;p&gt; todo is @newTodo &lt;/p&gt;
+
+
+@code {
+  private List&lt;TodoItem&gt; todos = new();
+  private string? newTodo;
+
+  private void AddItem() {
+    todos.Add(new TodoItem { Title = newTodo});
+    newTodo = string.Empty;
+  }
+
+
+
+}
 </pre></div>
 </div>
-</section>
-<section id="python-proxy-server">
-<h2>Python proxy server<a class="headerlink" href="#python-proxy-server" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://github.com/csukuangfj/python-proxy-server
+<p>On parameter set:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@page</span> <span class="s2">&quot;/counter/</span><span class="si">{startingValue}</span><span class="s2">&quot;</span>
+<span class="nd">@code</span> <span class="p">{</span>
+
+  <span class="n">private</span> <span class="nb">int</span> <span class="n">currentCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="p">[</span><span class="n">Parameter</span><span class="p">]</span>
+  <span class="n">private</span> <span class="nb">int</span> <span class="n">startingValue</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="n">protected</span> <span class="n">override</span> <span class="n">void</span> <span class="n">OnParametersSet</span><span class="p">()</span>
+  <span class="p">{</span>
+      <span class="n">currentCount</span> <span class="o">=</span> <span class="n">startingValue</span><span class="p">;</span>
+      <span class="n">base</span><span class="o">.</span><span class="n">OnParametersSet</span><span class="p">();</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
 </pre></div>
 </div>
-</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Embedded systems" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="raspberry_pi.html" class="btn btn-neutral float-right" title="Raspberry PI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dotnet.html" class="btn btn-neutral float-left" title="dotnet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="hello.html" class="btn btn-neutral float-right" title="Hello" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

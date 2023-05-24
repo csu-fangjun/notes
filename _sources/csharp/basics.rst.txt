@@ -189,3 +189,96 @@ my first page
       </form>
   </body>
   </html>
+
+EF
+---
+
+- Microsoft.EntityFrameworkCore.SQLite
+- Microsoft.VisualStudio.Web.CodeGeneration.Design
+- Microsoft.EntityFrameworkCore.SqlServer
+- Microsoft.EntityFrameworkCore.Design
+- Microsoft.EntityFrameworkCore.Tools
+
+.. code-block:: bash
+
+  dotnet tool uninstall --global dotnet-aspnet-codegenerator
+  dotnet tool install --global dotnet-aspnet-codegenerator
+  dotnet tool uninstall --global dotnet-ef
+  dotnet tool install --global dotnet-ef
+
+  export PATH=$HOME/.dotnet/tools:$PATH
+
+
+.. code-block:: bash
+
+  dotnet aspnet-codegenerator controller -name MoviesController -m Movie -dc MvcMovie.Data.MvcMovieContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries -sqlite
+
+
+.. code-block:: bash
+
+  Building project ...
+  Finding the generator 'controller'...
+  Running the generator 'controller'...
+  --useSqlite|-sqlite option is obsolete now. Use --databaseProvider|-dbProvider instead in the future.
+
+  Minimal hosting scenario!
+  Generating a new DbContext class 'MvcMovie.Data.MvcMovieContext'
+  Attempting to compile the application in memory with the added DbContext.
+  Attempting to figure out the EntityFramework metadata for the model and DbContext: 'Movie'
+
+  Using database provider 'Microsoft.EntityFrameworkCore.Sqlite'!
+
+  Added DbContext : '/Data/MvcMovieContext.cs'
+  Added Controller : '/Controllers/MoviesController.cs'.
+  Added View : /Views/Movies/Create.cshtml
+  Added View : /Views/Movies/Edit.cshtml
+  Added View : /Views/Movies/Details.cshtml
+  Added View : /Views/Movies/Delete.cshtml
+  Added View : /Views/Movies/Index.cshtml
+
+.. code-block:: diff
+
+  diff --git a/MvcMovie/Program.cs b/MvcMovie/Program.cs
+  index 9fbb57d..b96f671 100644
+  --- a/MvcMovie/Program.cs
+  +++ b/MvcMovie/Program.cs
+  @@ -1,4 +1,9 @@
+  -var builder = WebApplication.CreateBuilder(args);
+  +using Microsoft.EntityFrameworkCore;
+  +using Microsoft.Extensions.DependencyInjection;
+  +using MvcMovie.Data;
+  +var builder = WebApplication.CreateBuilder(args);
+  +builder.Services.AddDbContext<MvcMovieContext>(options =>
+  +    options.UseSqlite(builder.Configuration.GetConnectionString("MvcMovieContext") ?? throw new InvalidOperationException("Connection string 'MvcMovieContext' not found.")));
+
+   // Add services to the container.
+   builder.Services.AddControllersWithViews();
+
+.. code-block:: bash
+
+  diff --git a/MvcMovie/appsettings.json b/MvcMovie/appsettings.json
+  index af0538f..d8b9276 100644
+  --- a/MvcMovie/appsettings.json
+  +++ b/MvcMovie/appsettings.json
+  @@ -1,10 +1,12 @@
+  -{
+  +{
+     "Logging": {
+       "LogLevel": {
+         "Default": "Information",
+         "Microsoft.AspNetCore": "Warning"
+       }
+     },
+  -  "AllowedHosts": "*"
+  -}
+  -
+  +  "AllowedHosts": "*",
+  +  "ConnectionStrings": {
+  +    "MvcMovieContext": "Data Source=MvcMovieContext-95c663f1-d863-4557-a405-0d9cf818bb16.db"
+  +  }
+  +}
+
+.. code-block:: bash
+
+   dotnet ef migrations add InitialCreate
+

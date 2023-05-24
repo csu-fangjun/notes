@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>m3axpi &mdash; notes  documentation</title>
+  <title>star visionfive 2 &mdash; notes  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Raspberry PI" href="raspberry_pi.html" />
-    <link rel="prev" title="Embedded systems" href="index.html" /> 
+    <link rel="next" title="ssh" href="../ssh/index.html" />
+    <link rel="prev" title="nano-pi" href="nano-pi.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -75,15 +75,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Embedded systems</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">m3axpi</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#how-to-setup-date">How to setup date</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#python-proxy-server">Python proxy server</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="m3axpi.html">m3axpi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raspberry_pi.html">Raspberry PI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alsa.html">ALSA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nano-pi.html">nano-pi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visionfive.html">star visionfive 2</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">star visionfive 2</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
@@ -106,9 +102,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">Embedded systems</a> &raquo;</li>
-      <li>m3axpi</li>
+      <li>star visionfive 2</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/embedded_systems/m3axpi.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/embedded_systems/visionfive.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -116,40 +112,82 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="m3axpi">
-<h1>m3axpi<a class="headerlink" href="#m3axpi" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p><a class="reference external" href="https://wiki.sipeed.com/hardware/zh/maixIII/ax-pi/basic_usage.html">https://wiki.sipeed.com/hardware/zh/maixIII/ax-pi/basic_usage.html</a></p></li>
+  <section id="star-visionfive-2">
+<h1>star visionfive 2<a class="headerlink" href="#star-visionfive-2" title="Permalink to this headline">¶</a></h1>
+<p>boot mode settings:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://doc-en.rvspace.org/VisionFive2/Quick_Start_Guide/VisionFive2_SDK_QSG/boot_mode_settings.html">https://doc-en.rvspace.org/VisionFive2/Quick_Start_Guide/VisionFive2_SDK_QSG/boot_mode_settings.html</a></p></li>
+<li><p>RGPIO_1: low, RGPI_0: high for sd card</p></li>
 </ul>
-<section id="how-to-setup-date">
-<h2>How to setup date<a class="headerlink" href="#how-to-setup-date" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># If network is not available, then setup the http proxy</span>
-<span class="c1">#</span>
-<span class="c1"># export http_proxy=http://localhost:6009</span>
-<span class="c1"># export HTTP_PROXY=http://localhost:6009</span>
-sudo date -s <span class="s2">&quot;</span><span class="k">$(</span>wget --no-cache -S -O /dev/null google.com <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> <span class="se">\</span>
-  sed -n -e <span class="s1">&#39;/  *Date: */ {&#39;</span> -e s///p -e q -e <span class="s1">&#39;}&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
-
-<span class="c1"># or use</span>
-sudo date -s <span class="s2">&quot;</span><span class="k">$(</span>wget --no-cache -S -O /dev/null bing.com <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> <span class="se">\</span>
-  sed -n -e <span class="s1">&#39;/  *Date: */ {&#39;</span> -e s///p -e q -e <span class="s1">&#39;}&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
+</div></blockquote>
+<p>Note: The network interface name of the board is end1 and end0</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>QR CODE -&gt; end0</p></li>
+<li><p>FLY_CORE FC-11Q280 2307 -&gt; end1, I have set static IP address for it: 192.168.1.100</p></li>
+</ul>
+</div></blockquote>
+<p>Login:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>username: <code class="docutils literal notranslate"><span class="pre">user</span></code></p></li>
+<li><p>password: <code class="docutils literal notranslate"><span class="pre">starfive</span></code> (the same password for root)</p></li>
+</ul>
+</div></blockquote>
+<p>Install toolchains:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install -y gcc-riscv64-linux-gnu
 </pre></div>
 </div>
-</section>
-<section id="python-proxy-server">
-<h2>Python proxy server<a class="headerlink" href="#python-proxy-server" title="Permalink to this headline">¶</a></h2>
+<p>Setup proxy:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># on my macOS</span>
+Host starfive
+  Hostname <span class="m">192</span>.168.1.100
+  User user
+  IdentityFile ~/.ssh/starfive
+  RemoteForward <span class="m">8080</span> localhost:8080
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># on the board</span>
+<span class="nb">export</span> <span class="nv">http_proxy</span><span class="o">=</span>http://localhost:8080
+<span class="nb">export</span> <span class="nv">HTTP_PROXY</span><span class="o">=</span>http://localhost:8080
+
+sudo touch /etc/apt/apt.conf.d/proxy.conf
+sudo vi /etc/apt/apt.conf.d/proxy.conf
+
+<span class="c1"># Add one line to proxy.conf</span>
+Acquire::http::Proxy <span class="s2">&quot;http://user:password@proxy.server:port/&quot;</span><span class="p">;</span>
+Acquire::https::Proxy <span class="s2">&quot;http://user:password@proxy.server:port/&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Python proxy server</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://github.com/csukuangfj/python-proxy-server
 </pre></div>
 </div>
-</section>
+<p>Free space:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>df -h
+<span class="nb">cd</span> /usr/share
+sudo rm -rf <span class="nb">help</span>
+sudo rm -rf doc
+</pre></div>
+</div>
+<p>install usb:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://snapshot.debian.org/archive/debian-ports/20221225T084846Z/pool-riscv64/main/u/usbutils/usbutils_014-1+b1_riscv64.deb
+
+sudo apt-get install ./usbutils*.deb
+
+wget https://snapshot.debian.org/archive/debian-ports/20221225T084846Z/pool-riscv64/main/n/net-tools/net-tools_2.10-0.1_riscv64.deb
+sudo apt-get install ./net-tools*.deb
+</pre></div>
+</div>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Embedded systems" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="raspberry_pi.html" class="btn btn-neutral float-right" title="Raspberry PI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="nano-pi.html" class="btn btn-neutral float-left" title="nano-pi" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ssh/index.html" class="btn btn-neutral float-right" title="ssh" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
