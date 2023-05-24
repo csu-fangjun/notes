@@ -7,3 +7,4 @@ Embedded systems
     raspberry_pi
     alsa
     ./nano-pi.rst
+    ./visionfive.rst

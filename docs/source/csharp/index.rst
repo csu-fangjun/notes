@@ -7,3 +7,5 @@ csharp
    ./basics.rst
    ./nuget.rst
    ./dotnet.rst
+   ./blazor.rst
+   ./hello.rst
