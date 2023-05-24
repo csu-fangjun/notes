@@ -72,3 +72,9 @@ install usb:
 
    wget https://snapshot.debian.org/archive/debian-ports/20221225T084846Z/pool-riscv64/main/n/net-tools/net-tools_2.10-0.1_riscv64.deb
    sudo apt-get install ./net-tools*.deb
+
+.. code-block:: bash
+
+   lsusb
+   cat /proc/asound/cards
+   lsmod
