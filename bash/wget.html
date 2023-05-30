@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>echo &mdash; notes  documentation</title>
+  <title>wget &mdash; notes  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ffmeg" href="ffmpeg.html" />
-    <link rel="prev" title="sort" href="sort.html" /> 
+    <link rel="next" title="CUDA" href="../cuda/index.html" />
+    <link rel="prev" title="ffmeg" href="ffmpeg.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,9 +47,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">bash</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="sort.html">sort</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">echo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="echo.html">echo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ffmpeg.html">ffmeg</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wget.html">wget</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">wget</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cookies">cookies</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
@@ -101,9 +104,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">bash</a> &raquo;</li>
-      <li>echo</li>
+      <li>wget</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/bash/echo.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/bash/wget.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -111,21 +114,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="echo">
-<h1>echo<a class="headerlink" href="#echo" title="Permalink to this headline">¶</a></h1>
-<p>Generate a binary file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> -n -e <span class="s1">&#39;\x30\x31\x32&#39;</span> &gt; a.bin
-hexdump a.bin
-</pre></div>
-</div>
+  <section id="wget">
+<h1>wget<a class="headerlink" href="#wget" title="Permalink to this headline">¶</a></h1>
+<section id="cookies">
+<h2>cookies<a class="headerlink" href="#cookies" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Install the chrome extension: <code class="docutils literal notranslate"><span class="pre">editthiscookie</span></code></p></li>
+<li><p>Copy the cookie of the selected website to clipboard</p></li>
+<li><p>Save it to a text file, e.g., <code class="docutils literal notranslate"><span class="pre">a.txt</span></code></p></li>
+<li><p>Load the cookie with <code class="docutils literal notranslate"><span class="pre">wget</span> <span class="pre">--load-cookie</span> <span class="pre">a.txt</span></code></p></li>
+</ol>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="sort.html" class="btn btn-neutral float-left" title="sort" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="ffmpeg.html" class="btn btn-neutral float-right" title="ffmeg" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ffmpeg.html" class="btn btn-neutral float-left" title="ffmeg" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../cuda/index.html" class="btn btn-neutral float-right" title="CUDA" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
