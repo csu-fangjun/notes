@@ -7,4 +7,5 @@ bash
     sort
     echo
     ffmpeg
+    wget
 
