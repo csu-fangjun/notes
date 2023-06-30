@@ -91,6 +91,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -125,67 +126,67 @@
 <p>(Use the following SDK to install NDK)</p>
 <p>See <a class="reference external" href="https://developer.android.com/ndk/downloads/index.html">https://developer.android.com/ndk/downloads/index.html</a></p>
 <p>See <a class="reference external" href="https://www.cryptopp.com/wiki/Android_Setup_(Command_Line)">https://www.cryptopp.com/wiki/Android_Setup_(Command_Line)</a> for details.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://dl.google.com/android/repository/android-ndk-r25-linux.zip
-unzip -d /ceph-fj/fangjun/software android-ndk-r25-linux.zip
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://dl.google.com/android/repository/android-ndk-r25-linux.zip
+unzip<span class="w"> </span>-d<span class="w"> </span>/ceph-fj/fangjun/software<span class="w"> </span>android-ndk-r25-linux.zip
 <span class="c1"># It will create /ceph-fj/fangjun/software/android-ndk-r25</span>
 </pre></div>
 </div>
 <p>Other versions can be downloaded from <a class="reference external" href="https://github.com/android/ndk/wiki/Unsupported-Downloads">https://github.com/android/ndk/wiki/Unsupported-Downloads</a></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://dl.google.com/android/repository/android-ndk-r24-linux.zip
-unzip -d /ceph-fj/fangjun/software android-ndk-r24-linux.zip
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://dl.google.com/android/repository/android-ndk-r24-linux.zip
+unzip<span class="w"> </span>-d<span class="w"> </span>/ceph-fj/fangjun/software<span class="w"> </span>android-ndk-r24-linux.zip
 
 <span class="c1"># It will create /ceph-fj/fangjun/software/android-ndk-r24</span>
 </pre></div>
 </div>
 <p>Now create a symlink in <code class="docutils literal notranslate"><span class="pre">/ceph-fj/fangjun/software</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /ceph-fj/fangjun/software
-ln -s android-ndk-r25 android-ndk
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/ceph-fj/fangjun/software
+ln<span class="w"> </span>-s<span class="w"> </span>android-ndk-r25<span class="w"> </span>android-ndk
 </pre></div>
 </div>
 <p>Set the following environment variable:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ANDROID_NDK_ROOT</span><span class="o">=</span>/ceph-fj/fangjun/software/android-ndk
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$ANDROID_NDK_ROOT</span>:<span class="nv">$PATH</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ANDROID_NDK_ROOT</span><span class="o">=</span>/ceph-fj/fangjun/software/android-ndk
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$ANDROID_NDK_ROOT</span>:<span class="nv">$PATH</span>
 </pre></div>
 </div>
 </section>
 <section id="install-sdk-on-linux">
 <h2>Install SDK on Linux<a class="headerlink" href="#install-sdk-on-linux" title="Permalink to this headline">¶</a></h2>
 <p>Download the commandline tools only from <a class="reference external" href="https://developer.android.com/studio#downloads">https://developer.android.com/studio#downloads</a></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://dl.google.com/android/repository/commandlinetools-linux-8512546_latest.zip
-unzip -d /ceph-fj/fangjun/software/android-sdk ./commandlinetools-linux-8512546_latest.zip
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://dl.google.com/android/repository/commandlinetools-linux-8512546_latest.zip
+unzip<span class="w"> </span>-d<span class="w"> </span>/ceph-fj/fangjun/software/android-sdk<span class="w"> </span>./commandlinetools-linux-8512546_latest.zip
 <span class="c1"># Everything is inside /ceph-fj/fangjun/software/android-sdk/cmdline-tools/</span>
-<span class="nb">cd</span> /ceph-fj/fangjun/software/android-sdk
-mv cmdline-tools latest
-mkdir cmdline-tools
-mv latest ./cmdline-tools/
+<span class="nb">cd</span><span class="w"> </span>/ceph-fj/fangjun/software/android-sdk
+mv<span class="w"> </span>cmdline-tools<span class="w"> </span>latest
+mkdir<span class="w"> </span>cmdline-tools
+mv<span class="w"> </span>latest<span class="w"> </span>./cmdline-tools/
 </pre></div>
 </div>
 <p>If we don't run <code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">cmdline-tools</span> <span class="pre">latest</span></code>, it will throw the following error</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ /ceph-fj/fangjun/software/android-sdk/cmdline-tools/bin/sdkmanager --list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>/ceph-fj/fangjun/software/android-sdk/cmdline-tools/bin/sdkmanager<span class="w"> </span>--list
 
-Error: Could not determine SDK root.
-Error: Either specify it explicitly with --sdk_root<span class="o">=</span> or move this package into its expected location: &lt;sdk&gt;/cmdline-tools/latest/
+Error:<span class="w"> </span>Could<span class="w"> </span>not<span class="w"> </span>determine<span class="w"> </span>SDK<span class="w"> </span>root.
+Error:<span class="w"> </span>Either<span class="w"> </span>specify<span class="w"> </span>it<span class="w"> </span>explicitly<span class="w"> </span>with<span class="w"> </span>--sdk_root<span class="o">=</span><span class="w"> </span>or<span class="w"> </span>move<span class="w"> </span>this<span class="w"> </span>package<span class="w"> </span>into<span class="w"> </span>its<span class="w"> </span>expected<span class="w"> </span>location:<span class="w"> </span>&lt;sdk&gt;/cmdline-tools/latest/
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sdkmanager --update
-sdkmanager --list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sdkmanager<span class="w"> </span>--update
+sdkmanager<span class="w"> </span>--list
 
 <span class="c1"># Install the build tools</span>
-sdkmanager <span class="s2">&quot;platforms;android-28&quot;</span> <span class="s2">&quot;build-tools;28.0.3&quot;</span>
+sdkmanager<span class="w"> </span><span class="s2">&quot;platforms;android-28&quot;</span><span class="w"> </span><span class="s2">&quot;build-tools;28.0.3&quot;</span>
 <span class="c1"># It will create the following directories inside /ceph-fj/fangjun/software/android-sdk/</span>
 <span class="c1">#</span>
 <span class="c1"># build-tools, emulator, licenses, patcher, platform-tools, platforms, tools</span>
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sdkmanager --list_installed
-Installed packages:<span class="o">=====================]</span> <span class="m">100</span>% Fetch remote repository...
-  Path                 <span class="p">|</span> Version <span class="p">|</span> Description                    <span class="p">|</span> Location
-  -------              <span class="p">|</span> ------- <span class="p">|</span> -------                        <span class="p">|</span> -------
-  build-tools<span class="p">;</span><span class="m">28</span>.0.3   <span class="p">|</span> <span class="m">28</span>.0.3  <span class="p">|</span> Android SDK Build-Tools <span class="m">28</span>.0.3 <span class="p">|</span> build-tools/28.0.3
-  emulator             <span class="p">|</span> <span class="m">31</span>.3.10 <span class="p">|</span> Android Emulator               <span class="p">|</span> emulator
-  patcher<span class="p">;</span>v4           <span class="p">|</span> <span class="m">1</span>       <span class="p">|</span> SDK Patch Applier v4           <span class="p">|</span> patcher/v4
-  platform-tools       <span class="p">|</span> <span class="m">33</span>.0.2  <span class="p">|</span> Android SDK Platform-Tools     <span class="p">|</span> platform-tools
-  platforms<span class="p">;</span>android-28 <span class="p">|</span> <span class="m">6</span>       <span class="p">|</span> Android SDK Platform <span class="m">28</span>        <span class="p">|</span> platforms/android-28
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sdkmanager<span class="w"> </span>--list_installed
+Installed<span class="w"> </span>packages:<span class="o">=====================]</span><span class="w"> </span><span class="m">100</span>%<span class="w"> </span>Fetch<span class="w"> </span>remote<span class="w"> </span>repository...
+<span class="w">  </span>Path<span class="w">                 </span><span class="p">|</span><span class="w"> </span>Version<span class="w"> </span><span class="p">|</span><span class="w"> </span>Description<span class="w">                    </span><span class="p">|</span><span class="w"> </span>Location
+<span class="w">  </span>-------<span class="w">              </span><span class="p">|</span><span class="w"> </span>-------<span class="w"> </span><span class="p">|</span><span class="w"> </span>-------<span class="w">                        </span><span class="p">|</span><span class="w"> </span>-------
+<span class="w">  </span>build-tools<span class="p">;</span><span class="m">28</span>.0.3<span class="w">   </span><span class="p">|</span><span class="w"> </span><span class="m">28</span>.0.3<span class="w">  </span><span class="p">|</span><span class="w"> </span>Android<span class="w"> </span>SDK<span class="w"> </span>Build-Tools<span class="w"> </span><span class="m">28</span>.0.3<span class="w"> </span><span class="p">|</span><span class="w"> </span>build-tools/28.0.3
+<span class="w">  </span>emulator<span class="w">             </span><span class="p">|</span><span class="w"> </span><span class="m">31</span>.3.10<span class="w"> </span><span class="p">|</span><span class="w"> </span>Android<span class="w"> </span>Emulator<span class="w">               </span><span class="p">|</span><span class="w"> </span>emulator
+<span class="w">  </span>patcher<span class="p">;</span>v4<span class="w">           </span><span class="p">|</span><span class="w"> </span><span class="m">1</span><span class="w">       </span><span class="p">|</span><span class="w"> </span>SDK<span class="w"> </span>Patch<span class="w"> </span>Applier<span class="w"> </span>v4<span class="w">           </span><span class="p">|</span><span class="w"> </span>patcher/v4
+<span class="w">  </span>platform-tools<span class="w">       </span><span class="p">|</span><span class="w"> </span><span class="m">33</span>.0.2<span class="w">  </span><span class="p">|</span><span class="w"> </span>Android<span class="w"> </span>SDK<span class="w"> </span>Platform-Tools<span class="w">     </span><span class="p">|</span><span class="w"> </span>platform-tools
+<span class="w">  </span>platforms<span class="p">;</span>android-28<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">6</span><span class="w">       </span><span class="p">|</span><span class="w"> </span>Android<span class="w"> </span>SDK<span class="w"> </span>Platform<span class="w"> </span><span class="m">28</span><span class="w">        </span><span class="p">|</span><span class="w"> </span>platforms/android-28
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sdkmanager</span> <span class="o">--</span><span class="n">help</span>
@@ -193,29 +194,29 @@ Installed packages:<span class="o">=====================]</span> <span class="m"
 </pre></div>
 </div>
 <p>Set the following environment variables:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ANDROID_SDK_ROOT</span><span class="o">=</span>/ceph-fj/fangjun/software/android-sdk
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$ANDROID_SDK_ROOT</span>/cmdline-tools/latest/bin:<span class="nv">$PATH</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ANDROID_SDK_ROOT</span><span class="o">=</span>/ceph-fj/fangjun/software/android-sdk
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$ANDROID_SDK_ROOT</span>/cmdline-tools/latest/bin:<span class="nv">$PATH</span>
 
-<span class="nb">export</span> <span class="nv">ANDROID_HOME</span><span class="o">=</span>/ceph-fj/fangjun/software/android-sdk
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANDROID_HOME</span><span class="o">=</span>/ceph-fj/fangjun/software/android-sdk
 
 <span class="c1"># for emulator</span>
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$ANDROID_SDK_ROOT</span>/emulator:<span class="nv">$PATH</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$ANDROID_SDK_ROOT</span>/emulator:<span class="nv">$PATH</span>
 
 <span class="c1"># for adb</span>
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$ANDROID_SDK_ROOT</span>/platform-tools:<span class="nv">$PATH</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$ANDROID_SDK_ROOT</span>/platform-tools:<span class="nv">$PATH</span>
 
 <span class="c1"># We installed 28.0.3 before</span>
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$ANDROID_SDK_ROOT</span>/build-tools/28.0.3:<span class="nv">$PATH</span> <span class="c1"># change it for different versions</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$ANDROID_SDK_ROOT</span>/build-tools/28.0.3:<span class="nv">$PATH</span><span class="w"> </span><span class="c1"># change it for different versions</span>
 </pre></div>
 </div>
 <p>Now install NDK using <code class="docutils literal notranslate"><span class="pre">sdkmanager</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># sdkmanager --list | grep ndk</span>
-sdkmanager <span class="s2">&quot;ndk;21.0.6113669&quot;</span>
+sdkmanager<span class="w"> </span><span class="s2">&quot;ndk;21.0.6113669&quot;</span>
 <span class="c1"># it will download android-ndk-r21 and will generate</span>
 <span class="c1">#  android-sdk/ndk/21.0.6113669</span>
 
-<span class="nb">export</span> <span class="nv">ANROID_NDK_HOME</span><span class="o">=</span><span class="nv">$ANDROID_SDK_ROOT</span>/ndk/21.0.6113669
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$ANDROID_NDK_ROOT</span>:<span class="nv">$PATH</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANROID_NDK_HOME</span><span class="o">=</span><span class="nv">$ANDROID_SDK_ROOT</span>/ndk/21.0.6113669
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$ANDROID_NDK_ROOT</span>:<span class="nv">$PATH</span>
 </pre></div>
 </div>
 </section>

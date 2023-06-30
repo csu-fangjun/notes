@@ -114,6 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -148,48 +149,48 @@
 <p>Load the saved <code class="docutils literal notranslate"><span class="pre">foo.pt</span></code> in C++  from <a class="reference internal" href="hello.html#export-and-ignore-methods"><span class="std std-ref">Export and ignore methods</span></a>.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">./code/load-in-cpp/Makefile</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
-<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nv">USE_CXX11_ABI</span> <span class="o">:=</span> <span class="k">$(</span>shell python3 -c <span class="s1">&#39;import torch; print(int(torch.compiled_with_cxx11_abi()))&#39;</span><span class="k">)</span>
-<span class="linenos"> 2</span><span class="nv">TORCH_INSTALL_DIR</span> <span class="o">:=</span> <span class="k">$(</span>shell python3 -c <span class="s1">&#39;import os; import torch; print(os.path.dirname(torch.__file__))&#39;</span><span class="k">)</span>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nv">USE_CXX11_ABI</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>shell<span class="w"> </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import torch; print(int(torch.compiled_with_cxx11_abi()))&#39;</span><span class="k">)</span>
+<span class="linenos"> 2</span><span class="nv">TORCH_INSTALL_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>shell<span class="w"> </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import os; import torch; print(os.path.dirname(torch.__file__))&#39;</span><span class="k">)</span>
 <span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="k">$(</span><span class="nv">info</span> <span class="nv">USE_CXX11_ABI</span> <span class="k">$(</span><span class="nv">USE_CXX11_ABI</span><span class="k">))</span><span class="w"></span>
-<span class="linenos"> 5</span><span class="k">$(</span><span class="nv">info</span> <span class="nv">TORCH_INSTALL_DIR</span> <span class="k">$(</span><span class="nv">TORCH_INSTALL_DIR</span><span class="k">))</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="k">$(</span><span class="nv">info</span> <span class="nv">USE_CXX11_ABI</span> <span class="k">$(</span><span class="nv">USE_CXX11_ABI</span><span class="k">))</span>
+<span class="linenos"> 5</span><span class="k">$(</span><span class="nv">info</span> <span class="nv">TORCH_INSTALL_DIR</span> <span class="k">$(</span><span class="nv">TORCH_INSTALL_DIR</span><span class="k">))</span>
 <span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="nv">CXXFLAGS</span> <span class="o">:=</span> -I<span class="k">$(</span>TORCH_INSTALL_DIR<span class="k">)</span>/include
-<span class="linenos"> 8</span><span class="nv">CXXFLAGS</span> <span class="o">+=</span> -I<span class="k">$(</span>TORCH_INSTALL_DIR<span class="k">)</span>/include/torch/csrc/api/include
-<span class="linenos"> 9</span><span class="nv">CXXFLAGS</span> <span class="o">+=</span> -I<span class="k">$(</span>TORCH_INSTALL_DIR<span class="k">)</span>/include/TH
-<span class="linenos">10</span><span class="nv">CXXFLAGS</span> <span class="o">+=</span> -I<span class="k">$(</span>TORCH_INSTALL_DIR<span class="k">)</span>/include/THC
-<span class="linenos">11</span><span class="nv">CXXFLAGS</span> <span class="o">+=</span> -std<span class="o">=</span>c++14
-<span class="linenos">12</span><span class="nv">CXXFLAGS</span> <span class="o">+=</span> -D_GLIBCXX_USE_CXX11_ABI<span class="o">=</span><span class="k">$(</span>USE_CXX11_ABI<span class="k">)</span>
+<span class="linenos"> 7</span><span class="nv">CXXFLAGS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>-I<span class="k">$(</span>TORCH_INSTALL_DIR<span class="k">)</span>/include
+<span class="linenos"> 8</span><span class="nv">CXXFLAGS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-I<span class="k">$(</span>TORCH_INSTALL_DIR<span class="k">)</span>/include/torch/csrc/api/include
+<span class="linenos"> 9</span><span class="nv">CXXFLAGS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-I<span class="k">$(</span>TORCH_INSTALL_DIR<span class="k">)</span>/include/TH
+<span class="linenos">10</span><span class="nv">CXXFLAGS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-I<span class="k">$(</span>TORCH_INSTALL_DIR<span class="k">)</span>/include/THC
+<span class="linenos">11</span><span class="nv">CXXFLAGS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-std<span class="o">=</span>c++14
+<span class="linenos">12</span><span class="nv">CXXFLAGS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-D_GLIBCXX_USE_CXX11_ABI<span class="o">=</span><span class="k">$(</span>USE_CXX11_ABI<span class="k">)</span>
 <span class="linenos">13</span>
-<span class="linenos">14</span><span class="nv">CXXFLAGS</span> <span class="o">+=</span> -Wno-unknown-pragmas <span class="c1"># disable omp warnings</span>
+<span class="linenos">14</span><span class="nv">CXXFLAGS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-Wno-unknown-pragmas<span class="w"> </span><span class="c1"># disable omp warnings</span>
 <span class="linenos">15</span>
-<span class="linenos">16</span><span class="nv">LDFLAGS</span> <span class="o">:=</span> -L<span class="k">$(</span>TORCH_INSTALL_DIR<span class="k">)</span>/lib
-<span class="linenos">17</span><span class="nv">LDFLAGS</span> <span class="o">+=</span> -lc10 -ltorch -ltorch_cpu
+<span class="linenos">16</span><span class="nv">LDFLAGS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>-L<span class="k">$(</span>TORCH_INSTALL_DIR<span class="k">)</span>/lib
+<span class="linenos">17</span><span class="nv">LDFLAGS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-lc10<span class="w"> </span>-ltorch<span class="w"> </span>-ltorch_cpu
 <span class="linenos">18</span><span class="c"># LDFLAGS += -lc10 -ltorch</span>
-<span class="linenos">19</span><span class="nv">LDFLAGS</span> <span class="o">+=</span> -Wl,-rpath,<span class="k">$(</span>TORCH_INSTALL_DIR<span class="k">)</span>/lib
+<span class="linenos">19</span><span class="nv">LDFLAGS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-Wl,-rpath,<span class="k">$(</span>TORCH_INSTALL_DIR<span class="k">)</span>/lib
 <span class="linenos">20</span>
-<span class="linenos">21</span><span class="nv">HAS_CUDA</span> <span class="o">:=</span> <span class="k">$(</span>shell python3 -c <span class="s1">&#39;import torch; print(&quot;yes&quot; if torch.cuda.is_available() else &quot;no&quot;)&#39;</span><span class="k">)</span>
-<span class="linenos">22</span><span class="nv">HAS_CUDA</span> <span class="o">:=</span> yes
-<span class="linenos">23</span><span class="k">$(</span><span class="nv">info</span> <span class="nv">has</span> <span class="nv">cuda</span> <span class="k">$(</span><span class="nv">HAS_CUDA</span><span class="k">))</span><span class="w"></span>
+<span class="linenos">21</span><span class="nv">HAS_CUDA</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>shell<span class="w"> </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import torch; print(&quot;yes&quot; if torch.cuda.is_available() else &quot;no&quot;)&#39;</span><span class="k">)</span>
+<span class="linenos">22</span><span class="nv">HAS_CUDA</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>yes
+<span class="linenos">23</span><span class="k">$(</span><span class="nv">info</span> <span class="nv">has</span> <span class="nv">cuda</span> <span class="k">$(</span><span class="nv">HAS_CUDA</span><span class="k">))</span>
 <span class="linenos">24</span>
 <span class="linenos">25</span><span class="cp">ifeq ($(HAS_CUDA),yes)</span>
-<span class="linenos">26</span><span class="nv">CUDA_HOME</span> <span class="o">:=</span> <span class="k">$(</span>shell which nvcc <span class="p">|</span> xargs dirname <span class="p">|</span> xargs dirname<span class="k">)</span>
-<span class="linenos">27</span><span class="nv">CXXFLAGS</span> <span class="o">+=</span> -I<span class="k">$(</span>CUDA_HOME<span class="k">)</span>/include
-<span class="linenos">28</span><span class="nv">LDFLAGS</span> <span class="o">+=</span> -L<span class="k">$(</span>CUDA_HOME<span class="k">)</span>/lib64
-<span class="linenos">29</span><span class="nv">LDFLAGS</span> <span class="o">+=</span> -lcudart -lc10_cuda -ltorch_cuda
-<span class="linenos">30</span><span class="nv">LDFLAGS</span> <span class="o">+=</span> -Wl,-rpath,<span class="k">$(</span>CUDA_HOME<span class="k">)</span>/lib64
+<span class="linenos">26</span><span class="nv">CUDA_HOME</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>shell<span class="w"> </span>which<span class="w"> </span>nvcc<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>dirname<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>dirname<span class="k">)</span>
+<span class="linenos">27</span><span class="nv">CXXFLAGS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-I<span class="k">$(</span>CUDA_HOME<span class="k">)</span>/include
+<span class="linenos">28</span><span class="nv">LDFLAGS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-L<span class="k">$(</span>CUDA_HOME<span class="k">)</span>/lib64
+<span class="linenos">29</span><span class="nv">LDFLAGS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-lcudart<span class="w"> </span>-lc10_cuda<span class="w"> </span>-ltorch_cuda
+<span class="linenos">30</span><span class="nv">LDFLAGS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-Wl,-rpath,<span class="k">$(</span>CUDA_HOME<span class="k">)</span>/lib64
 <span class="linenos">31</span><span class="cp">endif</span>
 <span class="linenos">32</span>
-<span class="linenos">33</span><span class="nf">.PHONY</span><span class="o">:</span> <span class="n">clean</span>
+<span class="linenos">33</span><span class="nf">.PHONY</span><span class="o">:</span><span class="w"> </span><span class="n">clean</span>
 <span class="linenos">34</span>
-<span class="linenos">35</span><span class="nf">main</span><span class="o">:</span> <span class="n">main</span>.<span class="n">o</span>
-<span class="linenos">36</span>	<span class="k">$(</span>CXX<span class="k">)</span> -o <span class="nv">$@</span> $&lt; <span class="k">$(</span>LDFLAGS<span class="k">)</span>
+<span class="linenos">35</span><span class="nf">main</span><span class="o">:</span><span class="w"> </span><span class="n">main</span>.<span class="n">o</span>
+<span class="linenos">36</span><span class="w">	</span><span class="k">$(</span>CXX<span class="k">)</span><span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span><span class="w"> </span>$&lt;<span class="w"> </span><span class="k">$(</span>LDFLAGS<span class="k">)</span>
 <span class="linenos">37</span>
-<span class="linenos">38</span><span class="nf">main.o</span><span class="o">:</span> <span class="n">main</span>.<span class="n">cc</span>
-<span class="linenos">39</span>	<span class="k">$(</span>CXX<span class="k">)</span> <span class="k">$(</span>CXXFLAGS<span class="k">)</span> -c -o <span class="nv">$@</span> $&lt;
+<span class="linenos">38</span><span class="nf">main.o</span><span class="o">:</span><span class="w"> </span><span class="n">main</span>.<span class="n">cc</span>
+<span class="linenos">39</span><span class="w">	</span><span class="k">$(</span>CXX<span class="k">)</span><span class="w"> </span><span class="k">$(</span>CXXFLAGS<span class="k">)</span><span class="w"> </span>-c<span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span><span class="w"> </span>$&lt;
 <span class="linenos">40</span>
 <span class="linenos">41</span><span class="nf">clean</span><span class="o">:</span>
-<span class="linenos">42</span>	<span class="k">$(</span>RM<span class="k">)</span> main.o main
+<span class="linenos">42</span><span class="w">	</span><span class="k">$(</span>RM<span class="k">)</span><span class="w"> </span>main.o<span class="w"> </span>main
 </pre></div>
 </div>
 </div>
@@ -199,20 +200,20 @@
 </div>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">./code/load-in-cpp/main.cc</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;torch/script.h&quot;</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;torch/script.h&quot;</span>
 <span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos"> 4</span><span class="w">  </span><span class="c1">// see torch/csrc/jit/module.h</span>
-<span class="linenos"> 5</span><span class="w">  </span><span class="n">torch</span><span class="o">::</span><span class="n">jit</span><span class="o">::</span><span class="n">Module</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">jit</span><span class="o">::</span><span class="n">load</span><span class="p">(</span><span class="s">&quot;../foo.pt&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="linenos"> 6</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;is training: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">is_training</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="linenos"> 7</span><span class="w">  </span><span class="n">m</span><span class="p">.</span><span class="n">eval</span><span class="p">();</span><span class="w"></span>
-<span class="linenos"> 8</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;after m.eval(): is training: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">is_training</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="linenos"> 9</span><span class="w">  </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">tensor</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">},</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">kFloat</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">10</span><span class="w">  </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">run_method</span><span class="p">(</span><span class="s">&quot;baz&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">).</span><span class="n">toTensor</span><span class="p">();</span><span class="w"></span>
-<span class="linenos">11</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">  </span><span class="n">torch</span><span class="o">::</span><span class="n">jit</span><span class="o">::</span><span class="n">Module</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">jit</span><span class="o">::</span><span class="n">load</span><span class="p">(</span><span class="s">&quot;../foo.pt&quot;</span><span class="p">);</span>
+<span class="linenos"> 6</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;is training: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">is_training</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="linenos"> 7</span><span class="w">  </span><span class="n">m</span><span class="p">.</span><span class="n">eval</span><span class="p">();</span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;after m.eval(): is training: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">is_training</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">tensor</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">},</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">kFloat</span><span class="p">);</span>
+<span class="linenos">10</span><span class="w">  </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">run_method</span><span class="p">(</span><span class="s">&quot;baz&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">).</span><span class="n">toTensor</span><span class="p">();</span>
+<span class="linenos">11</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
 <span class="linenos">12</span>
-<span class="linenos">13</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">14</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">13</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">14</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>

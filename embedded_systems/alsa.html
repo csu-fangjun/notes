@@ -95,6 +95,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -127,70 +128,70 @@
 <p>Advanced Linux Sound Architecture (ALSA).</p>
 <section id="usb-microphone-for-raspberry-pi">
 <h2>USB microphone for raspberry pi<a class="headerlink" href="#usb-microphone-for-raspberry-pi" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pi@raspberrypi:~ $ arecord -l
-**** List of CAPTURE Hardware Devices ****
-card <span class="m">3</span>: UACDemoV10 <span class="o">[</span>UACDemoV1.0<span class="o">]</span>, device <span class="m">0</span>: USB Audio <span class="o">[</span>USB Audio<span class="o">]</span>
-  Subdevices: <span class="m">1</span>/1
-  Subdevice <span class="c1">#0: subdevice #0</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pi@raspberrypi:~<span class="w"> </span>$<span class="w"> </span>arecord<span class="w"> </span>-l
+****<span class="w"> </span>List<span class="w"> </span>of<span class="w"> </span>CAPTURE<span class="w"> </span>Hardware<span class="w"> </span>Devices<span class="w"> </span>****
+card<span class="w"> </span><span class="m">3</span>:<span class="w"> </span>UACDemoV10<span class="w"> </span><span class="o">[</span>UACDemoV1.0<span class="o">]</span>,<span class="w"> </span>device<span class="w"> </span><span class="m">0</span>:<span class="w"> </span>USB<span class="w"> </span>Audio<span class="w"> </span><span class="o">[</span>USB<span class="w"> </span>Audio<span class="o">]</span>
+<span class="w">  </span>Subdevices:<span class="w"> </span><span class="m">1</span>/1
+<span class="w">  </span>Subdevice<span class="w"> </span><span class="c1">#0: subdevice #0</span>
 </pre></div>
 </div>
 </section>
 <section id="alsa-utils">
 <h2>alsa-utils<a class="headerlink" href="#alsa-utils" title="Permalink to this headline">¶</a></h2>
 <p>See <a class="reference external" href="https://github.com/alsa-project/alsa-utils">https://github.com/alsa-project/alsa-utils</a></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install alsa-utils
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>alsa-utils
 </pre></div>
 </div>
 <p>It contains source code for <code class="docutils literal notranslate"><span class="pre">arecord</span></code>, <code class="docutils literal notranslate"><span class="pre">areplay</span></code>, etc.</p>
 <section id="aplay">
 <h3>aplay<a class="headerlink" href="#aplay" title="Permalink to this headline">¶</a></h3>
 <p>List playback devices:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aplay -l
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aplay<span class="w"> </span>-l
 
-**** List of PLAYBACK Hardware Devices ****
-card <span class="m">1</span>: vc4hdmi0 <span class="o">[</span>vc4-hdmi-0<span class="o">]</span>, device <span class="m">0</span>: MAI PCM i2s-hifi-0 <span class="o">[</span>MAI PCM i2s-hifi-0<span class="o">]</span>
-  Subdevices: <span class="m">1</span>/1
-  Subdevice <span class="c1">#0: subdevice #0</span>
-card <span class="m">2</span>: vc4hdmi1 <span class="o">[</span>vc4-hdmi-1<span class="o">]</span>, device <span class="m">0</span>: MAI PCM i2s-hifi-0 <span class="o">[</span>MAI PCM i2s-hifi-0<span class="o">]</span>
-  Subdevices: <span class="m">1</span>/1
-  Subdevice <span class="c1">#0: subdevice #0</span>
+****<span class="w"> </span>List<span class="w"> </span>of<span class="w"> </span>PLAYBACK<span class="w"> </span>Hardware<span class="w"> </span>Devices<span class="w"> </span>****
+card<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>vc4hdmi0<span class="w"> </span><span class="o">[</span>vc4-hdmi-0<span class="o">]</span>,<span class="w"> </span>device<span class="w"> </span><span class="m">0</span>:<span class="w"> </span>MAI<span class="w"> </span>PCM<span class="w"> </span>i2s-hifi-0<span class="w"> </span><span class="o">[</span>MAI<span class="w"> </span>PCM<span class="w"> </span>i2s-hifi-0<span class="o">]</span>
+<span class="w">  </span>Subdevices:<span class="w"> </span><span class="m">1</span>/1
+<span class="w">  </span>Subdevice<span class="w"> </span><span class="c1">#0: subdevice #0</span>
+card<span class="w"> </span><span class="m">2</span>:<span class="w"> </span>vc4hdmi1<span class="w"> </span><span class="o">[</span>vc4-hdmi-1<span class="o">]</span>,<span class="w"> </span>device<span class="w"> </span><span class="m">0</span>:<span class="w"> </span>MAI<span class="w"> </span>PCM<span class="w"> </span>i2s-hifi-0<span class="w"> </span><span class="o">[</span>MAI<span class="w"> </span>PCM<span class="w"> </span>i2s-hifi-0<span class="o">]</span>
+<span class="w">  </span>Subdevices:<span class="w"> </span><span class="m">1</span>/1
+<span class="w">  </span>Subdevice<span class="w"> </span><span class="c1">#0: subdevice #0</span>
 </pre></div>
 </div>
 <p>To play <code class="docutils literal notranslate"><span class="pre">foo.wav</span></code> on card 1, device 0, use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aplay -D hw:1,0 foo.wav
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aplay<span class="w"> </span>-D<span class="w"> </span>hw:1,0<span class="w"> </span>foo.wav
 </pre></div>
 </div>
 </section>
 <section id="arecord">
 <h3>arecord<a class="headerlink" href="#arecord" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat /proc/asound/pcm
-<span class="m">00</span>-00: bcm2835 Headphones : bcm2835 Headphones : playback <span class="m">8</span>
-<span class="m">01</span>-00: MAI PCM i2s-hifi-0 : MAI PCM i2s-hifi-0 : playback <span class="m">1</span>
-<span class="m">02</span>-00: MAI PCM i2s-hifi-0 : MAI PCM i2s-hifi-0 : playback <span class="m">1</span>
-<span class="m">03</span>-00: USB Audio : USB Audio : capture <span class="m">1</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/proc/asound/pcm
+<span class="m">00</span>-00:<span class="w"> </span>bcm2835<span class="w"> </span>Headphones<span class="w"> </span>:<span class="w"> </span>bcm2835<span class="w"> </span>Headphones<span class="w"> </span>:<span class="w"> </span>playback<span class="w"> </span><span class="m">8</span>
+<span class="m">01</span>-00:<span class="w"> </span>MAI<span class="w"> </span>PCM<span class="w"> </span>i2s-hifi-0<span class="w"> </span>:<span class="w"> </span>MAI<span class="w"> </span>PCM<span class="w"> </span>i2s-hifi-0<span class="w"> </span>:<span class="w"> </span>playback<span class="w"> </span><span class="m">1</span>
+<span class="m">02</span>-00:<span class="w"> </span>MAI<span class="w"> </span>PCM<span class="w"> </span>i2s-hifi-0<span class="w"> </span>:<span class="w"> </span>MAI<span class="w"> </span>PCM<span class="w"> </span>i2s-hifi-0<span class="w"> </span>:<span class="w"> </span>playback<span class="w"> </span><span class="m">1</span>
+<span class="m">03</span>-00:<span class="w"> </span>USB<span class="w"> </span>Audio<span class="w"> </span>:<span class="w"> </span>USB<span class="w"> </span>Audio<span class="w"> </span>:<span class="w"> </span>capture<span class="w"> </span><span class="m">1</span>
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>arecord -l
-**** List of CAPTURE Hardware Devices ****
-card <span class="m">3</span>: UACDemoV10 <span class="o">[</span>UACDemoV1.0<span class="o">]</span>, device <span class="m">0</span>: USB Audio <span class="o">[</span>USB Audio<span class="o">]</span>
-  Subdevices: <span class="m">1</span>/1
-  Subdevice <span class="c1">#0: subdevice #0</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>arecord<span class="w"> </span>-l
+****<span class="w"> </span>List<span class="w"> </span>of<span class="w"> </span>CAPTURE<span class="w"> </span>Hardware<span class="w"> </span>Devices<span class="w"> </span>****
+card<span class="w"> </span><span class="m">3</span>:<span class="w"> </span>UACDemoV10<span class="w"> </span><span class="o">[</span>UACDemoV1.0<span class="o">]</span>,<span class="w"> </span>device<span class="w"> </span><span class="m">0</span>:<span class="w"> </span>USB<span class="w"> </span>Audio<span class="w"> </span><span class="o">[</span>USB<span class="w"> </span>Audio<span class="o">]</span>
+<span class="w">  </span>Subdevices:<span class="w"> </span><span class="m">1</span>/1
+<span class="w">  </span>Subdevice<span class="w"> </span><span class="c1">#0: subdevice #0</span>
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat  /proc/asound/card3/stream0
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w">  </span>/proc/asound/card3/stream0
 
-Jieli Technology UACDemoV1.0 at usb-0000:01:00.0-1.4, full speed : USB Audio
+Jieli<span class="w"> </span>Technology<span class="w"> </span>UACDemoV1.0<span class="w"> </span>at<span class="w"> </span>usb-0000:01:00.0-1.4,<span class="w"> </span>full<span class="w"> </span>speed<span class="w"> </span>:<span class="w"> </span>USB<span class="w"> </span>Audio
 
 Capture:
-  Status: Stop
-  Interface <span class="m">1</span>
-    Altset <span class="m">1</span>
-    Format: S16_LE
-    Channels: <span class="m">1</span>
-    Endpoint: 0x83 <span class="o">(</span><span class="m">3</span> IN<span class="o">)</span> <span class="o">(</span>ASYNC<span class="o">)</span>
-    Rates: <span class="m">48000</span>
-    Bits: <span class="m">16</span>
-    Channel map: MONO
+<span class="w">  </span>Status:<span class="w"> </span>Stop
+<span class="w">  </span>Interface<span class="w"> </span><span class="m">1</span>
+<span class="w">    </span>Altset<span class="w"> </span><span class="m">1</span>
+<span class="w">    </span>Format:<span class="w"> </span>S16_LE
+<span class="w">    </span>Channels:<span class="w"> </span><span class="m">1</span>
+<span class="w">    </span>Endpoint:<span class="w"> </span>0x83<span class="w"> </span><span class="o">(</span><span class="m">3</span><span class="w"> </span>IN<span class="o">)</span><span class="w"> </span><span class="o">(</span>ASYNC<span class="o">)</span>
+<span class="w">    </span>Rates:<span class="w"> </span><span class="m">48000</span>
+<span class="w">    </span>Bits:<span class="w"> </span><span class="m">16</span>
+<span class="w">    </span>Channel<span class="w"> </span>map:<span class="w"> </span>MONO
 </pre></div>
 </div>
 </section>
@@ -198,19 +199,19 @@ Capture:
 <section id="cross-compiling-alsa-lib">
 <h2>Cross compiling alsa-lib<a class="headerlink" href="#cross-compiling-alsa-lib" title="Permalink to this headline">¶</a></h2>
 <p>See <a class="reference external" href="https://github.com/alsa-project/alsa-lib/blob/master/INSTALL">https://github.com/alsa-project/alsa-lib/blob/master/INSTALL</a></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone --depth <span class="m">1</span> https://github.com/alsa-project/alsa-lib
-<span class="nb">cd</span> alsa-lib
-<span class="nv">CC</span><span class="o">=</span>aarch64-linux-gnu-gcc ./gitcompile --host<span class="o">=</span>aarch64-linux-gnu
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span><span class="w"> </span>https://github.com/alsa-project/alsa-lib
+<span class="nb">cd</span><span class="w"> </span>alsa-lib
+<span class="nv">CC</span><span class="o">=</span>aarch64-linux-gnu-gcc<span class="w"> </span>./gitcompile<span class="w"> </span>--host<span class="o">=</span>aarch64-linux-gnu
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">/bin/bash:</span> <span class="pre">plantuml:</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">found</span></code>: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">plantuml</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>alsa-lib$ find . -name <span class="s2">&quot;*.so&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>alsa-lib$<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.so&quot;</span>
 
 ./src/.libs/libasound.so
 ./src/topology/.libs/libatopology.so
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>alsa-lib$ find . -name asoundlib.h
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>alsa-lib$<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span>asoundlib.h
 ./include/asoundlib.h
 </pre></div>
 </div>
@@ -221,7 +222,7 @@ on raspberry pi.</p>
 </section>
 <section id="introduction-to-sound-programming-with-alsa">
 <h2>Introduction to Sound Programming with ALSA<a class="headerlink" href="#introduction-to-sound-programming-with-alsa" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install libasound2-dev libasound2
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libasound2-dev<span class="w"> </span>libasound2
 </pre></div>
 </div>
 <dl class="simple">

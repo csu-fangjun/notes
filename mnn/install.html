@@ -85,6 +85,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -117,10 +118,10 @@
 <p>Refer to
 <a class="reference external" href="https://mnn-docs.readthedocs.io/en/latest/compile/engine.html">https://mnn-docs.readthedocs.io/en/latest/compile/engine.html</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./schema/generate.sh
-mkdir build
-<span class="nb">cd</span> build
-cmake  -DMNN_BUILD_CONVERTER<span class="o">=</span>ON -DMNN_SUPPORT_DEPRECATED_OP<span class="o">=</span>OFF -DMNN_BUILD_TORCH<span class="o">=</span>ON ..
-make -j <span class="m">10</span>
+mkdir<span class="w"> </span>build
+<span class="nb">cd</span><span class="w"> </span>build
+cmake<span class="w">  </span>-DMNN_BUILD_CONVERTER<span class="o">=</span>ON<span class="w"> </span>-DMNN_SUPPORT_DEPRECATED_OP<span class="o">=</span>OFF<span class="w"> </span>-DMNN_BUILD_TORCH<span class="o">=</span>ON<span class="w"> </span>..
+make<span class="w"> </span>-j<span class="w"> </span><span class="m">10</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -132,14 +133,14 @@ for searching.</p>
 <h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
 <p>See <a class="reference external" href="https://mnn-docs.readthedocs.io/en/latest/compile/pymnn.html">https://mnn-docs.readthedocs.io/en/latest/compile/pymnn.html</a></p>
 <p>To build a python package, use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> pymnn/pip_package/
-python3 ./build_deps.py
-python3 setup.py bdist_wheel --version <span class="m">2</span>.1.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>pymnn/pip_package/
+python3<span class="w"> </span>./build_deps.py
+python3<span class="w"> </span>setup.py<span class="w"> </span>bdist_wheel<span class="w"> </span>--version<span class="w"> </span><span class="m">2</span>.1.1
 <span class="c1"># We can get the version from include/MNN/MNNDefine.h</span>
 <span class="c1"># or we can give it an arbitrary version string.</span>
-pip install ./dist/MNN-2.1.1-cp38-cp38-linux_x86_64.whl
-<span class="nb">cd</span> <span class="nv">$HOME</span>
-python3 -c <span class="s2">&quot;import MNN; print(dir(MNN))&quot;</span>
+pip<span class="w"> </span>install<span class="w"> </span>./dist/MNN-2.1.1-cp38-cp38-linux_x86_64.whl
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>
+python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import MNN; print(dir(MNN))&quot;</span>
 </pre></div>
 </div>
 </section>

@@ -76,6 +76,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -106,18 +107,18 @@
 <h1>pyenv<a class="headerlink" href="#pyenv" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 
-<span class="nb">export</span> <span class="nv">PYENV_ROOT</span><span class="o">=</span>/star-fj/fangjun/open-source/pyenv
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PYENV_ROOT</span>/bin:<span class="nv">$PATH</span>
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PYENV_ROOT</span>/shims:<span class="nv">$PATH</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PYENV_ROOT</span><span class="o">=</span>/star-fj/fangjun/open-source/pyenv
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PYENV_ROOT</span>/bin:<span class="nv">$PATH</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PYENV_ROOT</span>/shims:<span class="nv">$PATH</span>
 
-<span class="k">if</span> <span class="nb">command</span> -v pyenv &gt;/dev/null<span class="p">;</span> <span class="k">then</span>
-  <span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>pyenv init -<span class="k">)</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="nb">command</span><span class="w"> </span>-v<span class="w"> </span>pyenv<span class="w"> </span>&gt;/dev/null<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>pyenv<span class="w"> </span>init<span class="w"> </span>-<span class="k">)</span><span class="s2">&quot;</span><span class="p">;</span>
 <span class="k">fi</span>
 
-<span class="nb">export</span> <span class="nv">PYTHON_CONFIGURE_OPTS</span><span class="o">=</span><span class="s2">&quot;--enable-shared&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PYTHON_CONFIGURE_OPTS</span><span class="o">=</span><span class="s2">&quot;--enable-shared&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 -m venv ./py38
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>./py38
 </pre></div>
 </div>
 </section>

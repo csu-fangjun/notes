@@ -83,6 +83,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -123,36 +124,36 @@
 </ol>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">./code/call_cpp/hello.h</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">  </span><span class="n">A</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="nf">getInt</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="n">A</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="nf">getInt</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 
-<span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">i_</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="k">private</span><span class="o">:</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">i_</span><span class="p">;</span>
+<span class="p">};</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">./code/call_cpp/hello.cc</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;hello.h&quot;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;hello.h&quot;</span>
 
-<span class="n">A</span><span class="o">::</span><span class="n">A</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">i_</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="n">A</span><span class="o">::</span><span class="n">getInt</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">i_</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="n">A</span><span class="o">::</span><span class="n">A</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">i_</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">A</span><span class="o">::</span><span class="n">getInt</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">i_</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">./code/call_cpp/Makefile</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="nl">all</span><span class="p">:</span><span class="w"> </span><span class="n">libhello</span><span class="p">.</span><span class="n">a</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="nl">all</span><span class="p">:</span><span class="w"> </span><span class="n">libhello</span><span class="p">.</span><span class="n">a</span>
 
-<span class="n">libhello</span><span class="p">.</span><span class="n">a</span><span class="o">:</span><span class="w"> </span><span class="n">hello</span><span class="p">.</span><span class="n">h</span><span class="w"> </span><span class="n">hello</span><span class="p">.</span><span class="n">cc</span><span class="w"></span>
-<span class="w">	</span><span class="n">g</span><span class="o">++</span><span class="w"> </span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="n">hello</span><span class="p">.</span><span class="n">cc</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">hello</span><span class="p">.</span><span class="n">o</span><span class="w"></span>
-<span class="w">	</span><span class="n">ar</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="n">libhello</span><span class="p">.</span><span class="n">a</span><span class="w"> </span><span class="n">hello</span><span class="p">.</span><span class="n">o</span><span class="w"></span>
+<span class="n">libhello</span><span class="p">.</span><span class="n">a</span><span class="o">:</span><span class="w"> </span><span class="n">hello</span><span class="p">.</span><span class="n">h</span><span class="w"> </span><span class="n">hello</span><span class="p">.</span><span class="n">cc</span>
+<span class="w">	</span><span class="n">g</span><span class="o">++</span><span class="w"> </span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="n">hello</span><span class="p">.</span><span class="n">cc</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">hello</span><span class="p">.</span><span class="n">o</span>
+<span class="w">	</span><span class="n">ar</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="n">libhello</span><span class="p">.</span><span class="n">a</span><span class="w"> </span><span class="n">hello</span><span class="p">.</span><span class="n">o</span>
 
-<span class="nl">clean</span><span class="p">:</span><span class="w"></span>
-<span class="w">	</span><span class="n">$</span><span class="p">(</span><span class="n">RM</span><span class="p">)</span><span class="w"> </span><span class="n">libhello</span><span class="p">.</span><span class="n">a</span><span class="w"> </span><span class="n">hello</span><span class="p">.</span><span class="n">o</span><span class="w"></span>
+<span class="nl">clean</span><span class="p">:</span>
+<span class="w">	</span><span class="n">$</span><span class="p">(</span><span class="n">RM</span><span class="p">)</span><span class="w"> </span><span class="n">libhello</span><span class="p">.</span><span class="n">a</span><span class="w"> </span><span class="n">hello</span><span class="p">.</span><span class="n">o</span>
 </pre></div>
 </div>
 </div>
@@ -167,16 +168,16 @@ In the popped-up dialog, select <code class="docutils literal notranslate"><span
 swift compiler, objective-c bridging header, and enter a header name.</p></li>
 <li><p>Content of <code class="docutils literal notranslate"><span class="pre">wrapper.cc</span></code></p></li>
 </ol>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;hello.h&quot;</span><span class="cp"></span>
-<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">getIntFromCpp</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="mi">10</span><span class="p">).</span><span class="n">getInt</span><span class="p">();</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;hello.h&quot;</span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">getIntFromCpp</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="mi">10</span><span class="p">).</span><span class="n">getInt</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="13">
 <li><p>Content of the bridging header <code class="docutils literal notranslate"><span class="pre">TestCpp-Briding-Header.h</span></code>:</p></li>
 </ol>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">getIntFromCpp</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">getIntFromCpp</span><span class="p">();</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="14">

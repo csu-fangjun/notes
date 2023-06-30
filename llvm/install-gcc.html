@@ -88,6 +88,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -117,26 +118,26 @@
              
   <section id="install-gcc">
 <h1>Install GCC<a class="headerlink" href="#install-gcc" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar xvf gcc-12.2.0.tar.gz
-<span class="nb">cd</span> gcc-12.2.0
-./configure --prefix<span class="o">=</span>/ceph-fj/fangjun/software/gcc-12.2.0
-make -j <span class="m">5</span>
-make install
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar<span class="w"> </span>xvf<span class="w"> </span>gcc-12.2.0.tar.gz
+<span class="nb">cd</span><span class="w"> </span>gcc-12.2.0
+./configure<span class="w"> </span>--prefix<span class="o">=</span>/ceph-fj/fangjun/software/gcc-12.2.0
+make<span class="w"> </span>-j<span class="w"> </span><span class="m">5</span>
+make<span class="w"> </span>install
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">gcc_dir</span><span class="o">=</span>/ceph-fj/fangjun/software/gcc-12.2.0
-<span class="nb">export</span> <span class="nv">CC</span><span class="o">=</span><span class="nv">$gcc_dir</span>/bin/gcc
-<span class="nb">export</span> <span class="nv">CXX</span><span class="o">=</span><span class="nv">$gcc_dir</span>/bin/g++
-<span class="nb">export</span> <span class="nv">LIBRARY_PATH</span><span class="o">=</span><span class="nv">$gcc_dir</span>/lib64:<span class="nv">$LIBRARY_PATH</span>
-<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$gcc_dir</span>/lib64:<span class="nv">$LD_LIBRARY_PATH</span>
-<span class="nb">export</span> <span class="nv">C_INCLUDE_PATH</span><span class="o">=</span><span class="nv">$gcc_dir</span>/include
-<span class="nb">export</span> <span class="nv">CPLUS_INCLUDE_PATH</span><span class="o">=</span><span class="nv">$gcc_dir</span>/include
+<span class="nb">export</span><span class="w"> </span><span class="nv">CC</span><span class="o">=</span><span class="nv">$gcc_dir</span>/bin/gcc
+<span class="nb">export</span><span class="w"> </span><span class="nv">CXX</span><span class="o">=</span><span class="nv">$gcc_dir</span>/bin/g++
+<span class="nb">export</span><span class="w"> </span><span class="nv">LIBRARY_PATH</span><span class="o">=</span><span class="nv">$gcc_dir</span>/lib64:<span class="nv">$LIBRARY_PATH</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$gcc_dir</span>/lib64:<span class="nv">$LD_LIBRARY_PATH</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">C_INCLUDE_PATH</span><span class="o">=</span><span class="nv">$gcc_dir</span>/include
+<span class="nb">export</span><span class="w"> </span><span class="nv">CPLUS_INCLUDE_PATH</span><span class="o">=</span><span class="nv">$gcc_dir</span>/include
 </pre></div>
 </div>
 <section id="using-conda">
 <h2>Using conda<a class="headerlink" href="#using-conda" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge <span class="nv">gcc</span><span class="o">==</span><span class="m">9</span>.5.0
-conda install -c conda-forge <span class="nv">gxx</span><span class="o">==</span><span class="m">9</span>.5.0
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="nv">gcc</span><span class="o">==</span><span class="m">9</span>.5.0
+conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="nv">gxx</span><span class="o">==</span><span class="m">9</span>.5.0
 </pre></div>
 </div>
 </section>

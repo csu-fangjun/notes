@@ -85,6 +85,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -118,10 +119,10 @@
 <p><a class="reference external" href="https://llvm.org/docs/GettingStarted.html#getting-a-modern-host-c-toolchain">https://llvm.org/docs/GettingStarted.html#getting-a-modern-host-c-toolchain</a>
 describes how to install GCC from source.</p>
 <p>Use of a user provided GCC:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir build
-<span class="nb">cd</span> build
-<span class="nv">CC</span><span class="o">=</span><span class="nv">$HOME</span>/toolchains/bin/gcc <span class="nv">CXX</span><span class="o">=</span><span class="nv">$HOME</span>/toolchains/bin/g++ <span class="se">\</span>
-  cmake .. -DCMAKE_CXX_LINK_FLAGS<span class="o">=</span><span class="s2">&quot;-Wl,-rpath,</span><span class="nv">$HOME</span><span class="s2">/toolchains/lib64 -L</span><span class="nv">$HOME</span><span class="s2">/toolchains/lib64&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>build
+<span class="nb">cd</span><span class="w"> </span>build
+<span class="nv">CC</span><span class="o">=</span><span class="nv">$HOME</span>/toolchains/bin/gcc<span class="w"> </span><span class="nv">CXX</span><span class="o">=</span><span class="nv">$HOME</span>/toolchains/bin/g++<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>cmake<span class="w"> </span>..<span class="w"> </span>-DCMAKE_CXX_LINK_FLAGS<span class="o">=</span><span class="s2">&quot;-Wl,-rpath,</span><span class="nv">$HOME</span><span class="s2">/toolchains/lib64 -L</span><span class="nv">$HOME</span><span class="s2">/toolchains/lib64&quot;</span>
 </pre></div>
 </div>
 <p>Useful tools that can be found in <cite>build/bin</cite>:</p>

@@ -85,6 +85,7 @@
 <li class="toctree-l2"><a class="reference internal" href="hello.html">Hello</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -114,24 +115,24 @@
              
   <section id="dotnet">
 <h1>dotnet<a class="headerlink" href="#dotnet" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dotnet --list-sdks
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dotnet<span class="w"> </span>--list-sdks
 
 <span class="c1"># Create a directory and create a file global.json in it</span>
 <span class="c1"># global.json contains the default sdk version to use</span>
-dotnet new globaljson --sdk-version <span class="m">6</span>.0.100 --output FirstProject
+dotnet<span class="w"> </span>new<span class="w"> </span>globaljson<span class="w"> </span>--sdk-version<span class="w"> </span><span class="m">6</span>.0.100<span class="w"> </span>--output<span class="w"> </span>FirstProject
 
 <span class="c1"># Create an ASP.Net Core MVC web project, and put it inside the directory</span>
 <span class="c1"># FirstProject.</span>
-dotnet new mvc --no-https --output FirstProject --framework net6.0
+dotnet<span class="w"> </span>new<span class="w"> </span>mvc<span class="w"> </span>--no-https<span class="w"> </span>--output<span class="w"> </span>FirstProject<span class="w"> </span>--framework<span class="w"> </span>net6.0
 
 <span class="c1"># Create a solution named FirstProject and put it inside ./FirstProject</span>
-dotnet new sln -o FirstProject
+dotnet<span class="w"> </span>new<span class="w"> </span>sln<span class="w"> </span>-o<span class="w"> </span>FirstProject
 
 <span class="c1"># Add the project &quot;FirstProject&quot; to the solution &quot;FirstProject&quot;</span>
-dotnet sln FirstProject add FirstProject
+dotnet<span class="w"> </span>sln<span class="w"> </span>FirstProject<span class="w"> </span>add<span class="w"> </span>FirstProject
 
 <span class="c1"># list supported projects</span>
-dotnet new --list
+dotnet<span class="w"> </span>new<span class="w"> </span>--list
 </pre></div>
 </div>
 </section>

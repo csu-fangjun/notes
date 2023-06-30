@@ -42,6 +42,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">git</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="branch.html">Branch</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="commands.html">Commands</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">rev-parse</a></li>
 </ul>
@@ -84,6 +85,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -137,8 +139,8 @@ as follows:</p>
 </pre></div>
 </div>
 <p>It can also be used in bash script:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">root_dir</span><span class="o">=</span><span class="k">$(</span>git rev-parse --show-toplevel<span class="k">)</span>
-<span class="nb">echo</span> <span class="s2">&quot;root_dir </span><span class="si">${</span><span class="nv">root_dir</span><span class="si">}</span><span class="s2">&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">root_dir</span><span class="o">=</span><span class="k">$(</span>git<span class="w"> </span>rev-parse<span class="w"> </span>--show-toplevel<span class="k">)</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;root_dir </span><span class="si">${</span><span class="nv">root_dir</span><span class="si">}</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">help</span> <span class="pre">git-rev-parse</span></code> outputs helpful information for <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rev-parse</span></code>. In

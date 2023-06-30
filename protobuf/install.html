@@ -86,6 +86,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -131,27 +132,27 @@ cd $HOME/software/protobuf-3.20.1
 tree . &gt; tree-log.txt
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span><span class="nv">$HOME</span>/software/protobuf-3.20.1:<span class="nv">$PKG_CONFIG_PATH</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span><span class="nv">$HOME</span>/software/protobuf-3.20.1:<span class="nv">$PKG_CONFIG_PATH</span>
 
-$ pkg-config --cflags protobuf
+$<span class="w"> </span>pkg-config<span class="w"> </span>--cflags<span class="w"> </span>protobuf
 -I/root/fangjun/software/protobuf-3.20.1/include
 
-$ pkg-config --libs protobuf
--L/root/fangjun/software/protobuf-3.20.1/lib -lprotobuf
+$<span class="w"> </span>pkg-config<span class="w"> </span>--libs<span class="w"> </span>protobuf
+-L/root/fangjun/software/protobuf-3.20.1/lib<span class="w"> </span>-lprotobuf
 
-$ pkg-config --cflags --libs  protobuf
--I/root/fangjun/software/protobuf-3.20.1/include -L/root/fangjun/software/protobuf-3.20.1/lib -lprotobuf
+$<span class="w"> </span>pkg-config<span class="w"> </span>--cflags<span class="w"> </span>--libs<span class="w">  </span>protobuf
+-I/root/fangjun/software/protobuf-3.20.1/include<span class="w"> </span>-L/root/fangjun/software/protobuf-3.20.1/lib<span class="w"> </span>-lprotobuf
 
-$ pkg-config --libs-only-L  protobuf
+$<span class="w"> </span>pkg-config<span class="w"> </span>--libs-only-L<span class="w">  </span>protobuf
 -L/root/fangjun/software/protobuf-3.20.1/lib
 
-$ pkg-config --libs-only-l  protobuf
+$<span class="w"> </span>pkg-config<span class="w"> </span>--libs-only-l<span class="w">  </span>protobuf
 -lprotobuf
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/software/protobuf-3.20.1/bin:<span class="nv">$PATH</span>
-$ protoc --version
-libprotoc <span class="m">3</span>.20.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/software/protobuf-3.20.1/bin:<span class="nv">$PATH</span>
+$<span class="w"> </span>protoc<span class="w"> </span>--version
+libprotoc<span class="w"> </span><span class="m">3</span>.20.1
 </pre></div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id1">

@@ -90,6 +90,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -121,93 +122,93 @@
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <section id="cuda-10-1-243">
 <h2>CUDA 10.1.243<a class="headerlink" href="#cuda-10-1-243" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cuda_10.1.243_418.87.00_linux.run --silent --toolkit --installpath<span class="o">=</span>/ceph-data4/fangjun/software/cuda-10.1.243 --no-opengl-libs --no-drm --no-man-page
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cuda_10.1.243_418.87.00_linux.run<span class="w"> </span>--silent<span class="w"> </span>--toolkit<span class="w"> </span>--installpath<span class="o">=</span>/ceph-data4/fangjun/software/cuda-10.1.243<span class="w"> </span>--no-opengl-libs<span class="w"> </span>--no-drm<span class="w"> </span>--no-man-page
 
 <span class="c1"># Install cuDNN</span>
-<span class="nb">cd</span> /ceph-data4/fangjun/software/cuda-10.1.243
-tar xvf /ceph-sh0/fangjun/cudnn/cudnn-10.1-linux-x64-v8.0.4.30.tgz --strip-components<span class="o">=</span><span class="m">1</span>
+<span class="nb">cd</span><span class="w"> </span>/ceph-data4/fangjun/software/cuda-10.1.243
+tar<span class="w"> </span>xvf<span class="w"> </span>/ceph-sh0/fangjun/cudnn/cudnn-10.1-linux-x64-v8.0.4.30.tgz<span class="w"> </span>--strip-components<span class="o">=</span><span class="m">1</span>
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 
-<span class="nb">export</span> <span class="nv">CUDA_HOME</span><span class="o">=</span>/ceph-data4/fangjun/software/cuda-10.1.243
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>/bin:<span class="nv">$PATH</span>
-<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>/lib64:<span class="nv">$LD_LIBRARY_PATH</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CUDA_HOME</span><span class="o">=</span>/ceph-data4/fangjun/software/cuda-10.1.243
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>/bin:<span class="nv">$PATH</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>/lib64:<span class="nv">$LD_LIBRARY_PATH</span>
 
 <span class="c1"># See /ceph-fj/fangjun/py38/lib/python3.8/site-packages/torch/share/cmake/Caffe2/Modules_CUDA_fix/upstream/FindCUDA.cmake</span>
-<span class="nb">export</span> <span class="nv">CUDA_TOOLKIT_ROOT_DIR</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>
-<span class="nb">export</span> <span class="nv">CUDA_TOOLKIT_ROOT</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>
-<span class="nb">export</span> <span class="nv">CUDA_BIN_PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>
-<span class="nb">export</span> <span class="nv">CUDA_PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>
-<span class="nb">export</span> <span class="nv">CUDA_INC_PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>/targets/x86_64-linux
+<span class="nb">export</span><span class="w"> </span><span class="nv">CUDA_TOOLKIT_ROOT_DIR</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CUDA_TOOLKIT_ROOT</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CUDA_BIN_PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CUDA_PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CUDA_INC_PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>/targets/x86_64-linux
 </pre></div>
 </div>
 </section>
 <section id="cuda-10-2-89">
 <h2>CUDA 10.2.89<a class="headerlink" href="#cuda-10-2-89" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cuda_10.2.89_440.33.01_linux.run --silent --toolkit --installpath<span class="o">=</span>/ceph-data4/fangjun/software/cuda-10.2.89 --no-opengl-libs --no-drm --no-man-page
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cuda_10.2.89_440.33.01_linux.run<span class="w"> </span>--silent<span class="w"> </span>--toolkit<span class="w"> </span>--installpath<span class="o">=</span>/ceph-data4/fangjun/software/cuda-10.2.89<span class="w"> </span>--no-opengl-libs<span class="w"> </span>--no-drm<span class="w"> </span>--no-man-page
 <span class="c1"># Install cuDNN</span>
-wget https://huggingface.co/csukuangfj/cudnn/resolve/main/cudnn-10.2-linux-x64-v8.0.2.39.tgz
-tar xvf cudnn-10.2-linux-x64-v8.0.2.39.tgz --strip-components<span class="o">=</span><span class="m">1</span> -C /ceph-data4/fangjun/software/cuda-10.2.89
+wget<span class="w"> </span>https://huggingface.co/csukuangfj/cudnn/resolve/main/cudnn-10.2-linux-x64-v8.0.2.39.tgz
+tar<span class="w"> </span>xvf<span class="w"> </span>cudnn-10.2-linux-x64-v8.0.2.39.tgz<span class="w"> </span>--strip-components<span class="o">=</span><span class="m">1</span><span class="w"> </span>-C<span class="w"> </span>/ceph-data4/fangjun/software/cuda-10.2.89
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 
-<span class="nb">export</span> <span class="nv">CUDA_HOME</span><span class="o">=</span>/ceph-sh1/fangjun/software/cuda-10.2.89
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>/bin:<span class="nv">$PATH</span>
-<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>/lib64:<span class="nv">$LD_LIBRARY_PATH</span>
-<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>/lib:<span class="nv">$LD_LIBRARY_PATH</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CUDA_HOME</span><span class="o">=</span>/ceph-sh1/fangjun/software/cuda-10.2.89
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>/bin:<span class="nv">$PATH</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>/lib64:<span class="nv">$LD_LIBRARY_PATH</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>/lib:<span class="nv">$LD_LIBRARY_PATH</span>
 
 <span class="c1"># See /ceph-fj/fangjun/py38/lib/python3.8/site-packages/torch/share/cmake/Caffe2/Modules_CUDA_fix/upstream/FindCUDA.cmake</span>
-<span class="nb">export</span> <span class="nv">CUDA_TOOLKIT_ROOT_DIR</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>
-<span class="nb">export</span> <span class="nv">CUDA_TOOLKIT_ROOT</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>
-<span class="nb">export</span> <span class="nv">CUDA_BIN_PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>
-<span class="nb">export</span> <span class="nv">CUDA_PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>
-<span class="nb">export</span> <span class="nv">CUDA_INC_PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>/targets/x86_64-linux
-<span class="nb">export</span> <span class="nv">CFLAGS</span><span class="o">=</span>-I<span class="nv">$CUDA_HOME</span>/targets/x86_64-linux/include
+<span class="nb">export</span><span class="w"> </span><span class="nv">CUDA_TOOLKIT_ROOT_DIR</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CUDA_TOOLKIT_ROOT</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CUDA_BIN_PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CUDA_PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CUDA_INC_PATH</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>/targets/x86_64-linux
+<span class="nb">export</span><span class="w"> </span><span class="nv">CFLAGS</span><span class="o">=</span>-I<span class="nv">$CUDA_HOME</span>/targets/x86_64-linux/include
 </pre></div>
 </div>
 </section>
 <section id="cuda-11-0-3">
 <h2>CUDA 11.0.3<a class="headerlink" href="#cuda-11-0-3" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cuda_11.0.3_450.51.06_linux.run --silent --toolkit --installpath<span class="o">=</span>/ceph-data4/fangjun/software/cuda-11.0.3 --no-opengl-libs --no-drm --no-man-page
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cuda_11.0.3_450.51.06_linux.run<span class="w"> </span>--silent<span class="w"> </span>--toolkit<span class="w"> </span>--installpath<span class="o">=</span>/ceph-data4/fangjun/software/cuda-11.0.3<span class="w"> </span>--no-opengl-libs<span class="w"> </span>--no-drm<span class="w"> </span>--no-man-page
 
 <span class="c1"># Install cuDNN</span>
-<span class="nb">cd</span> /ceph-data4/fangjun/software/cuda-11.0.3
-tar xvf /ceph-sh0/fangjun/cudnn/cudnn-11.0-linux-x64-v8.0.4.30.tgz --strip-components<span class="o">=</span><span class="m">1</span>
+<span class="nb">cd</span><span class="w"> </span>/ceph-data4/fangjun/software/cuda-11.0.3
+tar<span class="w"> </span>xvf<span class="w"> </span>/ceph-sh0/fangjun/cudnn/cudnn-11.0-linux-x64-v8.0.4.30.tgz<span class="w"> </span>--strip-components<span class="o">=</span><span class="m">1</span>
 </pre></div>
 </div>
 </section>
 <section id="cuda-11-3-1">
 <h2>CUDA 11.3.1<a class="headerlink" href="#cuda-11-3-1" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cuda_11.3.1_465.19.01_linux.run --silent --toolkit --installpath<span class="o">=</span>/ceph-data4/fangjun/software/cuda-11.3.1 --no-opengl-libs --no-drm --no-man-page
-<span class="nb">cd</span> /ceph-data4/fangjun/software/cuda-11.3.1
-tar xvf /ceph-sh0/fangjun/cudnn/cudnn-11.3-linux-x64-v8.2.1.32.tgz --strip-components<span class="o">=</span><span class="m">1</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cuda_11.3.1_465.19.01_linux.run<span class="w"> </span>--silent<span class="w"> </span>--toolkit<span class="w"> </span>--installpath<span class="o">=</span>/ceph-data4/fangjun/software/cuda-11.3.1<span class="w"> </span>--no-opengl-libs<span class="w"> </span>--no-drm<span class="w"> </span>--no-man-page
+<span class="nb">cd</span><span class="w"> </span>/ceph-data4/fangjun/software/cuda-11.3.1
+tar<span class="w"> </span>xvf<span class="w"> </span>/ceph-sh0/fangjun/cudnn/cudnn-11.3-linux-x64-v8.2.1.32.tgz<span class="w"> </span>--strip-components<span class="o">=</span><span class="m">1</span>
 </pre></div>
 </div>
 </section>
 <section id="cuda-11-5-2">
 <h2>CUDA 11.5.2<a class="headerlink" href="#cuda-11-5-2" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cuda_11.5.2_495.29.05_linux.run --silent --toolkit --installpath<span class="o">=</span>/ceph-data4/fangjun/software/cuda-11.5.2 --no-opengl-libs --no-drm --no-man-page
-<span class="nb">cd</span> /ceph-data4/fangjun/software/cuda-11.5.2
-tar xvf /ceph-sh0/fangjun/cudnn/cudnn-linux-x86_64-8.3.2.44_cuda11.5-archive.tar.xz --strip-components<span class="o">=</span><span class="m">1</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cuda_11.5.2_495.29.05_linux.run<span class="w"> </span>--silent<span class="w"> </span>--toolkit<span class="w"> </span>--installpath<span class="o">=</span>/ceph-data4/fangjun/software/cuda-11.5.2<span class="w"> </span>--no-opengl-libs<span class="w"> </span>--no-drm<span class="w"> </span>--no-man-page
+<span class="nb">cd</span><span class="w"> </span>/ceph-data4/fangjun/software/cuda-11.5.2
+tar<span class="w"> </span>xvf<span class="w"> </span>/ceph-sh0/fangjun/cudnn/cudnn-linux-x86_64-8.3.2.44_cuda11.5-archive.tar.xz<span class="w"> </span>--strip-components<span class="o">=</span><span class="m">1</span>
 </pre></div>
 </div>
 </section>
 <section id="cuda-11-6-1">
 <h2>CUDA 11.6.1<a class="headerlink" href="#cuda-11-6-1" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cuda_11.6.1_510.47.03_linux.run --silent --toolkit --installpath<span class="o">=</span>/ceph-data4/fangjun/software/cuda-11.6.1 --no-opengl-libs --no-drm --no-man-page
-<span class="nb">cd</span> /ceph-data4/fangjun/software/cuda-11.6.1
-tar xvf /ceph-sh0/fangjun/cudnn/cudnn-11.3-linux-x64-v8.2.1.32.tgz --strip-components<span class="o">=</span><span class="m">1</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cuda_11.6.1_510.47.03_linux.run<span class="w"> </span>--silent<span class="w"> </span>--toolkit<span class="w"> </span>--installpath<span class="o">=</span>/ceph-data4/fangjun/software/cuda-11.6.1<span class="w"> </span>--no-opengl-libs<span class="w"> </span>--no-drm<span class="w"> </span>--no-man-page
+<span class="nb">cd</span><span class="w"> </span>/ceph-data4/fangjun/software/cuda-11.6.1
+tar<span class="w"> </span>xvf<span class="w"> </span>/ceph-sh0/fangjun/cudnn/cudnn-11.3-linux-x64-v8.2.1.32.tgz<span class="w"> </span>--strip-components<span class="o">=</span><span class="m">1</span>
 </pre></div>
 </div>
 </section>
 <section id="cuda-11-7-1">
 <h2>CUDA 11.7.1<a class="headerlink" href="#cuda-11-7-1" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://developer.download.nvidia.com/compute/cuda/11.7.1/local_installers/cuda_11.7.1_515.65.01_linux.run
-chmod +x cuda_11.7.1_515.65.01_linux.run
-./cuda_11.7.1_515.65.01_linux.run --silent --toolkit --installpath<span class="o">=</span>/ceph-data4/fangjun/software/cuda-11.7.1 --no-opengl-libs --no-drm --no-man-page
-<span class="nb">cd</span> /ceph-data4/fangjun/software/cuda-11.7.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://developer.download.nvidia.com/compute/cuda/11.7.1/local_installers/cuda_11.7.1_515.65.01_linux.run
+chmod<span class="w"> </span>+x<span class="w"> </span>cuda_11.7.1_515.65.01_linux.run
+./cuda_11.7.1_515.65.01_linux.run<span class="w"> </span>--silent<span class="w"> </span>--toolkit<span class="w"> </span>--installpath<span class="o">=</span>/ceph-data4/fangjun/software/cuda-11.7.1<span class="w"> </span>--no-opengl-libs<span class="w"> </span>--no-drm<span class="w"> </span>--no-man-page
+<span class="nb">cd</span><span class="w"> </span>/ceph-data4/fangjun/software/cuda-11.7.1
 </pre></div>
 </div>
 </section>

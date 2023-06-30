@@ -90,6 +90,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -124,12 +125,12 @@ an emulator, and how to run the executable in the emulator via <code class="docu
 <code class="docutils literal notranslate"><span class="pre">adb</span> <span class="pre">shell</span></code>.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">./code/hello/hello.cc</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="linenos">2</span>
-<span class="linenos">3</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">4</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;hello world</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">5</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">6</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">3</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">4</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;hello world</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="linenos">5</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">6</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -145,8 +146,8 @@ an emulator, and how to run the executable in the emulator via <code class="docu
 </div>
 <section id="x86">
 <h2>x86<a class="headerlink" href="#x86" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ANDROID_NDK_ROOT</span><span class="o">=</span>/ceph-fj/fangjun/software/android-ndk
-cmake -DCMAKE_TOOLCHAIN_FILE<span class="o">=</span><span class="nv">$ANDROID_NDK_ROOT</span>/build/cmake/android.toolchain.cmake -DANDROID_ABI<span class="o">=</span>x86 ..
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ANDROID_NDK_ROOT</span><span class="o">=</span>/ceph-fj/fangjun/software/android-ndk
+cmake<span class="w"> </span>-DCMAKE_TOOLCHAIN_FILE<span class="o">=</span><span class="nv">$ANDROID_NDK_ROOT</span>/build/cmake/android.toolchain.cmake<span class="w"> </span>-DANDROID_ABI<span class="o">=</span>x86<span class="w"> </span>..
 </pre></div>
 </div>
 <dl class="simple">
@@ -159,14 +160,14 @@ cmake -DCMAKE_TOOLCHAIN_FILE<span class="o">=</span><span class="nv">$ANDROID_ND
 </ul>
 </dd>
 </dl>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sdkmanager --list <span class="p">|</span> grep system-images <span class="p">|</span> grep x86 <span class="p">|</span> grep android-28
-$ sdkmanager <span class="s2">&quot;system-images;android-28;default;x86&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sdkmanager<span class="w"> </span>--list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>system-images<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>x86<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>android-28
+$<span class="w"> </span>sdkmanager<span class="w"> </span><span class="s2">&quot;system-images;android-28;default;x86&quot;</span>
 
-$ which avdmanager
+$<span class="w"> </span>which<span class="w"> </span>avdmanager
 /ceph-fj/fangjun/software/android-sdk/cmdline-tools/latest/bin/avdmanage
 
-$ avdmanager create avd --help
-$ -k --package  : Package path of the system image <span class="k">for</span> this AVD
+$<span class="w"> </span>avdmanager<span class="w"> </span>create<span class="w"> </span>avd<span class="w"> </span>--help
+$<span class="w"> </span>-k<span class="w"> </span>--package<span class="w">  </span>:<span class="w"> </span>Package<span class="w"> </span>path<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>system<span class="w"> </span>image<span class="w"> </span><span class="k">for</span><span class="w"> </span>this<span class="w"> </span>AVD
 <span class="c1">#                 (e.g., &#39;system-images;android-19;google_apis;x86&#39;).</span>
 <span class="c1"># -n --name     : Name of the new AVD [required]</span>
 <span class="c1"># -b --abi      : The ABI to use for the AVD. The default is to auto-select</span>
@@ -174,44 +175,44 @@ $ -k --package  : Package path of the system image <span class="k">for</span> th
 <span class="c1"># -g --tag      : The sys-img tag to use for the AVD. The default is to</span>
 <span class="c1">#                 auto-select if the platform has only one tag for its system</span>
 <span class="c1">#                 images</span>
-$ avdmanager create avd -k <span class="s2">&quot;system-images;android-28;default;x86&quot;</span> -n hello -b x86 -g default
+$<span class="w"> </span>avdmanager<span class="w"> </span>create<span class="w"> </span>avd<span class="w"> </span>-k<span class="w"> </span><span class="s2">&quot;system-images;android-28;default;x86&quot;</span><span class="w"> </span>-n<span class="w"> </span>hello<span class="w"> </span>-b<span class="w"> </span>x86<span class="w"> </span>-g<span class="w"> </span>default
 <span class="c1"># Use the default option [no] when it prompts:</span>
 <span class="c1">#  Do you wish to create a custom hardware profile? [no]</span>
 <span class="c1">#</span>
-$ avdmanager delete avd -n hello <span class="c1"># to delete it</span>
+$<span class="w"> </span>avdmanager<span class="w"> </span>delete<span class="w"> </span>avd<span class="w"> </span>-n<span class="w"> </span>hello<span class="w"> </span><span class="c1"># to delete it</span>
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ avdmanager list avd
-Available Android Virtual Devices:
-    Name: hello
-    Path: /root/fangjun/.android/avd/hello.avd
-  Target: Default Android System Image
-          Based on: Android <span class="m">9</span>.0 <span class="o">(</span>Pie<span class="o">)</span> Tag/ABI: default/x86
-  Sdcard: <span class="m">512</span> MB
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>avdmanager<span class="w"> </span>list<span class="w"> </span>avd
+Available<span class="w"> </span>Android<span class="w"> </span>Virtual<span class="w"> </span>Devices:
+<span class="w">    </span>Name:<span class="w"> </span>hello
+<span class="w">    </span>Path:<span class="w"> </span>/root/fangjun/.android/avd/hello.avd
+<span class="w">  </span>Target:<span class="w"> </span>Default<span class="w"> </span>Android<span class="w"> </span>System<span class="w"> </span>Image
+<span class="w">          </span>Based<span class="w"> </span>on:<span class="w"> </span>Android<span class="w"> </span><span class="m">9</span>.0<span class="w"> </span><span class="o">(</span>Pie<span class="o">)</span><span class="w"> </span>Tag/ABI:<span class="w"> </span>default/x86
+<span class="w">  </span>Sdcard:<span class="w"> </span><span class="m">512</span><span class="w"> </span>MB
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>emulator -avd hello -no-window  -no-accel <span class="c1"># then, open a new terminal</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>emulator<span class="w"> </span>-avd<span class="w"> </span>hello<span class="w"> </span>-no-window<span class="w">  </span>-no-accel<span class="w"> </span><span class="c1"># then, open a new terminal</span>
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ adb devices
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>adb<span class="w"> </span>devices
 
-* daemon not running<span class="p">;</span> starting now at tcp:5037
-* daemon started successfully
-List of devices attached
-emulator-5554   offline
+*<span class="w"> </span>daemon<span class="w"> </span>not<span class="w"> </span>running<span class="p">;</span><span class="w"> </span>starting<span class="w"> </span>now<span class="w"> </span>at<span class="w"> </span>tcp:5037
+*<span class="w"> </span>daemon<span class="w"> </span>started<span class="w"> </span>successfully
+List<span class="w"> </span>of<span class="w"> </span>devices<span class="w"> </span>attached
+emulator-5554<span class="w">   </span>offline
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># push the binary from code/hello/build/hello</span>
 
-adb push ./code/hello/build/hello /sdcard <span class="c1"># not able to use chmod +x in it</span>
-adb push ./code/hello/build/hello /data/local
-adb shell /data/local/hello
-adb shell
-generic_x86:/ <span class="c1">#</span>
+adb<span class="w"> </span>push<span class="w"> </span>./code/hello/build/hello<span class="w"> </span>/sdcard<span class="w"> </span><span class="c1"># not able to use chmod +x in it</span>
+adb<span class="w"> </span>push<span class="w"> </span>./code/hello/build/hello<span class="w"> </span>/data/local
+adb<span class="w"> </span>shell<span class="w"> </span>/data/local/hello
+adb<span class="w"> </span>shell
+generic_x86:/<span class="w"> </span><span class="c1">#</span>
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>generic_x86:/ <span class="c1"># ./data/local/hello</span>
-hello world
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>generic_x86:/<span class="w"> </span><span class="c1"># ./data/local/hello</span>
+hello<span class="w"> </span>world
 </pre></div>
 </div>
 </section>

@@ -81,6 +81,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -111,12 +112,12 @@
   <section id="install">
 <h1>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h1>
 <p>See <a class="reference external" href="https://grpc.io/docs/languages/cpp/quickstart/">https://grpc.io/docs/languages/cpp/quickstart/</a></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone --recurse-submodules -b v1.46.3 --depth <span class="m">1</span> --shallow-submodules https://github.com/grpc/grpc
-mkdir build
-<span class="nb">cd</span> build
-cmake -DgRPC_INSTALL<span class="o">=</span>ON -DgRPC_BUILD_TESTS<span class="o">=</span>OFF -DCMAKE_INSTALL_PREFIX<span class="o">=</span>/ceph-fj/fangjun/software/grpc-1.46.3 .. <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> tee cmake-configure-1.log
-make -j20 <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> tee make-1.log
-make install <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> tee make-2.log
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--recurse-submodules<span class="w"> </span>-b<span class="w"> </span>v1.46.3<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span><span class="w"> </span>--shallow-submodules<span class="w"> </span>https://github.com/grpc/grpc
+mkdir<span class="w"> </span>build
+<span class="nb">cd</span><span class="w"> </span>build
+cmake<span class="w"> </span>-DgRPC_INSTALL<span class="o">=</span>ON<span class="w"> </span>-DgRPC_BUILD_TESTS<span class="o">=</span>OFF<span class="w"> </span>-DCMAKE_INSTALL_PREFIX<span class="o">=</span>/ceph-fj/fangjun/software/grpc-1.46.3<span class="w"> </span>..<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>cmake-configure-1.log
+make<span class="w"> </span>-j20<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>make-1.log
+make<span class="w"> </span>install<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>make-2.log
 </pre></div>
 </div>
 </section>

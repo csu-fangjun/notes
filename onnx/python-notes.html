@@ -88,6 +88,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -118,7 +119,7 @@
   <section id="python-notes">
 <h1>Python notes<a class="headerlink" href="#python-notes" title="Permalink to this headline">¶</a></h1>
 <p>See <a class="reference external" href="https://onnx.ai/onnx/api/index.html#l-python-onnx-api">https://onnx.ai/onnx/api/index.html#l-python-onnx-api</a></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install onnx
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>onnx
 </pre></div>
 </div>
 <p>The data structure is defined in a protocol buffer file</p>
@@ -163,7 +164,7 @@ defines a mapping to map datatypes from onnx to numpy.</p>
 <span class="linenos">27</span>    <span class="p">)</span>
 <span class="linenos">28</span>    <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 <span class="linenos">29</span>
-<span class="linenos">30</span>    <span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">30</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">31</span><span class="sd">    dims: 2</span>
 <span class="linenos">32</span><span class="sd">    dims: 2</span>
 <span class="linenos">33</span><span class="sd">    data_type: 7</span>
@@ -183,7 +184,7 @@ defines a mapping to map datatypes from onnx to numpy.</p>
 <span class="linenos">47</span>    <span class="n">t</span><span class="o">.</span><span class="n">dims</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="linenos">48</span>    <span class="n">t</span><span class="o">.</span><span class="n">float_data</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <span class="linenos">49</span>    <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="linenos">50</span>    <span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">50</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">51</span><span class="sd">    dims: 5</span>
 <span class="linenos">52</span><span class="sd">    data_type: 1</span>
 <span class="linenos">53</span><span class="sd">    float_data: 0.0</span>
@@ -228,7 +229,7 @@ defines a mapping to map datatypes from onnx to numpy.</p>
 <span class="linenos">13</span>    <span class="n">dim2</span> <span class="o">=</span> <span class="n">shape_proto</span><span class="o">.</span><span class="n">dim</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
 <span class="linenos">14</span>    <span class="n">dim2</span><span class="o">.</span><span class="n">dim_param</span> <span class="o">=</span> <span class="s2">&quot;N&quot;</span>
 <span class="linenos">15</span>    <span class="nb">print</span><span class="p">(</span><span class="n">shape_proto</span><span class="p">)</span>
-<span class="linenos">16</span>    <span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">16</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">17</span><span class="sd">    dim {</span>
 <span class="linenos">18</span><span class="sd">      dim_value: 10</span>
 <span class="linenos">19</span><span class="sd">    }</span>

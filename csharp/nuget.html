@@ -88,6 +88,7 @@
 <li class="toctree-l2"><a class="reference internal" href="hello.html">Hello</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -118,10 +119,10 @@
   <section id="nuget">
 <h1>nuget<a class="headerlink" href="#nuget" title="Permalink to this headline">¶</a></h1>
 <p>vosk is using non-SDK style, while the latest .NET doc uses SDK style.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>msbuild ./t.csproj -t:targetName -p:Configuration<span class="o">=</span>Release -verbosity:detail
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>msbuild<span class="w"> </span>./t.csproj<span class="w"> </span>-t:targetName<span class="w"> </span>-p:Configuration<span class="o">=</span>Release<span class="w"> </span>-verbosity:detail
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dotnet msbuild -property:TargetFramework<span class="o">=</span>netcoreapp2.0 -preprocess:output.xml
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dotnet<span class="w"> </span>msbuild<span class="w"> </span>-property:TargetFramework<span class="o">=</span>netcoreapp2.0<span class="w"> </span>-preprocess:output.xml
 </pre></div>
 </div>
 <section id="references">
@@ -138,39 +139,39 @@
 <li><p><a class="reference external" href="https://learn.microsoft.com/en-us/dotnet/core/project-sdk/overview">.NET project SDKs</a></p></li>
 </ul>
 <p>Select file</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>// All cs files in the current directory
-<span class="nt">&lt;CSFile</span> <span class="na">Include=</span><span class="s">&quot;*.cs&quot;</span><span class="nt">/&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>//<span class="w"> </span>All<span class="w"> </span>cs<span class="w"> </span>files<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>directory
+<span class="nt">&lt;CSFile</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;*.cs&quot;</span><span class="nt">/&gt;</span>
 
-// All files in the D drive
-<span class="nt">&lt;VBFile</span> <span class="na">Include=</span><span class="s">&quot;D:/**/*.vb&quot;</span><span class="nt">/&gt;</span>
+//<span class="w"> </span>All<span class="w"> </span>files<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>D<span class="w"> </span>drive
+<span class="nt">&lt;VBFile</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;D:/**/*.vb&quot;</span><span class="nt">/&gt;</span>
 
-// Include all cs files except the file DoNotBuild.cs
+//<span class="w"> </span>Include<span class="w"> </span>all<span class="w"> </span>cs<span class="w"> </span>files<span class="w"> </span>except<span class="w"> </span>the<span class="w"> </span>file<span class="w"> </span>DoNotBuild.cs
 <span class="nt">&lt;ItemGroup&gt;</span>
- <span class="nt">&lt;CSFile</span>  <span class="na">Include=</span><span class="s">&quot;*.cs&quot;</span>  <span class="na">Exclude=</span><span class="s">&quot;DoNotBuild.cs&quot;</span><span class="nt">/&gt;</span>
+<span class="w"> </span><span class="nt">&lt;CSFile</span><span class="w">  </span><span class="na">Include=</span><span class="s">&quot;*.cs&quot;</span><span class="w">  </span><span class="na">Exclude=</span><span class="s">&quot;DoNotBuild.cs&quot;</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/ItemGroup&gt;</span>
 
 
-<span class="nt">&lt;Compile</span> <span class="na">Include=</span><span class="s">&quot;*.cs&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;Compile</span> <span class="na">Include=</span><span class="s">&quot;*.res&quot;</span> <span class="na">Exclude=</span><span class="s">&quot;Form1.cs&quot;</span><span class="nt">&gt;</span> // note: Form1.cs is included in the first statement
+<span class="nt">&lt;Compile</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;*.cs&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;Compile</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;*.res&quot;</span><span class="w"> </span><span class="na">Exclude=</span><span class="s">&quot;Form1.cs&quot;</span><span class="nt">&gt;</span><span class="w"> </span>//<span class="w"> </span>note:<span class="w"> </span>Form1.cs<span class="w"> </span>is<span class="w"> </span>included<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>first<span class="w"> </span>statement
 
-<span class="nt">&lt;CSFile</span> <span class="na">Include=</span><span class="s">&quot;Form1.cs&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;CSFile</span> <span class="na">Include =</span><span class="s">&quot;File1.cs;File2.cs&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;CSFile</span> <span class="na">Include=</span><span class="s">&quot;*.cs&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;JPGFile</span> <span class="na">Include=</span><span class="s">&quot;Images\**\*.jpg&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;CSFile</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;Form1.cs&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;CSFile</span><span class="w"> </span><span class="na">Include =</span><span class="s">&quot;File1.cs;File2.cs&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;CSFile</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;*.cs&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;JPGFile</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;Images\**\*.jpg&quot;</span><span class="nt">/&gt;</span>
 
-// All *.cs execpt Form2.cs and Fomr3.cs
-<span class="nt">&lt;CSFile</span> <span class="na">Include=</span><span class="s">&quot;*.cs&quot;</span> <span class="na">Exclude=</span><span class="s">&quot;Form2.cs;Form3.cs&quot;</span><span class="nt">/&gt;</span>
+//<span class="w"> </span>All<span class="w"> </span>*.cs<span class="w"> </span>execpt<span class="w"> </span>Form2.cs<span class="w"> </span>and<span class="w"> </span>Fomr3.cs
+<span class="nt">&lt;CSFile</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;*.cs&quot;</span><span class="w"> </span><span class="na">Exclude=</span><span class="s">&quot;Form2.cs;Form3.cs&quot;</span><span class="nt">/&gt;</span>
 
-// all *.jpg files except the version2 directory
+//<span class="w"> </span>all<span class="w"> </span>*.jpg<span class="w"> </span>files<span class="w"> </span>except<span class="w"> </span>the<span class="w"> </span>version2<span class="w"> </span>directory
 <span class="nt">&lt;JPGFile</span>
-    <span class="na">Include=</span><span class="s">&quot;Images\**\*.jpg&quot;</span>
-    <span class="na">Exclude =</span> <span class="s">&quot;Images\**\Version2\*.jpg&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="na">Include=</span><span class="s">&quot;Images\**\*.jpg&quot;</span>
+<span class="w">    </span><span class="na">Exclude =</span><span class="w"> </span><span class="s">&quot;Images\**\Version2\*.jpg&quot;</span><span class="nt">/&gt;</span>
 
 
-// Include only in Release build
+//<span class="w"> </span>Include<span class="w"> </span>only<span class="w"> </span>in<span class="w"> </span>Release<span class="w"> </span>build
 <span class="nt">&lt;Compile</span>
-   <span class="na">Include=</span><span class="s">&quot;Formula.vb&quot;</span>
-   <span class="na">Condition=</span><span class="s">&quot; &#39;$(Configuration)&#39; == &#39;Release&#39; &quot;</span> <span class="nt">/&gt;</span>
+<span class="w">   </span><span class="na">Include=</span><span class="s">&quot;Formula.vb&quot;</span>
+<span class="w">   </span><span class="na">Condition=</span><span class="s">&quot; &#39;$(Configuration)&#39; == &#39;Release&#39; &quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </pre></div>
 </div>
 <ul class="simple">

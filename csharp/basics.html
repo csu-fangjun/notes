@@ -95,6 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="hello.html">Hello</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -150,27 +151,27 @@
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># it generates ./a.exe</span>
-csc ./a.cs
+csc<span class="w"> </span>./a.cs
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># it generates b.dll</span>
-csc /target:library b.cs
+csc<span class="w"> </span>/target:library<span class="w"> </span>b.cs
 
 <span class="c1"># it generates a.exe</span>
-csc /r:b.dll a.cs
+csc<span class="w"> </span>/r:b.dll<span class="w"> </span>a.cs
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dumbpin -exports sherpa-onnx-c-api.dll
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dumbpin<span class="w"> </span>-exports<span class="w"> </span>sherpa-onnx-c-api.dll
 </pre></div>
 </div>
 <p>If the name in the C++ function is Hello, we can use either:</p>
-<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="na">[DllImport(&quot;dllname&quot;)]</span><span class="w"></span>
-<span class="k">void</span><span class="w"> </span><span class="nf">Hello</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="na">[DllImport(&quot;dllname&quot;)]</span>
+<span class="k">void</span><span class="w"> </span><span class="nf">Hello</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="na">[DllImport(&quot;dllname&quot;, EntryPoint=&quot;Hello&quot;)]</span><span class="w"></span>
-<span class="k">void</span><span class="w"> </span><span class="nf">HelloANewName</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="na">[DllImport(&quot;dllname&quot;, EntryPoint=&quot;Hello&quot;)]</span>
+<span class="k">void</span><span class="w"> </span><span class="nf">HelloANewName</span><span class="p">();</span>
 </pre></div>
 </div>
 </section>
@@ -184,19 +185,19 @@ it will show the locations:</p>
 <li><p>SDK: <code class="docutils literal notranslate"><span class="pre">/usr/local/share/dotnet/sdk/7.0.203/Sdks</span></code></p></li>
 </ul>
 </div></blockquote>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ /usr/local/share/dotnet/dotnet
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>/usr/local/share/dotnet/dotnet
 
-Usage: dotnet <span class="o">[</span>options<span class="o">]</span>
-Usage: dotnet <span class="o">[</span>path-to-application<span class="o">]</span>
+Usage:<span class="w"> </span>dotnet<span class="w"> </span><span class="o">[</span>options<span class="o">]</span>
+Usage:<span class="w"> </span>dotnet<span class="w"> </span><span class="o">[</span>path-to-application<span class="o">]</span>
 
 Options:
-  -h<span class="p">|</span>--help         Display help.
-  --info            Display .NET information.
-  --list-sdks       Display the installed SDKs.
-  --list-runtimes   Display the installed runtimes.
+<span class="w">  </span>-h<span class="p">|</span>--help<span class="w">         </span>Display<span class="w"> </span>help.
+<span class="w">  </span>--info<span class="w">            </span>Display<span class="w"> </span>.NET<span class="w"> </span>information.
+<span class="w">  </span>--list-sdks<span class="w">       </span>Display<span class="w"> </span>the<span class="w"> </span>installed<span class="w"> </span>SDKs.
+<span class="w">  </span>--list-runtimes<span class="w">   </span>Display<span class="w"> </span>the<span class="w"> </span>installed<span class="w"> </span>runtimes.
 
 path-to-application:
-  The path to an application .dll file to execute.
+<span class="w">  </span>The<span class="w"> </span>path<span class="w"> </span>to<span class="w"> </span>an<span class="w"> </span>application<span class="w"> </span>.dll<span class="w"> </span>file<span class="w"> </span>to<span class="w"> </span>execute.
 </pre></div>
 </div>
 </section>
@@ -207,24 +208,24 @@ path-to-application:
 </section>
 <section id="nullable-types">
 <h2>nullable types<a class="headerlink" href="#nullable-types" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Product? <span class="nv">p</span> <span class="o">=</span> products<span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="p">;</span>
-string val<span class="p">;</span>
-<span class="k">if</span> <span class="o">(</span>p !<span class="o">=</span> null<span class="o">)</span> <span class="o">{</span>
-  <span class="nv">val</span> <span class="o">=</span> p.Name<span class="p">;</span>
-<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-  <span class="nv">val</span> <span class="o">=</span> <span class="s2">&quot;No value&quot;</span><span class="p">;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Product?<span class="w"> </span><span class="nv">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>products<span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="p">;</span>
+string<span class="w"> </span>val<span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="o">(</span>p<span class="w"> </span>!<span class="o">=</span><span class="w"> </span>null<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nv">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>p.Name<span class="p">;</span>
+<span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nv">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;No value&quot;</span><span class="p">;</span>
 <span class="o">}</span>
-<span class="k">return</span> View<span class="o">(</span>new string<span class="o">[]</span> <span class="o">{</span> val <span class="o">})</span><span class="p">;</span>
+<span class="k">return</span><span class="w"> </span>View<span class="o">(</span>new<span class="w"> </span>string<span class="o">[]</span><span class="w"> </span><span class="o">{</span><span class="w"> </span>val<span class="w"> </span><span class="o">})</span><span class="p">;</span>
 
-string? <span class="nv">val</span> <span class="o">=</span> products<span class="o">[</span><span class="m">0</span><span class="o">]</span>?.Name<span class="p">;</span>
-<span class="k">if</span> <span class="o">(</span>val !<span class="o">=</span> null<span class="o">)</span> <span class="o">{</span>
-  <span class="k">return</span> View<span class="o">(</span>new string<span class="o">[]</span> <span class="o">{</span> val <span class="o">})</span><span class="p">;</span>
+string?<span class="w"> </span><span class="nv">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>products<span class="o">[</span><span class="m">0</span><span class="o">]</span>?.Name<span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="o">(</span>val<span class="w"> </span>!<span class="o">=</span><span class="w"> </span>null<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span>View<span class="o">(</span>new<span class="w"> </span>string<span class="o">[]</span><span class="w"> </span><span class="o">{</span><span class="w"> </span>val<span class="w"> </span><span class="o">})</span><span class="p">;</span>
 <span class="o">}</span>
-<span class="k">return</span> View<span class="o">(</span>new string<span class="o">[]</span> <span class="o">{</span> <span class="s2">&quot;No Value&quot;</span> <span class="o">})</span><span class="p">;</span>
+<span class="k">return</span><span class="w"> </span>View<span class="o">(</span>new<span class="w"> </span>string<span class="o">[]</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="s2">&quot;No Value&quot;</span><span class="w"> </span><span class="o">})</span><span class="p">;</span>
 
-<span class="k">return</span> View<span class="o">(</span>new string<span class="o">[]</span> <span class="o">{</span> products<span class="o">[</span><span class="m">0</span><span class="o">]</span>?.Name ?? <span class="s2">&quot;No Value&quot;</span> <span class="o">})</span><span class="p">;</span>
+<span class="k">return</span><span class="w"> </span>View<span class="o">(</span>new<span class="w"> </span>string<span class="o">[]</span><span class="w"> </span><span class="o">{</span><span class="w"> </span>products<span class="o">[</span><span class="m">0</span><span class="o">]</span>?.Name<span class="w"> </span>??<span class="w"> </span><span class="s2">&quot;No Value&quot;</span><span class="w"> </span><span class="o">})</span><span class="p">;</span>
 
-<span class="k">return</span> View<span class="o">(</span>new string<span class="o">[]</span> <span class="o">{</span> products<span class="o">[</span><span class="m">0</span><span class="o">]</span>!.Name <span class="o">})</span><span class="p">;</span>
+<span class="k">return</span><span class="w"> </span>View<span class="o">(</span>new<span class="w"> </span>string<span class="o">[]</span><span class="w"> </span><span class="o">{</span><span class="w"> </span>products<span class="o">[</span><span class="m">0</span><span class="o">]</span>!.Name<span class="w"> </span><span class="o">})</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
@@ -271,7 +272,7 @@ string? <span class="nv">val</span> <span class="o">=</span> products<span class
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width&quot;</span><span class="p">/&gt;</span>
     <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Hello my page<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"></span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
 <span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -302,79 +303,79 @@ string? <span class="nv">val</span> <span class="o">=</span> products<span class
 <li><p>Microsoft.EntityFrameworkCore.Design</p></li>
 <li><p>Microsoft.EntityFrameworkCore.Tools</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dotnet tool uninstall --global dotnet-aspnet-codegenerator
-dotnet tool install --global dotnet-aspnet-codegenerator
-dotnet tool uninstall --global dotnet-ef
-dotnet tool install --global dotnet-ef
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dotnet<span class="w"> </span>tool<span class="w"> </span>uninstall<span class="w"> </span>--global<span class="w"> </span>dotnet-aspnet-codegenerator
+dotnet<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>--global<span class="w"> </span>dotnet-aspnet-codegenerator
+dotnet<span class="w"> </span>tool<span class="w"> </span>uninstall<span class="w"> </span>--global<span class="w"> </span>dotnet-ef
+dotnet<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>--global<span class="w"> </span>dotnet-ef
 
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/.dotnet/tools:<span class="nv">$PATH</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/.dotnet/tools:<span class="nv">$PATH</span>
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dotnet aspnet-codegenerator controller -name MoviesController -m Movie -dc MvcMovie.Data.MvcMovieContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries -sqlite
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dotnet<span class="w"> </span>aspnet-codegenerator<span class="w"> </span>controller<span class="w"> </span>-name<span class="w"> </span>MoviesController<span class="w"> </span>-m<span class="w"> </span>Movie<span class="w"> </span>-dc<span class="w"> </span>MvcMovie.Data.MvcMovieContext<span class="w"> </span>--relativeFolderPath<span class="w"> </span>Controllers<span class="w"> </span>--useDefaultLayout<span class="w"> </span>--referenceScriptLibraries<span class="w"> </span>-sqlite
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Building project ...
-Finding the generator <span class="s1">&#39;controller&#39;</span>...
-Running the generator <span class="s1">&#39;controller&#39;</span>...
---useSqlite<span class="p">|</span>-sqlite option is obsolete now. Use --databaseProvider<span class="p">|</span>-dbProvider instead <span class="k">in</span> the future.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Building<span class="w"> </span>project<span class="w"> </span>...
+Finding<span class="w"> </span>the<span class="w"> </span>generator<span class="w"> </span><span class="s1">&#39;controller&#39;</span>...
+Running<span class="w"> </span>the<span class="w"> </span>generator<span class="w"> </span><span class="s1">&#39;controller&#39;</span>...
+--useSqlite<span class="p">|</span>-sqlite<span class="w"> </span>option<span class="w"> </span>is<span class="w"> </span>obsolete<span class="w"> </span>now.<span class="w"> </span>Use<span class="w"> </span>--databaseProvider<span class="p">|</span>-dbProvider<span class="w"> </span>instead<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>future.
 
-Minimal hosting scenario!
-Generating a new DbContext class <span class="s1">&#39;MvcMovie.Data.MvcMovieContext&#39;</span>
-Attempting to compile the application <span class="k">in</span> memory with the added DbContext.
-Attempting to figure out the EntityFramework metadata <span class="k">for</span> the model and DbContext: <span class="s1">&#39;Movie&#39;</span>
+Minimal<span class="w"> </span>hosting<span class="w"> </span>scenario!
+Generating<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>DbContext<span class="w"> </span>class<span class="w"> </span><span class="s1">&#39;MvcMovie.Data.MvcMovieContext&#39;</span>
+Attempting<span class="w"> </span>to<span class="w"> </span>compile<span class="w"> </span>the<span class="w"> </span>application<span class="w"> </span><span class="k">in</span><span class="w"> </span>memory<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>added<span class="w"> </span>DbContext.
+Attempting<span class="w"> </span>to<span class="w"> </span>figure<span class="w"> </span>out<span class="w"> </span>the<span class="w"> </span>EntityFramework<span class="w"> </span>metadata<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>model<span class="w"> </span>and<span class="w"> </span>DbContext:<span class="w"> </span><span class="s1">&#39;Movie&#39;</span>
 
-Using database provider <span class="s1">&#39;Microsoft.EntityFrameworkCore.Sqlite&#39;</span>!
+Using<span class="w"> </span>database<span class="w"> </span>provider<span class="w"> </span><span class="s1">&#39;Microsoft.EntityFrameworkCore.Sqlite&#39;</span>!
 
-Added DbContext : <span class="s1">&#39;/Data/MvcMovieContext.cs&#39;</span>
-Added Controller : <span class="s1">&#39;/Controllers/MoviesController.cs&#39;</span>.
-Added View : /Views/Movies/Create.cshtml
-Added View : /Views/Movies/Edit.cshtml
-Added View : /Views/Movies/Details.cshtml
-Added View : /Views/Movies/Delete.cshtml
-Added View : /Views/Movies/Index.cshtml
+Added<span class="w"> </span>DbContext<span class="w"> </span>:<span class="w"> </span><span class="s1">&#39;/Data/MvcMovieContext.cs&#39;</span>
+Added<span class="w"> </span>Controller<span class="w"> </span>:<span class="w"> </span><span class="s1">&#39;/Controllers/MoviesController.cs&#39;</span>.
+Added<span class="w"> </span>View<span class="w"> </span>:<span class="w"> </span>/Views/Movies/Create.cshtml
+Added<span class="w"> </span>View<span class="w"> </span>:<span class="w"> </span>/Views/Movies/Edit.cshtml
+Added<span class="w"> </span>View<span class="w"> </span>:<span class="w"> </span>/Views/Movies/Details.cshtml
+Added<span class="w"> </span>View<span class="w"> </span>:<span class="w"> </span>/Views/Movies/Delete.cshtml
+Added<span class="w"> </span>View<span class="w"> </span>:<span class="w"> </span>/Views/Movies/Index.cshtml
 </pre></div>
 </div>
-<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/MvcMovie/Program.cs b/MvcMovie/Program.cs</span><span class="w"></span>
-<span class="gh">index 9fbb57d..b96f671 100644</span><span class="w"></span>
-<span class="gd">--- a/MvcMovie/Program.cs</span><span class="w"></span>
-<span class="gi">+++ b/MvcMovie/Program.cs</span><span class="w"></span>
-<span class="gu">@@ -1,4 +1,9 @@</span><span class="w"></span>
-<span class="gd">-var builder = WebApplication.CreateBuilder(args);</span><span class="w"></span>
-<span class="gi">+using Microsoft.EntityFrameworkCore;</span><span class="w"></span>
-<span class="gi">+using Microsoft.Extensions.DependencyInjection;</span><span class="w"></span>
-<span class="gi">+using MvcMovie.Data;</span><span class="w"></span>
-<span class="gi">+var builder = WebApplication.CreateBuilder(args);</span><span class="w"></span>
-<span class="gi">+builder.Services.AddDbContext&lt;MvcMovieContext&gt;(options =&gt;</span><span class="w"></span>
-<span class="gi">+    options.UseSqlite(builder.Configuration.GetConnectionString(&quot;MvcMovieContext&quot;) ?? throw new InvalidOperationException(&quot;Connection string &#39;MvcMovieContext&#39; not found.&quot;)));</span><span class="w"></span>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/MvcMovie/Program.cs b/MvcMovie/Program.cs</span>
+<span class="gh">index 9fbb57d..b96f671 100644</span>
+<span class="gd">--- a/MvcMovie/Program.cs</span>
+<span class="gi">+++ b/MvcMovie/Program.cs</span>
+<span class="gu">@@ -1,4 +1,9 @@</span>
+<span class="gd">-var builder = WebApplication.CreateBuilder(args);</span>
+<span class="gi">+using Microsoft.EntityFrameworkCore;</span>
+<span class="gi">+using Microsoft.Extensions.DependencyInjection;</span>
+<span class="gi">+using MvcMovie.Data;</span>
+<span class="gi">+var builder = WebApplication.CreateBuilder(args);</span>
+<span class="gi">+builder.Services.AddDbContext&lt;MvcMovieContext&gt;(options =&gt;</span>
+<span class="gi">+    options.UseSqlite(builder.Configuration.GetConnectionString(&quot;MvcMovieContext&quot;) ?? throw new InvalidOperationException(&quot;Connection string &#39;MvcMovieContext&#39; not found.&quot;)));</span>
 
-<span class="w"> </span>// Add services to the container.<span class="w"></span>
-<span class="w"> </span>builder.Services.AddControllersWithViews();<span class="w"></span>
+<span class="w"> </span>// Add services to the container.
+<span class="w"> </span>builder.Services.AddControllersWithViews();
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>diff --git a/MvcMovie/appsettings.json b/MvcMovie/appsettings.json
-index af0538f..d8b9276 <span class="m">100644</span>
---- a/MvcMovie/appsettings.json
-+++ b/MvcMovie/appsettings.json
-@@ -1,10 +1,12 @@
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>diff<span class="w"> </span>--git<span class="w"> </span>a/MvcMovie/appsettings.json<span class="w"> </span>b/MvcMovie/appsettings.json
+index<span class="w"> </span>af0538f..d8b9276<span class="w"> </span><span class="m">100644</span>
+---<span class="w"> </span>a/MvcMovie/appsettings.json
++++<span class="w"> </span>b/MvcMovie/appsettings.json
+@@<span class="w"> </span>-1,10<span class="w"> </span>+1,12<span class="w"> </span>@@
 -<span class="o">{</span>
 +<span class="o">{</span>
-   <span class="s2">&quot;Logging&quot;</span>: <span class="o">{</span>
-     <span class="s2">&quot;LogLevel&quot;</span>: <span class="o">{</span>
-       <span class="s2">&quot;Default&quot;</span>: <span class="s2">&quot;Information&quot;</span>,
-       <span class="s2">&quot;Microsoft.AspNetCore&quot;</span>: <span class="s2">&quot;Warning&quot;</span>
-     <span class="o">}</span>
-   <span class="o">}</span>,
--  <span class="s2">&quot;AllowedHosts&quot;</span>: <span class="s2">&quot;*&quot;</span>
+<span class="w">   </span><span class="s2">&quot;Logging&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">     </span><span class="s2">&quot;LogLevel&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">       </span><span class="s2">&quot;Default&quot;</span>:<span class="w"> </span><span class="s2">&quot;Information&quot;</span>,
+<span class="w">       </span><span class="s2">&quot;Microsoft.AspNetCore&quot;</span>:<span class="w"> </span><span class="s2">&quot;Warning&quot;</span>
+<span class="w">     </span><span class="o">}</span>
+<span class="w">   </span><span class="o">}</span>,
+-<span class="w">  </span><span class="s2">&quot;AllowedHosts&quot;</span>:<span class="w"> </span><span class="s2">&quot;*&quot;</span>
 -<span class="o">}</span>
 -
-+  <span class="s2">&quot;AllowedHosts&quot;</span>: <span class="s2">&quot;*&quot;</span>,
-+  <span class="s2">&quot;ConnectionStrings&quot;</span>: <span class="o">{</span>
-+    <span class="s2">&quot;MvcMovieContext&quot;</span>: <span class="s2">&quot;Data Source=MvcMovieContext-95c663f1-d863-4557-a405-0d9cf818bb16.db&quot;</span>
-+  <span class="o">}</span>
++<span class="w">  </span><span class="s2">&quot;AllowedHosts&quot;</span>:<span class="w"> </span><span class="s2">&quot;*&quot;</span>,
++<span class="w">  </span><span class="s2">&quot;ConnectionStrings&quot;</span>:<span class="w"> </span><span class="o">{</span>
++<span class="w">    </span><span class="s2">&quot;MvcMovieContext&quot;</span>:<span class="w"> </span><span class="s2">&quot;Data Source=MvcMovieContext-95c663f1-d863-4557-a405-0d9cf818bb16.db&quot;</span>
++<span class="w">  </span><span class="o">}</span>
 +<span class="o">}</span>
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dotnet ef migrations add InitialCreate
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dotnet<span class="w"> </span>ef<span class="w"> </span>migrations<span class="w"> </span>add<span class="w"> </span>InitialCreate
 </pre></div>
 </div>
 </section>

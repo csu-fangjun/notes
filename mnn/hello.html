@@ -82,6 +82,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -132,19 +133,19 @@
 </pre></div>
 </div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>MNNConvert -f TORCH --modelFile ./ex1.pt --MNNModel ex1.mnn --bizCode MNN
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>MNNConvert<span class="w"> </span>-f<span class="w"> </span>TORCH<span class="w"> </span>--modelFile<span class="w"> </span>./ex1.pt<span class="w"> </span>--MNNModel<span class="w"> </span>ex1.mnn<span class="w"> </span>--bizCode<span class="w"> </span>MNN
 </pre></div>
 </div>
 <p>It prints:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Start to Convert Other Model Format To MNN Model...
-Start to Optimize the MNN Net...
-inputTensors : <span class="o">[</span> x.1, <span class="o">]</span>
-outputTensors: <span class="o">[</span> <span class="m">2</span>, <span class="o">]</span>
-Converted Success!
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Start<span class="w"> </span>to<span class="w"> </span>Convert<span class="w"> </span>Other<span class="w"> </span>Model<span class="w"> </span>Format<span class="w"> </span>To<span class="w"> </span>MNN<span class="w"> </span>Model...
+Start<span class="w"> </span>to<span class="w"> </span>Optimize<span class="w"> </span>the<span class="w"> </span>MNN<span class="w"> </span>Net...
+inputTensors<span class="w"> </span>:<span class="w"> </span><span class="o">[</span><span class="w"> </span>x.1,<span class="w"> </span><span class="o">]</span>
+outputTensors:<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="o">]</span>
+Converted<span class="w"> </span>Success!
 </pre></div>
 </div>
 <p>We can use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>netron ex1.mnn --port <span class="m">6006</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>netron<span class="w"> </span>ex1.mnn<span class="w"> </span>--port<span class="w"> </span><span class="m">6006</span>
 </pre></div>
 </div>
 <p>to view it:</p>
@@ -152,53 +153,53 @@ Converted Success!
 </pre></div>
 </div>
 <p>To convert the model to <code class="docutils literal notranslate"><span class="pre">json</span></code>, use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>MNNDump2Json ./ex1.mnn ./ex1.json
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>MNNDump2Json<span class="w"> </span>./ex1.mnn<span class="w"> </span>./ex1.json
 </pre></div>
 </div>
 <p>which generates:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">./code/hello/ex1.json</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;bizCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MNN&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;extraInfo&quot;</span><span class="p">:</span><span class="w"> </span>
-<span class="linenos"> 2</span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.1.1&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.1.1&quot;</span><span class="w"> </span><span class="p">}</span>
 <span class="linenos"> 3</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;oplists&quot;</span><span class="p">:</span><span class="w"> </span>
 <span class="linenos"> 4</span><span class="p">[</span><span class="w"> </span>
 <span class="linenos"> 5</span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;main_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Input&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;main&quot;</span><span class="p">:</span><span class="w"> </span>
-<span class="linenos"> 6</span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;dtype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DT_FLOAT&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;dformat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NCHW&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;dtype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DT_FLOAT&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;dformat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NCHW&quot;</span><span class="w"> </span><span class="p">}</span>
 <span class="linenos"> 7</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;outputIndexes&quot;</span><span class="p">:</span><span class="w"> </span>
-<span class="linenos"> 8</span><span class="p">[</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="linenos"> 9</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Input&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;defaultDimentionFormat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NHWC&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="p">[</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">]</span>
+<span class="linenos"> 9</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Input&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;defaultDimentionFormat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NHWC&quot;</span><span class="w"> </span><span class="p">}</span>
 <span class="linenos">10</span><span class="p">,</span><span class="w"> </span>
 <span class="linenos">11</span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;inputIndexes&quot;</span><span class="p">:</span><span class="w"> </span>
-<span class="linenos">12</span><span class="p">[</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="linenos">12</span><span class="p">[</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">]</span>
 <span class="linenos">13</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;main_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Relu&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;main&quot;</span><span class="p">:</span><span class="w"> </span>
-<span class="linenos">14</span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;slope&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">14</span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;slope&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="p">}</span>
 <span class="linenos">15</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;outputIndexes&quot;</span><span class="p">:</span><span class="w"> </span>
-<span class="linenos">16</span><span class="p">[</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="linenos">17</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ReLU&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;defaultDimentionFormat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NCHW&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="linenos">18</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="linenos">16</span><span class="p">[</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">]</span>
+<span class="linenos">17</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ReLU&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;defaultDimentionFormat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NCHW&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos">18</span><span class="w"> </span><span class="p">]</span>
 <span class="linenos">19</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;outputName&quot;</span><span class="p">:</span><span class="w"> </span>
-<span class="linenos">20</span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="linenos">20</span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="w"> </span><span class="p">]</span>
 <span class="linenos">21</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;preferForwardType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CPU&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;sourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TORCH&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;tensorName&quot;</span><span class="p">:</span><span class="w"> </span>
-<span class="linenos">22</span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;x.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="linenos">23</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;tensorNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;usage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INFERENCE&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;mnn_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;d24b26b1-14c8-42cb-9ce1-2a9b867714e9&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">22</span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;x.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="w"> </span><span class="p">]</span>
+<span class="linenos">23</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;tensorNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;usage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INFERENCE&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;mnn_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;d24b26b1-14c8-42cb-9ce1-2a9b867714e9&quot;</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <p>To convert <code class="docutils literal notranslate"><span class="pre">ex1.json</span></code> back to a <code class="docutils literal notranslate"><span class="pre">.mnn</span></code> file, use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>MNNRevert2Buffer ex1.json ex11.mnn
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>MNNRevert2Buffer<span class="w"> </span>ex1.json<span class="w"> </span>ex11.mnn
 </pre></div>
 </div>
 <p>To show the information of the model:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>MNNConvert --framework MNN --modelFile ./ex1.mnn --info
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>MNNConvert<span class="w"> </span>--framework<span class="w"> </span>MNN<span class="w"> </span>--modelFile<span class="w"> </span>./ex1.mnn<span class="w"> </span>--info
 </pre></div>
 </div>
 <p>It prints:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Model default dimensionFormat is NCHW
-Model Inputs:
-<span class="o">[</span> x.1 <span class="o">]</span>: dimensionFormat: NCHW, size: <span class="o">[</span> <span class="o">]</span>, <span class="nb">type</span> is float
-Model Outputs:
-<span class="o">[</span> <span class="m">2</span> <span class="o">]</span>
-Model Version: <span class="m">2</span>.1.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Model<span class="w"> </span>default<span class="w"> </span>dimensionFormat<span class="w"> </span>is<span class="w"> </span>NCHW
+Model<span class="w"> </span>Inputs:
+<span class="o">[</span><span class="w"> </span>x.1<span class="w"> </span><span class="o">]</span>:<span class="w"> </span>dimensionFormat:<span class="w"> </span>NCHW,<span class="w"> </span>size:<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="o">]</span>,<span class="w"> </span><span class="nb">type</span><span class="w"> </span>is<span class="w"> </span>float
+Model<span class="w"> </span>Outputs:
+<span class="o">[</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">]</span>
+Model<span class="w"> </span>Version:<span class="w"> </span><span class="m">2</span>.1.1
 </pre></div>
 </div>
 <p>To run it with <code class="docutils literal notranslate"><span class="pre">MNN</span></code> in Python:</p>

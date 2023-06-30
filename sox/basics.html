@@ -88,6 +88,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -126,7 +127,7 @@
 </section>
 <section id="fix-broken-waves">
 <h2>Fix broken waves<a class="headerlink" href="#fix-broken-waves" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sox --ignore-length corrupted.wav fixed.wav
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sox<span class="w"> </span>--ignore-length<span class="w"> </span>corrupted.wav<span class="w"> </span>fixed.wav
 </pre></div>
 </div>
 </section>
@@ -134,13 +135,13 @@
 <h2>pad<a class="headerlink" href="#pad" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add 2 seconds of silence at the begining and 3 seconds of silence</span>
 <span class="c1"># at the end.</span>
-sox <span class="k">in</span>.wav out.wav pad <span class="m">2</span> <span class="m">3</span>
+sox<span class="w"> </span><span class="k">in</span>.wav<span class="w"> </span>out.wav<span class="w"> </span>pad<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span>
 </pre></div>
 </div>
 </section>
 <section id="raw">
 <h2>raw<a class="headerlink" href="#raw" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sox -t raw -r <span class="m">16000</span> -e signed -b <span class="m">16</span> -c <span class="m">1</span> test.raw -r <span class="m">48000</span> out.wav
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sox<span class="w"> </span>-t<span class="w"> </span>raw<span class="w"> </span>-r<span class="w"> </span><span class="m">16000</span><span class="w"> </span>-e<span class="w"> </span>signed<span class="w"> </span>-b<span class="w"> </span><span class="m">16</span><span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>test.raw<span class="w"> </span>-r<span class="w"> </span><span class="m">48000</span><span class="w"> </span>out.wav
 </pre></div>
 </div>
 </section>

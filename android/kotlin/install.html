@@ -96,6 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -127,13 +128,13 @@
   <section id="install">
 <h1>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h1>
 <p>See <a class="reference external" href="https://kotlinlang.org/docs/command-line.html#run-scripts">https://kotlinlang.org/docs/command-line.html#run-scripts</a></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://github.com/JetBrains/kotlin/releases/download/v1.7.22/kotlin-compiler-1.7.22.zip
-<span class="nb">cd</span> <span class="nv">$HOME</span>/software
-mkdir kotlin
-<span class="nb">cd</span> kotlin
-unzip /path/to/kotlin-compiler-1.7.22.zip
-mv kotlinc <span class="m">1</span>.7.22
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/software/kotlin/1.7.22/bin:<span class="nv">$PATH</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://github.com/JetBrains/kotlin/releases/download/v1.7.22/kotlin-compiler-1.7.22.zip
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>/software
+mkdir<span class="w"> </span>kotlin
+<span class="nb">cd</span><span class="w"> </span>kotlin
+unzip<span class="w"> </span>/path/to/kotlin-compiler-1.7.22.zip
+mv<span class="w"> </span>kotlinc<span class="w"> </span><span class="m">1</span>.7.22
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/software/kotlin/1.7.22/bin:<span class="nv">$PATH</span>
 </pre></div>
 </div>
 <section id="hello-world">
@@ -146,34 +147,34 @@ mv kotlinc <span class="m">1</span>.7.22
 </div>
 <section id="usage-1">
 <h3>Usage 1<a class="headerlink" href="#usage-1" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kotlinc hello.kt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kotlinc<span class="w"> </span>hello.kt
 </pre></div>
 </div>
 <p>It will generate a binary <code class="docutils literal notranslate"><span class="pre">hello.native</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls -lh hello.native
--rwxr-xr-x <span class="m">1</span> kuangfangjun root <span class="m">8</span>.1K Mar <span class="m">18</span>  <span class="m">2022</span> hello.native
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>hello.native
+-rwxr-xr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>kuangfangjun<span class="w"> </span>root<span class="w"> </span><span class="m">8</span>.1K<span class="w"> </span>Mar<span class="w"> </span><span class="m">18</span><span class="w">  </span><span class="m">2022</span><span class="w"> </span>hello.native
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>readelf -d hello.native
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>readelf<span class="w"> </span>-d<span class="w"> </span>hello.native
 </pre></div>
 </div>
 <p>It prints:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Dynamic section at offset 0xe20 contains <span class="m">24</span> entries:
-  Tag        Type                         Name/Value
- 0x0000000000000001 <span class="o">(</span>NEEDED<span class="o">)</span>             Shared library: <span class="o">[</span>libc.so.6<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Dynamic<span class="w"> </span>section<span class="w"> </span>at<span class="w"> </span>offset<span class="w"> </span>0xe20<span class="w"> </span>contains<span class="w"> </span><span class="m">24</span><span class="w"> </span>entries:
+<span class="w">  </span>Tag<span class="w">        </span>Type<span class="w">                         </span>Name/Value
+<span class="w"> </span>0x0000000000000001<span class="w"> </span><span class="o">(</span>NEEDED<span class="o">)</span><span class="w">             </span>Shared<span class="w"> </span>library:<span class="w"> </span><span class="o">[</span>libc.so.6<span class="o">]</span>
 </pre></div>
 </div>
 <p>Note: It depends only on <code class="docutils literal notranslate"><span class="pre">libc</span></code>.</p>
 </section>
 <section id="usage-2">
 <h3>Usage 2<a class="headerlink" href="#usage-2" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kotlinc hello.kt -d hello.jar
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kotlinc<span class="w"> </span>hello.kt<span class="w"> </span>-d<span class="w"> </span>hello.jar
 <span class="c1"># or</span>
-kotlinc hello.kt -include-runtime -d hello.jar
+kotlinc<span class="w"> </span>hello.kt<span class="w"> </span>-include-runtime<span class="w"> </span>-d<span class="w"> </span>hello.jar
 
 <span class="c1"># It can be run using:</span>
-java -jar hello.jar
-kotlin -classpath ./hello.jar HelloKt
+java<span class="w"> </span>-jar<span class="w"> </span>hello.jar
+kotlin<span class="w"> </span>-classpath<span class="w"> </span>./hello.jar<span class="w"> </span>HelloKt
 </pre></div>
 </div>
 </section>

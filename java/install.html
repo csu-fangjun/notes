@@ -87,6 +87,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -119,7 +120,7 @@
 <section id="formatter">
 <h2>formatter<a class="headerlink" href="#formatter" title="Permalink to this headline">¶</a></h2>
 <p>Install <a class="reference external" href="https://github.com/google/google-java-format">https://github.com/google/google-java-format</a></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://github.com/google/google-java-format/releases/download/v1.15.0/google-java-format-1.15.0-all-deps.jar
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://github.com/google/google-java-format/releases/download/v1.15.0/google-java-format-1.15.0-all-deps.jar
 </pre></div>
 </div>
 <p>Create a script with filename <code class="docutils literal notranslate"><span class="pre">google-java-format</span></code>:</p>
@@ -133,18 +134,18 @@ java -jar /ceph-sh0/fangjun/download/google-java-format-1.15.0-all-deps.jar $@
 <section id="jdk">
 <h2>JDK<a class="headerlink" href="#jdk" title="Permalink to this headline">¶</a></h2>
 <p>Go to <a class="reference external" href="https://www.oracle.com/java/technologies/downloads/#java17">https://www.oracle.com/java/technologies/downloads/#java17</a> and download</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.tar.gz
-mkdir /ceph-fj/fangjun/software/
-tar xvf jdk-17_linux-x64_bin.tar.gz -C /ceph-fj/fangjun/software
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.tar.gz
+mkdir<span class="w"> </span>/ceph-fj/fangjun/software/
+tar<span class="w"> </span>xvf<span class="w"> </span>jdk-17_linux-x64_bin.tar.gz<span class="w"> </span>-C<span class="w"> </span>/ceph-fj/fangjun/software
 </pre></div>
 </div>
 <p>And then set the following environment variables:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span>/ceph-fj/fangjun/software/jdk-17.0.3
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$JAVA_HOME</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/ceph-fj/fangjun/software/jdk-17.0.3
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$JAVA_HOME</span>
 </pre></div>
 </div>
 <p>The source code of <code class="docutils literal notranslate"><span class="pre">JDK</span></code> can be download from</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/openjdk/jdk.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/openjdk/jdk.git
 </pre></div>
 </div>
 </section>

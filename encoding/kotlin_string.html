@@ -84,6 +84,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -117,16 +118,16 @@
 number of bytes.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">./code/kotlin_string.kt</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;你好hello&quot;</span><span class="w"></span>
-<span class="w">  </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;s.length: ${s.length}&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ByteArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;你好hello&quot;</span><span class="p">.</span><span class="na">toByteArray</span><span class="p">()</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// for(b in bytes) {</span><span class="w"></span>
-<span class="w">  </span><span class="c1">//   println(b.toUByte().toString(radix = 16))</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// }</span><span class="w"></span>
-<span class="w">  </span><span class="n">bytes</span><span class="p">.</span><span class="na">forEachIndexed</span><span class="p">{</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"></span>
-<span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;$i, ${b.toUByte().toString(radix=16)}&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;你好hello&quot;</span>
+<span class="w">  </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;s.length: ${s.length}&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ByteArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;你好hello&quot;</span><span class="p">.</span><span class="na">toByteArray</span><span class="p">()</span>
+<span class="w">  </span><span class="c1">// for(b in bytes) {</span>
+<span class="w">  </span><span class="c1">//   println(b.toUByte().toString(radix = 16))</span>
+<span class="w">  </span><span class="c1">// }</span>
+<span class="w">  </span><span class="n">bytes</span><span class="p">.</span><span class="na">forEachIndexed</span><span class="p">{</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;$i, ${b.toUByte().toString(radix=16)}&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="cm">/*</span>
 <span class="cm">s.length: 7</span>
 
@@ -141,8 +142,8 @@ number of bytes.</p>
 <span class="cm">8, 6c</span>
 <span class="cm">9, 6c</span>
 <span class="cm">10, 6f</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="cm">*/</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>

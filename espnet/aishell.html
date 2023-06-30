@@ -84,6 +84,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -122,19 +123,19 @@
 <p>The encoder type <cite>vggblstm</cite>, 3 layers, hidden dim, 1024, proj dim 1024,
 subsampling <code class="docutils literal notranslate"><span class="pre">1_2_2_1_1</span></code>.</p>
 <p>Command is:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>asr_train.py <span class="se">\</span>
-  --config conf/train.yaml <span class="se">\</span>
-  --preprocess-conf <span class="se">\</span>
-  --ngpu <span class="m">1</span> <span class="se">\</span>
-  --backend pytorch <span class="se">\</span>
-  --outdir exp/xxx <span class="se">\</span>
-  --debugmode <span class="m">1</span> <span class="se">\</span>
-  --dict data/lang_char/train_sp_units.txt
-  --minibatches <span class="m">0</span> <span class="se">\</span>
-  --verbose <span class="m">0</span> <span class="se">\</span>
-  --resume <span class="se">\</span>
-  --train-json  xxx/data.json <span class="se">\</span>
-  --valid-json  yyy/data.json
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>asr_train.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--config<span class="w"> </span>conf/train.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--preprocess-conf<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--ngpu<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--backend<span class="w"> </span>pytorch<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--outdir<span class="w"> </span>exp/xxx<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--debugmode<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dict<span class="w"> </span>data/lang_char/train_sp_units.txt
+<span class="w">  </span>--minibatches<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--verbose<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--resume<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--train-json<span class="w">  </span>xxx/data.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--valid-json<span class="w">  </span>yyy/data.json
 </pre></div>
 </div>
 </section>

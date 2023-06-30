@@ -51,5 +51,8 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    ssh/index
    onnx/index
    csharp/index
+   flask/index
+   arm/index
+   vitualbox/index
 
 .. github/index

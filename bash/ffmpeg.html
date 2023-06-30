@@ -88,6 +88,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -125,18 +126,18 @@
 <ul class="simple">
 <li><p>opus to wav</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ffmpeg -i input.opus output.wav
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.opus<span class="w"> </span>output.wav
 
-ffmpeg -i input.opus -acodec pcm_s16le -ac <span class="m">1</span> -ar <span class="m">16000</span> output.wav
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.opus<span class="w"> </span>-acodec<span class="w"> </span>pcm_s16le<span class="w"> </span>-ac<span class="w"> </span><span class="m">1</span><span class="w"> </span>-ar<span class="w"> </span><span class="m">16000</span><span class="w"> </span>output.wav
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Extract part of a file</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># extract 30 seconds starting at offset 1 minute</span>
-ffmpeg -i input.opus -ss <span class="m">60</span> -t <span class="m">30</span> output.wav
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.opus<span class="w"> </span>-ss<span class="w"> </span><span class="m">60</span><span class="w"> </span>-t<span class="w"> </span><span class="m">30</span><span class="w"> </span>output.wav
 <span class="c1"># or use HH:MM:SS format</span>
-ffmpeg -i input.opus -ss <span class="m">0</span>:01:00 -t <span class="m">0</span>:00:30 output.wav
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.opus<span class="w"> </span>-ss<span class="w"> </span><span class="m">0</span>:01:00<span class="w"> </span>-t<span class="w"> </span><span class="m">0</span>:00:30<span class="w"> </span>output.wav
 </pre></div>
 </div>
 </section>

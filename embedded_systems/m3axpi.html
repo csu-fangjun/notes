@@ -89,6 +89,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -127,12 +128,12 @@
 <span class="c1">#</span>
 <span class="c1"># export http_proxy=http://localhost:6009</span>
 <span class="c1"># export HTTP_PROXY=http://localhost:6009</span>
-sudo date -s <span class="s2">&quot;</span><span class="k">$(</span>wget --no-cache -S -O /dev/null google.com <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> <span class="se">\</span>
-  sed -n -e <span class="s1">&#39;/  *Date: */ {&#39;</span> -e s///p -e q -e <span class="s1">&#39;}&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
+sudo<span class="w"> </span>date<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>wget<span class="w"> </span>--no-cache<span class="w"> </span>-S<span class="w"> </span>-O<span class="w"> </span>/dev/null<span class="w"> </span>google.com<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>sed<span class="w"> </span>-n<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;/  *Date: */ {&#39;</span><span class="w"> </span>-e<span class="w"> </span>s///p<span class="w"> </span>-e<span class="w"> </span>q<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;}&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
 
 <span class="c1"># or use</span>
-sudo date -s <span class="s2">&quot;</span><span class="k">$(</span>wget --no-cache -S -O /dev/null bing.com <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> <span class="se">\</span>
-  sed -n -e <span class="s1">&#39;/  *Date: */ {&#39;</span> -e s///p -e q -e <span class="s1">&#39;}&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
+sudo<span class="w"> </span>date<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>wget<span class="w"> </span>--no-cache<span class="w"> </span>-S<span class="w"> </span>-O<span class="w"> </span>/dev/null<span class="w"> </span>bing.com<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>sed<span class="w"> </span>-n<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;/  *Date: */ {&#39;</span><span class="w"> </span>-e<span class="w"> </span>s///p<span class="w"> </span>-e<span class="w"> </span>q<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;}&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </section>

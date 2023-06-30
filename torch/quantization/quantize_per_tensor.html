@@ -102,6 +102,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -162,7 +163,7 @@
     <span class="n">f</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">dequantize</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">torch</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>
     <span class="c1">#  print(q)</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    tensor([10.,  2.], size=(2,), dtype=torch.qint8,</span>
 <span class="sd">           quantization_scheme=torch.per_tensor_affine, scale=0.1, zero_point=1)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -171,7 +172,7 @@
     <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()))</span>
     <span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.5</span>  <span class="c1"># Note: it will quantize 2.5 and store it in q</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">int_repr</span><span class="p">())</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    tensor([26, 21], dtype=torch.int8)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 </pre></div>
@@ -190,7 +191,7 @@
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ratio: </span><span class="si">{</span><span class="n">float_size</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">int8_size</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">float_size</span><span class="o">/</span><span class="n">int8_size</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;float32.pt&quot;</span><span class="p">)</span>
     <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;int8.pt&quot;</span><span class="p">)</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    float_size: 40747</span>
 <span class="sd">    int8_size: 10795</span>
 <span class="sd">    ratio: 40747/10795: 3.775</span>

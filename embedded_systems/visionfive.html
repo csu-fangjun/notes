@@ -85,6 +85,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -136,28 +137,28 @@
 </ul>
 </div></blockquote>
 <p>Install toolchains:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install -y gcc-riscv64-linux-gnu
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>gcc-riscv64-linux-gnu
 </pre></div>
 </div>
 <p>Setup proxy:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># on my macOS</span>
-Host starfive
-  Hostname <span class="m">192</span>.168.1.100
-  User user
-  IdentityFile ~/.ssh/starfive
-  RemoteForward <span class="m">8080</span> localhost:8080
+Host<span class="w"> </span>starfive
+<span class="w">  </span>Hostname<span class="w"> </span><span class="m">192</span>.168.1.100
+<span class="w">  </span>User<span class="w"> </span>user
+<span class="w">  </span>IdentityFile<span class="w"> </span>~/.ssh/starfive
+<span class="w">  </span>RemoteForward<span class="w"> </span><span class="m">8080</span><span class="w"> </span>localhost:8080
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># on the board</span>
-<span class="nb">export</span> <span class="nv">http_proxy</span><span class="o">=</span>http://localhost:8080
-<span class="nb">export</span> <span class="nv">HTTP_PROXY</span><span class="o">=</span>http://localhost:8080
+<span class="nb">export</span><span class="w"> </span><span class="nv">http_proxy</span><span class="o">=</span>http://localhost:8080
+<span class="nb">export</span><span class="w"> </span><span class="nv">HTTP_PROXY</span><span class="o">=</span>http://localhost:8080
 
-sudo touch /etc/apt/apt.conf.d/proxy.conf
-sudo vi /etc/apt/apt.conf.d/proxy.conf
+sudo<span class="w"> </span>touch<span class="w"> </span>/etc/apt/apt.conf.d/proxy.conf
+sudo<span class="w"> </span>vi<span class="w"> </span>/etc/apt/apt.conf.d/proxy.conf
 
 <span class="c1"># Add one line to proxy.conf</span>
-Acquire::http::Proxy <span class="s2">&quot;http://user:password@proxy.server:port/&quot;</span><span class="p">;</span>
-Acquire::https::Proxy <span class="s2">&quot;http://user:password@proxy.server:port/&quot;</span><span class="p">;</span>
+Acquire::http::Proxy<span class="w"> </span><span class="s2">&quot;http://user:password@proxy.server:port/&quot;</span><span class="p">;</span>
+Acquire::https::Proxy<span class="w"> </span><span class="s2">&quot;http://user:password@proxy.server:port/&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Python proxy server</p>
@@ -165,24 +166,28 @@ Acquire::https::Proxy <span class="s2">&quot;http://user:password@proxy.server:p
 </pre></div>
 </div>
 <p>Free space:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>df -h
-<span class="nb">cd</span> /usr/share
-sudo rm -rf <span class="nb">help</span>
-sudo rm -rf doc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>df<span class="w"> </span>-h
+<span class="nb">cd</span><span class="w"> </span>/usr/share
+sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="nb">help</span>
+sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>doc
 </pre></div>
 </div>
 <p>install usb:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://snapshot.debian.org/archive/debian-ports/20221225T084846Z/pool-riscv64/main/u/usbutils/usbutils_014-1+b1_riscv64.deb
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://snapshot.debian.org/archive/debian-ports/20221225T084846Z/pool-riscv64/main/u/usbutils/usbutils_014-1+b1_riscv64.deb
 
-sudo apt-get install ./usbutils*.deb
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>./usbutils*.deb
 
-wget https://snapshot.debian.org/archive/debian-ports/20221225T084846Z/pool-riscv64/main/n/net-tools/net-tools_2.10-0.1_riscv64.deb
-sudo apt-get install ./net-tools*.deb
+wget<span class="w"> </span>https://snapshot.debian.org/archive/debian-ports/20221225T084846Z/pool-riscv64/main/n/net-tools/net-tools_2.10-0.1_riscv64.deb
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>./net-tools*.deb
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>lsusb
-cat /proc/asound/cards
+cat<span class="w"> </span>/proc/asound/cards
 lsmod
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/VisionFive2/soft_3rdpart/IMG_GPU/out
+git<span class="w"> </span>lfs<span class="w"> </span>pull
 </pre></div>
 </div>
 </section>

@@ -90,6 +90,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -120,12 +121,12 @@
   <section id="note">
 <h1>Note<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h1>
 <p>To clip gradient, use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">tot_norm</span> <span class="o">=</span> torch.nn.utils.clip_grad_norm_<span class="o">(</span>model.parameters<span class="o">()</span>, <span class="nv">max_norm</span><span class="o">=</span><span class="m">5</span>, <span class="nv">norm_type</span><span class="o">=</span><span class="m">2</span>.0<span class="o">)</span>
-<span class="k">if</span> torch.logical_or<span class="o">(</span>tot_norm.isnan<span class="o">()</span>, tot_norm.isinf<span class="o">())</span>:
-  <span class="c1"># skip this update</span>
-  <span class="k">continue</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">tot_norm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>torch.nn.utils.clip_grad_norm_<span class="o">(</span>model.parameters<span class="o">()</span>,<span class="w"> </span><span class="nv">max_norm</span><span class="o">=</span><span class="m">5</span>,<span class="w"> </span><span class="nv">norm_type</span><span class="o">=</span><span class="m">2</span>.0<span class="o">)</span>
+<span class="k">if</span><span class="w"> </span>torch.logical_or<span class="o">(</span>tot_norm.isnan<span class="o">()</span>,<span class="w"> </span>tot_norm.isinf<span class="o">())</span>:
+<span class="w">  </span><span class="c1"># skip this update</span>
+<span class="w">  </span><span class="k">continue</span>
 <span class="k">else</span>:
-  optimizer.step<span class="o">()</span>
+<span class="w">  </span>optimizer.step<span class="o">()</span>
 </pre></div>
 </div>
 </section>

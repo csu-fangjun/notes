@@ -88,6 +88,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -120,18 +121,18 @@
 <h1>makefile<a class="headerlink" href="#makefile" title="Permalink to this headline">¶</a></h1>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">./code/Makefile</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
-<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nf">.PHONY</span><span class="o">:</span> <span class="n">all</span> <span class="n">clean</span>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nf">.PHONY</span><span class="o">:</span><span class="w"> </span><span class="n">all</span> <span class="n">clean</span>
 <span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="nf">all</span><span class="o">:</span> <span class="n">hello</span>.<span class="n">pb</span>.<span class="n">cc</span> <span class="n">hello</span>.<span class="n">pb</span>.<span class="n">h</span> <span class="n">hello_pb</span>2.<span class="n">py</span>
+<span class="linenos"> 3</span><span class="nf">all</span><span class="o">:</span><span class="w"> </span><span class="n">hello</span>.<span class="n">pb</span>.<span class="n">cc</span> <span class="n">hello</span>.<span class="n">pb</span>.<span class="n">h</span> <span class="n">hello_pb</span>2.<span class="n">py</span>
 <span class="linenos"> 4</span>
-<span class="linenos"> 5</span><span class="nf">hello.pb.cc hello.pb.h</span><span class="o">:</span> <span class="n">hello</span>.<span class="n">proto</span>
-<span class="linenos"> 6</span>	protoc -I<span class="o">=</span>./ --cpp_out<span class="o">=</span>./ ./hello.proto
+<span class="linenos"> 5</span><span class="nf">hello.pb.cc hello.pb.h</span><span class="o">:</span><span class="w"> </span><span class="n">hello</span>.<span class="n">proto</span>
+<span class="linenos"> 6</span><span class="w">	</span>protoc<span class="w"> </span>-I<span class="o">=</span>./<span class="w"> </span>--cpp_out<span class="o">=</span>./<span class="w"> </span>./hello.proto
 <span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="nf">hello_pb2.py</span><span class="o">:</span> <span class="n">hello</span>.<span class="n">proto</span>
-<span class="linenos"> 9</span>	protoc -I<span class="o">=</span>./ --python_out<span class="o">=</span>./ ./hello.proto
+<span class="linenos"> 8</span><span class="nf">hello_pb2.py</span><span class="o">:</span><span class="w"> </span><span class="n">hello</span>.<span class="n">proto</span>
+<span class="linenos"> 9</span><span class="w">	</span>protoc<span class="w"> </span>-I<span class="o">=</span>./<span class="w"> </span>--python_out<span class="o">=</span>./<span class="w"> </span>./hello.proto
 <span class="linenos">10</span>
 <span class="linenos">11</span><span class="nf">clean</span><span class="o">:</span>
-<span class="linenos">12</span>	<span class="k">$(</span>RM<span class="k">)</span> hello.pb.cc hello.pb.h hello_pb2.py
+<span class="linenos">12</span><span class="w">	</span><span class="k">$(</span>RM<span class="k">)</span><span class="w"> </span>hello.pb.cc<span class="w"> </span>hello.pb.h<span class="w"> </span>hello_pb2.py
 </pre></div>
 </div>
 </div>

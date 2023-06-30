@@ -85,6 +85,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -115,13 +116,13 @@
   <section id="basics">
 <h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h1>
 <p>Use only password:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh -o <span class="nv">PubkeyAuthentication</span><span class="o">=</span>no -o <span class="nv">PreferredAuthentications</span><span class="o">=</span>password  example.com
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>-o<span class="w"> </span><span class="nv">PubkeyAuthentication</span><span class="o">=</span>no<span class="w"> </span>-o<span class="w"> </span><span class="nv">PreferredAuthentications</span><span class="o">=</span>password<span class="w">  </span>example.com
 </pre></div>
 </div>
 <section id="remote-forward">
 <h2>Remote forward<a class="headerlink" href="#remote-forward" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run it on host2</span>
-ssh -R <span class="m">6006</span>:localhost:22 foo@host1
+ssh<span class="w"> </span>-R<span class="w"> </span><span class="m">6006</span>:localhost:22<span class="w"> </span>foo@host1
 <span class="c1"># We can access the port 6006 on host1, which is forwarded to host2&#39;s localhost:22</span>
 </pre></div>
 </div>
@@ -139,7 +140,7 @@ RemoteForward 6006 localhost:22</p>
 <section id="local-forward">
 <h2>Local forward<a class="headerlink" href="#local-forward" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run it on host2</span>
-ssh -L <span class="m">6006</span>:localhost:22 foo@host1
+ssh<span class="w"> </span>-L<span class="w"> </span><span class="m">6006</span>:localhost:22<span class="w"> </span>foo@host1
 <span class="c1"># We can access the 6006 on host2, which is forwarded to host1&#39;s localhost:22</span>
 </pre></div>
 </div>

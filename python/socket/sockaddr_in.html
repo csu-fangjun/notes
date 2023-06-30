@@ -101,6 +101,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -141,46 +142,46 @@
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">./code/sockaddr_in.h</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">// https://github.com/lattera/glibc/blob/master/bits/sockaddr.h</span>
-<span class="linenos"> 2</span><span class="cm">/* POSIX.1g specifies this type name for the `sa_family&#39; member.  */</span><span class="w"></span>
-<span class="linenos"> 3</span><span class="k">typedef</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">sa_family_t</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="cm">/* POSIX.1g specifies this type name for the `sa_family&#39; member.  */</span>
+<span class="linenos"> 3</span><span class="k">typedef</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">sa_family_t</span><span class="p">;</span>
 <span class="linenos"> 4</span>
 <span class="linenos"> 5</span><span class="cp">#define __SOCKADDR_COMMON(sa_prefix) sa_family_t sa_prefix##family</span>
 <span class="linenos"> 6</span>
 <span class="linenos"> 7</span><span class="c1">// https://github.com/lattera/glibc/blob/master/bits/socket.h</span>
 <span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">10</span><span class="w">  </span><span class="n">__SOCKADDR_COMMON</span><span class="p">(</span><span class="n">sa_</span><span class="p">);</span><span class="w"> </span><span class="cm">/* Common data: address family and length.  */</span><span class="w"></span>
-<span class="linenos">11</span><span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">sa_data</span><span class="p">[</span><span class="mi">14</span><span class="p">];</span><span class="w">       </span><span class="cm">/* Address data.  */</span><span class="w"></span>
-<span class="linenos">12</span><span class="p">};</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">10</span><span class="w">  </span><span class="n">__SOCKADDR_COMMON</span><span class="p">(</span><span class="n">sa_</span><span class="p">);</span><span class="w"> </span><span class="cm">/* Common data: address family and length.  */</span>
+<span class="linenos">11</span><span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">sa_data</span><span class="p">[</span><span class="mi">14</span><span class="p">];</span><span class="w">       </span><span class="cm">/* Address data.  */</span>
+<span class="linenos">12</span><span class="p">};</span>
 <span class="linenos">13</span>
 <span class="linenos">14</span><span class="c1">// https://github.com/lattera/glibc/blob/master/inet/netinet/in.h</span>
-<span class="linenos">15</span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr_in</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">16</span><span class="w">  </span><span class="n">__SOCKADDR_COMMON</span><span class="p">(</span><span class="n">sin_</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">17</span><span class="w">  </span><span class="n">in_port_t</span><span class="w"> </span><span class="n">sin_port</span><span class="p">;</span><span class="w">      </span><span class="cm">/* Port number.  */</span><span class="w"></span>
-<span class="linenos">18</span><span class="w">  </span><span class="k">struct</span><span class="w"> </span><span class="nc">in_addr</span><span class="w"> </span><span class="n">sin_addr</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Internet address.  */</span><span class="w"></span>
+<span class="linenos">15</span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr_in</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">16</span><span class="w">  </span><span class="n">__SOCKADDR_COMMON</span><span class="p">(</span><span class="n">sin_</span><span class="p">);</span>
+<span class="linenos">17</span><span class="w">  </span><span class="n">in_port_t</span><span class="w"> </span><span class="n">sin_port</span><span class="p">;</span><span class="w">      </span><span class="cm">/* Port number.  */</span>
+<span class="linenos">18</span><span class="w">  </span><span class="k">struct</span><span class="w"> </span><span class="nc">in_addr</span><span class="w"> </span><span class="n">sin_addr</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Internet address.  */</span>
 <span class="linenos">19</span>
-<span class="linenos">20</span><span class="w">  </span><span class="cm">/* Pad to size of `struct sockaddr&#39;.  */</span><span class="w"></span>
-<span class="linenos">21</span><span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">sin_zero</span><span class="p">[</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">__SOCKADDR_COMMON_SIZE</span><span class="w"> </span><span class="o">-</span><span class="w"></span>
-<span class="linenos">22</span><span class="w">                         </span><span class="k">sizeof</span><span class="p">(</span><span class="n">in_port_t</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">in_addr</span><span class="p">)];</span><span class="w"></span>
-<span class="linenos">23</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">20</span><span class="w">  </span><span class="cm">/* Pad to size of `struct sockaddr&#39;.  */</span>
+<span class="linenos">21</span><span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">sin_zero</span><span class="p">[</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">__SOCKADDR_COMMON_SIZE</span><span class="w"> </span><span class="o">-</span>
+<span class="linenos">22</span><span class="w">                         </span><span class="k">sizeof</span><span class="p">(</span><span class="n">in_port_t</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">in_addr</span><span class="p">)];</span>
+<span class="linenos">23</span><span class="p">};</span>
 <span class="linenos">24</span>
-<span class="linenos">25</span><span class="k">typedef</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">in_addr_t</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">26</span><span class="k">struct</span><span class="w"> </span><span class="nc">in_addr</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">27</span><span class="w">  </span><span class="n">in_addr_t</span><span class="w"> </span><span class="n">s_addr</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">28</span><span class="p">};</span><span class="w"></span>
+<span class="linenos">25</span><span class="k">typedef</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">in_addr_t</span><span class="p">;</span>
+<span class="linenos">26</span><span class="k">struct</span><span class="w"> </span><span class="nc">in_addr</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">27</span><span class="w">  </span><span class="n">in_addr_t</span><span class="w"> </span><span class="n">s_addr</span><span class="p">;</span>
+<span class="linenos">28</span><span class="p">};</span>
 <span class="linenos">29</span>
-<span class="linenos">30</span><span class="cm">/* Address to accept any incoming messages.  */</span><span class="w"></span>
+<span class="linenos">30</span><span class="cm">/* Address to accept any incoming messages.  */</span>
 <span class="linenos">31</span><span class="cp">#define INADDR_ANY ((in_addr_t)0x00000000)</span>
-<span class="linenos">32</span><span class="cm">/* Address to send to all hosts.  */</span><span class="w"></span>
+<span class="linenos">32</span><span class="cm">/* Address to send to all hosts.  */</span>
 <span class="linenos">33</span><span class="cp">#define INADDR_BROADCAST ((in_addr_t)0xffffffff)</span>
-<span class="linenos">34</span><span class="cm">/* Address indicating an error return.  */</span><span class="w"></span>
+<span class="linenos">34</span><span class="cm">/* Address indicating an error return.  */</span>
 <span class="linenos">35</span><span class="cp">#define INADDR_NONE ((in_addr_t)0xffffffff)</span>
 <span class="linenos">36</span>
-<span class="linenos">37</span><span class="cm">/* Network number for local host loopback.  */</span><span class="w"></span>
+<span class="linenos">37</span><span class="cm">/* Network number for local host loopback.  */</span>
 <span class="linenos">38</span><span class="cp">#define IN_LOOPBACKNET 127</span>
-<span class="linenos">39</span><span class="cm">/* Address to loopback in software to local host.  */</span><span class="w"></span>
+<span class="linenos">39</span><span class="cm">/* Address to loopback in software to local host.  */</span>
 <span class="linenos">40</span><span class="cp">#ifndef INADDR_LOOPBACK</span>
-<span class="linenos">41</span><span class="cp">#define INADDR_LOOPBACK ((in_addr_t)0x7f000001) </span><span class="cm">/* Inet 127.0.0.1.  */</span><span class="cp"></span>
+<span class="linenos">41</span><span class="cp">#define INADDR_LOOPBACK ((in_addr_t)0x7f000001) </span><span class="cm">/* Inet 127.0.0.1.  */</span>
 <span class="linenos">42</span><span class="cp">#endif</span>
 </pre></div>
 </div>

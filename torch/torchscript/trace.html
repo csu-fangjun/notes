@@ -114,6 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vitualbox/index.html">VirtualBox</a></li>
 </ul>
 
         </div>
@@ -185,7 +186,7 @@
 <span class="linenos">37</span><span class="k">def</span> <span class="nf">test_simple</span><span class="p">():</span>
 <span class="linenos">38</span>    <span class="n">f0</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">jit</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="n">simple</span><span class="p">,</span> <span class="p">([</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">0</span><span class="p">])],</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
 <span class="linenos">39</span>    <span class="c1">#  print(dir(f0))</span>
-<span class="linenos">40</span>    <span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">40</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">41</span><span class="sd">    [&#39;__call__&#39;, &#39;__class__&#39;, &#39;__delattr__&#39;, &#39;__dict__&#39;, &#39;__dir__&#39;, &#39;__doc__&#39;,</span>
 <span class="linenos">42</span><span class="sd">    &#39;__eq__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;,</span>
 <span class="linenos">43</span><span class="sd">    &#39;__init__&#39;, &#39;__init_subclass__&#39;, &#39;__le__&#39;, &#39;__lt__&#39;, &#39;__module__&#39;, &#39;__ne__&#39;,</span>
@@ -196,13 +197,13 @@
 <span class="linenos">48</span><span class="sd">    &quot;&quot;&quot;</span>
 <span class="linenos">49</span>    <span class="c1">#  print(f0.schema)  # simple(Tensor[] x, Tensor y) -&gt; (Tensor)</span>
 <span class="linenos">50</span>    <span class="c1">#  print(f0.code)</span>
-<span class="linenos">51</span>    <span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">51</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">52</span><span class="sd">    def simple(x: List[Tensor],</span>
 <span class="linenos">53</span><span class="sd">        y: Tensor) -&gt; Tensor:</span>
 <span class="linenos">54</span><span class="sd">      return y</span>
 <span class="linenos">55</span><span class="sd">    &quot;&quot;&quot;</span>
 <span class="linenos">56</span>    <span class="c1">#  print(f0.graph)</span>
-<span class="linenos">57</span>    <span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">57</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos">58</span><span class="sd">    graph(%x : Tensor[],</span>
 <span class="linenos">59</span><span class="sd">          %y : Float(2, 3, strides=[3, 1], requires_grad=0, device=cpu)):</span>
 <span class="linenos">60</span><span class="sd">      return (%y)</span>
