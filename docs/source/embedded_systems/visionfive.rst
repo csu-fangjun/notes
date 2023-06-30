@@ -78,3 +78,8 @@ install usb:
    lsusb
    cat /proc/asound/cards
    lsmod
+
+.. code-block:: bash
+
+   cd ~/VisionFive2/soft_3rdpart/IMG_GPU/out
+   git lfs pull
