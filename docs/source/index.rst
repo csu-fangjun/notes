@@ -55,5 +55,7 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    arm/index
    vitualbox/index
    go/index
+   whisper/index
+   windows/index
 
 .. github/index
