@@ -320,6 +320,15 @@ void TestMean() {
   std::cout << b << "\n";
 }
 
+void TestSlice2() {
+  auto t = torch::full({2, 3}, -1);
+  std::cout << t << "\n";
+
+  // set the last columnn to 0
+  t.index({torch::indexing::Slice(), -1}) = 0;
+  std::cout << t << "\n";
+}
+
 int main() {
   // TestCommonMethods();
   TestSlice();
@@ -341,6 +350,7 @@ int main() {
   TestElementwiseOp();
   TestRoll();
   TestMean();
+  TestSlice2();
 
   return 0;
 }

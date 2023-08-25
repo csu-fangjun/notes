@@ -186,3 +186,12 @@ torch.mean
    :linenos:
    :lines: 208-321
    :caption: torch.mean
+
+torch.index
+^^^^^^^^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 323-330
+   :caption: torch.mean
