@@ -12,3 +12,5 @@ macos
    wget https://go.dev/dl/go1.20.5.darwin-amd64.tar.gz
    tar xvf go1.20.5.darwin-amd64.tar.gz
    export PATH=~/software/go/bin:$PATH
+
+   go install golang.org/x/tools/cmd/godoc

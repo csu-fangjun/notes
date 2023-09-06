@@ -57,5 +57,10 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    go/index
    whisper/index
    windows/index
+   qt/index
+   webassembly/index
+   spleeter/index
+   django/index
+   react/index
 
 .. github/index

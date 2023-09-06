@@ -8,4 +8,5 @@ bash
     echo
     ffmpeg
     wget
-
+    hello
+    pkg-config

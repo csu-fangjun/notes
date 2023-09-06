@@ -1,0 +1,7 @@
+qt
+==
+
+.. toctree::
+
+    install
+    hello

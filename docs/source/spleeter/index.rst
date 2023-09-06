@@ -1,0 +1,6 @@
+spleeter
+========
+
+.. toctree::
+
+    ./basics.rst

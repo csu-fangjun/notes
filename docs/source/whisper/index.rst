@@ -1,0 +1,6 @@
+Whisper
+=======
+
+.. toctree::
+
+    basics
