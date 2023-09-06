@@ -52,8 +52,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">javascript</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Hello world</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#variables">variables</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#array">array</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#class">class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#template-strings">template strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functions">functions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="node.html">node</a></li>
@@ -97,6 +100,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
 </ul>
 
         </div>
@@ -144,10 +148,64 @@
 </pre></div>
 </div>
 <p>It is case sensitive. Statements are separated by <code class="docutils literal notranslate"><span class="pre">;</span></code>. Comments are the same as in C/C++.</p>
+<section id="variables">
+<h2>variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/hello_world/variables.js</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">// use const to define a constant</span>
+<span class="linenos"> 2</span><span class="kd">const</span><span class="w"> </span><span class="nx">pizza</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="linenos"> 3</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pizza</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="kd">var</span><span class="w"> </span><span class="nx">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;foo&#39;</span><span class="p">;</span>
+<span class="linenos"> 6</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">foo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 7</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;fooz&#39;</span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;foo is&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">foo</span><span class="p">);</span><span class="w"> </span><span class="c1">// foo is fooz</span>
+<span class="linenos"> 9</span><span class="p">}</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="c1">// note it outputs foo is fooz below since</span>
+<span class="linenos">12</span><span class="c1">// we use `var` inside the `if` statement</span>
+<span class="linenos">13</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;foo is&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">foo</span><span class="p">);</span><span class="w"> </span><span class="c1">// foo is fooz</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="kd">var</span><span class="w"> </span><span class="nx">bar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;bar&#39;</span><span class="p">;</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">bar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">18</span><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">bar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;barz&#39;</span>
+<span class="linenos">19</span><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;bar is&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">bar</span><span class="p">);</span><span class="w"> </span><span class="c1">// foo is barz</span>
+<span class="linenos">20</span><span class="p">}</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="c1">// note it outputs bar is bar below since</span>
+<span class="linenos">23</span><span class="c1">// we use `let` inside the `if` statement</span>
+<span class="linenos">24</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;bar is&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">bar</span><span class="p">);</span><span class="w"> </span><span class="c1">// foo is bar</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span><span class="c1">// we should use let as much as possible</span>
+<span class="linenos">27</span><span class="c1">// variables defined by `let` is scoped inside a block {}</span>
+<span class="linenos">28</span>
+<span class="linenos">29</span><span class="nx">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="linenos">30</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">31</span>
+<span class="linenos">32</span><span class="w">  </span><span class="nx">array</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
+<span class="linenos">33</span><span class="p">}</span>
+<span class="linenos">34</span><span class="nx">array</span><span class="p">[</span><span class="mf">0</span><span class="p">]();</span><span class="w"> </span><span class="c1">// 3</span>
+<span class="linenos">35</span><span class="nx">array</span><span class="p">[</span><span class="mf">1</span><span class="p">]();</span><span class="w"> </span><span class="c1">// 3</span>
+<span class="linenos">36</span><span class="nx">array</span><span class="p">[</span><span class="mf">2</span><span class="p">]();</span><span class="w"> </span><span class="c1">// 3</span>
+<span class="linenos">37</span><span class="c1">// since we are using var in the for loop, the closures capture the same i</span>
+<span class="linenos">38</span>
+<span class="linenos">39</span><span class="nx">array2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="linenos">40</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"> </span><span class="nx">k</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">41</span>
+<span class="linenos">42</span><span class="w">  </span><span class="nx">array2</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">k</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
+<span class="linenos">43</span><span class="p">}</span>
+<span class="linenos">44</span><span class="nx">array2</span><span class="p">[</span><span class="mf">0</span><span class="p">]();</span><span class="w"> </span><span class="c1">// 0</span>
+<span class="linenos">45</span><span class="nx">array2</span><span class="p">[</span><span class="mf">1</span><span class="p">]();</span><span class="w"> </span><span class="c1">// 1</span>
+<span class="linenos">46</span><span class="nx">array2</span><span class="p">[</span><span class="mf">2</span><span class="p">]();</span><span class="w"> </span><span class="c1">// 2</span>
+</pre></div>
+</div>
+</div>
+</section>
 <section id="array">
 <h2>array<a class="headerlink" href="#array" title="Permalink to this headline">¶</a></h2>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">./code/hello_world/array.js</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">./code/hello_world/array.js</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="p">];</span>
 <span class="linenos"> 2</span><span class="kd">function</span><span class="w"> </span><span class="nx">sum</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos"> 3</span><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
@@ -184,8 +242,8 @@
 </section>
 <section id="class">
 <h2>class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">./code/hello_world/class.js</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">./code/hello_world/class.js</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">class</span><span class="w"> </span><span class="nx">Point</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos"> 2</span><span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos"> 3</span><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">x</span><span class="p">;</span>
@@ -203,6 +261,73 @@
 <p>It defines a <code class="docutils literal notranslate"><span class="pre">Point</span></code> class with two fields <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>. <code class="docutils literal notranslate"><span class="pre">Point</span></code> has
 two methods: a constructor and a method <code class="docutils literal notranslate"><span class="pre">distance()</span></code>.</p>
 <p>Note that class names are by convention capitalized.</p>
+</section>
+<section id="template-strings">
+<h2>template strings<a class="headerlink" href="#template-strings" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">./code/hello_world/template_strings.js</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;a&quot;</span><span class="p">;</span>
+<span class="linenos"> 2</span><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;b&quot;</span><span class="p">;</span>
+<span class="linenos"> 3</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;a is &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;, b is &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// a is a, b is b</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="c1">// using string interpolation</span>
+<span class="linenos"> 6</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`a is </span><span class="si">${</span><span class="nx">a</span><span class="si">}</span><span class="sb">, b is </span><span class="si">${</span><span class="nx">b</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"> </span><span class="c1">// a is a, b is b</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="c1">// Note that it uses `${}`.</span>
+<span class="linenos"> 9</span><span class="c1">// It preserves spaces and line breaks</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="c1">// multiline examples</span>
+<span class="linenos">12</span><span class="kd">let</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span>
+<span class="linenos">13</span><span class="sb">a is </span><span class="si">${</span><span class="nx">a</span><span class="si">}</span>
+<span class="linenos">14</span><span class="sb">b is </span><span class="si">${</span><span class="nx">b</span><span class="si">}</span>
+<span class="linenos">15</span><span class="sb">`</span>
+<span class="linenos">16</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<p>Note that it is similar to the <code class="docutils literal notranslate"><span class="pre">F-string</span></code>, <code class="docutils literal notranslate"><span class="pre">f&quot;</span> <span class="pre">&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">f'</span> <span class="pre">'</span></code>,
+<code class="docutils literal notranslate"><span class="pre">f&quot;&quot;&quot;</span> <span class="pre">&quot;&quot;&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">f'''</span> <span class="pre">'''`</span></code> in Python.</p>
+</section>
+<section id="functions">
+<h2>functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">./code/hello_world/functions.js</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">// note that is supports default arguments</span>
+<span class="linenos"> 2</span><span class="kd">function</span><span class="w"> </span><span class="nx">hello</span><span class="p">(</span><span class="nx">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hi&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos"> 3</span><span class="c1">// the above is a function declaration, it is hoisted to the top</span>
+<span class="linenos"> 4</span><span class="c1">// in other words, we can invoke it before seeing it.</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="nx">hello</span><span class="p">();</span><span class="w">        </span><span class="c1">// hi</span>
+<span class="linenos"> 7</span><span class="nx">hello</span><span class="p">(</span><span class="s1">&#39;world&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// world</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="c1">// this is a function expression.</span>
+<span class="linenos">10</span><span class="kd">const</span><span class="w"> </span><span class="nx">hi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;hi&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span><span class="w"> </span><span class="p">};</span>
+<span class="linenos">11</span><span class="nx">hi</span><span class="p">();</span><span class="w">        </span><span class="c1">// hi</span>
+<span class="linenos">12</span><span class="nx">hi</span><span class="p">(</span><span class="s1">&#39;world&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// world</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="kd">const</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
+<span class="linenos">15</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">));</span><span class="w"> </span><span class="c1">// 3</span>
+<span class="linenos">16</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add</span><span class="p">(</span><span class="mf">1</span><span class="p">));</span><span class="w">    </span><span class="c1">// 2</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="c1">// arrow functions</span>
+<span class="linenos">19</span><span class="c1">// there is no keyword `function` and no `return`.</span>
+<span class="linenos">20</span><span class="kd">const</span><span class="w"> </span><span class="nx">inc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="linenos">21</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">inc</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">));</span><span class="w"> </span><span class="c1">// 3</span>
+<span class="linenos">22</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">inc</span><span class="p">(</span><span class="mf">1</span><span class="p">));</span><span class="w">    </span><span class="c1">// 2</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span><span class="kd">const</span><span class="w"> </span><span class="nx">dec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="linenos">25</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">dec</span><span class="p">(</span><span class="mf">10</span><span class="p">));</span><span class="w"> </span><span class="c1">// 9</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span><span class="c1">// for multiline statement, use {}</span>
+<span class="linenos">28</span><span class="kd">const</span><span class="w"> </span><span class="nx">sub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">29</span><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="linenos">30</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="linenos">31</span><span class="p">};</span>
+<span class="linenos">32</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sub</span><span class="p">(</span><span class="mf">100</span><span class="p">));</span><span class="w"> </span><span class="c1">// 99</span>
+</pre></div>
+</div>
+</div>
+<p>Note that it does not have keyword arguments.</p>
 </section>
 </section>
 

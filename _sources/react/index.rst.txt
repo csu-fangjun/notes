@@ -1,0 +1,6 @@
+React
+=====
+
+.. toctree::
+
+    basics

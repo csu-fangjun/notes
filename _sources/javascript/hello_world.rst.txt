@@ -23,6 +23,14 @@ To write multi-line javascript, use shift + Enter for a new line.
 
 It is case sensitive. Statements are separated by ``;``. Comments are the same as in C/C++.
 
+variables
+---------
+
+.. literalinclude:: ./code/hello_world/variables.js
+   :language: javascript
+   :linenos:
+   :caption: ./code/hello_world/variables.js
+
 array
 -----
 
@@ -54,3 +62,24 @@ It defines a ``Point`` class with two fields ``x``, ``y``. ``Point`` has
 two methods: a constructor and a method ``distance()``.
 
 Note that class names are by convention capitalized.
+
+template strings
+----------------
+
+.. literalinclude:: ./code/hello_world/template_strings.js
+   :language: javascript
+   :linenos:
+   :caption: ./code/hello_world/template_strings.js
+
+Note that it is similar to the ``F-string``, ``f" "``, ``f' '``,
+``f""" """``, ``f''' '''``` in Python.
+
+functions
+---------
+
+.. literalinclude:: ./code/hello_world/functions.js
+   :language: javascript
+   :linenos:
+   :caption: ./code/hello_world/functions.js
+
+Note that it does not have keyword arguments.
