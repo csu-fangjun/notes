@@ -1,0 +1,8 @@
+django
+======
+
+.. toctree::
+
+    basics
+
+

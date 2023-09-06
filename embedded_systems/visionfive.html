@@ -85,9 +85,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
 </ul>
 
         </div>
@@ -188,8 +195,57 @@ cat<span class="w"> </span>/proc/asound/cards
 lsmod
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/VisionFive2/soft_3rdpart/IMG_GPU/out
+<p>Compile the kernel by ourselves:</p>
+<blockquote>
+<div><p>See <a class="reference external" href="https://github.com/starfive-tech/VisionFive2">https://github.com/starfive-tech/VisionFive2</a></p>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/starfive-tech/VisionFive2
+
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>build-essential<span class="w"> </span>g++<span class="w"> </span>git<span class="w"> </span>autoconf<span class="w"> </span>automake<span class="w"> </span>autotools-dev<span class="w"> </span>texinfo<span class="w"> </span>bison<span class="w"> </span>xxd<span class="w"> </span>curl<span class="w"> </span>flex<span class="w"> </span>gawk<span class="w"> </span>gdisk<span class="w"> </span>gperf<span class="w"> </span>libgmp-dev<span class="w"> </span>libmpfr-dev<span class="w"> </span>libmpc-dev<span class="w"> </span>libz-dev<span class="w"> </span>libssl-dev<span class="w"> </span>libncurses-dev<span class="w"> </span>libtool<span class="w"> </span>patchutils<span class="w"> </span>python3<span class="w"> </span>screen<span class="w"> </span>texinfo<span class="w"> </span>unzip<span class="w"> </span>zlib1g-dev<span class="w"> </span>libyaml-dev<span class="w"> </span>wget<span class="w"> </span>cpio<span class="w"> </span>bc<span class="w"> </span>dosfstools<span class="w"> </span>mtools<span class="w"> </span>device-tree-compiler<span class="w"> </span>libglib2.0-dev<span class="w"> </span>libpixman-1-dev<span class="w"> </span>kpartx
+
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>git-lfs
+
+<span class="nb">cd</span><span class="w"> </span>~/VisionFive2/
+git<span class="w"> </span>checkout<span class="w"> </span>JH7110_VisionFive2_devel
+git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
+<span class="nb">cd</span><span class="w"> </span>buildroot<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>--track<span class="w"> </span>origin/JH7110_VisionFive2_devel<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
+<span class="nb">cd</span><span class="w"> </span>u-boot<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>--track<span class="w"> </span>origin/JH7110_VisionFive2_devel<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
+<span class="nb">cd</span><span class="w"> </span>linux<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>--track<span class="w"> </span>origin/JH7110_VisionFive2_devel<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
+<span class="nb">cd</span><span class="w"> </span>opensbi<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>master<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
+<span class="nb">cd</span><span class="w"> </span>soft_3rdpart<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>JH7110_VisionFive2_devel<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
+
+<span class="nb">cd</span><span class="w"> </span>~/VisionFive2/soft_3rdpart/IMG_GPU/out
 git<span class="w"> </span>lfs<span class="w"> </span>pull
+
+<span class="nb">cd</span><span class="w"> </span>~/VisionFive2/
+make<span class="w"> </span>-j<span class="k">$(</span>nproc<span class="k">)</span>
+make<span class="w"> </span>buildroot_rootfs<span class="w"> </span>-j<span class="k">$(</span>nproc<span class="k">)</span>
+make<span class="w"> </span>img
+
+<span class="c1"># The generated file is work/sdcard.img</span>
+<span class="c1"># username: root</span>
+<span class="c1"># password: starfive</span>
+<span class="c1"># The inner network interface is eth1, i.e., the inerface with name FLY_CORE</span>
+<span class="c1"># The outer network interface is eth0, i.e., the interface with a QR code</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># after login with root</span>
+<span class="n">vi</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">network</span><span class="o">/</span><span class="n">interfaces</span>
+
+<span class="c1"># iface eth1 inet dhcp</span>
+<span class="c1">#   pre-up /etc/network/nfs_check</span>
+<span class="c1">#   wait-delay 15</span>
+<span class="c1">#   hostname $(hostname)</span>
+<span class="n">iface</span> <span class="n">eth1</span> <span class="n">inet</span> <span class="n">static</span>
+    <span class="n">address</span> <span class="mf">192.168.1.100</span>
+    <span class="n">netmask</span> <span class="mf">255.255.255.0</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/etc/init.d/S40network<span class="w"> </span>restart
+</pre></div>
+</div>
+<p>To show the current directory in the terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">PS1</span><span class="o">=</span><span class="s1">&#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ &#39;</span>
 </pre></div>
 </div>
 </section>

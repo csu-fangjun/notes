@@ -5,3 +5,4 @@ Go
 
     install
     cross-compile
+    basics

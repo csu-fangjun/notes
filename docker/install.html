@@ -45,6 +45,9 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">docker</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#macos">macos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#change-directory-to-save-images">Change directory to save images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-an-image">Run an image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copy-data-between-container-and-host">copy data between container and host</a></li>
 </ul>
 </li>
 </ul>
@@ -84,9 +87,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
 </ul>
 
         </div>
@@ -119,6 +129,37 @@
 <section id="macos">
 <h2>macos<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h2>
 <p>Refer to <a class="reference external" href="https://docs.docker.com/desktop/mac/install/">https://docs.docker.com/desktop/mac/install/</a>.</p>
+</section>
+<section id="change-directory-to-save-images">
+<h2>Change directory to save images<a class="headerlink" href="#change-directory-to-save-images" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>info<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;{{ .DockerRootDir }}&#39;</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span>/tmp/new-docker-root
+sudo<span class="w"> </span>vi<span class="w"> </span>/etc/docker/daemon.json
+
+cat<span class="w"> </span>/etc/docker/daemon.json
+<span class="o">{</span>
+<span class="w">   </span><span class="s2">&quot;data-root&quot;</span>:<span class="w"> </span><span class="s2">&quot;/tmp/new-docker-root&quot;</span>
+<span class="o">}</span>
+
+sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>docker
+docker<span class="w"> </span>info<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;{{ .DockerRootDir}}&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="run-an-image">
+<h2>Run an image<a class="headerlink" href="#run-an-image" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>pytorch/manylinux-builder:cuda10.2<span class="w"> </span>/bin/bash
+</pre></div>
+</div>
+<p>Map a host directory to docker container:</p>
+</section>
+<section id="copy-data-between-container-and-host">
+<h2>copy data between container and host<a class="headerlink" href="#copy-data-between-container-and-host" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>docker<span class="w"> </span>cp<span class="w"> </span>container:src_path<span class="w"> </span>dst_path
+sudo<span class="w"> </span>docker<span class="w"> </span>cp<span class="w"> </span>src_path<span class="w"> </span>container:dst_path
+</pre></div>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code> to view the container ID.</p>
 </section>
 </section>
 
