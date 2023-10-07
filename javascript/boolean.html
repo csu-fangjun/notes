@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sox &mdash; notes  documentation</title>
+  <title>Boolean in javascript &mdash; notes  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Basics" href="basics.html" />
-    <link rel="prev" title="Install" href="../qemu/install.html" /> 
+    <link rel="next" title="Strings in javascript" href="strings.html" />
+    <link rel="prev" title="Numbers in javascript" href="numbers.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -50,7 +50,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">javascript</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers.html">Numbers in javascript</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Boolean in javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">Strings in javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="array.html">array in javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regular_expression.html">Regular expressions in javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="node.html">node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="todo.html">TODOs</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
@@ -66,11 +76,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">sox</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="basics.html">Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base64.html">base64</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
@@ -109,9 +115,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>sox</li>
+          <li><a href="index.html">javascript</a> &raquo;</li>
+      <li>Boolean in javascript</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/sox/index.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/javascript/boolean.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -119,20 +126,29 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="sox">
-<h1>sox<a class="headerlink" href="#sox" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="basics.html">Basics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="basics.html#extract-part-of-a-wave">Extract part of a wave</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basics.html#fix-broken-waves">Fix broken waves</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basics.html#pad">pad</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basics.html#raw">raw</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basics.html#generate">Generate</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="base64.html">base64</a></li>
-</ul>
+  <section id="boolean-in-javascript">
+<h1>Boolean in javascript<a class="headerlink" href="#boolean-in-javascript" title="Permalink to this headline">¶</a></h1>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/boolean.js</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cm">/*</span>
+<span class="linenos"> 2</span><span class="cm">null</span>
+<span class="linenos"> 3</span><span class="cm">undefined</span>
+<span class="linenos"> 4</span><span class="cm">0</span>
+<span class="linenos"> 5</span><span class="cm">-0</span>
+<span class="linenos"> 6</span><span class="cm">NaN</span>
+<span class="linenos"> 7</span><span class="cm">&quot;&quot;</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="cm">The above 6 values are automatically converted to false.</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="cm">All other values are converted to true. Even empty array is converted to true</span>
+<span class="linenos">12</span><span class="cm"> */</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">true</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span><span class="w">      </span><span class="c1">// null</span>
+<span class="linenos">15</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">true</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="kc">undefined</span><span class="p">);</span><span class="w"> </span><span class="c1">// undefined</span>
+<span class="linenos">16</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">([]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w">        </span><span class="c1">// true</span>
+<span class="linenos">17</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">([]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w">       </span><span class="c1">// []</span>
+</pre></div>
+</div>
 </div>
 </section>
 
@@ -140,8 +156,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../qemu/install.html" class="btn btn-neutral float-left" title="Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="basics.html" class="btn btn-neutral float-right" title="Basics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="numbers.html" class="btn btn-neutral float-left" title="Numbers in javascript" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="strings.html" class="btn btn-neutral float-right" title="Strings in javascript" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

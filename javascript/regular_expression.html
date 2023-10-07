@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>javascript &mdash; notes  documentation</title>
+  <title>Regular expressions in javascript &mdash; notes  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Hello world" href="hello_world.html" />
-    <link rel="prev" title="Reference" href="../java/reference.html" /> 
+    <link rel="next" title="node" href="node.html" />
+    <link rel="prev" title="array in javascript" href="array.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -50,13 +50,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">javascript</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">javascript</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="hello_world.html">Hello world</a></li>
 <li class="toctree-l2"><a class="reference internal" href="numbers.html">Numbers in javascript</a></li>
 <li class="toctree-l2"><a class="reference internal" href="boolean.html">Boolean in javascript</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings.html">Strings in javascript</a></li>
 <li class="toctree-l2"><a class="reference internal" href="array.html">array in javascript</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regular_expression.html">Regular expressions in javascript</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Regular expressions in javascript</a></li>
 <li class="toctree-l2"><a class="reference internal" href="node.html">node</a></li>
 <li class="toctree-l2"><a class="reference internal" href="todo.html">TODOs</a></li>
 </ul>
@@ -115,9 +115,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>javascript</li>
+          <li><a href="index.html">javascript</a> &raquo;</li>
+      <li>Regular expressions in javascript</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/javascript/index.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/javascript/regular_expression.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -125,26 +126,44 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="javascript">
-<h1>javascript<a class="headerlink" href="#javascript" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="hello_world.html">Hello world</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="hello_world.html#variables">variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hello_world.html#array">array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hello_world.html#class">class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hello_world.html#template-strings">template strings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hello_world.html#functions">functions</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="numbers.html">Numbers in javascript</a></li>
-<li class="toctree-l1"><a class="reference internal" href="boolean.html">Boolean in javascript</a></li>
-<li class="toctree-l1"><a class="reference internal" href="strings.html">Strings in javascript</a></li>
-<li class="toctree-l1"><a class="reference internal" href="array.html">array in javascript</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regular_expression.html">Regular expressions in javascript</a></li>
-<li class="toctree-l1"><a class="reference internal" href="node.html">node</a></li>
-<li class="toctree-l1"><a class="reference internal" href="todo.html">TODOs</a></li>
-</ul>
+  <section id="regular-expressions-in-javascript">
+<h1>Regular expressions in javascript<a class="headerlink" href="#regular-expressions-in-javascript" title="Permalink to this headline">¶</a></h1>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/regular_expression.js</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cm">/*</span>
+<span class="linenos"> 2</span><span class="cm">/^HTML/   Matches the letters HTML at the start of a string</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="cm">/^HTML/i   Matches the letters HTML (ignore cases) at the start of a string</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="cm">*/</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="c1">// /[0-9][0-9]*/   Match a non-zero digit, followed by any \# of digits</span>
+<span class="linenos"> 9</span><span class="c1">//</span>
+<span class="linenos">10</span><span class="c1">// /\bjavascript\b/i  Match &quot;javascript&quot; as a word, case-insensitive</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sr">/^HTML/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;HTML ABC&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
+<span class="linenos">13</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sr">/^HTML/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Html ABC&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// false</span>
+<span class="linenos">14</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sr">/^HTML/i</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Html ABC&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true, ignore cases</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sr">/[0-9][0-9]*/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">));</span><span class="w">     </span><span class="c1">// true</span>
+<span class="linenos">17</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sr">/[0-9][0-9]*/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;01234&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sr">/\bjavascript\b/i</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;hello javascript&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+<span class="linenos">20</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sr">/\bjavascript\b/i</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;hello_javascript&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="kd">let</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;testing: 1, 2, 3&quot;</span>
+<span class="linenos">23</span><span class="kd">let</span><span class="w"> </span><span class="nx">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sr">/\d+/g</span><span class="w"> </span><span class="c1">// matches all instances of one or more digits</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pattern</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">));</span><span class="w"> </span><span class="c1">// true, a match exists</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span><span class="c1">// return the first matched position</span>
+<span class="linenos">28</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="nx">pattern</span><span class="p">));</span><span class="w"> </span><span class="c1">// 9</span>
+<span class="linenos">29</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">pattern</span><span class="p">));</span><span class="w">  </span><span class="c1">// [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;], array of all matches</span>
+<span class="linenos">30</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">pattern</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;#&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// testing: #, #, #</span>
+<span class="linenos">31</span>
+<span class="linenos">32</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="sr">/\D+/</span><span class="p">))</span><span class="w"> </span><span class="c1">// split on non-digit, [&#39;&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;]</span>
+</pre></div>
+</div>
 </div>
 </section>
 
@@ -152,8 +171,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../java/reference.html" class="btn btn-neutral float-left" title="Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="hello_world.html" class="btn btn-neutral float-right" title="Hello world" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="array.html" class="btn btn-neutral float-left" title="array in javascript" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="node.html" class="btn btn-neutral float-right" title="node" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

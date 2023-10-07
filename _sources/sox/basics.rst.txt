@@ -32,3 +32,10 @@ raw
 
   sox -t raw -r 16000 -e signed -b 16 -c 1 test.raw -r 48000 out.wav
 
+
+Generate
+--------
+
+.. code-block:: bash
+
+   sox -r 16000 -n -b 16 -c 1 a.wav synth 10 sin 1000

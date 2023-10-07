@@ -18,7 +18,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="node" href="node.html" />
+    <link rel="next" title="Numbers in javascript" href="numbers.html" />
     <link rel="prev" title="javascript" href="index.html" /> 
 </head>
 
@@ -59,6 +59,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#functions">functions</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="numbers.html">Numbers in javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boolean.html">Boolean in javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">Strings in javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="array.html">array in javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regular_expression.html">Regular expressions in javascript</a></li>
 <li class="toctree-l2"><a class="reference internal" href="node.html">node</a></li>
 <li class="toctree-l2"><a class="reference internal" href="todo.html">TODOs</a></li>
 </ul>
@@ -130,6 +135,27 @@
              
   <section id="hello-world">
 <h1>Hello world<a class="headerlink" href="#hello-world" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p>case sensitive</p></li>
+<li><p>numbers (all numbers are 64-bit floating type)</p></li>
+<li><p>strings (<code class="docutils literal notranslate"><span class="pre">''</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>), there is no character type</p></li>
+<li><p>Like python, strings are immutable</p></li>
+<li><p>strings uses utf-16, like c#</p></li>
+<li><p>array</p></li>
+<li><p>boolean, <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">null</span></code> and <code class="docutils literal notranslate"><span class="pre">undefined</span></code></p></li>
+<li><p>string interpolation</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`hello ${someVariable}`
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>semicolon is optional. Better to always add it</p></li>
+<li><p>garbage collector</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> supports type conversion</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">===</span></code> does not support type conversion. (Recommended to use this one)</p></li>
+</ul>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">)</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;3 + 5&#39;</span><span class="p">))</span>
 </pre></div>
@@ -336,7 +362,7 @@ two methods: a constructor and a method <code class="docutils literal notranslat
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="javascript" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="node.html" class="btn btn-neutral float-right" title="node" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="numbers.html" class="btn btn-neutral float-right" title="Numbers in javascript" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

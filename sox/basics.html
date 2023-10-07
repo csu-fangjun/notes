@@ -72,6 +72,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#fix-broken-waves">Fix broken waves</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pad">pad</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#raw">raw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generate">Generate</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="base64.html">base64</a></li>
@@ -152,6 +153,12 @@ sox<span class="w"> </span><span class="k">in</span>.wav<span class="w"> </span>
 <section id="raw">
 <h2>raw<a class="headerlink" href="#raw" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sox<span class="w"> </span>-t<span class="w"> </span>raw<span class="w"> </span>-r<span class="w"> </span><span class="m">16000</span><span class="w"> </span>-e<span class="w"> </span>signed<span class="w"> </span>-b<span class="w"> </span><span class="m">16</span><span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>test.raw<span class="w"> </span>-r<span class="w"> </span><span class="m">48000</span><span class="w"> </span>out.wav
+</pre></div>
+</div>
+</section>
+<section id="generate">
+<h2>Generate<a class="headerlink" href="#generate" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sox<span class="w"> </span>-r<span class="w"> </span><span class="m">16000</span><span class="w"> </span>-n<span class="w"> </span>-b<span class="w"> </span><span class="m">16</span><span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>a.wav<span class="w"> </span>synth<span class="w"> </span><span class="m">10</span><span class="w"> </span>sin<span class="w"> </span><span class="m">1000</span>
 </pre></div>
 </div>
 </section>

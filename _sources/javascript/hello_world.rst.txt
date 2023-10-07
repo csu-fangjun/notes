@@ -1,6 +1,25 @@
 Hello world
 ===========
 
+- case sensitive
+- numbers (all numbers are 64-bit floating type)
+- strings (``''`` and ``""``), there is no character type
+- Like python, strings are immutable
+- strings uses utf-16, like c#
+- array
+- boolean, ``true`` and ``false``
+- ``null`` and ``undefined``
+- string interpolation
+
+    .. code-block::
+
+      `hello ${someVariable}`
+
+- semicolon is optional. Better to always add it
+- garbage collector
+- ``==`` supports type conversion
+- ``===`` does not support type conversion. (Recommended to use this one)
+
 .. code-block:: javascript
 
   console.log('hello world')

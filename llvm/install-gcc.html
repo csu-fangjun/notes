@@ -130,12 +130,21 @@
 <h1>Install GCC<a class="headerlink" href="#install-gcc" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar<span class="w"> </span>xvf<span class="w"> </span>gcc-12.2.0.tar.gz
 <span class="nb">cd</span><span class="w"> </span>gcc-12.2.0
-./configure<span class="w"> </span>--prefix<span class="o">=</span>/ceph-fj/fangjun/software/gcc-12.2.0
+mkdir<span class="w"> </span>build
+<span class="nb">cd</span><span class="w"> </span>build
+
+<span class="nb">unset</span><span class="w"> </span>C_INCLUDE_PATH
+<span class="nb">unset</span><span class="w"> </span>CPLUS_INCLUDE_PATH
+<span class="nb">unset</span><span class="w"> </span>LD_LIBRARY_PATH
+<span class="nb">unset</span><span class="w"> </span>LIBRARY_PATH
+
+../configure<span class="w"> </span>--prefix<span class="o">=</span>/ceph-fj/fangjun/software/gcc-12.2.0
 make<span class="w"> </span>-j<span class="w"> </span><span class="m">5</span>
 make<span class="w"> </span>install
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">gcc_dir</span><span class="o">=</span>/ceph-fj/fangjun/software/gcc-12.2.0
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$gcc_dir</span>/bin:<span class="nv">$PATH</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">CC</span><span class="o">=</span><span class="nv">$gcc_dir</span>/bin/gcc
 <span class="nb">export</span><span class="w"> </span><span class="nv">CXX</span><span class="o">=</span><span class="nv">$gcc_dir</span>/bin/g++
 <span class="nb">export</span><span class="w"> </span><span class="nv">LIBRARY_PATH</span><span class="o">=</span><span class="nv">$gcc_dir</span>/lib64:<span class="nv">$LIBRARY_PATH</span>

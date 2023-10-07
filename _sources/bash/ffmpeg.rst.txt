@@ -26,6 +26,9 @@ Convert format
    # or use HH:MM:SS format
    ffmpeg -i input.opus -ss 0:01:00 -t 0:00:30 output.wav
 
+   ffmpeg -ss 00:00:16 -to 00:00:30 -i ./abc.mov -c copy part.mp4
+
+
 References
 ----------
 
