@@ -62,5 +62,6 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    spleeter/index
    django/index
    react/index
+   tts/index
 
 .. github/index
