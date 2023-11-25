@@ -98,6 +98,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
 </ul>
 
         </div>
@@ -135,6 +136,12 @@ where <code class="docutils literal notranslate"><span class="pre">n</span></cod
 # -t filed separator
 # -k sort via a key
 # -n numeric sort
+</pre></div>
+</div>
+<p>Convert 32-bit floating pcm to wave:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># sample rate: 22050</span>
+<span class="c1"># c: channel</span>
+sox<span class="w"> </span>-t<span class="w"> </span>raw<span class="w"> </span>-r<span class="w"> </span><span class="m">22050</span><span class="w"> </span>-b<span class="w"> </span><span class="m">32</span><span class="w"> </span>-e<span class="w"> </span>floating-point<span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>./t.pcm<span class="w"> </span>./t.wav
 </pre></div>
 </div>
 </section>

@@ -90,6 +90,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">emsdk</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#install">Install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#hello-cc">hello.cc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#emscripten-h">emscripten.h</a></li>
 </ul>
 </li>
 </ul>
@@ -98,6 +99,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
 </ul>
 
         </div>
@@ -184,12 +186,17 @@ a.out.wasm: WebAssembly (wasm) binary module version 0x1 (MVP)
 </div>
 <p>Start a python http web server <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">http.server</span> <span class="pre">6006</span></code>, the log
 is printed to the browser console.</p>
+<p>Or use <code class="docutils literal notranslate"><span class="pre">emrun</span> <span class="pre">./hello.html</span></code>.</p>
 <p>Also, we can use <code class="docutils literal notranslate"><span class="pre">node</span></code> to run it: <code class="docutils literal notranslate"><span class="pre">node</span> <span class="pre">hello.js</span></code>.</p>
 <p>Now delete <code class="docutils literal notranslate"><span class="pre">hello.html</span></code> and use</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>emcc<span class="w"> </span>hello.cc<span class="w"> </span>-o<span class="w"> </span>hello.html
 <span class="c1"># It will generate: hello.html, hello.js, hello.wasm</span>
 </pre></div>
 </div>
+</section>
+<section id="emscripten-h">
+<h2>emscripten.h<a class="headerlink" href="#emscripten-h" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://emscripten.org/docs/api_reference/emscripten.h.html">https://emscripten.org/docs/api_reference/emscripten.h.html</a></p>
 </section>
 </section>
 

@@ -51,3 +51,41 @@ links
 .. code-block:: html
 
    <a href="https://www.google.com">some text</a>
+
+div
+---
+
+.. code-block:: html
+
+  <label for="quota">Number of primes:</label>
+  <input type="text" id="quota" name="quota" value="1000000" />
+
+  <button id="generate">Generate primes</button>
+  <button id="reload">Reload</button>
+
+  <div id="output"></div>
+
+  <pre readonly class="event-log"></pre>
+
+
+
+  // js
+  const quota = document.querySelector("#quota");
+  const output = document.querySelector("#output");
+  document.querySelector("#generate").addEventListener("click", () => {
+    const primes = generatePrimes(quota.value);
+
+
+    // note we use output.textContent
+    output.textContent = `Finished generating ${quota.value} primes!`;
+  });
+
+  document.querySelector("#reload").addEventListener("click", () => {
+    document.location.reload();
+  });
+
+  const log = document.querySelector(".event-log");
+  log.textContent = "";
+
+
+

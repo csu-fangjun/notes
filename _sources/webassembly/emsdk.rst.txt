@@ -67,6 +67,8 @@ Create a file ``test.html`` containing:
 Start a python http web server ``python3 -m http.server 6006``, the log
 is printed to the browser console.
 
+Or use ``emrun ./hello.html``.
+
 Also, we can use ``node`` to run it: ``node hello.js``.
 
 Now delete ``hello.html`` and use
@@ -76,3 +78,8 @@ Now delete ``hello.html`` and use
    emcc hello.cc -o hello.html
    # It will generate: hello.html, hello.js, hello.wasm
 
+
+emscripten.h
+------------
+
+`<https://emscripten.org/docs/api_reference/emscripten.h.html>`_
