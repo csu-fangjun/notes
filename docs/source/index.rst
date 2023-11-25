@@ -63,5 +63,6 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    django/index
    react/index
    tts/index
+   rust/index
 
 .. github/index

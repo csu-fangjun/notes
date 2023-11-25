@@ -6,3 +6,7 @@ tts
     vits
     unidecode
     phonemizer
+    books
+    papers
+    pypinyin
+    todo

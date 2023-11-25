@@ -21,6 +21,7 @@ Change directory to save images
       "data-root": "/tmp/new-docker-root"
    }
 
+   sudo systemctl daemon-reload
    sudo systemctl restart docker
    docker info -f '{{ .DockerRootDir}}'
 

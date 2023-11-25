@@ -5,5 +5,3 @@ array in javascript
    :language: javascript
    :linenos:
    :caption: ./code/array.js
-
-
