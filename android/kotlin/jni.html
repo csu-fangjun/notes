@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>kotlin &mdash; notes  documentation</title>
+  <title>jni &mdash; notes  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Install" href="install.html" />
-    <link rel="prev" title="Android" href="../index.html" /> 
+    <link rel="next" title="Hello jni" href="hello-jni.html" />
+    <link rel="prev" title="Install" href="install.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -65,9 +65,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../ncnn/index.html">ncnn</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../llvm/index.html">LLVM</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Android</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">kotlin</a><ul>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">kotlin</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="install.html">Install</a></li>
-<li class="toctree-l3"><a class="reference internal" href="jni.html">jni</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">jni</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hello-jni.html">Hello jni</a></li>
 <li class="toctree-l3"><a class="reference internal" href="feat-extractor-jni.html">Binding kaldi-native-fbank for kotlin</a></li>
 </ul>
@@ -123,9 +123,10 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">Android</a> &raquo;</li>
-      <li>kotlin</li>
+          <li><a href="index.html">kotlin</a> &raquo;</li>
+      <li>jni</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/android/kotlin/index.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/android/kotlin/jni.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -133,23 +134,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="kotlin">
-<h1>kotlin<a class="headerlink" href="#kotlin" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="install.html#hello-world">Hello world</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="install.html#usage-1">Usage 1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="install.html#usage-2">Usage 2</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#kotlinc-jvm">kotlinc-jvm</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="jni.html">jni</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hello-jni.html">Hello jni</a></li>
-<li class="toctree-l1"><a class="reference internal" href="feat-extractor-jni.html">Binding kaldi-native-fbank for kotlin</a></li>
-</ul>
+  <section id="jni">
+<h1>jni<a class="headerlink" href="#jni" title="Permalink to this headline">¶</a></h1>
+<p>To get the method signature, we first get the <code class="docutils literal notranslate"><span class="pre">.class</span></code> file of the
+kotlin or java code, and then use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>javap<span class="w"> </span>-s<span class="w"> </span>/path/to/xxx.class
+</pre></div>
 </div>
 </section>
 
@@ -157,8 +147,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../index.html" class="btn btn-neutral float-left" title="Android" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="install.html" class="btn btn-neutral float-right" title="Install" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="install.html" class="btn btn-neutral float-left" title="Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="hello-jni.html" class="btn btn-neutral float-right" title="Hello jni" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
