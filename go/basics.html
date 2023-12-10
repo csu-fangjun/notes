@@ -86,6 +86,8 @@
 <li class="toctree-l2"><a class="reference internal" href="cross-compile.html">Cross compile</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Basics</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#environment-variables">Environment variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hello-world">Hello world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verbose-build">verbose build</a></li>
 </ul>
 </li>
 </ul>
@@ -138,6 +140,28 @@ go<span class="w"> </span>env<span class="w"> </span>GOOS<span class="w"> </span
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">go</span> <span class="pre">help</span> <span class="pre">environment</span></code></p>
+</section>
+<section id="hello-world">
+<h2>Hello world<a class="headerlink" href="#hello-world" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference external" href="https://go.dev/doc/tutorial/getting-started">https://go.dev/doc/tutorial/getting-started</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>go<span class="w"> </span>mod<span class="w"> </span>init<span class="w"> </span>example/hello
+</pre></div>
+</div>
+<p>The above command will create a file <code class="docutils literal notranslate"><span class="pre">go.mod</span></code> in the current directory.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># content of go.mod</span>
+module<span class="w"> </span>example/hello
+
+go<span class="w"> </span><span class="m">1</span>.20
+</pre></div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">go</span> <span class="pre">mod</span> <span class="pre">init</span></code> does not create any directories. It only creates
+a file <code class="docutils literal notranslate"><span class="pre">go.mod</span></code> with the above content.</p>
+</section>
+<section id="verbose-build">
+<h2>verbose build<a class="headerlink" href="#verbose-build" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>go<span class="w"> </span>build<span class="w"> </span>-x<span class="w"> </span>-v
+</pre></div>
+</div>
 </section>
 </section>
 
