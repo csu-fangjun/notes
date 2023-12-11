@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>kotlin &mdash; notes  documentation</title>
+  <title>Basic types &mdash; notes  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Install" href="install.html" />
-    <link rel="prev" title="Android" href="../index.html" /> 
+    <link rel="next" title="jni" href="jni.html" />
+    <link rel="prev" title="Install" href="install.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -65,9 +65,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../ncnn/index.html">ncnn</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../llvm/index.html">LLVM</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Android</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">kotlin</a><ul>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">kotlin</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="install.html">Install</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basic-types.html">Basic types</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Basic types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#charsequence">CharSequence</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="jni.html">jni</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hello-jni.html">Hello jni</a></li>
 <li class="toctree-l3"><a class="reference internal" href="feat-extractor-jni.html">Binding kaldi-native-fbank for kotlin</a></li>
@@ -125,9 +128,10 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">Android</a> &raquo;</li>
-      <li>kotlin</li>
+          <li><a href="index.html">kotlin</a> &raquo;</li>
+      <li>Basic types</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/android/kotlin/index.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/android/kotlin/basic-types.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -135,38 +139,265 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="kotlin">
-<h1>kotlin<a class="headerlink" href="#kotlin" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="install.html#hello-world">Hello world</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="install.html#usage-1">Usage 1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="install.html#usage-2">Usage 2</a></li>
+  <section id="basic-types">
+<h1>Basic types<a class="headerlink" href="#basic-types" title="Permalink to this headline">¶</a></h1>
+<p>Note <code class="docutils literal notranslate"><span class="pre">String.length</span></code> and <code class="docutils literal notranslate"><span class="pre">Array.size</span></code>.</p>
+<p>Differences between <code class="docutils literal notranslate"><span class="pre">Array&lt;Float&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">FloatArray</span></code>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Array&lt;Float&gt;</span></code> saves objects</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FloatArray</span></code> is a primitive array</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Array&lt;Float</span></code> to <code class="docutils literal notranslate"><span class="pre">FloatArray</span></code>: <code class="docutils literal notranslate"><span class="pre">.toFloatArray()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FloatArray</span></code> to <code class="docutils literal notranslate"><span class="pre">Array&lt;Float&gt;</span></code>: <code class="docutils literal notranslate"><span class="pre">.toTypedArray()</span></code></p></li>
 </ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#kotlinc-jvm">kotlinc-jvm</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#naming-convention">Naming convention</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="basic-types.html">Basic types</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="basic-types.html#charsequence">CharSequence</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="jni.html">jni</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hello-jni.html">Hello jni</a></li>
-<li class="toctree-l1"><a class="reference internal" href="feat-extractor-jni.html">Binding kaldi-native-fbank for kotlin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
-</ul>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kotlinc<span class="w"> </span>-include-runtime<span class="w"> </span>-d<span class="w"> </span>hello.jar<span class="w"> </span>hello.kt
+</pre></div>
 </div>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/basic-types/hello.kt</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span>fun testInt() {
+  val a = 1
+  check(a is Int)
+  check(a == 1)
+
+  val b = 1L
+  check(b is Long)
+  check(b == 1L)
+
+  val c :Byte = -1
+  check(c is Byte)
+  check(c == (-1).toByte())
+
+  val d: Short = 1
+  check(d is Short)
+  check(d == 1.toShort())
+
+  val g = 0x0a
+  check(g is Int)
+  check(g == 10)
+
+  val f = 0b00001000
+  check(f is Int)
+  check(f == 8)
+
+  val h = 0b0000_1000
+  check(h is Int)
+  check(h == 8)
+
+  val k = 1_000
+  check(k is Int)
+  check(k == 1000)
+
+  val m = 1 / 2
+  check(m is Int)
+  check(m == 0)
+
+  val n = 1 / 2.toFloat()
+  check(n is Float)
+  check(n == 0.5f)
+}
+
+fun testFloat() {
+  val a = 1.0
+  check(a is Double)
+  check(a == 1.0)
+
+  val b = 2.0F
+  check(b is Float)
+  check(b == 2.0F)
+  check(b == (2.0).toFloat())
+
+  // either f or F is ok
+  val c = 2.0f
+  check(c is Float)
+  check(c == 2.0F)
+
+  val d = (2.2F).toInt()
+  check(d is Int)
+  check(d == 2)
+}
+
+
+fun testBitwise() {
+  // support only Int and Long
+  val a = 0b01
+  val b = 0b10
+
+  val c = a or b // in C++: c = a | b
+
+  check(c == 3)
+
+  val d = a and b // in C++: d = a &amp; b
+  check(d == 0)
+
+  val f = a shl 3 // in C++: a &lt;&lt; 3
+  check(f == 8)
+
+  val g = b shr 1 // in C++: g = b &gt;&gt; 1
+  check(g == 1)
+
+  val h = a xor b // in C++: h = a ^ b
+  check(h == 3)
+
+  val k :Byte = 0b0100_0001
+	// test inv()
+}
+
+fun testJavaClass() {
+  val a = 1
+	println(a.javaClass) // int
+}
+
+fun testBoolean() {
+  val a = true
+	val b = false
+	val c: Boolean = true
+	check(a)
+	check(!b)
+	check(c)
+
+	val d = a &amp;&amp; b
+	check(d == false)
+
+	val e = a || b
+	check(e)
+}
+
+fun testChar() {
+  // a char is 2-byte, utf-16
+	val a = &#39;a&#39;
+	check(a is Char)
+	check(a.isDigit() == false)
+
+	val b = &#39;\uff00&#39;
+	check(b is Char)
+
+	val c = &#39;9&#39;
+	check(c.isDigit() == true)
+
+	check(Char.SIZE_BITS == 16)
+	check(&#39;0&#39;.code == 0x30)
+	check(&#39;A&#39;.lowercaseChar() == &#39;a&#39;)
+	check(&#39;a&#39;.uppercaseChar() == &#39;A&#39;)
+}
+
+fun testString() {
+  // a sequence of Char, utf16
+  // immutable
+  val a = &quot;abc&quot;
+  check(a + 1 == &quot;abc1&quot;)
+
+  // multi-line strings, like python
+  val b = &quot;&quot;&quot;
+  line 1
+  line 2
+  &quot;&quot;&quot;
+  println(b)
+/*
+
+  line 1
+  line 2
+
+*/
+
+  val c = &quot;&quot;&quot;
+  |line 1
+  |line 2
+  &quot;&quot;&quot;.trimMargin()
+  println(c)
+/*
+line 1
+line 2
+*/
+
+  val d = &quot;&quot;&quot;
+  &gt;line 1
+  &gt;line 2
+  &quot;&quot;&quot;.trimMargin(&quot;&gt;&quot;)
+  println(d)
+/*
+line 1
+line 2
+*/
+
+  // format
+  val k = String.format(&quot;%x %02x&quot;, 10, 10)
+  check(k == &quot;a 0a&quot;)
+}
+
+fun testArray() {
+  val a = Array(3) {it}
+  check(a[0] == 0)
+  check(a[1] == 1)
+  check(a[2] == 2)
+
+  val b = arrayOf(0, 1, 2)
+  check(a.contentEquals(b)) // we cannot use == since they save references
+
+  a[0] = 10 // assign a value
+  check(a[0] == 10)
+
+  check(a.sum() == 10 + 1 + 2)
+
+  check(a.joinToString() == &quot;10, 1, 2&quot;)
+}
+
+fun shortArrayToByteArray() {
+  val a: Array&lt;Short&gt; = arrayOf(0x0102, 0x0304)
+  val b: Array&lt;Byte&gt; = Array(a.size * 2) {0}
+  println(a.contentToString()) // [258, 772]
+  println(b.contentToString()) // [0, 0, 0, 0]
+
+  for (i in a.indices) {
+    b[2*i] = (a[i].toInt() and 0xff).toByte()
+    b[2*i+1] =((a[i].toInt() shr 8) and 0xff).toByte()
+  }
+  println(b.contentToString()) //  [2, 1, 4, 3]
+}
+
+fun byteArrayToShortArray() {
+  val a: Array&lt;Byte&gt; = arrayOf(0x01, 0x02, 0x03, 0x04)
+  val b: Array&lt;Short&gt; = Array(a.size / 2) {0}
+
+  println(a.contentToString()) // [258, 772]
+  println(b.contentToString()) // [0, 0, 0, 0]
+
+  for (i in b.indices) {
+    b[i] = (a[2*i].toInt() + (a[2*i+1].toInt() shl 8)).toShort()
+  }
+  check(b[0].toInt() == 0x0201)
+  check(b[1].toInt() == 0x0403)
+}
+
+fun main() {
+  testInt()
+  testFloat()
+  testBitwise()
+	testJavaClass()
+	testBoolean()
+	testChar()
+	testString()
+  testArray()
+  shortArrayToByteArray()
+  byteArrayToShortArray()
+}
+</pre></div>
+</div>
+</div>
+<section id="charsequence">
+<h2>CharSequence<a class="headerlink" href="#charsequence" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference external" href="https://github.com/JetBrains/kotlin/blob/0938b46726b9c6938df309098316ce741815bb55/core/builtins/native/kotlin/CharSequence.kt#L22">https://github.com/JetBrains/kotlin/blob/0938b46726b9c6938df309098316ce741815bb55/core/builtins/native/kotlin/CharSequence.kt#L22</a></p>
+<p>It is an interface.</p>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../index.html" class="btn btn-neutral float-left" title="Android" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="install.html" class="btn btn-neutral float-right" title="Install" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="install.html" class="btn btn-neutral float-left" title="Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="jni.html" class="btn btn-neutral float-right" title="jni" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

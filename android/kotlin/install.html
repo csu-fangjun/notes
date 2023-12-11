@@ -18,7 +18,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="jni" href="jni.html" />
+    <link rel="next" title="Basic types" href="basic-types.html" />
     <link rel="prev" title="kotlin" href="index.html" /> 
 </head>
 
@@ -69,11 +69,14 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Install</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#hello-world">Hello world</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#kotlinc-jvm">kotlinc-jvm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#naming-convention">Naming convention</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="basic-types.html">Basic types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="jni.html">jni</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hello-jni.html">Hello jni</a></li>
 <li class="toctree-l3"><a class="reference internal" href="feat-extractor-jni.html">Binding kaldi-native-fbank for kotlin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="references.html">References</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../basics.html">Basics</a></li>
@@ -153,31 +156,31 @@ mv<span class="w"> </span>kotlinc<span class="w"> </span><span class="m">1</span
 <section id="hello-world">
 <h2>Hello world<a class="headerlink" href="#hello-world" title="Permalink to this headline">¶</a></h2>
 <p>Create a file <code class="docutils literal notranslate"><span class="pre">hello.kt</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">println</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span><span class="p">)</span>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/install/hello.kt</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
+</div>
 </div>
 <section id="usage-1">
 <h3>Usage 1<a class="headerlink" href="#usage-1" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kotlinc<span class="w"> </span>hello.kt
 </pre></div>
 </div>
-<p>It will generate a binary <code class="docutils literal notranslate"><span class="pre">hello.native</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>hello.native
--rwxr-xr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>kuangfangjun<span class="w"> </span>root<span class="w"> </span><span class="m">8</span>.1K<span class="w"> </span>Mar<span class="w"> </span><span class="m">18</span><span class="w">  </span><span class="m">2022</span><span class="w"> </span>hello.native
+<p>It will generate a binary file <code class="docutils literal notranslate"><span class="pre">HelloKt.class</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>javap<span class="w"> </span>HelloKt.class
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>readelf<span class="w"> </span>-d<span class="w"> </span>hello.native
+<p>The above command prints the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Compiled</span> <span class="kn">from</span> <span class="s2">&quot;hello.kt&quot;</span>
+<span class="n">public</span> <span class="n">final</span> <span class="k">class</span> <span class="nc">HelloKt</span> <span class="p">{</span>
+  <span class="n">public</span> <span class="n">static</span> <span class="n">final</span> <span class="n">void</span> <span class="n">main</span><span class="p">();</span>
+  <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">java</span><span class="o">.</span><span class="n">lang</span><span class="o">.</span><span class="n">String</span><span class="p">[]);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>It prints:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Dynamic<span class="w"> </span>section<span class="w"> </span>at<span class="w"> </span>offset<span class="w"> </span>0xe20<span class="w"> </span>contains<span class="w"> </span><span class="m">24</span><span class="w"> </span>entries:
-<span class="w">  </span>Tag<span class="w">        </span>Type<span class="w">                         </span>Name/Value
-<span class="w"> </span>0x0000000000000001<span class="w"> </span><span class="o">(</span>NEEDED<span class="o">)</span><span class="w">             </span>Shared<span class="w"> </span>library:<span class="w"> </span><span class="o">[</span>libc.so.6<span class="o">]</span>
-</pre></div>
-</div>
-<p>Note: It depends only on <code class="docutils literal notranslate"><span class="pre">libc</span></code>.</p>
 </section>
 <section id="usage-2">
 <h3>Usage 2<a class="headerlink" href="#usage-2" title="Permalink to this headline">¶</a></h3>
@@ -190,11 +193,28 @@ java<span class="w"> </span>-jar<span class="w"> </span>hello.jar
 kotlin<span class="w"> </span>-classpath<span class="w"> </span>./hello.jar<span class="w"> </span>HelloKt
 </pre></div>
 </div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">hello.jar</span></code> is actually a <code class="docutils literal notranslate"><span class="pre">zip</span></code> file.</p>
 </section>
 </section>
 <section id="kotlinc-jvm">
 <h2>kotlinc-jvm<a class="headerlink" href="#kotlinc-jvm" title="Permalink to this headline">¶</a></h2>
-<p>To run kotlin inside an interactive shell.</p>
+<p>To run kotlin inside an interactive shell, we can run the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kotlinc</span><span class="o">-</span><span class="n">jvm</span>
+</pre></div>
+</div>
+<p>or the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kotlinc</span>
+</pre></div>
+</div>
+</section>
+<section id="naming-convention">
+<h2>Naming convention<a class="headerlink" href="#naming-convention" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>class: ClassName</p></li>
+<li><p>function: funcName</p></li>
+<li><p>variable: variableName</p></li>
+<li><p>filename extension: <code class="docutils literal notranslate"><span class="pre">kt</span></code></p></li>
+</ul>
 </section>
 </section>
 
@@ -203,7 +223,7 @@ kotlin<span class="w"> </span>-classpath<span class="w"> </span>./hello.jar<span
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="kotlin" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="jni.html" class="btn btn-neutral float-right" title="jni" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="basic-types.html" class="btn btn-neutral float-right" title="Basic types" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
