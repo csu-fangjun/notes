@@ -1,6 +1,8 @@
 Basic types
 ============
 
+See `<https://kotlinlang.org/docs/basic-types.html>`_
+
 Note ``String.length`` and ``Array.size``.
 
 Differences between ``Array<Float>`` and ``FloatArray``:
