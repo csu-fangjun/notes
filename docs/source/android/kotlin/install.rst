@@ -18,11 +18,9 @@ Hello world
 
 Create a file ``hello.kt``:
 
-.. code-block::
-
-   fun main() {
-     println("hello world")
-   }
+.. literalinclude:: ./code/install/hello.kt
+   :language: kotlin
+   :caption: ./code/install/hello.kt
 
 Usage 1
 ^^^^^^^
@@ -31,26 +29,21 @@ Usage 1
 
    kotlinc hello.kt
 
-It will generate a binary ``hello.native``:
+It will generate a binary file ``HelloKt.class``:
 
 .. code-block:: bash
 
-  $ ls -lh hello.native
-  -rwxr-xr-x 1 kuangfangjun root 8.1K Mar 18  2022 hello.native
+  $ javap HelloKt.class
 
-.. code-block:: bash
+The above command prints the following:
 
-   readelf -d hello.native
+.. code-block::
 
-It prints:
-
-.. code-block:: bash
-
-  Dynamic section at offset 0xe20 contains 24 entries:
-    Tag        Type                         Name/Value
-   0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
-
-Note: It depends only on ``libc``.
+  Compiled from "hello.kt"
+  public final class HelloKt {
+    public static final void main();
+    public static void main(java.lang.String[]);
+  }
 
 Usage 2
 ^^^^^^^
@@ -65,8 +58,28 @@ Usage 2
    java -jar hello.jar
    kotlin -classpath ./hello.jar HelloKt
 
+Note that ``hello.jar`` is actually a ``zip`` file.
+
 
 kotlinc-jvm
 -----------
 
-To run kotlin inside an interactive shell.
+To run kotlin inside an interactive shell, we can run the command:
+
+.. code-block::
+
+   kotlinc-jvm
+
+or the command:
+
+.. code-block::
+
+   kotlinc
+
+Naming convention
+-----------------
+
+- class: ClassName
+- function: funcName
+- variable: variableName
+- filename extension: ``kt``
