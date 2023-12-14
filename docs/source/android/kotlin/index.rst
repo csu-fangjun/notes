@@ -5,6 +5,7 @@ kotlin
 
     install
     basic-types
+    collections
     jni
     hello-jni
     feat-extractor-jni
