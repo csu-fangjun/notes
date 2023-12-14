@@ -10,3 +10,4 @@ kotlin
     feat-extractor-jni
     references
     control-flow
+    functions
