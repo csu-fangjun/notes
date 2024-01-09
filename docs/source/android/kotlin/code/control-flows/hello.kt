@@ -12,6 +12,11 @@ fun testIf() {
   // if can be used in an expression
   val min = if (a < b) {a} else {b}
   check(min == a)
+
+//
+  if (true && true || false) {
+    check(true)
+  }
 }
 
 fun testWhen() {
@@ -62,6 +67,14 @@ fun testRange() {
   check(2 in 5 downTo 0 step 3)
   check(1 !in 5 downTo 0 step 3)
   check(0 !in 5 downTo 0 step 3)
+
+  val c = 'a'
+  check(c in 'a' .. 'z' || c in 'A' .. 'Z')
+  check(c !in '0' .. '9')
+
+  val d = '0'
+  check(d in '0' .. '9')
+  check(d !in 'a'..'z' && d !in 'A'..'Z')
 }
 
 fun testFor() {
@@ -95,7 +108,7 @@ fun testFor() {
       4 -> check(a[i] == 0)
     }
   }
-
+/*
   for ((i, value) in a.withIndexes()) {
     when (i) {
       0 -> check(value == 4)
@@ -105,6 +118,7 @@ fun testFor() {
       4 -> check(value == 0)
     }
   }
+*/
 }
 
 fun main() {

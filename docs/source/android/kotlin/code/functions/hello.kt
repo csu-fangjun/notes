@@ -1,3 +1,20 @@
+
+fun sum1(x: Int, y: Int): Int {
+  return x + y
+}
+
+// ignore the {} and return
+fun sum2(x: Int, y: Int): Int  = x + y
+
+// ignore the return type hint
+fun sum3(x: Int, y: Int) = x + y
+
+fun testSum() {
+  check(sum1(1, 2) == 3)
+  check(sum2(1, 2) == 3)
+  check(sum3(1, 2) == 3)
+}
+
 fun double(x: Double): Double {
   return x * 2
 }
@@ -52,9 +69,16 @@ fun testDefault2() {
   check(c == 1.5f+10)
 }
 
+fun testLambda() {
+  val makeUppercase = {x: String -> x.uppercase()}
+  check(makeUppercase("ab") == "AB")
+}
+
 fun main() {
+  testSum()
   testDouble()
   testPowerOf()
   testDefault()
   testDefault2()
+  testLambda()
 }

@@ -3,7 +3,12 @@ Basic types
 
 See `<https://kotlinlang.org/docs/basic-types.html>`_
 
-Note ``String.length`` and ``Array.size``.
+Note ``String.length`` and ``Array.size``. Both of them have ``count()``, i.e.,
+``String.count()`` and ``Array.count()``.
+
+``String.isNotBlank()`` and ``String.isNotEmpty()``.
+
+``String.isBlank()`` and ``String.isEmpty()`` returns true for an empty string ``""``.
 
 Differences between ``Array<Float>`` and ``FloatArray``:
 

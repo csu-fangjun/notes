@@ -1,5 +1,13 @@
 fun testList() {
   val a = mutableListOf(1, 2, 3)
+  println(a.javaClass) // class java.util.ArrayList
+
+/*
+  for((i, v) in a.withIndex()) {
+    check(i + 1 == v)
+  }
+*/
+
   val b: List<Int> = a // view of a, no data is copied
   a[0] = 10 // b is also changed since b is a view of a
   check(b[0] == 10)
@@ -28,6 +36,8 @@ fun testList() {
 
 fun testSet() {
   val a = mutableSetOf(1, 0, 2)
+  println(a.javaClass) // class java.util.LinkedHashSet
+
   println(a)
   check(0 in a)
   check(3 !in a)
@@ -45,6 +55,8 @@ fun testSet() {
 
 fun testMap() {
   val a: MutableMap<Int, String> = mutableMapOf(0 to "zero", 1 to "one", 2 to "two")
+  println(a.javaClass) // class java.util.LinkedHashMap
+
   check(a.count() == 3)
   check(a[0] == "zero")
   check(a.containsKey(0))
@@ -53,12 +65,9 @@ fun testMap() {
   check(0 !in a)
   check(a.containsKey(0) == false)
 
-  a.put(0, "zero")
+  a.put(0, "zero")  // equivalent to a[0] = "zero"
   check(0 in a)
   check(a.containsKey(0))
-
-  check("two" in a.values())
-  check("three" !in a.values())
 }
 
 fun main() {

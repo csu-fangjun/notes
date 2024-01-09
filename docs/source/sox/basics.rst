@@ -39,3 +39,13 @@ Generate
 .. code-block:: bash
 
    sox -r 16000 -n -b 16 -c 1 a.wav synth 10 sin 1000
+
+remix
+-----
+
+Split multi-channel wave to single channels.
+
+.. code-block:: bash
+
+   sox stereo_inputfile.wav leftchannel.wav remix 1
+   sox stereo_inputfile.wav rightchannel.wav remix 2

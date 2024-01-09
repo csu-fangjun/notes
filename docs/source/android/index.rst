@@ -10,3 +10,4 @@ Android
     hello
     android_mk
     adb
+    tts
