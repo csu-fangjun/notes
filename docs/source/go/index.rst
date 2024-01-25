@@ -6,3 +6,4 @@ Go
     install
     cross-compile
     basics
+    hello
