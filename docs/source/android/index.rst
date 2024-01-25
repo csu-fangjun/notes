@@ -11,3 +11,5 @@ Android
     android_mk
     adb
     tts
+    jetpack
+    samples

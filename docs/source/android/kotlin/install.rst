@@ -32,7 +32,7 @@ Usage 1
 
    kotlinc hello.kt
 
-It will generate a binary file ``HelloKt.class``:
+It will generate a binary file ``HelloKt.class`` and a folder ``META-INF``.
 
 .. code-block:: bash
 
@@ -47,6 +47,14 @@ The above command prints the following:
     public static final void main();
     public static void main(java.lang.String[]);
   }
+
+We can use:
+
+.. code-block::
+
+   kotlin HelloKt.class
+
+to execute it.
 
 Usage 2
 ^^^^^^^

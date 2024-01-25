@@ -13,3 +13,5 @@ kotlin
     control-flow
     functions
     package
+    for
+    enum

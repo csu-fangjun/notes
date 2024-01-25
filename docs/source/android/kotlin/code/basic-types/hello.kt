@@ -124,11 +124,25 @@ fun testChar() {
 	check('a'.uppercaseChar() == 'A')
 }
 
+// note String is immutable, like Python.
 fun testString() {
   // a sequence of Char, utf16
   // immutable
-  val a = "abc"
-  check(a + 1 == "abc1")
+  val a = "Abc"
+  check(a + 1 == "Abc1")
+  check(a.count() == 3)
+  check(a.length == 3)
+  check(a.lastIndex == a.length - 1)
+  check(a.toUpperCase() == "ABC")
+  check(a.toLowerCase() == "abc")
+
+  // remove the first two characters
+  check(a.drop(2) == "c")
+
+  // remove the last two characters
+  check(a.dropLast(2) == "A")
+
+  check(a.indexOf("bc") == 1)
 
   // multi-line strings, like python
   val b = """
@@ -174,7 +188,8 @@ fun testArray() {
   check(a[1] == 1)
   check(a[2] == 2)
 
-  val b = arrayOf(0, 1, 2)
+  // val b = arrayOf(0, 1, 2)
+  val b = arrayOf<Int>(0, 1, 2)
   check(a.contentEquals(b)) // we cannot use == since they save references
 
   a[0] = 10 // assign a value

@@ -12,9 +12,9 @@ Note ``String.length`` and ``Array.size``. Both of them have ``count()``, i.e.,
 
 Differences between ``Array<Float>`` and ``FloatArray``:
 
- - ``Array<Float>`` saves objects
+ - ``Array<Float>`` stores objects
  - ``FloatArray`` is a primitive array
- - ``Array<Float`` to ``FloatArray``: ``.toFloatArray()``
+ - ``Array<Float>`` to ``FloatArray``: ``.toFloatArray()``
  - ``FloatArray`` to ``Array<Float>``: ``.toTypedArray()``
 
 
