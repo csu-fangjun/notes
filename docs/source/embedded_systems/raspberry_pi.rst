@@ -1,3 +1,6 @@
+
+.. _raspberry pi:
+
 Raspberry PI
 ============
 
