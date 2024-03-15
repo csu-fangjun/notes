@@ -62,3 +62,7 @@ ssh config on macos:
     User pi
     IdentityFile ~/.ssh/pi
     RemoteForward 8080 localhost:8080
+
+.. code-block:: bash
+
+   sudo ifup eth0
