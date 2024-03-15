@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-doc:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       # refer to https://github.com/actions/checkout
       - uses: actions/checkout@v3
@@ -27,29 +27,33 @@ jobs:
         run: |
           pip install -r ./docs/requirements.txt
 
-      - name: Build pdf and html
-        uses: xu-cheng/texlive-action/full@v1
+      - name: Setup TeX Live
+        uses: teatimeguest/setup-texlive-action@v3
         with:
-          run: |
-            apk add make && \
-            apk add python3 py3-pip && \
-            python3 -m pip install -r ./docs/requirements.txt && \
-            cd docs && \
-            make html &&
-            touch build/html/.nojekyll
+          packages: scheme-basic
 
-            # make latex && \
-            # mkdir -pv build/html/_static && \
-            # cd build/latex && \
-            # latexmk -pdf -dvi -ps- notes.tex && \
-            # cp -v notes.pdf ../html/_static/
+      - name: Check `tlmgr` version
+        run: tlmgr --version
+
+      - name: Build pdf and html
+        shell: bash
+        run: |
+          cd docs
+          make html
+          touch build/html/.nojekyll
+
+          make latex && \
+          mkdir -pv build/html/_static && \
+          cd build/latex && \
+          latexmk -pdf -dvi -ps- notes.tex && \
+          cp -v notes.pdf ../html/_static/
 
 
-      # - name: Upload pdf
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: notes.pdf
-      #     path: docs/build/latex/notes.pdf
+      - name: Upload pdf
+        uses: actions/upload-artifact@v4
+        with:
+          name: notes.pdf
+          path: docs/build/latex/notes.pdf
 
       - name: Deploy
         # if: github.event_name == 'push' && github.ref == 'ref/head/master'
