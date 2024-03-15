@@ -78,6 +78,9 @@
 <li class="toctree-l3"><a class="reference internal" href="references.html">References</a></li>
 <li class="toctree-l3"><a class="reference internal" href="control-flow.html">Control flows</a></li>
 <li class="toctree-l3"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="package.html">Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="for.html">for</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enum.html">enum</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../basics.html">Basics</a></li>
@@ -86,6 +89,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../hello.html">hello</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../android_mk.html">Android.mk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../adb.html">adb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tts.html">tts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jetpack.html">jetpack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../samples.html">Samples</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../qemu/index.html">qemu</a></li>
@@ -145,13 +151,16 @@
   <section id="basic-types">
 <h1>Basic types<a class="headerlink" href="#basic-types" title="Permalink to this headline">¶</a></h1>
 <p>See <a class="reference external" href="https://kotlinlang.org/docs/basic-types.html">https://kotlinlang.org/docs/basic-types.html</a></p>
-<p>Note <code class="docutils literal notranslate"><span class="pre">String.length</span></code> and <code class="docutils literal notranslate"><span class="pre">Array.size</span></code>.</p>
+<p>Note <code class="docutils literal notranslate"><span class="pre">String.length</span></code> and <code class="docutils literal notranslate"><span class="pre">Array.size</span></code>. Both of them have <code class="docutils literal notranslate"><span class="pre">count()</span></code>, i.e.,
+<code class="docutils literal notranslate"><span class="pre">String.count()</span></code> and <code class="docutils literal notranslate"><span class="pre">Array.count()</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">String.isNotBlank()</span></code> and <code class="docutils literal notranslate"><span class="pre">String.isNotEmpty()</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">String.isBlank()</span></code> and <code class="docutils literal notranslate"><span class="pre">String.isEmpty()</span></code> returns true for an empty string <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>.</p>
 <p>Differences between <code class="docutils literal notranslate"><span class="pre">Array&lt;Float&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">FloatArray</span></code>:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Array&lt;Float&gt;</span></code> saves objects</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Array&lt;Float&gt;</span></code> stores objects</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FloatArray</span></code> is a primitive array</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Array&lt;Float</span></code> to <code class="docutils literal notranslate"><span class="pre">FloatArray</span></code>: <code class="docutils literal notranslate"><span class="pre">.toFloatArray()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Array&lt;Float&gt;</span></code> to <code class="docutils literal notranslate"><span class="pre">FloatArray</span></code>: <code class="docutils literal notranslate"><span class="pre">.toFloatArray()</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FloatArray</span></code> to <code class="docutils literal notranslate"><span class="pre">Array&lt;Float&gt;</span></code>: <code class="docutils literal notranslate"><span class="pre">.toTypedArray()</span></code></p></li>
 </ul>
 </div></blockquote>
@@ -286,11 +295,25 @@ fun testChar() {
 	check(&#39;a&#39;.uppercaseChar() == &#39;A&#39;)
 }
 
+// note String is immutable, like Python.
 fun testString() {
   // a sequence of Char, utf16
   // immutable
-  val a = &quot;abc&quot;
-  check(a + 1 == &quot;abc1&quot;)
+  val a = &quot;Abc&quot;
+  check(a + 1 == &quot;Abc1&quot;)
+  check(a.count() == 3)
+  check(a.length == 3)
+  check(a.lastIndex == a.length - 1)
+  check(a.toUpperCase() == &quot;ABC&quot;)
+  check(a.toLowerCase() == &quot;abc&quot;)
+
+  // remove the first two characters
+  check(a.drop(2) == &quot;c&quot;)
+
+  // remove the last two characters
+  check(a.dropLast(2) == &quot;A&quot;)
+
+  check(a.indexOf(&quot;bc&quot;) == 1)
 
   // multi-line strings, like python
   val b = &quot;&quot;&quot;
@@ -336,7 +359,8 @@ fun testArray() {
   check(a[1] == 1)
   check(a[2] == 2)
 
-  val b = arrayOf(0, 1, 2)
+  // val b = arrayOf(0, 1, 2)
+  val b = arrayOf&lt;Int&gt;(0, 1, 2)
   check(a.contentEquals(b)) // we cannot use == since they save references
 
   a[0] = 10 // assign a value

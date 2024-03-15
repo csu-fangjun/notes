@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>cmake &mdash; notes  documentation</title>
+  <title>Samples &mdash; notes  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="hello" href="hello.html" />
-    <link rel="prev" title="Installation" href="install.html" /> 
+    <link rel="next" title="qemu" href="../qemu/index.html" />
+    <link rel="prev" title="jetpack" href="jetpack.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -68,13 +68,13 @@
 <li class="toctree-l2"><a class="reference internal" href="kotlin/index.html">kotlin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="basics.html">Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">cmake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cmake.html">cmake</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hello.html">hello</a></li>
 <li class="toctree-l2"><a class="reference internal" href="android_mk.html">Android.mk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="adb.html">adb</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tts.html">tts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="jetpack.html">jetpack</a></li>
-<li class="toctree-l2"><a class="reference internal" href="samples.html">Samples</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Samples</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
@@ -120,9 +120,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">Android</a> &raquo;</li>
-      <li>cmake</li>
+      <li>Samples</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/android/cmake.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/android/samples.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -130,49 +130,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="cmake">
-<h1>cmake<a class="headerlink" href="#cmake" title="Permalink to this headline">¶</a></h1>
-<p>See</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><a class="reference external" href="https://cmake.org/cmake/help/latest/manual/cmake-toolchains.7.html">https://cmake.org/cmake/help/latest/manual/cmake-toolchains.7.html</a></p></li>
-<li><p><a class="reference external" href="https://developer.android.com/ndk/guides/cmake#command-line">https://developer.android.com/ndk/guides/cmake#command-line</a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/ceph-fj/fangjun/software/android-ndk/build/cmake/android.toolchain.cmake</span></code></p></li>
+  <section id="samples">
+<h1>Samples<a class="headerlink" href="#samples" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://developer.android.com/courses/android-basics-compose/course">https://developer.android.com/courses/android-basics-compose/course</a></p>
+<ul>
+<li><p><a class="reference external" href="https://developer.android.com/courses/android-basics-compose/unit-2">https://developer.android.com/courses/android-basics-compose/unit-2</a></p></li>
 </ul>
-</div></blockquote>
-<p>User provided:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_NDK</span></code>: Set to the path of <code class="docutils literal notranslate"><span class="pre">android-ndk</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_ABI</span></code>: <code class="docutils literal notranslate"><span class="pre">armeabi-v7a</span></code>, <code class="docutils literal notranslate"><span class="pre">arm64-v8a</span></code>, <code class="docutils literal notranslate"><span class="pre">x86</span></code>, <code class="docutils literal notranslate"><span class="pre">x86_64</span></code>,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_PLATFORM</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_NATIVE_API_LEVEL</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_TOOLCHAIN</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID</span></code>: <code class="docutils literal notranslate"><span class="pre">TRUE</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">CMAKE_SYSTEM_NAME</span></code>: <code class="docutils literal notranslate"><span class="pre">Anroid</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_STL</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_HOST_TAG</span></code></p></li>
+</li>
+<li><p><a class="reference external" href="https://developer.android.com/modern-android-development">https://developer.android.com/modern-android-development</a></p></li>
+<li><p><a class="reference external" href="https://developer.android.com/courses/pathways/android-basics-compose-unit-1-pathway-3">https://developer.android.com/courses/pathways/android-basics-compose-unit-1-pathway-3</a></p></li>
+<li><p><a class="reference external" href="https://developer.android.com/courses/pathways/jetpack-compose-for-android-developers-1">https://developer.android.com/courses/pathways/jetpack-compose-for-android-developers-1</a></p></li>
+<li><p><a class="reference external" href="https://github.com/android/compose-samples">https://github.com/android/compose-samples</a></p></li>
+<li><p><a class="reference external" href="https://developer.android.com/courses/android-basics-compose/course">https://developer.android.com/courses/android-basics-compose/course</a></p></li>
 </ul>
-</div></blockquote>
-<p>Auto generated:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_NDK_MAJOR</span></code> - see <code class="docutils literal notranslate"><span class="pre">android-ndk/source.properties</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_NDK_MINOR</span></code> - see <code class="docutils literal notranslate"><span class="pre">android-ndk/source.properties</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_NDK_BUILD</span></code> - see <code class="docutils literal notranslate"><span class="pre">android-ndk/source.properties</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_NDK_REVISION</span></code> - see <code class="docutils literal notranslate"><span class="pre">android-ndk/source.properties</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_TOOLCHAIN_ROOT</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_C_COMPILER</span></code></p></li>
-</ul>
-</div></blockquote>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="install.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="hello.html" class="btn btn-neutral float-right" title="hello" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="jetpack.html" class="btn btn-neutral float-left" title="jetpack" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../qemu/index.html" class="btn btn-neutral float-right" title="qemu" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

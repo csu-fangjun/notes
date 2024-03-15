@@ -8,3 +8,4 @@ Embedded systems
     alsa
     ./nano-pi.rst
     ./visionfive.rst
+    ./licheepi4a.rst

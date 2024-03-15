@@ -70,12 +70,16 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#install-ndk-on-linux-not-recommmended">Install NDK on Linux (not recommmended)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#install-sdk-on-linux">Install SDK on Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#emulator">emulator</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="cmake.html">cmake</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hello.html">hello</a></li>
 <li class="toctree-l2"><a class="reference internal" href="android_mk.html">Android.mk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="adb.html">adb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tts.html">tts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html">jetpack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html">Samples</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
@@ -231,6 +235,16 @@ sdkmanager<span class="w"> </span><span class="s2">&quot;ndk;21.0.6113669&quot;<
 <span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$ANDROID_NDK_ROOT</span>:<span class="nv">$PATH</span>
 </pre></div>
 </div>
+</section>
+<section id="emulator">
+<h2>emulator<a class="headerlink" href="#emulator" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>find<span class="w"> </span>/Users/fangjun/software/my-android<span class="w"> </span>-name<span class="w"> </span>emulator
+/Users/fangjun/software/my-android/emulator<span class="w"> </span>-list-avds
+/Users/fangjun/software/my-android/emulator<span class="w"> </span>-avd<span class="w"> </span>Pixel_4_API_31<span class="w"> </span>-dns-server<span class="w"> </span><span class="m">8</span>.8.8.8
+</pre></div>
+</div>
+<p>Refer to <a class="reference external" href="https://developer.android.com/studio/run/emulator-networking#proxy">https://developer.android.com/studio/run/emulator-networking#proxy</a>
+to setup the proxy.</p>
 </section>
 </section>
 

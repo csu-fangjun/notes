@@ -18,7 +18,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Whisper" href="../whisper/index.html" />
+    <link rel="next" title="hello" href="hello.html" />
     <link rel="prev" title="Cross compile" href="cross-compile.html" /> 
 </head>
 
@@ -88,8 +88,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#environment-variables">Environment variables</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#hello-world">Hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#verbose-build">verbose build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exported">exported</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="hello.html">hello</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
@@ -163,6 +165,13 @@ a file <code class="docutils literal notranslate"><span class="pre">go.mod</span
 </pre></div>
 </div>
 </section>
+<section id="exported">
+<h2>exported<a class="headerlink" href="#exported" title="Permalink to this headline">¶</a></h2>
+<p>For non-builtin functions and variables, if the name begin with an uppercase,
+then it is exported. Otherwise, it is not exported.</p>
+<p>Note that for builtin functions, the above rule does not apply. For instance,
+both <code class="docutils literal notranslate"><span class="pre">print</span></code> and <code class="docutils literal notranslate"><span class="pre">println</span></code> are exported.</p>
+</section>
 </section>
 
 
@@ -170,7 +179,7 @@ a file <code class="docutils literal notranslate"><span class="pre">go.mod</span
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="cross-compile.html" class="btn btn-neutral float-left" title="Cross compile" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../whisper/index.html" class="btn btn-neutral float-right" title="Whisper" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="hello.html" class="btn btn-neutral float-right" title="hello" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jetpack &mdash; notes  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Samples" href="samples.html" />
+    <link rel="prev" title="tts" href="tts.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Android</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="kotlin/index.html">kotlin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cmake.html">cmake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hello.html">hello</a></li>
+<li class="toctree-l2"><a class="reference internal" href="android_mk.html">Android.mk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adb.html">adb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tts.html">tts</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">jetpack</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#material-design">material design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#state">state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bom">bom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arrangement">Arrangement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alignment">Alignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#surface">Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#preview">Preview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#column">Column</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lazycolumn">LazyColumn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#row">Row</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lazyrow">LazyRow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spacer">Spacer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#text">Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#button">Button</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iconbutton">IconButton</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#checkbox">Checkbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modifier">Modifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#box">Box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scaffold">Scaffold</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#textfield">TextField</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#remember">remember</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-1">Example 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-2">Example 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-3">Example 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-4">Example 4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-5">Example 5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-6">Example 6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-7">Example 7</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html">Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Android</a> &raquo;</li>
+      <li>jetpack</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/android/jetpack.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jetpack">
+<h1>jetpack<a class="headerlink" href="#jetpack" title="Permalink to this headline">¶</a></h1>
+<p>See also <a class="reference external" href="https://github.com/android/codelab-android-compose">https://github.com/android/codelab-android-compose</a></p>
+<section id="material-design">
+<h2>material design<a class="headerlink" href="#material-design" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MaterialTheme</span><span class="p">(</span>
+  <span class="n">colorScheme</span> <span class="o">=</span> <span class="n">MyAppsColorScheme</span><span class="p">,</span>
+  <span class="n">typography</span> <span class="o">=</span> <span class="n">MyAppsTypography</span><span class="p">,</span>
+  <span class="n">shapes</span> <span class="o">=</span> <span class="n">MyAppsShapes</span><span class="p">,</span>
+<span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="state">
+<h2>state<a class="headerlink" href="#state" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// var selectedAnswer: MutableState&lt;Answer?&gt; = mutableStateOf(null)
+var selectedAnswer: MutableState&lt;Answer?&gt; = remember { mutableStateOf(null) }
+var selectedAnswer: MutableState&lt;Answer?&gt; = rememberSaveable { mutableStateOf(null) }
+
+// note that we use the member ``value`` here
+isSelected = (selectedAnswer.value == anwser)
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>var selectedAnswer: Answer? by rememberSaveable { mutableStateOf(null) }
+
+isSelected = (selectedAnswer == anwser)
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">val</span> <span class="n">mutableState</span> <span class="o">=</span> <span class="n">remember</span> <span class="p">{</span> <span class="n">mutableStateOf</span><span class="p">(</span><span class="n">default</span><span class="p">)</span> <span class="p">}</span>
+
+<span class="n">var</span> <span class="n">value</span> <span class="n">by</span> <span class="n">remember</span> <span class="p">{</span> <span class="n">mutableStateOf</span><span class="p">(</span><span class="n">default</span><span class="p">)</span> <span class="p">}</span>
+
+<span class="n">val</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">setValue</span><span class="p">)</span> <span class="o">=</span> <span class="n">remember</span> <span class="p">{</span> <span class="n">mutableStateOf</span><span class="p">(</span><span class="n">default</span><span class="p">)</span> <span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="bom">
+<h2>bom<a class="headerlink" href="#bom" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://developer.android.com/jetpack/compose/bom/bom-mapping">https://developer.android.com/jetpack/compose/bom/bom-mapping</a></p>
+</section>
+<section id="arrangement">
+<h2>Arrangement<a class="headerlink" href="#arrangement" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://vitor-ramos.medium.com/understand-arrangement-and-alignment-in-jetpack-compose-7633f2ed5b39">https://vitor-ramos.medium.com/understand-arrangement-and-alignment-in-jetpack-compose-7633f2ed5b39</a></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Arrangement.Start</span></code>, <code class="docutils literal notranslate"><span class="pre">Arrangement.Top</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Arrangement.End</span></code>, <code class="docutils literal notranslate"><span class="pre">Arrangement.Bottom</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Arrangement.Center</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Arrangement.SpaceBetween</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Arrangement.SpaceAround</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Arrangement.SpaceEvenly</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Arrangement.spacedBy(8.dp)</span></code></p></li>
+</ul>
+</section>
+<section id="alignment">
+<h2>Alignment<a class="headerlink" href="#alignment" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Alignment.Start</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Alignment.End</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Alignment.Center</span></code></p></li>
+</ul>
+</section>
+<section id="surface">
+<h2>Surface<a class="headerlink" href="#surface" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Surface</span><span class="p">(</span>
+  <span class="n">modifier</span> <span class="o">=</span>  <span class="n">Modifier</span><span class="o">.</span><span class="n">fillMaxSize</span><span class="p">(),</span>
+  <span class="n">color</span> <span class="o">=</span> <span class="n">MaterialTheme</span><span class="o">.</span><span class="n">colorscheme</span><span class="o">.</span><span class="n">background</span>
+<span class="p">)</span>
+
+<span class="n">Surface</span><span class="p">(</span>
+  <span class="n">color</span> <span class="o">=</span> <span class="n">MaterialTheme</span><span class="o">.</span><span class="n">colorscheme</span><span class="o">.</span><span class="n">primary</span>
+<span class="p">)</span>
+
+<span class="n">Surface</span><span class="p">(</span>
+  <span class="n">color</span> <span class="o">=</span> <span class="n">MaterialTheme</span><span class="o">.</span><span class="n">colorscheme</span><span class="o">.</span><span class="n">surface</span><span class="p">,</span>
+  <span class="n">shape</span> <span class="o">=</span> <span class="n">RoundedCornerShape</span><span class="p">(</span><span class="mf">8.</span><span class="n">dp</span><span class="p">),</span>
+  <span class="n">border</span> <span class="o">=</span> <span class="n">BorderStroke</span><span class="p">(</span><span class="mf">2.</span><span class="n">dp</span><span class="p">,</span> <span class="n">MaterialTheme</span><span class="o">.</span><span class="n">colorscheme</span><span class="o">.</span><span class="n">surfaceVariant</span><span class="p">),</span>
+  <span class="n">shadowElevation</span> <span class="o">=</span> <span class="mf">8.</span><span class="n">dp</span><span class="p">,</span>
+  <span class="n">tonalElevation</span> <span class="o">=</span> <span class="mf">8.</span><span class="n">dp</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="preview">
+<h2>Preview<a class="headerlink" href="#preview" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@Preview</span><span class="p">(</span><span class="n">showBackground</span><span class="o">=</span><span class="n">true</span><span class="p">,</span> <span class="n">showSystemUi</span><span class="o">=</span><span class="n">true</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;My name&quot;</span><span class="p">)</span>
+
+<span class="o">//</span> <span class="n">dark</span> <span class="n">mode</span>
+<span class="nd">@Preview</span><span class="p">(</span>
+    <span class="n">showBackground</span> <span class="o">=</span> <span class="n">true</span><span class="p">,</span>
+    <span class="n">widthDp</span> <span class="o">=</span> <span class="mi">320</span><span class="p">,</span>
+    <span class="n">uiMode</span> <span class="o">=</span> <span class="n">UI_MODE_NIGHT_YES</span><span class="p">,</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;GreetingPreviewDark&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="column">
+<h2>Column<a class="headerlink" href="#column" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Column</span><span class="p">(</span>
+  <span class="n">verticalArrangement</span> <span class="o">=</span> <span class="n">Arrangement</span><span class="o">.</span><span class="n">Center</span><span class="p">,</span>
+  <span class="n">horizontalAlignment</span> <span class="o">=</span> <span class="n">Alignment</span><span class="o">.</span><span class="n">CenterHorizontally</span><span class="p">,</span>
+  <span class="n">modifier</span> <span class="o">=</span> <span class="n">modifier</span><span class="o">.</span><span class="n">padding</span><span class="p">(</span><span class="mf">8.</span><span class="n">dp</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="lazycolumn">
+<h2>LazyColumn<a class="headerlink" href="#lazycolumn" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">androidx.compose.foundation.lazy.LazyColumn</span>
+<span class="kn">import</span> <span class="nn">androidx.compose.foundation.lazy.items</span>
+
+
+<span class="nd">@Composable</span>
+<span class="n">private</span> <span class="n">fun</span> <span class="n">Greetings</span><span class="p">(</span>
+    <span class="n">modifier</span><span class="p">:</span> <span class="n">Modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="p">,</span>
+    <span class="n">names</span><span class="p">:</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">List</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="p">{</span> <span class="s2">&quot;$it&quot;</span> <span class="p">}</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="n">LazyColumn</span><span class="p">(</span><span class="n">modifier</span> <span class="o">=</span> <span class="n">modifier</span><span class="o">.</span><span class="n">padding</span><span class="p">(</span><span class="n">vertical</span> <span class="o">=</span> <span class="mf">4.</span><span class="n">dp</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">items</span><span class="p">(</span><span class="n">items</span> <span class="o">=</span> <span class="n">names</span><span class="p">)</span> <span class="p">{</span> <span class="n">name</span> <span class="o">-&gt;</span>
+            <span class="n">Greeting</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="row">
+<h2>Row<a class="headerlink" href="#row" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference external" href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/package-summary#Row(androidx.compose.ui.Modifier,androidx.compose.foundation.layout.Arrangement.Horizontal,androidx.compose.ui.Alignment.Vertical,kotlin.Function1)">https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/package-summary#Row(androidx.compose.ui.Modifier,androidx.compose.foundation.layout.Arrangement.Horizontal,androidx.compose.ui.Alignment.Vertical,kotlin.Function1)</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Row</span><span class="p">(</span><span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="o">.</span><span class="n">padding</span><span class="p">(</span><span class="nb">all</span> <span class="o">=</span> <span class="mf">8.</span><span class="n">dp</span><span class="p">))</span>
+
+<span class="n">Row</span><span class="p">(</span>
+    <span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="o">.</span><span class="n">fillMaxSize</span><span class="p">(),</span>
+    <span class="n">horizontalArrangement</span> <span class="o">=</span> <span class="n">Arrangement</span><span class="o">.</span><span class="n">Center</span><span class="p">,</span>
+    <span class="n">verticalAlignment</span> <span class="o">=</span> <span class="n">Alignment</span><span class="o">.</span><span class="n">Top</span>
+<span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+
+<span class="n">Row</span><span class="p">(</span><span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="o">.</span><span class="n">padding</span><span class="p">(</span><span class="nb">all</span> <span class="o">=</span> <span class="mf">8.</span><span class="n">dp</span><span class="p">))</span> <span class="p">{</span>
+  <span class="n">Column</span><span class="p">(</span><span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="o">.</span><span class="n">weight</span><span class="p">(</span><span class="mi">1</span><span class="n">f</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">Text</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+    <span class="n">Text</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;World&quot;</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="n">ElevatedButton</span><span class="p">(</span>
+    <span class="n">onClick</span> <span class="o">=</span> <span class="p">{}</span>
+  <span class="p">)</span> <span class="p">{</span>
+    <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Show more&quot;</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">Row</span><span class="p">(</span>
+    <span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span>
+       <span class="o">.</span><span class="n">fillMaxSize</span><span class="p">()</span>
+       <span class="o">.</span><span class="n">border</span><span class="p">(</span><span class="n">width</span> <span class="o">=</span> <span class="mf">2.</span><span class="n">dp</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="o">.</span><span class="n">Green</span><span class="p">)</span>
+<span class="p">)</span> <span class="p">{</span>
+</pre></div>
+</div>
+</section>
+<section id="lazyrow">
+<h2>LazyRow<a class="headerlink" href="#lazyrow" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LazyRow</span><span class="p">(</span>
+  <span class="n">horizontalArrangement</span> <span class="o">=</span> <span class="n">Arrangement</span><span class="o">.</span><span class="n">spacedBy</span><span class="p">(</span><span class="mf">8.</span><span class="n">dp</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="nd">@Composable</span>
+<span class="n">fun</span> <span class="n">AlignYourBodyRow</span><span class="p">(</span>
+   <span class="n">modifier</span><span class="p">:</span> <span class="n">Modifier</span> <span class="o">=</span> <span class="n">Modifier</span>
+<span class="p">)</span> <span class="p">{</span>
+   <span class="n">LazyRow</span><span class="p">(</span>
+       <span class="n">horizontalArrangement</span> <span class="o">=</span> <span class="n">Arrangement</span><span class="o">.</span><span class="n">spacedBy</span><span class="p">(</span><span class="mf">8.</span><span class="n">dp</span><span class="p">),</span>
+       <span class="n">contentPadding</span> <span class="o">=</span> <span class="n">PaddingValues</span><span class="p">(</span><span class="n">horizontal</span> <span class="o">=</span> <span class="mf">16.</span><span class="n">dp</span><span class="p">),</span>
+       <span class="n">modifier</span> <span class="o">=</span> <span class="n">modifier</span>
+   <span class="p">)</span> <span class="p">{</span>
+       <span class="n">items</span><span class="p">(</span><span class="n">alignYourBodyData</span><span class="p">)</span> <span class="p">{</span> <span class="n">item</span> <span class="o">-&gt;</span>
+           <span class="n">AlignYourBodyElement</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">drawable</span><span class="p">,</span> <span class="n">item</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+       <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="spacer">
+<h2>Spacer<a class="headerlink" href="#spacer" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">within</span> <span class="n">a</span> <span class="n">row</span>
+<span class="n">Spacer</span><span class="p">(</span><span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="o">.</span><span class="n">width</span><span class="p">(</span><span class="mf">8.</span><span class="n">dp</span><span class="p">))</span>
+
+<span class="o">//</span> <span class="n">within</span> <span class="n">a</span> <span class="n">column</span>
+<span class="n">Spacer</span><span class="p">(</span><span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="o">.</span><span class="n">height</span><span class="p">(</span><span class="mf">4.</span><span class="n">dp</span><span class="p">))</span>
+
+<span class="n">Spacer</span><span class="p">(</span><span class="n">Modifier</span><span class="o">.</span><span class="n">height</span><span class="p">(</span><span class="mf">16.</span><span class="n">dp</span><span class="p">))</span>
+
+<span class="n">Spacker</span><span class="p">(</span>
+  <span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span>
+             <span class="o">.</span><span class="n">matchParentSize</span><span class="p">()</span>
+             <span class="o">.</span><span class="n">background</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="o">.</span><span class="n">Gray</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">.7</span><span class="n">f</span><span class="p">))</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="text">
+<h2>Text<a class="headerlink" href="#text" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Text</span><span class="p">(</span>
+  <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Happy Birthday Sam!&quot;</span><span class="p">,</span>
+  <span class="n">fontSize</span> <span class="o">=</span> <span class="mf">100.</span><span class="n">sp</span><span class="p">,</span>
+  <span class="n">lineHeight</span> <span class="o">=</span> <span class="mf">116.</span><span class="n">sp</span>
+  <span class="n">textAlign</span> <span class="o">=</span> <span class="n">TextAlign</span><span class="o">.</span><span class="n">Center</span>
+<span class="p">)</span>
+
+<span class="n">Text</span><span class="p">(</span>
+  <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;From Emma&quot;</span><span class="p">,</span>
+  <span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="o">.</span><span class="n">padding</span><span class="p">(</span><span class="mf">16.</span><span class="n">dp</span><span class="p">)</span><span class="o">.</span><span class="n">align</span><span class="p">(</span><span class="n">alignment</span> <span class="o">=</span> <span class="n">Alignment</span><span class="o">.</span><span class="n">End</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">Text</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="n">name</span><span class="p">,</span> <span class="n">style</span> <span class="o">=</span> <span class="n">MaterialTheme</span><span class="o">.</span><span class="n">typography</span><span class="o">.</span><span class="n">headlineMedium</span><span class="p">)</span>
+
+<span class="n">Text</span><span class="p">(</span>
+   <span class="n">text</span> <span class="o">=</span> <span class="n">name</span><span class="p">,</span>
+   <span class="n">style</span> <span class="o">=</span> <span class="n">MaterialTheme</span><span class="o">.</span><span class="n">typography</span><span class="o">.</span><span class="n">headlineMedium</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span>
+        <span class="n">fontWeight</span> <span class="o">=</span> <span class="n">FontWeight</span><span class="o">.</span><span class="n">ExtraBold</span>
+   <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">Text</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="n">stringResource</span><span class="p">(</span><span class="n">R</span><span class="o">.</span><span class="n">string</span><span class="o">.</span><span class="n">ab1_inversions</span><span class="p">))</span>
+
+<span class="n">Text</span><span class="p">(</span>
+  <span class="s2">&quot;Hello compose&quot;</span><span class="p">,</span>
+  <span class="n">Modifier</span><span class="o">.</span><span class="n">background</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">Magenta</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mf">200.</span><span class="n">dp</span><span class="p">,</span> <span class="mf">30.</span><span class="n">dp</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">padding</span><span class="p">(</span><span class="mf">5.</span><span class="n">dp</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">alpha</span><span class="p">(</span><span class="mf">0.5</span><span class="n">f</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">align</span><span class="p">(</span><span class="n">Alignment</span><span class="o">.</span><span class="n">BottomEnd</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">clickable</span> <span class="p">{}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="button">
+<h2>Button<a class="headerlink" href="#button" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Button</span><span class="p">(</span>
+  <span class="n">onclick</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="p">)</span> <span class="p">{</span>
+  <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Show less&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="iconbutton">
+<h2>IconButton<a class="headerlink" href="#iconbutton" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IconButton</span><span class="p">(</span><span class="n">onClick</span> <span class="o">=</span> <span class="p">{</span><span class="o">...</span><span class="p">})</span> <span class="p">{</span>
+  <span class="n">Icon</span><span class="p">(</span><span class="n">Icons</span><span class="o">.</span><span class="n">Filled</span><span class="o">.</span><span class="n">Close</span><span class="p">,</span> <span class="n">contentDescription</span> <span class="o">=</span> <span class="s2">&quot;Close&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="checkbox">
+<h2>Checkbox<a class="headerlink" href="#checkbox" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Checkbox</span><span class="p">(</span>
+  <span class="n">checked</span> <span class="o">=</span> <span class="n">true</span><span class="p">,</span>
+  <span class="n">onCheckedChange</span> <span class="o">=</span> <span class="p">{</span><span class="n">it</span><span class="o">-&gt;</span><span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="modifier">
+<h2>Modifier<a class="headerlink" href="#modifier" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference external" href="https://developer.android.com/jetpack/compose/modifiers">https://developer.android.com/jetpack/compose/modifiers</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="o">.</span><span class="n">fillMaxSize</span><span class="p">()</span>
+
+<span class="n">modifier</span> <span class="o">=</span> <span class="n">modifier</span><span class="o">.</span><span class="n">padding</span><span class="p">(</span><span class="mf">8.</span><span class="n">dp</span><span class="p">)</span>
+
+<span class="n">modifier</span> <span class="o">=</span> <span class="n">modifier</span><span class="o">.</span><span class="n">padding</span><span class="p">(</span><span class="n">vertical</span> <span class="o">=</span> <span class="mf">4.</span><span class="n">dp</span><span class="p">,</span> <span class="n">horizontal</span> <span class="o">=</span> <span class="mf">8.</span><span class="n">dp</span><span class="p">)</span>
+
+<span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="o">.</span><span class="n">padding</span><span class="p">(</span><span class="n">start</span> <span class="o">=</span> <span class="mf">4.</span><span class="n">dp</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="mf">8.</span><span class="n">dp</span><span class="p">)</span>
+
+<span class="n">modifier</span> <span class="o">=</span> <span class="n">modifier</span><span class="o">.</span><span class="n">padding</span><span class="p">(</span><span class="n">bottom</span> <span class="o">=</span> <span class="mf">4.</span><span class="n">dp</span><span class="p">)</span>
+
+<span class="n">modifier</span> <span class="o">=</span> <span class="n">modifier</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mf">40.</span><span class="n">dp</span><span class="p">)</span>
+
+<span class="n">modifier</span> <span class="o">=</span> <span class="n">modifier</span><span class="o">.</span><span class="n">weight</span><span class="p">(</span><span class="mi">1</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">modifier</span> <span class="o">=</span> <span class="n">modifier</span><span class="o">.</span><span class="n">heightIn</span><span class="p">(</span><span class="nb">min</span> <span class="o">=</span> <span class="mf">56.</span><span class="n">dp</span><span class="p">)</span>
+
+<span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="o">.</span><span class="n">align</span><span class="p">(</span><span class="n">Arrangement</span><span class="o">.</span><span class="n">CenterVertically</span><span class="p">)</span>
+
+<span class="n">modifier</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">CircleShape</span><span class="p">)</span>
+
+<span class="n">modifier</span><span class="o">.</span><span class="n">clickable</span> <span class="p">{</span>
+ <span class="o">//</span> <span class="n">some</span> <span class="n">code</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="n">For</span> <span class="n">a</span> <span class="n">function</span><span class="p">,</span> <span class="n">it</span><span class="s1">&#39;d better to set the last argument as modifier</span>
+<span class="nd">@Composable</span>
+<span class="n">fun</span> <span class="n">MyApp</span><span class="p">(</span><span class="n">modifier</span><span class="p">:</span> <span class="n">Modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</section>
+<section id="box">
+<h2>Box<a class="headerlink" href="#box" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Box</span><span class="p">(</span>
+  <span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="o">.</span><span class="n">fillMaxSize</span><span class="p">(),</span>
+  <span class="n">contentAlignment</span> <span class="o">=</span> <span class="n">Alignment</span><span class="o">.</span><span class="n">Center</span><span class="p">,</span>
+<span class="p">)</span>
+
+ <span class="n">Box</span><span class="p">(</span>
+     <span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span>
+         <span class="o">.</span><span class="n">padding</span><span class="p">(</span><span class="nb">all</span> <span class="o">=</span> <span class="mf">2.</span><span class="n">dp</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mf">56.</span><span class="n">dp</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">background</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="o">.</span><span class="n">Magenta</span><span class="p">)</span>
+ <span class="p">)</span> <span class="p">{</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="scaffold">
+<h2>Scaffold<a class="headerlink" href="#scaffold" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Scaffold</span><span class="p">(</span>
+  <span class="n">topBar</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">InfoHeader</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+  <span class="p">},</span>
+  <span class="n">bottomBar</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">Button</span><span class="p">(</span>
+      <span class="n">onClick</span> <span class="o">=</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
+    <span class="p">)</span> <span class="p">{</span>
+      <span class="n">Text</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">)</span> <span class="p">{</span>
+  <span class="o">//</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="textfield">
+<h2>TextField<a class="headerlink" href="#textfield" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference external" href="https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#TextField(androidx.compose.ui.text.input.TextFieldValue,kotlin.Function1,androidx.compose.ui.Modifier,kotlin.Boolean,kotlin.Boolean,androidx.compose.ui.text.TextStyle,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Boolean,androidx.compose.ui.text.input.VisualTransformation,androidx.compose.foundation.text.KeyboardOptions,androidx.compose.foundation.text.KeyboardActions,kotlin.Boolean,kotlin.Int,kotlin.Int,androidx.compose.foundation.interaction.MutableInteractionSource,androidx.compose.ui.graphics.Shape,androidx.compose.material3.TextFieldColors)">https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#TextField(androidx.compose.ui.text.input.TextFieldValue,kotlin.Function1,androidx.compose.ui.Modifier,kotlin.Boolean,kotlin.Boolean,androidx.compose.ui.text.TextStyle,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Boolean,androidx.compose.ui.text.input.VisualTransformation,androidx.compose.foundation.text.KeyboardOptions,androidx.compose.foundation.text.KeyboardActions,kotlin.Boolean,kotlin.Int,kotlin.Int,androidx.compose.foundation.interaction.MutableInteractionSource,androidx.compose.ui.graphics.Shape,androidx.compose.material3.TextFieldColors)</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">text</span> <span class="n">by</span> <span class="n">rememberSaveable</span><span class="p">(</span><span class="n">stateSaver</span> <span class="o">=</span> <span class="n">TextFieldValue</span><span class="o">.</span><span class="n">Saver</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">mutableStateOf</span><span class="p">(</span><span class="n">TextFieldValue</span><span class="p">(</span><span class="s2">&quot;example&quot;</span><span class="p">,</span> <span class="n">TextRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">)))</span>
+<span class="p">}</span>
+
+<span class="n">TextField</span><span class="p">(</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">text</span><span class="p">,</span>
+    <span class="n">onValueChange</span> <span class="o">=</span> <span class="p">{</span> <span class="n">text</span> <span class="o">=</span> <span class="n">it</span> <span class="p">},</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="p">{</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Label&quot;</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="n">TextField</span><span class="p">(</span>
+   <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="n">onValueChange</span> <span class="o">=</span> <span class="p">{},</span>
+   <span class="n">modifier</span> <span class="o">=</span> <span class="n">modifier</span>
+       <span class="o">.</span><span class="n">fillMaxWidth</span><span class="p">()</span>
+       <span class="o">.</span><span class="n">heightIn</span><span class="p">(</span><span class="nb">min</span> <span class="o">=</span> <span class="mf">56.</span><span class="n">dp</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="remember">
+<h2>remember<a class="headerlink" href="#remember" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// Note we use val here with &quot;= remember&quot;
+val expanded = remember { mutableStateOf(false) }
+
+expanded.value = !expanded.value
+
+val extraPadding = if(expanded.value)  48.dp else 0.dp
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// Note we use var here with &quot;by remember&quot;
+var expanded by remember { mutableStateOf(false) }
+
+expanded = !expanded
+
+val extraPadding = if(expanded) 48.dp else 0.dp
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">expanded</span> <span class="n">by</span> <span class="n">rememberSaveable</span> <span class="p">{</span> <span class="n">mutableStateOf</span><span class="p">(</span><span class="n">false</span><span class="p">)</span> <span class="p">}</span>
+<span class="n">val</span> <span class="n">extraPadding</span> <span class="n">by</span> <span class="n">animateDpAsState</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">expanded</span><span class="p">)</span> <span class="mf">48.</span><span class="n">dp</span> <span class="k">else</span> <span class="mf">0.</span><span class="n">dp</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="example-1">
+<h2>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference external" href="https://developer.android.com/codelabs/jetpack-compose-basics?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fjetpack-compose-for-android-developers-1%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fjetpack-compose-basics#4">https://developer.android.com/codelabs/jetpack-compose-basics?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fjetpack-compose-for-android-developers-1%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fjetpack-compose-basics#4</a></p>
+<p>Note how <code class="docutils literal notranslate"><span class="pre">Surface</span></code> is used.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            BasicsCodelabTheme {
+                MyApp(modifier = Modifier.fillMaxSize())
+            }
+        }
+    }
+}
+
+@Composable
+fun MyApp(modifier: Modifier = Modifier) {
+    Surface(
+        modifier = modifier,
+        color = MaterialTheme.colorScheme.background
+    ) {
+        Greeting(&quot;Android&quot;)
+    }
+}
+
+@Composable
+fun Greeting(name: String, modifier: Modifier = Modifier) {
+    Surface(color = MaterialTheme.colorScheme.primary) {
+        Text(
+            text = &quot;Hello $name!&quot;,
+            modifier = modifier.padding(24.dp)
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    BasicsCodelabTheme {
+        MyApp()
+    }
+}
+</pre></div>
+</div>
+</section>
+<section id="example-2">
+<h2>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference external" href="https://developer.android.com/codelabs/jetpack-compose-basics?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fjetpack-compose-for-android-developers-1%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fjetpack-compose-basics#7">https://developer.android.com/codelabs/jetpack-compose-basics?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fjetpack-compose-for-android-developers-1%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fjetpack-compose-basics#7</a></p>
+<p>Note that we pass a lambda function <code class="docutils literal notranslate"><span class="pre">onContinueClicked</span></code> to change the state.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@Composable</span>
+<span class="n">fun</span> <span class="n">MyApp</span><span class="p">(</span><span class="n">modifier</span><span class="p">:</span> <span class="n">Modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="n">var</span> <span class="n">shouldShowOnboarding</span> <span class="n">by</span> <span class="n">remember</span> <span class="p">{</span> <span class="n">mutableStateOf</span><span class="p">(</span><span class="n">true</span><span class="p">)</span> <span class="p">}</span>
+
+    <span class="n">Surface</span><span class="p">(</span><span class="n">modifier</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">shouldShowOnboarding</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">OnboardingScreen</span><span class="p">(</span><span class="n">onContinueClicked</span> <span class="o">=</span> <span class="p">{</span> <span class="n">shouldShowOnboarding</span> <span class="o">=</span> <span class="n">false</span> <span class="p">})</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">Greetings</span><span class="p">()</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nd">@Composable</span>
+<span class="n">fun</span> <span class="n">OnboardingScreen</span><span class="p">(</span>
+    <span class="n">onContinueClicked</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Unit</span><span class="p">,</span>
+    <span class="n">modifier</span><span class="p">:</span> <span class="n">Modifier</span> <span class="o">=</span> <span class="n">Modifier</span>
+<span class="p">)</span> <span class="p">{</span>
+
+
+    <span class="n">Column</span><span class="p">(</span>
+        <span class="n">modifier</span> <span class="o">=</span> <span class="n">modifier</span><span class="o">.</span><span class="n">fillMaxSize</span><span class="p">(),</span>
+        <span class="n">verticalArrangement</span> <span class="o">=</span> <span class="n">Arrangement</span><span class="o">.</span><span class="n">Center</span><span class="p">,</span>
+        <span class="n">horizontalAlignment</span> <span class="o">=</span> <span class="n">Alignment</span><span class="o">.</span><span class="n">CenterHorizontally</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Welcome to the Basics Codelab!&quot;</span><span class="p">)</span>
+        <span class="n">Button</span><span class="p">(</span>
+            <span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span>
+                <span class="o">.</span><span class="n">padding</span><span class="p">(</span><span class="n">vertical</span> <span class="o">=</span> <span class="mf">24.</span><span class="n">dp</span><span class="p">),</span>
+            <span class="n">onClick</span> <span class="o">=</span> <span class="n">onContinueClicked</span>
+        <span class="p">)</span> <span class="p">{</span>
+            <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Continue&quot;</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="nd">@Preview</span><span class="p">(</span><span class="n">showBackground</span> <span class="o">=</span> <span class="n">true</span><span class="p">,</span> <span class="n">widthDp</span> <span class="o">=</span> <span class="mi">320</span><span class="p">,</span> <span class="n">heightDp</span> <span class="o">=</span> <span class="mi">320</span><span class="p">)</span>
+<span class="nd">@Composable</span>
+<span class="n">fun</span> <span class="n">OnboardingPreview</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">BasicsCodelabTheme</span> <span class="p">{</span>
+        <span class="n">OnboardingScreen</span><span class="p">(</span><span class="n">onContinueClicked</span> <span class="o">=</span> <span class="p">{})</span> <span class="o">//</span> <span class="n">Do</span> <span class="n">nothing</span> <span class="n">on</span> <span class="n">click</span><span class="o">.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="example-3">
+<h2>Example 3<a class="headerlink" href="#example-3" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference external" href="https://developer.android.com/codelabs/jetpack-compose-basics?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fjetpack-compose-for-android-developers-1%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fjetpack-compose-basics#11">https://developer.android.com/codelabs/jetpack-compose-basics?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fjetpack-compose-for-android-developers-1%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fjetpack-compose-basics#11</a></p>
+<p>Change the colors.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Color</span><span class="o">.</span><span class="n">kt</span>
+
+<span class="n">val</span> <span class="n">Navy</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="mh">0xFF073042</span><span class="p">)</span>
+<span class="n">val</span> <span class="n">Blue</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="mh">0xFF4285F4</span><span class="p">)</span>
+<span class="n">val</span> <span class="n">LightBlue</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="mh">0xFFD7EFFE</span><span class="p">)</span>
+<span class="n">val</span> <span class="n">Chartreuse</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="mh">0xFFEFF7CF</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Theme</span><span class="o">.</span><span class="n">kt</span>
+
+<span class="n">private</span> <span class="n">val</span> <span class="n">LightColorScheme</span> <span class="o">=</span> <span class="n">lightColorScheme</span><span class="p">(</span>
+    <span class="n">surface</span> <span class="o">=</span> <span class="n">Blue</span><span class="p">,</span>
+    <span class="n">onSurface</span> <span class="o">=</span> <span class="n">Color</span><span class="o">.</span><span class="n">White</span><span class="p">,</span>
+    <span class="n">primary</span> <span class="o">=</span> <span class="n">LightBlue</span><span class="p">,</span>
+    <span class="n">onPrimary</span> <span class="o">=</span> <span class="n">Navy</span>
+<span class="p">)</span>
+
+<span class="n">private</span> <span class="n">val</span> <span class="n">DarkColorScheme</span> <span class="o">=</span> <span class="n">darkColorScheme</span><span class="p">(</span>
+    <span class="n">surface</span> <span class="o">=</span> <span class="n">Blue</span><span class="p">,</span>
+    <span class="n">onSurface</span> <span class="o">=</span> <span class="n">Navy</span><span class="p">,</span>
+    <span class="n">primary</span> <span class="o">=</span> <span class="n">Navy</span><span class="p">,</span>
+    <span class="n">onPrimary</span> <span class="o">=</span> <span class="n">Chartreuse</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="example-4">
+<h2>Example 4<a class="headerlink" href="#example-4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@Composable</span>
+<span class="n">fun</span> <span class="n">FavoriteCollectionCard</span><span class="p">(</span>
+   <span class="nd">@DrawableRes</span> <span class="n">drawable</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span>
+   <span class="nd">@StringRes</span> <span class="n">text</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span>
+   <span class="n">modifier</span><span class="p">:</span> <span class="n">Modifier</span> <span class="o">=</span> <span class="n">Modifier</span>
+<span class="p">)</span> <span class="p">{</span>
+   <span class="n">Surface</span><span class="p">(</span>
+       <span class="n">shape</span> <span class="o">=</span> <span class="n">MaterialTheme</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">medium</span><span class="p">,</span>
+       <span class="n">color</span> <span class="o">=</span> <span class="n">MaterialTheme</span><span class="o">.</span><span class="n">colorScheme</span><span class="o">.</span><span class="n">surfaceVariant</span><span class="p">,</span>
+       <span class="n">modifier</span> <span class="o">=</span> <span class="n">modifier</span>
+   <span class="p">)</span> <span class="p">{</span>
+       <span class="n">Row</span><span class="p">(</span>
+           <span class="n">verticalAlignment</span> <span class="o">=</span> <span class="n">Alignment</span><span class="o">.</span><span class="n">CenterVertically</span><span class="p">,</span>
+           <span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="o">.</span><span class="n">width</span><span class="p">(</span><span class="mf">255.</span><span class="n">dp</span><span class="p">)</span>
+       <span class="p">)</span> <span class="p">{</span>
+           <span class="n">Image</span><span class="p">(</span>
+               <span class="n">painter</span> <span class="o">=</span> <span class="n">painterResource</span><span class="p">(</span><span class="n">drawable</span><span class="p">),</span>
+               <span class="n">contentDescription</span> <span class="o">=</span> <span class="n">null</span><span class="p">,</span>
+               <span class="n">contentScale</span> <span class="o">=</span> <span class="n">ContentScale</span><span class="o">.</span><span class="n">Crop</span><span class="p">,</span>
+               <span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mf">80.</span><span class="n">dp</span><span class="p">)</span>
+           <span class="p">)</span>
+           <span class="n">Text</span><span class="p">(</span>
+               <span class="n">text</span> <span class="o">=</span> <span class="n">stringResource</span><span class="p">(</span><span class="n">text</span><span class="p">),</span>
+               <span class="n">style</span> <span class="o">=</span> <span class="n">MaterialTheme</span><span class="o">.</span><span class="n">typography</span><span class="o">.</span><span class="n">titleMedium</span><span class="p">,</span>
+               <span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="o">.</span><span class="n">padding</span><span class="p">(</span><span class="n">horizontal</span> <span class="o">=</span> <span class="mf">16.</span><span class="n">dp</span><span class="p">)</span>
+           <span class="p">)</span>
+       <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nd">@Preview</span><span class="p">(</span><span class="n">showBackground</span> <span class="o">=</span> <span class="n">true</span><span class="p">,</span> <span class="n">backgroundColor</span> <span class="o">=</span> <span class="mh">0xFFF5F0EE</span><span class="p">)</span>
+<span class="nd">@Composable</span>
+<span class="n">fun</span> <span class="n">FavoriteCollectionCardPreview</span><span class="p">()</span> <span class="p">{</span>
+   <span class="n">MySootheTheme</span> <span class="p">{</span>
+       <span class="n">FavoriteCollectionCard</span><span class="p">(</span>
+           <span class="n">text</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">string</span><span class="o">.</span><span class="n">fc2_nature_meditations</span><span class="p">,</span>
+           <span class="n">drawable</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">drawable</span><span class="o">.</span><span class="n">fc2_nature_meditations</span><span class="p">,</span>
+           <span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="o">.</span><span class="n">padding</span><span class="p">(</span><span class="mf">8.</span><span class="n">dp</span><span class="p">)</span>
+       <span class="p">)</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="example-5">
+<h2>Example 5<a class="headerlink" href="#example-5" title="Permalink to this headline">¶</a></h2>
+<p>scroll</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@Composable</span>
+<span class="n">fun</span> <span class="n">HomeScreen</span><span class="p">(</span><span class="n">modifier</span><span class="p">:</span> <span class="n">Modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">Column</span><span class="p">(</span>
+       <span class="n">modifier</span>
+           <span class="o">.</span><span class="n">verticalScroll</span><span class="p">(</span><span class="n">rememberScrollState</span><span class="p">())</span>
+   <span class="p">)</span> <span class="p">{</span>
+       <span class="n">Spacer</span><span class="p">(</span><span class="n">Modifier</span><span class="o">.</span><span class="n">height</span><span class="p">(</span><span class="mf">16.</span><span class="n">dp</span><span class="p">))</span>
+       <span class="n">SearchBar</span><span class="p">(</span><span class="n">Modifier</span><span class="o">.</span><span class="n">padding</span><span class="p">(</span><span class="n">horizontal</span> <span class="o">=</span> <span class="mf">16.</span><span class="n">dp</span><span class="p">))</span>
+       <span class="n">HomeSection</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">string</span><span class="o">.</span><span class="n">align_your_body</span><span class="p">)</span> <span class="p">{</span>
+           <span class="n">AlignYourBodyRow</span><span class="p">()</span>
+       <span class="p">}</span>
+       <span class="n">HomeSection</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">string</span><span class="o">.</span><span class="n">favorite_collections</span><span class="p">)</span> <span class="p">{</span>
+           <span class="n">FavoriteCollectionsGrid</span><span class="p">()</span>
+       <span class="p">}</span>
+       <span class="n">Spacer</span><span class="p">(</span><span class="n">Modifier</span><span class="o">.</span><span class="n">height</span><span class="p">(</span><span class="mf">16.</span><span class="n">dp</span><span class="p">))</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="example-6">
+<h2>Example 6<a class="headerlink" href="#example-6" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@Composable</span>
+<span class="n">fun</span> <span class="n">SingleChoiceQuestion</span><span class="p">(</span><span class="n">answers</span><span class="p">:</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Answer</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Column</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">answers</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">())</span> <span class="p">{</span>
+      <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;...&quot;</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="n">answers</span><span class="o">.</span><span class="n">forEach</span> <span class="p">{</span><span class="n">answer</span> <span class="o">-&gt;</span>
+        <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;...&quot;</span><span class="p">)</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="example-7">
+<h2>Example 7<a class="headerlink" href="#example-7" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@Composable</span>
+<span class="n">fun</span> <span class="n">MyAppTopAppBar</span><span class="p">(</span><span class="n">topAppBarText</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="n">onBackPressed</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Unit</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">TopAppBar</span><span class="p">(</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">Text</span><span class="p">(</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">topAppBarText</span><span class="p">,</span>
+                <span class="n">textAlign</span> <span class="o">=</span> <span class="n">TextAlign</span><span class="o">.</span><span class="n">Center</span><span class="p">,</span>
+                <span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span>
+                    <span class="o">.</span><span class="n">fillMaxSize</span><span class="p">()</span>
+                    <span class="o">.</span><span class="n">wrapContentSize</span><span class="p">(</span><span class="n">Alignment</span><span class="o">.</span><span class="n">Center</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">},</span>
+        <span class="n">navigationIcon</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">IconButton</span><span class="p">(</span><span class="n">onClick</span> <span class="o">=</span> <span class="n">onBackPressed</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">Icon</span><span class="p">(</span>
+                    <span class="n">Icons</span><span class="o">.</span><span class="n">Filled</span><span class="o">.</span><span class="n">ArrowBack</span><span class="p">,</span>
+                    <span class="n">contentDescription</span> <span class="o">=</span> <span class="n">localizedString</span>
+                <span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="o">//</span> <span class="o">...</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tts.html" class="btn btn-neutral float-left" title="tts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="samples.html" class="btn btn-neutral float-right" title="Samples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

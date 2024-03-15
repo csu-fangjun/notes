@@ -75,6 +75,9 @@
 <li class="toctree-l3"><a class="reference internal" href="references.html">References</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Control flows</a></li>
 <li class="toctree-l3"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="package.html">Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="for.html">for</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enum.html">enum</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../basics.html">Basics</a></li>
@@ -83,6 +86,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../hello.html">hello</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../android_mk.html">Android.mk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../adb.html">adb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tts.html">tts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jetpack.html">jetpack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../samples.html">Samples</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../qemu/index.html">qemu</a></li>
@@ -161,6 +167,11 @@
 <span class="w">  </span><span class="c1">// if can be used in an expression</span>
 <span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="n">a</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="n">b</span><span class="p">}</span>
 <span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="n">min</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">a</span><span class="p">)</span>
+
+<span class="c1">//</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">check</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 
 <span class="kd">fun</span><span class="w"> </span><span class="nf">testWhen</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -211,6 +222,14 @@
 <span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="m">2</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="n">downTo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
 <span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="k">!in</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="n">downTo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
 <span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="m">0</span><span class="w"> </span><span class="k">!in</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="n">downTo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+
+<span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;a&#39;</span>
+<span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="w"> </span><span class="p">..</span><span class="w"> </span><span class="sc">&#39;z&#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="w"> </span><span class="p">..</span><span class="w"> </span><span class="sc">&#39;Z&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="k">!in</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="w"> </span><span class="p">..</span><span class="w"> </span><span class="sc">&#39;9&#39;</span><span class="p">)</span>
+
+<span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span>
+<span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="n">d</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="w"> </span><span class="p">..</span><span class="w"> </span><span class="sc">&#39;9&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="n">d</span><span class="w"> </span><span class="k">!in</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="p">..</span><span class="sc">&#39;z&#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">!in</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">..</span><span class="sc">&#39;Z&#39;</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="kd">fun</span><span class="w"> </span><span class="nf">testFor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -244,16 +263,17 @@
 <span class="w">      </span><span class="m">4</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">check</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
-
-<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">((</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">withIndexes</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">when</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">check</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">4</span><span class="p">)</span>
-<span class="w">      </span><span class="m">1</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">check</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
-<span class="w">      </span><span class="m">2</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">check</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
-<span class="w">      </span><span class="m">3</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">check</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
-<span class="w">      </span><span class="m">4</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">check</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">}</span>
+<span class="cm">/*</span>
+<span class="cm">  for ((i, value) in a.withIndexes()) {</span>
+<span class="cm">    when (i) {</span>
+<span class="cm">      0 -&gt; check(value == 4)</span>
+<span class="cm">      1 -&gt; check(value == 3)</span>
+<span class="cm">      2 -&gt; check(value == 2)</span>
+<span class="cm">      3 -&gt; check(value == 1)</span>
+<span class="cm">      4 -&gt; check(value == 0)</span>
+<span class="cm">    }</span>
+<span class="cm">  }</span>
+<span class="cm">*/</span>
 <span class="p">}</span>
 
 <span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>

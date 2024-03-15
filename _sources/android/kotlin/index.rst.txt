@@ -12,3 +12,6 @@ kotlin
     references
     control-flow
     functions
+    package
+    for
+    enum

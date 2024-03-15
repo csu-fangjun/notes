@@ -80,6 +80,9 @@
 <li class="toctree-l3"><a class="reference internal" href="references.html">References</a></li>
 <li class="toctree-l3"><a class="reference internal" href="control-flow.html">Control flows</a></li>
 <li class="toctree-l3"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="package.html">Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="for.html">for</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enum.html">enum</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../basics.html">Basics</a></li>
@@ -88,6 +91,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../hello.html">hello</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../android_mk.html">Android.mk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../adb.html">adb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tts.html">tts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jetpack.html">jetpack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../samples.html">Samples</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../qemu/index.html">qemu</a></li>
@@ -146,6 +152,8 @@
              
   <section id="install">
 <h1>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h1>
+<p>Kotlin to java online converter:
+<a class="reference external" href="https://www.codeconvert.ai/kotlin-to-java-converter">https://www.codeconvert.ai/kotlin-to-java-converter</a>.</p>
 <p>See <a class="reference external" href="https://kotlinlang.org/docs/command-line.html#run-scripts">https://kotlinlang.org/docs/command-line.html#run-scripts</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://github.com/JetBrains/kotlin/releases/download/v1.7.22/kotlin-compiler-1.7.22.zip
 <span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>/software
@@ -172,7 +180,7 @@ mv<span class="w"> </span>kotlinc<span class="w"> </span><span class="m">1</span
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kotlinc<span class="w"> </span>hello.kt
 </pre></div>
 </div>
-<p>It will generate a binary file <code class="docutils literal notranslate"><span class="pre">HelloKt.class</span></code>:</p>
+<p>It will generate a binary file <code class="docutils literal notranslate"><span class="pre">HelloKt.class</span></code> and a folder <code class="docutils literal notranslate"><span class="pre">META-INF</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>javap<span class="w"> </span>HelloKt.class
 </pre></div>
 </div>
@@ -184,6 +192,11 @@ mv<span class="w"> </span>kotlinc<span class="w"> </span><span class="m">1</span
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>We can use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kotlin</span> <span class="n">HelloKt</span><span class="o">.</span><span class="k">class</span>
+</pre></div>
+</div>
+<p>to execute it.</p>
 </section>
 <section id="usage-2">
 <h3>Usage 2<a class="headerlink" href="#usage-2" title="Permalink to this headline">¶</a></h3>

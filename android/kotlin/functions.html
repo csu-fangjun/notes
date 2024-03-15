@@ -18,7 +18,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Basics" href="../basics.html" />
+    <link rel="next" title="Package" href="package.html" />
     <link rel="prev" title="Control flows" href="control-flow.html" /> 
 </head>
 
@@ -75,6 +75,9 @@
 <li class="toctree-l3"><a class="reference internal" href="references.html">References</a></li>
 <li class="toctree-l3"><a class="reference internal" href="control-flow.html">Control flows</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="package.html">Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="for.html">for</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enum.html">enum</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../basics.html">Basics</a></li>
@@ -83,6 +86,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../hello.html">hello</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../android_mk.html">Android.mk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../adb.html">adb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tts.html">tts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jetpack.html">jetpack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../samples.html">Samples</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../qemu/index.html">qemu</a></li>
@@ -142,12 +148,35 @@
   <section id="functions">
 <h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
 <p>See <a class="reference external" href="https://kotlinlang.org/docs/functions.html">https://kotlinlang.org/docs/functions.html</a></p>
+<p>typealias:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">kotlinlang</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="nb">type</span><span class="o">-</span><span class="n">aliases</span><span class="o">.</span><span class="n">html</span>
+<span class="n">typealias</span> <span class="n">ClickHandler</span> <span class="o">=</span> <span class="p">(</span><span class="n">Button</span><span class="p">,</span> <span class="n">ClickEvent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Unit</span>
+</pre></div>
+</div>
+</div></blockquote>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kotlinc<span class="w"> </span>-include-runtime<span class="w"> </span>-d<span class="w"> </span>hello.jar<span class="w"> </span>hello.kt
 </pre></div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">./code/functions/hello.kt</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
-<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="kd">fun</span><span class="w"> </span><span class="nf">double</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">Double</span><span class="p">):</span><span class="w"> </span><span class="kt">Double</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="kd">fun</span><span class="w"> </span><span class="nf">sum1</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">):</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span>
+<span class="p">}</span>
+
+<span class="c1">// ignore the {} and return</span>
+<span class="kd">fun</span><span class="w"> </span><span class="nf">sum2</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">):</span><span class="w"> </span><span class="kt">Int</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span>
+
+<span class="c1">// ignore the return type hint</span>
+<span class="kd">fun</span><span class="w"> </span><span class="nf">sum3</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span>
+
+<span class="kd">fun</span><span class="w"> </span><span class="nf">testSum</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="n">sum1</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="n">sum2</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="n">sum3</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">fun</span><span class="w"> </span><span class="nf">double</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">Double</span><span class="p">):</span><span class="w"> </span><span class="kt">Double</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2</span>
 <span class="p">}</span>
 
@@ -201,11 +230,18 @@
 <span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1.5f</span><span class="o">+</span><span class="m">10</span><span class="p">)</span>
 <span class="p">}</span>
 
+<span class="kd">fun</span><span class="w"> </span><span class="nf">testLambda</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">makeUppercase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="na">uppercase</span><span class="p">()}</span>
+<span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="n">makeUppercase</span><span class="p">(</span><span class="s">&quot;ab&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;AB&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
 <span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">testSum</span><span class="p">()</span>
 <span class="w">  </span><span class="n">testDouble</span><span class="p">()</span>
 <span class="w">  </span><span class="n">testPowerOf</span><span class="p">()</span>
 <span class="w">  </span><span class="n">testDefault</span><span class="p">()</span>
 <span class="w">  </span><span class="n">testDefault2</span><span class="p">()</span>
+<span class="w">  </span><span class="n">testLambda</span><span class="p">()</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -217,7 +253,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="control-flow.html" class="btn btn-neutral float-left" title="Control flows" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../basics.html" class="btn btn-neutral float-right" title="Basics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="package.html" class="btn btn-neutral float-right" title="Package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

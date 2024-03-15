@@ -72,6 +72,9 @@
 <li class="toctree-l2"><a class="reference internal" href="hello.html">hello</a></li>
 <li class="toctree-l2"><a class="reference internal" href="android_mk.html">Android.mk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="adb.html">adb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tts.html">tts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html">jetpack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html">Samples</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
@@ -152,12 +155,22 @@
 <li class="toctree-l2"><a class="reference internal" href="kotlin/references.html">References</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kotlin/control-flow.html">Control flows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kotlin/functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kotlin/package.html">Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kotlin/for.html">for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kotlin/enum.html">enum</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="basics.html">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Basics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#textview">TextView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#button">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#edittext">EditText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#linearlayout">LinearLayout</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="install.html#install-ndk-on-linux-not-recommmended">Install NDK on Linux (not recommmended)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#install-sdk-on-linux">Install SDK on Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#emulator">emulator</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="cmake.html">cmake</a></li>
@@ -174,8 +187,42 @@
 <li class="toctree-l2"><a class="reference internal" href="adb.html#install-on-windows">install on windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="adb.html#install-on-linux">install on Linux</a></li>
 <li class="toctree-l2"><a class="reference internal" href="adb.html#run-binaries">run binaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adb.html#paste-text-to-android-emulator">paste text to android emulator</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="tts.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jetpack.html">jetpack</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#material-design">material design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#state">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#bom">bom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#arrangement">Arrangement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#alignment">Alignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#surface">Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#preview">Preview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#column">Column</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#lazycolumn">LazyColumn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#row">Row</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#lazyrow">LazyRow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#spacer">Spacer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#text">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#button">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#iconbutton">IconButton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#checkbox">Checkbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#modifier">Modifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#box">Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#scaffold">Scaffold</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#textfield">TextField</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#remember">remember</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#example-1">Example 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#example-2">Example 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#example-3">Example 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#example-4">Example 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#example-5">Example 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#example-6">Example 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html#example-7">Example 7</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">Samples</a></li>
 </ul>
 </div>
 </section>

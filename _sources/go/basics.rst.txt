@@ -42,3 +42,15 @@ verbose build
 .. code-block:: bash
 
    go build -x -v
+
+
+exported
+--------
+
+For non-builtin functions and variables, if the name begin with an uppercase,
+then it is exported. Otherwise, it is not exported.
+
+Note that for builtin functions, the above rule does not apply. For instance,
+both ``print`` and ``println`` are exported.
+
+

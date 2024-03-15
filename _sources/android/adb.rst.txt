@@ -28,3 +28,12 @@ run binaries
 .. code-block:: bash
 
   adb push ./hello-world /data/local/tmp/
+
+paste text to android emulator
+------------------------------
+
+.. code-block:: bash
+
+   adb shell "input text 'hello world'"
+
+

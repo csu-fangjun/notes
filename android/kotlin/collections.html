@@ -75,6 +75,9 @@
 <li class="toctree-l3"><a class="reference internal" href="references.html">References</a></li>
 <li class="toctree-l3"><a class="reference internal" href="control-flow.html">Control flows</a></li>
 <li class="toctree-l3"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="package.html">Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="for.html">for</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enum.html">enum</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../basics.html">Basics</a></li>
@@ -83,6 +86,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../hello.html">hello</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../android_mk.html">Android.mk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../adb.html">adb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tts.html">tts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jetpack.html">jetpack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../samples.html">Samples</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../qemu/index.html">qemu</a></li>
@@ -150,6 +156,14 @@
 </div></blockquote>
 <div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="kd">fun</span><span class="w"> </span><span class="nf">testList</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mutableListOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<span class="w">  </span><span class="n">println</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">javaClass</span><span class="p">)</span><span class="w"> </span><span class="c1">// class java.util.ArrayList</span>
+
+<span class="cm">/*</span>
+<span class="cm">  for((i, v) in a.withIndex()) {</span>
+<span class="cm">    check(i + 1 == v)</span>
+<span class="cm">  }</span>
+<span class="cm">*/</span>
+
 <span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">b</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="c1">// view of a, no data is copied</span>
 <span class="w">  </span><span class="n">a</span><span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="c1">// b is also changed since b is a view of a</span>
 <span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="n">b</span><span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
@@ -178,6 +192,8 @@
 
 <span class="kd">fun</span><span class="w"> </span><span class="nf">testSet</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mutableSetOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
+<span class="w">  </span><span class="n">println</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">javaClass</span><span class="p">)</span><span class="w"> </span><span class="c1">// class java.util.LinkedHashSet</span>
+
 <span class="w">  </span><span class="n">println</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="m">0</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">a</span><span class="p">)</span>
 <span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="m">3</span><span class="w"> </span><span class="k">!in</span><span class="w"> </span><span class="n">a</span><span class="p">)</span>
@@ -195,6 +211,8 @@
 
 <span class="kd">fun</span><span class="w"> </span><span class="nf">testMap</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">a</span><span class="p">:</span><span class="w"> </span><span class="n">MutableMap</span><span class="o">&lt;</span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mutableMapOf</span><span class="p">(</span><span class="m">0</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="s">&quot;zero&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="s">&quot;one&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="s">&quot;two&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">println</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">javaClass</span><span class="p">)</span><span class="w"> </span><span class="c1">// class java.util.LinkedHashMap</span>
+
 <span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">count</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
 <span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;zero&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="m">0</span><span class="p">))</span>
@@ -203,12 +221,9 @@
 <span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="m">0</span><span class="w"> </span><span class="k">!in</span><span class="w"> </span><span class="n">a</span><span class="p">)</span>
 <span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
 
-<span class="w">  </span><span class="n">a</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;zero&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">a</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;zero&quot;</span><span class="p">)</span><span class="w">  </span><span class="c1">// equivalent to a[0] = &quot;zero&quot;</span>
 <span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="m">0</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">a</span><span class="p">)</span>
 <span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="m">0</span><span class="p">))</span>
-
-<span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="s">&quot;two&quot;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">values</span><span class="p">())</span>
-<span class="w">  </span><span class="n">check</span><span class="p">(</span><span class="s">&quot;three&quot;</span><span class="w"> </span><span class="k">!in</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">values</span><span class="p">())</span>
 <span class="p">}</span>
 
 <span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>

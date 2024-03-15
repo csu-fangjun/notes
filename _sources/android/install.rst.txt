@@ -122,3 +122,16 @@ Now install NDK using ``sdkmanager``:
    export ANROID_NDK_HOME=$ANDROID_SDK_ROOT/ndk/21.0.6113669
    export PATH=$ANDROID_NDK_ROOT:$PATH
 
+
+emulator
+--------
+
+.. code-block:: bash
+
+   find /Users/fangjun/software/my-android -name emulator
+   /Users/fangjun/software/my-android/emulator -list-avds
+   /Users/fangjun/software/my-android/emulator -avd Pixel_4_API_31 -dns-server 8.8.8.8
+
+Refer to `<https://developer.android.com/studio/run/emulator-networking#proxy>`_
+to setup the proxy.
+

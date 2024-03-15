@@ -19,7 +19,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Installation" href="install.html" />
-    <link rel="prev" title="Functions" href="kotlin/functions.html" /> 
+    <link rel="prev" title="enum" href="kotlin/enum.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -66,12 +66,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Android</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="kotlin/index.html">kotlin</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Basics</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#textview">TextView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#button">Button</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edittext">EditText</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linearlayout">LinearLayout</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cmake.html">cmake</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hello.html">hello</a></li>
 <li class="toctree-l2"><a class="reference internal" href="android_mk.html">Android.mk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="adb.html">adb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tts.html">tts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html">jetpack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html">Samples</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
@@ -139,13 +148,110 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_HOME</span></code></p></li>
 </ul>
 </div></blockquote>
+<p>The name of the app is determined by <code class="docutils literal notranslate"><span class="pre">&lt;application</span> <span class="pre">android:label</span></code> in
+<code class="docutils literal notranslate"><span class="pre">AndroidManifest.xml</span></code>. We can use <code class="docutils literal notranslate"><span class="pre">&#64;string/app_name</span></code>.</p>
+<p>The title of the nav bar is determined by <code class="docutils literal notranslate"><span class="pre">&lt;activity</span> <span class="pre">android:label</span></code>
+in <code class="docutils literal notranslate"><span class="pre">AndroidManifest.xml</span></code>.</p>
+<p>Button click:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">val</span> <span class="n">button</span><span class="p">:</span> <span class="n">Button</span> <span class="o">=</span> <span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">button1</span><span class="p">)</span>
+<span class="n">button1</span><span class="o">.</span><span class="n">setOnclickListener</span> <span class="p">{</span>
+  <span class="n">Toast</span><span class="o">.</span><span class="n">makeText</span><span class="p">(</span><span class="n">this</span><span class="p">,</span> <span class="s2">&quot;Clicked me!&quot;</span><span class="p">,</span> <span class="n">Toast</span><span class="o">.</span><span class="n">LengthShort</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The menu is added in <code class="docutils literal notranslate"><span class="pre">res/menu</span></code> The directory <code class="docutils literal notranslate"><span class="pre">res/menu</span></code> is created by
+us manually. After creating the directory, we can right click it, and select
+<code class="docutils literal notranslate"><span class="pre">menu</span> <span class="pre">resource</span> <span class="pre">file</span></code>. If we name it <code class="docutils literal notranslate"><span class="pre">main</span></code>, it will create a file <code class="docutils literal notranslate"><span class="pre">main.xml</span></code>
+inside <code class="docutils literal notranslate"><span class="pre">res/menu</span></code>.  Inside <code class="docutils literal notranslate"><span class="pre">main.xml</span></code>, each menu item contains something like
+below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">item</span> <span class="n">android</span><span class="p">:</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;@+id/add_item&quot;</span> <span class="n">android</span><span class="p">:</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Add&quot;</span> <span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p>After creating <code class="docutils literal notranslate"><span class="pre">main.xml</span></code>, click the menu <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">-&gt;</span> <span class="pre">Override</span> <span class="pre">Method</span></code>, select
+<code class="docutils literal notranslate"><span class="pre">onCreateOptionsMenu</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>menuInflater.inflace<span class="o">(</span>R.menu.main,<span class="w"> </span>menu<span class="o">)</span>
+<span class="k">return</span><span class="w"> </span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>To define a function when a menu item is clicked, click the menu <code class="docutils literal notranslate"><span class="pre">Code-&gt;Override</span> <span class="pre">Method</span></code>,
+select <code class="docutils literal notranslate"><span class="pre">onOptionsItemSelected</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">when</span> <span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">itemId</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">R</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">add_item</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="n">xxx</span> <span class="p">}</span>
+  <span class="n">R</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">remove_item</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="n">xxx</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">return</span> <span class="n">true</span>
+</pre></div>
+</div>
+<p>To destroy an activity, call <code class="docutils literal notranslate"><span class="pre">finish()</span></code>.</p>
+<section id="textview">
+<h2>TextView<a class="headerlink" href="#textview" title="Permalink to this headline">¶</a></h2>
+<p>It is a label in other GUI.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">TextView</span>
+  <span class="n">android</span><span class="p">:</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;@+id/textView&quot;</span>
+  <span class="n">android</span><span class="p">:</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;hello world&quot;</span>
+  <span class="n">android</span><span class="p">:</span><span class="n">layout_width</span><span class="o">=</span><span class="s2">&quot;match_parent&quot;</span>
+  <span class="n">android</span><span class="p">:</span><span class="n">layout_height</span><span class="o">=</span><span class="s2">&quot;wrap_content&quot;</span>
+<span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p>To change the alignment, use <code class="docutils literal notranslate"><span class="pre">android:gravity</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">android</span><span class="p">:</span><span class="n">gravity</span><span class="o">=</span><span class="s2">&quot;center&quot;</span>
+<span class="o">//</span> <span class="n">top</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span>
+<span class="o">//</span> <span class="n">center_vertical</span><span class="o">|</span><span class="n">center_horizontal</span>
+</pre></div>
+</div>
+<p>To change the color, use <code class="docutils literal notranslate"><span class="pre">android::textColor</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">android</span><span class="p">::</span><span class="n">textColor</span><span class="o">=</span><span class="s2">&quot;#00ff00&quot;</span>
+</pre></div>
+</div>
+<p>To change the font size, use <code class="docutils literal notranslate"><span class="pre">android::textSize=&quot;24sp&quot;</span></code></p>
+</section>
+<section id="button">
+<h2>Button<a class="headerlink" href="#button" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">Button</span>
+  <span class="n">android</span><span class="p">:</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;@+id/button&quot;</span>
+  <span class="n">android</span><span class="p">:</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Button&quot;</span>
+  <span class="n">android</span><span class="p">:</span><span class="n">textAllCaps</span><span class="o">=</span><span class="s2">&quot;false&quot;</span>
+  <span class="n">android</span><span class="p">:</span><span class="n">layout_width</span><span class="o">=</span><span class="s2">&quot;match_parent&quot;</span>
+  <span class="n">android</span><span class="p">:</span><span class="n">layout_height</span><span class="o">=</span><span class="s2">&quot;wrap_content&quot;</span>
+<span class="o">/&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="edittext">
+<h2>EditText<a class="headerlink" href="#edittext" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">EditText</span>
+  <span class="n">android</span><span class="p">:</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;@+id/editText&quot;</span>
+  <span class="n">android</span><span class="p">:</span><span class="n">layout_width</span><span class="o">=</span><span class="s2">&quot;match_parent&quot;</span>
+  <span class="n">android</span><span class="p">:</span><span class="n">layout_height</span><span class="o">=</span><span class="s2">&quot;wrap_content&quot;</span>
+  <span class="n">android</span><span class="p">:</span><span class="n">hint</span><span class="o">=</span><span class="s2">&quot;this is some hint&quot;</span>
+  <span class="n">android</span><span class="p">:</span><span class="n">maxLines</span><span class="o">=</span><span class="s2">&quot;10&quot;</span>
+<span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p>To get the text of EditText in the kotlin code, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>val<span class="w"> </span><span class="nv">inputText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>editText.text.toString<span class="o">()</span>
+</pre></div>
+</div>
+</section>
+<section id="linearlayout">
+<h2>LinearLayout<a class="headerlink" href="#linearlayout" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">LinearLayout</span>
+  <span class="n">android</span><span class="p">:</span><span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;vertical&quot;</span>
+  <span class="n">android</span><span class="p">:</span><span class="n">layout_width</span><span class="o">=</span><span class="s2">&quot;match_parent&quot;</span>
+  <span class="n">android</span><span class="p">:</span><span class="n">layout_height</span><span class="o">=</span><span class="s2">&quot;match_parent&quot;</span>
+<span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">orientation</span></code> can also be <code class="docutils literal notranslate"><span class="pre">horizontal</span></code>.</p>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="kotlin/functions.html" class="btn btn-neutral float-left" title="Functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="kotlin/enum.html" class="btn btn-neutral float-left" title="enum" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="install.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

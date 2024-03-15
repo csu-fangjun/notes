@@ -73,6 +73,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#pad">pad</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#raw">raw</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#generate">Generate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#remix">remix</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="base64.html">base64</a></li>
@@ -161,6 +162,14 @@ sox<span class="w"> </span><span class="k">in</span>.wav<span class="w"> </span>
 <section id="generate">
 <h2>Generate<a class="headerlink" href="#generate" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sox<span class="w"> </span>-r<span class="w"> </span><span class="m">16000</span><span class="w"> </span>-n<span class="w"> </span>-b<span class="w"> </span><span class="m">16</span><span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>a.wav<span class="w"> </span>synth<span class="w"> </span><span class="m">10</span><span class="w"> </span>sin<span class="w"> </span><span class="m">1000</span>
+</pre></div>
+</div>
+</section>
+<section id="remix">
+<h2>remix<a class="headerlink" href="#remix" title="Permalink to this headline">¶</a></h2>
+<p>Split multi-channel wave to single channels.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sox<span class="w"> </span>stereo_inputfile.wav<span class="w"> </span>leftchannel.wav<span class="w"> </span>remix<span class="w"> </span><span class="m">1</span>
+sox<span class="w"> </span>stereo_inputfile.wav<span class="w"> </span>rightchannel.wav<span class="w"> </span>remix<span class="w"> </span><span class="m">2</span>
 </pre></div>
 </div>
 </section>

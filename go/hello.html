@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>cmake &mdash; notes  documentation</title>
+  <title>hello &mdash; notes  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="hello" href="hello.html" />
-    <link rel="prev" title="Installation" href="install.html" /> 
+    <link rel="next" title="Whisper" href="../whisper/index.html" />
+    <link rel="prev" title="Basics" href="basics.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -64,19 +64,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Android</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="kotlin/index.html">kotlin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basics.html">Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">cmake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hello.html">hello</a></li>
-<li class="toctree-l2"><a class="reference internal" href="android_mk.html">Android.mk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="adb.html">adb</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tts.html">tts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="jetpack.html">jetpack</a></li>
-<li class="toctree-l2"><a class="reference internal" href="samples.html">Samples</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
@@ -93,7 +81,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Go</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cross-compile.html">Cross compile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Basics</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">hello</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
@@ -119,10 +113,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Android</a> &raquo;</li>
-      <li>cmake</li>
+          <li><a href="index.html">Go</a> &raquo;</li>
+      <li>hello</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/android/cmake.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/go/hello.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -130,49 +124,78 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="cmake">
-<h1>cmake<a class="headerlink" href="#cmake" title="Permalink to this headline">¶</a></h1>
-<p>See</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><a class="reference external" href="https://cmake.org/cmake/help/latest/manual/cmake-toolchains.7.html">https://cmake.org/cmake/help/latest/manual/cmake-toolchains.7.html</a></p></li>
-<li><p><a class="reference external" href="https://developer.android.com/ndk/guides/cmake#command-line">https://developer.android.com/ndk/guides/cmake#command-line</a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/ceph-fj/fangjun/software/android-ndk/build/cmake/android.toolchain.cmake</span></code></p></li>
+  <section id="hello">
+<h1>hello<a class="headerlink" href="#hello" title="Permalink to this headline">¶</a></h1>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/hello2/ex.go</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>To run the program, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>go<span class="w"> </span>run<span class="w"> </span>ex.go
+</pre></div>
+</div>
+<p>For recent version of go, <code class="docutils literal notranslate"><span class="pre">go</span> <span class="pre">build</span></code> will throw the following error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ go build
+go: cannot find main module, but found .git/config in /Users/fangjun/open-source/notes
+        to create a module there, run:
+        cd ../../../../.. &amp;&amp; go mod init
+</pre></div>
+</div>
+<p>But we can use <code class="docutils literal notranslate"><span class="pre">go</span> <span class="pre">build</span> <span class="pre">ex.go</span></code>, which works fine and will generate an executable <code class="docutils literal notranslate"><span class="pre">ex</span></code>.</p>
+<p>To format the file <code class="docutils literal notranslate"><span class="pre">in-place</span></code>, use <code class="docutils literal notranslate"><span class="pre">go</span> <span class="pre">fmt</span> <span class="pre">ex.go</span></code>.</p>
+<p>To see the help for a command, for instance the command for <code class="docutils literal notranslate"><span class="pre">go</span> <span class="pre">fmt</span></code>, use <code class="docutils literal notranslate"><span class="pre">go</span> <span class="pre">help</span> <span class="pre">fmt</span></code>.</p>
+<p>To view the doc, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gofmt
+<span class="c1"># The above command is equivalent to</span>
+gofmt<span class="w"> </span>-http<span class="w"> </span>localhost:6060
+<span class="c1"># Then start your browser and visit http://localhost:6060</span>
+</pre></div>
+</div>
+<p>To install <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">tour</span> <span class="pre">of</span> <span class="pre">goo</span></code>, run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># see https://go.dev/tour/list</span>
+<span class="n">go</span> <span class="n">install</span> <span class="n">golang</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">x</span><span class="o">/</span><span class="n">website</span><span class="o">/</span><span class="n">tour</span><span class="nd">@latest</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="s2">&quot;fmt&quot;</span>
+<span class="kn">import</span> <span class="s2">&quot;math/rand&quot;</span>
+</pre></div>
+</div>
+<p>is equivalent to</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="p">(</span>
+  <span class="s2">&quot;fmt&quot;</span>
+  <span class="s2">&quot;math/rand&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Format specifier:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">%v</span></code>, for any value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%T</span></code>, print the type</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%x</span></code>, same as C/C++</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%s</span></code>, for string and byte slice</p></li>
 </ul>
-</div></blockquote>
-<p>User provided:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_NDK</span></code>: Set to the path of <code class="docutils literal notranslate"><span class="pre">android-ndk</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_ABI</span></code>: <code class="docutils literal notranslate"><span class="pre">armeabi-v7a</span></code>, <code class="docutils literal notranslate"><span class="pre">arm64-v8a</span></code>, <code class="docutils literal notranslate"><span class="pre">x86</span></code>, <code class="docutils literal notranslate"><span class="pre">x86_64</span></code>,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_PLATFORM</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_NATIVE_API_LEVEL</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_TOOLCHAIN</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID</span></code>: <code class="docutils literal notranslate"><span class="pre">TRUE</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">CMAKE_SYSTEM_NAME</span></code>: <code class="docutils literal notranslate"><span class="pre">Anroid</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_STL</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_HOST_TAG</span></code></p></li>
-</ul>
-</div></blockquote>
-<p>Auto generated:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_NDK_MAJOR</span></code> - see <code class="docutils literal notranslate"><span class="pre">android-ndk/source.properties</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_NDK_MINOR</span></code> - see <code class="docutils literal notranslate"><span class="pre">android-ndk/source.properties</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_NDK_BUILD</span></code> - see <code class="docutils literal notranslate"><span class="pre">android-ndk/source.properties</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_NDK_REVISION</span></code> - see <code class="docutils literal notranslate"><span class="pre">android-ndk/source.properties</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_TOOLCHAIN_ROOT</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ANDROID_C_COMPILER</span></code></p></li>
-</ul>
-</div></blockquote>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># to view the help information of the function fmt.Printf</span>
+<span class="n">go</span> <span class="n">doc</span> <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span>
+</pre></div>
+</div>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="install.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="hello.html" class="btn btn-neutral float-right" title="hello" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="basics.html" class="btn btn-neutral float-left" title="Basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../whisper/index.html" class="btn btn-neutral float-right" title="Whisper" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
