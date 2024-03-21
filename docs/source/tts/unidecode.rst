@@ -11,5 +11,5 @@ unidecode
 
   (py38) fangjuns-MacBook-Pro:~ fangjun$ echo heiße |unidecode
   heisse
-  (py38) fangjuns-MacBook-Pro:~ fangjun$ echo 'hello 你好!' | unidecode
+  (py38) fangjuns-MacBook-Pro:~ fangjun$ echo 'hello hanzi nihao!' | unidecode
   hello Ni Hao !

@@ -1,7 +1,7 @@
 fun main() {
-  var s = "你好hello"
+  var s = "nihaohello"
   println("s.length: ${s.length}")
-  var bytes : ByteArray = "你好hello".toByteArray()
+  var bytes : ByteArray = "nihaohello".toByteArray()
   // for(b in bytes) {
   //   println(b.toUByte().toString(radix = 16))
   // }

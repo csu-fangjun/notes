@@ -21,16 +21,30 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
             image: reitzig/texlive-full:latest
+            # image: ghcr.io/xu-cheng/texlive-full:latest
             options: |
               --volume ${{ github.workspace }}/:/workspace
             shell: bash
             run: |
               uname -a
+              cat /etc/*release
+
+              id
+              pwd
+              ls -lh
+
               cd /workspace
               which latexmk
 
+              apk add --no-cache python3 py3-pip make gcc zlib-dev libffi-dev openssl-dev musl-dev ghostscript
+              python3 --version
 
-              pip install -r ./docs/requirements.txt
+
+              python3 -m venv abc
+              source ./abc/bin/activate
+              python3 -m ensurepip
+
+              python3 -m pip install -r ./docs/requirements.txt
 
               cd docs
               make html
@@ -46,8 +60,8 @@ jobs:
         shell: bash
         run: |
           ls -lh docs/build
-          ls -lh docs/html
-          ls -lh docs/latex
+          ls -lh docs/build/html
+          ls -lh docs/build/latex
 
       - name: Upload pdf
         uses: actions/upload-artifact@v4
