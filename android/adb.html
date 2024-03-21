@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>adb &mdash; notes  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -14,7 +16,9 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,11 +31,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> notes
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -110,6 +118,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
 </ul>
 
         </div>
@@ -125,9 +136,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Android</a> &raquo;</li>
-      <li>adb</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Android</a></li>
+      <li class="breadcrumb-item active">adb</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/android/adb.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -138,33 +149,33 @@
            <div itemprop="articleBody">
              
   <section id="adb">
-<h1>adb<a class="headerlink" href="#adb" title="Permalink to this headline">¶</a></h1>
+<h1>adb<a class="headerlink" href="#adb" title="Permalink to this heading">¶</a></h1>
 <section id="install-on-macos">
-<h2>install on macos<a class="headerlink" href="#install-on-macos" title="Permalink to this headline">¶</a></h2>
+<h2>install on macos<a class="headerlink" href="#install-on-macos" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://dl.google.com/android/repository/platform-tools-latest-darwin.zip
 <span class="c1"># unzip it and you will find the binary `adb`</span>
 </pre></div>
 </div>
 </section>
 <section id="install-on-windows">
-<h2>install on windows<a class="headerlink" href="#install-on-windows" title="Permalink to this headline">¶</a></h2>
+<h2>install on windows<a class="headerlink" href="#install-on-windows" title="Permalink to this heading">¶</a></h2>
 <p>Go to <a class="reference external" href="https://adbshell.com/downloads">https://adbshell.com/downloads</a> to download it.</p>
 </section>
 <section id="install-on-linux">
-<h2>install on Linux<a class="headerlink" href="#install-on-linux" title="Permalink to this headline">¶</a></h2>
+<h2>install on Linux<a class="headerlink" href="#install-on-linux" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://dl.google.com/android/repository/platform-tools-latest-linux.zip
 <span class="c1"># unzip it</span>
 </pre></div>
 </div>
 </section>
 <section id="run-binaries">
-<h2>run binaries<a class="headerlink" href="#run-binaries" title="Permalink to this headline">¶</a></h2>
+<h2>run binaries<a class="headerlink" href="#run-binaries" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>adb<span class="w"> </span>push<span class="w"> </span>./hello-world<span class="w"> </span>/data/local/tmp/
 </pre></div>
 </div>
 </section>
 <section id="paste-text-to-android-emulator">
-<h2>paste text to android emulator<a class="headerlink" href="#paste-text-to-android-emulator" title="Permalink to this headline">¶</a></h2>
+<h2>paste text to android emulator<a class="headerlink" href="#paste-text-to-android-emulator" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>adb<span class="w"> </span>shell<span class="w"> </span><span class="s2">&quot;input text &#39;hello world&#39;&quot;</span>
 </pre></div>
 </div>

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tensor &mdash; notes  documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -14,7 +16,9 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -27,11 +31,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> notes
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            notes
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -130,6 +138,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../react/index.html">React</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tts/index.html">tts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../openfst/index.html">OpenFst</a></li>
 </ul>
 
         </div>
@@ -145,10 +156,10 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">torch</a> &raquo;</li>
-          <li><a href="index.html">TorchScript</a> &raquo;</li>
-      <li>Tensor</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">torch</a></li>
+          <li class="breadcrumb-item"><a href="index.html">TorchScript</a></li>
+      <li class="breadcrumb-item active">Tensor</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/torch/torchscript/tensor.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -159,7 +170,7 @@
            <div itemprop="articleBody">
              
   <section id="tensor">
-<h1>Tensor<a class="headerlink" href="#tensor" title="Permalink to this headline">¶</a></h1>
+<h1>Tensor<a class="headerlink" href="#tensor" title="Permalink to this heading">¶</a></h1>
 <p>See</p>
 <blockquote>
 <div><ul class="simple">
@@ -169,7 +180,7 @@
 </ul>
 </div></blockquote>
 <section id="common-methods">
-<h2>Common methods<a class="headerlink" href="#common-methods" title="Permalink to this headline">¶</a></h2>
+<h2>Common methods<a class="headerlink" href="#common-methods" title="Permalink to this heading">¶</a></h2>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">./code/tensor/main.cc (Not recommended constructors)</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">TestCommonMethods</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -258,7 +269,7 @@
 </div>
 </div>
 <section id="slice">
-<h3>slice<a class="headerlink" href="#slice" title="Permalink to this headline">¶</a></h3>
+<h3>slice<a class="headerlink" href="#slice" title="Permalink to this heading">¶</a></h3>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">torch::slice</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">TestSlice</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -280,7 +291,7 @@
 </div>
 </section>
 <section id="topk">
-<h3>topk<a class="headerlink" href="#topk" title="Permalink to this headline">¶</a></h3>
+<h3>topk<a class="headerlink" href="#topk" title="Permalink to this heading">¶</a></h3>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">torch::topk</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">// https://pytorch.org/docs/stable/generated/torch.topk.html</span>
@@ -304,7 +315,7 @@
 </div>
 </section>
 <section id="floor-divide">
-<h3>floor_divide<a class="headerlink" href="#floor-divide" title="Permalink to this headline">¶</a></h3>
+<h3>floor_divide<a class="headerlink" href="#floor-divide" title="Permalink to this heading">¶</a></h3>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">torch::floor_divide</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">TestFloorDivide</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -322,7 +333,7 @@
 </div>
 </section>
 <section id="div">
-<h3>div<a class="headerlink" href="#div" title="Permalink to this headline">¶</a></h3>
+<h3>div<a class="headerlink" href="#div" title="Permalink to this heading">¶</a></h3>
 <div class="literal-block-wrapper docutils container" id="id5">
 <div class="code-block-caption"><span class="caption-text">torch::div</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">// https://pytorch.org/docs/stable/generated/torch.div.html</span>
@@ -342,7 +353,7 @@
 </div>
 </section>
 <section id="remainder">
-<h3>remainder<a class="headerlink" href="#remainder" title="Permalink to this headline">¶</a></h3>
+<h3>remainder<a class="headerlink" href="#remainder" title="Permalink to this heading">¶</a></h3>
 <div class="literal-block-wrapper docutils container" id="id6">
 <div class="code-block-caption"><span class="caption-text">torch::remainder</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">TestRemainder</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -358,7 +369,7 @@
 </div>
 </section>
 <section id="empty">
-<h3>empty<a class="headerlink" href="#empty" title="Permalink to this headline">¶</a></h3>
+<h3>empty<a class="headerlink" href="#empty" title="Permalink to this heading">¶</a></h3>
 <div class="literal-block-wrapper docutils container" id="id7">
 <div class="code-block-caption"><span class="caption-text">torch::empty</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">TestEmpty</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -371,7 +382,7 @@
 </div>
 </section>
 <section id="stack">
-<h3>stack<a class="headerlink" href="#stack" title="Permalink to this headline">¶</a></h3>
+<h3>stack<a class="headerlink" href="#stack" title="Permalink to this heading">¶</a></h3>
 <div class="literal-block-wrapper docutils container" id="id8">
 <div class="code-block-caption"><span class="caption-text">torch::stack</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">TestStack</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -390,7 +401,7 @@
 </div>
 </section>
 <section id="unbind">
-<h3>unbind<a class="headerlink" href="#unbind" title="Permalink to this headline">¶</a></h3>
+<h3>unbind<a class="headerlink" href="#unbind" title="Permalink to this heading">¶</a></h3>
 <div class="literal-block-wrapper docutils container" id="id9">
 <div class="code-block-caption"><span class="caption-text">torch::unbind</span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">TestUnbind</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -406,7 +417,7 @@
 </div>
 </section>
 <section id="full">
-<h3>full<a class="headerlink" href="#full" title="Permalink to this headline">¶</a></h3>
+<h3>full<a class="headerlink" href="#full" title="Permalink to this heading">¶</a></h3>
 <div class="literal-block-wrapper docutils container" id="id10">
 <div class="code-block-caption"><span class="caption-text">torch::full</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">TestFull</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -421,7 +432,7 @@
 </div>
 </section>
 <section id="split">
-<h3>split<a class="headerlink" href="#split" title="Permalink to this headline">¶</a></h3>
+<h3>split<a class="headerlink" href="#split" title="Permalink to this heading">¶</a></h3>
 <div class="literal-block-wrapper docutils container" id="id11">
 <div class="code-block-caption"><span class="caption-text">torch::split</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">TestSplit</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -442,7 +453,7 @@
 </div>
 </section>
 <section id="zeros">
-<h3>zeros<a class="headerlink" href="#zeros" title="Permalink to this headline">¶</a></h3>
+<h3>zeros<a class="headerlink" href="#zeros" title="Permalink to this heading">¶</a></h3>
 <div class="literal-block-wrapper docutils container" id="id12">
 <div class="code-block-caption"><span class="caption-text">torch::zeros</span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">TestZeros</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -453,7 +464,7 @@
 </div>
 </section>
 <section id="cat">
-<h3>cat<a class="headerlink" href="#cat" title="Permalink to this headline">¶</a></h3>
+<h3>cat<a class="headerlink" href="#cat" title="Permalink to this heading">¶</a></h3>
 <div class="literal-block-wrapper docutils container" id="id13">
 <div class="code-block-caption"><span class="caption-text">torch::cat</span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">TestCat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -467,7 +478,7 @@
 </div>
 </section>
 <section id="division">
-<h3>division<a class="headerlink" href="#division" title="Permalink to this headline">¶</a></h3>
+<h3>division<a class="headerlink" href="#division" title="Permalink to this heading">¶</a></h3>
 <div class="literal-block-wrapper docutils container" id="id14">
 <div class="code-block-caption"><span class="caption-text">test division</span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">TestDivision</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -494,7 +505,7 @@
 </div>
 </section>
 <section id="default-constructed">
-<h3>default constructed<a class="headerlink" href="#default-constructed" title="Permalink to this headline">¶</a></h3>
+<h3>default constructed<a class="headerlink" href="#default-constructed" title="Permalink to this heading">¶</a></h3>
 <div class="literal-block-wrapper docutils container" id="id15">
 <div class="code-block-caption"><span class="caption-text">test default constructed</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kt">void</span><span class="w"> </span><span class="nf">TestDefaultConstructed</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -505,7 +516,7 @@
 </div>
 </section>
 <section id="copy">
-<h3>copy<a class="headerlink" href="#copy" title="Permalink to this headline">¶</a></h3>
+<h3>copy<a class="headerlink" href="#copy" title="Permalink to this heading">¶</a></h3>
 <div class="literal-block-wrapper docutils container" id="id16">
 <div class="code-block-caption"><span class="caption-text">test rowwise copy</span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kt">void</span><span class="w"> </span><span class="nf">TestCopy</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -524,7 +535,7 @@
 </div>
 </section>
 <section id="default-addmm">
-<h3>default addmm<a class="headerlink" href="#default-addmm" title="Permalink to this headline">¶</a></h3>
+<h3>default addmm<a class="headerlink" href="#default-addmm" title="Permalink to this heading">¶</a></h3>
 <div class="literal-block-wrapper docutils container" id="id17">
 <div class="code-block-caption"><span class="caption-text">test default constructed</span><a class="headerlink" href="#id17" title="Permalink to this code">¶</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kt">void</span><span class="w"> </span><span class="nf">TestAddmm</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -547,7 +558,7 @@
 </div>
 </section>
 <section id="elementwise-operation">
-<h3>elementwise operation<a class="headerlink" href="#elementwise-operation" title="Permalink to this headline">¶</a></h3>
+<h3>elementwise operation<a class="headerlink" href="#elementwise-operation" title="Permalink to this heading">¶</a></h3>
 <div class="literal-block-wrapper docutils container" id="id18">
 <div class="code-block-caption"><span class="caption-text">test elementwise operation</span><a class="headerlink" href="#id18" title="Permalink to this code">¶</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kt">void</span><span class="w"> </span><span class="nf">TestElementwiseOp</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -567,7 +578,7 @@
 </div>
 </section>
 <section id="torch-roll">
-<h3>torch.roll<a class="headerlink" href="#torch-roll" title="Permalink to this headline">¶</a></h3>
+<h3>torch.roll<a class="headerlink" href="#torch-roll" title="Permalink to this heading">¶</a></h3>
 <div class="literal-block-wrapper docutils container" id="id19">
 <div class="code-block-caption"><span class="caption-text">torch.roll</span><a class="headerlink" href="#id19" title="Permalink to this code">¶</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kt">void</span><span class="w"> </span><span class="nf">TestRoll</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -603,7 +614,7 @@
 </div>
 </section>
 <section id="torch-mean">
-<h3>torch.mean<a class="headerlink" href="#torch-mean" title="Permalink to this headline">¶</a></h3>
+<h3>torch.mean<a class="headerlink" href="#torch-mean" title="Permalink to this heading">¶</a></h3>
 <div class="literal-block-wrapper docutils container" id="id20">
 <div class="code-block-caption"><span class="caption-text">torch.mean</span><a class="headerlink" href="#id20" title="Permalink to this code">¶</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">);</span>
@@ -725,7 +736,7 @@
 </div>
 </section>
 <section id="torch-index">
-<h3>torch.index<a class="headerlink" href="#torch-index" title="Permalink to this headline">¶</a></h3>
+<h3>torch.index<a class="headerlink" href="#torch-index" title="Permalink to this heading">¶</a></h3>
 <div class="literal-block-wrapper docutils container" id="id21">
 <div class="code-block-caption"><span class="caption-text">torch.mean</span><a class="headerlink" href="#id21" title="Permalink to this code">¶</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kt">void</span><span class="w"> </span><span class="nf">TestSlice2</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Basics &mdash; notes  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -14,7 +16,9 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,11 +31,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> notes
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -103,6 +111,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
 </ul>
 
         </div>
@@ -118,9 +129,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">sox</a> &raquo;</li>
-      <li>Basics</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">sox</a></li>
+      <li class="breadcrumb-item active">Basics</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/sox/basics.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -131,22 +142,22 @@
            <div itemprop="articleBody">
              
   <section id="basics">
-<h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h1>
+<h1>Basics<a class="headerlink" href="#basics" title="Permalink to this heading">¶</a></h1>
 <section id="extract-part-of-a-wave">
-<h2>Extract part of a wave<a class="headerlink" href="#extract-part-of-a-wave" title="Permalink to this headline">¶</a></h2>
+<h2>Extract part of a wave<a class="headerlink" href="#extract-part-of-a-wave" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># offset 2 seconds, length 0.195 seconds</span>
 <span class="n">sox</span> <span class="ow">in</span><span class="o">.</span><span class="n">mp3</span> <span class="n">out</span><span class="o">.</span><span class="n">mp3</span> <span class="n">trim</span> <span class="mi">2</span> <span class="mf">0.195</span>
 </pre></div>
 </div>
 </section>
 <section id="fix-broken-waves">
-<h2>Fix broken waves<a class="headerlink" href="#fix-broken-waves" title="Permalink to this headline">¶</a></h2>
+<h2>Fix broken waves<a class="headerlink" href="#fix-broken-waves" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sox<span class="w"> </span>--ignore-length<span class="w"> </span>corrupted.wav<span class="w"> </span>fixed.wav
 </pre></div>
 </div>
 </section>
 <section id="pad">
-<h2>pad<a class="headerlink" href="#pad" title="Permalink to this headline">¶</a></h2>
+<h2>pad<a class="headerlink" href="#pad" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add 2 seconds of silence at the begining and 3 seconds of silence</span>
 <span class="c1"># at the end.</span>
 sox<span class="w"> </span><span class="k">in</span>.wav<span class="w"> </span>out.wav<span class="w"> </span>pad<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span>
@@ -154,19 +165,19 @@ sox<span class="w"> </span><span class="k">in</span>.wav<span class="w"> </span>
 </div>
 </section>
 <section id="raw">
-<h2>raw<a class="headerlink" href="#raw" title="Permalink to this headline">¶</a></h2>
+<h2>raw<a class="headerlink" href="#raw" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sox<span class="w"> </span>-t<span class="w"> </span>raw<span class="w"> </span>-r<span class="w"> </span><span class="m">16000</span><span class="w"> </span>-e<span class="w"> </span>signed<span class="w"> </span>-b<span class="w"> </span><span class="m">16</span><span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>test.raw<span class="w"> </span>-r<span class="w"> </span><span class="m">48000</span><span class="w"> </span>out.wav
 </pre></div>
 </div>
 </section>
 <section id="generate">
-<h2>Generate<a class="headerlink" href="#generate" title="Permalink to this headline">¶</a></h2>
+<h2>Generate<a class="headerlink" href="#generate" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sox<span class="w"> </span>-r<span class="w"> </span><span class="m">16000</span><span class="w"> </span>-n<span class="w"> </span>-b<span class="w"> </span><span class="m">16</span><span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>a.wav<span class="w"> </span>synth<span class="w"> </span><span class="m">10</span><span class="w"> </span>sin<span class="w"> </span><span class="m">1000</span>
 </pre></div>
 </div>
 </section>
 <section id="remix">
-<h2>remix<a class="headerlink" href="#remix" title="Permalink to this headline">¶</a></h2>
+<h2>remix<a class="headerlink" href="#remix" title="Permalink to this heading">¶</a></h2>
 <p>Split multi-channel wave to single channels.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sox<span class="w"> </span>stereo_inputfile.wav<span class="w"> </span>leftchannel.wav<span class="w"> </span>remix<span class="w"> </span><span class="m">1</span>
 sox<span class="w"> </span>stereo_inputfile.wav<span class="w"> </span>rightchannel.wav<span class="w"> </span>remix<span class="w"> </span><span class="m">2</span>

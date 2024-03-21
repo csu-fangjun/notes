@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Basics &mdash; notes  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -14,7 +16,9 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,11 +31,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> notes
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -108,6 +116,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
 </ul>
 
         </div>
@@ -123,9 +134,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">csharp</a> &raquo;</li>
-      <li>Basics</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">csharp</a></li>
+      <li class="breadcrumb-item active">Basics</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/csharp/basics.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -136,7 +147,7 @@
            <div itemprop="articleBody">
              
   <section id="basics">
-<h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h1>
+<h1>Basics<a class="headerlink" href="#basics" title="Permalink to this heading">¶</a></h1>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.mono-project.com/docs/advanced/pinvoke">Interop with Native Libraries</a></p></li>
 <li><p><a class="reference external" href="https://learn.microsoft.com/en-us/dotnet/framework/interop/default-marshalling-for-strings">Default marshalling for strings</a></p></li>
@@ -157,7 +168,7 @@
 <li><p><a class="reference external" href="https://learn.microsoft.com/en-us/dotnet/core/rid-catalog">.NET RID Catalog</a></p></li>
 </ul>
 <section id="use-the-commandline">
-<h2>Use the commandline<a class="headerlink" href="#use-the-commandline" title="Permalink to this headline">¶</a></h2>
+<h2>Use the commandline<a class="headerlink" href="#use-the-commandline" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># To activate the developer commandline</span>
 <span class="s2">&quot;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat&quot;</span>
 </pre></div>
@@ -188,7 +199,7 @@ csc<span class="w"> </span>/r:b.dll<span class="w"> </span>a.cs
 </div>
 </section>
 <section id="visual-studio-for-mac">
-<h2>Visual Studio for Mac<a class="headerlink" href="#visual-studio-for-mac" title="Permalink to this headline">¶</a></h2>
+<h2>Visual Studio for Mac<a class="headerlink" href="#visual-studio-for-mac" title="Permalink to this heading">¶</a></h2>
 <p>After installation, start it and click <code class="docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Stuido</span> <span class="pre">-&gt;</span> <span class="pre">About</span> <span class="pre">Visual</span> <span class="pre">studio</span> <span class="pre">-&gt;</span> <span class="pre">Show</span> <span class="pre">details</span></code>,
 it will show the locations:</p>
 <blockquote>
@@ -214,12 +225,12 @@ path-to-application:
 </div>
 </section>
 <section id="global-usings">
-<h2>global usings<a class="headerlink" href="#global-usings" title="Permalink to this headline">¶</a></h2>
+<h2>global usings<a class="headerlink" href="#global-usings" title="Permalink to this heading">¶</a></h2>
 <p>Requires C# &gt;= 10.0</p>
 <p>Create a file, e.g., <code class="docutils literal notranslate"><span class="pre">GlobalUsings.cs</span></code>:</p>
 </section>
 <section id="nullable-types">
-<h2>nullable types<a class="headerlink" href="#nullable-types" title="Permalink to this headline">¶</a></h2>
+<h2>nullable types<a class="headerlink" href="#nullable-types" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Product?<span class="w"> </span><span class="nv">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>products<span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="p">;</span>
 string<span class="w"> </span>val<span class="p">;</span>
 <span class="k">if</span><span class="w"> </span><span class="o">(</span>p<span class="w"> </span>!<span class="o">=</span><span class="w"> </span>null<span class="o">)</span><span class="w"> </span><span class="o">{</span>
@@ -242,7 +253,7 @@ string?<span class="w"> </span><span class="nv">val</span><span class="w"> </spa
 </div>
 </section>
 <section id="dictionary">
-<h2>Dictionary<a class="headerlink" href="#dictionary" title="Permalink to this headline">¶</a></h2>
+<h2>Dictionary<a class="headerlink" href="#dictionary" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">Product</span><span class="o">&gt;</span> <span class="n">products</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">Product</span><span class="o">&gt;</span> <span class="p">{</span>
   <span class="p">{</span> <span class="s2">&quot;Kayak&quot;</span><span class="p">,</span> <span class="n">new</span> <span class="n">Product</span> <span class="p">{</span> <span class="n">Name</span> <span class="o">=</span> <span class="s2">&quot;Kayak&quot;</span><span class="p">,</span> <span class="n">Price</span> <span class="o">=</span> <span class="mi">275</span><span class="n">M</span> <span class="p">}</span> <span class="p">},</span>
   <span class="p">{</span> <span class="s2">&quot;Lifejacket&quot;</span><span class="p">,</span>  <span class="n">new</span> <span class="n">Product</span><span class="p">{</span> <span class="n">Name</span> <span class="o">=</span> <span class="s2">&quot;Lifejacket&quot;</span><span class="p">,</span> <span class="n">Price</span> <span class="o">=</span> <span class="mf">48.95</span><span class="n">M</span> <span class="p">}</span> <span class="p">}</span>
@@ -261,7 +272,7 @@ string?<span class="w"> </span><span class="nv">val</span><span class="w"> </spa
 </div>
 </section>
 <section id="foreach">
-<h2>foreach<a class="headerlink" href="#foreach" title="Permalink to this headline">¶</a></h2>
+<h2>foreach<a class="headerlink" href="#foreach" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>public class ShoppingCart : IEnumerable&lt;Product?&gt; {
   public IEnumerable&lt;Product?&gt;? Products { get; set; }
 
@@ -273,7 +284,7 @@ string?<span class="w"> </span><span class="nv">val</span><span class="w"> </spa
 </div>
 </section>
 <section id="my-first-page">
-<h2>my first page<a class="headerlink" href="#my-first-page" title="Permalink to this headline">¶</a></h2>
+<h2>my first page<a class="headerlink" href="#my-first-page" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span>@model MyMessage
 @{
     Layout = null;
@@ -307,7 +318,7 @@ string?<span class="w"> </span><span class="nv">val</span><span class="w"> </spa
 </div>
 </section>
 <section id="ef">
-<h2>EF<a class="headerlink" href="#ef" title="Permalink to this headline">¶</a></h2>
+<h2>EF<a class="headerlink" href="#ef" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Microsoft.EntityFrameworkCore.SQLite</p></li>
 <li><p>Microsoft.VisualStudio.Web.CodeGeneration.Design</p></li>

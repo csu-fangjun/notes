@@ -3,6 +3,6 @@ Windows
 
 .. toctree::
 
-    scripts
+    ./script.rst
     ./visual_studio.rst
 

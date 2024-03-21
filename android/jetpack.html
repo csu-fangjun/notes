@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>jetpack &mdash; notes  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -14,7 +16,9 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,11 +31,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> notes
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -133,6 +141,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
 </ul>
 
         </div>
@@ -148,9 +159,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Android</a> &raquo;</li>
-      <li>jetpack</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Android</a></li>
+      <li class="breadcrumb-item active">jetpack</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/android/jetpack.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -161,10 +172,10 @@
            <div itemprop="articleBody">
              
   <section id="jetpack">
-<h1>jetpack<a class="headerlink" href="#jetpack" title="Permalink to this headline">¶</a></h1>
+<h1>jetpack<a class="headerlink" href="#jetpack" title="Permalink to this heading">¶</a></h1>
 <p>See also <a class="reference external" href="https://github.com/android/codelab-android-compose">https://github.com/android/codelab-android-compose</a></p>
 <section id="material-design">
-<h2>material design<a class="headerlink" href="#material-design" title="Permalink to this headline">¶</a></h2>
+<h2>material design<a class="headerlink" href="#material-design" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MaterialTheme</span><span class="p">(</span>
   <span class="n">colorScheme</span> <span class="o">=</span> <span class="n">MyAppsColorScheme</span><span class="p">,</span>
   <span class="n">typography</span> <span class="o">=</span> <span class="n">MyAppsTypography</span><span class="p">,</span>
@@ -175,7 +186,7 @@
 </div>
 </section>
 <section id="state">
-<h2>state<a class="headerlink" href="#state" title="Permalink to this headline">¶</a></h2>
+<h2>state<a class="headerlink" href="#state" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// var selectedAnswer: MutableState&lt;Answer?&gt; = mutableStateOf(null)
 var selectedAnswer: MutableState&lt;Answer?&gt; = remember { mutableStateOf(null) }
 var selectedAnswer: MutableState&lt;Answer?&gt; = rememberSaveable { mutableStateOf(null) }
@@ -198,11 +209,11 @@ isSelected = (selectedAnswer == anwser)
 </div>
 </section>
 <section id="bom">
-<h2>bom<a class="headerlink" href="#bom" title="Permalink to this headline">¶</a></h2>
+<h2>bom<a class="headerlink" href="#bom" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://developer.android.com/jetpack/compose/bom/bom-mapping">https://developer.android.com/jetpack/compose/bom/bom-mapping</a></p>
 </section>
 <section id="arrangement">
-<h2>Arrangement<a class="headerlink" href="#arrangement" title="Permalink to this headline">¶</a></h2>
+<h2>Arrangement<a class="headerlink" href="#arrangement" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://vitor-ramos.medium.com/understand-arrangement-and-alignment-in-jetpack-compose-7633f2ed5b39">https://vitor-ramos.medium.com/understand-arrangement-and-alignment-in-jetpack-compose-7633f2ed5b39</a></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Arrangement.Start</span></code>, <code class="docutils literal notranslate"><span class="pre">Arrangement.Top</span></code></p></li>
@@ -215,7 +226,7 @@ isSelected = (selectedAnswer == anwser)
 </ul>
 </section>
 <section id="alignment">
-<h2>Alignment<a class="headerlink" href="#alignment" title="Permalink to this headline">¶</a></h2>
+<h2>Alignment<a class="headerlink" href="#alignment" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Alignment.Start</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Alignment.End</span></code></p></li>
@@ -223,7 +234,7 @@ isSelected = (selectedAnswer == anwser)
 </ul>
 </section>
 <section id="surface">
-<h2>Surface<a class="headerlink" href="#surface" title="Permalink to this headline">¶</a></h2>
+<h2>Surface<a class="headerlink" href="#surface" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Surface</span><span class="p">(</span>
   <span class="n">modifier</span> <span class="o">=</span>  <span class="n">Modifier</span><span class="o">.</span><span class="n">fillMaxSize</span><span class="p">(),</span>
   <span class="n">color</span> <span class="o">=</span> <span class="n">MaterialTheme</span><span class="o">.</span><span class="n">colorscheme</span><span class="o">.</span><span class="n">background</span>
@@ -244,7 +255,7 @@ isSelected = (selectedAnswer == anwser)
 </div>
 </section>
 <section id="preview">
-<h2>Preview<a class="headerlink" href="#preview" title="Permalink to this headline">¶</a></h2>
+<h2>Preview<a class="headerlink" href="#preview" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@Preview</span><span class="p">(</span><span class="n">showBackground</span><span class="o">=</span><span class="n">true</span><span class="p">,</span> <span class="n">showSystemUi</span><span class="o">=</span><span class="n">true</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;My name&quot;</span><span class="p">)</span>
 
 <span class="o">//</span> <span class="n">dark</span> <span class="n">mode</span>
@@ -258,7 +269,7 @@ isSelected = (selectedAnswer == anwser)
 </div>
 </section>
 <section id="column">
-<h2>Column<a class="headerlink" href="#column" title="Permalink to this headline">¶</a></h2>
+<h2>Column<a class="headerlink" href="#column" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Column</span><span class="p">(</span>
   <span class="n">verticalArrangement</span> <span class="o">=</span> <span class="n">Arrangement</span><span class="o">.</span><span class="n">Center</span><span class="p">,</span>
   <span class="n">horizontalAlignment</span> <span class="o">=</span> <span class="n">Alignment</span><span class="o">.</span><span class="n">CenterHorizontally</span><span class="p">,</span>
@@ -268,7 +279,7 @@ isSelected = (selectedAnswer == anwser)
 </div>
 </section>
 <section id="lazycolumn">
-<h2>LazyColumn<a class="headerlink" href="#lazycolumn" title="Permalink to this headline">¶</a></h2>
+<h2>LazyColumn<a class="headerlink" href="#lazycolumn" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">androidx.compose.foundation.lazy.LazyColumn</span>
 <span class="kn">import</span> <span class="nn">androidx.compose.foundation.lazy.items</span>
 
@@ -288,7 +299,7 @@ isSelected = (selectedAnswer == anwser)
 </div>
 </section>
 <section id="row">
-<h2>Row<a class="headerlink" href="#row" title="Permalink to this headline">¶</a></h2>
+<h2>Row<a class="headerlink" href="#row" title="Permalink to this heading">¶</a></h2>
 <p>See <a class="reference external" href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/package-summary#Row(androidx.compose.ui.Modifier,androidx.compose.foundation.layout.Arrangement.Horizontal,androidx.compose.ui.Alignment.Vertical,kotlin.Function1)">https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/package-summary#Row(androidx.compose.ui.Modifier,androidx.compose.foundation.layout.Arrangement.Horizontal,androidx.compose.ui.Alignment.Vertical,kotlin.Function1)</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Row</span><span class="p">(</span><span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="o">.</span><span class="n">padding</span><span class="p">(</span><span class="nb">all</span> <span class="o">=</span> <span class="mf">8.</span><span class="n">dp</span><span class="p">))</span>
 
@@ -321,7 +332,7 @@ isSelected = (selectedAnswer == anwser)
 </div>
 </section>
 <section id="lazyrow">
-<h2>LazyRow<a class="headerlink" href="#lazyrow" title="Permalink to this headline">¶</a></h2>
+<h2>LazyRow<a class="headerlink" href="#lazyrow" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LazyRow</span><span class="p">(</span>
   <span class="n">horizontalArrangement</span> <span class="o">=</span> <span class="n">Arrangement</span><span class="o">.</span><span class="n">spacedBy</span><span class="p">(</span><span class="mf">8.</span><span class="n">dp</span><span class="p">)</span>
 <span class="p">)</span>
@@ -344,7 +355,7 @@ isSelected = (selectedAnswer == anwser)
 </div>
 </section>
 <section id="spacer">
-<h2>Spacer<a class="headerlink" href="#spacer" title="Permalink to this headline">¶</a></h2>
+<h2>Spacer<a class="headerlink" href="#spacer" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">within</span> <span class="n">a</span> <span class="n">row</span>
 <span class="n">Spacer</span><span class="p">(</span><span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="o">.</span><span class="n">width</span><span class="p">(</span><span class="mf">8.</span><span class="n">dp</span><span class="p">))</span>
 
@@ -362,7 +373,7 @@ isSelected = (selectedAnswer == anwser)
 </div>
 </section>
 <section id="text">
-<h2>Text<a class="headerlink" href="#text" title="Permalink to this headline">¶</a></h2>
+<h2>Text<a class="headerlink" href="#text" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Text</span><span class="p">(</span>
   <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Happy Birthday Sam!&quot;</span><span class="p">,</span>
   <span class="n">fontSize</span> <span class="o">=</span> <span class="mf">100.</span><span class="n">sp</span><span class="p">,</span>
@@ -399,7 +410,7 @@ isSelected = (selectedAnswer == anwser)
 </div>
 </section>
 <section id="button">
-<h2>Button<a class="headerlink" href="#button" title="Permalink to this headline">¶</a></h2>
+<h2>Button<a class="headerlink" href="#button" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Button</span><span class="p">(</span>
   <span class="n">onclick</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="p">)</span> <span class="p">{</span>
@@ -409,7 +420,7 @@ isSelected = (selectedAnswer == anwser)
 </div>
 </section>
 <section id="iconbutton">
-<h2>IconButton<a class="headerlink" href="#iconbutton" title="Permalink to this headline">¶</a></h2>
+<h2>IconButton<a class="headerlink" href="#iconbutton" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IconButton</span><span class="p">(</span><span class="n">onClick</span> <span class="o">=</span> <span class="p">{</span><span class="o">...</span><span class="p">})</span> <span class="p">{</span>
   <span class="n">Icon</span><span class="p">(</span><span class="n">Icons</span><span class="o">.</span><span class="n">Filled</span><span class="o">.</span><span class="n">Close</span><span class="p">,</span> <span class="n">contentDescription</span> <span class="o">=</span> <span class="s2">&quot;Close&quot;</span><span class="p">)</span>
 <span class="p">}</span>
@@ -417,7 +428,7 @@ isSelected = (selectedAnswer == anwser)
 </div>
 </section>
 <section id="checkbox">
-<h2>Checkbox<a class="headerlink" href="#checkbox" title="Permalink to this headline">¶</a></h2>
+<h2>Checkbox<a class="headerlink" href="#checkbox" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Checkbox</span><span class="p">(</span>
   <span class="n">checked</span> <span class="o">=</span> <span class="n">true</span><span class="p">,</span>
   <span class="n">onCheckedChange</span> <span class="o">=</span> <span class="p">{</span><span class="n">it</span><span class="o">-&gt;</span><span class="p">}</span>
@@ -426,7 +437,7 @@ isSelected = (selectedAnswer == anwser)
 </div>
 </section>
 <section id="modifier">
-<h2>Modifier<a class="headerlink" href="#modifier" title="Permalink to this headline">¶</a></h2>
+<h2>Modifier<a class="headerlink" href="#modifier" title="Permalink to this heading">¶</a></h2>
 <p>See <a class="reference external" href="https://developer.android.com/jetpack/compose/modifiers">https://developer.android.com/jetpack/compose/modifiers</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="o">.</span><span class="n">fillMaxSize</span><span class="p">()</span>
 
@@ -459,7 +470,7 @@ isSelected = (selectedAnswer == anwser)
 </div>
 </section>
 <section id="box">
-<h2>Box<a class="headerlink" href="#box" title="Permalink to this headline">¶</a></h2>
+<h2>Box<a class="headerlink" href="#box" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Box</span><span class="p">(</span>
   <span class="n">modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="o">.</span><span class="n">fillMaxSize</span><span class="p">(),</span>
   <span class="n">contentAlignment</span> <span class="o">=</span> <span class="n">Alignment</span><span class="o">.</span><span class="n">Center</span><span class="p">,</span>
@@ -476,7 +487,7 @@ isSelected = (selectedAnswer == anwser)
 </div>
 </section>
 <section id="scaffold">
-<h2>Scaffold<a class="headerlink" href="#scaffold" title="Permalink to this headline">¶</a></h2>
+<h2>Scaffold<a class="headerlink" href="#scaffold" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Scaffold</span><span class="p">(</span>
   <span class="n">topBar</span> <span class="o">=</span> <span class="p">{</span>
     <span class="n">InfoHeader</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
@@ -495,7 +506,7 @@ isSelected = (selectedAnswer == anwser)
 </div>
 </section>
 <section id="textfield">
-<h2>TextField<a class="headerlink" href="#textfield" title="Permalink to this headline">¶</a></h2>
+<h2>TextField<a class="headerlink" href="#textfield" title="Permalink to this heading">¶</a></h2>
 <p>See <a class="reference external" href="https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#TextField(androidx.compose.ui.text.input.TextFieldValue,kotlin.Function1,androidx.compose.ui.Modifier,kotlin.Boolean,kotlin.Boolean,androidx.compose.ui.text.TextStyle,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Boolean,androidx.compose.ui.text.input.VisualTransformation,androidx.compose.foundation.text.KeyboardOptions,androidx.compose.foundation.text.KeyboardActions,kotlin.Boolean,kotlin.Int,kotlin.Int,androidx.compose.foundation.interaction.MutableInteractionSource,androidx.compose.ui.graphics.Shape,androidx.compose.material3.TextFieldColors)">https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#TextField(androidx.compose.ui.text.input.TextFieldValue,kotlin.Function1,androidx.compose.ui.Modifier,kotlin.Boolean,kotlin.Boolean,androidx.compose.ui.text.TextStyle,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Function0,kotlin.Boolean,androidx.compose.ui.text.input.VisualTransformation,androidx.compose.foundation.text.KeyboardOptions,androidx.compose.foundation.text.KeyboardActions,kotlin.Boolean,kotlin.Int,kotlin.Int,androidx.compose.foundation.interaction.MutableInteractionSource,androidx.compose.ui.graphics.Shape,androidx.compose.material3.TextFieldColors)</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">text</span> <span class="n">by</span> <span class="n">rememberSaveable</span><span class="p">(</span><span class="n">stateSaver</span> <span class="o">=</span> <span class="n">TextFieldValue</span><span class="o">.</span><span class="n">Saver</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">mutableStateOf</span><span class="p">(</span><span class="n">TextFieldValue</span><span class="p">(</span><span class="s2">&quot;example&quot;</span><span class="p">,</span> <span class="n">TextRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">)))</span>
@@ -518,7 +529,7 @@ isSelected = (selectedAnswer == anwser)
 </div>
 </section>
 <section id="remember">
-<h2>remember<a class="headerlink" href="#remember" title="Permalink to this headline">¶</a></h2>
+<h2>remember<a class="headerlink" href="#remember" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// Note we use val here with &quot;= remember&quot;
 val expanded = remember { mutableStateOf(false) }
 
@@ -543,7 +554,7 @@ val extraPadding = if(expanded) 48.dp else 0.dp
 </div>
 </section>
 <section id="example-1">
-<h2>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h2>
+<h2>Example 1<a class="headerlink" href="#example-1" title="Permalink to this heading">¶</a></h2>
 <p>See <a class="reference external" href="https://developer.android.com/codelabs/jetpack-compose-basics?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fjetpack-compose-for-android-developers-1%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fjetpack-compose-basics#4">https://developer.android.com/codelabs/jetpack-compose-basics?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fjetpack-compose-for-android-developers-1%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fjetpack-compose-basics#4</a></p>
 <p>Note how <code class="docutils literal notranslate"><span class="pre">Surface</span></code> is used.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>class MainActivity : ComponentActivity() {
@@ -588,7 +599,7 @@ fun GreetingPreview() {
 </div>
 </section>
 <section id="example-2">
-<h2>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h2>
+<h2>Example 2<a class="headerlink" href="#example-2" title="Permalink to this heading">¶</a></h2>
 <p>See <a class="reference external" href="https://developer.android.com/codelabs/jetpack-compose-basics?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fjetpack-compose-for-android-developers-1%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fjetpack-compose-basics#7">https://developer.android.com/codelabs/jetpack-compose-basics?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fjetpack-compose-for-android-developers-1%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fjetpack-compose-basics#7</a></p>
 <p>Note that we pass a lambda function <code class="docutils literal notranslate"><span class="pre">onContinueClicked</span></code> to change the state.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@Composable</span>
@@ -640,7 +651,7 @@ fun GreetingPreview() {
 </div>
 </section>
 <section id="example-3">
-<h2>Example 3<a class="headerlink" href="#example-3" title="Permalink to this headline">¶</a></h2>
+<h2>Example 3<a class="headerlink" href="#example-3" title="Permalink to this heading">¶</a></h2>
 <p>See <a class="reference external" href="https://developer.android.com/codelabs/jetpack-compose-basics?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fjetpack-compose-for-android-developers-1%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fjetpack-compose-basics#11">https://developer.android.com/codelabs/jetpack-compose-basics?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fjetpack-compose-for-android-developers-1%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fjetpack-compose-basics#11</a></p>
 <p>Change the colors.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Color</span><span class="o">.</span><span class="n">kt</span>
@@ -670,7 +681,7 @@ fun GreetingPreview() {
 </div>
 </section>
 <section id="example-4">
-<h2>Example 4<a class="headerlink" href="#example-4" title="Permalink to this headline">¶</a></h2>
+<h2>Example 4<a class="headerlink" href="#example-4" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@Composable</span>
 <span class="n">fun</span> <span class="n">FavoriteCollectionCard</span><span class="p">(</span>
    <span class="nd">@DrawableRes</span> <span class="n">drawable</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span>
@@ -716,7 +727,7 @@ fun GreetingPreview() {
 </div>
 </section>
 <section id="example-5">
-<h2>Example 5<a class="headerlink" href="#example-5" title="Permalink to this headline">¶</a></h2>
+<h2>Example 5<a class="headerlink" href="#example-5" title="Permalink to this heading">¶</a></h2>
 <p>scroll</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@Composable</span>
 <span class="n">fun</span> <span class="n">HomeScreen</span><span class="p">(</span><span class="n">modifier</span><span class="p">:</span> <span class="n">Modifier</span> <span class="o">=</span> <span class="n">Modifier</span><span class="p">)</span> <span class="p">{</span>
@@ -739,7 +750,7 @@ fun GreetingPreview() {
 </div>
 </section>
 <section id="example-6">
-<h2>Example 6<a class="headerlink" href="#example-6" title="Permalink to this headline">¶</a></h2>
+<h2>Example 6<a class="headerlink" href="#example-6" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@Composable</span>
 <span class="n">fun</span> <span class="n">SingleChoiceQuestion</span><span class="p">(</span><span class="n">answers</span><span class="p">:</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Answer</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">Column</span> <span class="p">{</span>
@@ -756,7 +767,7 @@ fun GreetingPreview() {
 </div>
 </section>
 <section id="example-7">
-<h2>Example 7<a class="headerlink" href="#example-7" title="Permalink to this headline">¶</a></h2>
+<h2>Example 7<a class="headerlink" href="#example-7" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@Composable</span>
 <span class="n">fun</span> <span class="n">MyAppTopAppBar</span><span class="p">(</span><span class="n">topAppBarText</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="n">onBackPressed</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Unit</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">TopAppBar</span><span class="p">(</span>
