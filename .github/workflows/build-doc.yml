@@ -29,9 +29,8 @@ jobs:
               cd /workspace
               which latexmk
 
-              python3 --version
 
-              python3 -m pip install -r ./docs/requirements.txt
+              pip install -r ./docs/requirements.txt
 
               cd docs
               make html

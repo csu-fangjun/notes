@@ -1,0 +1,7 @@
+OpenFst
+=======
+
+.. toctree::
+
+    basics
+

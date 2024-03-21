@@ -64,5 +64,8 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    react/index
    tts/index
    rust/index
+   elf/index
+   ros2/index
+   openfst/index
 
 .. github/index
