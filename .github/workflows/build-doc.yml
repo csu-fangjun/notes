@@ -13,41 +13,42 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       # refer to https://github.com/actions/checkout
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup Python
-        uses: actions/setup-python@v2
+      - name: Run docker
+        uses: addnab/docker-run-action@v3
         with:
-          python-version: "3.8"
+            image: reitzig/texlive-full:latest
+            options: |
+              --volume ${{ github.workspace }}/:/workspace
+            shell: bash
+            run: |
+              uname -a
+              cd /workspace
+              which latexmk
 
-      - name: Install dependencies
+              python3 --version
+
+              python3 -m pip install -r ./docs/requirements.txt
+
+              cd docs
+              make html
+              touch build/html/.nojekyll
+
+              make latex && \
+              mkdir -pv build/html/_static && \
+              cd build/latex && \
+              latexmk -pdf -dvi -ps- notes.tex && \
+              cp -v notes.pdf ../html/_static/
+
+      - name: Show files
         shell: bash
         run: |
-          pip install -r ./docs/requirements.txt
-
-      - name: Setup TeX Live
-        uses: teatimeguest/setup-texlive-action@v3
-        with:
-          packages: scheme-basic
-
-      - name: Check `tlmgr` version
-        run: tlmgr --version
-
-      - name: Build pdf and html
-        shell: bash
-        run: |
-          cd docs
-          make html
-          touch build/html/.nojekyll
-
-          make latex && \
-          mkdir -pv build/html/_static && \
-          cd build/latex && \
-          latexmk -pdf -dvi -ps- notes.tex && \
-          cp -v notes.pdf ../html/_static/
-
+          ls -lh docs/build
+          ls -lh docs/html
+          ls -lh docs/latex
 
       - name: Upload pdf
         uses: actions/upload-artifact@v4
