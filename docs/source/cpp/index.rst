@@ -9,4 +9,5 @@ C++
     getline
     ratio
     chrono
+    ./iomanip.rst
 
