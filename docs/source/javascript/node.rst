@@ -34,3 +34,25 @@ We can run ``yarm`` inside the directory containing ``package.json``.
 
 If a project contains a file ``yarn.lock``, then it is using the tool ``yarn``.
 
+
+glibc 2.32 on ubuntu 18.04
+--------------------------
+
+.. code-block:: bash
+
+  # see also https://github.com/nodesource/distributions/issues/1392
+  sudo apt install -y gawk
+
+  wget https://github.com/bminor/glibc/archive/refs/tags/glibc-2.32.tar.gz
+  tar xvf glibc-2.32.tar.gz
+  mkdir glibc-build
+  cd glibc-build
+  cd glibc-glibc-2.32/
+  unset LD_LIBRARY_PATH
+  unset CFLAGS
+  unset CPPFLAGS
+  unset CXXFLAGS
+  ../configure --prefix=/star-fj/fangjun/software/glibc-2.32
+  make install
+  apt install -y patchelf
+  patchelf --set-interpreter /star-fj/fangjun/software/glibc-2.32/lib/ld-linux-x86-64.so.2 --set-rpath /star-fj/fangjun/software/glibc-2.32/lib:/usr/lib/x86_64-linux-gnu:/lib/x86_64-linux-gnu ./node
