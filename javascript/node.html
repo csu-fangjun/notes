@@ -66,7 +66,10 @@
 <li class="toctree-l2"><a class="reference internal" href="array.html">array in javascript</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typed_array.html">typed array in javascript</a></li>
 <li class="toctree-l2"><a class="reference internal" href="regular_expression.html">Regular expressions in javascript</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">node</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">node</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#glibc-2-32-on-ubuntu-18-04">glibc 2.32 on ubuntu 18.04</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="todo.html">TODOs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="npm.html">npm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="module.html">module</a></li>
@@ -164,6 +167,27 @@ use <code class="docutils literal notranslate"><span class="pre">npm</span> <spa
 <p>An alternative for <code class="docutils literal notranslate"><span class="pre">npm</span></code> is <code class="docutils literal notranslate"><span class="pre">yarn</span></code>: <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">-g</span> <span class="pre">yarn</span></code>.</p>
 <p>We can run <code class="docutils literal notranslate"><span class="pre">yarm</span></code> inside the directory containing <code class="docutils literal notranslate"><span class="pre">package.json</span></code>.</p>
 <p>If a project contains a file <code class="docutils literal notranslate"><span class="pre">yarn.lock</span></code>, then it is using the tool <code class="docutils literal notranslate"><span class="pre">yarn</span></code>.</p>
+<section id="glibc-2-32-on-ubuntu-18-04">
+<h2>glibc 2.32 on ubuntu 18.04<a class="headerlink" href="#glibc-2-32-on-ubuntu-18-04" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># see also https://github.com/nodesource/distributions/issues/1392</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>gawk
+
+wget<span class="w"> </span>https://github.com/bminor/glibc/archive/refs/tags/glibc-2.32.tar.gz
+tar<span class="w"> </span>xvf<span class="w"> </span>glibc-2.32.tar.gz
+mkdir<span class="w"> </span>glibc-build
+<span class="nb">cd</span><span class="w"> </span>glibc-build
+<span class="nb">cd</span><span class="w"> </span>glibc-glibc-2.32/
+<span class="nb">unset</span><span class="w"> </span>LD_LIBRARY_PATH
+<span class="nb">unset</span><span class="w"> </span>CFLAGS
+<span class="nb">unset</span><span class="w"> </span>CPPFLAGS
+<span class="nb">unset</span><span class="w"> </span>CXXFLAGS
+../configure<span class="w"> </span>--prefix<span class="o">=</span>/star-fj/fangjun/software/glibc-2.32
+make<span class="w"> </span>install
+apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>patchelf
+patchelf<span class="w"> </span>--set-interpreter<span class="w"> </span>/star-fj/fangjun/software/glibc-2.32/lib/ld-linux-x86-64.so.2<span class="w"> </span>--set-rpath<span class="w"> </span>/star-fj/fangjun/software/glibc-2.32/lib:/usr/lib/x86_64-linux-gnu:/lib/x86_64-linux-gnu<span class="w"> </span>./node
+</pre></div>
+</div>
+</section>
 </section>
 
 
