@@ -7,3 +7,4 @@ Go
     cross-compile
     basics
     hello
+    array

@@ -12,7 +12,7 @@ To run the program, use:
 
   go run ex.go
 
-For recent version of go, ``go build`` will throw the following error:
+For a recent version of go, ``go build`` will throw the following error:
 
 .. code-block::
 
