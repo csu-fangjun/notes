@@ -2,7 +2,8 @@ Package
 =======
 
 
-.. code-block::
+.. code-block:: kotlin
+
    // a.kt
    package geometry.shape
 

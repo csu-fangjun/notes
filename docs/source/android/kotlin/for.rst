@@ -16,6 +16,11 @@ for
      check(numbers[i] == value)
    }
 
+   // 0 <= i < numbers.size
+   for (i in 0 until numbers.size) {
+     println(numbers[i])
+   }
+
 
    // forEach
    val a = arrayOf(1, 2, 3)

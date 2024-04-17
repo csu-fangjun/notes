@@ -13,3 +13,5 @@ Android
     tts
     jetpack
     samples
+    resources
+    release

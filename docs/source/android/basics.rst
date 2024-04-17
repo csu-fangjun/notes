@@ -132,3 +132,33 @@ LinearLayout
    />
 
 ``orientation`` can also be ``horizontal``.
+
+view binding
+------------
+
+Edit ``app/build.gradle``, add the following:
+
+.. code-block::
+
+
+  android { ...
+    kotlinOptions {
+      jvmTarget = '1.8'
+    }
+    buildFeatures {
+      viewBinding true
+    }
+  }
+
+Then in the main activity, use::
+
+  // activity_main.xml -> AcitvityMainBinding
+  import com.bignerdranch.android.geoquiz.databinding.ActivityMainBinding
+
+  private lateinit var binding: ActivityMainBinding
+  binding = ActivityMainBinding.inflate(layoutInflater)
+  setContentView(binding.root)
+
+  binding.trueButton.setOnClickListener { view: View -> }
+
+  binding.falseButton.setOnClickListener { view: View -> }
