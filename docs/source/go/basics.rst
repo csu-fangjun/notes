@@ -53,4 +53,9 @@ then it is exported. Otherwise, it is not exported.
 Note that for builtin functions, the above rule does not apply. For instance,
 both ``print`` and ``println`` are exported.
 
+go vet
+------
+
+Use ``go vet`` to quick check the correctness of the code.
+
 

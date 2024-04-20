@@ -69,3 +69,12 @@ Format specifier:
    # to view the help information of the function fmt.Printf
    go doc fmt.Printf
 
+.. code-block::
+
+   go doc builtin.append
+   go doc builtin.make
+   go doc builtin.copy
+   go doc builtin.new
+   go doc builtin.len
+   go doc builtin.cap
+
