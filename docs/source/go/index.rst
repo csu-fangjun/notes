@@ -12,3 +12,5 @@ Go
     integers
     ./string.rst
     ./for.rst
+    ./map.rst
+    ./switch.rst
