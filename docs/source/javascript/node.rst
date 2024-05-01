@@ -25,14 +25,76 @@ containing ``package.json``.
 
 To create a new project, run ``npm init -y``, it will generate ``package.json``.
 
-To install a package, use ``npm install package-name``. To remove a package,
-use ``npm remove package-name``.
+To install a local package, use ``npm install package-name``. To remove a local package,
+use ``npm remove package-name`` or ``npm uninstall package-name``.
+
+To install a global package, use ``npm install -g package-name``. To remove a global package,
+use ``npm remove -g package-name`` or ``npm uninstall -g package-name``.
+
 
 An alternative for ``npm`` is ``yarn``: ``npm install -g yarn``.
 
 We can run ``yarm`` inside the directory containing ``package.json``.
 
 If a project contains a file ``yarn.lock``, then it is using the tool ``yarn``.
+
+
+.. code-block:: bash
+
+   which node
+   which npm
+
+.. code-block::
+
+    /Users/fangjun/software/node-v21.1.0-darwin-x64/bin/node
+    /Users/fangjun/software/node-v21.1.0-darwin-x64/bin/npm
+
+Globally installed ``npm`` packages are placed in ``prefix/lib/node_modules``
+and executable files are placed in ``prefix/bin``. Use ``-g`` or ``--global``
+in ``npm install``.
+
+Locally installed ``npm`` packages are placed in ``pwd/node_modules``
+and executable files are placed in ``pwd/node_modules/.bin``.
+
+.. code-block:: bash
+
+   npm install -g eslint
+   wchi eslint
+
+prints::
+
+  /Users/fangjun/software/node-v21.1.0-darwin-x64/bin/eslint
+
+
+To install a specific version, use::
+
+  npm install ejs@2.7.4
+
+
+``npm i == npm install``.
+
+``npm install --global == npm install -g``.
+
+versions:
+
+  - ``1.2.33``, an exact version
+  - ``>1.2.33``
+  - ``>=1.2.33`
+  - ``<1.2.33`
+  - ``<=1.2.33`
+  - ``^1.2.33`, the latest compatible major version, i.e., ``<2.0.0``.
+  - ``~1.2.33``, the latest version ``<1.3.0``. ``~`` means latest minor number.
+  - ``*``, any version
+
+
+To list locally installed packages::
+
+  npm list
+
+To list globally installed packages::
+
+  npm list --global
+  npm list -g
 
 
 glibc 2.32 on ubuntu 18.04
@@ -56,3 +118,6 @@ glibc 2.32 on ubuntu 18.04
   make install
   apt install -y patchelf
   patchelf --set-interpreter /star-fj/fangjun/software/glibc-2.32/lib/ld-linux-x86-64.so.2 --set-rpath /star-fj/fangjun/software/glibc-2.32/lib:/usr/lib/x86_64-linux-gnu:/lib/x86_64-linux-gnu ./node
+
+process
+-------

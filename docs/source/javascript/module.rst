@@ -12,13 +12,16 @@ Export a single function:
 .. code-block:: javascript
 
   # mod1.js
-  const mod1Function = () => console.log('Mod1 is alive!')
-  module.exports = mod1Function
+  const mod1Function = () => console.log('Mod1 is alive!');
+  module.exports = mod1Function;
 
 
   # main.js
   mod1Function = require('./mod1.js')
   mod1Function()
+  # Since we used "module.exports = mod1Function;", we can use mod1Function() here directly.
+  #
+  # If we use "module.exports = {mod1Function};", then we need to use "mod1Function.mod1Function();"
 
 
 Export more function:
@@ -26,15 +29,21 @@ Export more function:
 .. code-block:: javascript
 
    # mod1.js
-   const mod1Function = () => console.log('Mod1 is alive!')
-   const mod1Function2 = () => console.log('Mod1 is rolling, baby!')
+   const mod1Function = () => console.log('Mod1 is alive!');
+   const mod1Function2 = () => console.log('Mod1 is rolling, baby!');
 
-   module.exports = { mod1Function, mod1Function2 }
+   module.exports = { mod1Function, mod1Function2 };
 
    # main.js
-   ({ mod1Function, mod1Function2 } = require('./mod1.js'))
-   mod1Function()
-   mod1Function2()
+   const { mod1Function, mod1Function2 } = require('./mod1.js');
+   mod1Function();
+   mod1Function2();
+
+   # or main.js
+   const lib = require('./mod1.js');
+   lib.mod1Function();
+   lib.mod1Function2();
+
 
 ESmodules
 ---------

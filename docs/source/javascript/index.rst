@@ -14,3 +14,5 @@ javascript
     todo
     ./npm.rst
     ./module.rst
+    ./object.rst
+    ./node-addon-api.rst

@@ -6,3 +6,8 @@ Strings in javascript
    :linenos:
    :caption: ./code/strings.js
 
+String interpolation example::
+
+  const myName = "world";
+  console.log(`hello ${myName}`);
+

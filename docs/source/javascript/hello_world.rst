@@ -1,6 +1,10 @@
 Hello world
 ===========
 
+strict mode::
+
+  "use strict";
+
 - case sensitive
 - numbers (all numbers are 64-bit floating type)
 - strings (``''`` and ``""``), there is no character type

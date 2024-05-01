@@ -1,0 +1,7 @@
+Colab
+=====
+
+.. toctree::
+
+    hello
+

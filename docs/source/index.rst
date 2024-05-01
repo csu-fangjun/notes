@@ -67,5 +67,6 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    elf/index
    ros2/index
    openfst/index
+   colab/index
 
 .. github/index
