@@ -14,5 +14,10 @@ console.log(First.First("hello"));
 console.log(First.add(2, 3));
 First.runCallback(function(msg) { console.log("Msg is", msg); });
 First.runCallback((msg) => { console.log("Msg2 is", msg); });
+const obj1 = First.createObject("foo");
+const obj2 = First.createObject("bar");
+console.log(obj1.msg, obj2.msg);
+const p = First.createExternal();
+First.printExternal(p);
 
 console.log("Tests passed- everything looks OK!");

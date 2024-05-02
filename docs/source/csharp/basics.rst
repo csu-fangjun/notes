@@ -94,7 +94,7 @@ Requires C# >= 10.0
 
 Create a file, e.g., ``GlobalUsings.cs``:
 
-.. code-bock:: c#
+.. code-bock::
 
   global using LanguageFeatures.Models;
   global using Microsoft.AspNetCore.Mvc;

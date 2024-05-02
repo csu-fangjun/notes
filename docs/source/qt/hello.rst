@@ -1,7 +1,7 @@
 Hello
 =====
 
-.. code-code:: bash
+.. code-block:: bash
 
    mkdir -p code/hello
    cd code/hello

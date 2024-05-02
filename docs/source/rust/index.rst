@@ -4,4 +4,5 @@ rust
 .. toctree::
 
     baiscs
+    string
 

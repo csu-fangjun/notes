@@ -3,7 +3,7 @@ Installation
 
 Refer to `<https://llvm.org/docs/GettingStarted.html#requirements>`_
 
-.. cod-block:: bash
+.. code-block:: bash
 
     git clone --depth 1 https://github.com/llvm/llvm-project.git
     cd llvm-project

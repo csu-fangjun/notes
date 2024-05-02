@@ -76,7 +76,7 @@ div
     const primes = generatePrimes(quota.value);
 
 
-    // note we use output.textContent
+    // note we use output.textContent for div
     output.textContent = `Finished generating ${quota.value} primes!`;
   });
 
@@ -85,7 +85,17 @@ div
   });
 
   const log = document.querySelector(".event-log");
+
+  // textContent for pre
   log.textContent = "";
 
+span
+----
 
+.. code-block::
 
+   <span id="age"></span>
+
+   // js
+   var ageEl = document.getElementById("age")
+   ageEl.innerText = "22"

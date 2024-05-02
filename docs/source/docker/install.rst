@@ -35,6 +35,7 @@ Run an image
 Map a host directory to docker container:
 
 .. code-block:: bash
+
    sudo docker run -it -v /host/path:/container/path pytorch/manylinux-builder:cuda10.2 /bin/bash
 
 copy data between container and host
