@@ -21,3 +21,16 @@ Remove folder
 .. code-block:: bash
 
    del /s /q .\*
+
+Change default shell to powershell for OpenSSH
+----------------------------------------------
+
+See `<https://superuser.com/questions/1799896/how-to-configure-powershell-for-openssh-instead-of-cmd>`_
+
+.. code-block::bash
+
+  New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" `
+                   -Name DefaultShell `
+                   -Value "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" `
+                   -PropertyType String `
+                   -Force

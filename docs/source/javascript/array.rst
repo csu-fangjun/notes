@@ -1,6 +1,8 @@
 array in javascript
 =====================
 
+All typed array are zero initialized.
+
 .. literalinclude:: ./code/array2.js
    :language: javascript
    :linenos:
