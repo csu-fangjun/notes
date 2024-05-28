@@ -4,6 +4,7 @@
 void testDouble() {
   // control the number of decimal pointer when converting it to a string
   double i = 2.354;
+  assert(i.toString() == '2.354');
   assert(i.toStringAsPrecision(1) == '2');
   assert(i.toStringAsPrecision(2) == '2.4');
   assert(i.toStringAsPrecision(3) == '2.35');
@@ -21,6 +22,7 @@ void testInt() {
   assert(i == 23);
 }
 
+// the type is String, not string
 void testString() {
   var s = 'hello';
   var s2 = s + " world";
@@ -38,6 +40,14 @@ python. multi line string
       multi-line string
       """;
   print(s);
+
+  String a = 'abc';
+  assert(a.toUpperCase() == 'ABC');
+
+  a = 'ABC';
+
+  // we can print a string on assertion failure
+  assert(a.toLowerCase() == 'abc', "${a.toLowerCase()}");
 }
 
 void testBoolean() {
@@ -92,6 +102,52 @@ void testList() {
   }
 }
 
+void testList2() {
+  // type is List<String>
+  final aListOfStrings = ['one', 'two', 'three'];
+  assert(aListOfStrings is List<String>);
+  assert(aListOfStrings.isNotEmpty);
+
+  // type is Set<String>
+  final aSetOfStrings = {'one', 'two', 'three'};
+  assert(aSetOfStrings is Set<String>);
+  assert(aSetOfStrings.length == 3);
+  assert(aSetOfStrings.contains('one'));
+  assert(aSetOfStrings.contains('two'));
+  assert(aSetOfStrings.contains('three'));
+
+  // type is Map<String, int>
+  final aMapOfStringsToInts = {
+    'one': 1,
+    'two': 2,
+    'three': 3,
+  };
+  assert(aMapOfStringsToInts is Map<String, int>);
+  assert(aMapOfStringsToInts.length == 3);
+  assert(aMapOfStringsToInts['one'] == 1);
+  assert(aMapOfStringsToInts['two'] == 2);
+  assert(aMapOfStringsToInts['three'] == 3);
+
+  final aListOfInt = <int>[];
+  assert(aListOfInt is List<int>);
+
+  assert(aListOfInt.isEmpty);
+
+  aListOfInt.add(10);
+  aListOfInt.add(20);
+  assert(aListOfInt.length == 2);
+  assert(aListOfInt[0] == 10);
+  assert(aListOfInt[1] == 20);
+
+  final aSetOfInt = <int>{};
+  assert(aSetOfInt is Set<int>);
+
+  final aMapOfIntToDouble = <int, double>{};
+  assert(aMapOfIntToDouble is Map<int, double>);
+
+  // final aListOfBaseType = <BaseType>[SubType(), SubType()];
+}
+
 void testNuallable() {
   int? a;
   assert(a == null);
@@ -110,11 +166,33 @@ void testNuallable() {
   assert(b == 20);
 }
 
+void testTypeInference() {
+  var a = 1;
+  assert(a is int);
+
+  var b = 's';
+  assert(b is String);
+
+  var c = 3.7;
+  assert(c is double);
+
+  var d = ['1', '2', '3'];
+  assert(d is List<String>);
+
+  var f = {
+    'one': 1,
+    'two': 2,
+  };
+  assert(f is Map<String, int>);
+}
+
 void main() {
   testDouble();
   testInt();
   testString();
   testBoolean();
   testList();
+  testList2();
   testNuallable();
+  testTypeInference();
 }

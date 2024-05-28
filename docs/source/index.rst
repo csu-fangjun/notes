@@ -69,5 +69,6 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    openfst/index
    colab/index
    dart/index
+   flutter/index
 
 .. github/index

@@ -1,2 +1,7 @@
 build
 *.jar
+*.dylib
+*.so
+.dart_tool
+*.lock
+*.o

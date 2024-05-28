@@ -5,4 +5,3 @@ Commands
 .. toctree::
 
     rev-parse
-

@@ -1,0 +1,7 @@
+name: hello_ffi
+
+environment:
+  sdk: ^3.4.0
+
+dependencies:
+  path: ^1.8.0

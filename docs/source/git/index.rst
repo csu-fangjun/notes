@@ -8,3 +8,4 @@ This page describes commonly used git commands.
 
     ./branch.rst
     commands
+    ./tag.rst
