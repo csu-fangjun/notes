@@ -34,3 +34,12 @@ See `<https://superuser.com/questions/1799896/how-to-configure-powershell-for-op
                    -Value "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" `
                    -PropertyType String `
                    -Force
+
+re-enable cmd after uninstalling anaconda
+-----------------------------------------
+
+.. code-block:: bash
+
+  # Run it in powershell
+  C:\Windows\System32\reg.exe DELETE "HKCU\Software\Microsoft\Command Processor" /v AutoRun /f
+

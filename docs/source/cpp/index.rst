@@ -10,4 +10,5 @@ C++
     ratio
     chrono
     ./iomanip.rst
+    ./index.rst
 

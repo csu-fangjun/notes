@@ -70,5 +70,7 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    colab/index
    dart/index
    flutter/index
+   kws/index
+   papers/index
 
 .. github/index

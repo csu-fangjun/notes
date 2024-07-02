@@ -1,0 +1,6 @@
+Papers
+======
+
+.. toctree::
+
+    ./transformers.rst

@@ -13,5 +13,6 @@ torch
     android/index
     onnx/index
     lstm
+    torchvision
 
 
