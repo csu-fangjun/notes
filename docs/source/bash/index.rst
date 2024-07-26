@@ -10,3 +10,4 @@ bash
     wget
     hello
     pkg-config
+    sed

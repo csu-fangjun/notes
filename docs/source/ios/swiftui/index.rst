@@ -1,0 +1,7 @@
+Swiftui
+=======
+
+.. toctree::
+
+    basics
+

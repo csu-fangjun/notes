@@ -7,21 +7,28 @@ for score in individualScores {
     teamScore += 1
   }
 }
-print(teamScore) // 11
+// 11
+print(teamScore)
 
 var optionalString: String? = "Hello"
-print(optionalString == nil) // false
+// false
+print(optionalString == nil)
 
 var optionalName: String? = "Tom"
 var greeting = "Hello!"
+
+// if optionalName is nil, then the condition is false
+// if optionalName is not nil, then the condition is true and optionalName is unwrapped and assigned to name
 if let name = optionalName {
   greeting = "Hello,\(name)"
 }
-print(greeting) // Hello,Tom
+// Hello,Tom
+print(greeting)
 
 let nickname: String? = nil
 let fullName: String = "Tom Green"
-let informalGreeting = "Hi, \(nickname ?? fullName)" // Hi, Tom Green
+// Hi, Tom Green
+let informalGreeting = "Hi, \(nickname ?? fullName)"
 print(informalGreeting)
 
 if let nickname {
