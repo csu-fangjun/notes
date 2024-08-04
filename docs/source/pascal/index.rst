@@ -1,0 +1,8 @@
+Pascal
+======
+
+.. toctree::
+
+    install
+    hello
+

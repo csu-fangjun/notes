@@ -72,5 +72,6 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    flutter/index
    kws/index
    papers/index
+   ./pascal/index
 
 .. github/index

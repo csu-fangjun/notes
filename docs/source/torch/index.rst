@@ -14,5 +14,6 @@ torch
     onnx/index
     lstm
     torchvision
+    autograd
 
 
