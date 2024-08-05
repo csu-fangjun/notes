@@ -6,8 +6,8 @@ Basics
    :caption: ./code/basics.py
 
 
-Write to a binary file and read from C/C++
--------------------------------------------
+Write to a binary file in Python and read it from C/C++
+-------------------------------------------------------
 
 
 .. code-block:: python
@@ -40,3 +40,17 @@ Write to a binary file and read from C/C++
 
     return 0;
   }
+
+Write to a binary file in C++ and read it from Python
+------------------------------------------------------
+
+.. code-block:: c++
+
+    std::vector<float> v(100*560);
+    FILE *fp = fopen("b.bin", "wb");
+    fwrite(v.data(), sizeof(float), v.size(), fp);
+    fclose(fp);
+
+.. code-block:: python
+
+  features = np.fromfile('./b.bin', dtype='uint8').view(np.float32).reshape(-1, 560)

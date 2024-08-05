@@ -13,6 +13,7 @@ Integer to string::
 
 
 String interpolation, use ``\(value)``. ``value`` can be an expression::
+To get a lowercased string, use the method ``.lowercased()`` of a string variable.
 
   let s = 10
   let s2 = "s is \(s)"

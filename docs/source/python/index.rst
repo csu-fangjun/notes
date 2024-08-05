@@ -14,3 +14,4 @@ Python
     socket/index
     numpy/index
     pip
+    os

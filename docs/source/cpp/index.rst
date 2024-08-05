@@ -10,5 +10,5 @@ C++
     ratio
     chrono
     ./iomanip.rst
-    ./index.rst
+    ./shared_lib.rst
 
