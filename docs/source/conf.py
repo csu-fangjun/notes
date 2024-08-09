@@ -39,7 +39,7 @@ extensions = [
     "sphinxcontrib.youtube",
 ]
 
-bibtex_bibfiles = ["refs.bib", "transformers.bib"]
+bibtex_bibfiles = ["refs.bib", "transformers.bib", "programming.bib"]
 
 
 # Add any paths that contain templates here, relative to this directory.

@@ -15,5 +15,6 @@ torch
     lstm
     torchvision
     autograd
+    seed
 
 
