@@ -5,4 +5,5 @@ Pascal
 
     install
     hello
+    ./call-c.rst
 

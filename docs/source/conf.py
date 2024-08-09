@@ -37,9 +37,15 @@ extensions = [
     "sphinx_rtd_theme",
     "sphinx_tabs.tabs",
     "sphinxcontrib.youtube",
+    "sphinxcontrib.bibtex",
 ]
 
-bibtex_bibfiles = ["refs.bib", "transformers.bib", "programming.bib"]
+bibtex_bibfiles = [
+    "diffusion.bib",
+    "programming.bib",
+    "refs.bib",
+    "transformers.bib",
+]
 
 
 # Add any paths that contain templates here, relative to this directory.

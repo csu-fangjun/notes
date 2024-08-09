@@ -6,5 +6,7 @@ Swift
     ./data_types.rst
     basics
     package
+    pointer
+    callback
 
 

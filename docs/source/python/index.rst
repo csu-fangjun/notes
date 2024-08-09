@@ -15,3 +15,4 @@ Python
     numpy/index
     pip
     os
+    ./matplotlib.rst
