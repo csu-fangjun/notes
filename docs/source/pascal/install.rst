@@ -1,6 +1,11 @@
 Install
 =======
 
+online pascal compiler
+----------------------
+
+- `<https://www.onlinegdb.com/online_pascal_compiler>`_
+
 Free pascal
 -----------
 
