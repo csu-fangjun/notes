@@ -1,7 +1,7 @@
-recommonmark==0.7.1
-sphinx==5.0.0
-sphinx-autodoc-typehints==1.12.0
-sphinx_rtd_theme==1.0.0
-sphinxcontrib-bibtex==2.4.1
-sphinxcontrib-youtube==1.1.0
+recommonmark
+sphinx
+sphinx-autodoc-typehints
+sphinx_rtd_theme
+sphinxcontrib-bibtex
+sphinxcontrib-youtube
 sphinx-tabs

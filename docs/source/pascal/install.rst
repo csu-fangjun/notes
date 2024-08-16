@@ -19,6 +19,50 @@ After installing, we will get an executable ``fpc`` in the command line.
 
 ``/usr/local/share/src/fpc-3.2.2/demo`` contains examples.
 
+.. code-block:: bash
+
+  mkdir ~/t
+  cd ~/t
+  cp /usr/local/share/src/fpc-3.2.2/demo/text/hello.pp ./
+  fpc ./hello.pp
+
+  It throws the following error::
+  Free Pascal Compiler version 3.2.2 [2021/05/16] for x86_64
+  Copyright (c) 1993-2021 by Florian Klaempfl and others
+  Target OS: Darwin for x86_64
+  Compiling ./hello.pp
+  Assembling hello
+  Linking hello
+  ld: library not found for -lc
+  An error occurred while linking
+  hello.pp(19,27) Error: Error while linking
+  hello.pp(19,27) Fatal: There were 1 errors compiling module, stopping
+  Fatal: Compilation aborted
+  Error: /usr/local/bin/ppcx64 returned an error exitcode
+
+The fix is to run::
+
+  fpc -XR/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/ ./hello.pp
+
+The logs are::
+
+  Free Pascal Compiler version 3.2.2 [2021/05/16] for x86_64
+  Copyright (c) 1993-2021 by Florian Klaempfl and others
+  Target OS: Darwin for x86_64
+  Compiling ./hello.pp
+  Assembling hello
+  Linking hello
+  21 lines compiled, 0.2 sec
+
+The following command::
+
+  fpc -h | grep XR
+
+prints::
+
+  -Xd        Do not search default library path (sometimes required for cross-compiling when not using -XR)
+  -XR<x>     Prepend <x> to all linker search paths (BeOS, Darwin, FreeBSD, Linux, Mac OS, Solaris)
+
 Linux
 ~~~~~
 
