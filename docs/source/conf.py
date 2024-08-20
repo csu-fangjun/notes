@@ -30,10 +30,8 @@ author = "fangjun"
 # ones.
 extensions = [
     "recommonmark",
-    "sphinx.ext.autodoc",
     "sphinx.ext.githubpages",
     "sphinx.ext.napoleon",
-    "sphinx_autodoc_typehints",
     "sphinx_rtd_theme",
     "sphinx_tabs.tabs",
     "sphinxcontrib.bibtex",
