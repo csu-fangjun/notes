@@ -10,4 +10,7 @@ Pascal
     ./char.rst
     ./pointers.rst
     ./class.rst
+    ./conditional-compiling.rst
+    ./compiler-options.rst
+    ./dl.rst
 

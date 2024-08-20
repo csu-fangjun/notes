@@ -36,7 +36,6 @@ extensions = [
     "sphinx_autodoc_typehints",
     "sphinx_rtd_theme",
     "sphinx_tabs.tabs",
-    "sphinxcontrib.youtube",
     "sphinxcontrib.bibtex",
 ]
 

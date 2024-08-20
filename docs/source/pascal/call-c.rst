@@ -22,3 +22,15 @@ Call C
 - `<https://github.com/Kagamma/whisper-pas/blob/master/src/whisper.pas>`_
 
   Wrapper for whisper
+
+ctypes
+------
+
+``ctypes.inc`` can be found at `<https://github.com/fpc/FPCSource/blob/main/rtl/unix/ctypes.inc>`_.
+
+It defines commonly used integer types for C/C++.
+
+  - cint32, pcint32
+  - cfloat, pcfloat
+  - cdouble, pcdouble
+  - csize_t, pcsize_t
