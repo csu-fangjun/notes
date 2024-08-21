@@ -13,4 +13,5 @@ Pascal
     ./conditional-compiling.rst
     ./compiler-options.rst
     ./dl.rst
+    ./lazarus.rst
 

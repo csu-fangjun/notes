@@ -35,12 +35,187 @@ whole program optimization: `<https://wiki.freepascal.org/Whole_Program_Optimiza
 
    `<https://wiki.freepascal.org/Application_Bundle>`_
 
+- `<https://wiki.lazarus.freepascal.org/Lazarus_Tutorial>`_
+
 Marcos
 ------
 
 - For operating systems: ``DARWIN`` for macOS and iOS
 - See `<https://www.freepascal.org/docs-html/3.2.0/prog/progap7.html#x341-357000G>`_ for a complete list
 
+Samples and tutorials
+---------------------
+
+  - `<https://wiki.lazarus.freepascal.org/Category:Tutorials>`_
+  - `<https://wiki.lazarus.freepascal.org/Lazarus_Documentation>`_
+
+  - Manual conversion of C headers to Pascal
+
+    `<https://wiki.lazarus.freepascal.org/Creating_bindings_for_C_libraries#Manual_conversion_of_C_headers_to_Pascal>`_
+
+
+TForm
+-----
+
+See `<https://wiki.lazarus.freepascal.org/Form_Tutorial>`_
+
+To change the caption of the form, assign a string to its ``Caption`` property.
+
+1. How to show a second form from the main form?
+
+  - There are two methods.
+
+    - (1) The form is created automatically by the application, which is the default behavior.
+          If we want to disable auto creation, then we can either edit ``*.lpr`` or use
+          menu -> project options -> form, disable auto creating the form.
+
+          Note that the above code assumes the form is created automatically.
+
+
+          .. code-block:: pascal
+
+            // unit1.pas
+            var
+              r: Integer;
+            begin
+              r := Form2.ShowModal;
+
+              case r of
+                1: begin ShowMessage('1'); end;
+                2: begin ShowMessage('2'); end;
+                3: begin ShowMessage('3'); end;
+              end;
+            end;
+
+            // unit2.pas
+            // to exit form2, we can either use self.Close
+            // or use
+            //
+            // Self.ModalResult := 10;
+            //
+            // we can assign any integer value to Self.ModalResult
+            // and it will close the form immediately.
+
+        `<https://lazarus-ccr.sourceforge.io/docs/lcl/forms/tmodalresult.html>`_
+        and
+        `<https://lazarus-ccr.sourceforge.io/docs/lazutils/uitypes/tmodalresult.html>`_
+        and
+        `<https://fossies.org/linux/lazarus/components/lazutils/uitypes.pas>`_
+        define some constant, e.g., ``mrOK``, ``mrCancel``, etc.
+
+        If we use ``Self.Close`` or click the ``X`` to close the Form, then
+        the returned ``ModalResult`` is ``mrCancel``, which is 2.
+
+    - (2) If the form is not created automatically, then we can use
+
+        .. code-block:: pascal
+
+            procedure TForm1.Button1Click(Sender: TObject);
+            begin
+              Form2:=TForm2.Create(Nil);  //Form2 is created
+              Form2.ShowModal;            //Form2 is displayed
+              FreeAndNil(Form2);          //Free Form2
+            end;
+
+2. How to create a new form dynamically?
+
+  See `<https://wiki.lazarus.freepascal.org/Form_Tutorial#Generate_the_form_dynamically>`_
+
+  .. code-block:: pascal
+
+      procedure TForm1.Button1Click(Sender: TObject);
+      var
+        MyForm: TForm;
+        MyButton: TButton;
+      begin
+        MyForm:=TForm.Create(nil);
+        MyForm.SetBounds(100, 100, 220, 150);
+        MyForm.Caption:='My dynamic created form';
+
+        MyButton:=TButton.create(MyForm);
+        MyButton.Caption:='Close my form';
+        MyButton.SetBounds(10, 10, 200, 30);
+        MyButton.Parent:=MyForm;
+
+        MyButton.OnClick:=@MyButtonClick;
+
+        MyForm.ShowModal;
+
+        FreeAndNil(MyForm);
+      end;
+
+Tips for manual generation of controls
+--------------------------------------
+
+See `<https://wiki.lazarus.freepascal.org/LCL_Tips>`_
+
+
+TButton
+-------
+
+See
+  - `<https://wiki.freepascal.org/TButton>`_
+  - `<https://lazarus-ccr.sourceforge.io/docs/lcl/stdctrls/tbutton.html>`_
+
+Note that we can set its ``tag`` property. Several buttons
+can share the same onclick event handler, we can use its ``tag`` attribute
+to distinguish them.
+
+**Example 1**:
+
+.. code-block:: pascal
+
+  // from https://wiki.lazarus.freepascal.org/Lazarus_Tutorial
+  procedure TForm1.Button1Click(Sender: TObject);
+  { Makes use of the Tag property, setting it to either 0 or 1}
+  begin
+    if Button1.tag = 0 then
+    begin
+      Button1.caption := 'Press again';
+      Button1.tag := 1;
+    end else
+    begin
+      Button1.caption := 'Press';
+      Button1.tag := 0;
+    end;
+  end;
+
+**Example 2**:
+
+.. code-block:: pascal
+
+  // from
+  // https://wiki.lazarus.freepascal.org/TButton
+  procedure TForm1.FormCreate(Sender: TObject);
+  var
+    i:       Integer;
+    aButton: TButton;
+  begin
+    for i := 0 to 9 do begin                // create 10 Buttons
+      aButton := TButton.Create(Self);      // create Button, Owner is Form1, where the button is released later
+      aButton.Parent  := Self;              // determine where it is to be displayed
+      aButton.Width   := aButton.Height;    // Width should correspond to the height of the buttons
+      aButton.Left    := i * aButton.Width; // Distance from left
+      aButton.Caption := IntToStr(i);       // Captions of the buttons (0.9)
+      aButton.OnClick := @aButtonClick;     // the event handler for the button -> will be created yet
+    end;
+    Self.Height := aButton.Height;          // Height of the form should correspond to the height of the buttons
+    Self.Width  := aButton.Width * 10;      // Width of the form to match the width of all buttons
+  end;
+
+  procedure TForm1.aButtonClick(Sender: TObject);
+  const
+    Cnt: Integer = 0;
+  var
+    i: Integer;
+  begin
+    if (Sender is TButton) and                  // called the event handler of a button out?
+       TryStrToInt(TButton(Sender).Caption, i)  // then try to convert the label in a integer
+    then begin
+      Cnt := Cnt + i;                           // the adding counter is incremented by the number of entrechende
+      Caption:='QuickAdd: '+IntToStr(Cnt);      // write the result to the caption of the form
+    end;
+  end;
 
 macOS related
 -------------
