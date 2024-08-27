@@ -35,3 +35,31 @@ Basics
 .. literalinclude:: ./code/e.txt
    :linenos:
    :caption: ./code/e.txt
+
+.. literalinclude:: ./code/custom-op-2.cc
+   :language: c++
+   :linenos:
+   :caption: ./code/custom-op-2.cc
+
+.. literalinclude:: ./code/f.py
+   :language: python
+   :linenos:
+   :caption: ./code/f.py
+
+.. literalinclude:: ./code/f.txt
+   :linenos:
+   :caption: ./code/f.txt
+
+.. literalinclude:: ./code/custom-op-3.cc
+   :language: c++
+   :linenos:
+   :caption: ./code/custom-op-3.cc
+
+.. literalinclude:: ./code/g.py
+   :language: python
+   :linenos:
+   :caption: ./code/g.py
+
+.. literalinclude:: ./code/g.txt
+   :linenos:
+   :caption: ./code/g.txt

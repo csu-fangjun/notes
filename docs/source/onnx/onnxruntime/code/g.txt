@@ -1,0 +1,190 @@
+ir_version: 8
+opset_import {
+  domain: "com.k2fsa.org"
+  version: 1
+}
+opset_import {
+  domain: "pkg.onnxscript.torch_lib"
+  version: 1
+}
+opset_import {
+  domain: ""
+  version: 18
+}
+opset_import {
+  domain: "pkg.onnxscript.torch_lib.common"
+  version: 1
+}
+producer_name: "pytorch"
+producer_version: "2.4.0"
+graph {
+  node {
+    input: "foo"
+    output: "my_cast"
+    name: "custom_my_cast_0_n0"
+    op_type: "MyCast"
+    domain: "com.k2fsa.org"
+  }
+  node {
+    input: "l_x_"
+    input: "my_cast"
+    output: "add"
+    name: "aten_add_1"
+    op_type: "aten_add"
+    domain: "pkg.onnxscript.torch_lib"
+    attribute {
+      name: "alpha"
+      type: FLOAT
+      f: 1
+    }
+  }
+  name: "main_graph"
+  initializer {
+    dims: 2
+    data_type: 2
+    name: "foo"
+    raw_data: "\n\024"
+  }
+  input {
+    name: "l_x_"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "add"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "my_cast"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "pkg.onnxscript.torch_lib::aten_add/self"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "pkg.onnxscript.torch_lib::aten_add/other"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "pkg.onnxscript.torch_lib::aten_add/alpha"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  value_info {
+    name: "pkg.onnxscript.torch_lib::aten_add/other_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "pkg.onnxscript.torch_lib::aten_add/return_val"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 2
+          }
+        }
+      }
+    }
+  }
+}
+functions {
+  name: "aten_add"
+  input: "self"
+  input: "other"
+  output: "return_val"
+  attribute_proto {
+    name: "alpha"
+    type: FLOAT
+    f: 1
+  }
+  node {
+    output: "alpha"
+    name: "n0"
+    op_type: "Constant"
+    attribute {
+      name: "value_float"
+      ref_attr_name: "alpha"
+      type: FLOAT
+    }
+  }
+  node {
+    input: "other"
+    input: "alpha"
+    output: "other_1"
+    name: "n2"
+    op_type: "Mul"
+  }
+  node {
+    input: "self"
+    input: "other_1"
+    output: "return_val"
+    name: "n3"
+    op_type: "Add"
+  }
+  doc_string: "add.Tensor(Tensor self, Tensor other, *, Scalar alpha=1) -> Tensor"
+  opset_import {
+    domain: ""
+    version: 18
+  }
+  domain: "pkg.onnxscript.torch_lib"
+}
