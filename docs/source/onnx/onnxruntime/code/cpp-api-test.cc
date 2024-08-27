@@ -60,8 +60,8 @@ static void TestCreateTensor() {
   assert(tensor_type_and_shape_info.GetElementType() ==
          ONNX_TENSOR_ELEMENT_DATA_TYPE_INT32);
 
-  Ort::ConstMemoryInfo memory_info = x.GetTensorMemoryInfo();
-  std::cout << "allocator name: " << memory_info.GetAllocatorName() << "\n";
+  Ort::ConstMemoryInfo memory_info2 = x.GetTensorMemoryInfo();
+  std::cout << "allocator name: " << memory_info2.GetAllocatorName() << "\n";
 }
 
 void TestCppApi() {

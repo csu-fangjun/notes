@@ -1,8 +1,8 @@
-CXXFLAGS := -std=c++14
-CXXFLAGS += -I /Users/fangjun/open-source/sherpa-onnx/onnxruntime-osx-x86_64-1.12.1/include
-LDFLAGS := -L /Users/fangjun/open-source/sherpa-onnx/onnxruntime-osx-x86_64-1.12.1/lib
+CXXFLAGS := -std=c++17
+CXXFLAGS += -I /Users/fangjun/Downloads/onnxruntime-osx-x86_64-1.18.0/include
+LDFLAGS := -L /Users/fangjun/Downloads/onnxruntime-osx-x86_64-1.18.0/lib
 LDFLAGS += -l onnxruntime
-LDFLAGS += -Wl,-rpath,/Users/fangjun/open-source/sherpa-onnx/onnxruntime-osx-x86_64-1.12.1/lib
+LDFLAGS += -Wl,-rpath,/Users/fangjun/Downloads/onnxruntime-osx-x86_64-1.18.0/lib
 
-main: main.cc c-api-test.cc cpp-api-test.cc
+main: main.cc c-api-test.cc cpp-api-test.cc ./custom-op.cc
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)

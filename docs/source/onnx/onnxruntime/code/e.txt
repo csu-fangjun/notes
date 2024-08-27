@@ -1,0 +1,65 @@
+ir_version: 8
+opset_import {
+  domain: "com.k2fsa.org"
+  version: 1
+}
+opset_import {
+  domain: ""
+  version: 18
+}
+opset_import {
+  domain: "pkg.onnxscript.torch_lib.common"
+  version: 1
+}
+producer_name: "pytorch"
+producer_version: "2.4.0"
+graph {
+  node {
+    input: "l_x_"
+    input: "l_y_"
+    output: "my_add_op"
+    name: "custom_my_add_0_n0"
+    op_type: "CustomOpOne"
+    domain: "com.k2fsa.org"
+  }
+  name: "main_graph"
+  input {
+    name: "l_x_"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "l_y_"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "my_add_op"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+}

@@ -21,3 +21,17 @@ Basics
    :language: c++
    :linenos:
    :caption: ./code/cpp-api-test.cc
+
+.. literalinclude:: ./code/custom-op.cc
+   :language: c++
+   :linenos:
+   :caption: ./code/custom-op.cc
+
+.. literalinclude:: ./code/e.py
+   :language: python
+   :linenos:
+   :caption: ./code/e.py
+
+.. literalinclude:: ./code/e.txt
+   :linenos:
+   :caption: ./code/e.txt
