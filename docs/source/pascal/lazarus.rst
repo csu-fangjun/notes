@@ -4,6 +4,9 @@ Lazarus
 Follow `<https://wiki.freepascal.org/Installing_Lazarus_on_macOS>`_
 to install Lazarus.
 
+After installation on macOS, the directory
+``/Applications/Lazarus/examples`` contains many examples.
+
 We need to download two files from `<https://sourceforge.net/projects/lazarus/files/Lazarus%20macOS%20x86-64/>`_:
 
   - ``Lazarus-3.4-macosx-x86_64.pkg``
@@ -60,6 +63,9 @@ TForm
 See `<https://wiki.lazarus.freepascal.org/Form_Tutorial>`_
 
 To change the caption of the form, assign a string to its ``Caption`` property.
+
+To add a hint to the form, we need to first change its property ``Hint``
+and then set property ``ShowHint`` to true.
 
 1. How to show a second form from the main form?
 
@@ -216,6 +222,83 @@ to distinguish them.
       Caption:='QuickAdd: '+IntToStr(Cnt);      // write the result to the caption of the form
     end;
   end;
+
+TMemo
+-----
+
+Support multiline texts.
+
+It has an attributes ``Lines``, which is of type ``TStringList``.
+``Lines.Count`` returns number of lines. If it is 0, then
+the text is empty. ``Lines.Add('a new line')`` to add a new line.
+``Lines.Clear()`` to clear all lines.
+
+See also `<https://wiki.lazarus.freepascal.org/TMemo>`_.
+
+**Example 1**:
+
+.. code-block:: pascal
+
+  // from https://wiki.lazarus.freepascal.org/TMemo
+  // assign a TStringList to a TMemo
+  // Note that we have to call Free to free the stringlist
+  procedure TForm1.Button1Click(Sender: TObject);
+  var
+    myStringList: TStringList;
+  begin
+    myStringList:=TStringList.Create;               //Create my StringList
+    myStringList.Add('This is the first line.');    //add a line
+    myStringList.Add('This is the second line.');
+    myStringList.Add('This is the third line.');
+    myStringList.Add('etc.');
+    Memo1.Lines.Assign(myStringList);               //assign text content
+    myStringList.Free;                              //free my StringList
+  end;
+
+**Example 2**:
+
+.. code-block:: pascal
+
+  procedure TForm1.Button1Click(Sender: TObject);
+  begin
+    Memo1.Lines.Clear;                              //delete all lines of Memo1
+    Memo1.Lines.Add('This is the first line.');     //add a line
+    Memo1.Lines.Add('This is the second line.');
+    Memo1.Lines.Add('This is the third line.');
+    Memo1.Lines.Add('etc.');
+  end;
+
+TListBox
+--------
+
+See `<https://wiki.lazarus.freepascal.org/TListBox>`_.
+
+1. How to add an item
+2. How to get the selected item
+3. How to get multi-selected items
+
+Dialogs
+-------
+
+See `<https://wiki.lazarus.freepascal.org/Dialog_Examples>`_.
+
+
+1. ``ShowMessage``
+2. ``Application.MessageBox``, we can provide several buttons, ask users to click
+   one button, figure out which button is clicked, e.g., the yes or no button,
+   execute some code.
+3. ``MessageDlg``, like ``Application.MessageBox`` but we can specify which
+   buttons to show to users. We should prefer this one.
+
+4. ``QuestionDlg``: Users can customize the caption of the buttons.
+5. There are also dialogues for accepts user inputs.
+
+TMainMenu
+---------
+
+See `<https://wiki.lazarus.freepascal.org/TMainMenu>`_
+
+Naming convention: ``MenuFile``, ``MenuFileOpen`` (for File -> Open), ``MenuHelp``.
 
 macOS related
 -------------

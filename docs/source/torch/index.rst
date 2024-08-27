@@ -16,5 +16,6 @@ torch
     torchvision
     autograd
     seed
+    ./float16.rst
 
 

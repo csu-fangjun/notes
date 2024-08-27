@@ -1,0 +1,78 @@
+type(mp) <class 'onnx.onnx_ml_pb2.ModelProto'>
+ir_version: 8
+opset_import {
+  domain: ""
+  version: 15
+}
+producer_name: "next-gen kaldi"
+producer_version: "1.10.22"
+model_version: 99
+doc_string: "my first example model with onnxscript"
+graph {
+  node {
+    input: "x"
+    output: "tmp"
+    name: "n0"
+    op_type: "Exp"
+    domain: ""
+  }
+  node {
+    output: "const"
+    name: "n1"
+    op_type: "Constant"
+    domain: ""
+    attribute {
+      name: "value"
+      type: TENSOR
+      t {
+        data_type: 1
+        float_data: 1
+        name: "const"
+      }
+    }
+  }
+  node {
+    input: "const"
+    input: "tmp"
+    output: "const_cast"
+    name: "n2"
+    op_type: "CastLike"
+    domain: ""
+  }
+  node {
+    input: "tmp"
+    input: "const_cast"
+    output: "tmp_0"
+    name: "n3"
+    op_type: "Add"
+    domain: ""
+  }
+  node {
+    input: "tmp_0"
+    output: "return_val"
+    name: "n4"
+    op_type: "Log"
+    domain: ""
+  }
+  name: "Softplus"
+  input {
+    name: "x"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+        }
+      }
+    }
+  }
+  output {
+    name: "return_val"
+  }
+}
+metadata_props {
+  key: "my-numbers"
+  value: "1,2,3"
+}
+
+tensor([1.0000, 0.5000]) tensor([1.3133, 0.9741])
+[1.3132616 0.974077 ]

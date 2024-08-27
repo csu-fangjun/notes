@@ -7,13 +7,13 @@ Simple OPs
 linear
 ------
 
-``nn.Linear`` has two parameters ``weight`` and ``biase``.
+``nn.Linear`` has two parameters ``weight`` and ``bias``.
 
 In PyTorch, ``weight.shape`` is ``(out_channels, in_channels)``.
-But after exporting to onnx, ``model.onnx`` use a shape ``(in_channels, out_channels)``, 
+But after exporting to onnx, ``model.onnx`` uses a shape ``(in_channels, out_channels)``,
 which is a transpose of the PyTorch's weight.
 
-To use int8 quantization for::
+To use int8 symmetric quantization for::
 
   tensor([[ 0.0928, -0.0400,  0.0666],
           [-0.5535, -0.2698,  0.4867],
@@ -36,7 +36,7 @@ It prints::
 
 Note that for symmetric quantization, zero point is 0.
 
-In ``model.onnx``, the int8 weights is saved as::
+In ``model.onnx``, the int8 weights are saved as::
 
   [
       [
@@ -59,7 +59,7 @@ In ``model.onnx``, the int8 weights is saved as::
       ]
   ]
 
-Before quantization, the float32 weight in ``model.onnx`` is::
+Before quantization, the float32 weights in ``model.onnx`` are::
 
   [
       [
@@ -81,3 +81,30 @@ Before quantization, the float32 weight in ``model.onnx`` is::
           -0.43489107489585876
       ]
   ]
+
+The file ``model.onnx.txt`` is given below:
+
+.. literalinclude:: ./code/simple-op/model.onnx.txt
+
+The file ``model.int8.onnx.txt`` is given below:
+
+.. literalinclude:: ./code/simple-op/model.int8.onnx.txt
+
+Note that onnxruntime uses::
+
+  val_fp32 = scale * (val_quantized - zero_point)
+
+The CPU implementation for DynamicLinearQuantizer can be found at
+
+  - ``DynamicQuantizeLinear<T>::Compute``: `<https://github.com/microsoft/onnxruntime/blob/main/onnxruntime/core/providers/cpu/quantization/dynamicquantizelinear.cc#L23>`_
+
+  - ``GetQuantizationParameter``: `<https://github.com/microsoft/onnxruntime/blob/main/onnxruntime/core/util/qmath.h>`_
+
+    It shows how to compute the scale and zero_point. Note that it uses asymmetric quantization by default.
+
+      - ``scale = (float_max - float_min) / (int_max - int min)``
+      - ``zero_point = RoundHalfToEven(int_min - float_min / scale)``
+  - ``MlasQuantizeLinearKernel``: `<https://github.com/microsoft/onnxruntime/blob/main/onnxruntime/core/mlas/lib/power/QuantizePower.cpp>`_
+
+    It does the actual quantization using ``MLAS``.
+

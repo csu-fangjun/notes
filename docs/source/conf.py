@@ -42,6 +42,7 @@ bibtex_bibfiles = [
     "programming.bib",
     "refs.bib",
     "transformers.bib",
+    "torch/onnx/quantization.bib",
 ]
 
 
