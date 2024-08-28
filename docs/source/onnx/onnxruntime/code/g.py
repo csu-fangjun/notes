@@ -10,33 +10,35 @@ import warnings
 warnings.filterwarnings("ignore")
 
 @custom_op.custom_op("mylibrary::my_cast")
-def my_cast(x: torch.Tensor) -> torch.Tensor:
+def my_cast(x: torch.Tensor, scale: float = 0.25) -> torch.Tensor:
     # Since we are using mylibrary::my_cast, so the function
     # name must be my_cast; otherwise, it will throw an error
     # when this script is run
     return x.to(torch.float32)
 
 @my_cast.impl_abstract()
-def my_cast_impl_abstract_any_name_is_ok(x):
+def my_cast_impl_abstract_any_name_is_ok(x, scale: float = 0.25):
     return x.to(torch.float32)
 
 @my_cast.impl("cpu")
-def my_cast_impl_any_name_is_ok(x):
+def my_cast_impl_any_name_is_ok(x, scale: float = 0.25):
     return x.to(torch.float32)   # add x to itself, and round the result
 
 class CustomFoo(torch.nn.Module):
     def __init__(self):
         super().__init__()
         self.register_buffer('foo', torch.tensor([10, 20], dtype=torch.uint8))
+        self.scale = 0.125
+
     def forward(self, x):
-        return x + my_cast(self.foo)
+        return x + my_cast(self.foo, self.scale)
 
 
 custom_opset = onnxscript.values.Opset(domain="com.k2fsa.org", version=1)
 
-@onnxscript.script(custom_opset)
-def custom_my_cast(x):
-    return custom_opset.MyCast(x)
+@onnxscript.script(custom_opset, default_opset=opset18)
+def custom_my_cast(x, scale: float = 0.5):
+    return custom_opset.MyCast(x, scale)
 
 @torch.no_grad()
 def main():

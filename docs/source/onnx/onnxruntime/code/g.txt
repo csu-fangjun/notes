@@ -19,9 +19,20 @@ producer_name: "pytorch"
 producer_version: "2.4.0"
 graph {
   node {
-    input: "foo"
-    output: "my_cast"
+    output: "custom_my_cast_0_scale"
     name: "custom_my_cast_0_n0"
+    op_type: "Constant"
+    attribute {
+      name: "value_float"
+      type: FLOAT
+      f: 0.125
+    }
+  }
+  node {
+    input: "foo"
+    input: "custom_my_cast_0_scale"
+    output: "my_cast"
+    name: "custom_my_cast_0_n1"
     op_type: "MyCast"
     domain: "com.k2fsa.org"
   }
@@ -67,6 +78,16 @@ graph {
           dim {
             dim_value: 2
           }
+        }
+      }
+    }
+  }
+  value_info {
+    name: "custom_my_cast_0_scale"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
         }
       }
     }

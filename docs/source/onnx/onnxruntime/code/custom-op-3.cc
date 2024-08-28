@@ -9,14 +9,16 @@ https://onnxruntime.ai/docs/reference/operators/add-custom-op.html
 #include <vector>
 
 static void KernelOne(const Ort::Custom::Tensor<uint8_t> &X,
+                      const Ort::Custom::Tensor<float> &scale_tensor,
                       Ort::Custom::Tensor<float> &Y) {
   auto input_shape = X.Shape();
   auto x_raw = X.Data();
+  auto scale = scale_tensor.Data()[0];
   auto y_raw = Y.Allocate(input_shape);
   for (int64_t i = 0; i < Y.NumberOfElement(); ++i) {
 
-    // scale each uint8 number by 0.1
-    y_raw[i] = x_raw[i] * 0.1;
+    // scale each uint8 number by
+    y_raw[i] = x_raw[i] * scale;
   }
 }
 
@@ -52,10 +54,10 @@ void TestCustomModel3() {
 
   auto memory_info =
       Ort::MemoryInfo::CreateCpu(OrtDeviceAllocator, OrtMemTypeDefault);
-  // foo is [1.5, 2.5, 3.5, 4.5]
+  // foo is [10, 20]
   //
 
-  std::vector<float> x = {10, 20};
+  std::vector<float> x = {1, 2};
 
   std::array<int64_t, 1> shape = {2};
 
