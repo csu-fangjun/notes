@@ -5,5 +5,6 @@ onnxruntime
 
     install
     basics
+    ./internals.rst
 
 

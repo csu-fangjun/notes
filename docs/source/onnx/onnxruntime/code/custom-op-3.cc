@@ -17,7 +17,7 @@ static void KernelOne(const Ort::Custom::Tensor<uint8_t> &X,
   auto y_raw = Y.Allocate(input_shape);
   for (int64_t i = 0; i < Y.NumberOfElement(); ++i) {
 
-    // scale each uint8 number by
+    // scale each uint8 number
     y_raw[i] = x_raw[i] * scale;
   }
 }

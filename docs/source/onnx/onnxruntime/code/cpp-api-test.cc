@@ -5,6 +5,9 @@
 
 static void TestOrtGetApi() {
   const OrtApi &api = Ort::GetApi(); // it returns a const reference
+
+  std::string version = Ort::GetVersionString();
+  std::cout << "version: " << version << "\n";
 }
 
 static void PrintAvailableProviders() {
@@ -64,9 +67,37 @@ static void TestCreateTensor() {
   std::cout << "allocator name: " << memory_info2.GetAllocatorName() << "\n";
 }
 
+static void TestDataType() {
+  static_assert(Ort::TypeToTensorType<float>::type ==
+                ONNX_TENSOR_ELEMENT_DATA_TYPE_FLOAT);
+
+  static_assert(Ort::TypeToTensorType<double>::type ==
+                ONNX_TENSOR_ELEMENT_DATA_TYPE_DOUBLE);
+
+  static_assert(Ort::TypeToTensorType<int8_t>::type ==
+                ONNX_TENSOR_ELEMENT_DATA_TYPE_INT8);
+  static_assert(Ort::TypeToTensorType<int16_t>::type ==
+                ONNX_TENSOR_ELEMENT_DATA_TYPE_INT16);
+  static_assert(Ort::TypeToTensorType<int32_t>::type ==
+                ONNX_TENSOR_ELEMENT_DATA_TYPE_INT32);
+  static_assert(Ort::TypeToTensorType<int64_t>::type ==
+                ONNX_TENSOR_ELEMENT_DATA_TYPE_INT64);
+  static_assert(Ort::TypeToTensorType<uint8_t>::type ==
+                ONNX_TENSOR_ELEMENT_DATA_TYPE_UINT8);
+  static_assert(Ort::TypeToTensorType<uint16_t>::type ==
+                ONNX_TENSOR_ELEMENT_DATA_TYPE_UINT16);
+  static_assert(Ort::TypeToTensorType<uint32_t>::type ==
+                ONNX_TENSOR_ELEMENT_DATA_TYPE_UINT32);
+  static_assert(Ort::TypeToTensorType<uint64_t>::type ==
+                ONNX_TENSOR_ELEMENT_DATA_TYPE_UINT64);
+  static_assert(Ort::TypeToTensorType<bool>::type ==
+                ONNX_TENSOR_ELEMENT_DATA_TYPE_BOOL);
+}
+
 void TestCppApi() {
   TestOrtGetApi();
   PrintAvailableProviders();
   TestCreateTensorFromBuffer();
   TestCreateTensor();
+  TestDataType();
 }
