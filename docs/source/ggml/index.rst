@@ -1,0 +1,7 @@
+ggml
+====
+
+.. toctree::
+
+    install
+
