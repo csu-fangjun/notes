@@ -1,0 +1,8 @@
+Amphion
+=======
+
+.. toctree::
+
+    basics
+
+

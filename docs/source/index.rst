@@ -73,5 +73,7 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    kws/index
    papers/index
    ./pascal/index
+   ./ggml/index
+   ./amphion/index
 
 .. github/index

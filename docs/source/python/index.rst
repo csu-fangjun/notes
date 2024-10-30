@@ -16,3 +16,4 @@ Python
     pip
     os
     ./matplotlib.rst
+    ./struct.rst
