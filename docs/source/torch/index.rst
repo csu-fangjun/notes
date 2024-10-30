@@ -17,5 +17,5 @@ torch
     autograd
     seed
     ./float16.rst
-
-
+    ./dynamo.rst
+    ./random.rst

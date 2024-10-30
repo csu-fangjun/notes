@@ -60,6 +60,12 @@ def main():
         },
     )
     print(list(model.parameters()))
+    meta_data = {
+        "date": 20240822,
+        "author": "me",
+        "version": 10,
+    }
+    add_meta_data("model.onnx", meta_data)
 
     quantize_dynamic(
         model_input="model.onnx",
@@ -69,9 +75,19 @@ def main():
     )
     w = model.my_linear.weight
     max_w = w.abs().max().item()
-    scale = max_w * 2 / 255
+    scale = max_w * 2 / (255 - 1)
     print(scale)
     print((w / scale).to(torch.int8))
+
+    print("----")
+
+    m = onnx.load("model.onnx")
+    with open("model.onnx.txt", "w") as f:
+        f.write(str(m))
+
+    m_int8 = onnx.load("model.int8.onnx")
+    with open("model.int8.onnx.txt", "w") as f:
+        f.write(str(m_int8))
 
 
 if __name__ == "__main__":
