@@ -8,3 +8,4 @@ Papers
     ./diffusion.rst
     ./flow-maching.rst
     ./books.rst
+    ./tts.rst

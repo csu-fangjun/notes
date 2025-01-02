@@ -10,3 +10,4 @@ tts
     papers
     pypinyin
     todo
+    matcha-tts

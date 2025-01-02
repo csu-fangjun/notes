@@ -38,3 +38,11 @@ will generate a file ``package.json``:
     "license": "ISC"
   }
 
+mirror
+------
+
+.. code-block:: bash
+
+  npm config set registry https://registry.npmmirror.com
+  npm config get registry
+

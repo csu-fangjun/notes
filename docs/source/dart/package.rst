@@ -57,7 +57,7 @@ It changes ``dependencies`` in ``pubspec.yaml`` to::
     vector_math: ^2.1.4
 
 Note: There is a ``.dart_tool`` in the current directory generated automatically
-by ``dart pub get``. Part of its is given below::
+by ``dart pub get``. Part of it is given below::
 
   {
     "configVersion": 2,

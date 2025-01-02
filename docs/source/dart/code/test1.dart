@@ -2,7 +2,7 @@
 // dart --enable-asserts ./test1.dart
 
 void testDouble() {
-  // control the number of decimal pointer when converting it to a string
+  // control the number of decimal points when converting it to a string
   double i = 2.354;
   assert(i.toString() == '2.354');
   assert(i.toStringAsPrecision(1) == '2');
@@ -15,11 +15,45 @@ void testDouble() {
 
   assert(i.ceil() == 3);
   assert(i.floor() == 2);
+
+  int a = i.toInt();
+  assert(a == 2);
 }
 
 void testInt() {
   int i = int.parse('23');
   assert(i == 23);
+
+  // note that i/2 is a double
+  assert(i / 2 == 11.5);
+  assert((i / 2) is double);
+
+  assert((i / 1) is double);
+  assert((i / 1) == 23.0);
+
+  // truncation division: ~/
+  assert((i ~/ 2) is int);
+  assert((i ~/ 2) == 11);
+
+  // see https://api.flutter.dev/flutter/dart-core/int/tryParse.html
+  // int.tryParse() returns null if the input is not an integer
+  int a = int.tryParse('30a') ?? -1;
+  assert(a == -1);
+
+  a = 10;
+
+  a += 1;
+  assert(a == 11);
+
+  a -= 1;
+  assert(a == 10);
+
+  // note that both ++a and a++ are valid
+  a++;
+  assert(a == 11);
+
+  ++a;
+  assert(a == 12);
 }
 
 // the type is String, not string
@@ -98,6 +132,11 @@ void testList() {
   }
 
   for (var value in li) {
+    assert(value == li[value]);
+  }
+
+  // we can also use final if we don't change value inside the loop
+  for (final value in li) {
     assert(value == li[value]);
   }
 }
@@ -186,6 +225,51 @@ void testTypeInference() {
   assert(f is Map<String, int>);
 }
 
+void testDynamic() {
+  dynamic a = 1;
+  assert(a is int);
+
+  a = 2.5;
+  assert(a is double);
+
+  a = 'a';
+  assert(a is String);
+}
+
+void testObject() {
+  Object a = 1;
+  assert(a is int);
+  assert(a.runtimeType == int);
+
+  int i = a as int; // type casting
+  assert(i == 1);
+
+  a = 2.5;
+  assert(a is double);
+
+  a = 'a';
+  assert(a is String);
+}
+
+void testCompileTimeConstant() {
+  const a = 1;
+  assert(a is int);
+
+  // specify the type explicitly
+  const String b = 'hello';
+  assert(b == 'hello');
+}
+
+void testRuntimeConstant() {
+  double a = 5;
+  final b = a / 2;
+  assert(b is double);
+  assert(b == 2.5);
+
+  final int c = 3;
+  assert(c == 3);
+}
+
 void main() {
   testDouble();
   testInt();
@@ -195,4 +279,8 @@ void main() {
   testList2();
   testNuallable();
   testTypeInference();
+  testDynamic();
+  testObject();
+  testCompileTimeConstant();
+  testRuntimeConstant();
 }

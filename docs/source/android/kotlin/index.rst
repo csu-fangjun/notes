@@ -15,3 +15,4 @@ kotlin
     package
     for
     enum
+    ./coroutine.rst

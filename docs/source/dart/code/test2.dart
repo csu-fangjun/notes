@@ -18,6 +18,11 @@ int func2(int a, {int? b, int? c}) {
   return a - (b ?? 0) + (c ?? 0);
 }
 
+int myMax(int a, int b) {
+  // like ?: in C/C++
+  return (a > b) ? a : b;
+}
+
 // both ways are fine to define a function type
 typedef int MyAdd(int a, int b); // argument names cannot be omitted
 
@@ -51,4 +56,6 @@ void main() {
 
   var f = (a, b) => a + b;
   assert(f(2, 3) == 5);
+
+  assert(myMax(1, 2) == 2);
 }

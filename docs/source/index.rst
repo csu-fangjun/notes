@@ -75,5 +75,7 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    ./pascal/index
    ./ggml/index
    ./amphion/index
+   ./harmonyos/index
+   ./icefall/index
 
 .. github/index

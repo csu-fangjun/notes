@@ -28,3 +28,10 @@ gradio
 - `<https://huggingface.co/spaces/jonatasgrosman/asr>`_
 - `<https://github.com/gradio-app/gradio/issues/1359>`_
 - `<https://huggingface.co/spaces/Gradio-Blocks/neon-tts-plugin-coqui/blob/main/app.py>`_, css styles
+
+Mirrors
+-------
+
+ - `<https://hf.qhduan.com/spaces/k2-fsa/automatic-speech-recognition>`_
+ - `<https://hf.qhduan.com/spaces/k2-fsa/automatic-speech-recognition-with-whisper>`_
+ - `<https://hf.qhduan.com/spaces/k2-fsa/text-to-speech>`_

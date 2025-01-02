@@ -16,3 +16,4 @@ javascript
     ./module.rst
     ./object.rst
     ./node-addon-api.rst
+    ./vue.rst
