@@ -26,5 +26,6 @@ TorchScript
     graph
     passes
     ops
+    ./extra-files.rst
 
 
