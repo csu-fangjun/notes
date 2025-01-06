@@ -25,7 +25,7 @@ jobs:
       - name: Run docker
         uses: addnab/docker-run-action@v3
         with:
-            image: reitzig/texlive-full:latest
+            image: reitzig/texlive-base:latest
             # image: ghcr.io/xu-cheng/texlive-full:latest
             options: |
               --volume ${{ github.workspace }}/:/workspace
@@ -60,21 +60,24 @@ jobs:
               # cd build/latex && \
               # latexmk -pdf -dvi -ps- notes.tex && \
 
-              make latex >/dev/null
-              mkdir -pv build/html/_static
+              if false; then
+                make latex >/dev/null
+                mkdir -pv build/html/_static
 
-              cd build/latex
-              latexmk -interaction=nonstopmode -f -pdf -dvi- -ps- sherpa.tex >/dev/null 2>&1 || true
-              cp -v notes.pdf ../html/ || true
+                cd build/latex
+                latexmk -interaction=nonstopmode -f -pdf -dvi- -ps- sherpa.tex >/dev/null 2>&1 || true
+                cp -v notes.pdf ../html/ || true
+              fi
 
       - name: Show files
         shell: bash
         run: |
           ls -lh docs/build
           ls -lh docs/build/html
-          ls -lh docs/build/latex
+          # ls -lh docs/build/latex
 
       - name: Upload pdf
+        if: false
         uses: actions/upload-artifact@v4
         with:
           name: notes.pdf
