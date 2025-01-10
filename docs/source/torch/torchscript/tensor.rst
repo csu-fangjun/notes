@@ -187,11 +187,20 @@ torch.mean
    :lines: 208-321
    :caption: torch.mean
 
-torch.index
+torch.slice
 ^^^^^^^^^^^
 
 .. literalinclude:: ./code/tensor/main.cc
    :language: c++
    :linenos:
    :lines: 323-330
-   :caption: torch.mean
+   :caption: torch.slice
+
+torch.as_strided
+^^^^^^^^^^^^^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 332-348
+   :caption: torch.as_strided

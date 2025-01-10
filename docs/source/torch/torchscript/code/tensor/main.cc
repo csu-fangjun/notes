@@ -329,6 +329,24 @@ void TestSlice2() {
   std::cout << t << "\n";
 }
 
+void TestAsStrided() {
+  /*
+   0 1 2 3 4 5 6 7 8 9
+   */
+
+  /*
+    0 1 2
+    2 3 4
+    4 5 6
+    6 7 8
+   */
+  torch::Tensor a = torch::arange(0, 10).to(torch::kFloat);
+  // (10 - 3) // 2 + 1 = 4
+  torch::Tensor b = a.as_strided({4, 3}, {2, 1});
+  std::cout << a << "\n";
+  std::cout << b << "\n";
+}
+
 int main() {
   // TestCommonMethods();
   TestSlice();
@@ -351,6 +369,7 @@ int main() {
   TestRoll();
   TestMean();
   TestSlice2();
+  TestAsStrided();
 
   return 0;
 }
