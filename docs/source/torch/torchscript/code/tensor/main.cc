@@ -324,7 +324,7 @@ void TestSlice2() {
   auto t = torch::full({2, 3}, -1);
   std::cout << t << "\n";
 
-  // set the last columnn to 0
+  // set the last column to 0
   t.index({torch::indexing::Slice(), -1}) = 0;
   std::cout << t << "\n";
 }
@@ -345,6 +345,68 @@ void TestAsStrided() {
   torch::Tensor b = a.as_strided({4, 3}, {2, 1});
   std::cout << a << "\n";
   std::cout << b << "\n";
+}
+
+void TestArgMax() {
+  std::vector<float> v = {
+      //
+      0.2, 0.5, 0.1, 0.4,
+      //
+      0.9, 0.2, 0.0, 0.3,
+      //
+      0.8, 0.99, 0.1, 0.3
+      //
+  };
+  torch::Tensor a = torch::from_blob(v.data(), {3, 4}, torch::kFloat);
+  std::cout << a << "\n"; // shape (3, 4)
+
+  torch::Tensor b = a.argmax(1);
+  std::cout << b << "\n"; // 1-d, shape: (3,)
+  // 1, 0, 1
+
+  // test 3-d
+  a = torch::from_blob(v.data(), {2, 3, 2}, torch::kFloat);
+  std::cout << a << "\n"; // shape (2, 3, 2)
+
+  b = a.argmax(-1);
+  std::cout << b << "\n"; // 1-d, shape: (2, 3)
+                          // 1, 1, 0
+                          // 1, 1, 1
+}
+
+void TestNonZero() {
+  auto t = torch::tensor({0, 2, 0, 0, 5, 0, 1}, torch::kInt);
+  std::cout << t << "\n";       // 1-d, shape (7,)
+  auto indexes = t.nonzero();   //
+  std::cout << indexes << "\n"; // 2-d, shape (3, 1) 1 4 6
+
+  indexes = indexes.squeeze();
+  auto v = t.index_select(0, indexes);
+  std::cout << v << "\n";
+}
+
+void TestIndex() {
+  // see https://pytorch.org/cppdocs/notes/tensor_indexing.html
+  std::vector<float> v = {
+      //
+      0.2, 0.5, 0.1, 0.4,
+      //
+      0.9, 0.2, 0.0, 0.3,
+      //
+      0.8, 0.99, 0.1, 0.3
+      //
+  };
+  torch::Tensor a = torch::from_blob(v.data(), {3, 4}, torch::kFloat);
+  std::cout << a << "\n"; // shape (3, 4)
+
+  torch::Tensor b = a.index({0});
+  std::cout << b << "\n"; // 1-d, shape (4,) 0.2, 0.5, 0.1, 0.4
+                          //
+  b = a.index({2});
+  std::cout << b << "\n"; // 1-d, shape (4,) 0.8, 0.99, 0.1, 0.3
+
+  torch::Tensor c = b.slice(/*dim*/ 0, /*start*/ 0, /*end*/ 2);
+  std::cout << c << "\n"; // 1-d, shape (2,) 0.8, 0.99
 }
 
 int main() {
@@ -370,6 +432,9 @@ int main() {
   TestMean();
   TestSlice2();
   TestAsStrided();
+  TestArgMax();
+  TestNonZero();
+  TestIndex();
 
   return 0;
 }

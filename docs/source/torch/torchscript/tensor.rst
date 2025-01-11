@@ -204,3 +204,21 @@ torch.as_strided
    :linenos:
    :lines: 332-348
    :caption: torch.as_strided
+
+torch.argmax
+^^^^^^^^^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 350-375
+   :caption: torch.as_strided
+
+torch.index
+^^^^^^^^^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 388-407
+   :caption: torch.as_strided
