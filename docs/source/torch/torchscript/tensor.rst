@@ -222,3 +222,12 @@ torch.index
    :linenos:
    :lines: 388-407
    :caption: torch.as_strided
+
+torch.nn.functional.pad
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 413-455
+   :caption: torch.as_strided

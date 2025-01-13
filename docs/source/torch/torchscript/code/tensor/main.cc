@@ -1,4 +1,5 @@
 #include "torch/script.h"
+#include "torch/torch.h"
 
 static void TestCommonMethods() {
   torch::Tensor t = torch::rand({2, 3, 4});
@@ -409,6 +410,50 @@ void TestIndex() {
   std::cout << c << "\n"; // 1-d, shape (2,) 0.8, 0.99
 }
 
+void TestPad() {
+  std::vector<float> v = {0, 1, 2, 3, 4, 5};
+  torch::Tensor a = torch::from_blob(v.data(), {2, 3}, torch::kFloat);
+
+  int32_t padding = 1;
+
+  // pad dim 1
+#ifdef __ANDROID__
+  auto padding_value = torch::zeros(
+      {a.size(0), padding}, torch::dtype(torch::kFloat).device(a.device()));
+
+  torch::Tensor b = torch::cat({a, padding_value}, 1);
+#else
+  torch::Tensor b = torch::nn::functional::pad(
+      a, torch::nn::functional::PadFuncOptions({0, padding})
+             .mode(torch::kConstant)
+             .value(0));
+#endif
+  /*
+   0 1 2 0
+   3 4 5 0
+   */
+  std::cout << b << "\n";
+
+  // pad dim 1
+#ifdef __ANDROID__
+  padding_value = torch::zeros({padding, a.size(1)},
+                               torch::dtype(torch::kFloat).device(a.device()));
+
+  torch::Tensor c = torch::cat({a, padding_value}, 0);
+#else
+  torch::Tensor c = torch::nn::functional::pad(
+      a, torch::nn::functional::PadFuncOptions({0, 0, 0, padding})
+             .mode(torch::kConstant)
+             .value(0));
+#endif
+  /*
+    0 1 2
+    3 4 5
+    0 0 0
+   */
+  std::cout << c << "\n";
+}
+
 int main() {
   // TestCommonMethods();
   TestSlice();
@@ -435,6 +480,7 @@ int main() {
   TestArgMax();
   TestNonZero();
   TestIndex();
+  TestPad();
 
   return 0;
 }
