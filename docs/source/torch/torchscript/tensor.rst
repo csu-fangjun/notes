@@ -212,7 +212,7 @@ torch.argmax
    :language: c++
    :linenos:
    :lines: 350-375
-   :caption: torch.as_strided
+   :caption: torch.argmax
 
 torch.index
 ^^^^^^^^^^^^
@@ -221,7 +221,7 @@ torch.index
    :language: c++
    :linenos:
    :lines: 388-407
-   :caption: torch.as_strided
+   :caption: torch.index
 
 torch.nn.functional.pad
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -230,4 +230,13 @@ torch.nn.functional.pad
    :language: c++
    :linenos:
    :lines: 413-455
-   :caption: torch.as_strided
+   :caption: torch.nn.functional.pad
+
+torch.index_put_
+^^^^^^^^^^^^^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 457-592
+   :caption: torch.index_put_

@@ -454,6 +454,143 @@ void TestPad() {
   std::cout << c << "\n";
 }
 
+void TestIndexPut() {
+  // https://pytorch.org/cppdocs/notes/tensor_indexing.html#setter
+  std::vector<float> v = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+  torch::Tensor a = torch::from_blob(v.data(), {12}, torch::kFloat);
+  torch::Tensor indexes =
+      torch::tensor({0, 1, 3, 5}, torch::dtype(torch::kLong));
+
+  a.index_put_({indexes}, 0);
+  std::cout << a << "\n";
+  /*
+   0 0 2 0 4 0 6 7 8 9 10 11
+
+   */
+
+  // 2-d
+
+  v = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+  a = torch::from_blob(v.data(), {4, 3}, torch::kFloat);
+
+  indexes = torch::tensor({0, 2}, torch::dtype(torch::kLong));
+  a.index_put_({indexes}, 100);
+
+  /*
+    100 100 100
+    3   4   5
+    100 100 100
+    9   10  11
+   */
+  std::cout << a << "\n";
+
+  v = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+  a = torch::from_blob(v.data(), {4, 3}, torch::kFloat);
+
+  indexes = torch::tensor({0, 2}, torch::dtype(torch::kLong));
+  a.index_put_({"...", indexes}, 99);
+
+  /*
+   99 1 99
+   99 4 99
+   99 7 99
+   99 10 99
+   */
+  std::cout << a << "\n";
+
+  // 3-d
+  v = {0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  10, 11,
+       12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};
+  a = torch::from_blob(v.data(), {2, 3, 4}, torch::kFloat);
+
+  /*
+    0 1 2 3
+    4 5 6 7
+    8 9 10 11
+
+    ---
+
+    12 13 14 15
+    16 17 18 19
+    20 21 22 23
+   */
+  std::cout << a << "\n";
+
+  indexes = torch::tensor({0}, torch::dtype(torch::kLong));
+  a.index_put_({indexes}, 88); // dim 0
+  std::cout << a << "\n";
+  /*
+    88 88 88 88
+    88 88 88 88
+    88 88 88 88
+
+    ---
+
+    12 13 14 15
+    16 17 18 19
+    20 21 22 23
+   */
+
+  v = {0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  10, 11,
+       12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};
+  a = torch::from_blob(v.data(), {2, 3, 4}, torch::kFloat);
+  indexes = torch::tensor({0, 3}, torch::dtype(torch::kLong));
+  a.index_put_({"...", indexes}, 66); // the last dim, i.e., dim 2
+  std::cout << a << "\n";
+  /*
+    66 1 2 66
+    66 5 6 66
+    66 9 10 66
+
+    ---
+
+    66 13 14 66
+    66 17 18 66
+    66 21 22 66
+   */
+  v = {0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  10, 11,
+       12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};
+  a = torch::from_blob(v.data(), {2, 3, 4}, torch::kFloat);
+  indexes = torch::tensor({1}, torch::dtype(torch::kLong));
+  a.index_put_({torch::indexing::None, indexes}, 55); // dim 1
+  std::cout << a << "\n";
+  /*
+    0 1 2 3
+    4 5 6 7
+    8 9 10 11
+
+    ---
+
+    55 55 55 55
+    55 55 55 55
+    55 55 55 55
+   */
+
+  v = {0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  10, 11,
+       12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};
+  a = torch::from_blob(v.data(), {2, 3, 4}, torch::kFloat);
+  indexes = torch::tensor({1}, torch::dtype(torch::kLong));
+  a.index_put_(
+      {torch::indexing::Slice(torch::indexing::None, torch::indexing::None,
+                              torch::indexing::None),
+       torch::indexing::Slice(torch::indexing::None, torch::indexing::None,
+                              torch::indexing::None),
+       indexes},
+      33); // dim 2
+  std::cout << a << "\n";
+  /*
+    0 33 2 3
+    4 33 6 7
+    8 33 10 11
+
+    ---
+
+    12 33 14 15
+    16 33 18 19
+    20 33 22 23
+   */
+}
+
 int main() {
   // TestCommonMethods();
   TestSlice();
@@ -481,6 +618,7 @@ int main() {
   TestNonZero();
   TestIndex();
   TestPad();
+  TestIndexPut();
 
   return 0;
 }
