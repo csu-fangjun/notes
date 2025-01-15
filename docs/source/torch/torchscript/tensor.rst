@@ -238,5 +238,20 @@ torch.index_put_
 .. literalinclude:: ./code/tensor/main.cc
    :language: c++
    :linenos:
-   :lines: 457-592
+   :lines: 457-611
    :caption: torch.index_put_
+
+torch.nonzero
+^^^^^^^^^^^^^^^^
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 378-387
+   :caption: torch.nonzero
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 613-627
+   :caption: torch.nonzero

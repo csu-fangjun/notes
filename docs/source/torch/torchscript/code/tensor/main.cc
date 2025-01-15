@@ -471,6 +471,12 @@ void TestIndexPut() {
   // 2-d
 
   v = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+  /*
+   0 1 2
+   3 4 5
+   6 7 8
+   9 10 11
+   */
   a = torch::from_blob(v.data(), {4, 3}, torch::kFloat);
 
   indexes = torch::tensor({0, 2}, torch::dtype(torch::kLong));
@@ -495,6 +501,19 @@ void TestIndexPut() {
    99 4 99
    99 7 99
    99 10 99
+   */
+  std::cout << a << "\n";
+
+  v = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+  a = torch::from_blob(v.data(), {4, 3}, torch::kFloat);
+
+  indexes = torch::tensor({0, 2}, torch::dtype(torch::kLong));
+  a.index_put_({"...", 1}, 6666);
+  /*
+   0 6666 2
+   3 6666 5
+   6 6666 8
+   9 6666 11
    */
   std::cout << a << "\n";
 
@@ -591,6 +610,22 @@ void TestIndexPut() {
    */
 }
 
+void TestNonZero2() {
+  auto a = torch::tensor({1, 5, 5}, torch::dtype(torch::kInt)).reshape({3, 1});
+  torch::Tensor b = (a == 5).nonzero();
+  // 1 0
+  // 2 0
+  std::cout << b << "\n"; // shape is (2, 2)
+
+  torch::Tensor c = (a.squeeze() == 5).nonzero();
+  // 1
+  // 2
+  std::cout << c << "\n"; // shape is (2, 1)
+
+  torch::Tensor d = (a == 50).nonzero();
+  std::cout << d.numel() << "\n";
+}
+
 int main() {
   // TestCommonMethods();
   TestSlice();
@@ -619,6 +654,7 @@ int main() {
   TestIndex();
   TestPad();
   TestIndexPut();
+  TestNonZero2();
 
   return 0;
 }
