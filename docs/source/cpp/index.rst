@@ -11,4 +11,5 @@ C++
     chrono
     ./iomanip.rst
     ./shared_lib.rst
+    ./regex.rst
 
