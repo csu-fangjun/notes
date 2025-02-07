@@ -17,6 +17,11 @@ Convert format
 
    ffmpeg -i input.opus -acodec pcm_s16le -ac 1 -ar 16000 output.wav
 
+   # compress mov
+   # a larger value for crf -> a smaller file
+   ffmpeg -i ./kokoro-1.0-tts-engine-apk-demo.mov -c:v libx264 -c:a copy -crf 25 newmovie.mov
+
+
 - Extract part of a file
 
 .. code-block:: bash
