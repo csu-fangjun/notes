@@ -12,7 +12,7 @@ To install the flutter SDK,
        unzip /Users/fangjun/Downloads/flutter_macos_3.22.0-stable.zip
        export PATH=/Users/fangjun/software/flutter/bin:$PATH
 
-  3. It also installs ``dart``. There is not need to install ``dart`` separately.
+  3. It also installs ``dart``. There is no need to install ``dart`` separately.
   4. Open Android Studio, and install the ``flutter`` plugin
 
       - Android studio settings, Plugins, Marketplace, search for ``flutter``, click install

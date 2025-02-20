@@ -1,0 +1,7 @@
+RKNN
+====
+
+.. toctree::
+
+    install
+    basics
