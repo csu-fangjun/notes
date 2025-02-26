@@ -63,3 +63,48 @@ Use::
   watch -n 1 cat /sys/kernel/debug/rknpu/load
 
 to view the usage of npu cores.
+
+To view the versions of rknn driver, 
+
+  dmesg | grep -i rknpu
+
+It prints::
+
+  [    6.784814] RKNPU fdab0000.npu: Adding to iommu group 0
+  [    6.784923] RKNPU fdab0000.npu: RKNPU: rknpu iommu is enabled, using iommu mode
+  [    6.786126] RKNPU fdab0000.npu: can't request region for resource [mem 0xfdab0000-0xfdabffff]
+  [    6.786146] RKNPU fdab0000.npu: can't request region for resource [mem 0xfdac0000-0xfdacffff]
+  [    6.786156] RKNPU fdab0000.npu: can't request region for resource [mem 0xfdad0000-0xfdadffff]
+  [    6.786580] [drm] Initialized rknpu 0.9.6 20240322 for fdab0000.npu on minor 1
+  [    6.791864] RKNPU fdab0000.npu: RKNPU: bin=0
+  [    6.792047] RKNPU fdab0000.npu: leakage=6
+  [    6.792083] debugfs: Directory 'fdab0000.npu-rknpu' with parent 'vdd_npu_s0' already present!
+  [    6.805376] RKNPU fdab0000.npu: pvtm=874
+  [    6.809605] RKNPU fdab0000.npu: pvtm-volt-sel=3
+  [    6.809648] debugfs: Directory 'fdab0000.npu-rknpu' with parent 'vdd_npu_s0' already present!
+  [    6.811600] RKNPU fdab0000.npu: avs=0
+  [    6.811748] RKNPU fdab0000.npu: l=10000 h=85000 hyst=5000 l_limit=0 h_limit=800000000 h_table=0
+
+``rknpu 0.9.6 20240322`` contains the driver version.
+
+``cat /sys/module/rknpu/version`` can also show the driver version, which is ``0.9.6``.
+
+To show the version of the ``/usr/lib/librknnrt.so``, use::
+
+  strings /usr/lib/librknnrt.so | grep "librknnrt
+
+It prints::
+
+  librknnrt.so
+  librknnrt version: 1.4.0 (a10f100eb@2022-09-09T09:07:14)
+
+To show the version of ``rknn_server``, run::
+
+  rknn_server
+
+It shows::
+
+  start rknn server, version:1.3.0 (121b661 build: 2022-04-29 11:12:02)
+  I NPUTransfer: Starting NPU Transfer Server, Transfer version 2.1.0 (b5861e7@2020-11-23T11:50:51)
+
+We need to support RK3568、RK3566、RK3562、 RK3588、RV1106, and RV1103.
