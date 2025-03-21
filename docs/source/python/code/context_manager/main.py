@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import contextlib
 from contextlib import contextmanager
 
 number = 10
@@ -21,6 +22,10 @@ def process(new_n):
     yield
     set_number(old_n)
 
+
+print(process(1))  # <contextlib._GeneratorContextManager object at 0x108a2ccd0>
+print(type(process(1)))  # <class 'contextlib._GeneratorContextManager'>
+assert isinstance(process(1), contextlib._GeneratorContextManager), type(process(1))
 
 with process(100):
     # inside this block ,number is changed to 100
