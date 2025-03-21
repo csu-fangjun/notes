@@ -25,6 +25,18 @@ slice
    :lines: 86-99
    :caption: torch::slice
 
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 324-331
+   :caption: torch::slice
+
+.. literalinclude:: ./code/tensor/main.cc
+   :language: c++
+   :linenos:
+   :lines: 629-639
+   :caption: torch::slice
+
 topk
 ^^^^
 

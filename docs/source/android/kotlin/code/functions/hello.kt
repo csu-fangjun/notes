@@ -74,6 +74,15 @@ fun testLambda() {
   check(makeUppercase("ab") == "AB")
 }
 
+fun testLambda2(a: Int, b: Int, f: (Int, Int)->Int): Int {
+  return f(a, b)
+}
+
+fun testLambda3(a: Int, f: (Int)->Int): Int {
+  return f(a);
+}
+
+
 fun main() {
   testSum()
   testDouble()
@@ -81,4 +90,13 @@ fun main() {
   testDefault()
   testDefault2()
   testLambda()
+  var i = testLambda2(2, 3) {a, b -> a + b}
+  check(i == 5)
+
+  i = testLambda2(2, 3) {a, b -> a - b}
+  check(i == -1)
+
+    // the default argument is named as it
+  i = testLambda3(2) {it + 1}
+  check(i == 2 + 1)
 }

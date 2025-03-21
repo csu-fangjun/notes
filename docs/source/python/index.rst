@@ -17,3 +17,4 @@ Python
     os
     ./matplotlib.rst
     ./struct.rst
+    ./contextmanager.rst

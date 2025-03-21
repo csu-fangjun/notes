@@ -626,6 +626,52 @@ void TestNonZero2() {
   std::cout << d.numel() << "\n";
 }
 
+void TestSlice3() {
+  auto a = torch::tensor({1, 3, 10}, torch::kFloat);
+  auto count = torch::zeros({10}, torch::kFloat);
+
+  count.slice(0, 1, 4).add_(a);
+  // count: 0 1 3 10 0 0 0 0 0 0
+  std::cout << "count: " << count << "\n";
+  count.slice(0, 2, 5).add_(a);
+  std::cout << "count: " << count << "\n";
+  // count: 0 1 4 13 10 0 0 0 0 0
+}
+void TestIndex2() {
+  auto a = torch::tensor({1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1},
+                         torch::kFloat)
+               .reshape({2, 3, 3});
+  /*
+     1 1 0
+     0 1 0
+     0 0 0
+
+     0 1 1
+     1 0 0
+     1 1 1
+   */
+  auto indexes = a.sum(-1) > 1;
+  /*
+    1 0 0
+    1 0 1
+   */
+
+  std::cout << a.index({indexes}) << "\n";
+  a.index_put_({indexes}, 0);
+
+  std::cout << "---\n";
+  std::cout << a << "\n";
+  /*
+   0 0 0
+   0 1 0
+   0 0 0
+
+   0 0 0
+   1 0 0
+   0 0 0
+   */
+}
+
 int main() {
   // TestCommonMethods();
   TestSlice();
@@ -655,6 +701,8 @@ int main() {
   TestPad();
   TestIndexPut();
   TestNonZero2();
+  TestSlice3();
+  TestIndex2();
 
   return 0;
 }

@@ -19,3 +19,6 @@ pyenv
 .. code-block:: bash
 
   python3 -m venv ./py38
+
+We can edit ``/mnt/data-ssd/user/omni/fj/open-source/pyenv/plugins/python-build/share/python-build/3.10.16``
+to specify a local file by using ``file:///path/to/Python-3.10.6.tar.xz``

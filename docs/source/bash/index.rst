@@ -11,3 +11,4 @@ bash
     hello
     pkg-config
     sed
+    rsync

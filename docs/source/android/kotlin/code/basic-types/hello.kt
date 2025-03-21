@@ -111,12 +111,14 @@ fun testChar() {
 	val a = 'a'
 	check(a is Char)
 	check(a.isDigit() == false)
+	check(a.isLetter() == true)
 
 	val b = '\uff00'
 	check(b is Char)
 
 	val c = '9'
 	check(c.isDigit() == true)
+	check(c.isLetter() == false)
 
 	check(Char.SIZE_BITS == 16)
 	check('0'.code == 0x30)
@@ -133,8 +135,8 @@ fun testString() {
   check(a.count() == 3)
   check(a.length == 3)
   check(a.lastIndex == a.length - 1)
-  check(a.toUpperCase() == "ABC")
-  check(a.toLowerCase() == "abc")
+  check(a.uppercase() == "ABC")
+  check(a.lowercase() == "abc")
 
   // remove the first two characters
   check(a.drop(2) == "c")
