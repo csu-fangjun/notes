@@ -19,3 +19,6 @@ torch
     ./float16.rst
     ./dynamo.rst
     ./random.rst
+    ./compile.rst
+    ./benchmark.rst
+    ./cv2.rst

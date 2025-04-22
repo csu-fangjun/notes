@@ -12,3 +12,4 @@ bash
     pkg-config
     sed
     rsync
+    htop

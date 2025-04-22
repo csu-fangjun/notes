@@ -29,8 +29,8 @@ std::string ToString(const std::wstring &s) {
 }
 
 int32_t main() {
-  std::string s =
-      "你好吗，HoW    are You doIng?  包含中文和英文。are you ok? 谢谢";
+  std::string s = "你(好)吗，HoW    are You doIng?  包含\"中文\"和'英文'。are "
+                  "you ok? 谢谢!好的;说:一句话…也“可以”";
   std::cout << s << "\n";
 
   std::vector<std::pair<std::string, std::string>> replace_str_pairs = {
@@ -53,7 +53,8 @@ int32_t main() {
 
   // https://en.cppreference.com/w/cpp/regex
   // https://stackoverflow.com/questions/37989081/how-to-use-unicode-range-in-c-regex
-  std::string expr = "([\\u4e00-\\u9fff]+)|([\\u0000-\\u007f]+)";
+  std::string expr =
+      "([;:,.?!'\"…\\(\\)“”])|([\\u4e00-\\u9fff]+)|([\\u0000-\\u007f]+)";
 
   std::wstring wexpr = ToWideString(expr);
   std::wregex we(wexpr);
