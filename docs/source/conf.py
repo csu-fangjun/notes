@@ -97,3 +97,10 @@ html_theme_options = {
     "prev_next_buttons_location": "bottom",
     "style_external_links": True,
 }
+
+# https://docs.readthedocs.com/platform/latest/guides/pdf-non-ascii-languages.html
+latex_engine = "xelatex"
+latex_use_xindy = False
+latex_elements = {
+    "preamble": "\\usepackage[UTF8]{ctex}\n",
+}

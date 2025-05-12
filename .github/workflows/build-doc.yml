@@ -61,29 +61,16 @@ jobs:
               ls -lh notes.pdf
               cp -v notes.pdf ../html
 
-              # make latex && \
-              # mkdir -pv build/html/_static && \
-              # cd build/latex && \
-              # latexmk -pdf -dvi -ps- notes.tex && \
-
-              if false; then
-                make latex >/dev/null
-                mkdir -pv build/html/_static
-
-                cd build/latex
-                latexmk -interaction=nonstopmode -f -pdf -dvi- -ps- sherpa.tex >/dev/null 2>&1 || true
-                cp -v notes.pdf ../html/ || true
-              fi
-
       - name: Show files
         shell: bash
         run: |
           ls -lh docs/build
+          echo "docs/build/html"
           ls -lh docs/build/html
+          find . -name "*.pdf"
           # ls -lh docs/build/latex
 
       - name: Upload pdf
-        if: false
         uses: actions/upload-artifact@v4
         with:
           name: notes.pdf
@@ -91,7 +78,7 @@ jobs:
 
       - name: Deploy
         # if: github.event_name == 'push' && github.ref == 'ref/head/master'
-        if: github.event_name == 'push'
+        # if: github.event_name == 'push'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
