@@ -1,5 +1,5 @@
-ffmeg
-=====
+ffmpeg
+======
 
 
 .. code-block::
