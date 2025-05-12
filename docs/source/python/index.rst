@@ -18,3 +18,6 @@ Python
     ./matplotlib.rst
     ./struct.rst
     ./contextmanager.rst
+    ./iter.rst
+    ./for.rst
+    ./sequence.rst

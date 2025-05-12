@@ -4,4 +4,5 @@ ggml
 .. toctree::
 
     install
+    ./basics
 

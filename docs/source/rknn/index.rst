@@ -5,3 +5,4 @@ RKNN
 
     install
     basics
+    lubancat

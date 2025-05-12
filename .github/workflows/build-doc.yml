@@ -55,6 +55,12 @@ jobs:
               make html
               touch build/html/.nojekyll
 
+              make latexpdf
+              cd build/latex
+              find . -name "*.pdf"
+              ls -lh notes.pdf
+              cp -v notes.pdf ../html
+
               # make latex && \
               # mkdir -pv build/html/_static && \
               # cd build/latex && \
@@ -90,4 +96,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/build/html
+          force_orphan: true
           publish_branch: gh-pages

@@ -19,8 +19,10 @@ def set_number(n):
 def process(new_n):
     old_n = get_number()
     set_number(new_n)
-    yield
-    set_number(old_n)
+    try:
+        yield
+    finally:
+        set_number(old_n)
 
 
 print(process(1))  # <contextlib._GeneratorContextManager object at 0x108a2ccd0>
@@ -32,4 +34,22 @@ with process(100):
     assert number == 100, number
 
 # outside of the above block, number is reset to its original value
+assert number == 10, number
+
+
+class MyProcess:
+    def __init__(self, new_n):
+        self.new_n = new_n
+
+    def __enter__(self):
+        self.old_n = get_number()
+        set_number(self.new_n)
+
+    def __exit__(self, type, value, traceback):
+        set_number(self.old_n)
+
+
+with MyProcess(-1):
+    assert number == -1, number
+
 assert number == 10, number

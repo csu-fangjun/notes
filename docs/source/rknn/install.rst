@@ -4,6 +4,7 @@ Install
 - User manual: `<https://drive.google.com/drive/u/0/folders/1kzMRI95yaXLbQuK86fUbs92NJ6QOYIGO>`_
 - Ubuntu images: `<https://drive.google.com/drive/u/0/folders/1qSA5yr_UOll3LKMzdn74i_SCYygnIcJ8>`_
 - Android images: `<https://drive.google.com/drive/u/0/folders/1SQcrQI8Qn1MbAcv3ggxhAPyIMTQ2-Xog?usp=sharing>`_
+- Official tools: `<https://drive.google.com/drive/mobile/folders/19OaB7_ND4dqxyczOTODb4hnIXGZ1C2g0?usp=sharing>`_
 
 I have downloaded ``Orangepi5max_1.0.0_ubuntu_jammy_server_linux6.1.43.7z``. Unzip it
 and we get a folder ``Orangepi5max_1.0.0_ubuntu_jammy_server_linux6.1.43``.
@@ -143,3 +144,29 @@ It prints something like below::
   $ sudo dhclient wlan0
 
 Now ``ifconfig wlan0`` should show its IP address.
+
+
+Android
+-------
+
+1. Download ``SDDiskTool_v1.72.zip`` from `<https://drive.google.com/drive/u/0/folders/1RFBMuHwbN8V_LsQTnW05KpRKYSGjB6MD>`_
+   and unzip it to get the folder ``SDDiskTool_v1.72``.
+2. Download ``OrangePi5Max_RK3588_Android13_v1.0.0.tar.gz`` from `<https://drive.google.com/drive/folders/1SQcrQI8Qn1MbAcv3ggxhAPyIMTQ2-Xog>`_
+   and unzip it to get ``OrangePi5Max_RK3588_Android13_v1.0.0.img``.
+3. Switch to the folder ``SDDiskTool_v1.72`` and double click ``SD_Firmware_Tool.exe``,
+   - (1) select the sd card
+   - (2) Start from sd card and the click the button on the bottom to format the sd card
+   - (3) Select the android image and burn it
+
+.. code-block:: bash
+
+   adb shell
+   getprop ro.build.version.release
+   getprop ro.product.model
+   getprop ro.product.manufacturer
+
+
+
+
+
+

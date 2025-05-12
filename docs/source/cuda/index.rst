@@ -5,4 +5,5 @@ CUDA
 .. toctree::
 
     install
+    ./blogs
 

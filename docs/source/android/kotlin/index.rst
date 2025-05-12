@@ -16,3 +16,5 @@ kotlin
     for
     enum
     ./coroutine.rst
+    ./kmp.rst
+    ./native.rst
