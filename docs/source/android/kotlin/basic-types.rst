@@ -17,6 +17,10 @@ Differences between ``Array<Float>`` and ``FloatArray``:
  - ``Array<Float>`` to ``FloatArray``: ``.toFloatArray()``
  - ``FloatArray`` to ``Array<Float>``: ``.toTypedArray()``
 
+ranges:
+  - ``start..end``: ``[start, end]``
+  - ``start until end``: ``[start, end)``
+
 
 .. code-block:: bash
 
