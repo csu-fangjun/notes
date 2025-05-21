@@ -59,7 +59,7 @@ jobs:
               cd build/latex
               find . -name "*.pdf"
               ls -lh notes.pdf
-              cp -v notes.pdf ../html
+              cp -v notes.pdf ../html/_static
 
       - name: Show files
         shell: bash
