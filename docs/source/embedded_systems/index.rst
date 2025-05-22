@@ -9,3 +9,4 @@ Embedded systems
     ./nano-pi.rst
     ./visionfive.rst
     ./licheepi4a.rst
+    ./ai-pro.rst

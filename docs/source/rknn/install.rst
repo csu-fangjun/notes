@@ -60,7 +60,7 @@ displays::
   NAME                          UUID       TYPE        DEVICE
   Wired connection 1            xxxx       ethernet    enP3p49s0
 
-Then run ``nmcli connection mod "Wire connection 1" ipv4.addresses "192.168.1.9/24" ipv4.method "manual"
+Then run ``nmcli connection mod "Wired connection 1" ipv4.addresses "192.168.1.9/24" ipv4.method "manual"
 
 Then run ``sudo reboot``.
 
