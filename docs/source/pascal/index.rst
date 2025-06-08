@@ -5,6 +5,7 @@ Pascal
 
     install
     hello
+    ./fpc-help.rst
     ./call-c.rst
     ./basics.rst
     ./char.rst

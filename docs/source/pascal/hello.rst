@@ -10,7 +10,7 @@ file extensions
   - ``xx.o``
 
 ``fpc ./hello.pp`` will generate two files: ``./hello`` and ``./hello.o``.
-We can delete ``./hello.o`` in this case since ``./hello` is an executable.
+We can delete ``./hello.o`` in this case since ``./hello`` is an executable.
 
 ``fpc hello``
 

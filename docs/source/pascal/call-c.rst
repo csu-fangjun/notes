@@ -73,7 +73,7 @@ To link a lib in the code::
   // On windows, we have to use {$L foo.dll}
   // See https://www.freepascal.org/docs-html/prog/progsu149.html
 
-Or at the commandlin use ``-Flxxx``
+Or at the commandline use ``-Flxxx``
 
 To specify the object file in the commandline, use ``-Fo``
 
