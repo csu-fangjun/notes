@@ -77,3 +77,37 @@ Then we can use::
   java -cp ./hello.jar:./kotlinx-coroutines-core-jvm-1.10.1.jar  HelloKt
   kotlin -cp ./hello.jar:./kotlinx-coroutines-core-jvm-1.10.1.jar  HelloKt
   kotlin -classpath ./hello.jar:./kotlinx-coroutines-core-jvm-1.10.1.jar  HelloKt
+
+thread related functions
+-------------------------
+
+.. code-block::
+
+   Thread.sleep(1000L) # sleep 1000ms, i.e., 1s
+
+common suspendable functions
+----------------------------
+
+.. code-block::
+
+   delay(1000L) # sleep 1000m, i.e., 1s
+
+Predefined coroutine dispatcher
+-------------------------------
+
+- ``Dispatchers.Default``: Compute-intensive
+- ``Dispatchers.IO``: File I/O, blocking socket I/O, etc
+- ``Dispatchers.Main``: For UI thread
+
+functions without a scope
+--------------------------
+
+- ``runBlocking``, it is not a ``suspend`` function, coroutine builder, scope builder
+- ``coroutineScope()``, it is a ``suspend`` function, scope builder
+- ``withContext()``, it is a ``suspend`` function
+
+functions requiring a scope
+----------------------------
+
+- ``launch()``, e.g., ``GlobalScope.lanuch``, it is not a ``suspend`` function. coroutine builder
+- ``async()``, e.g., ``GlobalScope.async``, it is not a ``suspend`` function. coroutine builder

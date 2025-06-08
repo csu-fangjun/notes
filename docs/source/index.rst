@@ -79,5 +79,7 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    ./icefall/index
    ./rknn/index
    ./lhotse/index
+   ./ffmpeg/index
+   ./vlc/index
 
 .. github/index

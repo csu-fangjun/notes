@@ -15,3 +15,4 @@ Android
     samples
     resources
     release
+    ./coroutine.rst
