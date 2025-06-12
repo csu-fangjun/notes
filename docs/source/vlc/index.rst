@@ -5,3 +5,4 @@ vlc
 
     macos.rst
     hello.rst
+    build.rst
