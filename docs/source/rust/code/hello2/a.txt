@@ -1,0 +1,37 @@
+.
+├── Cargo.lock
+├── Cargo.toml
+├── a.txt
+├── src
+│   └── main.rs
+└── target
+    ├── CACHEDIR.TAG
+    └── debug
+        ├── build
+        ├── deps
+        │   ├── hello2-517dbf907ca40ba4
+        │   ├── hello2-517dbf907ca40ba4.2ejis4jtcc22k78hwpfevmpn9.rcgu.o
+        │   ├── hello2-517dbf907ca40ba4.2u847h470kx4lrmip8o7wbm3j.rcgu.o
+        │   ├── hello2-517dbf907ca40ba4.5xtf1o3fzpwipxjpgh6vuq5nb.rcgu.o
+        │   ├── hello2-517dbf907ca40ba4.biyzt084nbvwnn6rzalk2kv68.rcgu.o
+        │   ├── hello2-517dbf907ca40ba4.d
+        │   ├── hello2-517dbf907ca40ba4.d4ptlawbgayqhc0mck8d1zb7y.rcgu.o
+        │   └── hello2-517dbf907ca40ba4.ebi7az3oo64vunpcvr2ytqd4k.rcgu.o
+        ├── examples
+        ├── hello2
+        ├── hello2.d
+        └── incremental
+            └── hello2-21n5fdb2vj2ji
+                ├── s-h889axkwsg-0ius9rz-eplmacagf6o0mvmceghnny7ip
+                │   ├── 2ejis4jtcc22k78hwpfevmpn9.o
+                │   ├── 2u847h470kx4lrmip8o7wbm3j.o
+                │   ├── 5xtf1o3fzpwipxjpgh6vuq5nb.o
+                │   ├── biyzt084nbvwnn6rzalk2kv68.o
+                │   ├── d4ptlawbgayqhc0mck8d1zb7y.o
+                │   ├── dep-graph.bin
+                │   ├── ebi7az3oo64vunpcvr2ytqd4k.o
+                │   ├── query-cache.bin
+                │   └── work-products.bin
+                └── s-h889axkwsg-0ius9rz.lock
+
+9 directories, 25 files

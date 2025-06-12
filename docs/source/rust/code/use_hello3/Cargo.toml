@@ -1,0 +1,7 @@
+[package]
+name = "use_hello3"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+hello3={path = "../hello3"}
