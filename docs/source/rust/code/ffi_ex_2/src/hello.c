@@ -81,3 +81,24 @@ float compute_struct2_sum(const MyStruct2 *s) {
   }
   return strlen(s->s1) + s->s2.a + s->s2.b + s->s2.c + s->s2.d + s->i;
 }
+
+typedef struct MyOpaque MyOpaque;
+
+MyOpaque *create_my_opaque() {
+  MyStruct1 *s = malloc(sizeof(MyStruct1));
+  s->a = 1;
+  s->b = 2;
+  s->c = 3.5;
+  s->s = 0;
+  s->d = 5.5;
+  printf("return s: %p\n", s);
+  return (MyOpaque *)s;
+}
+
+void free_my_opaque(MyOpaque *p) {
+  MyStruct1 *s = (MyStruct1 *)p;
+  printf("get s: %p\n", s);
+  printf("my opaque: %d, %d, %.3f, %.3f, %s\n", s->a, (int32_t)s->b, s->c, s->d,
+         s->s ? s->s : "<empty str>");
+  free(s);
+}

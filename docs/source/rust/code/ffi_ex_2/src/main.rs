@@ -18,6 +18,11 @@ struct MyStruct2 {
     i: i32,
 }
 
+#[repr(C)]
+struct MyOpaque {
+    _private: [u8; 0],
+}
+
 unsafe extern "C" {
     fn sum_float_arr(v: *const f32, n: i32) -> f32;
     fn add_one_vec(v: *mut i32, n: i32);
@@ -29,6 +34,8 @@ unsafe extern "C" {
     fn my_str_array() -> *const *const i8;
     fn compute_struct1_sum(p: *const MyStruct1) -> f32;
     fn compute_struct2_sum(p: *const MyStruct2) -> f32;
+    fn create_my_opaque() -> *const MyOpaque;
+    fn free_my_opaque(p: *const MyOpaque);
 }
 
 fn test_sum_float_arr() {
@@ -177,6 +184,18 @@ fn test_compute_struct2_sum() {
     assert_eq!(sum, c.count_bytes() as f32 + s.s2.a as f32 + s.s2.b as f32 + s.s2.c + s.s2.d as f32+ s.i as f32);
 }
 
+fn    test_my_opaque() {
+    let p: *const MyOpaque;
+    unsafe {
+        p = create_my_opaque();
+    }
+
+    println!("p is {p:p}");
+    unsafe {
+        free_my_opaque(p);
+    }
+}
+
 fn main() {
     test_sum_float_arr();
     test_add_one_vec();
@@ -187,4 +206,5 @@ fn main() {
     test_my_str_array();
     test_compute_struct1_sum();
     test_compute_struct2_sum();
+    test_my_opaque();
 }
