@@ -7,3 +7,5 @@ Implementation of the class ``String``:
 Documentation of ``String``:
 `<https://doc.rust-lang.org/std/string/struct.String.html>`_
 
+Rust also has raw strings.
+

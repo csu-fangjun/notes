@@ -1,0 +1,40 @@
+books
+=====
+
+Welcome to Comprehensive Rust 🦀
+--------------------------------------------------
+
+`<https://google.github.io/comprehensive-rust/>`_
+
+The Rust Programming Language
+----------------------------------------
+
+Also known as the rust book
+
+`<https://doc.rust-lang.org/book/>`_
+
+Rust by example
+------------------------------
+
+`<https://doc.rust-lang.org/rust-by-example/>`_
+
+The cargo book
+---------------
+
+`<https://doc.rust-lang.org/cargo/>`_
+
+The Rustonomicon
+--------------------
+
+`<https://doc.rust-lang.org/nomicon/>`_
+
+A little C with your Rust
+------------------------------
+
+`<https://docs.rust-embedded.org/book/interoperability/c-with-rust.html#a-little-c-with-your-rust>`_
+
+
+The bindgen User Guide
+----------------------
+
+`<https://rust-lang.github.io/rust-bindgen/introduction.html>`_
