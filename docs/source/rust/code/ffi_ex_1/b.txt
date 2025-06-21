@@ -1,0 +1,74 @@
+.
+├── Cargo.lock
+├── Cargo.toml
+├── a.txt
+├── b.txt
+├── build.rs
+├── src
+│   ├── hello.c
+│   └── main.rs
+└── target
+    ├── CACHEDIR.TAG
+    └── debug
+        ├── build
+        │   ├── ffi_ex_1-c1751820b0caf7b9
+        │   │   ├── invoked.timestamp
+        │   │   ├── out
+        │   │   │   ├── ea708c7824d36062-hello.o
+        │   │   │   └── libhello.a
+        │   │   ├── output
+        │   │   ├── root-output
+        │   │   └── stderr
+        │   └── ffi_ex_1-eeb655500d051c65
+        │       ├── build-script-build
+        │       ├── build_script_build-eeb655500d051c65
+        │       └── build_script_build-eeb655500d051c65.d
+        ├── deps
+        │   ├── cc-5dcc6a1224077a74.d
+        │   ├── ffi_ex_1-48ca45584c8a6533
+        │   ├── ffi_ex_1-48ca45584c8a6533.17mg2lvz5zsf4xisp4ugqnwo7.rcgu.o
+        │   ├── ffi_ex_1-48ca45584c8a6533.3l4c4w7v8kf8llhfrx4i7p5yc.rcgu.o
+        │   ├── ffi_ex_1-48ca45584c8a6533.4rpejftjpoen151ivfn5qariz.rcgu.o
+        │   ├── ffi_ex_1-48ca45584c8a6533.7hrnv0dz5cw72d51erex2v0bi.rcgu.o
+        │   ├── ffi_ex_1-48ca45584c8a6533.8yulq6zedu5kz2pppsyts0xlz.rcgu.o
+        │   ├── ffi_ex_1-48ca45584c8a6533.d
+        │   ├── ffi_ex_1-48ca45584c8a6533.dr47jdmpb57wqvb5e2le5xqf3.rcgu.o
+        │   ├── ffi_ex_1-48ca45584c8a6533.ehb6gqlxf57d6a0eh76iai9b0.rcgu.o
+        │   ├── libcc-5dcc6a1224077a74.rlib
+        │   ├── libcc-5dcc6a1224077a74.rmeta
+        │   ├── libshlex-808473125270fb34.rlib
+        │   ├── libshlex-808473125270fb34.rmeta
+        │   └── shlex-808473125270fb34.d
+        ├── examples
+        ├── ffi_ex_1
+        ├── ffi_ex_1.d
+        └── incremental
+            ├── build_script_build-35tgcqt68vk2k
+            │   ├── s-h8i0xk63ma-001vdkg-5w1mt9vbwdwfd0geysyn3a1ou
+            │   │   ├── 5cl9nz8leg4fp9dhwm8o3xtui.o
+            │   │   ├── 7qa59eaxgrwnvrui6xu6yolac.o
+            │   │   ├── 8lgj301y0ro8zv9b7ytlreq9j.o
+            │   │   ├── 8mvjxzqpmj3gh3t2p3cawrsmd.o
+            │   │   ├── 9bchr3q0syk5pwys1z7vb67cl.o
+            │   │   ├── b725p88zt33dujvfs20u5ushb.o
+            │   │   ├── dep-graph.bin
+            │   │   ├── e7jd1kyjm81jr46nyg9x9hgut.o
+            │   │   ├── ef35xgfwzws48flp98hjc2bvh.o
+            │   │   ├── query-cache.bin
+            │   │   └── work-products.bin
+            │   └── s-h8i0xk63ma-001vdkg.lock
+            └── ffi_ex_1-22x8jcwretezy
+                ├── s-h8i0xkv65h-0ah7faj-e9zhf3dbt7y4n2l8y3g56e2uy
+                │   ├── 17mg2lvz5zsf4xisp4ugqnwo7.o
+                │   ├── 3l4c4w7v8kf8llhfrx4i7p5yc.o
+                │   ├── 4rpejftjpoen151ivfn5qariz.o
+                │   ├── 7hrnv0dz5cw72d51erex2v0bi.o
+                │   ├── 8yulq6zedu5kz2pppsyts0xlz.o
+                │   ├── dep-graph.bin
+                │   ├── dr47jdmpb57wqvb5e2le5xqf3.o
+                │   ├── ehb6gqlxf57d6a0eh76iai9b0.o
+                │   ├── query-cache.bin
+                │   └── work-products.bin
+                └── s-h8i0xkv65h-0ah7faj.lock
+
+14 directories, 57 files

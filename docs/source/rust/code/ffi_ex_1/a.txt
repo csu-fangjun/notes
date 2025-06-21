@@ -1,0 +1,273 @@
+   Compiling shlex v1.3.0
+     Running
+     `CARGO=/Users/fangjun/.rustup/toolchains/stable-x86_64-apple-darwin/bin/cargo \
+     CARGO_CRATE_NAME=shlex \
+     CARGO_MANIFEST_DIR=/Users/fangjun/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/shlex-1.3.0 \
+     CARGO_MANIFEST_PATH=/Users/fangjun/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/shlex-1.3.0/Cargo.toml \
+     CARGO_PKG_AUTHORS='comex <comexk@gmail.com>:Fenhl <fenhl@fenhl.net>:Adrian Taylor <adetaylor@chromium.org>:Alex Touchet <alextouchet@outlook.com>:Daniel Parks <dp+git@oxidized.org>:Garrett Berg <googberg@gmail.com>' \
+     CARGO_PKG_DESCRIPTION='Split a string into shell words, like Python'\''s shlex.' \
+     CARGO_PKG_HOMEPAGE='' \
+     CARGO_PKG_LICENSE='MIT OR Apache-2.0' \
+     CARGO_PKG_LICENSE_FILE='' \
+     CARGO_PKG_NAME=shlex \
+     CARGO_PKG_README=README.md \
+     CARGO_PKG_REPOSITORY='https://github.com/comex/rust-shlex' \
+     CARGO_PKG_RUST_VERSION=1.46.0 \
+     CARGO_PKG_VERSION=1.3.0 \
+     CARGO_PKG_VERSION_MAJOR=1 \
+     CARGO_PKG_VERSION_MINOR=3 \
+     CARGO_PKG_VERSION_PATCH=0 \
+     CARGO_PKG_VERSION_PRE='' \
+     DYLD_FALLBACK_LIBRARY_PATH='/Users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug/deps:/Users/fangjun/.rustup/toolchains/stable-x86_64-apple-darwin/lib:/Users/fangjun/lib:/usr/local/lib:/usr/lib' \
+     /Users/fangjun/.rustup/toolchains/stable-x86_64-apple-darwin/bin/rustc \
+       --crate-name shlex \
+       --edition=2015 \
+       /Users/fangjun/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/shlex-1.3.0/src/lib.rs \
+       --error-format=json \
+       --json=diagnostic-rendered-ansi,artifacts,future-incompat \
+       --crate-type lib \
+       --emit=dep-info,metadata,link \
+       -C embed-bitcode=no \
+       --cfg 'feature="default"' \
+       --cfg 'feature="std"' \
+       --check-cfg 'cfg(docsrs,test)' \
+       --check-cfg 'cfg(feature, values("default", "std"))' \
+       -C metadata=d38534b5664a9a84 \
+       -C extra-filename=-808473125270fb34 \
+       --out-dir /Users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug/deps \
+       -L dependency=/Users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug/deps \
+       --cap-lints warn`
+warning: unexpected `cfg` condition name: `manual_codegen_check`
+
+   --> /Users/fangjun/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/shlex-1.3.0/src/bytes.rs:353:12
+    |
+353 | #[cfg_attr(manual_codegen_check, inline(never))]
+    |            ^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: expected names are: `docsrs`, `feature`, and `test` and 31 more
+    = help: consider using a Cargo feature instead
+    = help: or consider adding in `Cargo.toml` the `check-cfg` lint config for the lint:
+             [lints.rust]
+             unexpected_cfgs = { level = "warn", check-cfg = ['cfg(manual_codegen_check)'] }
+    = help: or consider adding `println!("cargo::rustc-check-cfg=cfg(manual_codegen_check)");` to the top of the `build.rs`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+    = note: `#[warn(unexpected_cfgs)]` on by default
+
+   compiling cc v1.2.27
+     running `
+     cargo=/users/fangjun/.rustup/toolchains/stable-x86_64-apple-darwin/bin/cargo \
+     cargo_crate_name=cc \
+     cargo_manifest_dir=/users/fangjun/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cc-1.2.27 \
+     cargo_manifest_path=/users/fangjun/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cc-1.2.27/cargo.toml \
+     cargo_pkg_authors='alex crichton <alex@alexcrichton.com>' \
+     cargo_pkg_description='a build-time dependency for cargo build scripts to assist in invoking the native c compiler to compile native c code into a static archive to be linked into rust code.' \
+     cargo_pkg_homepage='https://github.com/rust-lang/cc-rs' \
+     cargo_pkg_license='mit or apache-2.0' \
+     cargo_pkg_license_file='' \
+     cargo_pkg_name=cc \
+     cargo_pkg_readme=readme.md \
+     cargo_pkg_repository='https://github.com/rust-lang/cc-rs' \
+     cargo_pkg_rust_version=1.63 \
+     cargo_pkg_version=1.2.27 \
+     cargo_pkg_version_major=1 \
+     cargo_pkg_version_minor=2 \
+     cargo_pkg_version_patch=27 \
+     cargo_pkg_version_pre='' \
+     dyld_fallback_library_path='/users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug/deps:/users/fangjun/.rustup/toolchains/stable-x86_64-apple-darwin/lib:/users/fangjun/lib:/usr/local/lib:/usr/lib' \
+     /users/fangjun/.rustup/toolchains/stable-x86_64-apple-darwin/bin/rustc \
+       --crate-name cc \
+       --edition=2018 \
+       /users/fangjun/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cc-1.2.27/src/lib.rs \
+       --error-format=json \
+       --json=diagnostic-rendered-ansi,artifacts,future-incompat \
+       --crate-type lib \
+       --emit=dep-info,metadata,link \
+       -c embed-bitcode=no \
+       --check-cfg 'cfg(docsrs,test)' \
+       --check-cfg 'cfg(feature, values("jobserver", "parallel"))' \
+       -c metadata=a7441a07b903063b \
+       -c extra-filename=-5dcc6a1224077a74 \
+       --out-dir /users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug/deps \
+       -l dependency=/users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug/deps \
+       --extern shlex=/users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug/deps/libshlex-808473125270fb34.rmeta \
+       --cap-lints warn`
+warning: `shlex` (lib) generated 1 warning
+
+   compiling ffi_ex_1 v0.1.0 (/users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1)
+     running `\
+     cargo=/users/fangjun/.rustup/toolchains/stable-x86_64-apple-darwin/bin/cargo \
+     cargo_crate_name=build_script_build \
+     cargo_manifest_dir=/users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1 \
+     cargo_manifest_path=/users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/cargo.toml \
+     cargo_pkg_authors='' \
+     cargo_pkg_description='' \
+     cargo_pkg_homepage='' \
+     cargo_pkg_license='' \
+     cargo_pkg_license_file='' \
+     cargo_pkg_name=ffi_ex_1 \
+     cargo_pkg_readme='' \
+     cargo_pkg_repository='' \
+     cargo_pkg_rust_version='' \
+     cargo_pkg_version=0.1.0 \
+     cargo_pkg_version_major=0 \
+     cargo_pkg_version_minor=1 \
+     cargo_pkg_version_patch=0 \
+     cargo_pkg_version_pre='' \
+     cargo_primary_package=1 \
+     cargo_sbom_path='' \
+     dyld_fallback_library_path='/users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug/deps:/users/fangjun/.rustup/toolchains/stable-x86_64-apple-darwin/lib:/users/fangjun/lib:/usr/local/lib:/usr/lib' \
+     /users/fangjun/.rustup/toolchains/stable-x86_64-apple-darwin/bin/rustc \
+       --crate-name build_script_build \
+       --edition=2024 \
+       build.rs \
+       --error-format=json \
+       --json=diagnostic-rendered-ansi,artifacts,future-incompat \
+       --crate-type bin \
+       --emit=dep-info,link \
+       -c embed-bitcode=no \
+       --check-cfg 'cfg(docsrs,test)' \
+       --check-cfg 'cfg(feature, values())' \
+       -c metadata=f2e7fe36c03b5ec1 \
+       -c extra-filename=-eeb655500d051c65 \
+       --out-dir /users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug/build/ffi_ex_1-eeb655500d051c65 \
+       -c incremental=/users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug/incremental \
+       -l dependency=/users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug/deps \
+       --extern cc=/users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug/deps/libcc-5dcc6a1224077a74.rlib`
+
+     running `\
+     cargo=/users/fangjun/.rustup/toolchains/stable-x86_64-apple-darwin/bin/cargo \
+     cargo_cfg_feature='' \
+     cargo_cfg_panic=unwind \
+     cargo_cfg_target_abi='' \
+     cargo_cfg_target_arch=x86_64 \
+     cargo_cfg_target_endian=little \
+     cargo_cfg_target_env='' \
+     cargo_cfg_target_family=unix \
+     cargo_cfg_target_feature=cmpxchg16b,fxsr,sse,sse2,sse3,sse4.1,ssse3 \
+     cargo_cfg_target_has_atomic=128,16,32,64,8,ptr \
+     cargo_cfg_target_os=macos \
+     cargo_cfg_target_pointer_width=64 \
+     cargo_cfg_target_vendor=apple \
+     cargo_cfg_unix='' \
+     cargo_encoded_rustflags='' \
+     cargo_manifest_dir=/users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1 \
+     cargo_manifest_path=/users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/cargo.toml \
+     cargo_pkg_authors='' \
+     cargo_pkg_description='' \
+     cargo_pkg_homepage='' \
+     cargo_pkg_license='' \
+     cargo_pkg_license_file='' \
+     cargo_pkg_name=ffi_ex_1 \
+     cargo_pkg_readme='' \
+     cargo_pkg_repository='' \
+     cargo_pkg_rust_version='' \
+     cargo_pkg_version=0.1.0 \
+     cargo_pkg_version_major=0 \
+     cargo_pkg_version_minor=1 \
+     cargo_pkg_version_patch=0 \
+     cargo_pkg_version_pre='' \
+     debug=true \
+     dyld_fallback_library_path='/users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug/deps:/users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug:/users/fangjun/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/x86_64-apple-darwin/lib:/users/fangjun/.rustup/toolchains/stable-x86_64-apple-darwin/lib:/users/fangjun/lib:/usr/local/lib:/usr/lib' \
+     host=x86_64-apple-darwin \
+     num_jobs=8 \
+     opt_level=0 \
+     out_dir=/users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug/build/ffi_ex_1-c1751820b0caf7b9/out \
+     profile=debug \
+     rustc=/users/fangjun/.rustup/toolchains/stable-x86_64-apple-darwin/bin/rustc \
+     rustdoc=/users/fangjun/.rustup/toolchains/stable-x86_64-apple-darwin/bin/rustdoc \
+     target=x86_64-apple-darwin \
+     /users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug/build/ffi_ex_1-eeb655500d051c65/build-script-build`
+
+[ffi_ex_1 0.1.0] out_dir = some(/users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug/build/ffi_ex_1-c1751820b0caf7b9/out)
+[ffi_ex_1 0.1.0] opt_level = some(0)
+[ffi_ex_1 0.1.0] target = some(x86_64-apple-darwin)
+[ffi_ex_1 0.1.0] host = some(x86_64-apple-darwin)
+[ffi_ex_1 0.1.0] cargo:rerun-if-env-changed=cc_x86_64-apple-darwin
+[ffi_ex_1 0.1.0] cc_x86_64-apple-darwin = none
+[ffi_ex_1 0.1.0] cargo:rerun-if-env-changed=cc_x86_64_apple_darwin
+[ffi_ex_1 0.1.0] cc_x86_64_apple_darwin = none
+[ffi_ex_1 0.1.0] cargo:rerun-if-env-changed=host_cc
+[ffi_ex_1 0.1.0] host_cc = none
+[ffi_ex_1 0.1.0] cargo:rerun-if-env-changed=cc
+[ffi_ex_1 0.1.0] cc = none
+[ffi_ex_1 0.1.0] cargo:rerun-if-env-changed=cc_enable_debug_output
+[ffi_ex_1 0.1.0] rustc_wrapper = none
+[ffi_ex_1 0.1.0] cargo:rerun-if-env-changed=crate_cc_no_defaults
+[ffi_ex_1 0.1.0] crate_cc_no_defaults = none
+[ffi_ex_1 0.1.0] debug = some(true)
+[ffi_ex_1 0.1.0] cargo:rerun-if-env-changed=macosx_deployment_target
+[ffi_ex_1 0.1.0] macosx_deployment_target = none
+[ffi_ex_1 0.1.0] cargo:rerun-if-env-changed=cflags
+[ffi_ex_1 0.1.0] cflags = none
+[ffi_ex_1 0.1.0] cargo:rerun-if-env-changed=host_cflags
+[ffi_ex_1 0.1.0] host_cflags = none
+[ffi_ex_1 0.1.0] cargo:rerun-if-env-changed=cflags_x86_64_apple_darwin
+[ffi_ex_1 0.1.0] cflags_x86_64_apple_darwin = none
+[ffi_ex_1 0.1.0] cargo:rerun-if-env-changed=cflags_x86_64-apple-darwin
+[ffi_ex_1 0.1.0] cflags_x86_64-apple-darwin = none
+[ffi_ex_1 0.1.0] cargo_encoded_rustflags = some()
+[ffi_ex_1 0.1.0] cargo:rerun-if-env-changed=ar_x86_64-apple-darwin
+[ffi_ex_1 0.1.0] ar_x86_64-apple-darwin = none
+[ffi_ex_1 0.1.0] cargo:rerun-if-env-changed=ar_x86_64_apple_darwin
+[ffi_ex_1 0.1.0] ar_x86_64_apple_darwin = none
+[ffi_ex_1 0.1.0] cargo:rerun-if-env-changed=host_ar
+[ffi_ex_1 0.1.0] host_ar = none
+[ffi_ex_1 0.1.0] cargo:rerun-if-env-changed=ar
+[ffi_ex_1 0.1.0] ar = none
+[ffi_ex_1 0.1.0] cargo:rerun-if-env-changed=arflags
+[ffi_ex_1 0.1.0] arflags = none
+[ffi_ex_1 0.1.0] cargo:rerun-if-env-changed=host_arflags
+[ffi_ex_1 0.1.0] host_arflags = none
+[ffi_ex_1 0.1.0] cargo:rerun-if-env-changed=arflags_x86_64_apple_darwin
+[ffi_ex_1 0.1.0] arflags_x86_64_apple_darwin = none
+[ffi_ex_1 0.1.0] cargo:rerun-if-env-changed=arflags_x86_64-apple-darwin
+[ffi_ex_1 0.1.0] arflags_x86_64-apple-darwin = none
+[ffi_ex_1 0.1.0] cargo:rustc-link-lib=static=hello
+[ffi_ex_1 0.1.0] cargo:rustc-link-search=native=/Users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug/build/ffi_ex_1-c1751820b0caf7b9/out
+[ffi_ex_1 0.1.0] cargo:rerun-if-changed=src/hello.c
+
+     Running `
+     CARGO=/Users/fangjun/.rustup/toolchains/stable-x86_64-apple-darwin/bin/cargo \
+     CARGO_BIN_NAME=ffi_ex_1 \
+     CARGO_CRATE_NAME=ffi_ex_1 \
+     CARGO_MANIFEST_DIR=/Users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1 \
+     CARGO_MANIFEST_PATH=/Users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/Cargo.toml \
+     CARGO_PKG_AUTHORS='' \
+     CARGO_PKG_DESCRIPTION='' \
+     CARGO_PKG_HOMEPAGE='' \
+     CARGO_PKG_LICENSE='' \
+     CARGO_PKG_LICENSE_FILE='' \
+     CARGO_PKG_NAME=ffi_ex_1 \
+     CARGO_PKG_README='' \
+     CARGO_PKG_REPOSITORY='' \
+     CARGO_PKG_RUST_VERSION='' \
+     CARGO_PKG_VERSION=0.1.0 \
+     CARGO_PKG_VERSION_MAJOR=0 \
+     CARGO_PKG_VERSION_MINOR=1 \
+     CARGO_PKG_VERSION_PATCH=0 \
+     CARGO_PKG_VERSION_PRE='' \
+     CARGO_PRIMARY_PACKAGE=1 \
+     CARGO_SBOM_PATH='' \
+     DYLD_FALLBACK_LIBRARY_PATH='/Users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug/deps:/Users/fangjun/.rustup/toolchains/stable-x86_64-apple-darwin/lib:/Users/fangjun/lib:/usr/local/lib:/usr/lib' \
+     OUT_DIR=/Users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug/build/ffi_ex_1-c1751820b0caf7b9/out \
+     /Users/fangjun/.rustup/toolchains/stable-x86_64-apple-darwin/bin/rustc \
+       --crate-name ffi_ex_1 \
+       --edition=2024 \
+       src/main.rs \
+       --error-format=json \
+       --json=diagnostic-rendered-ansi,artifacts,future-incompat \
+       --crate-type bin \
+       --emit=dep-info,link \
+       -C embed-bitcode=no \
+       -C debuginfo=2 \
+       -C split-debuginfo=unpacked \
+       --check-cfg 'cfg(docsrs,test)' \
+       --check-cfg 'cfg(feature, values())' \
+       -C metadata=068e65a8f5ae7900 \
+       -C extra-filename=-48ca45584c8a6533 \
+       --out-dir /Users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug/deps \
+       -C incremental=/Users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug/incremental \
+       -L dependency=/Users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug/deps \
+       -L native=/Users/fangjun/open-source/notes/docs/source/rust/code/ffi_ex_1/target/debug/build/ffi_ex_1-c1751820b0caf7b9/out \
+       -l static=hello`
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 4.25s

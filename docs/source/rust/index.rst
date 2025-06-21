@@ -16,4 +16,5 @@ rust
     mdbook
     ./useful_packages.rst
     cargo
+    ./ffi.rst
 
