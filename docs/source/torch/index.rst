@@ -12,6 +12,7 @@ torch
     quantization/index
     android/index
     onnx/index
+    triton/index
     lstm
     torchvision
     autograd
@@ -22,3 +23,5 @@ torch
     ./compile.rst
     ./benchmark.rst
     ./cv2.rst
+    ./einsum.rst
+    ./executorch/index.rst

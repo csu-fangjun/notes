@@ -90,12 +90,90 @@ Two ways to create a list::
    :linenos:
    :caption: ./code/test2.dart
 
+control
+----------
+
 .. literalinclude:: ./code/test-control.dart
    :language: dart
    :linenos:
    :caption: ./code/test-control.dart
 
+record
+-------
+
 .. literalinclude:: ./code/test_record.dart
    :language: dart
    :linenos:
    :caption: ./code/test_record.dart
+
+function
+--------
+
+.. literalinclude:: ./code/test-function.dart
+   :language: dart
+   :linenos:
+   :caption: ./code/test-function.dart
+
+class
+-----
+
+.. literalinclude:: ./code/test-class.dart
+   :language: dart
+   :linenos:
+   :caption: ./code/test-class.dart
+
+null
+-----
+
+.. literalinclude:: ./code/test-null.dart
+   :language: dart
+   :linenos:
+   :caption: ./code/test-null.dart
+
+list
+-----
+
+.. literalinclude:: ./code/test-list.dart
+   :language: dart
+   :linenos:
+   :caption: ./code/test-list.dart
+
+set
+-----
+
+.. literalinclude:: ./code/test-set.dart
+   :language: dart
+   :linenos:
+   :caption: ./code/test-set.dart
+
+map
+-----
+
+.. literalinclude:: ./code/test-map.dart
+   :language: dart
+   :linenos:
+   :caption: ./code/test-map.dart
+
+string
+-----
+
+.. literalinclude:: ./code/test-string.dart
+   :language: dart
+   :linenos:
+   :caption: ./code/test-string.dart
+
+events
+-------
+
+.. literalinclude:: ./code/test-events.dart
+   :language: dart
+   :linenos:
+   :caption: ./code/test-events.dart
+
+isolate
+-------
+
+.. literalinclude:: ./code/test-isolate.dart
+   :language: dart
+   :linenos:
+   :caption: ./code/test-isolate.dart
