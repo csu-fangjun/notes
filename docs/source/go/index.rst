@@ -14,3 +14,4 @@ Go
     ./for.rst
     ./map.rst
     ./switch.rst
+    ./proxy.rst

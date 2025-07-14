@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+// iterate a slice
 func test1() {
 	fmt.Println("---test1---")
 	a := []int{1, 2}
@@ -16,6 +17,7 @@ func test1() {
 	// fmt.Println(i) // undefined: i
 }
 
+// iterate a slice
 func test2() {
 	fmt.Println("---test2---")
 	a := []int{1, 2}
@@ -102,6 +104,17 @@ func test7() {
 	fmt.Println(i) // 2
 }
 
+func test8() {
+	// for go >= 1.22
+	fmt.Println("---test8---")
+	for i := range 3 {
+		fmt.Println(i)
+	}
+	// 0
+	// 1
+	// 2
+}
+
 func main() {
 	test1()
 	test2()
@@ -110,4 +123,5 @@ func main() {
 	test5()
 	test6()
 	test7()
+	test8()
 }

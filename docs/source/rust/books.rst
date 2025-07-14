@@ -38,3 +38,14 @@ The bindgen User Guide
 ----------------------
 
 `<https://rust-lang.github.io/rust-bindgen/introduction.html>`_
+
+Yet Another Rust Resource (YARR!)
+----------------------------------------
+
+`<https://yarr.fyi/>`_
+
+
+The Rust Edition Guide
+------------------------------
+
+`<https://doc.rust-lang.org/edition-guide/rust-2021/c-string-literals.html>`_

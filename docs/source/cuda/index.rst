@@ -6,4 +6,6 @@ CUDA
 
     install
     ./blogs
+    ./projects.rst
+    ./references.rst
 

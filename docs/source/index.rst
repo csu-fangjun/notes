@@ -81,5 +81,6 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    ./lhotse/index
    ./ffmpeg/index
    ./vlc/index
+   ./mlx/index
 
 .. github/index
