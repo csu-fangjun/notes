@@ -4,3 +4,4 @@ mlx
 .. toctree::
 
     basics
+    lstm
