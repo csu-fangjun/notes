@@ -59,6 +59,8 @@ It will generate an executable ``./1-hello``.
    :language: swift
    :caption: ./code/2-variables.swift
 
+For arrays, see also `<https://docs.swift.org/swift-book/documentation/the-swift-programming-language/collectiontypes>`_
+
 .. literalinclude:: ./code/3-array-dict.swift
    :language: swift
    :caption: ./code/3-array-dict.swift
