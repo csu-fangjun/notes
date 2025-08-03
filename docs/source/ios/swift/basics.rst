@@ -110,3 +110,7 @@ It will generate an executable ``./1-hello``.
 .. literalinclude:: ./code/14-typed-pointers.swift
    :language: swift
    :caption: ./code/14-typed-pointers.swift
+
+.. literalinclude:: ./code/15-async.swift
+   :language: swift
+   :caption: ./code/15-async.swift

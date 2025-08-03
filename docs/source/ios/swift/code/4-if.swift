@@ -29,8 +29,25 @@ let nickname: String? = nil
 let fullName: String = "Tom Green"
 // Hi, Tom Green
 let informalGreeting = "Hi, \(nickname ?? fullName)"
+// if nickname is not nil, then nickname is used
+// if nickname is nil, then fullName is used
+
 print(informalGreeting)
 
 if let nickname {
   print("Hey, \(nickname)")
 }
+
+// if can be used as an expression!
+let i = 3
+let b = if i >= 0 {
+    1
+} else {
+    -1
+}
+
+// 1
+print(b)
+
+var s: String?  // initialized to nil by default
+print(s == nil) // true
