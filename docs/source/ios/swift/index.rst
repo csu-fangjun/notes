@@ -9,5 +9,6 @@ Swift
     package
     pointer
     callback
+    ./struct.rst
 
 
