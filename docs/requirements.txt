@@ -4,3 +4,4 @@ docutils==0.17
 sphinx_rtd_theme
 sphinxcontrib-bibtex
 sphinx-tabs
+sphinx-copybutton

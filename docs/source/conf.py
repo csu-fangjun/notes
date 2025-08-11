@@ -35,6 +35,7 @@ extensions = [
     "sphinx_rtd_theme",
     "sphinx_tabs.tabs",
     "sphinxcontrib.bibtex",
+    "sphinx_copybutton",  # https://sphinx-copybutton.readthedocs.io/en/latest/
 ]
 
 bibtex_bibfiles = [
