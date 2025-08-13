@@ -1,6 +1,10 @@
 References
 ==========
 
+- `<https://github.com/ModelTC/LightLLM/tree/main/lightllm/common/basemodel/triton_kernel>`_
+
+- `<https://github.com/unslothai/unsloth/tree/main/unsloth/kernels>`_
+
 - GPU Teaching Kit - Accelerated Computing
 
   `<http://gputeachingkit.hwu.crhc.illinois.edu/>`_
