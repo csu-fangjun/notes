@@ -46,3 +46,26 @@ The following shows how to use ``act`` to run the above workflow locally.
   | foo is hello
   | BAR is world
   [My first workflow/foo_job]   ✅  Success - Test 1
+
+Windows path
+------------
+
+``/tmp/wheels`` may be mapped to ``D:\tmp\wheels``. We can use ``/d/tmp/wheels``
+to access it.
+
+
+Set PATH for windows
+--------------------
+
+.. code-block:: bash
+
+    base="/c/hostedtoolcache/windows/Python/3.10.*/*/bin"
+
+    for dir in $base; do
+      if [ -d "$dir" ]; then
+        echo "Adding $dir to PATH"
+        export PATH="$dir:$PATH"
+      fi
+    done
+    echo "Current PATH:"
+    echo "$PATH"
