@@ -4,3 +4,4 @@ LLM
 .. toctree::
 
     gpt
+    bpe
