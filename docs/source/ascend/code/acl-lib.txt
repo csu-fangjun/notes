@@ -1,0 +1,38 @@
+ls /usr/local/Ascend/ascend-toolkit/latest/lib64/
+
+auto_deploy_utils-0.1.0-py3-none-any.whl  libaclnn_ops_infer.so            libbuilt_in_flowfunc.so    libhccl_alg_research.so         libregister.so
+auto_tune-0.1.0-py3-none-any.whl          libaclnn_ops_train.so            lib_caffe_parser.so        libhccl_alg.so                  librs.so
+c                                         libaclnn_rand.so                 libcann_kb.so              libhccl_heterog.so              librt2_registry.a
+d2d_bandwidth_test_310b.o                 libacl_op_compiler.so            libcce_aicore.so           libhccl_plf.so                  libruntime_kb.so
+d2d_bandwidth_test.o                      libacl_retr.so                   libcce_aicpudev_online.so  libhccl.so                      libruntime.so
+d2d_bandwidth_write_test.o                libacl_tde_mpi.so                libcce.so                  libhcom_executor.so             libslice.so
+dataflow-0.0.1-py3-none-any.whl           libacl_tdt_channel.so            libcce_tools.so            libhcom_gradient_split_tune.so  libte_fusion.so
+hbm_power.o                               libacl_tdt_queue.so              libcompress.so             libhcom_graph_adaptor.so        libtiling_api.a
+hbm_test_0.o                              libacl_vi_mpi.so                 libcompressweight.so       libhdds_base.so                 libtiling.so
+hbm_test_1.o                              libacl_vo_mpi.so                 libc_sec.a                 libhost_aicpu_scheduler.so      libtprt.so
+hbm_test_2.o                              libacl_vpss_mpi.so               libc_sec.so                libhybrid_executor.so           libtsdclient.so
+hbm_test_3.o                              libadcore.a                      libdata_flow_base.so       libindextransform.so            libtvm_runtime.so
+hbm_test_4.o                              libadump_server.a                libdatatransfer.so         libllm_engine.so                libtvm.so
+hbm_test_5.o                              libaicore_utils.so               libdavinci_executor.so     libmmpa.a                       libudf_dump.so
+hccl-0.1.0-py3-none-any.whl               libaicpu_engine_common.so        libdgw_client.so           libmmpa.so                      libudf_profiling.so
+hccl_aiv_op_ascend910B.o                  libamctacl.so                    libdgw_client_so.so        libmodel_deployer.so            llm_datadist-0.0.1-py3-none-any.whl
+hccl_reduce_op_Ascend310P3.o              libaoe_compiler.so               libdummy_tls.so            libmsprofiler.so                op_compile_tool-0.1.0-py3-none-any.whl
+hccl_reduce_op_ascend910B.o               libaoe_executor.so               libdvpp_cmdlist.so         libmspti.so                     opc_tool-0.1.0-py3-none-any.whl
+hccl_reduce_op_ascend910.o                libaoe_opat.so                   libdvpp_op_base.so         libms_tools_ext.so              plugin
+infer_310b_model_int8.o                   libaoe_plugin.so                 liberror_manager.a         libnca.so                       schedule_search-0.1.0-py3-none-any.whl
+infer_310b_model.o                        libaoe_runner.so                 liberror_manager.so        libnnopbase.so                  stub
+infer_mmad_model_int8.o                   libaoe_tuning.so                 libexe_graph.so            libopapi.so                     switch_by_index.o
+infer_mmad_model.o                        libascendalog.so                 libflow_func.so            libopat.so                      te-0.4.0-py3-none-any.whl
+infer_mmad_v200_model_int8.o              libascend_aoe_runner_offline.so  libflow_graph.so           libop_common.so                 train_matmul_model_fp32.o
+infer_mmad_v200_model.o                   libascendcl.a                    libfmk_onnx_parser.so      libopskernel.so                 train_matmul_model_hf32.o
+libacl_audio_mpi.so                       libascendcl.so                   libfmk_parser.so           libopt_feature.so               train_matmul_model_int8.o
+libacl_cblas.so                           libascendc_runtime.a             libge_common_base.so       libparser_common.so             train_matmul_model.o
+libacl_dvpp_mpi.so                        libascend_dump.a                 libge_common.so            libplatform.so                  train_mmad_model_int8.o
+libacl_dvpp_op.so                         libascend_dump.so                libge_compiler.so          libprofapi.so                   train_mmad_model.o
+libacl_dvpp.so                            libascend_ml.so                  libge_executor.so          libprofimpl.so                  train_mmad_vec_model_int8.o
+libacl_hdmi_mpi.so                        libascendprofhal.so              libgert.so                 libqos_manager.so               train_mmad_vec_model.o
+libacl_isp_ae_mpi.so                      libascend_protobuf.so            libge_runner.so            libra_hdc.so                    vector_multiplication_fp32.o
+libacl_isp_awb_mpi.so                     libascend_protobuf.so.3.13.0.0   libgraph_base.so           libra_peer.so                   vector_multiplication.o
+libacl_isp_mpi.so                         libascend_trace.so               libgraph.so                libra.so
+libacl_mfusion_mpi.so                     libascend_watchdog.so            libgraphtuner_executor.so  libreader_writer.so
+libaclnn_math.so                          libauto_tiling.so                libhccd.so                 libregister.a
