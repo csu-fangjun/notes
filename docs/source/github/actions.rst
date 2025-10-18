@@ -69,3 +69,10 @@ Set PATH for windows
     done
     echo "Current PATH:"
     echo "$PATH"
+
+SSH remote login to debug
+--------------------------
+
+See `<https://github.com/mxschmitt/action-tmate>`_
+
+Login into github actions machines with ssh.

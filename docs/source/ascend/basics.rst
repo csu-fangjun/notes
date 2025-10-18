@@ -20,48 +20,12 @@ npu-smi
   | NPU   Name                | Health        | Power(W)    Temp(C)           Hugepages-Usage(page)|
   | Chip                      | Bus-Id        | AICore(%)   Memory-Usage(MB)  HBM-Usage(MB)        |
   +===========================+===============+====================================================+
-  | 0     910B                | OK            | 68.5        40                0    / 0             |
-  | 0                         | 0000:C1:00.0  | 0           2382 / 15038      0    / 32768         |
+  | 0     910B                | OK            | xx.x        xxx               0    / 0             |
+  | 0                         | 1234:d0:12.1  | 0           xxxx / 1xxxx      0    / xxxxx         |
   +===========================+===============+====================================================+
-  | 1     910B                | OK            | 65.1        41                0    / 0             |
-  | 0                         | 0000:81:00.0  | 0           2353 / 15038      0    / 32768         |
-  +===========================+===============+====================================================+
-  | 2     910B                | OK            | 67.9        41                0    / 0             |
-  | 0                         | 0000:41:00.0  | 0           2355 / 15038      0    / 32768         |
-  +===========================+===============+====================================================+
-  | 3     910B                | OK            | 65.6        41                0    / 0             |
-  | 0                         | 0000:01:00.0  | 0           2352 / 15038      0    / 32768         |
-  +===========================+===============+====================================================+
-  | 4     910B                | OK            | 67.5        41                0    / 0             |
-  | 0                         | 0000:C2:00.0  | 0           2353 / 15038      0    / 32768         |
-  +===========================+===============+====================================================+
-  | 5     910B                | OK            | 63.2        41                0    / 0             |
-  | 0                         | 0000:82:00.0  | 0           2356 / 15038      0    / 32768         |
-  +===========================+===============+====================================================+
-  | 6     910B                | OK            | 66.6        41                0    / 0             |
-  | 0                         | 0000:42:00.0  | 0           2380 / 15038      0    / 32768         |
-  +===========================+===============+====================================================+
-  | 7     910B                | OK            | 65.0        40                0    / 0             |
-  | 0                         | 0000:02:00.0  | 0           2402 / 15038      124  / 32768         |
-  +===========================+===============+====================================================+
-  +---------------------------+---------------+----------------------------------------------------+
   | NPU     Chip              | Process id    | Process name             | Process memory(MB)      |
   +===========================+===============+====================================================+
   | No running processes found in NPU 0                                                            |
-  +===========================+===============+====================================================+
-  | No running processes found in NPU 1                                                            |
-  +===========================+===============+====================================================+
-  | No running processes found in NPU 2                                                            |
-  +===========================+===============+====================================================+
-  | No running processes found in NPU 3                                                            |
-  +===========================+===============+====================================================+
-  | No running processes found in NPU 4                                                            |
-  +===========================+===============+====================================================+
-  | No running processes found in NPU 5                                                            |
-  +===========================+===============+====================================================+
-  | No running processes found in NPU 6                                                            |
-  +===========================+===============+====================================================+
-  | 7       0                 | 87322         | python3                  | 109                     |
   +===========================+===============+====================================================+
 
 atc
@@ -138,3 +102,53 @@ To show debug messages:
   export ASCEND_SLOG_PRINT_TO_STDOUT=1
 
 
+fix errors
+----------
+
+.. code-block::
+
+  [INFO] acl init success [INFO] open device 0 success [INFO] create new context
+  [ACL ERROR] E19999: Inner Error! E19999:
+  [PID: 3370899] 2025-10-17-18:40:43.617.804 Invalid opp version [8.3.T14.0.B101] or
+  compiler_version [],Please check if it is within the required
+  range[FUNC:CheckOsCpuInfoAndOppVersion][FILE:model_helper.cc][LINE:973]
+  TraceBack (most recent call last): Assert ((error_code) == ge::SUCCESS)
+  failed[FUNC:LoadExecutorFromModelData][FILE:api.cc][LINE:111]
+  [Model][FromData]call gert::LoadExecutorFromModelDataWithMem load model from data failed,
+  ge result[4294967295][FUNC:ReportCallError][FILE:log_inner.cpp][LINE:161]
+  [ERROR] load model from file failed, model file is ./encoder.om
+  [WARN] Check failed:processModel->LoadModelFromFile(modelPath), ret:1
+
+I am using  ``ascendai/cann:latest`` from `<https://github.com/Ascend/cann-container-image>`_ in GitHub actions
+It shows::
+
+  source /usr/local/Ascend/ascend-toolkit/set_env.sh
+
+  /usr/local/Ascend/ascend-toolkit/8.3.RC1.alpha003/fwkacllib/lib64/libascend_protobuf.so
+  /usr/local/Ascend/ascend-toolkit/8.3.RC1.alpha003/fwkacllib/lib64/libascend_dump.so
+
+And on my device, I have::
+
+  cat /usr/local/Ascend/driver/version.info
+
+  Version=24.1.0
+  ascendhal_version=7.35.23
+  aicpu_version=1.0
+  tdt_version=1.0
+  log_version=1.0
+  prof_version=2.0
+  dvppkernels_version=1.1
+  tsfw_version=1.0
+  Innerversion=V100R001C19SPC002B226
+  compatible_version=[V100R001C13],[V100R001C15],[V100R001C17],[V100R001C18],[V100R001C19]
+  compatible_version_fw=[7.0.0,7.6.99]
+  package_version=24.1.0
+
+``24.1.0`` requires ``CANN 8.0 / 8.1 LTS``, but i was using ``8.3.RC1.alpha003``, which is too new.
+
+Switch to ``8.1.rc1-910b-ubuntu22.04-py3.10``. See `<https://github.com/Ascend/cann-container-image/tree/main/cann/8.1.rc1-910b-ubuntu22.04-py3.10>`_
+
+- CANN 7.0.x supports 23.0.x, for 910/310
+- CANN 7.1.x supports 23.1.x and 23.2x, for A310B, 910B
+- CANN 8.0.x/8.1.x supports 24.0.x/24.1.x
+- CANN 8.3.x supports 25.0.x/ 25.1.x
