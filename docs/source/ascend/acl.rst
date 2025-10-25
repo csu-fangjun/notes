@@ -1,9 +1,16 @@
 acl
 ===
 
+- 动态Shape输入（设置Shape范围）
+
+  `<https://www.hiascend.com/document/detail/zh/canncommercial/80RC2/developmentguide/appdevg/aclcppdevg/aclcppdevg_000044.html>`_
+
+
 - 头文件和库文件说明
 
   `<https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/83RC1alpha003/API/appdevgapi/aclcppdevg_03_1952.html>`_
+
+  `<https://www.hiascend.com/document/detail/zh/canncommercial/82RC1/appdevg/acldevg/aclcppdevg_000000.html>`_
 
 .. code-block::
 
