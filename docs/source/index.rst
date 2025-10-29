@@ -85,5 +85,6 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    ./mba/index
    ./llm/index
    ./ascend/index.rst
+   ./qnn/index.rst
 
 .. github/index
