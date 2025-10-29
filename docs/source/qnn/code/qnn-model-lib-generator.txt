@@ -1,0 +1,36 @@
+usage: qnn-model-lib-generator
+       [-h]
+       -c
+       CPP
+       [-b BIN]
+       [-t LIB_TARGETS [LIB_TARGETS ...]]
+       [-l LIB_NAME]
+       [-o OUTPUT_DIR]
+       [-d]
+
+options:
+  -h, --help
+    show this help message and exit
+
+required arguments:
+  -c CPP, --cpp CPP
+    Filepath for the qnn model .cpp file
+
+optional arguments:
+  -b BIN, --bin BIN
+    Filepath for the qnn model .bin file. (Note: if not passed, runtime will fail if .cpp
+    needs any items from a .bin file.)
+  -t LIB_TARGETS [LIB_TARGETS ...], --lib_targets LIB_TARGETS [LIB_TARGETS ...]
+    Specifies the targets to build the models for. Supported
+    targets: x86_64-linux-clang, aarch64-oe-linux-gcc8.2,
+    aarch64-oe-linux-gcc11.2, aarch64-oe-linux-gcc9.3, aarch64-ubuntu-gcc9.4,
+    aarch64-android.
+    Default: [x86_64-linux-clang, aarch64-android]
+  -l LIB_NAME, --lib_name LIB_NAME
+    Specifies the name to use for libraries.
+    Default:
+    uses name in <model>.bin if provided, else generic qnn_model
+  -o OUTPUT_DIR, --output_dir OUTPUT_DIR
+    Location for saving output libraries. Default: /content/lib
+  -d, --debug
+    Set log level as debug mode

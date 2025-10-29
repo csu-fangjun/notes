@@ -1,12 +1,3 @@
-/bin/bash: line 2: fg: no job control
-Python 3.12.12
-Python 3.10.12
-/content/qairt/2.22.6.240515/bin /content
-aimet_env_setup.sh  check-linux-dependency.sh  envsetup.sh
-[INFO] AISW SDK environment set
-[INFO] QNN_SDK_ROOT: /content/qairt/2.22.6.240515
-[INFO] SNPE_ROOT: /content/qairt/2.22.6.240515
-/content
 usage: qnn-onnx-converter [--out_node OUT_NAMES] [--input_type INPUT_NAME INPUT_TYPE]
                           [--input_dtype INPUT_NAME INPUT_DTYPE] [--input_encoding  ...]]
                           [--input_layout INPUT_NAME INPUT_LAYOUT] [--custom_io CUSTOM_IO]

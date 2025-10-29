@@ -3,6 +3,8 @@ basics
 
 gmail, B1!
 
+- `<https://scalable.uni-jena.de/opt/eml/chapters/assignment_mobile_inference.html>`_
+
 - QNN Execution Provider
 
   `<https://onnxruntime.ai/docs/execution-providers/QNN-ExecutionProvider.html>`_
