@@ -13,5 +13,4 @@ qnn
     ./qairt-dlc-info.rst
     ./qairt-quantizer.rst
     ./boards.rst
-
-
+    ./code.rst

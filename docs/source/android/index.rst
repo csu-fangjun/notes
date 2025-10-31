@@ -16,3 +16,4 @@ Android
     resources
     release
     ./coroutine.rst
+    ./run-cpp-on-android.rst
