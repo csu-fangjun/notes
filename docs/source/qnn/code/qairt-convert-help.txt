@@ -1,0 +1,316 @@
+usage: qairt-converter [--source_model_input_shape INPUT_NAME INPUT_DIM]
+                       [--out_tensor_node OUT_NAMES]
+                       [--source_model_input_datatype INPUT_NAME INPUT_DTYPE]
+                       [--source_model_input_layout INPUT_NAME INPUT_LAYOUT]
+                       [--desired_input_layout INPUT_NAME DESIRED_INPUT_LAYOUT]
+                       [--source_model_output_layout OUTPUT_NAME OUTPUT_LAYOUT]
+                       [--desired_output_layout OUTPUT_NAME DESIRED_OUTPUT_LAYOUT]
+                       [--desired_input_color_encoding  ...]]
+                       [--preserve_io_datatype [PRESERVE_IO_DATATYPE ...]]
+                       [--dump_config_template DUMP_IO_CONFIG_TEMPLATE] [--config IO_CONFIG]
+                       [--dry_run [DRY_RUN]] [--enable_framework_trace] [--gguf_config GGUF_CONFIG]
+                       [--quantization_overrides QUANTIZATION_OVERRIDES]
+                       [--lora_weight_list LORA_WEIGHT_LIST] [--onnx_skip_simplification]
+                       [--onnx_override_batch BATCH] [--onnx_define_symbol SYMBOL_NAME VALUE]
+                       [--onnx_validate_models] [--onnx_summary]
+                       [--onnx_perform_sequence_construct_optimizer] [--tf_summary]
+                       [--tf_disable_optimization] [--tf_show_unconsumed_nodes]
+                       [--tf_saved_model_tag SAVED_MODEL_TAG]
+                       [--tf_saved_model_signature_key SAVED_MODEL_SIGNATURE_KEY]
+                       [--tf_validate_models] [--tflite_signature_name SIGNATURE_NAME]
+                       --input_network INPUT_NETWORK [--debug [DEBUG]] [--output_path OUTPUT_PATH]
+                       [--copyright_file COPYRIGHT_FILE] [--float_bitwidth FLOAT_BITWIDTH]
+                       [--float_bias_bitwidth FLOAT_BIAS_BITWIDTH]
+                       [--set_model_version MODEL_VERSION]
+                       [--converter_op_package_lib CONVERTER_OP_PACKAGE_LIB]
+                       [--package_name PACKAGE_NAME | --op_package_config CUSTOM_OP_CONFIG_PATHS [CUSTOM_OP_CONFIG_PATHS ...]]
+                       [-h] [--target_backend BACKEND] [--target_soc_model SOC_MODEL]
+
+required arguments:
+  --input_network INPUT_NETWORK, -i INPUT_NETWORK
+                        Path to the source framework model.
+
+optional arguments:
+  --source_model_input_shape INPUT_NAME INPUT_DIM, -s INPUT_NAME INPUT_DIM
+                        The name and dimension of all the input buffers to the network specified in
+                        the format [input_name comma-separated-dimensions],
+                        for example: --source_model_input_shape 'data' 1,224,224,3.
+                        Note that the quotes should always be included in order to handle special
+                        characters, spaces, etc.
+                        NOTE: Required for TensorFlow and PyTorch. Optional for Onnx and Tflite
+                        In case of Onnx, this feature works only with Onnx 1.6.0 and above
+  --out_tensor_node OUT_NAMES, --out_tensor_name OUT_NAMES
+                        Name of the graph's output Tensor Names. Multiple output names should be
+                        provided separately like:
+                            --out_tensor_name out_1 --out_tensor_name out_2
+                        NOTE: Required for TensorFlow. Optional for Onnx, Tflite and PyTorch
+  --source_model_input_datatype INPUT_NAME INPUT_DTYPE
+                        The names and datatype of the network input layers specified in the format
+                        [input_name datatype], for example:
+                            'data' 'float32'
+                        Default is float32 if not specified
+                        Note that the quotes should always be included in order to handlespecial
+                        characters, spaces, etc.
+                        For multiple inputs specify multiple --source_model_input_datatype on the
+                        command line like:
+                            --source_model_input_datatype 'data1' 'float32'
+                        --source_model_input_datatype 'data2' 'float32'
+  --source_model_input_layout INPUT_NAME INPUT_LAYOUT
+                        Layout of each input tensor. If not specified, it will use the default based
+                        on the Source Framework, shape of input and input encoding.
+                        Accepted values are-
+                            NCDHW, NDHWC, NCHW, NHWC, HWIO, OIHW, NFC, NCF, NTF, TNF, NF, NC, F
+                        N = Batch, C = Channels, D = Depth, H = Height, W = Width, F = Feature,
+                        T = Time, I = Input, O = Output
+                        NDHWC/NCDHW used for 5d inputs
+                        NHWC/NCHW used for 4d image-like inputs
+                        HWIO/IOHW used for Weights of Conv Ops
+                        NFC/NCF used for inputs to Conv1D or other 1D ops
+                        NTF/TNF used for inputs with time steps like the ones used for LSTM op
+                        NF used for 2D inputs, like the inputs to Dense/FullyConnected layers
+                        NC used for 2D inputs with 1 for batch and other for Channels (rarely used)
+                        F used for 1D inputs, e.g. Bias tensor
+                        For multiple inputs specify multiple --source_model_input_layout on the
+                        command line.
+                        Eg:
+                            --source_model_input_layout "data1" NCHW --source_model_input_layout
+                        "data2" NCHW
+  --desired_input_layout INPUT_NAME DESIRED_INPUT_LAYOUT
+                        Desired Layout of each input tensor. If not specified, it will use the
+                        default based on the Source Framework, shape of input and input encoding.
+                        Accepted values are-
+                            NCDHW, NDHWC, NCHW, NHWC, HWIO, OIHW, NFC, NCF, NTF, TNF, NF, NC, F
+                        N = Batch, C = Channels, D = Depth, H = Height, W = Width, F = Feature,
+                        T = Time, I = Input, O = Output
+                        NDHWC/NCDHW used for 5d inputs
+                        NHWC/NCHW used for 4d image-like inputs
+                        HWIO/IOHW used for Weights of Conv Ops
+                        NFC/NCF used for inputs to Conv1D or other 1D ops
+                        NTF/TNF used for inputs with time steps like the ones used for LSTM op
+                        NF used for 2D inputs, like the inputs to Dense/FullyConnected layers
+                        NC used for 2D inputs with 1 for batch and other for Channels (rarely used)
+                        F used for 1D inputs, e.g. Bias tensor
+                        For multiple inputs specify multiple --desired_input_layout on the command
+                        line.
+                        Eg:
+                            --desired_input_layout "data1" NCHW --desired_input_layout "data2" NCHW
+  --source_model_output_layout OUTPUT_NAME OUTPUT_LAYOUT
+                        Layout of each output tensor. If not specified, it will use the default
+                        based on the Source Framework, shape of input and input encoding.
+                        Accepted values are-
+                            NCDHW, NDHWC, NCHW, NHWC, HWIO, OIHW, NFC, NCF, NTF, TNF, NF, NC, F
+                        N = Batch, C = Channels, D = Depth, H = Height, W = Width, F = Feature, T =
+                        Time
+                        NDHWC/NCDHW used for 5d inputs
+                        NHWC/NCHW used for 4d image-like inputs
+                        NFC/NCF used for inputs to Conv1D or other 1D ops
+                        NTF/TNF used for inputs with time steps like the ones used for LSTM op
+                        NF used for 2D inputs, like the inputs to Dense/FullyConnected layers
+                        NC used for 2D inputs with 1 for batch and other for Channels (rarely used)
+                        F used for 1D inputs, e.g. Bias tensor
+                        For multiple inputs specify multiple --source_model_output_layout on the
+                        command line.
+                        Eg:
+                            --source_model_output_layout "data1" NCHW --source_model_output_layout
+                        "data2" NCHW
+  --desired_output_layout OUTPUT_NAME DESIRED_OUTPUT_LAYOUT
+                        Desired Layout of each output tensor. If not specified, it will use the
+                        default based on the Source Framework.
+                        Accepted values are-
+                            NCDHW, NDHWC, NCHW, NHWC, HWIO, OIHW, NFC, NCF, NTF, TNF, NF, NC, F
+                        N = Batch, C = Channels, D = Depth, H = Height, W = Width, F = Feature, T =
+                        Time
+                        NDHWC/NCDHW used for 5d outputs
+                        NHWC/NCHW used for 4d image-like outputs
+                        NFC/NCF used for outputs to Conv1D or other 1D ops
+                        NTF/TNF used for outputs with time steps like the ones used for LSTM op
+                        NF used for 2D outputs, like the outputs to Dense/FullyConnected layers
+                        NC used for 2D outputs with 1 for batch and other for Channels (rarely used)
+                        F used for 1D outputs, e.g. Bias tensor
+                        For multiple outputs specify multiple --desired_output_layout on the command
+                        line.
+                        Eg:
+                            --desired_output_layout "data1" NCHW --desired_output_layout "data2"
+                        NCHW
+  --desired_input_color_encoding  ...], -e  ...]
+                        Usage:     --input_color_encoding "INPUT_NAME" INPUT_ENCODING_IN
+                        [INPUT_ENCODING_OUT]
+                        Input encoding of the network inputs. Default is bgr.
+                        e.g.
+                           --input_color_encoding "data" rgba
+                        Quotes must wrap the input node name to handle special characters,
+                        spaces, etc. To specify encodings for multiple inputs, invoke
+                        --input_color_encoding for each one.
+                        e.g.
+                            --input_color_encoding "data1" rgba --input_color_encoding "data2" other
+                        Optionally, an output encoding may be specified for an input node by
+                        providing a second encoding. The default output encoding is bgr.
+                        e.g.
+                            --input_color_encoding "data3" rgba rgb
+                        Input encoding types:
+                             image color encodings: bgr,rgb, nv21, nv12, ...
+                            time_series: for inputs of rnn models;
+                            other: not available above or is unknown.
+                        Supported encodings:
+                           bgr
+                           rgb
+                           rgba
+                           argb32
+                           nv21
+                           nv12
+  --preserve_io_datatype [PRESERVE_IO_DATATYPE ...]
+                        Use this option to preserve IO datatype. The different ways of using this
+                        option are as follows:
+                            --preserve_io_datatype <space separated list of names of inputs and
+                        outputs of the graph>
+                        e.g.
+                            --preserve_io_datatype input1 input2 output1
+                        The user may choose to preserve the datatype for all the inputs and outputs
+                        of the graph.
+                            --preserve_io_datatype
+                        Note: --config gets higher precedence than --preserve_io_datatype.
+  --dump_config_template DUMP_IO_CONFIG_TEMPLATE
+                        Dumps the yaml template for I/O configuration. This file can be edited as
+                        per the custom requirements and passed using the option --configUse this
+                        option to specify a yaml file to which the IO config template is dumped.
+  --config IO_CONFIG    Use this option to specify a yaml file for input and output options.
+  --dry_run [DRY_RUN]   Evaluates the model without actually converting any ops, and returns
+                        unsupported ops/attributes as well as unused inputs and/or outputs if any.
+  --enable_framework_trace
+                        Use this option to enable converter to trace the op/tensor change
+                        information.
+                        Currently framework op trace is supported only for ONNX converter.
+  --gguf_config GGUF_CONFIG
+                        This is an optional argument that can be used when input network is a GGUF
+                        File.It specifies the path to the config file for building GenAI model.(the
+                        config.json file generated when saving the huggingface model)
+  --debug [DEBUG]       Run the converter in debug mode.
+  --output_path OUTPUT_PATH, -o OUTPUT_PATH
+                        Path where the converted Output model should be saved.If not specified, the
+                        converter model will be written to a file with same name as the input model
+  --copyright_file COPYRIGHT_FILE
+                        Path to copyright file. If provided, the content of the file will be added
+                        to the output model.
+  --float_bitwidth FLOAT_BITWIDTH
+                        Use the --float_bitwidth option to convert the graph to the specified float
+                        bitwidth, either 32 (default) or 16.
+  --float_bias_bitwidth FLOAT_BIAS_BITWIDTH
+                        Use the --float_bias_bitwidth option to select the bitwidth to use for float
+                        bias tensor, either 32 or 16 (default '0' if not provided).
+  --set_model_version MODEL_VERSION
+                        User-defined ASCII string to identify the model, only first 64 bytes will be
+                        stored
+  -h, --help            show this help message and exit
+
+Custom Op Package Options:
+  --converter_op_package_lib CONVERTER_OP_PACKAGE_LIB, -cpl CONVERTER_OP_PACKAGE_LIB
+                        Absolute path to converter op package library compiled by the OpPackage
+                        generator. Must be separated by a comma for multiple package libraries.
+                        Note: Order of converter op package libraries must follow the order of xmls.
+                        Ex1: --converter_op_package_lib absolute_path_to/libExample.so
+                        Ex2: -cpl absolute_path_to/libExample1.so,absolute_path_to/libExample2.so
+  --package_name PACKAGE_NAME, -p PACKAGE_NAME
+                        A global package name to be used for each node in the Model.cpp file.
+                        Defaults to Qnn header defined package name
+  --op_package_config CUSTOM_OP_CONFIG_PATHS [CUSTOM_OP_CONFIG_PATHS ...], -opc CUSTOM_OP_CONFIG_PATHS [CUSTOM_OP_CONFIG_PATHS ...]
+                        Path to a Qnn Op Package XML configuration file that contains user defined
+                        custom operations.
+
+Quantizer Options:
+  --quantization_overrides QUANTIZATION_OVERRIDES, -q QUANTIZATION_OVERRIDES
+                        Use this option to specify a json file with parameters to use for
+                        quantization. These will override any quantization data carried from
+                        conversion (eg TF fake quantization) or calculated during the normal
+                        quantization process. Format defined as per AIMET specification.
+
+LoRA Converter Options:
+  --lora_weight_list LORA_WEIGHT_LIST
+                        Path to a file specifying a list of tensor names that should be updateable.
+
+Onnx Converter Options:
+  --onnx_skip_simplification, -oss
+                        Do not attempt to simplify the model automatically. This may prevent some
+                        models from
+                        properly converting  when sequences of unsupported static operations are
+                        present.
+  --onnx_override_batch BATCH
+                        The batch dimension override. This will take the first dimension of all
+                        inputs and treat it as a batch dim, overriding it with the value provided
+                        here. For example:
+                        --onnx_override_batch 6
+                        will result in a shape change from [1,3,224,224] to [6,3,224,224].
+                        If there are inputs without batch dim this should not be used and each input
+                        should be overridden independently using -d option for input dimension
+                        overrides.
+  --onnx_define_symbol SYMBOL_NAME VALUE
+                        This option allows overriding specific input dimension symbols. For instance
+                        you might see input shapes specified with variables such as :
+                        data: [1,3,height,width]
+                        To override these simply pass the option as:
+                        --onnx_define_symbol height 224 --onnx_define_symbol width 448
+                        which results in dimensions that look like:
+                        data: [1,3,224,448]
+  --onnx_validate_models
+                        Validate the original ONNX model against optimized ONNX model.
+                        Constant inputs with all value 1s will be generated and will be used
+                        by both models and their outputs are checked against each other.
+                        The % average error and 90th percentile of output differences will be
+                        calculated for this.
+                        Note: Usage of this flag will incur extra time due to inference of the
+                        models.
+  --onnx_summary        Summarize the original onnx model and optimized onnx model.
+                        Summary will print the model information such as number of parameters,
+                        number of operators and their count, input-output tensor name, shape and
+                        dtypes.
+  --onnx_perform_sequence_construct_optimizer
+                        This option allows optimization on SequenceConstruct Op.
+                        When SequenceConstruct op is one of the outputs of the graph, it removes
+                        SequenceConstruct op and makes its inputs as graph outputs to replace the
+                        original output of SequenceConstruct.
+  --tf_summary          Summarize the original TF model and optimized TF model.
+                        Summary will print the model information such as number of parameters,
+                        number of operators and their count, input-output tensor name, shape and
+                        dtypes.
+
+TensorFlow Converter Options:
+  --tf_disable_optimization
+                        Do not attempt to optimize the model automatically.
+  --tf_show_unconsumed_nodes
+                        Displays a list of unconsumed nodes, if there any are found. Nodeswhich are
+                        unconsumed do not violate the structural fidelity of thegenerated graph.
+  --tf_saved_model_tag SAVED_MODEL_TAG
+                        Specify the tag to seletet a MetaGraph from savedmodel. ex:
+                        --saved_model_tag serve. Default value will be 'serve' when it is not
+                        assigned.
+  --tf_saved_model_signature_key SAVED_MODEL_SIGNATURE_KEY
+                        Specify signature key to select input and output of the model. ex:
+                        --tf_saved_model_signature_key serving_default. Default value will be
+                        'serving_default' when it is not assigned
+  --tf_validate_models  Validate the original TF model against optimized TF model.
+                        Constant inputs with all value 1s will be generated and will be used
+                        by both models and their outputs are checked against each other.
+                        The % average error and 90th percentile of output differences will be
+                        calculated for this.
+                        Note: Usage of this flag will incur extra time due to inference of the
+                        models.
+
+Tflite Converter Options:
+  --tflite_signature_name SIGNATURE_NAME
+                        Use this option to specify a specific Subgraph signature to convert
+
+Backend Options:
+  --target_backend BACKEND
+                        Use this option to specify the backend on which the model needs to run.
+                        Providing this option will generate a graph optimized for the given backend
+                        and this graph may not run on other backends.
+                        Supported backends are CPU,GPU,DSP,HTP,HTA,LPAI.
+  --target_soc_model SOC_MODEL
+                        Use this option to specify the SOC on which the model needs to run.
+                        This can be found from SOC info of the device and it starts with strings
+                        such as SDM, SM, QCS, IPQ, SA, QC, SC, SXR, SSG, STP, QRB, or AIC.
+                        NOTE: --target_backend option must be provided to use --target_soc_model
+                        option.
+
+Note: Only one of: {'op_package_config', 'package_name'} can be specified Note: Only one of:
+{'op_package_config', 'package_name'} can be specified
+

@@ -14,6 +14,21 @@ SenseVoice
     --float_bitwidth 16 \
     --use_per_channel_quantization
 
+  qnn-onnx-converter \
+    --input_network ./model.onnx \
+    --output_path ./qnn_model_dynamic \
+    --out_node logits \
+    --input_dtype x float32 \
+    --input_dtype prompt int32 \
+    --input_layout x NTF \
+    --define_symbol N 1 \
+    --define_symbol T 93 \
+    --float_bitwidth 16 \
+    --float_fallback \
+    --use_per_row_quantization \
+    --input_dim x 1,93,560 \
+    --input_dim prompt 4
+
 .. code-block:: bash
 
   2025-10-29 05:45:28,229 - 240 - WARNING - Symbolic shape inference Failed. Exception: Incomplete symbolic shape inference. Running normal shape inference.
@@ -68,3 +83,9 @@ SenseVoice
    ls -lh model_libs/x86_64-linux-clang/
 
    -rwxr-xr-x 1 root root 448M Oct 29 06:18 libqnn_model_dynamic.so
+
+If we don't specify the ``-t``, it will show::
+
+  2025-10-29 10:41:45,757 -    INFO - qnn-model-lib-generator: Target: x86_64-linux-clang	Library: /content/model_libs/x86_64-linux-clang/libqnn_model_dynamic.so
+  2025-10-29 10:41:45,757 -    INFO - qnn-model-lib-generator: Target: aarch64-android	Library: /content/model_libs/aarch64-android/libqnn_model_dynamic.so
+

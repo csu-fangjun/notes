@@ -1,0 +1,25 @@
+usage: qairt-dlc-info
+       [-h]
+       -i
+
+       [-s]
+       [-m]
+       [-d]
+       [-t]
+
+Reads in a DLC file and outputs layer information to stdout.
+
+required arguments:
+  -i, --input_dlc
+    Path to a DLC file.
+
+optional arguments:
+  -s, --save
+    Save the output to a csv file. Specify a target file path.
+  -m, --display_memory
+    Show detailed information about memory usage.
+  -d, --display_all_encodings
+    Show detailed axis-quantization encoding information.
+  -t, --dump_framework_trace
+    Save framework trace info into the csv file that was passed to --save option.
+

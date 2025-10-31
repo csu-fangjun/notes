@@ -1,0 +1,184 @@
+usage: qairt-quantizer --input_dlc INPUT_DLC [--output_dlc OUTPUT_DLC] [--input_list INPUT_LIST]
+                       [--enable_float_fallback] [--apply_algorithms ALGORITHMS [ALGORITHMS ...]]
+                       [--bias_bitwidth BIAS_BITWIDTH] [--act_bitwidth ACT_BITWIDTH]
+                       [--weights_bitwidth WEIGHTS_BITWIDTH] [--float_bitwidth FLOAT_BITWIDTH]
+                       [--float_bias_bitwidth FLOAT_BIAS_BITWIDTH] [--ignore_quantization_overrides]
+                       [--use_per_channel_quantization] [--use_per_row_quantization]
+                       [--enable_per_row_quantized_bias]
+                       [--preserve_io_datatype [PRESERVE_IO_DATATYPE ...]]
+                       [--use_native_input_files] [--use_native_output_files]
+                       [--restrict_quantization_steps ENCODING_MIN, ENCODING_MAX]
+                       [--keep_weights_quantized] [--adjust_bias_encoding]
+                       [--act_quantizer_calibration ACT_QUANTIZER_CALIBRATION]
+                       [--param_quantizer_calibration PARAM_QUANTIZER_CALIBRATION]
+                       [--act_quantizer_schema ACT_QUANTIZER_SCHEMA]
+                       [--param_quantizer_schema PARAM_QUANTIZER_SCHEMA]
+                       [--percentile_calibration_value PERCENTILE_CALIBRATION_VALUE]
+                       [--use_aimet_quantizer] [--op_package_lib OP_PACKAGE_LIB]
+                       [--dump_encoding_json] [--config CONFIG_FILE] [--export_stripped_dlc] [-h]
+                       [--target_backend BACKEND] [--target_soc_model SOC_MODEL] [--debug [DEBUG]]
+
+required arguments:
+  --input_dlc INPUT_DLC, -i INPUT_DLC
+                        Path to the dlc container containing the model for which fixed-point
+                        encoding metadata should be generated. This argument is required
+
+optional arguments:
+  --output_dlc OUTPUT_DLC, -o OUTPUT_DLC
+                        Path at which the metadata-included quantized model container should be
+                        written.If this argument is omitted, the quantized model will be written at
+                        <unquantized_model_name>_quantized.dlc
+  --input_list INPUT_LIST, -l INPUT_LIST
+                        Path to a file specifying the input data. This file should be a plain text
+                        file, containing one or more absolute file paths per line. Each path is
+                        expected to point to a binary file containing one input in the "raw" format,
+                        ready to be consumed by the quantizer without any further preprocessing.
+                        Multiple files per line separated by spaces indicate multiple inputs to the
+                        network. See documentation for more details. Must be specified for
+                        quantization. All subsequent quantization options are ignored when this is
+                        not provided.
+  --enable_float_fallback, -f
+                        Use this option to enable fallback to floating point (FP) instead of fixed
+                        point.
+                        This option can be paired with --float_bitwidth to indicate the bitwidth for
+                        FP (by default 32).
+                        If this option is enabled, then input list must not be provided and
+                        --ignore_quantization_overrides must not be provided.
+                        The external quantization encodings (encoding file/FakeQuant encodings)
+                        might be missing quantization parameters for some interim tensors.
+                        First it will try to fill the gaps by propagating across math-invariant
+                        functions. If the quantization params are still missing,
+                        then it will apply fallback to nodes to floating point.
+  --apply_algorithms ALGORITHMS [ALGORITHMS ...]
+                        Use this option to enable new optimization algorithms. Usage is:
+                        --apply_algorithms <algo_name1> ... The available optimization algorithms
+                        are: "cle" - Cross layer equalization includes a number of methods for
+                        equalizing weights and biases across layers in order to rectify imbalances
+                        that cause quantization errors.
+  --bias_bitwidth BIAS_BITWIDTH
+                        Use the --bias_bitwidth option to select the bitwidth to use when quantizing
+                        the biases, either 8 (default) or 32.
+  --act_bitwidth ACT_BITWIDTH
+                        Use the --act_bitwidth option to select the bitwidth to use when quantizing
+                        the activations, either 8 (default) or 16.
+  --weights_bitwidth WEIGHTS_BITWIDTH
+                        Use the --weights_bitwidth option to select the bitwidth to use when
+                        quantizing the weights, either 4, 8 (default) or 16.
+  --float_bitwidth FLOAT_BITWIDTH
+                        Use the --float_bitwidth option to select the bitwidth to use for float
+                        tensors,either 32 (default) or 16.
+  --float_bias_bitwidth FLOAT_BIAS_BITWIDTH
+                        Use the --float_bias_bitwidth option to select the bitwidth to use when
+                        biases are in float, either 32 or 16 (default '0' if not provided).
+  --ignore_quantization_overrides
+                        Use only quantizer generated encodings, ignoring any user or model provided
+                        encodings.
+                        Note: Cannot use --ignore_quantization_overrides with
+                        --quantization_overrides (argument of Qairt Converter)
+  --use_per_channel_quantization
+                        Use this option to enable per-channel quantization for convolution-based op
+                        weights.
+                        Note: This will only be used if built-in model Quantization-Aware Trained
+                        (QAT) encodings are not present for a given weight.
+  --use_per_row_quantization
+                        Use this option to enable rowwise quantization of Matmul and FullyConnected
+                        ops.
+  --enable_per_row_quantized_bias
+                        Use this option to enable rowwise quantization of bias for FullyConnected
+                        ops, when weights are per-row quantized.
+  --preserve_io_datatype [PRESERVE_IO_DATATYPE ...]
+                        Use this option to preserve IO datatype. The different ways of using this
+                        option are as follows:
+                            --preserve_io_datatype <space separated list of names of inputs and
+                        outputs of the graph>
+                        e.g.
+                           --preserve_io_datatype input1 input2 output1
+                        The user may choose to preserve the datatype for all the inputs and outputs
+                        of the graph.
+                            --preserve_io_datatype
+  --use_native_input_files
+                        Boolean flag to indicate how to read input files.
+                        If not provided, reads inputs as floats and quantizes if necessary based on
+                        quantization parameters in the model. (default)
+                        If provided, reads inputs assuming the data type to be native to the model.
+                        For ex., uint8_t.
+  --use_native_output_files
+                        Boolean flag to indicate the data type of the output files
+                        If not provided, outputs the file as floats. (default)
+                        If provided, outputs the file that is native to the model. For ex., uint8_t.
+  --restrict_quantization_steps ENCODING_MIN, ENCODING_MAX
+                        Specifies the number of steps to use for computing quantization encodings
+                        such that scale = (max - min) / number of quantization steps.
+                        The option should be passed as a space separated pair of hexadecimal string
+                        minimum and maximum valuesi.e. --restrict_quantization_steps "MIN MAX".
+                         Please note that this is a hexadecimal string literal and not a signed
+                        integer, to supply a negative value an explicit minus sign is required.
+                        E.g.--restrict_quantization_steps "-0x80 0x7F" indicates an example 8 bit
+                        range,
+                            --restrict_quantization_steps "-0x8000 0x7F7F" indicates an example 16
+                        bit range.
+                        This argument is required for 16-bit Matmul operations.
+  --keep_weights_quantized
+                        Use this option to keep the weights quantized even when the output of the op
+                        is in floating point. Bias will be converted to floating point as per the
+                        output of the op. Required to enable wFxp_actFP configurations according to
+                        the provided bitwidth for weights and activations
+                        Note: These modes are not supported by all runtimes. Please check
+                        corresponding Backend OpDef supplement if these are supported
+  --adjust_bias_encoding
+                        Use --adjust_bias_encoding option to modify bias encoding and weight
+                        encoding to ensure that the bias value is in the range of the bias encoding.
+                        This option is only applicable for per-channel quantized weights.
+                         NOTE: This may result in clipping of the weight values
+  --act_quantizer_calibration ACT_QUANTIZER_CALIBRATION
+                        Specify which quantization calibration method to use for activations
+                        supported values: min-max (default), sqnr, entropy, mse, percentile
+                        This option can be paired with --act_quantizer_schema to override the
+                        quantization
+                        schema to use for activations otherwise default schema(asymmetric) will be
+                        used
+  --param_quantizer_calibration PARAM_QUANTIZER_CALIBRATION
+                        Specify which quantization calibration method to use for parameters
+                        supported values: min-max (default), sqnr, entropy, mse, percentile
+                        This option can be paired with --param_quantizer_schema to override the
+                        quantization
+                        schema to use for parameters otherwise default schema(asymmetric) will be
+                        used
+  --act_quantizer_schema ACT_QUANTIZER_SCHEMA
+                        Specify which quantization schema to use for activations
+                        supported values: asymmetric (default), symmetric, unsignedsymmetric
+  --param_quantizer_schema PARAM_QUANTIZER_SCHEMA
+                        Specify which quantization schema to use for parameters
+                        supported values: asymmetric (default), symmetric, unsignedsymmetric
+  --percentile_calibration_value PERCENTILE_CALIBRATION_VALUE
+                        Specify the percentile value to be used with Percentile calibration method
+                        The specified float value must lie within 90 and 100, default: 99.99
+  --use_aimet_quantizer
+                        Use AIMET for Quantization instead of QNN IR quantizer
+  --op_package_lib OP_PACKAGE_LIB, -opl OP_PACKAGE_LIB
+                        Use this argument to pass an op package library for quantization. Must be in
+                        the form <op_package_lib_path:interfaceProviderName> and be separated by a
+                        comma for multiple package libs
+  --dump_encoding_json  Use this argument to dump encoding of all the tensors in a json file
+  --config CONFIG_FILE, -c CONFIG_FILE
+                        Use this argument to pass the path of the config YAML file with quantizer
+                        options
+  --export_stripped_dlc
+                        Use this argument to export a DLC which strips out data not needed for graph
+                        composition
+  -h, --help            show this help message and exit
+  --debug [DEBUG]       Run the quantizer in debug mode.
+
+Backend Options:
+  --target_backend BACKEND
+                        Use this option to specify the backend on which the model needs to run.
+                        Providing this option will generate a graph optimized for the given backend
+                        and this graph may not run on other backends.
+                        Supported backends are CPU,GPU,DSP,HTP,HTA,LPAI.
+  --target_soc_model SOC_MODEL
+                        Use this option to specify the SOC on which the model needs to run.
+                        This can be found from SOC info of the device and it starts with strings
+                        such as SDM, SM, QCS, IPQ, SA, QC, SC, SXR, SSG, STP, QRB, or AIC.
+                        NOTE: --target_backend option must be provided to use --target_soc_model
+                        option.
+
