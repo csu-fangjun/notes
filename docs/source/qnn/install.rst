@@ -1,6 +1,8 @@
 Install qnn
 ============
 
+Go to `<https://softwarecenter.qualcomm.com/catalog/item/Qualcomm_AI_Runtime_Community>`_
+
 .. code-block:: bash
 
   wget https://apigwx-aws.qualcomm.com/qsc/public/v1/api/download/software/sdks/Qualcomm_AI_Runtime_Community/All/2.32.0.250228/v2.32.0.250228.zip

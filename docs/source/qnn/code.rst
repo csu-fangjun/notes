@@ -25,3 +25,39 @@ code
 
   - Line 419, load system lib, call ``QnnSystemInterface_getProviders``
   - Line 481, load backend lib, call ``QnnInterface_getProviders``
+
+- QnnModel_composeGraphs
+
+  See 
+
+    - `<https://github.com/asfahl/EML_2024/blob/5fc62b687865b46e890e0f5de303a9682142127d/Week_8/model/resnet18_int8.cpp>`_
+    - `<https://github.com/quic/ai-engine-direct-helper/blob/aa658eb2f26436efd88ae62f51698c23d03a4935/src/Utils/DynamicLoadUtil.cpp#L102>`_
+
+
+When using v2.32 with my Xiaomi 17, I get::
+
+  backend build ID: v2.32.0.250228225014_116386
+       0.0ms [INFO   ] QnnDsp <I> QnnLog_create started.
+       0.0ms [VERBOSE] QnnDsp <V> Registered a new graph environment 1 with priority: 100, num hvx threads: 0, num hmx threads: 1001
+       0.0ms [WARN   ] QnnDsp <W> Initializing HtpProvider
+       0.0ms [VERBOSE] QnnDsp <V> Creating default router
+       0.0ms [VERBOSE] QnnDsp <V> RouterFastRPC create
+       0.0ms [VERBOSE] QnnDsp <V> HTP: Initializing the router
+       0.0ms [INFO   ] QnnDsp <I> exit with 0
+       0.0ms [INFO   ] QnnDsp <I> exit with 0
+       0.0ms [ERROR  ] QnnDsp <E> Stub lib id mismatch: expected (v2.32.0.250228225014_116386), detected (v2.33.0.250327124043_117917)
+       0.0ms [ERROR  ] QnnDsp <E> Unable to load Remote symbols 1008
+       0.0ms [ERROR  ] QnnDsp <E> Unable to load Remote symbols 1008
+       0.0ms [VERBOSE] QnnDsp <V> Async property not supported. Skipping setup async threads
+       0.0ms [VERBOSE] QnnDsp <V> Detected Snapdragon SOC SM8850 with 1 SOCs
+       0.0ms [VERBOSE] QnnDsp <V> Allocating PlatformInfo struct size 120
+       0.0ms [VERBOSE] QnnDsp <V> HTP: Initializing the log registry
+
+.. code-block:: bash
+
+  pandora:/data/local/tmp $ strings /vendor/lib/rfsa/adsp/libQnnHtpV81Skel.so  | grep AISW_VERSION
+  AISW_VERSION: 2.33.0
+
+  pandora:/data/local/tmp $ strings /vendor/lib/rfsa/adsp/libQnnHtpV81Skel.so  | grep v2.33
+  v2.33.0.250327124043_117917
+  v2.33.0.250327124043_117917.d278150d6a

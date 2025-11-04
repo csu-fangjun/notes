@@ -14,3 +14,4 @@ qnn
     ./qairt-quantizer.rst
     ./boards.rst
     ./code.rst
+    ./todo.rst
