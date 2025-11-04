@@ -15,3 +15,5 @@ qnn
     ./boards.rst
     ./code.rst
     ./todo.rst
+    ./onnxruntime.rst
+    ./htp.rst
