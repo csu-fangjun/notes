@@ -17,3 +17,4 @@ qnn
     ./todo.rst
     ./onnxruntime.rst
     ./htp.rst
+    ./qnn-context-binary-generator.rst
