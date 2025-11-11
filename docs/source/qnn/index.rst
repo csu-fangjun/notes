@@ -18,3 +18,4 @@ qnn
     ./onnxruntime.rst
     ./htp.rst
     ./qnn-context-binary-generator.rst
+    ./aimet

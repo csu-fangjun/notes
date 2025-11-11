@@ -18,6 +18,9 @@ Write to a binary file in Python and read it from C/C++
   with open("a.bin", "wb") as f:
       f.write(a.tobytes())
 
+  # or
+  a.tofile("a.bin")
+
 .. code-block:: c++
 
   #include <stdio.h>
