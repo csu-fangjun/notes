@@ -9,3 +9,4 @@ ascend
     cann
     orange-pi-aipro
     ./samples.rst
+    ./ais_bench.rst
