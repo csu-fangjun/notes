@@ -162,3 +162,26 @@ Then in the main activity, use::
   binding.trueButton.setOnClickListener { view: View -> }
 
   binding.falseButton.setOnClickListener { view: View -> }
+
+directories
+------------
+
+.. code-block::
+
+   val nativeDirPath = context.applicationInfo.nativeLibraryDir
+   Log.i(TAG, "nativeDirPath: $nativeDirPath")
+
+   // nativeDirPath: /data/app/~~cqPVTPOsjtVv50X9wWpr1g==/com.k2fsa.sherpa.onnx.simulate.streaming.asr-LWDzOBpzdRoEuYbbcqyjTg==/lib/arm64
+
+.. code-block::
+
+   val assetFilePath = context.filesDir.absolutePath
+   Log.i(TAG, "assetFilePath: $assetFilePath")
+
+   // assetFilePath: /data/user/0/com.k2fsa.sherpa.onnx.simulate.streaming.asr/files
+
+.. code-block::
+
+   context.dataDir
+
+   // /data/user/0/com.k2fsa.sherpa.onnx.simulate.streaming.asr

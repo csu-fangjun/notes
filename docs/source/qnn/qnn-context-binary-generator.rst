@@ -10,6 +10,8 @@ See
   - `<https://github.com/tianxf99/executorch/blob/main/backends/qualcomm/serialization/qc_compiler_spec.fbs>`_
   - `<https://github.com/tianxf99/executorch/blob/main/backends/qualcomm/utils/utils.py#L963>`_
 
+  - `<https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-10/QNN_general_overview.html>`_
+
   - SA: Snapdragon Automotive
   - SM: Snapdragon Mobile
 
