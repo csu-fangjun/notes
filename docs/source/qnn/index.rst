@@ -19,3 +19,4 @@ qnn
     ./htp.rst
     ./qnn-context-binary-generator.rst
     ./aimet
+    ./android.rst
