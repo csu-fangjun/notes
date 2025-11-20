@@ -20,6 +20,9 @@ See
  * - Hardware
    - SOC ID
    - Hexagon arch
+ * - 865 (SM8250)
+   - 21
+   - 66
  * - SA8295
    - 39
    - 68
@@ -47,9 +50,13 @@ See
  * - 8 Gen 5
    - 79
    - 80
+ * - 8 Elite Gen 5 SM8850
+   - 87
+   - 81
  * - SSG2115P
    - 46
    - 73
+
 
 
 
