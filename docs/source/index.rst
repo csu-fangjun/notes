@@ -86,5 +86,6 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    ./llm/index
    ./ascend/index.rst
    ./qnn/index.rst
+   ./reverse-engineering/index.rst
 
 .. github/index

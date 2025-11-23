@@ -4,6 +4,14 @@ Shared libs
 - `How to write shared libraries <https://www.akkadia.org/drepper/dsohowto.pdf>`_
 - `<https://gcc.gnu.org/wiki/Visibility>`_
 
+- Position Independent Code (PIC) in shared libraries
+
+  `<https://eli.thegreenplace.net/2011/11/03/position-independent-code-pic-in-shared-libraries/>`_
+
+- Position Independent Code (PIC) in shared libraries
+
+  `<https://eli.thegreenplace.net/2011/11/03/position-independent-code-pic-in-shared-libraries>`_
+
 - `OpenFST does not recognize FST type "vector" #1 <https://github.com/wincentbalin/compile-static-openfst/issues/1>`_
 
 .. code-block::
