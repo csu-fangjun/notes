@@ -7,9 +7,14 @@ What is this GLIBCXX error?
 
 See `<https://omairmajid.com/posts/2020-07-08-what-is-glibcxx-error/>`_
 
+.. code-block::
+
+   app: /lib64/libc.so.6: version `GLIBC_3.1.45' not found (required by ./app)
+
+   app: /lib64/libstdc++.so.6: version `GLIBCXX_3.4.20' not found (required by ./app)
+
+
 It shows how to build and use glibc.
-
-
 
 .. code-block:: bash
 
@@ -25,3 +30,11 @@ It shows how to build and use glibc.
     15: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSirsERs@GLIBCXX_3.4 (3)
     16: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZSt29_Rb_tree_insert_and@GLIBCXX_3.4 (3)
     19: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSdD2Ev@GLIBCXX_3.4 (3)
+
+See also
+
+ - How the GNU C Library handles backward compatibility
+
+   `<https://developers.redhat.com/blog/2019/08/01/how-the-gnu-c-library-handles-backward-compatibility#>`_
+
+

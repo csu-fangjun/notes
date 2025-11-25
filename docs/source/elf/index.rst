@@ -3,4 +3,4 @@ ELF
 
 .. toctree::
 
-    ./basics.rst
+    ./symbol-visibility.rst
