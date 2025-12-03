@@ -78,6 +78,7 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    ./harmonyos/index
    ./icefall/index
    ./rknn/index
+   ./axera/index
    ./lhotse/index
    ./ffmpeg/index
    ./vlc/index
