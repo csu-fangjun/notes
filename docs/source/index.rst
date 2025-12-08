@@ -88,5 +88,6 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    ./ascend/index.rst
    ./qnn/index.rst
    ./reverse-engineering/index.rst
+   ./economics/index.rst
 
 .. github/index
