@@ -1,0 +1,7 @@
+Funasr
+======
+
+.. toctree::
+
+    basics
+
