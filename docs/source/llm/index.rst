@@ -6,3 +6,5 @@ LLM
     gpt
     bpe
     todo
+    ./comparison.rst
+    ./papers.rst
