@@ -5,4 +5,5 @@ Windows
 
     ./script.rst
     ./visual_studio.rst
+    ./firewall.rst
 
