@@ -6,6 +6,11 @@ Welcome to Comprehensive Rust 🦀
 
 `<https://google.github.io/comprehensive-rust/>`_
 
+The Rustonomicon
+--------------------
+
+`<https://doc.rust-lang.org/nomicon/repr-rust.html>`_
+
 The Rust Programming Language
 ----------------------------------------
 

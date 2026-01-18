@@ -9,7 +9,7 @@ File extension is ``.rs``.
 
 To build a statically linked executable, run::
 
-  rust ./hello.rst
+  rust ./hello.rs
 
 It generates an executable ``hello``::
 

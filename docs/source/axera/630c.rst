@@ -1,0 +1,27 @@
+630c
+====
+
+ax-samples
+----------
+
+header files: `<https://github.com/AXERA-TECH/ax620e_bsp_sdk/tree/main/msp/out/arm64_glibc/include>`_
+
+See `<https://github.com/AXERA-TECH/ax-samples/blob/main/.github/workflows/build_630c_glibc.yaml#L35>`_
+for how to build it.
+
+``AX_SYS_Init()`` is defined in
+`<https://github.com/AXERA-TECH/ax620e_bsp_sdk/blob/main/msp/out/arm64_glibc/include/ax_sys_api.h>`_
+It returns 0 on success.
+
+``AX_SYS_Deinit()`` can be used to deinitialize the system.
+
+ax sys api 文档, ax engine api 文档：`<https://dl.sipeed.com/shareURL/MaixIV/M4N-Dock/07_Software_Doc/board>`_
+
+- sense voice: `<https://github.com/ml-inory/sensevoice.axera/tree/main>`_
+
+  model export: `<https://github.com/ml-inory/sensevoice.axera/blob/main/model_convert/README.md>`_
+
+axcl-samples
+------------
+
+- whisper: `<https://github.com/ml-inory/whisper.axcl/tree/main>`_

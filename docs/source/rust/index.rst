@@ -5,6 +5,7 @@ rust
     :maxdepth: 3
 
     books
+    ./lecture.rst
     install
     hello
     array
@@ -17,4 +18,5 @@ rust
     ./useful_packages.rst
     cargo
     ./ffi.rst
+    ./ex1.rst
 

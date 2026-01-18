@@ -90,5 +90,7 @@ Download this website in a single `pdf file <./_static/notes.pdf>`_.
    ./reverse-engineering/index.rst
    ./economics/index.rst
    ./funasr/index.rst
+   ./amd-npu/index.rst
+
 
 .. github/index
