@@ -19,4 +19,5 @@ rust
     cargo
     ./ffi.rst
     ./ex1.rst
+    ./todo.rst
 

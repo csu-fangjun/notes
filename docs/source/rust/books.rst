@@ -1,6 +1,17 @@
 books
 =====
 
+Rust By Practice
+-----------------
+
+`<https://practice.course.rs/>`_
+
+100-exercises-to-learn-rust
+------------------------------
+
+  - `<https://github.com/mainmatter/100-exercises-to-learn-rust>`_
+  - `<https://rust-exercises.com/100-exercises/>`_
+
 Welcome to Comprehensive Rust 🦀
 --------------------------------------------------
 
