@@ -11,3 +11,5 @@ TODOs
 2. Color picker tool: `<https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Colors/Color_picker_tool>`_
 
 3. Google font: `<https://fonts.google.com/>`_ and `<https://developers.google.com/fonts/docs/getting_started>`_
+
+4. `<https://github.com/WiseLibs/better-sqlite3/blob/master/lib/database.js>`_ study it!
