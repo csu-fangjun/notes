@@ -25,16 +25,16 @@ Part of the installation logs:
 
 .. code-block::
 
-===========
-= Summary =
-===========
+  ===========
+  = Summary =
+  ===========
 
-  Driver:   Installed in /usr/local/Ascend/driver.
-  Toolkit:  Ascend-cann-toolkit_8.5.0.alpha001_linux-aarch64 install success, installed in /usr/local/Ascend.
+    Driver:   Installed in /usr/local/Ascend/driver.
+    Toolkit:  Ascend-cann-toolkit_8.5.0.alpha001_linux-aarch64 install success, installed in /usr/local/Ascend.
 
-  Please make sure that the environment variables have been configured.
-  -  To take effect for all users, you can add "source /usr/local/Ascend/ascend-toolkit/set_env.sh" to /etc/profile.
-  -  To take effect for current user, you can exec command below: source /usr/local/Ascend/ascend-toolkit/set_env.sh or add "source /usr/local/Ascend/ascend-toolkit/set_env.sh" to ~/.bashrc.
+    Please make sure that the environment variables have been configured.
+    -  To take effect for all users, you can add "source /usr/local/Ascend/ascend-toolkit/set_env.sh" to /etc/profile.
+    -  To take effect for current user, you can exec command below: source /usr/local/Ascend/ascend-toolkit/set_env.sh or add "source /usr/local/Ascend/ascend-toolkit/set_env.sh" to ~/.bashrc.
 
 To fix the following error::
 
@@ -63,3 +63,4 @@ Run::
   /root/miniconda3/envs/py310/lib/libpython3.10.so
 
   # export LD_LIBRARY_PATH=/root/miniconda3/envs/py310/lib:$LD_LIBRARY_PATH
+

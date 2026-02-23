@@ -9,3 +9,10 @@ Documentation of ``String``:
 
 Rust also has raw strings.
 
+- ``rustup doc``
+- ``rustup doc --book``
+- ``rustup doc std``
+- ``rustup doc std::io``
+
+- ``cargo doc --open``
+

@@ -10,3 +10,4 @@ ascend
     orange-pi-aipro
     ./samples.rst
     ./ais_bench.rst
+    ./hi-dev-lab.rst

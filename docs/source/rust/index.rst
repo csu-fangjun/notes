@@ -20,4 +20,5 @@ rust
     ./ffi.rst
     ./ex1.rst
     ./todo.rst
+    ./rustfmt
 
