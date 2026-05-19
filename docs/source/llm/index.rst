@@ -8,3 +8,4 @@ LLM
     todo
     ./comparison.rst
     ./papers.rst
+    ./ai-coding.rst
