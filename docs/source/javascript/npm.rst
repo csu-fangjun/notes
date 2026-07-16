@@ -46,3 +46,28 @@ mirror
   npm config set registry https://registry.npmmirror.com
   npm config get registry
 
+To publish a new package for the first time
+---------------------------------------------
+
+Available files:
+
+.. code-block::
+
+  /Users/fangjun/open-source/piper-phonemize/scripts/npm
+  (py312) fangjuns-MacBook-Pro:npm fangjun$ ls
+  index.js                         package.json-2                   piper-phonemize-wasm-nodejs.wasm README.md
+  package.json                     piper-phonemize-wasm-nodejs.js   piper-phonemize.node.js
+
+Now run:
+
+.. code-block::
+
+  cd scripts/npm
+
+  npm pack --dry-run
+
+  npm login
+  # It prints a URL, click it to open a browser
+
+  npm publish --access public
+  # Now you are ready to configure to publish it via github workflows
