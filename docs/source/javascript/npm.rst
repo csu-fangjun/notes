@@ -71,3 +71,18 @@ Now run:
 
   npm publish --access public
   # Now you are ready to configure to publish it via github workflows
+
+To pack a folder as a package and install it later
+--------------------------------------------------
+
+.. code-block::
+
+   cd scripts/npm
+   npm pack
+
+It will generate `<package-name>-<version>.tgz` inside the current package directory.
+
+.. code-block::
+
+   npm install ./xxx.tgz
+
