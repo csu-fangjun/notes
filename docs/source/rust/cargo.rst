@@ -17,3 +17,6 @@ Find some examples of existing packages/crates.
    cargo package --list # check the files to be included for publishing
 
 Default ``CARGO_HOMOE`` is the directory ``~/.cargo``
+
+
+We can publish a new crate in github actions, like publishing a python package.
