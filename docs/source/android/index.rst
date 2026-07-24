@@ -17,3 +17,4 @@ Android
     release
     ./coroutine.rst
     ./run-cpp-on-android.rst
+    ./gradle.rst
