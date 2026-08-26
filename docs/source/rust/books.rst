@@ -1,6 +1,11 @@
 books
 =====
 
+Learn Rust the Dangerous Way
+------------------------------
+
+  `<https://cliffle.com/p/dangerust/>`_
+
 Rust By Practice
 -----------------
 

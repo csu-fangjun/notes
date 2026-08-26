@@ -92,3 +92,10 @@ Select file
 Some well-known item metadata ``%(FullPath)``, ``%(Filename)``
 
 
+
+publish a new package
+--------------------
+
+It supports trusted publishing, like pub.dev for flutter. In addition,
+it can create and publish a new package from github actions, while flutter
+needs to first publish a new package locally.

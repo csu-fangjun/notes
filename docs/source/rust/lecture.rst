@@ -10,3 +10,7 @@ Lectures
 - CSCI 181G PO
 
   `<https://cs.pomona.edu/classes/cs181g/>`_
+
+- CS 110L: Safety in Systems Programming
+
+  `<https://reberhardt.com/cs110l/spring-2020/>`_

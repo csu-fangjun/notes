@@ -21,4 +21,7 @@ rust
     ./ex1.rst
     ./todo.rst
     ./rustfmt
+    ./hello-tauri.rst
+    ./course.rst
+    ./the-book.rst
 
