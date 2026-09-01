@@ -1,0 +1,32 @@
+2025
+====
+
+- 2014 Prague
+- 2015 Seattle
+- 2017 Pittsburgh
+- 2019 Montreal
+- 2023  Le Mans
+
+Call for proposals 2025 Jelinek Workshop on speech and language technologies
+
+24 topic ideas received, 6 were declined after a preliminary review, 4 withdrew, 14 were pursued
+
+authros were invited to a planning review meeting nov 15-17, 2024
+
+46 reviewers, 26 academia, 9 jhu, 17 industry, 3 government
+
+
+EMMA: Lukas burget, samuele cornell, 6 senior researchers, 7 graduate students, 2 undergraduates, 7 affililiates
+
+PYP: 7 senior memebers, 8 graduate students, 3 undergraduates, 3 affiliates
+
+AuGI: 3 senior memebers, 9 graduate students, 2 undergraduates, 5 affiliates
+
+TTS4ALL: 10 senior memebers, 9 grauduate students, 4 affiliates,
+
+85 in-person participants
+
+
+
+Dialog flow, jsalt 2023
+SDialog toolkit JSALT 2025

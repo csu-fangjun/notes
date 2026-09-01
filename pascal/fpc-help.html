@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fpc -h &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Call C" href="call-c.html" />
+    <link rel="prev" title="Hello" href="hello.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/index.html">Papers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Pascal</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hello.html">Hello</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">fpc -h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call-c.html">Call C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="char.html">char</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pointers.html">Pointers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class.html">class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditional-compiling.html">Conditional compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiler-options.html">Compiler options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dl.html">dl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lazarus.html">Lazarus</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llm/index.html">LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ascend/index.html">ascend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qnn/index.html">qnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Pascal</a></li>
+      <li class="breadcrumb-item active">fpc -h</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/pascal/fpc-help.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="fpc-h">
+<h1>fpc -h<a class="headerlink" href="#fpc-h" title="Permalink to this heading"></a></h1>
+<p>The output of <code class="docutils literal notranslate"><span class="pre">fpc</span> <span class="pre">-help</span></code> or <code class="docutils literal notranslate"><span class="pre">fpc</span> <span class="pre">-h</span></code> is given below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Free Pascal Compiler version 3.2.2 [2021/05/16] for x86_64
+Copyright (c) 1993-2021 by Florian Klaempfl and others
+fpc [options] &lt;inputfile&gt; [options]
+ Only options valid for the default or selected platform are listed.
+ Put + after a boolean switch option to enable it, - to disable it.
+  @&lt;x&gt;   Read compiler options from &lt;x&gt; in addition to the default fpc.cfg
+  -a     The compiler does not delete the generated assembler file
+      -a5        Don&#39;t generate Big Obj COFF files for GNU Binutils older than 2.25 (Windows, NativeNT)
+      -al        List sourcecode lines in assembler file
+      -an        List node info in assembler file (-dEXTDEBUG compiler)
+      -ao        Add an extra option to external assembler call (ignored for internal)
+      -ap        Use pipes instead of creating temporary assembler files
+      -ar        List register allocation/release info in assembler file
+      -at        List temp allocation/release info in assembler file
+  -A&lt;x&gt;  Output format:
+      -Adefault  Use default assembler
+      -Aas       Assemble using GNU AS
+      -Agas      Assemble using GNU GAS
+      -Agas-darwin Assemble darwin Mach-O64 using GNU GAS
+      -Amasm     Win64 object file using ml64 (Microsoft)
+      -Apecoff   PE-COFF (Win64) using internal writer
+      -Aelf      ELF (Linux-64bit) using internal writer
+      -Ayasm     Assemble using Yasm (experimental)
+      -Anasm     Assemble using Nasm (experimental)
+      -Anasmwin64 Assemble Win64 object file using Nasm (experimental)
+      -Anasmelf  Assemble Linux-64bit object file using Nasm (experimental)
+      -Anasmdarwin Assemble darwin macho64 object file using Nasm (experimental)
+  -b     Generate browser info
+      -bl        Generate local symbol info
+  -B     Build all modules
+  -C&lt;x&gt;  Code generation options:
+      -C3        Turn on ieee error checking for constants
+      -Ca&lt;x&gt;     Select ABI; see fpc -i or fpc -ia for possible values
+      -Cb        Generate code for a big-endian variant of the target architecture
+      -Cc&lt;x&gt;     Set default calling convention to &lt;x&gt;
+      -CD        Create also dynamic library (not supported)
+      -Ce        Compilation with emulated floating point opcodes
+      -Cf&lt;x&gt;     Select fpu instruction set to use; see fpc -i or fpc -if for possible values
+      -CF&lt;x&gt;     Minimal floating point constant precision (default, 32, 64)
+      -Cg        Generate PIC code
+      -Ch&lt;n&gt;[,m] &lt;n&gt; bytes min heap size (between 1023 and 67107840) and optionally [m] max heap size
+      -Ci        IO-checking
+      -Cn        Omit linking stage
+      -Co        Check overflow of integer operations
+      -CO        Check for possible overflow of integer operations
+      -Cp&lt;x&gt;     Select instruction set; see fpc -i or fpc -ic for possible values
+      -CP&lt;x&gt;=&lt;y&gt;  packing settings
+         -CPPACKSET=&lt;y&gt;  &lt;y&gt; set allocation: 0, 1 or DEFAULT or NORMAL, 2, 4 and 8
+         -CPPACKENUM=&lt;y&gt;  &lt;y&gt; enum packing: 0, 1, 2 and 4 or DEFAULT or NORMAL
+         -CPPACKRECORD=&lt;y&gt;  &lt;y&gt; record packing: 0 or DEFAULT or NORMAL, 1, 2, 4, 8, 16 and 32
+      -Cr        Range checking
+      -CR        Verify object method call validity
+      -Cs&lt;n&gt;     Set stack checking size to &lt;n&gt;
+      -Ct        Stack checking (for testing only, see manual)
+      -CT&lt;x&gt;     Target-specific code generation options
+         -CTcld                      Emit a CLD instruction before using the x86 string instructions
+      -CX        Create also smartlinked library
+  -d&lt;x&gt;  Defines the symbol &lt;x&gt;
+  -D     Generate a DEF file
+      -Dd&lt;x&gt;     Set description to &lt;x&gt;
+      -Dv&lt;x&gt;     Set DLL version to &lt;x&gt;
+  -e&lt;x&gt;  Set path to executable
+  -E     Same as -Cn
+  -fPIC  Same as -Cg
+  -F&lt;x&gt;  Set file names and paths:
+      -Fa&lt;x&gt;[,y] (for a program) load units &lt;x&gt; and [y] before uses is parsed
+      -Fc&lt;x&gt;     Set input codepage to &lt;x&gt;
+      -FC&lt;x&gt;     Set RC compiler binary name to &lt;x&gt;
+      -Fd        Disable the compiler&#39;s internal directory cache
+      -FD&lt;x&gt;     Set the directory where to search for compiler utilities
+      -Fe&lt;x&gt;     Redirect error output to &lt;x&gt;
+      -Ff&lt;x&gt;     Add &lt;x&gt; to framework path (Darwin only)
+      -FE&lt;x&gt;     Set exe/unit output path to &lt;x&gt;
+      -Fi&lt;x&gt;     Add &lt;x&gt; to include path
+      -Fl&lt;x&gt;     Add &lt;x&gt; to library path
+      -FL&lt;x&gt;     Use &lt;x&gt; as dynamic linker
+      -Fm&lt;x&gt;     Load unicode conversion table from &lt;x&gt;.txt in the compiler dir
+      -FM&lt;x&gt;     Set the directory where to search for unicode binary files
+      -FN&lt;x&gt;     Add &lt;x&gt; to list of default unit scopes (namespaces)
+      -Fo&lt;x&gt;     Add &lt;x&gt; to object path
+      -Fr&lt;x&gt;     Load error message file &lt;x&gt;
+      -FR&lt;x&gt;     Set resource (.res) linker to &lt;x&gt;
+      -Fu&lt;x&gt;     Add &lt;x&gt; to unit path
+      -FU&lt;x&gt;     Set unit output path to &lt;x&gt;, overrides -FE
+      -FW&lt;x&gt;     Store generated whole-program optimization feedback in &lt;x&gt;
+      -Fw&lt;x&gt;     Load previously stored whole-program optimization feedback from &lt;x&gt;
+  -g     Generate debug information (default format for target)
+      -gc        Generate checks for pointers (experimental, only available on some targets, might generate false positive)
+      -gh        Use heaptrace unit (for memory leak/corruption debugging)
+      -gl        Use line info unit (show more info with backtraces)
+      -gm        Generate Microsoft CodeView debug information (experimental)
+      -go&lt;x&gt;     Set debug information options
+         -godwarfsets  Enable DWARF &#39;set&#39; type debug information (breaks gdb &lt; 6.5)
+         -gostabsabsincludes  Store absolute/full include file paths in Stabs
+         -godwarfmethodclassprefix  Prefix method names in DWARF with class name
+         -godwarfcpp  Simulate C++ debug information in DWARF
+         -godwarfomflinnum  Generate line number information in OMF LINNUM records in MS LINK format in addition to the DWARF debug information (Open Watcom Debugger/Linker compatibility)
+      -gp        Preserve case in stabs symbol names
+      -gs        Generate Stabs debug information
+      -gt        Trash local variables (to detect uninitialized uses; multiple &#39;t&#39; changes the trashing value)
+      -gv        Generates programs traceable with Valgrind
+      -gw        Generate DWARFv2 debug information (same as -gw2)
+      -gw2       Generate DWARFv2 debug information
+      -gw3       Generate DWARFv3 debug information
+      -gw4       Generate DWARFv4 debug information (experimental)
+  -i     Information
+      -iD        Return compiler date
+      -iSO       Return compiler OS
+      -iSP       Return compiler host processor
+      -iTO       Return target OS
+      -iTP       Return target processor
+      -iV        Return short compiler version
+      -iW        Return full compiler version
+      -ia        Return list of supported ABI targets
+      -ic        Return list of supported CPU instruction sets
+      -if        Return list of supported FPU instruction sets
+      -ii        Return list of supported inline assembler modes
+      -io        Return list of supported optimizations
+      -ir        Return list of recognized compiler and RTL features
+      -it        Return list of supported targets
+      -iu        Return list of supported microcontroller types
+      -iw        Return list of supported whole program optimizations
+  -I&lt;x&gt;  Add &lt;x&gt; to include path
+  -k&lt;x&gt;  Pass &lt;x&gt; to the linker
+  -l     Write logo
+  -M&lt;x&gt;  Set language mode to &lt;x&gt;
+      -Mfpc      Free Pascal dialect (default)
+      -Mobjfpc   FPC mode with Object Pascal support
+      -Mdelphi   Delphi 7 compatibility mode
+      -Mtp       TP/BP 7.0 compatibility mode
+      -Mmacpas   Macintosh Pascal dialects compatibility mode
+      -Miso      ISO 7185 mode
+      -Mextendedpascal ISO 10206 mode
+      -Mdelphiunicode Delphi 2009 and later compatibility mode
+  -n     Do not read the default config files
+  -o&lt;x&gt;  Change the name of the executable produced to &lt;x&gt;
+  -O&lt;x&gt;  Optimizations:
+      -O-        Disable optimizations
+      -O1        Level 1 optimizations (quick and debugger friendly)
+      -O2        Level 2 optimizations (-O1 + quick optimizations)
+      -O3        Level 3 optimizations (-O2 + slow optimizations)
+      -O4        Level 4 optimizations (-O3 + optimizations which might have unexpected side effects)
+      -Oa&lt;x&gt;=&lt;y&gt; Set alignment
+      -Oo[NO]&lt;x&gt; Enable or disable optimizations; see fpc -i or fpc -io for possible values
+      -Op&lt;x&gt;     Set target cpu for optimizing; see fpc -i or fpc -ic for possible values
+      -OW&lt;x&gt;     Generate whole-program optimization feedback for optimization &lt;x&gt;; see fpc -i or fpc -iw for possible values
+      -Ow&lt;x&gt;     Perform whole-program optimization &lt;x&gt;; see fpc -i or fpc -iw for possible values
+      -Os        Optimize for size rather than speed
+  -pg    Generate profile code for gprof (defines FPC_PROFILE)
+  -P&lt;x&gt;  Target CPU / compiler related options:
+      -PB        Show default compiler binary
+      -PP        Show default target cpu
+      -P&lt;x&gt;      Set target CPU (aarch64,arm,avr,i386,i8086,jvm,m68k,mips,mipsel,powerpc,powerpc64,sparc,x86_64)
+  -R&lt;x&gt;  Assembler reading style:
+      -Rdefault  Use default assembler for target
+      -Ratt      Read AT&amp;T style assembler
+      -Rintel    Read Intel style assembler
+  -S&lt;x&gt;  Syntax options:
+      -S2        Same as -Mobjfpc
+      -Sc        Support operators like C (*=,+=,/= and -=)
+      -Sa        Turn on assertions
+      -Sd        Same as -Mdelphi
+      -Se&lt;x&gt;     Error options. &lt;x&gt; is a combination of the following:
+         &lt;n&gt; : Compiler halts after the &lt;n&gt; errors (default is 1)
+         w : Compiler also halts after warnings
+         n : Compiler also halts after notes
+         h : Compiler also halts after hints
+      -Sf        Enable certain features in compiler and RTL; see fpc -i or fpc -ir for possible values)
+      -Sg        Enable LABEL and GOTO (default in -Mtp and -Mdelphi)
+      -Sh        Use reference counted strings (ansistring by default) instead of shortstrings
+      -Si        Turn on inlining of procedures/functions declared as &quot;inline&quot;
+      -Sj        Allows typed constants to be writeable (default in all modes)
+      -Sk        Load fpcylix unit
+      -SI&lt;x&gt;     Set interface style to &lt;x&gt;
+         -SIcom     COM compatible interface (default)
+         -SIcorba   CORBA compatible interface
+      -Sm        Support macros like C (global)
+      -So        Same as -Mtp
+      -Sr        Transparent file names in ISO mode
+      -Ss        Constructor name must be init (destructor must be done)
+      -Sv        Support vector processing (use CPU vector extensions if available)
+      -Sx        Enable exception keywords (default in Delphi/ObjFPC modes)
+      -Sy        @&lt;pointer&gt; returns a typed pointer, same as $T+
+  -s     Do not call assembler and linker
+      -sh        Generate script to link on host
+      -st        Generate script to link on target
+      -sr        Skip register allocation phase (use with -alr)
+  -T&lt;x&gt;  Target operating system:
+      -Taros     AROS
+      -Tdarwin   Darwin/Mac OS X
+      -Tdragonfly DragonFly BSD
+      -Tembedded Embedded
+      -Tfreebsd  FreeBSD
+      -Tiphonesim iPhoneSimulator
+      -Tlinux    Linux
+      -Tnetbsd   NetBSD
+      -Topenbsd  OpenBSD
+      -Tsolaris  Solaris
+      -Twin64    Win64 (64 bit Windows systems)
+  -u&lt;x&gt;  Undefines the symbol &lt;x&gt;
+  -U     Unit options:
+      -Un        Do not check where the unit name matches the file name
+      -Ur        Generate release unit files (never automatically recompiled)
+      -Us        Compile a system unit
+  -v&lt;x&gt;  Be verbose. &lt;x&gt; is a combination of the following letters:
+      e : Show errors (default)       0 : Show nothing (except errors)
+      w : Show warnings               u : Show unit info
+      n : Show notes                  t : Show tried/used files
+      h : Show hints                  c : Show conditionals
+      i : Show general info           d : Show debug info
+      l : Show linenumbers            r : Rhide/GCC compatibility mode
+      s : Show time stamps            q : Show message numbers
+      a : Show everything             x : Show info about invoked tools
+      b : Write file names messages   p : Write tree.log with parse tree
+          with full path              v : Write fpcdebug.txt with
+      z : Write output to stderr          lots of debugging info
+      m&lt;x&gt;,&lt;y&gt; : Do not show messages numbered &lt;x&gt; and &lt;y&gt;
+  -V&lt;x&gt;  Append &#39;-&lt;x&gt;&#39; to the used compiler binary name (e.g. for version)
+  -W&lt;x&gt;  Target-specific options (targets)
+      -WA        Specify native type application (Windows)
+      -Wb        Create a bundle instead of a library (Darwin)
+      -WB        Create a relocatable image (Windows)
+      -WB&lt;x&gt;     Set image base to &lt;x&gt; (Windows)
+      -WC        Specify console type application (Windows)
+      -WD        Use DEFFILE to export functions of DLL or EXE (Windows)
+      -We        Use external resources (Darwin)
+      -WG        Specify graphic type application (Windows)
+      -Wi        Use internal resources (Darwin)
+      -WI        Turn on/off the usage of import sections (Windows)
+      -WM&lt;x&gt;     Minimum Mac OS X deployment version: 10.4, 10.5.1, ... (Darwin)
+      -WN        Do not generate relocation code, needed for debugging (Windows)
+      -WP&lt;x&gt;     Minimum iOS deployment version: 8.0, 8.0.2, ... (iphonesim)
+      -WR        Generate relocation code (Windows)
+      -WX        Enable executable stack (Linux)
+  -X     Executable options:
+      -X9        Generate linkerscript for GNU Binutils ld older than version 2.19.1 (Linux)
+      -Xc        Pass --shared/-dynamic to the linker (BeOS, Darwin, FreeBSD, Linux)
+      -Xd        Do not search default library path (sometimes required for cross-compiling when not using -XR)
+      -Xe        Use external linker
+      -Xf        Substitute pthread library name for linking (BSD)
+      -Xg        Create debuginfo in a separate file and add a debuglink section to executable
+      -XD        Try to link units dynamically      (defines FPC_LINK_DYNAMIC)
+      -Xi        Use internal linker
+      -XLA       Define library substitutions for linking
+      -XLO       Define order of library linking
+      -XLD       Exclude default order of standard libraries
+      -Xm        Generate link map
+      -XM&lt;x&gt;     Set the name of the &#39;main&#39; program routine (default is &#39;main&#39;)
+      -Xn        Use target system native linker instead of GNU ld (Solaris, AIX)
+      -Xp&lt;x&gt;     First search for the compiler binary in the directory &lt;x&gt;
+      -XP&lt;x&gt;     Prepend the binutils names with the prefix &lt;x&gt;
+      -Xr&lt;x&gt;     Set the linker&#39;s rlink-path to &lt;x&gt; (needed for cross compile, see the ld manual for more information) (BeOS, Linux)
+      -XR&lt;x&gt;     Prepend &lt;x&gt; to all linker search paths (BeOS, Darwin, FreeBSD, Linux, Mac OS, Solaris)
+      -Xs        Strip all symbols from executable
+      -XS        Try to link units statically (default, defines FPC_LINK_STATIC)
+      -Xt        Link with static libraries (-static is passed to linker)
+      -Xv        Generate table for Virtual Entry calls
+      -XV        Use VLink as external linker       (default on Amiga, MorphOS)
+      -XX        Try to smartlink units             (defines FPC_LINK_SMART)
+  
+  -?     Show this help
+  -h     Shows this help without waiting
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="hello.html" class="btn btn-neutral float-left" title="Hello" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="call-c.html" class="btn btn-neutral float-right" title="Call C" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

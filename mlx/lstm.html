@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LSTM &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="conv1d" href="conv1d.html" />
+    <link rel="prev" title="Basics" href="basics.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/index.html">Papers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pascal/index.html">Pascal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlc/index.html">vlc</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">mlx</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Basics</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">LSTM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conv1d.html">conv1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conv2d.html">Conv2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="todo.html">todo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="batchnorm.html">BatchNorm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llm/index.html">LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ascend/index.html">ascend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qnn/index.html">qnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">mlx</a></li>
+      <li class="breadcrumb-item active">LSTM</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/mlx/lstm.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="lstm">
+<h1>LSTM<a class="headerlink" href="#lstm" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p>LSTM in mlx does not support multi-layers</p></li>
+<li><p>batch is always at the 0 dim, i.e., batch first is always True</p></li>
+<li><p>also, does not support bidrectional  lstm</p></li>
+<li><p>there is only a single bias, if not None</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/ml-explore/mlx-examples/blob/main/encodec/encodec.py#L14">https://github.com/ml-explore/mlx-examples/blob/main/encodec/encodec.py#L14</a>
+has a meta kernel implementation for LSTM.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/test_lstm_1_layer.py</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="ch">#!/usr/bin/env python3</span>
+<span class="linenos">  2</span>
+<span class="linenos">  3</span><span class="kn">import</span> <span class="nn">mlx.core</span> <span class="k">as</span> <span class="nn">mx</span>
+<span class="linenos">  4</span><span class="kn">import</span> <span class="nn">mlx.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="linenos">  5</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos">  6</span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="linenos">  7</span><span class="kn">from</span> <span class="nn">mlx.utils</span> <span class="kn">import</span> <span class="n">tree_flatten</span><span class="p">,</span> <span class="n">tree_map</span><span class="p">,</span> <span class="n">tree_unflatten</span>
+<span class="linenos">  8</span>
+<span class="linenos">  9</span>
+<span class="linenos"> 10</span><span class="k">class</span> <span class="nc">TorchLstm</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="linenos"> 11</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 12</span>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<span class="linenos"> 13</span>        <span class="bp">self</span><span class="o">.</span><span class="n">lstm</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">LSTM</span><span class="p">(</span><span class="n">input_size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">hidden_size</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">batch_first</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos"> 14</span>
+<span class="linenos"> 15</span>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="linenos"> 16</span>        <span class="k">if</span> <span class="n">h</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos"> 17</span>            <span class="n">y</span><span class="p">,</span> <span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lstm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+<span class="linenos"> 18</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 19</span>            <span class="n">y</span><span class="p">,</span> <span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lstm</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos"> 20</span>        <span class="k">return</span> <span class="n">y</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">c</span>
+<span class="linenos"> 21</span>
+<span class="linenos"> 22</span>
+<span class="linenos"> 23</span><span class="k">class</span> <span class="nc">MlxLstm</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="linenos"> 24</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 25</span>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<span class="linenos"> 26</span>        <span class="bp">self</span><span class="o">.</span><span class="n">lstm</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">LSTM</span><span class="p">(</span><span class="n">input_size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">hidden_size</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="linenos"> 27</span>
+<span class="linenos"> 28</span>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="linenos"> 29</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 30</span><span class="sd">        Args:</span>
+<span class="linenos"> 31</span><span class="sd">          x: (N, L, H)</span>
+<span class="linenos"> 32</span><span class="sd">          h: None or (N, H)</span>
+<span class="linenos"> 33</span><span class="sd">          c: None or (N, H)</span>
+<span class="linenos"> 34</span><span class="sd">        Returns:</span>
+<span class="linenos"> 35</span><span class="sd">          y: (N, L, H)</span>
+<span class="linenos"> 36</span><span class="sd">          h: (N, H)</span>
+<span class="linenos"> 37</span><span class="sd">          c: (N, H)</span>
+<span class="linenos"> 38</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos"> 39</span>        <span class="k">if</span> <span class="n">h</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos"> 40</span>            <span class="n">h</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lstm</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos"> 41</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 42</span>            <span class="n">h</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lstm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="linenos"> 43</span>        <span class="c1"># now both h and c are (N, L, H)</span>
+<span class="linenos"> 44</span>
+<span class="linenos"> 45</span>        <span class="k">return</span> <span class="n">h</span><span class="p">,</span> <span class="n">h</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="n">c</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+<span class="linenos"> 46</span>
+<span class="linenos"> 47</span>
+<span class="linenos"> 48</span><span class="k">def</span> <span class="nf">test_with_seq_len</span><span class="p">(</span><span class="n">torch_lstm</span><span class="p">,</span> <span class="n">mx_lstm</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
+<span class="linenos"> 49</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="linenos"> 50</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="linenos"> 51</span>
+<span class="linenos"> 52</span>    <span class="n">y</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">torch_lstm</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos"> 53</span>    <span class="k">assert</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span>
+<span class="linenos"> 54</span>    <span class="k">assert</span> <span class="n">h</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">h</span><span class="o">.</span><span class="n">shape</span>  <span class="c1"># 1 is number of layers</span>
+<span class="linenos"> 55</span>    <span class="k">assert</span> <span class="n">c</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">h</span><span class="o">.</span><span class="n">shape</span>
+<span class="linenos"> 56</span>
+<span class="linenos"> 57</span>    <span class="n">ix</span> <span class="o">=</span> <span class="n">mx</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos"> 58</span>    <span class="n">mx_y</span><span class="p">,</span> <span class="n">mx_h</span><span class="p">,</span> <span class="n">mx_c</span> <span class="o">=</span> <span class="n">mx_lstm</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">ix</span><span class="p">)</span>
+<span class="linenos"> 59</span>    <span class="k">assert</span> <span class="n">mx_y</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">mx_y</span><span class="o">.</span><span class="n">shape</span>
+<span class="linenos"> 60</span>    <span class="k">assert</span> <span class="n">mx_h</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">mx_h</span><span class="o">.</span><span class="n">shape</span>
+<span class="linenos"> 61</span>    <span class="k">assert</span> <span class="n">mx_c</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">mx_c</span><span class="o">.</span><span class="n">shape</span>
+<span class="linenos"> 62</span>
+<span class="linenos"> 63</span>    <span class="k">assert</span> <span class="n">torch</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mx_y</span><span class="p">)))</span>
+<span class="linenos"> 64</span>    <span class="k">assert</span> <span class="n">torch</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mx_h</span><span class="p">)))</span>
+<span class="linenos"> 65</span>    <span class="k">assert</span> <span class="n">torch</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mx_c</span><span class="p">)))</span>
+<span class="linenos"> 66</span>
+<span class="linenos"> 67</span>    <span class="c1"># now with states</span>
+<span class="linenos"> 68</span>    <span class="n">y</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">torch_lstm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="linenos"> 69</span>    <span class="k">assert</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span>
+<span class="linenos"> 70</span>    <span class="k">assert</span> <span class="n">h</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">h</span><span class="o">.</span><span class="n">shape</span>  <span class="c1"># 1 is number of layers</span>
+<span class="linenos"> 71</span>    <span class="k">assert</span> <span class="n">c</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">h</span><span class="o">.</span><span class="n">shape</span>
+<span class="linenos"> 72</span>
+<span class="linenos"> 73</span>    <span class="n">mx_y</span><span class="p">,</span> <span class="n">mx_h</span><span class="p">,</span> <span class="n">mx_c</span> <span class="o">=</span> <span class="n">mx_lstm</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">ix</span><span class="p">,</span> <span class="n">mx_h</span><span class="p">,</span> <span class="n">mx_c</span><span class="p">)</span>
+<span class="linenos"> 74</span>    <span class="k">assert</span> <span class="n">mx_y</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">mx_y</span><span class="o">.</span><span class="n">shape</span>
+<span class="linenos"> 75</span>    <span class="k">assert</span> <span class="n">mx_h</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">mx_h</span><span class="o">.</span><span class="n">shape</span>
+<span class="linenos"> 76</span>    <span class="k">assert</span> <span class="n">mx_c</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">mx_c</span><span class="o">.</span><span class="n">shape</span>
+<span class="linenos"> 77</span>
+<span class="linenos"> 78</span>    <span class="k">assert</span> <span class="n">torch</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mx_y</span><span class="p">)))</span>
+<span class="linenos"> 79</span>    <span class="k">assert</span> <span class="n">torch</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mx_h</span><span class="p">)))</span>
+<span class="linenos"> 80</span>    <span class="k">assert</span> <span class="n">torch</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mx_c</span><span class="p">)))</span>
+<span class="linenos"> 81</span>
+<span class="linenos"> 82</span>
+<span class="linenos"> 83</span><span class="k">def</span> <span class="nf">test_single_layer</span><span class="p">():</span>
+<span class="linenos"> 84</span>    <span class="n">torch_lstm</span> <span class="o">=</span> <span class="n">TorchLstm</span><span class="p">()</span>
+<span class="linenos"> 85</span>    <span class="n">mx_lstm</span> <span class="o">=</span> <span class="n">MlxLstm</span><span class="p">()</span>
+<span class="linenos"> 86</span>
+<span class="linenos"> 87</span>    <span class="c1"># [&#39;lstm.weight_ih_l0&#39;, &#39;lstm.weight_hh_l0&#39;, &#39;lstm.bias_ih_l0&#39;, &#39;lstm.bias_hh_l0&#39;]</span>
+<span class="linenos"> 88</span>    <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">torch_lstm</span><span class="o">.</span><span class="n">state_dict</span><span class="p">()</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+<span class="linenos"> 89</span>    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">torch_lstm</span><span class="o">.</span><span class="n">state_dict</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="linenos"> 90</span>        <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="linenos"> 91</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 92</span><span class="sd">    lstm.weight_ih_l0 torch.Size([24, 6])</span>
+<span class="linenos"> 93</span><span class="sd">    lstm.weight_hh_l0 torch.Size([24, 6])</span>
+<span class="linenos"> 94</span><span class="sd">    lstm.bias_ih_l0 torch.Size([24])</span>
+<span class="linenos"> 95</span><span class="sd">    lstm.bias_hh_l0 torch.Size([24])</span>
+<span class="linenos"> 96</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos"> 97</span>
+<span class="linenos"> 98</span>    <span class="c1"># lstm</span>
+<span class="linenos"> 99</span>    <span class="nb">print</span><span class="p">(</span><span class="n">mx_lstm</span><span class="o">.</span><span class="n">parameters</span><span class="p">()</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="linenos">100</span>
+<span class="linenos">101</span>    <span class="c1"># dict_keys([&#39;Wx&#39;, &#39;Wh&#39;, &#39;bias&#39;])</span>
+<span class="linenos">102</span>    <span class="nb">print</span><span class="p">(</span><span class="n">mx_lstm</span><span class="o">.</span><span class="n">parameters</span><span class="p">()[</span><span class="s2">&quot;lstm&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="linenos">103</span>    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">mx_lstm</span><span class="o">.</span><span class="n">parameters</span><span class="p">()[</span><span class="s2">&quot;lstm&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="linenos">104</span>        <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="linenos">105</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">106</span><span class="sd">    Wx (24, 6)</span>
+<span class="linenos">107</span><span class="sd">    Wh (24, 6)</span>
+<span class="linenos">108</span><span class="sd">    bias (24,)</span>
+<span class="linenos">109</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">110</span>    <span class="c1"># convert</span>
+<span class="linenos">111</span>    <span class="n">state_dict</span> <span class="o">=</span> <span class="n">torch_lstm</span><span class="o">.</span><span class="n">state_dict</span><span class="p">()</span>
+<span class="linenos">112</span>    <span class="n">new_state_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="linenos">113</span>    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">state_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="linenos">114</span>        <span class="n">basename</span><span class="p">,</span> <span class="n">pname</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos">115</span>        <span class="k">if</span> <span class="s2">&quot;lstm&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">basename</span><span class="p">:</span>
+<span class="linenos">116</span>            <span class="c1"># we convert only lstm in this for loop</span>
+<span class="linenos">117</span>            <span class="k">continue</span>
+<span class="linenos">118</span>        <span class="n">w_or_b</span><span class="p">,</span> <span class="n">ih_or_hh</span><span class="p">,</span> <span class="n">ln</span> <span class="o">=</span> <span class="n">pname</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)</span>
+<span class="linenos">119</span>        <span class="k">if</span> <span class="n">w_or_b</span> <span class="o">==</span> <span class="s2">&quot;weight&quot;</span><span class="p">:</span>
+<span class="linenos">120</span>            <span class="n">new_name</span> <span class="o">=</span> <span class="s2">&quot;Wx&quot;</span> <span class="k">if</span> <span class="n">ih_or_hh</span> <span class="o">==</span> <span class="s2">&quot;ih&quot;</span> <span class="k">else</span> <span class="s2">&quot;Wh&quot;</span>
+<span class="linenos">121</span>        <span class="k">elif</span> <span class="n">w_or_b</span> <span class="o">==</span> <span class="s2">&quot;bias&quot;</span> <span class="ow">and</span> <span class="n">ih_or_hh</span> <span class="o">==</span> <span class="s2">&quot;ih&quot;</span><span class="p">:</span>
+<span class="linenos">122</span>            <span class="k">continue</span>
+<span class="linenos">123</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">124</span>            <span class="n">v</span> <span class="o">=</span> <span class="n">v</span> <span class="o">+</span> <span class="n">state_dict</span><span class="p">[</span><span class="n">k</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_hh_&quot;</span><span class="p">,</span> <span class="s2">&quot;_ih_&quot;</span><span class="p">)]</span>
+<span class="linenos">125</span>            <span class="n">new_name</span> <span class="o">=</span> <span class="s2">&quot;bias&quot;</span>
+<span class="linenos">126</span>        <span class="c1">#  k = basename + &quot;.&quot; + ln[1:] + &quot;.&quot; + new_name # for multi-layer lstm</span>
+<span class="linenos">127</span>        <span class="n">k</span> <span class="o">=</span> <span class="n">basename</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">new_name</span>  <span class="c1"># for multi-layer lstm</span>
+<span class="linenos">128</span>        <span class="n">new_state_dict</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+<span class="linenos">129</span>    <span class="c1">#  print(&quot;here&quot;, new_state_dict)</span>
+<span class="linenos">130</span>    <span class="c1">#  print(&quot;here2&quot;, list(new_state_dict.items()))</span>
+<span class="linenos">131</span>    <span class="c1">#  print(&quot;here3&quot;, tree_unflatten(list(new_state_dict.items())))</span>
+<span class="linenos">132</span>    <span class="c1">#  print(&quot;here4&quot;, tree_flatten(tree_unflatten(list(new_state_dict.items()))))</span>
+<span class="linenos">133</span>
+<span class="linenos">134</span>    <span class="c1"># convert torch.tensor to mx.array</span>
+<span class="linenos">135</span>    <span class="n">new_state_dict</span> <span class="o">=</span> <span class="n">tree_map</span><span class="p">(</span><span class="n">mx</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">new_state_dict</span><span class="p">)</span>
+<span class="linenos">136</span>    <span class="n">mx_lstm</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">tree_unflatten</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">new_state_dict</span><span class="o">.</span><span class="n">items</span><span class="p">())))</span>
+<span class="linenos">137</span>
+<span class="linenos">138</span>    <span class="k">for</span> <span class="n">N</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
+<span class="linenos">139</span>        <span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
+<span class="linenos">140</span>            <span class="n">test_with_seq_len</span><span class="p">(</span><span class="n">torch_lstm</span><span class="o">=</span><span class="n">torch_lstm</span><span class="p">,</span> <span class="n">mx_lstm</span><span class="o">=</span><span class="n">mx_lstm</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">)</span>
+<span class="linenos">141</span>
+<span class="linenos">142</span>
+<span class="linenos">143</span><span class="nd">@torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">()</span>
+<span class="linenos">144</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos">145</span>    <span class="n">test_single_layer</span><span class="p">()</span>
+<span class="linenos">146</span>
+<span class="linenos">147</span>
+<span class="linenos">148</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="linenos">149</span>    <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">20250716</span><span class="p">)</span>
+<span class="linenos">150</span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">./code/test_lstm_multi_layers</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="ch">#!/usr/bin/env python3</span>
+<span class="linenos">  2</span>
+<span class="linenos">  3</span><span class="kn">import</span> <span class="nn">mlx.core</span> <span class="k">as</span> <span class="nn">mx</span>
+<span class="linenos">  4</span><span class="kn">import</span> <span class="nn">mlx.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="linenos">  5</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos">  6</span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="linenos">  7</span><span class="kn">from</span> <span class="nn">mlx.utils</span> <span class="kn">import</span> <span class="n">tree_flatten</span><span class="p">,</span> <span class="n">tree_map</span><span class="p">,</span> <span class="n">tree_unflatten</span>
+<span class="linenos">  8</span>
+<span class="linenos">  9</span>
+<span class="linenos"> 10</span><span class="k">class</span> <span class="nc">TorchLstm</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="linenos"> 11</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 12</span>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<span class="linenos"> 13</span>        <span class="bp">self</span><span class="o">.</span><span class="n">lstm</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">LSTM</span><span class="p">(</span>
+<span class="linenos"> 14</span>            <span class="n">input_size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">hidden_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">num_layers</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">batch_first</span><span class="o">=</span><span class="kc">True</span>
+<span class="linenos"> 15</span>        <span class="p">)</span>
+<span class="linenos"> 16</span>
+<span class="linenos"> 17</span>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="linenos"> 18</span>        <span class="k">if</span> <span class="n">h</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos"> 19</span>            <span class="n">y</span><span class="p">,</span> <span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lstm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+<span class="linenos"> 20</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 21</span>            <span class="n">y</span><span class="p">,</span> <span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lstm</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos"> 22</span>        <span class="k">return</span> <span class="n">y</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">c</span>
+<span class="linenos"> 23</span>
+<span class="linenos"> 24</span>
+<span class="linenos"> 25</span><span class="k">class</span> <span class="nc">MlxLstm</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="linenos"> 26</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 27</span>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<span class="linenos"> 28</span>        <span class="bp">self</span><span class="o">.</span><span class="n">lstm</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 29</span>        <span class="n">input_size</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos"> 30</span>        <span class="n">hidden_size</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="linenos"> 31</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="linenos"> 32</span>            <span class="n">in_size</span> <span class="o">=</span> <span class="n">input_size</span> <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">hidden_size</span>
+<span class="linenos"> 33</span>            <span class="bp">self</span><span class="o">.</span><span class="n">lstm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">LSTM</span><span class="p">(</span><span class="n">input_size</span><span class="o">=</span><span class="n">in_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="o">=</span><span class="n">hidden_size</span><span class="p">))</span>
+<span class="linenos"> 34</span>
+<span class="linenos"> 35</span>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">states</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="linenos"> 36</span><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 37</span><span class="sd">        Args:</span>
+<span class="linenos"> 38</span><span class="sd">          x: (N, L, C)</span>
+<span class="linenos"> 39</span><span class="sd">          states: None or a list containing 2*num_layers tensors</span>
+<span class="linenos"> 40</span><span class="sd">            - states[2*i] is the h of the i-th layer, of shape (N, C)</span>
+<span class="linenos"> 41</span><span class="sd">            - states[2*i+1] is the c of the i-th layer, of shape (N, C)</span>
+<span class="linenos"> 42</span><span class="sd">        Returns:</span>
+<span class="linenos"> 43</span><span class="sd">          y: (N, L, C)</span>
+<span class="linenos"> 44</span><span class="sd">          states: a list containing 2*num_layers tensors</span>
+<span class="linenos"> 45</span><span class="sd">            - states[2*i] is the h of the i-th layer, of shape (N, C)</span>
+<span class="linenos"> 46</span><span class="sd">            - states[2*i+1] is the c of the i-th layer, of shape (N, C)</span>
+<span class="linenos"> 47</span>
+<span class="linenos"> 48</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos"> 49</span>
+<span class="linenos"> 50</span>        <span class="k">if</span> <span class="n">states</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos"> 51</span>            <span class="n">states</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lstm</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<span class="linenos"> 52</span>
+<span class="linenos"> 53</span>        <span class="n">new_states</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 54</span>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lstm</span><span class="p">):</span>
+<span class="linenos"> 55</span>            <span class="n">h</span> <span class="o">=</span> <span class="n">states</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span><span class="p">]</span>
+<span class="linenos"> 56</span>            <span class="n">c</span> <span class="o">=</span> <span class="n">states</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+<span class="linenos"> 57</span>            <span class="n">x</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">layer</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="linenos"> 58</span>            <span class="n">new_states</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span>
+<span class="linenos"> 59</span>            <span class="n">new_states</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span>
+<span class="linenos"> 60</span>        <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">new_states</span>
+<span class="linenos"> 61</span>
+<span class="linenos"> 62</span>
+<span class="linenos"> 63</span><span class="k">def</span> <span class="nf">test_with_seq_len</span><span class="p">(</span><span class="n">torch_lstm</span><span class="p">,</span> <span class="n">mx_lstm</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
+<span class="linenos"> 64</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="linenos"> 65</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="linenos"> 66</span>
+<span class="linenos"> 67</span>    <span class="n">y</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">torch_lstm</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos"> 68</span>    <span class="k">assert</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span>
+<span class="linenos"> 69</span>    <span class="k">assert</span> <span class="n">h</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">h</span><span class="o">.</span><span class="n">shape</span>  <span class="c1"># 3 is number of layers</span>
+<span class="linenos"> 70</span>    <span class="k">assert</span> <span class="n">c</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">h</span><span class="o">.</span><span class="n">shape</span>
+<span class="linenos"> 71</span>
+<span class="linenos"> 72</span>    <span class="n">ix</span> <span class="o">=</span> <span class="n">mx</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos"> 73</span>    <span class="n">mx_y</span><span class="p">,</span> <span class="n">states</span> <span class="o">=</span> <span class="n">mx_lstm</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">ix</span><span class="p">)</span>
+<span class="linenos"> 74</span>
+<span class="linenos"> 75</span>    <span class="k">assert</span> <span class="n">mx_y</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">mx_y</span><span class="o">.</span><span class="n">shape</span>
+<span class="linenos"> 76</span>    <span class="k">assert</span> <span class="n">torch</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mx_y</span><span class="p">)))</span>
+<span class="linenos"> 77</span>
+<span class="linenos"> 78</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="linenos"> 79</span>        <span class="k">assert</span> <span class="n">torch</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">states</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span><span class="p">])))</span>
+<span class="linenos"> 80</span>        <span class="k">assert</span> <span class="n">torch</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">states</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])))</span>
+<span class="linenos"> 81</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mx_y&quot;</span><span class="p">,</span> <span class="n">mx_y</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">shape</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">states</span><span class="p">])</span>
+<span class="linenos"> 82</span>
+<span class="linenos"> 83</span>    <span class="c1"># now with states</span>
+<span class="linenos"> 84</span>    <span class="n">y</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">torch_lstm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="linenos"> 85</span>    <span class="k">assert</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span>
+<span class="linenos"> 86</span>    <span class="k">assert</span> <span class="n">h</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">h</span><span class="o">.</span><span class="n">shape</span>  <span class="c1"># 3 is number of layers</span>
+<span class="linenos"> 87</span>    <span class="k">assert</span> <span class="n">c</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">h</span><span class="o">.</span><span class="n">shape</span>
+<span class="linenos"> 88</span>
+<span class="linenos"> 89</span>    <span class="n">mx_y</span><span class="p">,</span> <span class="n">states</span> <span class="o">=</span> <span class="n">mx_lstm</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">ix</span><span class="p">,</span> <span class="n">states</span><span class="p">)</span>
+<span class="linenos"> 90</span>    <span class="k">assert</span> <span class="n">torch</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mx_y</span><span class="p">)))</span>
+<span class="linenos"> 91</span>
+<span class="linenos"> 92</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="linenos"> 93</span>        <span class="k">assert</span> <span class="n">torch</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">states</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span><span class="p">])))</span>
+<span class="linenos"> 94</span>        <span class="k">assert</span> <span class="n">torch</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">states</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])))</span>
+<span class="linenos"> 95</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mx_y&quot;</span><span class="p">,</span> <span class="n">mx_y</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">shape</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">states</span><span class="p">])</span>
+<span class="linenos"> 96</span>
+<span class="linenos"> 97</span>
+<span class="linenos"> 98</span><span class="k">def</span> <span class="nf">test_multi_layers</span><span class="p">():</span>
+<span class="linenos"> 99</span>    <span class="n">torch_lstm</span> <span class="o">=</span> <span class="n">TorchLstm</span><span class="p">()</span>
+<span class="linenos">100</span>    <span class="n">mx_lstm</span> <span class="o">=</span> <span class="n">MlxLstm</span><span class="p">()</span>
+<span class="linenos">101</span>    <span class="c1">#  mx.eval(mx_lstm.parameters())</span>
+<span class="linenos">102</span>
+<span class="linenos">103</span>    <span class="c1"># [&#39;lstm.weight_ih_l0&#39;, &#39;lstm.weight_hh_l0&#39;, &#39;lstm.bias_ih_l0&#39;,</span>
+<span class="linenos">104</span>    <span class="c1"># &#39;lstm.bias_hh_l0&#39;, &#39;lstm.weight_ih_l1&#39;, &#39;lstm.weight_hh_l1&#39;,</span>
+<span class="linenos">105</span>    <span class="c1"># &#39;lstm.bias_ih_l1&#39;, &#39;lstm.bias_hh_l1&#39;, &#39;lstm.weight_ih_l2&#39;,</span>
+<span class="linenos">106</span>    <span class="c1"># &#39;lstm.weight_hh_l2&#39;, &#39;lstm.bias_ih_l2&#39;, &#39;lstm.bias_hh_l2&#39;]</span>
+<span class="linenos">107</span>    <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">torch_lstm</span><span class="o">.</span><span class="n">state_dict</span><span class="p">()</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+<span class="linenos">108</span>    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">torch_lstm</span><span class="o">.</span><span class="n">state_dict</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="linenos">109</span>        <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="linenos">110</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">111</span><span class="sd">    lstm.weight_ih_l0 torch.Size([12, 2])</span>
+<span class="linenos">112</span><span class="sd">    lstm.weight_hh_l0 torch.Size([12, 3])</span>
+<span class="linenos">113</span><span class="sd">    lstm.bias_ih_l0 torch.Size([12])</span>
+<span class="linenos">114</span><span class="sd">    lstm.bias_hh_l0 torch.Size([12])</span>
+<span class="linenos">115</span><span class="sd">    lstm.weight_ih_l1 torch.Size([12, 3])</span>
+<span class="linenos">116</span><span class="sd">    lstm.weight_hh_l1 torch.Size([12, 3])</span>
+<span class="linenos">117</span><span class="sd">    lstm.bias_ih_l1 torch.Size([12])</span>
+<span class="linenos">118</span><span class="sd">    lstm.bias_hh_l1 torch.Size([12])</span>
+<span class="linenos">119</span><span class="sd">    lstm.weight_ih_l2 torch.Size([12, 3])</span>
+<span class="linenos">120</span><span class="sd">    lstm.weight_hh_l2 torch.Size([12, 3])</span>
+<span class="linenos">121</span><span class="sd">    lstm.bias_ih_l2 torch.Size([12])</span>
+<span class="linenos">122</span><span class="sd">    lstm.bias_hh_l2 torch.Size([12])</span>
+<span class="linenos">123</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">124</span>
+<span class="linenos">125</span>    <span class="c1"># lstm</span>
+<span class="linenos">126</span>    <span class="nb">print</span><span class="p">(</span><span class="n">mx_lstm</span><span class="o">.</span><span class="n">parameters</span><span class="p">()</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="linenos">127</span>    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mx_lstm</span><span class="o">.</span><span class="n">parameters</span><span class="p">()[</span><span class="s2">&quot;lstm&quot;</span><span class="p">],</span> <span class="nb">list</span><span class="p">)</span>
+<span class="linenos">128</span>    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">mx_lstm</span><span class="o">.</span><span class="n">parameters</span><span class="p">()[</span><span class="s2">&quot;lstm&quot;</span><span class="p">])</span> <span class="o">==</span> <span class="mi">3</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">mx_lstm</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span>
+<span class="linenos">129</span>
+<span class="linenos">130</span>    <span class="c1"># dict_keys([&#39;Wx&#39;, &#39;Wh&#39;, &#39;bias&#39;])</span>
+<span class="linenos">131</span>    <span class="nb">print</span><span class="p">(</span><span class="n">mx_lstm</span><span class="o">.</span><span class="n">parameters</span><span class="p">()[</span><span class="s2">&quot;lstm&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="linenos">132</span>    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">mx_lstm</span><span class="o">.</span><span class="n">parameters</span><span class="p">()[</span><span class="s2">&quot;lstm&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="linenos">133</span>        <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="linenos">134</span>
+<span class="linenos">135</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">136</span><span class="sd">    Wx (12, 2)</span>
+<span class="linenos">137</span><span class="sd">    Wh (12, 3)</span>
+<span class="linenos">138</span><span class="sd">    bias (12,)</span>
+<span class="linenos">139</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">140</span>    <span class="nb">print</span><span class="p">(</span><span class="n">mx_lstm</span><span class="o">.</span><span class="n">parameters</span><span class="p">()[</span><span class="s2">&quot;lstm&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="linenos">141</span>    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">mx_lstm</span><span class="o">.</span><span class="n">parameters</span><span class="p">()[</span><span class="s2">&quot;lstm&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="linenos">142</span>        <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="linenos">143</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">144</span><span class="sd">    Wx (12, 3)</span>
+<span class="linenos">145</span><span class="sd">    Wh (12, 3)</span>
+<span class="linenos">146</span><span class="sd">    bias (12,)</span>
+<span class="linenos">147</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">148</span>    <span class="c1"># a list of tuple</span>
+<span class="linenos">149</span>    <span class="c1"># [(&#39;lstm.0.Wx&#39;, array(...)),</span>
+<span class="linenos">150</span>    <span class="c1">#  (&#39;lstm.1.Wh&#39;, array(...)) ]</span>
+<span class="linenos">151</span>    <span class="c1">#  print(tree_flatten(mx_lstm.parameters()))</span>
+<span class="linenos">152</span>
+<span class="linenos">153</span>    <span class="c1"># convert</span>
+<span class="linenos">154</span>    <span class="n">state_dict</span> <span class="o">=</span> <span class="n">torch_lstm</span><span class="o">.</span><span class="n">state_dict</span><span class="p">()</span>
+<span class="linenos">155</span>    <span class="n">new_state_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="linenos">156</span>    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">state_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="linenos">157</span>        <span class="n">basename</span><span class="p">,</span> <span class="n">pname</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos">158</span>        <span class="k">if</span> <span class="s2">&quot;lstm&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">basename</span><span class="p">:</span>
+<span class="linenos">159</span>            <span class="c1"># we convert only lstm in this for loop</span>
+<span class="linenos">160</span>            <span class="k">continue</span>
+<span class="linenos">161</span>        <span class="n">w_or_b</span><span class="p">,</span> <span class="n">ih_or_hh</span><span class="p">,</span> <span class="n">ln</span> <span class="o">=</span> <span class="n">pname</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)</span>
+<span class="linenos">162</span>        <span class="k">if</span> <span class="n">w_or_b</span> <span class="o">==</span> <span class="s2">&quot;weight&quot;</span><span class="p">:</span>
+<span class="linenos">163</span>            <span class="n">new_name</span> <span class="o">=</span> <span class="s2">&quot;Wx&quot;</span> <span class="k">if</span> <span class="n">ih_or_hh</span> <span class="o">==</span> <span class="s2">&quot;ih&quot;</span> <span class="k">else</span> <span class="s2">&quot;Wh&quot;</span>
+<span class="linenos">164</span>        <span class="k">elif</span> <span class="n">w_or_b</span> <span class="o">==</span> <span class="s2">&quot;bias&quot;</span> <span class="ow">and</span> <span class="n">ih_or_hh</span> <span class="o">==</span> <span class="s2">&quot;ih&quot;</span><span class="p">:</span>
+<span class="linenos">165</span>            <span class="k">continue</span>
+<span class="linenos">166</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">167</span>            <span class="n">v</span> <span class="o">=</span> <span class="n">v</span> <span class="o">+</span> <span class="n">state_dict</span><span class="p">[</span><span class="n">k</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_hh_&quot;</span><span class="p">,</span> <span class="s2">&quot;_ih_&quot;</span><span class="p">)]</span>
+<span class="linenos">168</span>            <span class="n">new_name</span> <span class="o">=</span> <span class="s2">&quot;bias&quot;</span>
+<span class="linenos">169</span>        <span class="n">k</span> <span class="o">=</span> <span class="n">basename</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">ln</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">new_name</span>
+<span class="linenos">170</span>        <span class="n">new_state_dict</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+<span class="linenos">171</span>
+<span class="linenos">172</span>    <span class="c1"># convert torch.tensor to mx.array</span>
+<span class="linenos">173</span>    <span class="n">new_state_dict</span> <span class="o">=</span> <span class="n">tree_map</span><span class="p">(</span><span class="n">mx</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">new_state_dict</span><span class="p">)</span>
+<span class="linenos">174</span>    <span class="n">mx_lstm</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">tree_unflatten</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">new_state_dict</span><span class="o">.</span><span class="n">items</span><span class="p">())))</span>
+<span class="linenos">175</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;updated&quot;</span><span class="p">)</span>
+<span class="linenos">176</span>
+<span class="linenos">177</span>    <span class="k">for</span> <span class="n">N</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
+<span class="linenos">178</span>        <span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
+<span class="linenos">179</span>            <span class="n">test_with_seq_len</span><span class="p">(</span><span class="n">torch_lstm</span><span class="o">=</span><span class="n">torch_lstm</span><span class="p">,</span> <span class="n">mx_lstm</span><span class="o">=</span><span class="n">mx_lstm</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">)</span>
+<span class="linenos">180</span>
+<span class="linenos">181</span>
+<span class="linenos">182</span><span class="nd">@torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">()</span>
+<span class="linenos">183</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos">184</span>    <span class="n">test_multi_layers</span><span class="p">()</span>
+<span class="linenos">185</span>
+<span class="linenos">186</span>
+<span class="linenos">187</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="linenos">188</span>    <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">20250716</span><span class="p">)</span>
+<span class="linenos">189</span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="basics.html" class="btn btn-neutral float-left" title="Basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="conv1d.html" class="btn btn-neutral float-right" title="conv1d" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

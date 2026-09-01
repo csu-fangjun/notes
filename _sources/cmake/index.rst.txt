@@ -1,0 +1,8 @@
+cmake
+=====
+
+.. toctree::
+
+    tutorials
+    install
+

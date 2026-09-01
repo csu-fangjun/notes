@@ -1,0 +1,6 @@
+Flutter
+=======
+
+.. toctree::
+
+    install

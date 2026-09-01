@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matcha-TTS &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="rust" href="../rust/index.html" />
+    <link rel="prev" title="todo" href="todo.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">tts</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="vits.html">vits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unidecode.html">unidecode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phonemizer.html">phonemizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="books.html">books</a></li>
+<li class="toctree-l2"><a class="reference internal" href="papers.html">papers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypinyin.html">pypinyin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="todo.html">todo</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Matcha-TTS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-decoder-model">The decoder model</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/index.html">Papers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pascal/index.html">Pascal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llm/index.html">LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ascend/index.html">ascend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qnn/index.html">qnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">tts</a></li>
+      <li class="breadcrumb-item active">Matcha-TTS</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/tts/matcha-tts.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="matcha-tts">
+<h1>Matcha-TTS<a class="headerlink" href="#matcha-tts" title="Permalink to this heading"></a></h1>
+<p>The model has 3 inputs:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>x: <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">max_num_tokens)</span></code></p></li>
+<li><p>x_lengths: <code class="docutils literal notranslate"><span class="pre">(batch_size,)</span></code></p></li>
+<li><p>spks: <code class="docutils literal notranslate"><span class="pre">None</span></code>, or of shape <code class="docutils literal notranslate"><span class="pre">(batch_size,)</span></code></p></li>
+</ul>
+</div></blockquote>
+<p>If spks is not <code class="docutils literal notranslate"><span class="pre">None</span></code>, then it uses a embedding layer to convert it to a tensor
+of shape <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">spk_embedding_dim)</span></code>.</p>
+<p>x, x_lengths, spks, are sent to the TextEncoder.</p>
+<p>Inside the TextEncoder, x is sent to another embedding layer, the output is a tensor
+of shape <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">max_num_tokens,</span> <span class="pre">embedding_dim)</span></code>, then it is transposed to
+(batch_size, embedding_dim, max_num_tokens)</p>
+<p>It builds a mask from x_lengths. The mask is of shape <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">max_num_tokens)</span></code>.
+Valid positions in the mask is True. Padded positions in the mask is False.</p>
+<p>The mask is then reshaped to <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">1,</span> <span class="pre">max_num_tokens)</span></code>.</p>
+<p>Then x is sent to a <code class="docutils literal notranslate"><span class="pre">prenet</span></code>.</p>
+<p>Prenet contains 3 blocks. Each block consists of: Conv1D, LayerNorm, ReLU, Dropout.
+The last layer of a prenet is Conv1D, which is equivalent to a Linear layer.
+The advantage of use a Conv1D to replace Linear is that it does not need to transpose
+x. Also note that the LayerNorm in Prenet is user-implemented, which can save two transpose operations.</p>
+<p>Prenet also contains a residual connection, which means the input channels and output
+channels have to be the same.</p>
+<p>Note: Inside Prenet, only the input of the Conv1D is multiplied with the mask.
+Also, the output of Prenet is also multiplied with the mask.</p>
+<p>After the Prenet, it concatenates x and spk embeddings, so the resulting x is of shape
+<code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">embedding_dim</span> <span class="pre">+</span> <span class="pre">spk_embedding_dim,</span> <span class="pre">max_num_tokens)</span></code>.</p>
+<p>At this point, we only need to process x and mask, where</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>x: <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">embedding_dim</span> <span class="pre">+</span> <span class="pre">spk_embedding_dim,</span> <span class="pre">max_num_tokens)</span></code></p></li>
+<li><p>mask: <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">1,</span> <span class="pre">max_num_tokens)</span></code></p></li>
+</ul>
+</div></blockquote>
+<p>The next part is <code class="docutils literal notranslate"><span class="pre">Encoder</span></code> inside the  <code class="docutils literal notranslate"><span class="pre">TextEncoder</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">attn_mask</span></code> is of shape <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">max_num_tokens,</span> <span class="pre">max_num_tokens)</span></code> and is generated
+from <code class="docutils literal notranslate"><span class="pre">mask</span></code>.</p>
+<p>The Encoder in the TextEncoder is a Transformer encoder.</p>
+<p>After processing with the Encoder, it uses a Conv1D to convert the dim to <code class="docutils literal notranslate"><span class="pre">n_feats</span></code>.</p>
+<p>The duration predictor outputs a tensor of shape <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">1,</span> <span class="pre">max_num_tokens)</span></code>.</p>
+<p>Note that the duration predictor predicts log durations of each token.
+In the end, it uses <code class="docutils literal notranslate"><span class="pre">exp</span></code> to get the duration for each token.</p>
+<p>It then uses <code class="docutils literal notranslate"><span class="pre">ceil</span></code> to get integral durations. It can optionally use <code class="docutils literal notranslate"><span class="pre">length_scale</span></code>
+to scale the duration of each token.</p>
+<p>It uses <code class="docutils literal notranslate"><span class="pre">sum</span></code> to compute the total duration of each utterance.</p>
+<p><code class="docutils literal notranslate"><span class="pre">fix_len_compatibility()</span></code>: Convert to the next multiple of 4 if it is not a multiple of 4</p>
+<p><code class="docutils literal notranslate"><span class="pre">generate_path</span></code>: It actually returns a mask of shape <code class="docutils literal notranslate"><span class="pre">(batch,</span> <span class="pre">max_num_tokens,</span> <span class="pre">max_y)</span></code>.</p>
+<section id="the-decoder-model">
+<h2>The decoder model<a class="headerlink" href="#the-decoder-model" title="Permalink to this heading"></a></h2>
+<p>Its input:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>x: <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">num_feats,</span> <span class="pre">max_y)</span></code></p></li>
+<li><p>mask: <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">1,</span> <span class="pre">max_y)</span></code></p></li>
+<li><p>t: a scalar tensor</p></li>
+</ul>
+</div></blockquote>
+<p>First, an embedding is computed from <code class="docutils literal notranslate"><span class="pre">t</span></code> using <code class="docutils literal notranslate"><span class="pre">SinusoidPosEmb</span></code>. Note that
+it is not a standard Sinusoid positional encoding. The shape of the embedding is
+<code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">in_channels)</span></code>.</p>
+<p>The embedding is processed by <code class="docutils literal notranslate"><span class="pre">TimestepEmbedding</span></code>, which contains a linear layer,
+an activation layer, and a linear layer. The output shape is <code class="docutils literal notranslate"><span class="pre">(batch_size,</span> <span class="pre">time_embed_dim)</span></code>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="todo.html" class="btn btn-neutral float-left" title="todo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../rust/index.html" class="btn btn-neutral float-right" title="rust" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lazarus &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ggml" href="../ggml/index.html" />
+    <link rel="prev" title="dl" href="dl.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/index.html">Papers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Pascal</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hello.html">Hello</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fpc-help.html">fpc -h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call-c.html">Call C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="char.html">char</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pointers.html">Pointers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class.html">class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditional-compiling.html">Conditional compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiler-options.html">Compiler options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dl.html">dl</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lazarus</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#marcos">Marcos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#samples-and-tutorials">Samples and tutorials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tform">TForm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tips-for-manual-generation-of-controls">Tips for manual generation of controls</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tbutton">TButton</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tmemo">TMemo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tlistbox">TListBox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dialogs">Dialogs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tmainmenu">TMainMenu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#macos-related">macOS related</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#info-plist">Info.plist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bundle-programming-guide">Bundle Programming Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llm/index.html">LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ascend/index.html">ascend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qnn/index.html">qnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Pascal</a></li>
+      <li class="breadcrumb-item active">Lazarus</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/pascal/lazarus.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="lazarus">
+<h1>Lazarus<a class="headerlink" href="#lazarus" title="Permalink to this heading"></a></h1>
+<p>Follow <a class="reference external" href="https://wiki.freepascal.org/Installing_Lazarus_on_macOS">https://wiki.freepascal.org/Installing_Lazarus_on_macOS</a>
+to install Lazarus.</p>
+<p>After installation on macOS, the directory
+<code class="docutils literal notranslate"><span class="pre">/Applications/Lazarus/examples</span></code> contains many examples.</p>
+<p>We need to download two files from <a class="reference external" href="https://sourceforge.net/projects/lazarus/files/Lazarus%20macOS%20x86-64/">https://sourceforge.net/projects/lazarus/files/Lazarus%20macOS%20x86-64/</a>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Lazarus-3.4-macosx-x86_64.pkg</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fpc-src-3.2.2-20210709-macosx.dmg</span></code></p></li>
+</ul>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">fpc-src</span></code> is installed in <code class="docutils literal notranslate"><span class="pre">/usr/local/share/src/fpc-3.2.2</span></code>.
+The source code of <code class="docutils literal notranslate"><span class="pre">fpc</span></code> can also be found at <a class="reference external" href="https://github.com/fpc/FPCSource">https://github.com/fpc/FPCSource</a></p>
+<p>To reduce <code class="docutils literal notranslate"><span class="pre">.exe</span></code> file size:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">Project</span></code>, <code class="docutils literal notranslate"><span class="pre">Project</span> <span class="pre">options...</span></code>, <code class="docutils literal notranslate"><span class="pre">compiler</span> <span class="pre">options</span></code>, <code class="docutils literal notranslate"><span class="pre">Debugging</span></code></p></li>
+<li><p>Uncheck <code class="docutils literal notranslate"><span class="pre">Generate</span> <span class="pre">info</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">debugger</span> <span class="pre">(slower</span> <span class="pre">/</span> <span class="pre">increase</span> <span class="pre">exe</span> <span class="pre">size)</span></code></p></li>
+<li><p>Check <code class="docutils literal notranslate"><span class="pre">Strip</span> <span class="pre">symbols</span> <span class="pre">from</span> <span class="pre">exectuable</span></code></p></li>
+<li><p>Note: We can create release and debug build mode instead of using the default mode.</p></li>
+</ol>
+</div></blockquote>
+<p>See <a class="reference external" href="https://wiki.freepascal.org/Mac_Installation_FAQ">https://wiki.freepascal.org/Mac_Installation_FAQ</a> to fix the following error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ld</span><span class="p">:</span> <span class="n">framework</span> <span class="ow">not</span> <span class="n">found</span> <span class="n">Cocoa</span>
+</pre></div>
+</div>
+<p>whole program optimization: <a class="reference external" href="https://wiki.freepascal.org/Whole_Program_Optimization#Concrete_Lazarus_IDE_example">https://wiki.freepascal.org/Whole_Program_Optimization#Concrete_Lazarus_IDE_example</a></p>
+<blockquote>
+<div><ul>
+<li><p>Multiplatform Programming Guide</p>
+<p><a class="reference external" href="https://wiki.freepascal.org/Multiplatform_Programming_Guide">https://wiki.freepascal.org/Multiplatform_Programming_Guide</a></p>
+</li>
+<li><p>Application Bundle</p>
+<p><a class="reference external" href="https://wiki.freepascal.org/Application_Bundle">https://wiki.freepascal.org/Application_Bundle</a></p>
+</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p><a class="reference external" href="https://wiki.lazarus.freepascal.org/Lazarus_Tutorial">https://wiki.lazarus.freepascal.org/Lazarus_Tutorial</a></p></li>
+</ul>
+<section id="marcos">
+<h2>Marcos<a class="headerlink" href="#marcos" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>For operating systems: <code class="docutils literal notranslate"><span class="pre">DARWIN</span></code> for macOS and iOS</p></li>
+<li><p>See <a class="reference external" href="https://www.freepascal.org/docs-html/3.2.0/prog/progap7.html#x341-357000G">https://www.freepascal.org/docs-html/3.2.0/prog/progap7.html#x341-357000G</a> for a complete list</p></li>
+</ul>
+</section>
+<section id="samples-and-tutorials">
+<h2>Samples and tutorials<a class="headerlink" href="#samples-and-tutorials" title="Permalink to this heading"></a></h2>
+<blockquote>
+<div><ul>
+<li><p><a class="reference external" href="https://wiki.lazarus.freepascal.org/Category:Tutorials">https://wiki.lazarus.freepascal.org/Category:Tutorials</a></p></li>
+<li><p><a class="reference external" href="https://wiki.lazarus.freepascal.org/Lazarus_Documentation">https://wiki.lazarus.freepascal.org/Lazarus_Documentation</a></p></li>
+<li><p>Manual conversion of C headers to Pascal</p>
+<p><a class="reference external" href="https://wiki.lazarus.freepascal.org/Creating_bindings_for_C_libraries#Manual_conversion_of_C_headers_to_Pascal">https://wiki.lazarus.freepascal.org/Creating_bindings_for_C_libraries#Manual_conversion_of_C_headers_to_Pascal</a></p>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<section id="tform">
+<h2>TForm<a class="headerlink" href="#tform" title="Permalink to this heading"></a></h2>
+<p>See <a class="reference external" href="https://wiki.lazarus.freepascal.org/Form_Tutorial">https://wiki.lazarus.freepascal.org/Form_Tutorial</a></p>
+<p>To change the caption of the form, assign a string to its <code class="docutils literal notranslate"><span class="pre">Caption</span></code> property.</p>
+<p>To add a hint to the form, we need to first change its property <code class="docutils literal notranslate"><span class="pre">Hint</span></code>
+and then set property <code class="docutils literal notranslate"><span class="pre">ShowHint</span></code> to true.</p>
+<ol class="arabic simple">
+<li><p>How to show a second form from the main form?</p></li>
+</ol>
+<blockquote>
+<div><ul>
+<li><p>There are two methods.</p>
+<ul>
+<li><ol class="arabic">
+<li><p>The form is created automatically by the application, which is the default behavior.
+If we want to disable auto creation, then we can either edit <code class="docutils literal notranslate"><span class="pre">*.lpr</span></code> or use
+menu -&gt; project options -&gt; form, disable auto creating the form.</p>
+<p>Note that the above code assumes the form is created automatically.</p>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="c1">// unit1.pas</span>
+<span class="k">var</span>
+<span class="w">  </span><span class="n">r</span><span class="o">:</span><span class="w"> </span><span class="kt">Integer</span><span class="o">;</span>
+<span class="k">begin</span>
+<span class="w">  </span><span class="n">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Form2</span><span class="o">.</span><span class="n">ShowModal</span><span class="o">;</span>
+
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="k">of</span>
+<span class="w">    </span><span class="mi">1</span><span class="o">:</span><span class="w"> </span><span class="k">begin</span><span class="w"> </span><span class="n">ShowMessage</span><span class="p">(</span><span class="s">&#39;1&#39;</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="k">end</span><span class="o">;</span>
+<span class="w">    </span><span class="mi">2</span><span class="o">:</span><span class="w"> </span><span class="k">begin</span><span class="w"> </span><span class="n">ShowMessage</span><span class="p">(</span><span class="s">&#39;2&#39;</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="k">end</span><span class="o">;</span>
+<span class="w">    </span><span class="mi">3</span><span class="o">:</span><span class="w"> </span><span class="k">begin</span><span class="w"> </span><span class="n">ShowMessage</span><span class="p">(</span><span class="s">&#39;3&#39;</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="k">end</span><span class="o">;</span>
+<span class="w">  </span><span class="k">end</span><span class="o">;</span>
+<span class="k">end</span><span class="o">;</span>
+
+<span class="c1">// unit2.pas</span>
+<span class="c1">// to exit form2, we can either use self.Close</span>
+<span class="c1">// or use</span>
+<span class="c1">//</span>
+<span class="c1">// Self.ModalResult := 10;</span>
+<span class="c1">//</span>
+<span class="c1">// we can assign any integer value to Self.ModalResult</span>
+<span class="c1">// and it will close the form immediately.</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p><a class="reference external" href="https://lazarus-ccr.sourceforge.io/docs/lcl/forms/tmodalresult.html">https://lazarus-ccr.sourceforge.io/docs/lcl/forms/tmodalresult.html</a>
+and
+<a class="reference external" href="https://lazarus-ccr.sourceforge.io/docs/lazutils/uitypes/tmodalresult.html">https://lazarus-ccr.sourceforge.io/docs/lazutils/uitypes/tmodalresult.html</a>
+and
+<a class="reference external" href="https://fossies.org/linux/lazarus/components/lazutils/uitypes.pas">https://fossies.org/linux/lazarus/components/lazutils/uitypes.pas</a>
+define some constant, e.g., <code class="docutils literal notranslate"><span class="pre">mrOK</span></code>, <code class="docutils literal notranslate"><span class="pre">mrCancel</span></code>, etc.</p>
+<p>If we use <code class="docutils literal notranslate"><span class="pre">Self.Close</span></code> or click the <code class="docutils literal notranslate"><span class="pre">X</span></code> to close the Form, then
+the returned <code class="docutils literal notranslate"><span class="pre">ModalResult</span></code> is <code class="docutils literal notranslate"><span class="pre">mrCancel</span></code>, which is 2.</p>
+</div></blockquote>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>If the form is not created automatically, then we can use</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">TForm1</span><span class="o">.</span><span class="nf">Button1Click</span><span class="p">(</span><span class="n">Sender</span><span class="o">:</span><span class="w"> </span><span class="kt">TObject</span><span class="p">)</span><span class="o">;</span>
+<span class="k">begin</span>
+<span class="w">  </span><span class="n">Form2</span><span class="o">:=</span><span class="n">TForm2</span><span class="o">.</span><span class="n">Create</span><span class="p">(</span><span class="k">Nil</span><span class="p">)</span><span class="o">;</span><span class="w">  </span><span class="c1">//Form2 is created</span>
+<span class="w">  </span><span class="n">Form2</span><span class="o">.</span><span class="n">ShowModal</span><span class="o">;</span><span class="w">            </span><span class="c1">//Form2 is displayed</span>
+<span class="w">  </span><span class="nb">FreeAndNil</span><span class="p">(</span><span class="n">Form2</span><span class="p">)</span><span class="o">;</span><span class="w">          </span><span class="c1">//Free Form2</span>
+<span class="k">end</span><span class="o">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>How to create a new form dynamically?</p></li>
+</ol>
+<blockquote>
+<div><p>See <a class="reference external" href="https://wiki.lazarus.freepascal.org/Form_Tutorial#Generate_the_form_dynamically">https://wiki.lazarus.freepascal.org/Form_Tutorial#Generate_the_form_dynamically</a></p>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">TForm1</span><span class="o">.</span><span class="nf">Button1Click</span><span class="p">(</span><span class="n">Sender</span><span class="o">:</span><span class="w"> </span><span class="kt">TObject</span><span class="p">)</span><span class="o">;</span>
+<span class="k">var</span>
+<span class="w">  </span><span class="n">MyForm</span><span class="o">:</span><span class="w"> </span><span class="n">TForm</span><span class="o">;</span>
+<span class="w">  </span><span class="n">MyButton</span><span class="o">:</span><span class="w"> </span><span class="n">TButton</span><span class="o">;</span>
+<span class="k">begin</span>
+<span class="w">  </span><span class="n">MyForm</span><span class="o">:=</span><span class="n">TForm</span><span class="o">.</span><span class="n">Create</span><span class="p">(</span><span class="k">nil</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="n">MyForm</span><span class="o">.</span><span class="n">SetBounds</span><span class="p">(</span><span class="mi">100</span><span class="o">,</span><span class="w"> </span><span class="mi">100</span><span class="o">,</span><span class="w"> </span><span class="mi">220</span><span class="o">,</span><span class="w"> </span><span class="mi">150</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="n">MyForm</span><span class="o">.</span><span class="n">Caption</span><span class="o">:=</span><span class="s">&#39;My dynamic created form&#39;</span><span class="o">;</span>
+
+<span class="w">  </span><span class="n">MyButton</span><span class="o">:=</span><span class="n">TButton</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">MyForm</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="n">MyButton</span><span class="o">.</span><span class="n">Caption</span><span class="o">:=</span><span class="s">&#39;Close my form&#39;</span><span class="o">;</span>
+<span class="w">  </span><span class="n">MyButton</span><span class="o">.</span><span class="n">SetBounds</span><span class="p">(</span><span class="mi">10</span><span class="o">,</span><span class="w"> </span><span class="mi">10</span><span class="o">,</span><span class="w"> </span><span class="mi">200</span><span class="o">,</span><span class="w"> </span><span class="mi">30</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="n">MyButton</span><span class="o">.</span><span class="n">Parent</span><span class="o">:=</span><span class="n">MyForm</span><span class="o">;</span>
+
+<span class="w">  </span><span class="n">MyButton</span><span class="o">.</span><span class="n">OnClick</span><span class="o">:=@</span><span class="n">MyButtonClick</span><span class="o">;</span>
+
+<span class="w">  </span><span class="n">MyForm</span><span class="o">.</span><span class="n">ShowModal</span><span class="o">;</span>
+
+<span class="w">  </span><span class="nb">FreeAndNil</span><span class="p">(</span><span class="n">MyForm</span><span class="p">)</span><span class="o">;</span>
+<span class="k">end</span><span class="o">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="tips-for-manual-generation-of-controls">
+<h2>Tips for manual generation of controls<a class="headerlink" href="#tips-for-manual-generation-of-controls" title="Permalink to this heading"></a></h2>
+<p>See <a class="reference external" href="https://wiki.lazarus.freepascal.org/LCL_Tips">https://wiki.lazarus.freepascal.org/LCL_Tips</a></p>
+</section>
+<section id="tbutton">
+<h2>TButton<a class="headerlink" href="#tbutton" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>See</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://wiki.freepascal.org/TButton">https://wiki.freepascal.org/TButton</a></p></li>
+<li><p><a class="reference external" href="https://lazarus-ccr.sourceforge.io/docs/lcl/stdctrls/tbutton.html">https://lazarus-ccr.sourceforge.io/docs/lcl/stdctrls/tbutton.html</a></p></li>
+</ul>
+</dd>
+</dl>
+<p>Note that we can set its <code class="docutils literal notranslate"><span class="pre">tag</span></code> property. Several buttons
+can share the same onclick event handler, we can use its <code class="docutils literal notranslate"><span class="pre">tag</span></code> attribute
+to distinguish them.</p>
+<p><strong>Example 1</strong>:</p>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="c1">// from https://wiki.lazarus.freepascal.org/Lazarus_Tutorial</span>
+<span class="k">procedure</span><span class="w"> </span><span class="nc">TForm1</span><span class="o">.</span><span class="nf">Button1Click</span><span class="p">(</span><span class="n">Sender</span><span class="o">:</span><span class="w"> </span><span class="kt">TObject</span><span class="p">)</span><span class="o">;</span>
+<span class="cm">{ Makes use of the Tag property, setting it to either 0 or 1}</span>
+<span class="k">begin</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="n">Button1</span><span class="o">.</span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="k">begin</span>
+<span class="w">    </span><span class="n">Button1</span><span class="o">.</span><span class="n">caption</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#39;Press again&#39;</span><span class="o">;</span>
+<span class="w">    </span><span class="n">Button1</span><span class="o">.</span><span class="n">tag</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">1</span><span class="o">;</span>
+<span class="w">  </span><span class="k">end</span><span class="w"> </span><span class="k">else</span>
+<span class="w">  </span><span class="k">begin</span>
+<span class="w">    </span><span class="n">Button1</span><span class="o">.</span><span class="n">caption</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#39;Press&#39;</span><span class="o">;</span>
+<span class="w">    </span><span class="n">Button1</span><span class="o">.</span><span class="n">tag</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="o">;</span>
+<span class="w">  </span><span class="k">end</span><span class="o">;</span>
+<span class="k">end</span><span class="o">;</span>
+</pre></div>
+</div>
+<p><strong>Example 2</strong>:</p>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="c1">// from</span>
+<span class="c1">// https://wiki.lazarus.freepascal.org/TButton</span>
+<span class="k">procedure</span><span class="w"> </span><span class="nc">TForm1</span><span class="o">.</span><span class="nf">FormCreate</span><span class="p">(</span><span class="n">Sender</span><span class="o">:</span><span class="w"> </span><span class="kt">TObject</span><span class="p">)</span><span class="o">;</span>
+<span class="k">var</span>
+<span class="w">  </span><span class="n">i</span><span class="o">:</span><span class="w">       </span><span class="kt">Integer</span><span class="o">;</span>
+<span class="w">  </span><span class="n">aButton</span><span class="o">:</span><span class="w"> </span><span class="n">TButton</span><span class="o">;</span>
+<span class="k">begin</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="k">begin</span><span class="w">                </span><span class="c1">// create 10 Buttons</span>
+<span class="w">    </span><span class="n">aButton</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">TButton</span><span class="o">.</span><span class="n">Create</span><span class="p">(</span><span class="k">Self</span><span class="p">)</span><span class="o">;</span><span class="w">      </span><span class="c1">// create Button, Owner is Form1, where the button is released later</span>
+<span class="w">    </span><span class="n">aButton</span><span class="o">.</span><span class="n">Parent</span><span class="w">  </span><span class="o">:=</span><span class="w"> </span><span class="k">Self</span><span class="o">;</span><span class="w">              </span><span class="c1">// determine where it is to be displayed</span>
+<span class="w">    </span><span class="n">aButton</span><span class="o">.</span><span class="n">Width</span><span class="w">   </span><span class="o">:=</span><span class="w"> </span><span class="n">aButton</span><span class="o">.</span><span class="n">Height</span><span class="o">;</span><span class="w">    </span><span class="c1">// Width should correspond to the height of the buttons</span>
+<span class="w">    </span><span class="n">aButton</span><span class="o">.</span><span class="n">Left</span><span class="w">    </span><span class="o">:=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">aButton</span><span class="o">.</span><span class="n">Width</span><span class="o">;</span><span class="w"> </span><span class="c1">// Distance from left</span>
+<span class="w">    </span><span class="n">aButton</span><span class="o">.</span><span class="n">Caption</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">IntToStr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">;</span><span class="w">       </span><span class="c1">// Captions of the buttons (0.9)</span>
+<span class="w">    </span><span class="n">aButton</span><span class="o">.</span><span class="n">OnClick</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">@</span><span class="n">aButtonClick</span><span class="o">;</span><span class="w">     </span><span class="c1">// the event handler for the button -&gt; will be created yet</span>
+<span class="w">  </span><span class="k">end</span><span class="o">;</span>
+<span class="w">  </span><span class="k">Self</span><span class="o">.</span><span class="n">Height</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">aButton</span><span class="o">.</span><span class="n">Height</span><span class="o">;</span><span class="w">          </span><span class="c1">// Height of the form should correspond to the height of the buttons</span>
+<span class="w">  </span><span class="k">Self</span><span class="o">.</span><span class="n">Width</span><span class="w">  </span><span class="o">:=</span><span class="w"> </span><span class="n">aButton</span><span class="o">.</span><span class="n">Width</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="o">;</span><span class="w">      </span><span class="c1">// Width of the form to match the width of all buttons</span>
+<span class="k">end</span><span class="o">;</span>
+
+<span class="k">procedure</span><span class="w"> </span><span class="nc">TForm1</span><span class="o">.</span><span class="nf">aButtonClick</span><span class="p">(</span><span class="n">Sender</span><span class="o">:</span><span class="w"> </span><span class="kt">TObject</span><span class="p">)</span><span class="o">;</span>
+<span class="k">const</span>
+<span class="w">  </span><span class="n">Cnt</span><span class="o">:</span><span class="w"> </span><span class="kt">Integer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="o">;</span>
+<span class="k">var</span>
+<span class="w">  </span><span class="n">i</span><span class="o">:</span><span class="w"> </span><span class="kt">Integer</span><span class="o">;</span>
+<span class="k">begin</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Sender</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">TButton</span><span class="p">)</span><span class="w"> </span><span class="k">and</span><span class="w">                  </span><span class="c1">// called the event handler of a button out?</span>
+<span class="w">     </span><span class="nb">TryStrToInt</span><span class="p">(</span><span class="n">TButton</span><span class="p">(</span><span class="n">Sender</span><span class="p">)</span><span class="o">.</span><span class="n">Caption</span><span class="o">,</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w">  </span><span class="c1">// then try to convert the label in a integer</span>
+<span class="w">  </span><span class="k">then</span><span class="w"> </span><span class="k">begin</span>
+<span class="w">    </span><span class="n">Cnt</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">Cnt</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="o">;</span><span class="w">                           </span><span class="c1">// the adding counter is incremented by the number of entrechende</span>
+<span class="w">    </span><span class="n">Caption</span><span class="o">:=</span><span class="s">&#39;QuickAdd: &#39;</span><span class="o">+</span><span class="nb">IntToStr</span><span class="p">(</span><span class="n">Cnt</span><span class="p">)</span><span class="o">;</span><span class="w">      </span><span class="c1">// write the result to the caption of the form</span>
+<span class="w">  </span><span class="k">end</span><span class="o">;</span>
+<span class="k">end</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+<section id="tmemo">
+<h2>TMemo<a class="headerlink" href="#tmemo" title="Permalink to this heading"></a></h2>
+<p>Support multiline texts.</p>
+<p>It has an attributes <code class="docutils literal notranslate"><span class="pre">Lines</span></code>, which is of type <code class="docutils literal notranslate"><span class="pre">TStringList</span></code>.
+<code class="docutils literal notranslate"><span class="pre">Lines.Count</span></code> returns number of lines. If it is 0, then
+the text is empty. <code class="docutils literal notranslate"><span class="pre">Lines.Add('a</span> <span class="pre">new</span> <span class="pre">line')</span></code> to add a new line.
+<code class="docutils literal notranslate"><span class="pre">Lines.Clear()</span></code> to clear all lines.</p>
+<p>See also <a class="reference external" href="https://wiki.lazarus.freepascal.org/TMemo">https://wiki.lazarus.freepascal.org/TMemo</a>.</p>
+<p><strong>Example 1</strong>:</p>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="c1">// from https://wiki.lazarus.freepascal.org/TMemo</span>
+<span class="c1">// assign a TStringList to a TMemo</span>
+<span class="c1">// Note that we have to call Free to free the stringlist</span>
+<span class="k">procedure</span><span class="w"> </span><span class="nc">TForm1</span><span class="o">.</span><span class="nf">Button1Click</span><span class="p">(</span><span class="n">Sender</span><span class="o">:</span><span class="w"> </span><span class="kt">TObject</span><span class="p">)</span><span class="o">;</span>
+<span class="k">var</span>
+<span class="w">  </span><span class="n">myStringList</span><span class="o">:</span><span class="w"> </span><span class="n">TStringList</span><span class="o">;</span>
+<span class="k">begin</span>
+<span class="w">  </span><span class="n">myStringList</span><span class="o">:=</span><span class="n">TStringList</span><span class="o">.</span><span class="n">Create</span><span class="o">;</span><span class="w">               </span><span class="c1">//Create my StringList</span>
+<span class="w">  </span><span class="n">myStringList</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&#39;This is the first line.&#39;</span><span class="p">)</span><span class="o">;</span><span class="w">    </span><span class="c1">//add a line</span>
+<span class="w">  </span><span class="n">myStringList</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&#39;This is the second line.&#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="n">myStringList</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&#39;This is the third line.&#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="n">myStringList</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&#39;etc.&#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="n">Memo1</span><span class="o">.</span><span class="n">Lines</span><span class="o">.</span><span class="n">Assign</span><span class="p">(</span><span class="n">myStringList</span><span class="p">)</span><span class="o">;</span><span class="w">               </span><span class="c1">//assign text content</span>
+<span class="w">  </span><span class="n">myStringList</span><span class="o">.</span><span class="n">Free</span><span class="o">;</span><span class="w">                              </span><span class="c1">//free my StringList</span>
+<span class="k">end</span><span class="o">;</span>
+</pre></div>
+</div>
+<p><strong>Example 2</strong>:</p>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">TForm1</span><span class="o">.</span><span class="nf">Button1Click</span><span class="p">(</span><span class="n">Sender</span><span class="o">:</span><span class="w"> </span><span class="kt">TObject</span><span class="p">)</span><span class="o">;</span>
+<span class="k">begin</span>
+<span class="w">  </span><span class="n">Memo1</span><span class="o">.</span><span class="n">Lines</span><span class="o">.</span><span class="n">Clear</span><span class="o">;</span><span class="w">                              </span><span class="c1">//delete all lines of Memo1</span>
+<span class="w">  </span><span class="n">Memo1</span><span class="o">.</span><span class="n">Lines</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&#39;This is the first line.&#39;</span><span class="p">)</span><span class="o">;</span><span class="w">     </span><span class="c1">//add a line</span>
+<span class="w">  </span><span class="n">Memo1</span><span class="o">.</span><span class="n">Lines</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&#39;This is the second line.&#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="n">Memo1</span><span class="o">.</span><span class="n">Lines</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&#39;This is the third line.&#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="n">Memo1</span><span class="o">.</span><span class="n">Lines</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&#39;etc.&#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="k">end</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+<section id="tlistbox">
+<h2>TListBox<a class="headerlink" href="#tlistbox" title="Permalink to this heading"></a></h2>
+<p>See <a class="reference external" href="https://wiki.lazarus.freepascal.org/TListBox">https://wiki.lazarus.freepascal.org/TListBox</a>.</p>
+<ol class="arabic simple">
+<li><p>How to add an item</p></li>
+<li><p>How to get the selected item</p></li>
+<li><p>How to get multi-selected items</p></li>
+</ol>
+</section>
+<section id="dialogs">
+<h2>Dialogs<a class="headerlink" href="#dialogs" title="Permalink to this heading"></a></h2>
+<p>See <a class="reference external" href="https://wiki.lazarus.freepascal.org/Dialog_Examples">https://wiki.lazarus.freepascal.org/Dialog_Examples</a>.</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ShowMessage</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Application.MessageBox</span></code>, we can provide several buttons, ask users to click
+one button, figure out which button is clicked, e.g., the yes or no button,
+execute some code.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MessageDlg</span></code>, like <code class="docutils literal notranslate"><span class="pre">Application.MessageBox</span></code> but we can specify which
+buttons to show to users. We should prefer this one.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QuestionDlg</span></code>: Users can customize the caption of the buttons.</p></li>
+<li><p>There are also dialogues for accepts user inputs.</p></li>
+</ol>
+</section>
+<section id="tmainmenu">
+<h2>TMainMenu<a class="headerlink" href="#tmainmenu" title="Permalink to this heading"></a></h2>
+<p>See <a class="reference external" href="https://wiki.lazarus.freepascal.org/TMainMenu">https://wiki.lazarus.freepascal.org/TMainMenu</a></p>
+<p>Naming convention: <code class="docutils literal notranslate"><span class="pre">MenuFile</span></code>, <code class="docutils literal notranslate"><span class="pre">MenuFileOpen</span></code> (for File -&gt; Open), <code class="docutils literal notranslate"><span class="pre">MenuHelp</span></code>.</p>
+</section>
+<section id="macos-related">
+<h2>macOS related<a class="headerlink" href="#macos-related" title="Permalink to this heading"></a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://wiki.freepascal.org/Locating_the_macOS_application_resources_directory">Locating the macOS application resources directory</a></p></li>
+</ul>
+</div></blockquote>
+<section id="info-plist">
+<h3>Info.plist<a class="headerlink" href="#info-plist" title="Permalink to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Info.plist</span></code> is short for information property list.</p>
+<p>We can either use <code class="docutils literal notranslate"><span class="pre">vim</span></code> to edit <code class="docutils literal notranslate"><span class="pre">Info.plist</span></code> or use <code class="docutils literal notranslate"><span class="pre">open</span> <span class="pre">Info.plist</span></code>
+to start xcode to edit it.</p>
+<p>References:</p>
+<blockquote>
+<div><ul>
+<li><p><a class="reference external" href="https://help.apple.com/xcode/mac/8.0/#/dev3f399a2a6">Edit property lists</a></p>
+<blockquote>
+<div><p>It shows how to use xcode to edit <code class="docutils literal notranslate"><span class="pre">Info.plist</span></code>.</p>
+</div></blockquote>
+</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40009248-SW1">About Info.plist Keys and Values</a></p></li>
+<li><p><a class="reference external" href="https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AboutInformationPropertyListFiles.html#//apple_ref/doc/uid/TP40009254-SW1">About Information Property List Files</a></p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</section>
+<section id="bundle-programming-guide">
+<h3>Bundle Programming Guide<a class="headerlink" href="#bundle-programming-guide" title="Permalink to this heading"></a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://developer.apple.com/library/archive/documentation/CoreFoundation/Conceptual/CFBundles/Introduction/Introduction.html#//apple_ref/doc/uid/10000123i">Introduction</a></p></li>
+<li><p><a class="reference external" href="https://developer.apple.com/library/archive/documentation/CoreFoundation/Conceptual/CFBundles/BundleTypes/BundleTypes.html#//apple_ref/doc/uid/10000123i-CH101-SW13">Application Bundles</a></p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dl.html" class="btn btn-neutral float-left" title="dl" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ggml/index.html" class="btn btn-neutral float-right" title="ggml" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+AMD NPU
+=======
+
+.. toctree::
+
+    install
+

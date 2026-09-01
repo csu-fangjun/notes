@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>typed array in javascript &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Regular expressions in javascript" href="regular_expression.html" />
+    <link rel="prev" title="array in javascript" href="array.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">javascript</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers.html">Numbers in javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boolean.html">Boolean in javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">Strings in javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="array.html">array in javascript</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">typed array in javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regular_expression.html">Regular expressions in javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="node.html">node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="todo.html">TODOs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="npm.html">npm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html">module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="object.html">object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="node-addon-api.html">node-addon-api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vue.html">vue</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/index.html">Papers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pascal/index.html">Pascal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llm/index.html">LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ascend/index.html">ascend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qnn/index.html">qnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">javascript</a></li>
+      <li class="breadcrumb-item active">typed array in javascript</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/javascript/typed_array.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="typed-array-in-javascript">
+<h1>typed array in javascript<a class="headerlink" href="#typed-array-in-javascript" title="Permalink to this heading"></a></h1>
+<p>Typed array is a view into a buffer.</p>
+<p>When creating from an array, the array is copied to a newly created buffer.</p>
+<p>When creating from a length, a buffer is allocated, which is initialized with 0s.</p>
+<p>When creating from a buffer, the buffer is shared.</p>
+<dl class="simple">
+<dt>See</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray</a></p></li>
+<li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Typed_arrays">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Typed_arrays</a></p></li>
+</ul>
+</dd>
+</dl>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/typed_array.js</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="c1">// https://nodejs.org/api/assert.html</span>
+<span class="linenos">  2</span><span class="kd">const</span><span class="w"> </span><span class="nx">assert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;node:assert&#39;</span><span class="p">);</span>
+<span class="linenos">  3</span>
+<span class="linenos">  4</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nb">Int8Array</span><span class="p">.</span><span class="nx">BYTES_PER_ELEMENT</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<span class="linenos">  5</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nb">Uint8Array</span><span class="p">.</span><span class="nx">BYTES_PER_ELEMENT</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<span class="linenos">  6</span>
+<span class="linenos">  7</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nb">Int16Array</span><span class="p">.</span><span class="nx">BYTES_PER_ELEMENT</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="linenos">  8</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nb">Uint16Array</span><span class="p">.</span><span class="nx">BYTES_PER_ELEMENT</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="linenos">  9</span>
+<span class="linenos"> 10</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nb">Int32Array</span><span class="p">.</span><span class="nx">BYTES_PER_ELEMENT</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">);</span>
+<span class="linenos"> 11</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nb">Uint32Array</span><span class="p">.</span><span class="nx">BYTES_PER_ELEMENT</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">);</span>
+<span class="linenos"> 12</span>
+<span class="linenos"> 13</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nb">Float32Array</span><span class="p">.</span><span class="nx">BYTES_PER_ELEMENT</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">);</span>
+<span class="linenos"> 14</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nb">Float64Array</span><span class="p">.</span><span class="nx">BYTES_PER_ELEMENT</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">);</span>
+<span class="linenos"> 15</span>
+<span class="linenos"> 16</span><span class="kd">function</span><span class="w"> </span><span class="nx">test_uint32_array</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 17</span><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Uint32Array</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>
+<span class="linenos"> 18</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="linenos"> 19</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="linenos"> 20</span><span class="w">  </span><span class="nx">a</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x12345678</span>
+<span class="linenos"> 21</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="mh">0x12345678</span><span class="p">);</span>
+<span class="linenos"> 22</span>
+<span class="linenos"> 23</span><span class="w">  </span><span class="c1">// type of buf: ArrayBuffer</span>
+<span class="linenos"> 24</span><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">buffer</span><span class="p">;</span>
+<span class="linenos"> 25</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">buf</span><span class="p">.</span><span class="nx">byteLength</span><span class="p">,</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">Uint32Array</span><span class="p">.</span><span class="nx">BYTES_PER_ELEMENT</span><span class="p">);</span>
+<span class="linenos"> 26</span><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Uint8Array</span><span class="p">(</span><span class="nx">buf</span><span class="p">)</span>
+<span class="linenos"> 27</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">b</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="mh">0x78</span><span class="p">);</span><span class="w"> </span><span class="c1">// little endian</span>
+<span class="linenos"> 28</span><span class="w">  </span><span class="nx">b</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x23</span><span class="p">;</span><span class="w">              </span><span class="c1">// also changes a</span>
+<span class="linenos"> 29</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="mh">0x12342378</span><span class="p">);</span>
+<span class="linenos"> 30</span><span class="p">}</span>
+<span class="linenos"> 31</span>
+<span class="linenos"> 32</span><span class="kd">function</span><span class="w"> </span><span class="nx">test_int32_array</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 33</span><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Int32Array</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>
+<span class="linenos"> 34</span><span class="w">  </span><span class="c1">// all typed arrays are 0 initialized</span>
+<span class="linenos"> 35</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="linenos"> 36</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="linenos"> 37</span>
+<span class="linenos"> 38</span><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Int32Array</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// copy</span>
+<span class="linenos"> 39</span><span class="w">  </span><span class="nx">b</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="linenos"> 40</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="linenos"> 41</span>
+<span class="linenos"> 42</span><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Int32Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="linenos"> 43</span><span class="w">  </span><span class="nx">c</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="linenos"> 44</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="linenos"> 45</span>
+<span class="linenos"> 46</span><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Int32Array</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span>
+<span class="linenos"> 47</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span>
+<span class="linenos"> 48</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<span class="linenos"> 49</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="linenos"> 50</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mf">2</span><span class="p">],</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span>
+<span class="linenos"> 51</span>
+<span class="linenos"> 52</span><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Int32Array</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">buffer</span><span class="p">);</span><span class="w"> </span><span class="c1">// share the underlying buffer</span>
+<span class="linenos"> 53</span><span class="w">  </span><span class="nx">e</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">11</span><span class="p">;</span>
+<span class="linenos"> 54</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="mf">11</span><span class="p">);</span>
+<span class="linenos"> 55</span>
+<span class="linenos"> 56</span><span class="w">  </span><span class="c1">// the from method always copys</span>
+<span class="linenos"> 57</span><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Int32Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">buffer</span><span class="p">);</span><span class="w"> </span><span class="c1">// copy!</span>
+<span class="linenos"> 58</span><span class="w">  </span><span class="nx">f</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="linenos"> 59</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="mf">11</span><span class="p">);</span><span class="w"> </span><span class="c1">// a is not changed</span>
+<span class="linenos"> 60</span>
+<span class="linenos"> 61</span><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">];</span>
+<span class="linenos"> 62</span><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Int32Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span><span class="w"> </span><span class="c1">// from() always copy</span>
+<span class="linenos"> 63</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">g</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="linenos"> 64</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">g</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="mf">5</span><span class="p">);</span>
+<span class="linenos"> 65</span><span class="w">  </span><span class="nx">i</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// g is not changed</span>
+<span class="linenos"> 66</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">g</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="mf">5</span><span class="p">);</span>
+<span class="linenos"> 67</span><span class="p">}</span>
+<span class="linenos"> 68</span>
+<span class="linenos"> 69</span><span class="kd">function</span><span class="w"> </span><span class="nx">test_int32_array2</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 70</span><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Int32Array</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span>
+<span class="linenos"> 71</span><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="p">];</span>
+<span class="linenos"> 72</span><span class="w">  </span><span class="nx">a</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// copy b to a, start from offset 0</span>
+<span class="linenos"> 73</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="nx">b</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
+<span class="linenos"> 74</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="nx">b</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span>
+<span class="linenos"> 75</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">2</span><span class="p">],</span><span class="w"> </span><span class="nx">b</span><span class="p">[</span><span class="mf">2</span><span class="p">]);</span>
+<span class="linenos"> 76</span>
+<span class="linenos"> 77</span><span class="w">  </span><span class="nx">a</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w"> </span><span class="c1">// copy b to a, start from offset 2</span>
+<span class="linenos"> 78</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">2</span><span class="p">],</span><span class="w"> </span><span class="nx">b</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
+<span class="linenos"> 79</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">3</span><span class="p">],</span><span class="w"> </span><span class="nx">b</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span>
+<span class="linenos"> 80</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">4</span><span class="p">],</span><span class="w"> </span><span class="nx">b</span><span class="p">[</span><span class="mf">2</span><span class="p">]);</span>
+<span class="linenos"> 81</span>
+<span class="linenos"> 82</span><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Int32Array</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">);</span>
+<span class="linenos"> 83</span><span class="w">  </span><span class="nx">a</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span><span class="w"> </span><span class="c1">// copy c to a, at offset 0</span>
+<span class="linenos"> 84</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="nx">c</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
+<span class="linenos"> 85</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="nx">c</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span>
+<span class="linenos"> 86</span>
+<span class="linenos"> 87</span><span class="w">  </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Int32Array</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">7</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">,</span><span class="w"> </span><span class="mf">9</span><span class="p">);</span>
+<span class="linenos"> 88</span><span class="w">  </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// copy. start index 1 (included), stop index 3 (excluded)</span>
+<span class="linenos"> 89</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="linenos"> 90</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">b</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="nx">a</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span>
+<span class="linenos"> 91</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">b</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="nx">a</span><span class="p">[</span><span class="mf">2</span><span class="p">]);</span>
+<span class="linenos"> 92</span><span class="w">  </span><span class="nx">b</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span>
+<span class="linenos"> 93</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// a is not changed</span>
+<span class="linenos"> 94</span>
+<span class="linenos"> 95</span><span class="w">  </span><span class="c1">// share memory. start index 1 (included), stop index 3 (excluded)</span>
+<span class="linenos"> 96</span><span class="w">  </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">subarray</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span>
+<span class="linenos"> 97</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="linenos"> 98</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">c</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="nx">a</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span>
+<span class="linenos"> 99</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">c</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="nx">a</span><span class="p">[</span><span class="mf">2</span><span class="p">]);</span>
+<span class="linenos">100</span><span class="w">  </span><span class="nx">c</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span>
+<span class="linenos">101</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
+<span class="linenos">102</span>
+<span class="linenos">103</span><span class="w">  </span><span class="c1">// slice() copies data!</span>
+<span class="linenos">104</span><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span>
+<span class="linenos">105</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="linenos">106</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="nx">a</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span>
+<span class="linenos">107</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="nx">a</span><span class="p">[</span><span class="mf">2</span><span class="p">]);</span>
+<span class="linenos">108</span><span class="w">  </span><span class="nx">d</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1000</span><span class="p">;</span>
+<span class="linenos">109</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span><span class="w"> </span><span class="c1">// a is not changed</span>
+<span class="linenos">110</span><span class="p">}</span>
+<span class="linenos">111</span>
+<span class="linenos">112</span><span class="nx">test_uint32_array</span><span class="p">();</span>
+<span class="linenos">113</span><span class="nx">test_int32_array</span><span class="p">();</span>
+<span class="linenos">114</span><span class="nx">test_int32_array2</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">./code/int8_array.js</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">// https://nodejs.org/api/assert.html</span>
+<span class="linenos"> 2</span><span class="kd">const</span><span class="w"> </span><span class="nx">assert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;node:assert&#39;</span><span class="p">);</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="c1">// From an array</span>
+<span class="linenos"> 5</span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="p">];</span>
+<span class="linenos"> 6</span><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Int8Array</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// copy a into b</span>
+<span class="linenos"> 7</span><span class="nx">b</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span>
+<span class="linenos"> 8</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<span class="linenos"> 9</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">b</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span>
+<span class="linenos">10</span><span class="nx">assert</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="c1">// From a length. 0 initialized</span>
+<span class="linenos">13</span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Int8Array</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>
+<span class="linenos">14</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="linenos">15</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">c</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">16</span><span class="w">  </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="linenos">17</span><span class="p">}</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nx">BYTES_PER_ELEMENT</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">./code/int32_array.js</span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">// https://nodejs.org/api/assert.html</span>
+<span class="linenos"> 2</span><span class="kd">const</span><span class="w"> </span><span class="nx">assert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;node:assert&#39;</span><span class="p">);</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="c1">// 8 bytes buffer</span>
+<span class="linenos"> 5</span><span class="kd">let</span><span class="w"> </span><span class="nx">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">ArrayBuffer</span><span class="p">(</span><span class="mf">8</span><span class="p">);</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Int32Array</span><span class="p">(</span><span class="nx">buffer</span><span class="p">);</span>
+<span class="linenos"> 8</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w">     </span><span class="c1">// 2 ints</span>
+<span class="linenos"> 9</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">byteLength</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">);</span><span class="w"> </span><span class="c1">// 8 bytes</span>
+<span class="linenos">10</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">byteOffset</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="c1">// a and b share the same buffer</span>
+<span class="linenos">13</span><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Int8Array</span><span class="p">(</span><span class="nx">buffer</span><span class="p">);</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="nx">a</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x12345678</span><span class="p">;</span>
+<span class="linenos">16</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">b</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="mh">0x78</span><span class="p">);</span><span class="w"> </span><span class="c1">// little endian</span>
+<span class="linenos">17</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">b</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="mh">0x56</span><span class="p">);</span><span class="w"> </span><span class="c1">// little endian</span>
+<span class="linenos">18</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">b</span><span class="p">[</span><span class="mf">2</span><span class="p">],</span><span class="w"> </span><span class="mh">0x34</span><span class="p">);</span><span class="w"> </span><span class="c1">// little endian</span>
+<span class="linenos">19</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">b</span><span class="p">[</span><span class="mf">3</span><span class="p">],</span><span class="w"> </span><span class="mh">0x12</span><span class="p">);</span><span class="w"> </span><span class="c1">// little endian</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span><span class="c1">// subarray(start, end) -&gt; No copy</span>
+<span class="linenos">22</span><span class="kd">let</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">subarray</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// view to the same buffer, no copy</span>
+<span class="linenos">23</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="linenos">24</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nx">byteOffset</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<span class="linenos">25</span><span class="nx">b</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x23</span><span class="p">;</span>
+<span class="linenos">26</span><span class="nx">b</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x32</span><span class="p">;</span>
+<span class="linenos">27</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">c</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="mh">0x23</span><span class="p">);</span>
+<span class="linenos">28</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">c</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="mh">0x32</span><span class="p">);</span>
+<span class="linenos">29</span>
+<span class="linenos">30</span><span class="c1">// slice(start, end) -&gt; copy</span>
+<span class="linenos">31</span><span class="kd">let</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// copy</span>
+<span class="linenos">32</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="linenos">33</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="mh">0x23</span><span class="p">);</span>
+<span class="linenos">34</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="mh">0x32</span><span class="p">);</span>
+<span class="linenos">35</span><span class="nx">b</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x11</span><span class="p">;</span>
+<span class="linenos">36</span><span class="nx">b</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x22</span><span class="p">;</span>
+<span class="linenos">37</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="mh">0x23</span><span class="p">);</span>
+<span class="linenos">38</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">d</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="mh">0x32</span><span class="p">);</span>
+<span class="linenos">39</span>
+<span class="linenos">40</span><span class="c1">// share the same buffer</span>
+<span class="linenos">41</span><span class="kd">let</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Int8Array</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">buffer</span><span class="p">);</span>
+<span class="linenos">42</span><span class="nx">b</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x30</span><span class="p">;</span>
+<span class="linenos">43</span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">e</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="mh">0x30</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="array.html" class="btn btn-neutral float-left" title="array in javascript" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="regular_expression.html" class="btn btn-neutral float-right" title="Regular expressions in javascript" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

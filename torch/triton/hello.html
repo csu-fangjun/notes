@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="References" href="references.html" />
+    <link rel="prev" title="triton" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">torch</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../load-and-save.html">torch.load and torch.save</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gather.html">torch.gather</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ddp/index.html">DDP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../torchscript/index.html">TorchScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logical-op.html">Logical operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notes.html">Note</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quantization/index.html">Quantization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../android/index.html">android</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">triton</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Hello</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#test-cuda">test-cuda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vector-additon">vector additon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vector-subtraction">vector subtraction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vector-add-scalar">vector add scalar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#matrix-add-matrix">matrix add matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#batched-matrix-add-matrix">batched matrix add matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#matrix-multiplication">matrix multiplication</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vector-addition.html">vector addition</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../lstm.html">nn.LSTM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../torchvision.html">torchvision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../autograd.html">audograd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../seed.html">seed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../float16.html">float16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dynamo.html">Dynamo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../random.html">random</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compile.html">compile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../benchmark.html">benchmark</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cv2.html">cv2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../einsum.html">einsum</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../papers/index.html">Papers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pascal/index.html">Pascal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../llm/index.html">LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ascend/index.html">ascend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../qnn/index.html">qnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">torch</a></li>
+          <li class="breadcrumb-item"><a href="index.html">triton</a></li>
+      <li class="breadcrumb-item active">Hello</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/torch/triton/hello.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="hello">
+<h1>Hello<a class="headerlink" href="#hello" title="Permalink to this heading"></a></h1>
+<section id="test-cuda">
+<h2>test-cuda<a class="headerlink" href="#test-cuda" title="Permalink to this heading"></a></h2>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/test-cuda.py</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/usr/bin/env python3</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 6</span><span class="sd">L2_cache_size: 6291456</span>
+<span class="linenos"> 7</span><span class="sd">gcnArchName: Tesla V100-PCIE-32GB</span>
+<span class="linenos"> 8</span><span class="sd">is_integrated: 0</span>
+<span class="linenos"> 9</span><span class="sd">is_multi_gpu_board: 0</span>
+<span class="linenos">10</span><span class="sd">major: 7</span>
+<span class="linenos">11</span><span class="sd">max_threads_per_multi_processor: 2048</span>
+<span class="linenos">12</span><span class="sd">minor: 0</span>
+<span class="linenos">13</span><span class="sd">multi_processor_count: 80</span>
+<span class="linenos">14</span><span class="sd">name: Tesla V100-PCIE-32GB</span>
+<span class="linenos">15</span><span class="sd">regs_per_multiprocessor: 65536</span>
+<span class="linenos">16</span><span class="sd">shared_memory_per_block: 49152</span>
+<span class="linenos">17</span><span class="sd">shared_memory_per_block_optin: 98304</span>
+<span class="linenos">18</span><span class="sd">shared_memory_per_multiprocessor: 98304</span>
+<span class="linenos">19</span><span class="sd">total_memory: 34079899648</span>
+<span class="linenos">20</span><span class="sd">uuid: 2e9d29fc-608b-1348-6c9d-c190dc3bddbe</span>
+<span class="linenos">21</span><span class="sd">warp_size: 32</span>
+<span class="linenos">22</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span><span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+<span class="linenos">26</span>    <span class="c1">#  print(help(torch.cuda.get_device_properties(&quot;cuda:0&quot;)))</span>
+<span class="linenos">27</span>    <span class="n">props</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">get_device_properties</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">28</span>    <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">props</span><span class="p">):</span>
+<span class="linenos">29</span>        <span class="c1"># skip internal/private attributes</span>
+<span class="linenos">30</span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">attr</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">):</span>
+<span class="linenos">31</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">attr</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">getattr</span><span class="p">(</span><span class="n">props</span><span class="p">,</span><span class="w"> </span><span class="n">attr</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">32</span>
+<span class="linenos">33</span>
+<span class="linenos">34</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos">35</span>    <span class="n">test</span><span class="p">()</span>
+<span class="linenos">36</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="linenos">39</span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="vector-additon">
+<h2>vector additon<a class="headerlink" href="#vector-additon" title="Permalink to this heading"></a></h2>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">./code/vector_addition.py</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/usr/bin/env python3</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="linenos"> 4</span><span class="kn">import</span> <span class="nn">triton</span>
+<span class="linenos"> 5</span><span class="kn">import</span> <span class="nn">triton.language</span> <span class="k">as</span> <span class="nn">tl</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="c1"># e.g., cuda:0</span>
+<span class="linenos"> 8</span><span class="n">DEVICE</span> <span class="o">=</span> <span class="n">triton</span><span class="o">.</span><span class="n">runtime</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">active</span><span class="o">.</span><span class="n">get_active_torch_device</span><span class="p">()</span>
+<span class="linenos"> 9</span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">DEVICE</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">DEVICE</span><span class="p">)</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="nd">@triton</span><span class="o">.</span><span class="n">jit</span>
+<span class="linenos">13</span><span class="k">def</span> <span class="nf">add_kernel</span><span class="p">(</span><span class="n">x_ptr</span><span class="p">,</span> <span class="n">y_ptr</span><span class="p">,</span> <span class="n">output_ptr</span><span class="p">,</span> <span class="n">n_elements</span><span class="p">,</span> <span class="n">BLOCK_SIZE</span><span class="p">:</span> <span class="n">tl</span><span class="o">.</span><span class="n">constexpr</span><span class="p">):</span>
+<span class="linenos">14</span>    <span class="n">pid</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">program_id</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">15</span>    <span class="n">block_start</span> <span class="o">=</span> <span class="n">pid</span> <span class="o">*</span> <span class="n">BLOCK_SIZE</span>
+<span class="linenos">16</span>    <span class="n">offsets</span> <span class="o">=</span> <span class="n">block_start</span> <span class="o">+</span> <span class="n">tl</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">BLOCK_SIZE</span><span class="p">)</span>
+<span class="linenos">17</span>    <span class="n">mask</span> <span class="o">=</span> <span class="n">offsets</span> <span class="o">&lt;</span> <span class="n">n_elements</span>
+<span class="linenos">18</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">x_ptr</span> <span class="o">+</span> <span class="n">offsets</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>
+<span class="linenos">19</span>    <span class="n">y</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">y_ptr</span> <span class="o">+</span> <span class="n">offsets</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>
+<span class="linenos">20</span>    <span class="n">output</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="linenos">21</span>    <span class="n">tl</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">output_ptr</span> <span class="o">+</span> <span class="n">offsets</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+<span class="linenos">25</span>    <span class="n">output</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">26</span>    <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">device</span> <span class="o">==</span> <span class="n">DEVICE</span> <span class="ow">and</span> <span class="n">y</span><span class="o">.</span><span class="n">device</span> <span class="o">==</span> <span class="n">DEVICE</span> <span class="ow">and</span> <span class="n">output</span><span class="o">.</span><span class="n">device</span> <span class="o">==</span> <span class="n">DEVICE</span><span class="p">,</span> <span class="p">(</span>
+<span class="linenos">27</span>        <span class="n">x</span><span class="o">.</span><span class="n">deivce</span><span class="p">,</span>
+<span class="linenos">28</span>        <span class="n">y</span><span class="o">.</span><span class="n">device</span><span class="p">,</span>
+<span class="linenos">29</span>        <span class="n">output</span><span class="o">.</span><span class="n">device</span><span class="p">,</span>
+<span class="linenos">30</span>    <span class="p">)</span>
+<span class="linenos">31</span>    <span class="n">n_elements</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">numel</span><span class="p">()</span>
+<span class="linenos">32</span>    <span class="n">grid</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">meta</span><span class="p">:</span> <span class="p">(</span><span class="n">triton</span><span class="o">.</span><span class="n">cdiv</span><span class="p">(</span><span class="n">n_elements</span><span class="p">,</span> <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;BLOCK_SIZE&quot;</span><span class="p">]),)</span>
+<span class="linenos">33</span>    <span class="n">add_kernel</span><span class="p">[</span><span class="n">grid</span><span class="p">](</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">n_elements</span><span class="p">,</span> <span class="n">BLOCK_SIZE</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
+<span class="linenos">34</span>    <span class="k">return</span> <span class="n">output</span>
+<span class="linenos">35</span>
+<span class="linenos">36</span>
+<span class="linenos">37</span><span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">38</span><span class="n">size</span> <span class="o">=</span> <span class="mi">98432</span>
+<span class="linenos">39</span><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">DEVICE</span><span class="p">)</span>
+<span class="linenos">40</span><span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">DEVICE</span><span class="p">)</span>
+<span class="linenos">41</span><span class="n">output_torch</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="linenos">42</span><span class="n">output_triton</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="linenos">43</span><span class="nb">print</span><span class="p">(</span><span class="n">output_torch</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+<span class="linenos">44</span><span class="nb">print</span><span class="p">(</span><span class="n">output_triton</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+<span class="linenos">45</span><span class="nb">print</span><span class="p">(</span>
+<span class="linenos">46</span>    <span class="sa">f</span><span class="s2">&quot;The maximum difference between torch and triton is &quot;</span>
+<span class="linenos">47</span>    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">torch</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">output_torch</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">output_triton</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="linenos">48</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="vector-subtraction">
+<h2>vector subtraction<a class="headerlink" href="#vector-subtraction" title="Permalink to this heading"></a></h2>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">./code/vector_sub.py</span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/usr/bin/env python3</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">triton</span>
+<span class="linenos"> 4</span><span class="kn">import</span> <span class="nn">triton.language</span> <span class="k">as</span> <span class="nn">tl</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="nd">@triton</span><span class="o">.</span><span class="n">jit</span>
+<span class="linenos">10</span><span class="k">def</span> <span class="nf">sub_kernel</span><span class="p">(</span><span class="n">x_ptr</span><span class="p">,</span> <span class="n">y_ptr</span><span class="p">,</span> <span class="n">output_ptr</span><span class="p">,</span> <span class="n">n_elements</span><span class="p">,</span> <span class="n">BLOCK_SIZE</span><span class="p">:</span> <span class="n">tl</span><span class="o">.</span><span class="n">constexpr</span><span class="p">):</span>
+<span class="linenos">11</span>    <span class="n">start</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">program_id</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">12</span>    <span class="n">offset</span> <span class="o">=</span> <span class="n">start</span> <span class="o">*</span> <span class="n">BLOCK_SIZE</span> <span class="o">+</span> <span class="n">tl</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">BLOCK_SIZE</span><span class="p">)</span>
+<span class="linenos">13</span>    <span class="n">mask</span> <span class="o">=</span> <span class="n">offset</span> <span class="o">&lt;</span> <span class="n">n_elements</span>
+<span class="linenos">14</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">x_ptr</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>
+<span class="linenos">15</span>    <span class="n">y</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">y_ptr</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>
+<span class="linenos">16</span>    <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
+<span class="linenos">17</span>    <span class="n">tl</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">output_ptr</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="k">def</span> <span class="nf">sub</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
+<span class="linenos">21</span>    <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">device</span> <span class="o">==</span> <span class="n">device</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">device</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
+<span class="linenos">22</span>    <span class="k">assert</span> <span class="n">y</span><span class="o">.</span><span class="n">device</span> <span class="o">==</span> <span class="n">device</span><span class="p">,</span> <span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">device</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
+<span class="linenos">23</span>    <span class="n">n</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">nelement</span><span class="p">()</span>
+<span class="linenos">24</span>    <span class="n">grid</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">meta</span><span class="p">:</span> <span class="p">(</span><span class="n">triton</span><span class="o">.</span><span class="n">cdiv</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;BLOCK_SIZE&quot;</span><span class="p">]),)</span>
+<span class="linenos">25</span>    <span class="n">z</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">26</span>    <span class="n">sub_kernel</span><span class="p">[</span><span class="n">grid</span><span class="p">](</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">BLOCK_SIZE</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
+<span class="linenos">27</span>    <span class="k">return</span> <span class="n">z</span>
+<span class="linenos">28</span>
+<span class="linenos">29</span>
+<span class="linenos">30</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos">31</span>    <span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="linenos">32</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+<span class="linenos">33</span>    <span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+<span class="linenos">34</span>    <span class="n">z0</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
+<span class="linenos">35</span>    <span class="n">z1</span> <span class="o">=</span> <span class="n">sub</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="linenos">36</span>    <span class="nb">print</span><span class="p">(</span><span class="n">z0</span><span class="p">)</span>
+<span class="linenos">37</span>    <span class="nb">print</span><span class="p">(</span><span class="n">z1</span><span class="p">)</span>
+<span class="linenos">38</span>    <span class="nb">print</span><span class="p">((</span><span class="n">z0</span> <span class="o">-</span> <span class="n">z1</span><span class="p">)</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="linenos">39</span>
+<span class="linenos">40</span>
+<span class="linenos">41</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="linenos">42</span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="vector-add-scalar">
+<h2>vector add scalar<a class="headerlink" href="#vector-add-scalar" title="Permalink to this heading"></a></h2>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">./code/vector_add_scalar.py</span><a class="headerlink" href="#id4" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/usr/bin/env python3</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">triton</span>
+<span class="linenos"> 4</span><span class="kn">import</span> <span class="nn">triton.language</span> <span class="k">as</span> <span class="nn">tl</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="nd">@triton</span><span class="o">.</span><span class="n">jit</span>
+<span class="linenos">10</span><span class="k">def</span> <span class="nf">vector_add_scalar_kernel</span><span class="p">(</span><span class="n">x_ptr</span><span class="p">,</span> <span class="n">y_ptr</span><span class="p">,</span> <span class="n">scalar</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">BLOCK_SIZE</span><span class="p">:</span> <span class="n">tl</span><span class="o">.</span><span class="n">constexpr</span><span class="p">):</span>
+<span class="linenos">11</span>    <span class="n">start</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">program_id</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">12</span>    <span class="n">offset</span> <span class="o">=</span> <span class="n">start</span> <span class="o">*</span> <span class="n">BLOCK_SIZE</span> <span class="o">+</span> <span class="n">tl</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">BLOCK_SIZE</span><span class="p">)</span>
+<span class="linenos">13</span>    <span class="n">mask</span> <span class="o">=</span> <span class="n">offset</span> <span class="o">&lt;</span> <span class="n">n</span>
+<span class="linenos">14</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">x_ptr</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>
+<span class="linenos">15</span>    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">scalar</span>
+<span class="linenos">16</span>    <span class="n">tl</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">y_ptr</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="k">def</span> <span class="nf">vector_add_scalar</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">scalar</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+<span class="linenos">20</span>    <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">device</span> <span class="o">==</span> <span class="n">device</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">device</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
+<span class="linenos">21</span>    <span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">22</span>    <span class="n">n</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">nelement</span><span class="p">()</span>
+<span class="linenos">23</span>    <span class="n">grid</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">meta</span><span class="p">:</span> <span class="p">(</span><span class="n">triton</span><span class="o">.</span><span class="n">cdiv</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;BLOCK_SIZE&quot;</span><span class="p">]),)</span>
+<span class="linenos">24</span>    <span class="n">vector_add_scalar_kernel</span><span class="p">[</span><span class="n">grid</span><span class="p">](</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">scalar</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">BLOCK_SIZE</span><span class="o">=</span><span class="mi">4096</span><span class="p">)</span>
+<span class="linenos">25</span>    <span class="k">return</span> <span class="n">y</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span>
+<span class="linenos">28</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos">29</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10240</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+<span class="linenos">30</span>    <span class="n">scalar</span> <span class="o">=</span> <span class="mf">2.25</span>
+<span class="linenos">31</span>    <span class="n">y0</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">scalar</span>
+<span class="linenos">32</span>    <span class="n">y1</span> <span class="o">=</span> <span class="n">vector_add_scalar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">scalar</span><span class="p">)</span>
+<span class="linenos">33</span>    <span class="c1">#  print(x)</span>
+<span class="linenos">34</span>    <span class="c1">#  print(y0)</span>
+<span class="linenos">35</span>    <span class="c1">#  print(y1)</span>
+<span class="linenos">36</span>    <span class="nb">print</span><span class="p">((</span><span class="n">y0</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span>
+<span class="linenos">39</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="linenos">40</span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="matrix-add-matrix">
+<h2>matrix add matrix<a class="headerlink" href="#matrix-add-matrix" title="Permalink to this heading"></a></h2>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">./code/matrix_add_matrix.py</span><a class="headerlink" href="#id5" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/usr/bin/env python3</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">triton</span>
+<span class="linenos"> 4</span><span class="kn">import</span> <span class="nn">triton.language</span> <span class="k">as</span> <span class="nn">tl</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="nd">@triton</span><span class="o">.</span><span class="n">jit</span>
+<span class="linenos">10</span><span class="k">def</span> <span class="nf">matrix_add_matrix_kernel</span><span class="p">(</span>
+<span class="linenos">11</span>    <span class="n">x_ptr</span><span class="p">,</span>
+<span class="linenos">12</span>    <span class="n">y_ptr</span><span class="p">,</span>
+<span class="linenos">13</span>    <span class="n">out_ptr</span><span class="p">,</span>
+<span class="linenos">14</span>    <span class="n">num_rows</span><span class="p">,</span>
+<span class="linenos">15</span>    <span class="n">num_cols</span><span class="p">,</span>
+<span class="linenos">16</span>    <span class="n">BLOCK_SIZE_ROW</span><span class="p">:</span> <span class="n">tl</span><span class="o">.</span><span class="n">constexpr</span><span class="p">,</span>
+<span class="linenos">17</span>    <span class="n">BLOCK_SIZE_COL</span><span class="p">:</span> <span class="n">tl</span><span class="o">.</span><span class="n">constexpr</span><span class="p">,</span>
+<span class="linenos">18</span><span class="p">):</span>
+<span class="linenos">19</span>    <span class="n">row_start</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">program_id</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">20</span>    <span class="n">col_start</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">program_id</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span>    <span class="n">row_offset</span> <span class="o">=</span> <span class="n">row_start</span> <span class="o">*</span> <span class="n">BLOCK_SIZE_ROW</span> <span class="o">+</span> <span class="n">tl</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">BLOCK_SIZE_ROW</span><span class="p">)[:,</span> <span class="kc">None</span><span class="p">]</span>
+<span class="linenos">23</span>    <span class="n">col_offset</span> <span class="o">=</span> <span class="n">col_start</span> <span class="o">*</span> <span class="n">BLOCK_SIZE_COL</span> <span class="o">+</span> <span class="n">tl</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">BLOCK_SIZE_COL</span><span class="p">)[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]</span>
+<span class="linenos">24</span>    <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">row_offset</span> <span class="o">&lt;</span> <span class="n">num_rows</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">col_offset</span> <span class="o">&lt;</span> <span class="n">num_cols</span><span class="p">)</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span>    <span class="n">offset</span> <span class="o">=</span> <span class="n">row_offset</span> <span class="o">*</span> <span class="n">num_cols</span> <span class="o">+</span> <span class="n">col_offset</span>
+<span class="linenos">27</span>
+<span class="linenos">28</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">x_ptr</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>
+<span class="linenos">29</span>    <span class="n">y</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">y_ptr</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>
+<span class="linenos">30</span>    <span class="n">out</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="linenos">31</span>    <span class="n">tl</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">out_ptr</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>
+<span class="linenos">32</span>
+<span class="linenos">33</span>
+<span class="linenos">34</span><span class="k">def</span> <span class="nf">matrix_add_matrix</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+<span class="linenos">35</span>    <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">device</span> <span class="o">==</span> <span class="n">device</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">device</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
+<span class="linenos">36</span>    <span class="k">assert</span> <span class="n">y</span><span class="o">.</span><span class="n">device</span> <span class="o">==</span> <span class="n">device</span><span class="p">,</span> <span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">device</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
+<span class="linenos">37</span>    <span class="n">z</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">38</span>    <span class="n">num_rows</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos">39</span>    <span class="n">num_cols</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="linenos">40</span>    <span class="n">grid</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">meta</span><span class="p">:</span> <span class="p">(</span>
+<span class="linenos">41</span>        <span class="n">triton</span><span class="o">.</span><span class="n">cdiv</span><span class="p">(</span><span class="n">num_rows</span><span class="p">,</span> <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;BLOCK_SIZE_ROW&quot;</span><span class="p">]),</span>
+<span class="linenos">42</span>        <span class="n">triton</span><span class="o">.</span><span class="n">cdiv</span><span class="p">(</span><span class="n">num_cols</span><span class="p">,</span> <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;BLOCK_SIZE_COL&quot;</span><span class="p">]),</span>
+<span class="linenos">43</span>    <span class="p">)</span>
+<span class="linenos">44</span>    <span class="n">matrix_add_matrix_kernel</span><span class="p">[</span><span class="n">grid</span><span class="p">](</span>
+<span class="linenos">45</span>        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">num_rows</span><span class="p">,</span> <span class="n">num_cols</span><span class="p">,</span> <span class="n">BLOCK_SIZE_ROW</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">BLOCK_SIZE_COL</span><span class="o">=</span><span class="mi">32</span>
+<span class="linenos">46</span>    <span class="p">)</span>
+<span class="linenos">47</span>    <span class="k">return</span> <span class="n">z</span>
+<span class="linenos">48</span>
+<span class="linenos">49</span>
+<span class="linenos">50</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos">51</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">301</span><span class="p">,</span> <span class="mi">529</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+<span class="linenos">52</span>    <span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">301</span><span class="p">,</span> <span class="mi">529</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+<span class="linenos">53</span>    <span class="n">z0</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="linenos">54</span>    <span class="n">z1</span> <span class="o">=</span> <span class="n">matrix_add_matrix</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="linenos">55</span>    <span class="c1">#  print(x)</span>
+<span class="linenos">56</span>    <span class="c1">#  print(y)</span>
+<span class="linenos">57</span>    <span class="c1">#  print(z0)</span>
+<span class="linenos">58</span>    <span class="c1">#  print(z1)</span>
+<span class="linenos">59</span>    <span class="nb">print</span><span class="p">((</span><span class="n">z0</span> <span class="o">-</span> <span class="n">z1</span><span class="p">)</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="linenos">60</span>
+<span class="linenos">61</span>
+<span class="linenos">62</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="linenos">63</span>    <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">20250810</span><span class="p">)</span>
+<span class="linenos">64</span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="batched-matrix-add-matrix">
+<h2>batched matrix add matrix<a class="headerlink" href="#batched-matrix-add-matrix" title="Permalink to this heading"></a></h2>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">./code/batched_matrix_add.py</span><a class="headerlink" href="#id6" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/usr/bin/env python3</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">triton</span>
+<span class="linenos"> 4</span><span class="kn">import</span> <span class="nn">triton.language</span> <span class="k">as</span> <span class="nn">tl</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="nd">@triton</span><span class="o">.</span><span class="n">jit</span>
+<span class="linenos">10</span><span class="k">def</span> <span class="nf">add_kernel</span><span class="p">(</span>
+<span class="linenos">11</span>    <span class="n">a_ptr</span><span class="p">,</span>
+<span class="linenos">12</span>    <span class="n">b_ptr</span><span class="p">,</span>
+<span class="linenos">13</span>    <span class="n">c_ptr</span><span class="p">,</span>
+<span class="linenos">14</span>    <span class="n">num_rows</span><span class="p">,</span>
+<span class="linenos">15</span>    <span class="n">num_cols</span><span class="p">,</span>
+<span class="linenos">16</span>    <span class="n">BLOCK_SIZE_ROW</span><span class="p">:</span> <span class="n">tl</span><span class="o">.</span><span class="n">constexpr</span><span class="p">,</span>
+<span class="linenos">17</span>    <span class="n">BLOCK_SIZE_COL</span><span class="p">:</span> <span class="n">tl</span><span class="o">.</span><span class="n">constexpr</span><span class="p">,</span>
+<span class="linenos">18</span><span class="p">):</span>
+<span class="linenos">19</span>    <span class="n">batch_start</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">program_id</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">20</span>    <span class="n">row_start</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">program_id</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">21</span>    <span class="n">col_start</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">program_id</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span>    <span class="n">batch_offset</span> <span class="o">=</span> <span class="n">batch_start</span> <span class="o">*</span> <span class="n">num_rows</span> <span class="o">*</span> <span class="n">num_cols</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span>    <span class="n">row_offset</span> <span class="o">=</span> <span class="n">row_start</span> <span class="o">*</span> <span class="n">BLOCK_SIZE_ROW</span> <span class="o">+</span> <span class="n">tl</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">BLOCK_SIZE_ROW</span><span class="p">)[:,</span> <span class="kc">None</span><span class="p">]</span>
+<span class="linenos">26</span>    <span class="n">col_offset</span> <span class="o">=</span> <span class="n">col_start</span> <span class="o">*</span> <span class="n">BLOCK_SIZE_COL</span> <span class="o">+</span> <span class="n">tl</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">BLOCK_SIZE_COL</span><span class="p">)[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]</span>
+<span class="linenos">27</span>
+<span class="linenos">28</span>    <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">row_offset</span> <span class="o">&lt;</span> <span class="n">num_rows</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">col_offset</span> <span class="o">&lt;</span> <span class="n">num_cols</span><span class="p">)</span>
+<span class="linenos">29</span>
+<span class="linenos">30</span>    <span class="n">offset</span> <span class="o">=</span> <span class="n">batch_offset</span> <span class="o">+</span> <span class="n">row_offset</span> <span class="o">*</span> <span class="n">num_cols</span> <span class="o">+</span> <span class="n">col_offset</span>
+<span class="linenos">31</span>    <span class="n">a</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">a_ptr</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>
+<span class="linenos">32</span>    <span class="n">b</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">b_ptr</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>
+<span class="linenos">33</span>    <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="linenos">34</span>    <span class="n">tl</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">c_ptr</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>
+<span class="linenos">35</span>
+<span class="linenos">36</span>
+<span class="linenos">37</span><span class="k">def</span> <span class="nf">batched_add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+<span class="linenos">38</span>    <span class="k">assert</span> <span class="n">a</span><span class="o">.</span><span class="n">device</span> <span class="o">==</span> <span class="n">device</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">device</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
+<span class="linenos">39</span>    <span class="k">assert</span> <span class="n">b</span><span class="o">.</span><span class="n">device</span> <span class="o">==</span> <span class="n">device</span><span class="p">,</span> <span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">device</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
+<span class="linenos">40</span>
+<span class="linenos">41</span>    <span class="n">n</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span>
+<span class="linenos">42</span>    <span class="n">BLOCK_SIZE_ROW</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="linenos">43</span>    <span class="n">BLOCK_SIZE_COL</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="linenos">44</span>    <span class="n">grid</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">triton</span><span class="o">.</span><span class="n">cdiv</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">BLOCK_SIZE_ROW</span><span class="p">),</span> <span class="n">triton</span><span class="o">.</span><span class="n">cdiv</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">BLOCK_SIZE_COL</span><span class="p">))</span>
+<span class="linenos">45</span>    <span class="n">out</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="linenos">46</span>    <span class="n">add_kernel</span><span class="p">[</span><span class="n">grid</span><span class="p">](</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">BLOCK_SIZE_ROW</span><span class="p">,</span> <span class="n">BLOCK_SIZE_COL</span><span class="p">)</span>
+<span class="linenos">47</span>    <span class="k">return</span> <span class="n">out</span>
+<span class="linenos">48</span>
+<span class="linenos">49</span>
+<span class="linenos">50</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos">51</span>    <span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+<span class="linenos">52</span>    <span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+<span class="linenos">53</span>    <span class="n">c0</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="linenos">54</span>    <span class="n">c1</span> <span class="o">=</span> <span class="n">batched_add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="linenos">55</span>    <span class="nb">print</span><span class="p">((</span><span class="n">c0</span> <span class="o">-</span> <span class="n">c1</span><span class="p">)</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="linenos">56</span>
+<span class="linenos">57</span>
+<span class="linenos">58</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="linenos">59</span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="matrix-multiplication">
+<h2>matrix multiplication<a class="headerlink" href="#matrix-multiplication" title="Permalink to this heading"></a></h2>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">./code/matrix_mul.py</span><a class="headerlink" href="#id7" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="ch">#!/usr/bin/env python3</span>
+<span class="linenos">  2</span>
+<span class="linenos">  3</span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="linenos">  4</span><span class="kn">import</span> <span class="nn">triton.language</span> <span class="k">as</span> <span class="nn">tl</span>
+<span class="linenos">  5</span><span class="kn">import</span> <span class="nn">triton</span>
+<span class="linenos">  6</span>
+<span class="linenos">  7</span>
+<span class="linenos">  8</span><span class="k">def</span> <span class="nf">is_cuda</span><span class="p">():</span>
+<span class="linenos">  9</span>    <span class="k">return</span> <span class="n">triton</span><span class="o">.</span><span class="n">runtime</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">active</span><span class="o">.</span><span class="n">get_current_target</span><span class="p">()</span><span class="o">.</span><span class="n">backend</span> <span class="o">==</span> <span class="s2">&quot;cuda&quot;</span>
+<span class="linenos"> 10</span>
+<span class="linenos"> 11</span>
+<span class="linenos"> 12</span><span class="k">def</span> <span class="nf">get_cuda_autotune_config</span><span class="p">():</span>
+<span class="linenos"> 13</span>    <span class="k">return</span> <span class="p">[</span>
+<span class="linenos"> 14</span>        <span class="n">triton</span><span class="o">.</span><span class="n">Config</span><span class="p">(</span>
+<span class="linenos"> 15</span>            <span class="p">{</span>
+<span class="linenos"> 16</span>                <span class="s2">&quot;BLOCK_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+<span class="linenos"> 17</span>                <span class="s2">&quot;BLOCK_SIZE_N&quot;</span><span class="p">:</span> <span class="mi">256</span><span class="p">,</span>
+<span class="linenos"> 18</span>                <span class="s2">&quot;BLOCK_SIZE_K&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
+<span class="linenos"> 19</span>                <span class="s2">&quot;GROUP_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+<span class="linenos"> 20</span>            <span class="p">},</span>
+<span class="linenos"> 21</span>            <span class="n">num_stages</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="linenos"> 22</span>            <span class="n">num_warps</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+<span class="linenos"> 23</span>        <span class="p">),</span>
+<span class="linenos"> 24</span>        <span class="n">triton</span><span class="o">.</span><span class="n">Config</span><span class="p">(</span>
+<span class="linenos"> 25</span>            <span class="p">{</span>
+<span class="linenos"> 26</span>                <span class="s2">&quot;BLOCK_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
+<span class="linenos"> 27</span>                <span class="s2">&quot;BLOCK_SIZE_N&quot;</span><span class="p">:</span> <span class="mi">256</span><span class="p">,</span>
+<span class="linenos"> 28</span>                <span class="s2">&quot;BLOCK_SIZE_K&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+<span class="linenos"> 29</span>                <span class="s2">&quot;GROUP_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+<span class="linenos"> 30</span>            <span class="p">},</span>
+<span class="linenos"> 31</span>            <span class="n">num_stages</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos"> 32</span>            <span class="n">num_warps</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos"> 33</span>        <span class="p">),</span>
+<span class="linenos"> 34</span>        <span class="n">triton</span><span class="o">.</span><span class="n">Config</span><span class="p">(</span>
+<span class="linenos"> 35</span>            <span class="p">{</span>
+<span class="linenos"> 36</span>                <span class="s2">&quot;BLOCK_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+<span class="linenos"> 37</span>                <span class="s2">&quot;BLOCK_SIZE_N&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+<span class="linenos"> 38</span>                <span class="s2">&quot;BLOCK_SIZE_K&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+<span class="linenos"> 39</span>                <span class="s2">&quot;GROUP_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+<span class="linenos"> 40</span>            <span class="p">},</span>
+<span class="linenos"> 41</span>            <span class="n">num_stages</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos"> 42</span>            <span class="n">num_warps</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos"> 43</span>        <span class="p">),</span>
+<span class="linenos"> 44</span>        <span class="n">triton</span><span class="o">.</span><span class="n">Config</span><span class="p">(</span>
+<span class="linenos"> 45</span>            <span class="p">{</span>
+<span class="linenos"> 46</span>                <span class="s2">&quot;BLOCK_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+<span class="linenos"> 47</span>                <span class="s2">&quot;BLOCK_SIZE_N&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
+<span class="linenos"> 48</span>                <span class="s2">&quot;BLOCK_SIZE_K&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+<span class="linenos"> 49</span>                <span class="s2">&quot;GROUP_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+<span class="linenos"> 50</span>            <span class="p">},</span>
+<span class="linenos"> 51</span>            <span class="n">num_stages</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos"> 52</span>            <span class="n">num_warps</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos"> 53</span>        <span class="p">),</span>
+<span class="linenos"> 54</span>        <span class="n">triton</span><span class="o">.</span><span class="n">Config</span><span class="p">(</span>
+<span class="linenos"> 55</span>            <span class="p">{</span>
+<span class="linenos"> 56</span>                <span class="s2">&quot;BLOCK_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
+<span class="linenos"> 57</span>                <span class="s2">&quot;BLOCK_SIZE_N&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+<span class="linenos"> 58</span>                <span class="s2">&quot;BLOCK_SIZE_K&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+<span class="linenos"> 59</span>                <span class="s2">&quot;GROUP_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+<span class="linenos"> 60</span>            <span class="p">},</span>
+<span class="linenos"> 61</span>            <span class="n">num_stages</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos"> 62</span>            <span class="n">num_warps</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos"> 63</span>        <span class="p">),</span>
+<span class="linenos"> 64</span>        <span class="n">triton</span><span class="o">.</span><span class="n">Config</span><span class="p">(</span>
+<span class="linenos"> 65</span>            <span class="p">{</span>
+<span class="linenos"> 66</span>                <span class="s2">&quot;BLOCK_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+<span class="linenos"> 67</span>                <span class="s2">&quot;BLOCK_SIZE_N&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+<span class="linenos"> 68</span>                <span class="s2">&quot;BLOCK_SIZE_K&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+<span class="linenos"> 69</span>                <span class="s2">&quot;GROUP_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+<span class="linenos"> 70</span>            <span class="p">},</span>
+<span class="linenos"> 71</span>            <span class="n">num_stages</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos"> 72</span>            <span class="n">num_warps</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos"> 73</span>        <span class="p">),</span>
+<span class="linenos"> 74</span>        <span class="n">triton</span><span class="o">.</span><span class="n">Config</span><span class="p">(</span>
+<span class="linenos"> 75</span>            <span class="p">{</span>
+<span class="linenos"> 76</span>                <span class="s2">&quot;BLOCK_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
+<span class="linenos"> 77</span>                <span class="s2">&quot;BLOCK_SIZE_N&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+<span class="linenos"> 78</span>                <span class="s2">&quot;BLOCK_SIZE_K&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+<span class="linenos"> 79</span>                <span class="s2">&quot;GROUP_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+<span class="linenos"> 80</span>            <span class="p">},</span>
+<span class="linenos"> 81</span>            <span class="n">num_stages</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+<span class="linenos"> 82</span>            <span class="n">num_warps</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="linenos"> 83</span>        <span class="p">),</span>
+<span class="linenos"> 84</span>        <span class="n">triton</span><span class="o">.</span><span class="n">Config</span><span class="p">(</span>
+<span class="linenos"> 85</span>            <span class="p">{</span>
+<span class="linenos"> 86</span>                <span class="s2">&quot;BLOCK_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+<span class="linenos"> 87</span>                <span class="s2">&quot;BLOCK_SIZE_N&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
+<span class="linenos"> 88</span>                <span class="s2">&quot;BLOCK_SIZE_K&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+<span class="linenos"> 89</span>                <span class="s2">&quot;GROUP_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+<span class="linenos"> 90</span>            <span class="p">},</span>
+<span class="linenos"> 91</span>            <span class="n">num_stages</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+<span class="linenos"> 92</span>            <span class="n">num_warps</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="linenos"> 93</span>        <span class="p">),</span>
+<span class="linenos"> 94</span>        <span class="c1"># Good config for fp8 inputs.</span>
+<span class="linenos"> 95</span>        <span class="n">triton</span><span class="o">.</span><span class="n">Config</span><span class="p">(</span>
+<span class="linenos"> 96</span>            <span class="p">{</span>
+<span class="linenos"> 97</span>                <span class="s2">&quot;BLOCK_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+<span class="linenos"> 98</span>                <span class="s2">&quot;BLOCK_SIZE_N&quot;</span><span class="p">:</span> <span class="mi">256</span><span class="p">,</span>
+<span class="linenos"> 99</span>                <span class="s2">&quot;BLOCK_SIZE_K&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+<span class="linenos">100</span>                <span class="s2">&quot;GROUP_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+<span class="linenos">101</span>            <span class="p">},</span>
+<span class="linenos">102</span>            <span class="n">num_stages</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="linenos">103</span>            <span class="n">num_warps</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+<span class="linenos">104</span>        <span class="p">),</span>
+<span class="linenos">105</span>        <span class="n">triton</span><span class="o">.</span><span class="n">Config</span><span class="p">(</span>
+<span class="linenos">106</span>            <span class="p">{</span>
+<span class="linenos">107</span>                <span class="s2">&quot;BLOCK_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">256</span><span class="p">,</span>
+<span class="linenos">108</span>                <span class="s2">&quot;BLOCK_SIZE_N&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+<span class="linenos">109</span>                <span class="s2">&quot;BLOCK_SIZE_K&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+<span class="linenos">110</span>                <span class="s2">&quot;GROUP_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+<span class="linenos">111</span>            <span class="p">},</span>
+<span class="linenos">112</span>            <span class="n">num_stages</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="linenos">113</span>            <span class="n">num_warps</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+<span class="linenos">114</span>        <span class="p">),</span>
+<span class="linenos">115</span>        <span class="n">triton</span><span class="o">.</span><span class="n">Config</span><span class="p">(</span>
+<span class="linenos">116</span>            <span class="p">{</span>
+<span class="linenos">117</span>                <span class="s2">&quot;BLOCK_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">256</span><span class="p">,</span>
+<span class="linenos">118</span>                <span class="s2">&quot;BLOCK_SIZE_N&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
+<span class="linenos">119</span>                <span class="s2">&quot;BLOCK_SIZE_K&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+<span class="linenos">120</span>                <span class="s2">&quot;GROUP_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+<span class="linenos">121</span>            <span class="p">},</span>
+<span class="linenos">122</span>            <span class="n">num_stages</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos">123</span>            <span class="n">num_warps</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos">124</span>        <span class="p">),</span>
+<span class="linenos">125</span>        <span class="n">triton</span><span class="o">.</span><span class="n">Config</span><span class="p">(</span>
+<span class="linenos">126</span>            <span class="p">{</span>
+<span class="linenos">127</span>                <span class="s2">&quot;BLOCK_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
+<span class="linenos">128</span>                <span class="s2">&quot;BLOCK_SIZE_N&quot;</span><span class="p">:</span> <span class="mi">256</span><span class="p">,</span>
+<span class="linenos">129</span>                <span class="s2">&quot;BLOCK_SIZE_K&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+<span class="linenos">130</span>                <span class="s2">&quot;GROUP_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+<span class="linenos">131</span>            <span class="p">},</span>
+<span class="linenos">132</span>            <span class="n">num_stages</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos">133</span>            <span class="n">num_warps</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos">134</span>        <span class="p">),</span>
+<span class="linenos">135</span>        <span class="n">triton</span><span class="o">.</span><span class="n">Config</span><span class="p">(</span>
+<span class="linenos">136</span>            <span class="p">{</span>
+<span class="linenos">137</span>                <span class="s2">&quot;BLOCK_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+<span class="linenos">138</span>                <span class="s2">&quot;BLOCK_SIZE_N&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+<span class="linenos">139</span>                <span class="s2">&quot;BLOCK_SIZE_K&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+<span class="linenos">140</span>                <span class="s2">&quot;GROUP_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+<span class="linenos">141</span>            <span class="p">},</span>
+<span class="linenos">142</span>            <span class="n">num_stages</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos">143</span>            <span class="n">num_warps</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos">144</span>        <span class="p">),</span>
+<span class="linenos">145</span>        <span class="n">triton</span><span class="o">.</span><span class="n">Config</span><span class="p">(</span>
+<span class="linenos">146</span>            <span class="p">{</span>
+<span class="linenos">147</span>                <span class="s2">&quot;BLOCK_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+<span class="linenos">148</span>                <span class="s2">&quot;BLOCK_SIZE_N&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
+<span class="linenos">149</span>                <span class="s2">&quot;BLOCK_SIZE_K&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
+<span class="linenos">150</span>                <span class="s2">&quot;GROUP_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+<span class="linenos">151</span>            <span class="p">},</span>
+<span class="linenos">152</span>            <span class="n">num_stages</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos">153</span>            <span class="n">num_warps</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos">154</span>        <span class="p">),</span>
+<span class="linenos">155</span>        <span class="n">triton</span><span class="o">.</span><span class="n">Config</span><span class="p">(</span>
+<span class="linenos">156</span>            <span class="p">{</span>
+<span class="linenos">157</span>                <span class="s2">&quot;BLOCK_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
+<span class="linenos">158</span>                <span class="s2">&quot;BLOCK_SIZE_N&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+<span class="linenos">159</span>                <span class="s2">&quot;BLOCK_SIZE_K&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
+<span class="linenos">160</span>                <span class="s2">&quot;GROUP_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+<span class="linenos">161</span>            <span class="p">},</span>
+<span class="linenos">162</span>            <span class="n">num_stages</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos">163</span>            <span class="n">num_warps</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos">164</span>        <span class="p">),</span>
+<span class="linenos">165</span>        <span class="n">triton</span><span class="o">.</span><span class="n">Config</span><span class="p">(</span>
+<span class="linenos">166</span>            <span class="p">{</span>
+<span class="linenos">167</span>                <span class="s2">&quot;BLOCK_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+<span class="linenos">168</span>                <span class="s2">&quot;BLOCK_SIZE_N&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+<span class="linenos">169</span>                <span class="s2">&quot;BLOCK_SIZE_K&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
+<span class="linenos">170</span>                <span class="s2">&quot;GROUP_SIZE_M&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+<span class="linenos">171</span>            <span class="p">},</span>
+<span class="linenos">172</span>            <span class="n">num_stages</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos">173</span>            <span class="n">num_warps</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos">174</span>        <span class="p">),</span>
+<span class="linenos">175</span>    <span class="p">][:</span><span class="mi">2</span><span class="p">]</span>
+<span class="linenos">176</span>
+<span class="linenos">177</span>
+<span class="linenos">178</span><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos">179</span>
+<span class="linenos">180</span>
+<span class="linenos">181</span><span class="k">def</span> <span class="nf">get_autotune_config</span><span class="p">():</span>
+<span class="linenos">182</span>    <span class="k">assert</span> <span class="n">is_cuda</span><span class="p">()</span>
+<span class="linenos">183</span>    <span class="k">return</span> <span class="n">get_cuda_autotune_config</span><span class="p">()</span>
+<span class="linenos">184</span>
+<span class="linenos">185</span>
+<span class="linenos">186</span><span class="nd">@triton</span><span class="o">.</span><span class="n">autotune</span><span class="p">(</span>
+<span class="linenos">187</span>    <span class="n">configs</span><span class="o">=</span><span class="n">get_autotune_config</span><span class="p">(),</span>
+<span class="linenos">188</span>    <span class="n">key</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="s2">&quot;K&quot;</span><span class="p">],</span>
+<span class="linenos">189</span><span class="p">)</span>
+<span class="linenos">190</span><span class="nd">@triton</span><span class="o">.</span><span class="n">jit</span>
+<span class="linenos">191</span><span class="k">def</span> <span class="nf">matmul_kernel</span><span class="p">(</span>
+<span class="linenos">192</span>    <span class="n">a_ptr</span><span class="p">,</span>
+<span class="linenos">193</span>    <span class="n">b_ptr</span><span class="p">,</span>
+<span class="linenos">194</span>    <span class="n">c_ptr</span><span class="p">,</span>
+<span class="linenos">195</span>    <span class="n">M</span><span class="p">,</span>
+<span class="linenos">196</span>    <span class="n">N</span><span class="p">,</span>
+<span class="linenos">197</span>    <span class="n">K</span><span class="p">,</span>
+<span class="linenos">198</span>    <span class="n">stride_am</span><span class="p">,</span>
+<span class="linenos">199</span>    <span class="n">stride_ak</span><span class="p">,</span>
+<span class="linenos">200</span>    <span class="n">stride_bk</span><span class="p">,</span>
+<span class="linenos">201</span>    <span class="n">stride_bn</span><span class="p">,</span>
+<span class="linenos">202</span>    <span class="n">stride_cm</span><span class="p">,</span>
+<span class="linenos">203</span>    <span class="n">stride_cn</span><span class="p">,</span>
+<span class="linenos">204</span>    <span class="n">BLOCK_SIZE_M</span><span class="p">:</span> <span class="n">tl</span><span class="o">.</span><span class="n">constexpr</span><span class="p">,</span>
+<span class="linenos">205</span>    <span class="n">BLOCK_SIZE_N</span><span class="p">:</span> <span class="n">tl</span><span class="o">.</span><span class="n">constexpr</span><span class="p">,</span>
+<span class="linenos">206</span>    <span class="n">BLOCK_SIZE_K</span><span class="p">:</span> <span class="n">tl</span><span class="o">.</span><span class="n">constexpr</span><span class="p">,</span>
+<span class="linenos">207</span>    <span class="n">GROUP_SIZE_M</span><span class="p">:</span> <span class="n">tl</span><span class="o">.</span><span class="n">constexpr</span><span class="p">,</span>
+<span class="linenos">208</span>    <span class="n">ACTIVATION</span><span class="p">:</span> <span class="n">tl</span><span class="o">.</span><span class="n">constexpr</span><span class="p">,</span>
+<span class="linenos">209</span><span class="p">):</span>
+<span class="linenos">210</span>    <span class="n">pid</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">program_id</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">211</span>    <span class="n">num_pid_m</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">cdiv</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">BLOCK_SIZE_M</span><span class="p">)</span>
+<span class="linenos">212</span>    <span class="n">num_pid_n</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">cdiv</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">BLOCK_SIZE_N</span><span class="p">)</span>
+<span class="linenos">213</span>    <span class="n">num_pid_in_group</span> <span class="o">=</span> <span class="n">GROUP_SIZE_M</span> <span class="o">*</span> <span class="n">num_pid_n</span>
+<span class="linenos">214</span>    <span class="n">group_id</span> <span class="o">=</span> <span class="n">pid</span> <span class="o">//</span> <span class="n">num_pid_in_group</span>
+<span class="linenos">215</span>    <span class="n">first_pid_m</span> <span class="o">=</span> <span class="n">group_id</span> <span class="o">*</span> <span class="n">GROUP_SIZE_M</span>
+<span class="linenos">216</span>    <span class="n">group_size_m</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">num_pid_m</span> <span class="o">-</span> <span class="n">first_pid_m</span><span class="p">,</span> <span class="n">GROUP_SIZE_M</span><span class="p">)</span>
+<span class="linenos">217</span>    <span class="n">pid_m</span> <span class="o">=</span> <span class="n">first_pid_m</span> <span class="o">+</span> <span class="p">((</span><span class="n">pid</span> <span class="o">%</span> <span class="n">num_pid_in_group</span><span class="p">)</span> <span class="o">%</span> <span class="n">group_size_m</span><span class="p">)</span>
+<span class="linenos">218</span>    <span class="n">pid_n</span> <span class="o">=</span> <span class="p">(</span><span class="n">pid</span> <span class="o">%</span> <span class="n">num_pid_in_group</span><span class="p">)</span> <span class="o">//</span> <span class="n">group_size_m</span>
+<span class="linenos">219</span>
+<span class="linenos">220</span>    <span class="n">tl</span><span class="o">.</span><span class="n">assume</span><span class="p">(</span><span class="n">pid_m</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos">221</span>    <span class="n">tl</span><span class="o">.</span><span class="n">assume</span><span class="p">(</span><span class="n">pid_n</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos">222</span>    <span class="n">tl</span><span class="o">.</span><span class="n">assume</span><span class="p">(</span><span class="n">stride_am</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos">223</span>    <span class="n">tl</span><span class="o">.</span><span class="n">assume</span><span class="p">(</span><span class="n">stride_ak</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos">224</span>    <span class="n">tl</span><span class="o">.</span><span class="n">assume</span><span class="p">(</span><span class="n">stride_bk</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos">225</span>    <span class="n">tl</span><span class="o">.</span><span class="n">assume</span><span class="p">(</span><span class="n">stride_bn</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos">226</span>    <span class="n">tl</span><span class="o">.</span><span class="n">assume</span><span class="p">(</span><span class="n">stride_cm</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos">227</span>    <span class="n">tl</span><span class="o">.</span><span class="n">assume</span><span class="p">(</span><span class="n">stride_cn</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos">228</span>
+<span class="linenos">229</span>    <span class="n">offs_am</span> <span class="o">=</span> <span class="p">(</span><span class="n">pid_m</span> <span class="o">*</span> <span class="n">BLOCK_SIZE_M</span> <span class="o">+</span> <span class="n">tl</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">BLOCK_SIZE_M</span><span class="p">))</span> <span class="o">%</span> <span class="n">M</span>
+<span class="linenos">230</span>    <span class="n">offs_bn</span> <span class="o">=</span> <span class="p">(</span><span class="n">pid_n</span> <span class="o">*</span> <span class="n">BLOCK_SIZE_N</span> <span class="o">+</span> <span class="n">tl</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">BLOCK_SIZE_N</span><span class="p">))</span> <span class="o">%</span> <span class="n">N</span>
+<span class="linenos">231</span>    <span class="n">offs_k</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">BLOCK_SIZE_K</span><span class="p">)</span>
+<span class="linenos">232</span>
+<span class="linenos">233</span>    <span class="n">a_ptrs</span> <span class="o">=</span> <span class="n">a_ptr</span> <span class="o">+</span> <span class="p">(</span><span class="n">offs_am</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">stride_am</span> <span class="o">+</span> <span class="n">offs_k</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">stride_ak</span><span class="p">)</span>
+<span class="linenos">234</span>    <span class="n">b_ptrs</span> <span class="o">=</span> <span class="n">b_ptr</span> <span class="o">+</span> <span class="p">(</span><span class="n">offs_k</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">stride_bk</span> <span class="o">+</span> <span class="n">offs_bn</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">stride_bn</span><span class="p">)</span>
+<span class="linenos">235</span>    <span class="n">accumlator</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">BLOCK_SIZE_M</span><span class="p">,</span> <span class="n">BLOCK_SIZE_N</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tl</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="linenos">236</span>
+<span class="linenos">237</span>    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tl</span><span class="o">.</span><span class="n">cdiv</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">BLOCK_SIZE_K</span><span class="p">)):</span>
+<span class="linenos">238</span>        <span class="n">a</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">a_ptrs</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">offs_k</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]</span> <span class="o">&lt;</span> <span class="n">K</span> <span class="o">-</span> <span class="n">k</span> <span class="o">*</span> <span class="n">BLOCK_SIZE_K</span><span class="p">,</span> <span class="n">other</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="linenos">239</span>        <span class="n">b</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">b_ptrs</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">offs_k</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">K</span> <span class="o">-</span> <span class="n">k</span> <span class="o">*</span> <span class="n">BLOCK_SIZE_K</span><span class="p">,</span> <span class="n">other</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="linenos">240</span>        <span class="n">accumlator</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">accumlator</span><span class="p">)</span>
+<span class="linenos">241</span>
+<span class="linenos">242</span>        <span class="n">a_ptrs</span> <span class="o">+=</span> <span class="n">BLOCK_SIZE_K</span> <span class="o">*</span> <span class="n">stride_ak</span>
+<span class="linenos">243</span>        <span class="n">b_ptrs</span> <span class="o">+=</span> <span class="n">BLOCK_SIZE_K</span> <span class="o">*</span> <span class="n">stride_bk</span>
+<span class="linenos">244</span>    <span class="k">if</span> <span class="n">ACTIVATION</span> <span class="o">==</span> <span class="s2">&quot;leaky_relu&quot;</span><span class="p">:</span>
+<span class="linenos">245</span>        <span class="n">accumlator</span> <span class="o">=</span> <span class="n">leaky_relu</span><span class="p">(</span><span class="n">accumlator</span><span class="p">)</span>
+<span class="linenos">246</span>
+<span class="linenos">247</span>    <span class="n">c</span> <span class="o">=</span> <span class="n">accumlator</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">tl</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span>
+<span class="linenos">248</span>
+<span class="linenos">249</span>    <span class="n">offs_cm</span> <span class="o">=</span> <span class="n">pid_m</span> <span class="o">*</span> <span class="n">BLOCK_SIZE_M</span> <span class="o">+</span> <span class="n">tl</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">BLOCK_SIZE_M</span><span class="p">)</span>
+<span class="linenos">250</span>    <span class="n">offs_cn</span> <span class="o">=</span> <span class="n">pid_n</span> <span class="o">*</span> <span class="n">BLOCK_SIZE_N</span> <span class="o">+</span> <span class="n">tl</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">BLOCK_SIZE_N</span><span class="p">)</span>
+<span class="linenos">251</span>    <span class="n">c_ptrs</span> <span class="o">=</span> <span class="n">c_ptr</span> <span class="o">+</span> <span class="p">(</span><span class="n">offs_cm</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">stride_cm</span> <span class="o">+</span> <span class="n">offs_cn</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">stride_cn</span><span class="p">)</span>
+<span class="linenos">252</span>    <span class="n">c_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">offs_cm</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">M</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">offs_cn</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">)</span>
+<span class="linenos">253</span>    <span class="n">tl</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">c_ptrs</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">c_mask</span><span class="p">)</span>
+<span class="linenos">254</span>
+<span class="linenos">255</span>
+<span class="linenos">256</span><span class="nd">@triton</span><span class="o">.</span><span class="n">jit</span>
+<span class="linenos">257</span><span class="k">def</span> <span class="nf">leaky_relu</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos">258</span>    <span class="k">return</span> <span class="n">tl</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mf">0.01</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
+<span class="linenos">259</span>
+<span class="linenos">260</span>
+<span class="linenos">261</span><span class="k">def</span> <span class="nf">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+<span class="linenos">262</span>    <span class="k">assert</span> <span class="n">a</span><span class="o">.</span><span class="n">device</span> <span class="o">==</span> <span class="n">device</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">device</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
+<span class="linenos">263</span>    <span class="k">assert</span> <span class="n">b</span><span class="o">.</span><span class="n">device</span> <span class="o">==</span> <span class="n">device</span><span class="p">,</span> <span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">device</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
+<span class="linenos">264</span>    <span class="k">assert</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="linenos">265</span>    <span class="k">assert</span> <span class="n">a</span><span class="o">.</span><span class="n">is_contiguous</span><span class="p">()</span>
+<span class="linenos">266</span>
+<span class="linenos">267</span>    <span class="n">M</span><span class="p">,</span> <span class="n">K</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span>
+<span class="linenos">268</span>    <span class="n">_</span><span class="p">,</span> <span class="n">N</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">shape</span>
+<span class="linenos">269</span>
+<span class="linenos">270</span>    <span class="n">c</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">M</span><span class="p">,</span> <span class="n">N</span><span class="p">),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span>
+<span class="linenos">271</span>    <span class="n">grid</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">meta</span><span class="p">:</span> <span class="p">(</span>
+<span class="linenos">272</span>        <span class="n">triton</span><span class="o">.</span><span class="n">cdiv</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;BLOCK_SIZE_M&quot;</span><span class="p">])</span> <span class="o">*</span> <span class="n">triton</span><span class="o">.</span><span class="n">cdiv</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;BLOCK_SIZE_N&quot;</span><span class="p">]),</span>
+<span class="linenos">273</span>    <span class="p">)</span>
+<span class="linenos">274</span>    <span class="n">matmul_kernel</span><span class="p">[</span><span class="n">grid</span><span class="p">](</span>
+<span class="linenos">275</span>        <span class="n">a</span><span class="p">,</span>
+<span class="linenos">276</span>        <span class="n">b</span><span class="p">,</span>
+<span class="linenos">277</span>        <span class="n">c</span><span class="p">,</span>
+<span class="linenos">278</span>        <span class="n">M</span><span class="p">,</span>
+<span class="linenos">279</span>        <span class="n">N</span><span class="p">,</span>
+<span class="linenos">280</span>        <span class="n">K</span><span class="p">,</span>
+<span class="linenos">281</span>        <span class="n">a</span><span class="o">.</span><span class="n">stride</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+<span class="linenos">282</span>        <span class="n">a</span><span class="o">.</span><span class="n">stride</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+<span class="linenos">283</span>        <span class="n">b</span><span class="o">.</span><span class="n">stride</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+<span class="linenos">284</span>        <span class="n">b</span><span class="o">.</span><span class="n">stride</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+<span class="linenos">285</span>        <span class="n">c</span><span class="o">.</span><span class="n">stride</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+<span class="linenos">286</span>        <span class="n">c</span><span class="o">.</span><span class="n">stride</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+<span class="linenos">287</span>        <span class="n">ACTIVATION</span><span class="o">=</span><span class="n">activation</span><span class="p">,</span>
+<span class="linenos">288</span>    <span class="p">)</span>
+<span class="linenos">289</span>    <span class="k">return</span> <span class="n">c</span>
+<span class="linenos">290</span>
+<span class="linenos">291</span>
+<span class="linenos">292</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos">293</span>    <span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span>
+<span class="linenos">294</span>    <span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span>
+<span class="linenos">295</span>    <span class="n">c0</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="linenos">296</span>    <span class="c1">#  c1 = matmul(a, b, activation=&quot;leaky_relu&quot;)</span>
+<span class="linenos">297</span>    <span class="n">c1</span> <span class="o">=</span> <span class="n">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="linenos">298</span>    <span class="nb">print</span><span class="p">((</span><span class="n">c0</span> <span class="o">-</span> <span class="n">c1</span><span class="p">)</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="linenos">299</span>
+<span class="linenos">300</span>
+<span class="linenos">301</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="linenos">302</span>
+<span class="linenos">303</span>    <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">20250811</span><span class="p">)</span>
+<span class="linenos">304</span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="triton" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="references.html" class="btn btn-neutral float-right" title="References" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

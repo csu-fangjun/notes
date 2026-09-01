@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="websocketpp" href="../websocketpp/index.html" />
+    <link rel="prev" title="Install" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">asio</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Hello</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/index.html">Papers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pascal/index.html">Pascal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llm/index.html">LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ascend/index.html">ascend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qnn/index.html">qnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">asio</a></li>
+      <li class="breadcrumb-item active">Hello</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/asio/hello.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="hello">
+<h1>Hello<a class="headerlink" href="#hello" title="Permalink to this heading"></a></h1>
+<p><a class="reference external" href="https://think-async.com/Asio/asio-1.24.0/doc/asio/tutorial/tuttimer1.html">https://think-async.com/Asio/asio-1.24.0/doc/asio/tutorial/tuttimer1.html</a></p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/Makefile</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nv">CXXFLAGS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>-I<span class="w"> </span>/ceph-fj/fangjun/software/asio/include<span class="w"> </span>-pthread
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="nv">srcs</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>shell<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.cc&quot;</span><span class="w"> </span>-printf<span class="w"> </span><span class="s2">&quot;%f &quot;</span><span class="k">)</span>
+<span class="linenos"> 4</span><span class="nv">targets</span><span class="w"> </span><span class="o">:=</span><span class="k">$(</span>srcs:%.cc<span class="o">=</span>%<span class="k">)</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="nf">all</span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">targets</span><span class="k">)</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="nf">%</span><span class="o">:</span><span class="w"> </span>%.<span class="n">cc</span>
+<span class="linenos"> 9</span><span class="w">	</span><span class="k">$(</span>CXX<span class="k">)</span><span class="w"> </span><span class="k">$(</span>CXXFLAGS<span class="k">)</span><span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span><span class="w"> </span>$&lt;
+<span class="linenos">10</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="nf">.PHONY</span><span class="o">:</span><span class="w"> </span><span class="n">clean</span>
+<span class="linenos">13</span><span class="nf">clean</span><span class="o">:</span>
+<span class="linenos">14</span><span class="w">	</span><span class="k">$(</span>RM<span class="k">)</span><span class="w"> </span><span class="k">$(</span>targets<span class="k">)</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">./code/1-timer-synchronous.cc</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;asio.hpp&quot;</span>
+<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 5</span><span class="w">  </span><span class="n">asio</span><span class="o">::</span><span class="n">io_context</span><span class="w"> </span><span class="n">io</span><span class="p">;</span>
+<span class="linenos"> 6</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sleep for 1 second</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="linenos"> 7</span><span class="w">  </span><span class="n">asio</span><span class="o">::</span><span class="n">steady_timer</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="n">io</span><span class="p">,</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="n">t</span><span class="p">.</span><span class="n">wait</span><span class="p">();</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;hello world</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="linenos">10</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">11</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">./code/2-timer-asynchronous.cc</span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;asio.hpp&quot;</span>
+<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;done</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 7</span><span class="w">  </span><span class="n">asio</span><span class="o">::</span><span class="n">io_context</span><span class="w"> </span><span class="n">io</span><span class="p">;</span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sleep for 1 seconds</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="n">asio</span><span class="o">::</span><span class="n">steady_timer</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="n">io</span><span class="p">,</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="w">  </span><span class="n">t</span><span class="p">.</span><span class="n">async_wait</span><span class="p">(</span><span class="o">&amp;</span><span class="n">print</span><span class="p">);</span>
+<span class="linenos">12</span><span class="w">  </span><span class="n">t</span><span class="p">.</span><span class="n">async_wait</span><span class="p">(</span><span class="o">&amp;</span><span class="n">print</span><span class="p">);</span>
+<span class="linenos">13</span><span class="w">  </span><span class="n">io</span><span class="p">.</span><span class="n">run</span><span class="p">();</span>
+<span class="linenos">14</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">15</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">./code/3-timer-async-bind-argument.cc</span><a class="headerlink" href="#id4" title="Permalink to this code"></a></div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;asio.hpp&quot;</span>
+<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ec</span><span class="p">,</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">steady_timer</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">counter</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 5</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">counter</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">counter</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="o">*</span><span class="n">counter</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">expires_at</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">expiry</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="n">t</span><span class="o">-&gt;</span><span class="n">async_wait</span><span class="p">(</span>
+<span class="linenos">10</span><span class="w">        </span><span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">counter</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="o">&amp;</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">counter</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
+<span class="linenos">11</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">12</span><span class="p">}</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">15</span><span class="w">  </span><span class="n">asio</span><span class="o">::</span><span class="n">io_context</span><span class="w"> </span><span class="n">io</span><span class="p">;</span>
+<span class="linenos">16</span><span class="w">  </span><span class="n">asio</span><span class="o">::</span><span class="n">steady_timer</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="n">io</span><span class="p">,</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="linenos">17</span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="w">  </span><span class="c1">// use a lambda to pass extra parameters</span>
+<span class="linenos">20</span><span class="w">  </span><span class="n">t</span><span class="p">.</span><span class="n">async_wait</span><span class="p">(</span>
+<span class="linenos">21</span><span class="w">      </span><span class="p">[</span><span class="o">&amp;</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">counter</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="n">ec</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">counter</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
+<span class="linenos">22</span><span class="w">  </span><span class="n">io</span><span class="p">.</span><span class="n">run</span><span class="p">();</span>
+<span class="linenos">23</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">24</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">./code/4-timer-async-member-function.cc</span><a class="headerlink" href="#id5" title="Permalink to this code"></a></div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;asio.hpp&quot;</span>
+<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">class</span><span class="w"> </span><span class="nc">printer</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 5</span><span class="k">public</span><span class="o">:</span>
+<span class="linenos"> 6</span><span class="w">  </span><span class="n">printer</span><span class="p">(</span><span class="n">asio</span><span class="o">::</span><span class="n">io_context</span><span class="w"> </span><span class="o">&amp;</span><span class="n">io</span><span class="p">)</span>
+<span class="linenos"> 7</span><span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="n">t_</span><span class="p">(</span><span class="n">io</span><span class="p">,</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">1</span><span class="p">)),</span><span class="w"> </span><span class="n">counter_</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="n">t_</span><span class="p">.</span><span class="n">async_wait</span><span class="p">([</span><span class="k">this</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="n">ec</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">12</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">counter_</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">13</span><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">counter_</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="linenos">14</span><span class="w">      </span><span class="n">counter_</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="linenos">15</span><span class="w">      </span><span class="n">t_</span><span class="p">.</span><span class="n">async_wait</span><span class="p">([</span><span class="k">this</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="o">&amp;</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">print</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
+<span class="linenos">16</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">17</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="k">private</span><span class="o">:</span>
+<span class="linenos">20</span><span class="w">  </span><span class="n">asio</span><span class="o">::</span><span class="n">steady_timer</span><span class="w"> </span><span class="n">t_</span><span class="p">;</span>
+<span class="linenos">21</span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">counter_</span><span class="p">;</span>
+<span class="linenos">22</span><span class="p">};</span>
+<span class="linenos">23</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">24</span><span class="w">  </span><span class="n">asio</span><span class="o">::</span><span class="n">io_context</span><span class="w"> </span><span class="n">io</span><span class="p">;</span>
+<span class="linenos">25</span><span class="w">  </span><span class="n">printer</span><span class="w"> </span><span class="n">p</span><span class="p">(</span><span class="n">io</span><span class="p">);</span>
+<span class="linenos">26</span><span class="w">  </span><span class="n">io</span><span class="p">.</span><span class="n">run</span><span class="p">();</span>
+<span class="linenos">27</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">28</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">./code/5-timer-async-thread-non-synchronization.cc</span><a class="headerlink" href="#id6" title="Permalink to this code"></a></div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;asio.hpp&quot;</span>
+<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos"> 3</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;thread&gt;</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="k">class</span><span class="w"> </span><span class="nc">printer</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 6</span><span class="k">public</span><span class="o">:</span>
+<span class="linenos"> 7</span><span class="w">  </span><span class="n">printer</span><span class="p">(</span><span class="n">asio</span><span class="o">::</span><span class="n">io_context</span><span class="w"> </span><span class="o">&amp;</span><span class="n">io</span><span class="p">)</span>
+<span class="linenos"> 8</span><span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="n">t1_</span><span class="p">(</span><span class="n">io</span><span class="p">,</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">1</span><span class="p">)),</span><span class="w"> </span><span class="n">t2_</span><span class="p">(</span><span class="n">io</span><span class="p">,</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="n">t1_</span><span class="p">.</span><span class="n">async_wait</span><span class="p">([</span><span class="k">this</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="o">&amp;</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">print1</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
+<span class="linenos">10</span><span class="w">    </span><span class="n">t2_</span><span class="p">.</span><span class="n">async_wait</span><span class="p">([</span><span class="k">this</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="o">&amp;</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">print2</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
+<span class="linenos">11</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">print1</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">14</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">counter_</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">15</span><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;print1 id: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">get_id</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, counter &quot;</span>
+<span class="linenos">16</span><span class="w">                </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">counter_</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="linenos">17</span><span class="w">      </span><span class="n">counter_</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="linenos">18</span><span class="w">      </span><span class="n">t1_</span><span class="p">.</span><span class="n">expires_at</span><span class="p">(</span><span class="n">t1_</span><span class="p">.</span><span class="n">expiry</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="linenos">19</span><span class="w">      </span><span class="n">t1_</span><span class="p">.</span><span class="n">async_wait</span><span class="p">([</span><span class="k">this</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="o">&amp;</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">print1</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
+<span class="linenos">20</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">21</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">print2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">24</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">counter_</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">25</span><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;print2 id: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">get_id</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, counter &quot;</span>
+<span class="linenos">26</span><span class="w">                </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">counter_</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="linenos">27</span><span class="w">      </span><span class="n">counter_</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="linenos">28</span><span class="w">      </span><span class="n">t2_</span><span class="p">.</span><span class="n">expires_at</span><span class="p">(</span><span class="n">t2_</span><span class="p">.</span><span class="n">expiry</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="linenos">29</span><span class="w">      </span><span class="n">t2_</span><span class="p">.</span><span class="n">async_wait</span><span class="p">([</span><span class="k">this</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="o">&amp;</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">print2</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
+<span class="linenos">30</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">31</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">32</span>
+<span class="linenos">33</span><span class="k">private</span><span class="o">:</span>
+<span class="linenos">34</span><span class="w">  </span><span class="n">asio</span><span class="o">::</span><span class="n">steady_timer</span><span class="w"> </span><span class="n">t1_</span><span class="p">;</span>
+<span class="linenos">35</span><span class="w">  </span><span class="n">asio</span><span class="o">::</span><span class="n">steady_timer</span><span class="w"> </span><span class="n">t2_</span><span class="p">;</span>
+<span class="linenos">36</span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">counter_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">37</span><span class="p">};</span>
+<span class="linenos">38</span>
+<span class="linenos">39</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">40</span><span class="w">  </span><span class="n">asio</span><span class="o">::</span><span class="n">io_context</span><span class="w"> </span><span class="n">io</span><span class="p">;</span>
+<span class="linenos">41</span><span class="w">  </span><span class="n">printer</span><span class="w"> </span><span class="n">p</span><span class="p">(</span><span class="n">io</span><span class="p">);</span>
+<span class="linenos">42</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="kr">thread</span><span class="w"> </span><span class="n">t</span><span class="p">([</span><span class="o">&amp;</span><span class="n">io</span><span class="p">]()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">io</span><span class="p">.</span><span class="n">run</span><span class="p">();</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// NOTE: print1() and print2() can run</span>
+<span class="linenos">43</span><span class="w">                                        </span><span class="c1">// either in t or in the main thread</span>
+<span class="linenos">44</span><span class="w">  </span><span class="n">io</span><span class="p">.</span><span class="n">run</span><span class="p">();</span>
+<span class="linenos">45</span><span class="w">  </span><span class="n">t</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
+<span class="linenos">46</span><span class="p">}</span>
+<span class="linenos">47</span>
+<span class="linenos">48</span><span class="cp">#if 0</span>
+<span class="linenos">49</span><span class="c">(py38) kuangfangjun:code$ ./5-timer-async-thread-non-synchronization</span>
+<span class="linenos">50</span><span class="c">print1 id: print2 id: 140164266059584, counter 0</span>
+<span class="linenos">51</span><span class="c">140164247860992, counter 1</span>
+<span class="linenos">52</span><span class="c">print1 id: 140164266059584, counter 2</span>
+<span class="linenos">53</span><span class="c">print2 id: 140164247860992, counter 3</span>
+<span class="linenos">54</span><span class="c">print1 id: 140164266059584, counter 4</span>
+<span class="linenos">55</span><span class="c">print2 id: 140164247860992, counter 5</span>
+<span class="linenos">56</span><span class="c">print1 id: 140164266059584, counter 6</span>
+<span class="linenos">57</span><span class="c">print2 id: 140164247860992, counter 7</span>
+<span class="linenos">58</span><span class="c">(py38) kuangfangjun:code$ ./5-timer-async-thread-non-synchronization</span>
+<span class="linenos">59</span><span class="c">print2 id: print1 id: 140191018206976, counter 140191036405568, counter 0</span>
+<span class="linenos">60</span><span class="c">0</span>
+<span class="linenos">61</span><span class="c">print1 id: 140191018206976, counter print2 id: 2</span>
+<span class="linenos">62</span><span class="c">140191036405568, counter 3</span>
+<span class="linenos">63</span><span class="c">print1 id: 140191018206976, counter 4</span>
+<span class="linenos">64</span><span class="c">print2 id: 140191036405568, counter 5</span>
+<span class="linenos">65</span><span class="c">print1 id: 140191018206976, counter 6</span>
+<span class="linenos">66</span><span class="c">print2 id: 140191036405568, counter 7</span>
+<span class="linenos">67</span><span class="cp">#endif</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">./code/6-timer-async-thread-with-synchronization.cc</span><a class="headerlink" href="#id7" title="Permalink to this code"></a></div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;asio.hpp&quot;</span>
+<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos"> 3</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;thread&gt;</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="k">class</span><span class="w"> </span><span class="nc">printer</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 6</span><span class="k">public</span><span class="o">:</span>
+<span class="linenos"> 7</span><span class="w">  </span><span class="n">printer</span><span class="p">(</span><span class="n">asio</span><span class="o">::</span><span class="n">io_context</span><span class="w"> </span><span class="o">&amp;</span><span class="n">io</span><span class="p">)</span>
+<span class="linenos"> 8</span><span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="n">strand_</span><span class="p">(</span><span class="n">asio</span><span class="o">::</span><span class="n">make_strand</span><span class="p">(</span><span class="n">io</span><span class="p">)),</span><span class="w"> </span><span class="n">t1_</span><span class="p">(</span><span class="n">io</span><span class="p">,</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">1</span><span class="p">)),</span>
+<span class="linenos"> 9</span><span class="w">        </span><span class="n">t2_</span><span class="p">(</span><span class="n">io</span><span class="p">,</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">10</span><span class="w">    </span><span class="n">t1_</span><span class="p">.</span><span class="n">async_wait</span><span class="p">(</span><span class="n">asio</span><span class="o">::</span><span class="n">bind_executor</span><span class="p">(</span>
+<span class="linenos">11</span><span class="w">        </span><span class="n">strand_</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="o">&amp;</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">print1</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w"> </span><span class="p">}));</span>
+<span class="linenos">12</span><span class="w">    </span><span class="n">t2_</span><span class="p">.</span><span class="n">async_wait</span><span class="p">(</span><span class="n">asio</span><span class="o">::</span><span class="n">bind_executor</span><span class="p">(</span>
+<span class="linenos">13</span><span class="w">        </span><span class="n">strand_</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="o">&amp;</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">print2</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w"> </span><span class="p">}));</span>
+<span class="linenos">14</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">print1</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">17</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">counter_</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">18</span><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;print1 id: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">get_id</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, counter &quot;</span>
+<span class="linenos">19</span><span class="w">                </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">counter_</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="linenos">20</span><span class="w">      </span><span class="n">counter_</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="linenos">21</span><span class="w">      </span><span class="n">t1_</span><span class="p">.</span><span class="n">expires_at</span><span class="p">(</span><span class="n">t1_</span><span class="p">.</span><span class="n">expiry</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="linenos">22</span><span class="w">      </span><span class="n">t1_</span><span class="p">.</span><span class="n">async_wait</span><span class="p">([</span><span class="k">this</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="o">&amp;</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">print1</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
+<span class="linenos">23</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">24</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">print2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">27</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">counter_</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">28</span><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;print2 id: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">get_id</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, counter &quot;</span>
+<span class="linenos">29</span><span class="w">                </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">counter_</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="linenos">30</span><span class="w">      </span><span class="n">counter_</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="linenos">31</span><span class="w">      </span><span class="n">t2_</span><span class="p">.</span><span class="n">expires_at</span><span class="p">(</span><span class="n">t2_</span><span class="p">.</span><span class="n">expiry</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="linenos">32</span><span class="w">      </span><span class="n">t2_</span><span class="p">.</span><span class="n">async_wait</span><span class="p">([</span><span class="k">this</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="o">&amp;</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">print2</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
+<span class="linenos">33</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">34</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">35</span>
+<span class="linenos">36</span><span class="k">private</span><span class="o">:</span>
+<span class="linenos">37</span><span class="w">  </span><span class="n">asio</span><span class="o">::</span><span class="n">strand</span><span class="o">&lt;</span><span class="n">asio</span><span class="o">::</span><span class="n">io_context</span><span class="o">::</span><span class="n">executor_type</span><span class="o">&gt;</span><span class="w"> </span><span class="n">strand_</span><span class="p">;</span>
+<span class="linenos">38</span><span class="w">  </span><span class="n">asio</span><span class="o">::</span><span class="n">steady_timer</span><span class="w"> </span><span class="n">t1_</span><span class="p">;</span>
+<span class="linenos">39</span><span class="w">  </span><span class="n">asio</span><span class="o">::</span><span class="n">steady_timer</span><span class="w"> </span><span class="n">t2_</span><span class="p">;</span>
+<span class="linenos">40</span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">counter_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">41</span><span class="p">};</span>
+<span class="linenos">42</span>
+<span class="linenos">43</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">44</span><span class="w">  </span><span class="n">asio</span><span class="o">::</span><span class="n">io_context</span><span class="w"> </span><span class="n">io</span><span class="p">;</span>
+<span class="linenos">45</span><span class="w">  </span><span class="n">printer</span><span class="w"> </span><span class="n">p</span><span class="p">(</span><span class="n">io</span><span class="p">);</span>
+<span class="linenos">46</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="kr">thread</span><span class="w"> </span><span class="n">t</span><span class="p">([</span><span class="o">&amp;</span><span class="n">io</span><span class="p">]()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">io</span><span class="p">.</span><span class="n">run</span><span class="p">();</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// NOTE: print1() and print2() can run</span>
+<span class="linenos">47</span><span class="w">                                        </span><span class="c1">// either in t or in the main thread</span>
+<span class="linenos">48</span><span class="w">  </span><span class="n">io</span><span class="p">.</span><span class="n">run</span><span class="p">();</span>
+<span class="linenos">49</span><span class="w">  </span><span class="n">t</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
+<span class="linenos">50</span><span class="p">}</span>
+<span class="linenos">51</span><span class="cp">#if 0</span>
+<span class="linenos">52</span><span class="c">(py38) kuangfangjun:code$ ./6-timer-async-thread-with-synchronization</span>
+<span class="linenos">53</span><span class="c">print1 id: 140648598263616, counter 0</span>
+<span class="linenos">54</span><span class="c">print2 id: 140648598263616, counter 1</span>
+<span class="linenos">55</span><span class="c">print1 id: 140648580065024, counter 2</span>
+<span class="linenos">56</span><span class="c">print2 id: 140648598263616, counter 3</span>
+<span class="linenos">57</span><span class="c">print1 id: 140648580065024, counter 4</span>
+<span class="linenos">58</span><span class="c">print2 id: 140648598263616, counter 5</span>
+<span class="linenos">59</span><span class="c">print1 id: 140648580065024, counter 6</span>
+<span class="linenos">60</span><span class="c">print2 id: 140648598263616, counter 7</span>
+<span class="linenos">61</span><span class="c">(py38) kuangfangjun:code$ ./6-timer-async-thread-with-synchronization</span>
+<span class="linenos">62</span><span class="c">print1 id: 139671509145408, counter 0</span>
+<span class="linenos">63</span><span class="c">print2 id: 139671509145408, counter 1</span>
+<span class="linenos">64</span><span class="c">print1 id: 139671490946816, counter 2</span>
+<span class="linenos">65</span><span class="c">print2 id: 139671509145408, counter 3</span>
+<span class="linenos">66</span><span class="c">print1 id: 139671490946816, counter 4</span>
+<span class="linenos">67</span><span class="c">print2 id: 139671509145408, counter 5</span>
+<span class="linenos">68</span><span class="c">print1 id: 139671490946816, counter 6</span>
+<span class="linenos">69</span><span class="c">print2 id: 139671509145408, counter 7</span>
+<span class="linenos">70</span><span class="cp">#endif</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">./code/7-daytime-sync-client.cc</span><a class="headerlink" href="#id8" title="Permalink to this code"></a></div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;asio.hpp&quot;</span>
+<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;array&gt;</span>
+<span class="linenos"> 3</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="k">using</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">ip</span><span class="o">::</span><span class="n">tcp</span><span class="p">;</span>
+<span class="linenos"> 6</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 7</span><span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">argc</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 9</span><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Usage: client &lt;host&gt;&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">10</span><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="linenos">11</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="w">    </span><span class="n">asio</span><span class="o">::</span><span class="n">io_context</span><span class="w"> </span><span class="n">io</span><span class="p">;</span>
+<span class="linenos">14</span><span class="w">    </span><span class="n">tcp</span><span class="o">::</span><span class="n">resolver</span><span class="w"> </span><span class="n">resolver</span><span class="p">(</span><span class="n">io</span><span class="p">);</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="w">    </span><span class="n">tcp</span><span class="o">::</span><span class="n">resolver</span><span class="o">::</span><span class="n">results_type</span><span class="w"> </span><span class="n">endpoints</span><span class="w"> </span><span class="o">=</span>
+<span class="linenos">17</span><span class="w">        </span><span class="n">resolver</span><span class="p">.</span><span class="n">resolve</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="s">&quot;daytime&quot;</span><span class="p">);</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="w">    </span><span class="n">tcp</span><span class="o">::</span><span class="n">socket</span><span class="w"> </span><span class="n">socket</span><span class="p">(</span><span class="n">io</span><span class="p">);</span>
+<span class="linenos">20</span><span class="w">    </span><span class="n">asio</span><span class="o">::</span><span class="n">connect</span><span class="p">(</span><span class="n">socket</span><span class="p">,</span><span class="w"> </span><span class="n">endpoints</span><span class="p">);</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(;;)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">23</span><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">char</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="o">&gt;</span><span class="w"> </span><span class="n">buf</span><span class="p">;</span>
+<span class="linenos">24</span><span class="w">      </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="n">ec</span><span class="p">;</span>
+<span class="linenos">25</span><span class="w">      </span><span class="kt">size_t</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">socket</span><span class="p">.</span><span class="n">read_some</span><span class="p">(</span><span class="n">asio</span><span class="o">::</span><span class="n">buffer</span><span class="p">(</span><span class="n">buf</span><span class="p">),</span><span class="w"> </span><span class="n">ec</span><span class="p">);</span>
+<span class="linenos">26</span><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ec</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error</span><span class="o">::</span><span class="n">eof</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">27</span><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="linenos">28</span><span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">29</span><span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">system_error</span><span class="p">(</span><span class="n">ec</span><span class="p">);</span>
+<span class="linenos">30</span><span class="w">      </span><span class="p">}</span>
+<span class="linenos">31</span><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">buf</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">len</span><span class="p">);</span>
+<span class="linenos">32</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">33</span><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="w"> </span><span class="o">&amp;</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">34</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;exception: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="linenos">35</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">36</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">37</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">./code/8-daytime-sync-server.cc</span><a class="headerlink" href="#id9" title="Permalink to this code"></a></div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;asio.hpp&quot;</span>
+<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ctime&gt;</span>
+<span class="linenos"> 3</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos"> 4</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="k">using</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">ip</span><span class="o">::</span><span class="n">tcp</span><span class="p">;</span>
+<span class="linenos"> 7</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">make_daytime_string</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="kt">time_t</span><span class="w"> </span><span class="n">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="linenos">10</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">ctime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">now</span><span class="p">);</span>
+<span class="linenos">11</span><span class="p">}</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">14</span><span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">15</span><span class="w">    </span><span class="n">asio</span><span class="o">::</span><span class="n">io_context</span><span class="w"> </span><span class="n">io</span><span class="p">;</span>
+<span class="linenos">16</span><span class="w">    </span><span class="c1">// need sudo permission to bind port 13</span>
+<span class="linenos">17</span><span class="w">    </span><span class="n">tcp</span><span class="o">::</span><span class="n">acceptor</span><span class="w"> </span><span class="nf">acceptor</span><span class="p">(</span><span class="n">io</span><span class="p">,</span><span class="w"> </span><span class="n">tcp</span><span class="o">::</span><span class="n">endpoint</span><span class="p">(</span><span class="n">tcp</span><span class="o">::</span><span class="n">v4</span><span class="p">(),</span><span class="w"> </span><span class="mi">13</span><span class="p">));</span>
+<span class="linenos">18</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;started</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="linenos">19</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(;;)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">20</span><span class="w">      </span><span class="n">tcp</span><span class="o">::</span><span class="n">socket</span><span class="w"> </span><span class="nf">socket</span><span class="p">(</span><span class="n">io</span><span class="p">);</span>
+<span class="linenos">21</span><span class="w">      </span><span class="n">acceptor</span><span class="p">.</span><span class="n">accept</span><span class="p">(</span><span class="n">socket</span><span class="p">);</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span><span class="w">      </span><span class="k">auto</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_daytime_string</span><span class="p">();</span>
+<span class="linenos">24</span><span class="w">      </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="n">ec</span><span class="p">;</span>
+<span class="linenos">25</span><span class="w">      </span><span class="n">asio</span><span class="o">::</span><span class="n">write</span><span class="p">(</span><span class="n">socket</span><span class="p">,</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">buffer</span><span class="p">(</span><span class="n">message</span><span class="p">),</span><span class="w"> </span><span class="n">ec</span><span class="p">);</span>
+<span class="linenos">26</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">27</span><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="w"> </span><span class="o">&amp;</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">28</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Exception: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="linenos">29</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">30</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">31</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">./code/9-daytime-async-server.cc</span><a class="headerlink" href="#id10" title="Permalink to this code"></a></div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;asio.hpp&quot;</span>
+<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ctime&gt;</span>
+<span class="linenos"> 3</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos"> 4</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;memory&gt;</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="k">using</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">ip</span><span class="o">::</span><span class="n">tcp</span><span class="p">;</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">make_daytime_string</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<span class="linenos">10</span><span class="w">  </span><span class="kt">time_t</span><span class="w"> </span><span class="n">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="linenos">11</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">ctime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">now</span><span class="p">);</span>
+<span class="linenos">12</span><span class="p">}</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="k">class</span><span class="w"> </span><span class="nc">tcp_connection</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">enable_shared_from_this</span><span class="o">&lt;</span><span class="n">tcp_connection</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">15</span><span class="k">public</span><span class="o">:</span>
+<span class="linenos">16</span><span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="n">pointer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">tcp_connection</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="n">pointer</span><span class="w"> </span><span class="nf">create</span><span class="p">(</span><span class="n">asio</span><span class="o">::</span><span class="n">io_context</span><span class="w"> </span><span class="o">&amp;</span><span class="n">io</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">19</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">pointer</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">tcp_connection</span><span class="p">(</span><span class="n">io</span><span class="p">));</span>
+<span class="linenos">20</span><span class="w">    </span><span class="c1">// return std::make_shared&lt;tcp_connection&gt;(io);</span>
+<span class="linenos">21</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span><span class="w">  </span><span class="n">tcp</span><span class="o">::</span><span class="n">socket</span><span class="w"> </span><span class="o">&amp;</span><span class="nf">socket</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">socket_</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">26</span><span class="w">    </span><span class="n">message_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_daytime_string</span><span class="p">();</span>
+<span class="linenos">27</span><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shared_from_this</span><span class="p">();</span>
+<span class="linenos">28</span><span class="w">    </span><span class="n">asio</span><span class="o">::</span><span class="n">async_write</span><span class="p">(</span>
+<span class="linenos">29</span><span class="w">        </span><span class="n">socket_</span><span class="p">,</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">buffer</span><span class="p">(</span><span class="n">message_</span><span class="p">),</span>
+<span class="linenos">30</span><span class="w">        </span><span class="p">[</span><span class="n">p</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ec</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">bytes_transferred</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">31</span><span class="w">          </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">handle_write</span><span class="p">(</span><span class="n">ec</span><span class="p">,</span><span class="w"> </span><span class="n">bytes_transferred</span><span class="p">);</span>
+<span class="linenos">32</span><span class="w">        </span><span class="p">});</span>
+<span class="linenos">33</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">34</span>
+<span class="linenos">35</span><span class="k">private</span><span class="o">:</span>
+<span class="linenos">36</span><span class="w">  </span><span class="n">tcp_connection</span><span class="p">(</span><span class="n">asio</span><span class="o">::</span><span class="n">io_context</span><span class="w"> </span><span class="o">&amp;</span><span class="n">io</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">socket_</span><span class="p">(</span><span class="n">io</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">handle_write</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="cm">/*ec*/</span><span class="p">,</span>
+<span class="linenos">39</span><span class="w">                    </span><span class="kt">size_t</span><span class="w"> </span><span class="cm">/*bytes_transferred*/</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<span class="linenos">40</span>
+<span class="linenos">41</span><span class="w">  </span><span class="n">tcp</span><span class="o">::</span><span class="n">socket</span><span class="w"> </span><span class="n">socket_</span><span class="p">;</span>
+<span class="linenos">42</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">message_</span><span class="p">;</span>
+<span class="linenos">43</span><span class="p">};</span>
+<span class="linenos">44</span>
+<span class="linenos">45</span><span class="k">class</span><span class="w"> </span><span class="nc">tcp_server</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">46</span><span class="k">public</span><span class="o">:</span>
+<span class="linenos">47</span><span class="w">  </span><span class="n">tcp_server</span><span class="p">(</span><span class="n">asio</span><span class="o">::</span><span class="n">io_context</span><span class="w"> </span><span class="o">&amp;</span><span class="n">io</span><span class="p">)</span>
+<span class="linenos">48</span><span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="n">io_</span><span class="p">(</span><span class="n">io</span><span class="p">),</span><span class="w"> </span><span class="n">acceptor_</span><span class="p">(</span><span class="n">io</span><span class="p">,</span><span class="w"> </span><span class="n">tcp</span><span class="o">::</span><span class="n">endpoint</span><span class="p">(</span><span class="n">tcp</span><span class="o">::</span><span class="n">v4</span><span class="p">(),</span><span class="w"> </span><span class="mi">13</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">49</span><span class="w">    </span><span class="n">start_accept</span><span class="p">();</span>
+<span class="linenos">50</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">51</span>
+<span class="linenos">52</span><span class="k">private</span><span class="o">:</span>
+<span class="linenos">53</span><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">start_accept</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">54</span><span class="w">    </span><span class="n">tcp_connection</span><span class="o">::</span><span class="n">pointer</span><span class="w"> </span><span class="n">new_connection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tcp_connection</span><span class="o">::</span><span class="n">create</span><span class="p">(</span><span class="n">io_</span><span class="p">);</span>
+<span class="linenos">55</span><span class="w">    </span><span class="n">acceptor_</span><span class="p">.</span><span class="n">async_accept</span><span class="p">(</span><span class="n">new_connection</span><span class="o">-&gt;</span><span class="n">socket</span><span class="p">(),</span>
+<span class="linenos">56</span><span class="w">                           </span><span class="p">[</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">new_connection</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">57</span><span class="w">                             </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">handle_accept</span><span class="p">(</span><span class="n">new_connection</span><span class="p">,</span><span class="w"> </span><span class="n">ec</span><span class="p">);</span>
+<span class="linenos">58</span><span class="w">                           </span><span class="p">});</span>
+<span class="linenos">59</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">60</span><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">handle_accept</span><span class="p">(</span><span class="n">tcp_connection</span><span class="o">::</span><span class="n">pointer</span><span class="w"> </span><span class="n">new_connection</span><span class="p">,</span>
+<span class="linenos">61</span><span class="w">                     </span><span class="k">const</span><span class="w"> </span><span class="n">asio</span><span class="o">::</span><span class="n">error_code</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">62</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">ec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">63</span><span class="w">      </span><span class="n">new_connection</span><span class="o">-&gt;</span><span class="n">start</span><span class="p">();</span>
+<span class="linenos">64</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">65</span><span class="w">    </span><span class="n">start_accept</span><span class="p">();</span>
+<span class="linenos">66</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">67</span>
+<span class="linenos">68</span><span class="w">  </span><span class="n">asio</span><span class="o">::</span><span class="n">io_context</span><span class="w"> </span><span class="o">&amp;</span><span class="n">io_</span><span class="p">;</span>
+<span class="linenos">69</span><span class="w">  </span><span class="n">tcp</span><span class="o">::</span><span class="n">acceptor</span><span class="w"> </span><span class="n">acceptor_</span><span class="p">;</span>
+<span class="linenos">70</span><span class="p">};</span>
+<span class="linenos">71</span>
+<span class="linenos">72</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">73</span><span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">74</span><span class="w">    </span><span class="n">asio</span><span class="o">::</span><span class="n">io_context</span><span class="w"> </span><span class="n">io</span><span class="p">;</span>
+<span class="linenos">75</span><span class="w">    </span><span class="n">tcp_server</span><span class="w"> </span><span class="n">server</span><span class="p">(</span><span class="n">io</span><span class="p">);</span>
+<span class="linenos">76</span><span class="w">    </span><span class="n">io</span><span class="p">.</span><span class="n">run</span><span class="p">();</span>
+<span class="linenos">77</span><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="w"> </span><span class="o">&amp;</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">78</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Exception: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">();</span>
+<span class="linenos">79</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">80</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">81</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install.html" class="btn btn-neutral float-left" title="Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../websocketpp/index.html" class="btn btn-neutral float-right" title="websocketpp" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

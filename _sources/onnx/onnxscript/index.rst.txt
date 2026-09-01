@@ -1,0 +1,6 @@
+onnxscript
+==========
+
+.. toctree::
+
+    basics

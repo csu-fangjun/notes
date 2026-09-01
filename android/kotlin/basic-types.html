@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic types &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Collections" href="collections.html" />
+    <link rel="prev" title="Install" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Android</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">kotlin</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Basic types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#charsequence">CharSequence</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="collections.html">Collections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jni.html">jni</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hello-jni.html">Hello jni</a></li>
+<li class="toctree-l3"><a class="reference internal" href="feat-extractor-jni.html">Binding kaldi-native-fbank for kotlin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="control-flow.html">Control flows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="package.html">Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="for.html">for</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enum.html">enum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="coroutine.html">Coroutine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kmp.html">Kotlin Multiplatform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="native.html">Kotlin Native</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../basics.html">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cmake.html">cmake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hello.html">hello</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../android_mk.html">Android.mk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adb.html">adb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tts.html">tts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jetpack.html">jetpack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../samples.html">Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources.html">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release.html">Release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coroutine.html">Coroutine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run-cpp-on-android.html">Run CPP on Android</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gradle.html">gradle</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../papers/index.html">Papers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pascal/index.html">Pascal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../llm/index.html">LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ascend/index.html">ascend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../qnn/index.html">qnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Android</a></li>
+          <li class="breadcrumb-item"><a href="index.html">kotlin</a></li>
+      <li class="breadcrumb-item active">Basic types</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/android/kotlin/basic-types.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="basic-types">
+<h1>Basic types<a class="headerlink" href="#basic-types" title="Permalink to this heading"></a></h1>
+<p>See <a class="reference external" href="https://kotlinlang.org/docs/basic-types.html">https://kotlinlang.org/docs/basic-types.html</a></p>
+<p>Note <code class="docutils literal notranslate"><span class="pre">String.length</span></code> and <code class="docutils literal notranslate"><span class="pre">Array.size</span></code>. Both of them have <code class="docutils literal notranslate"><span class="pre">count()</span></code>, i.e.,
+<code class="docutils literal notranslate"><span class="pre">String.count()</span></code> and <code class="docutils literal notranslate"><span class="pre">Array.count()</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">String.isNotBlank()</span></code> and <code class="docutils literal notranslate"><span class="pre">String.isNotEmpty()</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">String.isBlank()</span></code> and <code class="docutils literal notranslate"><span class="pre">String.isEmpty()</span></code> returns true for an empty string <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>.</p>
+<p>Differences between <code class="docutils literal notranslate"><span class="pre">Array&lt;Float&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">FloatArray</span></code>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Array&lt;Float&gt;</span></code> stores objects</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FloatArray</span></code> is a primitive array</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Array&lt;Float&gt;</span></code> to <code class="docutils literal notranslate"><span class="pre">FloatArray</span></code>: <code class="docutils literal notranslate"><span class="pre">.toFloatArray()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FloatArray</span></code> to <code class="docutils literal notranslate"><span class="pre">Array&lt;Float&gt;</span></code>: <code class="docutils literal notranslate"><span class="pre">.toTypedArray()</span></code></p></li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt>ranges:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">start..end</span></code>: <code class="docutils literal notranslate"><span class="pre">[start,</span> <span class="pre">end]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">start</span> <span class="pre">until</span> <span class="pre">end</span></code>: <code class="docutils literal notranslate"><span class="pre">[start,</span> <span class="pre">end)</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kotlinc<span class="w"> </span>-include-runtime<span class="w"> </span>-d<span class="w"> </span>hello.jar<span class="w"> </span>hello.kt
+</pre></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/basic-types/hello.kt</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span>fun testInt() {
+  val a = 1
+  check(a is Int)
+  check(a == 1)
+
+  val b = 1L
+  check(b is Long)
+  check(b == 1L)
+
+  val c :Byte = -1
+  check(c is Byte)
+  check(c == (-1).toByte())
+
+  val d: Short = 1
+  check(d is Short)
+  check(d == 1.toShort())
+
+  val g = 0x0a
+  check(g is Int)
+  check(g == 10)
+
+  val f = 0b00001000
+  check(f is Int)
+  check(f == 8)
+
+  val h = 0b0000_1000
+  check(h is Int)
+  check(h == 8)
+
+  val k = 1_000
+  check(k is Int)
+  check(k == 1000)
+
+  val m = 1 / 2
+  check(m is Int)
+  check(m == 0)
+
+  val n = 1 / 2.toFloat()
+  check(n is Float)
+  check(n == 0.5f)
+}
+
+fun testFloat() {
+  val a = 1.0
+  check(a is Double)
+  check(a == 1.0)
+
+  val b = 2.0F
+  check(b is Float)
+  check(b == 2.0F)
+  check(b == (2.0).toFloat())
+
+  // either f or F is ok
+  val c = 2.0f
+  check(c is Float)
+  check(c == 2.0F)
+
+  val d = (2.2F).toInt()
+  check(d is Int)
+  check(d == 2)
+}
+
+
+fun testBitwise() {
+  // support only Int and Long
+  val a = 0b01
+  val b = 0b10
+
+  val c = a or b // in C++: c = a | b
+
+  check(c == 3)
+
+  val d = a and b // in C++: d = a &amp; b
+  check(d == 0)
+
+  val f = a shl 3 // in C++: a &lt;&lt; 3
+  check(f == 8)
+
+  val g = b shr 1 // in C++: g = b &gt;&gt; 1
+  check(g == 1)
+
+  val h = a xor b // in C++: h = a ^ b
+  check(h == 3)
+
+  val k :Byte = 0b0100_0001
+	// test inv()
+}
+
+fun testJavaClass() {
+  val a = 1
+	println(a.javaClass) // int
+}
+
+fun testBoolean() {
+  val a = true
+	val b = false
+	val c: Boolean = true
+	check(a)
+	check(!b)
+	check(c)
+
+	val d = a &amp;&amp; b
+	check(d == false)
+
+	val e = a || b
+	check(e)
+}
+
+fun testChar() {
+  // a char is 2-byte, utf-16
+	val a = &#39;a&#39;
+	check(a is Char)
+	check(a.isDigit() == false)
+	check(a.isLetter() == true)
+
+	val b = &#39;\uff00&#39;
+	check(b is Char)
+
+	val c = &#39;9&#39;
+	check(c.isDigit() == true)
+	check(c.isLetter() == false)
+
+	check(Char.SIZE_BITS == 16)
+	check(&#39;0&#39;.code == 0x30)
+	check(&#39;A&#39;.lowercaseChar() == &#39;a&#39;)
+	check(&#39;a&#39;.uppercaseChar() == &#39;A&#39;)
+}
+
+// note String is immutable, like Python.
+fun testString() {
+  // a sequence of Char, utf16
+  // immutable
+  val a = &quot;Abc&quot;
+  check(a + 1 == &quot;Abc1&quot;)
+  check(a.count() == 3)
+  check(a.length == 3)
+  check(a.lastIndex == a.length - 1)
+  check(a.uppercase() == &quot;ABC&quot;)
+  check(a.lowercase() == &quot;abc&quot;)
+
+  // remove the first two characters
+  check(a.drop(2) == &quot;c&quot;)
+
+  // remove the last two characters
+  check(a.dropLast(2) == &quot;A&quot;)
+
+  check(a.indexOf(&quot;bc&quot;) == 1)
+
+  // multi-line strings, like python
+  val b = &quot;&quot;&quot;
+  line 1
+  line 2
+  &quot;&quot;&quot;
+  println(b)
+/*
+
+  line 1
+  line 2
+
+*/
+
+  val c = &quot;&quot;&quot;
+  |line 1
+  |line 2
+  &quot;&quot;&quot;.trimMargin()
+  println(c)
+/*
+line 1
+line 2
+*/
+
+  val d = &quot;&quot;&quot;
+  &gt;line 1
+  &gt;line 2
+  &quot;&quot;&quot;.trimMargin(&quot;&gt;&quot;)
+  println(d)
+/*
+line 1
+line 2
+*/
+
+  // format
+  val k = String.format(&quot;%x %02x&quot;, 10, 10)
+  check(k == &quot;a 0a&quot;)
+}
+
+fun testArray() {
+  val a = Array(3) {it}
+  check(a[0] == 0)
+  check(a[1] == 1)
+  check(a[2] == 2)
+
+  // val b = arrayOf(0, 1, 2)
+  val b = arrayOf&lt;Int&gt;(0, 1, 2)
+  check(a.contentEquals(b)) // we cannot use == since they save references
+
+  a[0] = 10 // assign a value
+  check(a[0] == 10)
+
+  check(a.sum() == 10 + 1 + 2)
+
+  check(a.joinToString() == &quot;10, 1, 2&quot;)
+}
+
+fun shortArrayToByteArray() {
+  val a: Array&lt;Short&gt; = arrayOf(0x0102, 0x0304)
+  val b: Array&lt;Byte&gt; = Array(a.size * 2) {0}
+  println(a.contentToString()) // [258, 772]
+  println(b.contentToString()) // [0, 0, 0, 0]
+
+  for (i in a.indices) {
+    b[2*i] = (a[i].toInt() and 0xff).toByte()
+    b[2*i+1] =((a[i].toInt() shr 8) and 0xff).toByte()
+  }
+  println(b.contentToString()) //  [2, 1, 4, 3]
+}
+
+fun byteArrayToShortArray() {
+  val a: Array&lt;Byte&gt; = arrayOf(0x01, 0x02, 0x03, 0x04)
+  val b: Array&lt;Short&gt; = Array(a.size / 2) {0}
+
+  println(a.contentToString()) // [258, 772]
+  println(b.contentToString()) // [0, 0, 0, 0]
+
+  for (i in b.indices) {
+    b[i] = (a[2*i].toInt() + (a[2*i+1].toInt() shl 8)).toShort()
+  }
+  check(b[0].toInt() == 0x0201)
+  check(b[1].toInt() == 0x0403)
+}
+
+fun main() {
+  testInt()
+  testFloat()
+  testBitwise()
+	testJavaClass()
+	testBoolean()
+	testChar()
+	testString()
+  testArray()
+  shortArrayToByteArray()
+  byteArrayToShortArray()
+}
+</pre></div>
+</div>
+</div>
+<section id="charsequence">
+<h2>CharSequence<a class="headerlink" href="#charsequence" title="Permalink to this heading"></a></h2>
+<p>See <a class="reference external" href="https://github.com/JetBrains/kotlin/blob/0938b46726b9c6938df309098316ce741815bb55/core/builtins/native/kotlin/CharSequence.kt#L22">https://github.com/JetBrains/kotlin/blob/0938b46726b9c6938df309098316ce741815bb55/core/builtins/native/kotlin/CharSequence.kt#L22</a></p>
+<p>It is an interface.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install.html" class="btn btn-neutral float-left" title="Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="collections.html" class="btn btn-neutral float-right" title="Collections" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

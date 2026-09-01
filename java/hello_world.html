@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello world &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Reference" href="reference.html" />
+    <link rel="prev" title="Install" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">java</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Hello world</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#todos">TODOs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/index.html">Papers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pascal/index.html">Pascal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llm/index.html">LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ascend/index.html">ascend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qnn/index.html">qnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">java</a></li>
+      <li class="breadcrumb-item active">Hello world</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/java/hello_world.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="hello-world">
+<h1>Hello world<a class="headerlink" href="#hello-world" title="Permalink to this heading"></a></h1>
+<p>Look at the code <a class="reference external" href="https://github.com/openjdk/jdk/blob/master/src/java.base/share/classes/java/lang/System.java">https://github.com/openjdk/jdk/blob/master/src/java.base/share/classes/java/lang/System.java</a>
+to learn the coding style of java.</p>
+<p>All primitive types, such as <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">char</span></code>, and <code class="docutils literal notranslate"><span class="pre">double</span></code> begin with a lowercase.
+All other types, such as <code class="docutils literal notranslate"><span class="pre">String</span></code> and <code class="docutils literal notranslate"><span class="pre">Math</span></code>, begin with an uppercase.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">java.lang</span><span class="p">;</span>
+
+<span class="c1">// Class names looks like: MyClass</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">class</span> <span class="nc">System</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="c1">// method name</span>
+<span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">native</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">registerNatives</span><span class="p">();</span>
+
+<span class="c1">// constructor</span>
+<span class="kd">private</span><span class="w"> </span><span class="nf">System</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="c1">// member variables</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">InputStream</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">notSupportedJnuEncoding</span><span class="p">;</span>
+
+<span class="c1">// constants</span>
+<span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">NEVER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>It using <code class="docutils literal notranslate"><span class="pre">//</span></code> and <code class="docutils literal notranslate"><span class="pre">/**/</span></code> as comments, same as C++.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Hello.java</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Usage 1:</span>
+<span class="c1">//   java Hello.java</span>
+<span class="c1">// Usage 2:</span>
+<span class="c1">//   javac Hello.java</span>
+<span class="c1">//   java Hello</span>
+<span class="c1">//</span>
+<span class="c1">//  Note:</span>
+<span class="c1">//   - &quot;javac Hello.java&quot; generates a file &quot;Hello.class&quot;</span>
+<span class="c1">//   - &quot;java Hello&quot; takes as input &quot;Hello.class&quot; and executes it</span>
+<span class="c1">//</span>
+<span class="c1">// The class name Hello must match the filename Hello.java</span>
+<span class="c1">// By convention, the class name looks like `MyClass`.</span>
+<span class="kd">class</span> <span class="nc">Hello</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Note: How is array defined in java</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span><span class="w"> </span><span class="c1">// There is no &#39;;&#39; here</span>
+<span class="c1">// Every line of runnable code must be in some `class`</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">EqualTest.java</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">EqualTest</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">EqualTest</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">anObject</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">anObject</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">anObject</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">EqualTest</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">((</span><span class="n">EqualTest</span><span class="p">)</span><span class="w"> </span><span class="n">anObject</span><span class="p">).</span><span class="na">i</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">EqualTest</span><span class="w"> </span><span class="n">e1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">EqualTest</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="w">    </span><span class="n">EqualTest</span><span class="w"> </span><span class="n">e2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">EqualTest</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">e2</span><span class="p">);</span><span class="w"> </span><span class="c1">// false, compare the reference</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e1</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">e2</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">e2</span><span class="p">));</span><span class="w"> </span><span class="c1">// true, compare the contained value</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Variables.java</span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Variables</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello world&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="n">i</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">// ok</span>
+<span class="w">    </span><span class="o">++</span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="c1">// ok</span>
+<span class="w">    </span><span class="c1">// i-- // error, should be --i</span>
+<span class="w">    </span><span class="o">--</span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ii</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ii</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="c1">// truncated</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">ii</span><span class="p">);</span><span class="w"> </span><span class="c1">// 3</span>
+<span class="w">    </span><span class="n">ii</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">ii</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5</span>
+<span class="w">    </span><span class="c1">// also has:</span>
+<span class="w">    </span><span class="c1">// -=, &amp;=, |=, &gt;&gt;=, &lt;&lt;=, ^=, /=, *=</span>
+<span class="w">    </span><span class="c1">// Similar to C/C++</span>
+
+<span class="w">    </span><span class="cm">/* float f = 1.25; // error: possible lossy conversion from double to float */</span>
+<span class="w">    </span><span class="c1">// Caution: We have to use `1.25f` instead of `1.25` to assign a float variable</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.25f</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.25</span><span class="p">;</span>
+<span class="w">    </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.25d</span><span class="p">;</span><span class="w"> </span><span class="c1">// also ok</span>
+
+<span class="w">    </span><span class="c1">// f = d; // error: possible lossy conversion from double to float</span>
+<span class="w">    </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"> </span><span class="c1">// ok, explicit cast</span>
+<span class="w">    </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">;</span><span class="w"> </span><span class="c1">// ok</span>
+
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;h&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// a character</span>
+
+<span class="w">    </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w"> </span><span class="c1">// 10</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">f</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1.25</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">d</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1.25</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">c</span><span class="p">);</span><span class="w"> </span><span class="c1">// h</span>
+
+<span class="w">    </span><span class="c1">// define multiple variable in the same line</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">i2</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// System.out.println(i2); // variable i2 might not have been initialized</span>
+<span class="w">    </span><span class="n">i2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i2</span><span class="p">);</span><span class="w"> </span><span class="c1">// 3</span>
+<span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+<span class="w">    </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// b = 1; // error: int cannot be converted to boolean</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+
+<span class="w">    </span><span class="c1">// byte b0 = 128; // error: lossy conversion from int to byte</span>
+<span class="w">    </span><span class="kt">byte</span><span class="w"> </span><span class="n">b0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">127</span><span class="p">;</span><span class="w"> </span><span class="c1">// ok</span>
+<span class="w">    </span><span class="cm">/* b0 = -129; // error: lossy conversion from int to type */</span>
+<span class="w">    </span><span class="n">b0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">128</span><span class="p">;</span><span class="w"> </span><span class="c1">// ok</span>
+
+<span class="w">    </span><span class="c1">// short s0 = 32768; // error: lssoy conversion from int to short</span>
+<span class="w">    </span><span class="kt">short</span><span class="w"> </span><span class="n">s0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">32767</span><span class="p">;</span><span class="w"> </span><span class="c1">// ok</span>
+<span class="w">    </span><span class="c1">// s0 = -32769; // error: lossy conversion fro int to short</span>
+<span class="w">    </span><span class="n">s0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">32768</span><span class="p">;</span><span class="w"> </span><span class="c1">// ok</span>
+
+<span class="w">    </span><span class="c1">// other types: int, long, float, double, boolean, char</span>
+<span class="w">    </span><span class="c1">// Note: char has 2-byte</span>
+<span class="w">    </span><span class="c1">// boolean has 1-bit</span>
+<span class="w">    </span><span class="c1">// There are no unsigned integers !!</span>
+
+<span class="w">    </span><span class="c1">// ternary operator :?</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;yes&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;no&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// no</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Strings.java</span><a class="headerlink" href="#id4" title="Permalink to this code"></a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Strings</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">());</span><span class="w"> </span><span class="c1">// 3</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">());</span><span class="w"> </span><span class="c1">// ABC</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">().</span><span class="na">toLowerCase</span><span class="p">());</span><span class="w"> </span><span class="c1">// abc</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="s">&quot;ab&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// 0</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// 0</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="s">&quot;bc&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// 1</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="s">&quot;bca&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// when not found, it is -1</span>
+
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;123&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;abc123&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// false, == compares the reference</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">((</span><span class="n">s</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;123&quot;</span><span class="p">).</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;abc123&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true, compare the content</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">concat</span><span class="p">(</span><span class="s">&quot;123&quot;</span><span class="p">).</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;abc123&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true, compare the content</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">((</span><span class="n">s</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">123</span><span class="p">).</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;abc123&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true, compare the content</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">((</span><span class="mi">123</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">s</span><span class="p">).</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;123abc&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true, compare the content</span>
+<span class="w">    </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;a\&quot;b&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">MathTest.java</span><a class="headerlink" href="#id5" title="Permalink to this code"></a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">MathTest</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">));</span><span class="w"> </span><span class="c1">// 3</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.5</span><span class="p">));</span><span class="w"> </span><span class="c1">// 3.5</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.5</span><span class="p">));</span><span class="w"> </span><span class="c1">// 2</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="mf">6.25</span><span class="p">));</span><span class="w"> </span><span class="c1">// 2.5</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="mi">9</span><span class="p">));</span><span class="w"> </span><span class="c1">// 3.0, note it is a double</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">9</span><span class="p">));</span><span class="w"> </span><span class="c1">// -9</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">abs</span><span class="p">(</span><span class="o">-</span><span class="mf">9.0</span><span class="p">));</span><span class="w"> </span><span class="c1">// -9.0</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">());</span><span class="w"> </span><span class="c1">// a number in the range [0, 1)</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">ArrayTest.java</span><a class="headerlink" href="#id6" title="Permalink to this code"></a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">ArrayTest</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">    1</span>
+<span class="cm">    2</span>
+<span class="cm">    3</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">);</span><span class="w"> </span><span class="c1">// 3</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">    1</span>
+<span class="cm">    2</span>
+<span class="cm">    3</span>
+<span class="cm">         */</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<section id="todos">
+<h2>TODOs<a class="headerlink" href="#todos" title="Permalink to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>How to define an array? How to iterate an array?</p></li>
+<li><p>What methods does the <code class="docutils literal notranslate"><span class="pre">String</span></code> class have</p></li>
+<li><p>What are final variables?</p></li>
+<li><p>How to define a package?</p></li>
+<li><p>What is static import?</p></li>
+<li><p>What is a lambda expression?</p></li>
+<li><p>How to write comments using javadoc?</p></li>
+<li><p>How to generate documentation from javadoc?</p></li>
+<li><p>How to use a for-each loop?</p></li>
+<li><p>How to import a class from another file?</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install.html" class="btn btn-neutral float-left" title="Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="reference.html" class="btn btn-neutral float-right" title="Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

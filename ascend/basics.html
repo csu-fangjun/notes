@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basics &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Paraformer to ascend npu" href="paraformer.html" />
+    <link rel="prev" title="ascend" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/index.html">Papers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pascal/index.html">Pascal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llm/index.html">LLM</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ascend</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#npu-smi">npu-smi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#atc">atc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#atc-help">atc --help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">atc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fix-errors">fix errors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="paraformer.html">Paraformer to ascend npu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acl.html">acl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cann.html">cann</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orange-pi-aipro.html">orange pi ai pro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html">samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ais_bench.html">ais_bench</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hi-dev-lab.html">HiDevLab</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../qnn/index.html">qnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">ascend</a></li>
+      <li class="breadcrumb-item active">Basics</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/ascend/basics.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="basics">
+<h1>Basics<a class="headerlink" href="#basics" title="Permalink to this heading"></a></h1>
+<section id="npu-smi">
+<h2>npu-smi<a class="headerlink" href="#npu-smi" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">npu</span><span class="o">-</span><span class="n">smi</span> <span class="n">info</span>
+
+<span class="c1"># It&#39;s similar to nvida-smi</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>yyy@xxx:~$ npu-smi info
+
++------------------------------------------------------------------------------------------------+
+| npu-smi 24.1.0                   Version: 24.1.0                                               |
++---------------------------+---------------+----------------------------------------------------+
+| NPU   Name                | Health        | Power(W)    Temp(C)           Hugepages-Usage(page)|
+| Chip                      | Bus-Id        | AICore(%)   Memory-Usage(MB)  HBM-Usage(MB)        |
++===========================+===============+====================================================+
+| 0     910B                | OK            | xx.x        xxx               0    / 0             |
+| 0                         | 1234:d0:12.1  | 0           xxxx / 1xxxx      0    / xxxxx         |
++===========================+===============+====================================================+
+| NPU     Chip              | Process id    | Process name             | Process memory(MB)      |
++===========================+===============+====================================================+
+| No running processes found in NPU 0                                                            |
++===========================+===============+====================================================+
+</pre></div>
+</div>
+</section>
+<section id="atc">
+<h2>atc<a class="headerlink" href="#atc" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>yyy@xxx:~$ cat /usr/local/Ascend/ascend-toolkit/set_env.sh
+
+export LD_LIBRARY_PATH=/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:$LD_LIBRARY_PATH
+export ASCEND_TOOLKIT_HOME=/usr/local/Ascend/ascend-toolkit/latest
+export LD_LIBRARY_PATH=${ASCEND_TOOLKIT_HOME}/lib64:${ASCEND_TOOLKIT_HOME}/lib64/plugin/opskernel:${ASCEND_TOOLKIT_HOME}/lib64/plugin/nnengine:${ASCEND_TOOLKIT_HOME}/opp/built-in/op_impl/ai_core/tbe/op_tiling/lib/linux/$(arch):$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=${ASCEND_TOOLKIT_HOME}/tools/aml/lib64:${ASCEND_TOOLKIT_HOME}/tools/aml/lib64/plugin:$LD_LIBRARY_PATH
+export PYTHONPATH=${ASCEND_TOOLKIT_HOME}/python/site-packages:${ASCEND_TOOLKIT_HOME}/opp/built-in/op_impl/ai_core/tbe:$PYTHONPATH
+export PATH=${ASCEND_TOOLKIT_HOME}/bin:${ASCEND_TOOLKIT_HOME}/compiler/ccec_compiler/bin:${ASCEND_TOOLKIT_HOME}/tools/ccec_compiler/bin:$PATH
+export ASCEND_AICPU_PATH=${ASCEND_TOOLKIT_HOME}
+export ASCEND_OPP_PATH=${ASCEND_TOOLKIT_HOME}/opp
+export TOOLCHAIN_HOME=${ASCEND_TOOLKIT_HOME}/toolkit
+export ASCEND_HOME_PATH=${ASCEND_TOOLKIT_HOME}
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Ascend</span><span class="o">/</span><span class="n">ascend</span><span class="o">-</span><span class="n">toolkit</span><span class="o">/</span><span class="n">latest</span><span class="o">/</span><span class="n">version</span><span class="o">.</span><span class="n">cfg</span>
+
+<span class="c1"># version: 1.0</span>
+<span class="n">runtime_running_version</span><span class="o">=</span><span class="p">[</span><span class="mf">7.6.0.1.220</span><span class="p">:</span><span class="mf">8.0.0</span><span class="p">]</span>
+<span class="n">compiler_running_version</span><span class="o">=</span><span class="p">[</span><span class="mf">7.6.0.1.220</span><span class="p">:</span><span class="mf">8.0.0</span><span class="p">]</span>
+<span class="n">hccl_running_version</span><span class="o">=</span><span class="p">[</span><span class="mf">7.6.0.1.220</span><span class="p">:</span><span class="mf">8.0.0</span><span class="p">]</span>
+<span class="n">opp_running_version</span><span class="o">=</span><span class="p">[</span><span class="mf">7.6.0.1.220</span><span class="p">:</span><span class="mf">8.0.0</span><span class="p">]</span>
+<span class="n">toolkit_running_version</span><span class="o">=</span><span class="p">[</span><span class="mf">7.6.0.1.220</span><span class="p">:</span><span class="mf">8.0.0</span><span class="p">]</span>
+<span class="n">aoe_running_version</span><span class="o">=</span><span class="p">[</span><span class="mf">7.6.0.1.220</span><span class="p">:</span><span class="mf">8.0.0</span><span class="p">]</span>
+<span class="n">ncs_running_version</span><span class="o">=</span><span class="p">[</span><span class="mf">7.6.0.1.220</span><span class="p">:</span><span class="mf">8.0.0</span><span class="p">]</span>
+<span class="n">runtime_upgrade_version</span><span class="o">=</span><span class="p">[</span><span class="mf">7.6.0.1.220</span><span class="p">:</span><span class="mf">8.0.0</span><span class="p">]</span>
+<span class="n">compiler_upgrade_version</span><span class="o">=</span><span class="p">[</span><span class="mf">7.6.0.1.220</span><span class="p">:</span><span class="mf">8.0.0</span><span class="p">]</span>
+<span class="n">hccl_upgrade_version</span><span class="o">=</span><span class="p">[</span><span class="mf">7.6.0.1.220</span><span class="p">:</span><span class="mf">8.0.0</span><span class="p">]</span>
+<span class="n">opp_upgrade_version</span><span class="o">=</span><span class="p">[</span><span class="mf">7.6.0.1.220</span><span class="p">:</span><span class="mf">8.0.0</span><span class="p">]</span>
+<span class="n">toolkit_upgrade_version</span><span class="o">=</span><span class="p">[</span><span class="mf">7.6.0.1.220</span><span class="p">:</span><span class="mf">8.0.0</span><span class="p">]</span>
+<span class="n">aoe_upgrade_version</span><span class="o">=</span><span class="p">[</span><span class="mf">7.6.0.1.220</span><span class="p">:</span><span class="mf">8.0.0</span><span class="p">]</span>
+<span class="n">ncs_upgrade_version</span><span class="o">=</span><span class="p">[</span><span class="mf">7.6.0.1.220</span><span class="p">:</span><span class="mf">8.0.0</span><span class="p">]</span>
+<span class="n">runtime_installed_version</span><span class="o">=</span><span class="p">[</span><span class="mf">7.6.0.1.220</span><span class="p">:</span><span class="mf">8.0.0</span><span class="p">]</span>
+<span class="n">compiler_installed_version</span><span class="o">=</span><span class="p">[</span><span class="mf">7.6.0.1.220</span><span class="p">:</span><span class="mf">8.0.0</span><span class="p">]</span>
+<span class="n">hccl_installed_version</span><span class="o">=</span><span class="p">[</span><span class="mf">7.6.0.1.220</span><span class="p">:</span><span class="mf">8.0.0</span><span class="p">]</span>
+<span class="n">opp_installed_version</span><span class="o">=</span><span class="p">[</span><span class="mf">7.6.0.1.220</span><span class="p">:</span><span class="mf">8.0.0</span><span class="p">]</span>
+<span class="n">toolkit_installed_version</span><span class="o">=</span><span class="p">[</span><span class="mf">7.6.0.1.220</span><span class="p">:</span><span class="mf">8.0.0</span><span class="p">]</span>
+<span class="n">aoe_installed_version</span><span class="o">=</span><span class="p">[</span><span class="mf">7.6.0.1.220</span><span class="p">:</span><span class="mf">8.0.0</span><span class="p">]</span>
+<span class="n">ncs_installed_version</span><span class="o">=</span><span class="p">[</span><span class="mf">7.6.0.1.220</span><span class="p">:</span><span class="mf">8.0.0</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo $PATH | grep ascend-toolkit
+
+/usr/local/Ascend/ascend-toolkit/latest/bin:/usr/local/Ascend/ascend-toolkit/latest/compiler/ccec_compiler/bin:/usr/local/Ascend/ascend-toolkit/latest/tools/ccec_compiler/bin
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Ascend</span><span class="o">/</span><span class="n">ascend</span><span class="o">-</span><span class="n">toolkit</span><span class="o">/</span>
+
+<span class="mf">8.0</span>  <span class="mf">8.0.0</span>  <span class="n">latest</span>  <span class="n">set_env</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+</section>
+<section id="atc-help">
+<h2>atc --help<a class="headerlink" href="#atc-help" title="Permalink to this heading"></a></h2>
+<p>ascend tool chain</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ATC start working now, please wait for a moment.
+usage: atc &lt;args&gt;
+generate offline model example:
+atc --model=./alexnet.prototxt --weight=./alexnet.caffemodel --framework=0 --output=./domi --soc_version=&lt;soc_version&gt; 
+generate offline model for single op example:
+atc --singleop=./op_list.json --output=./op_model --soc_version=&lt;soc_version&gt; 
+
+===== Basic Functionality =====
+[General]
+  --h/help            Show this help message
+  --mode              Run mode.
+                       0: default, generate offline model;
+                       1: convert model to JSON format;
+                       3: only pre-check;
+                       5: convert ge dump txt file to JSON format;
+                       6: display model info;
+                       30: convert original graph to execute-om for nano(offline model)
+
+[Input]
+  --distributed_cluster_build      build model for distribute mode, 1: enable distribute; 0(default): disable distribute
+  --model             Model file
+  --weight            Weight file. Required when framework is Caffe
+  --om                The model file to be converted to json
+  --framework         Framework type. 0:Caffe; 1:MindSpore; 3:Tensorflow; 5:Onnx
+  --input_format      Format of input data. E.g.: &quot;NCHW&quot;
+  --input_shape       Shape of static input data or shape range of dynamic input. Separate multiple nodes with semicolons (;). Use double quotation marks (&quot;) to enclose each argument.
+                      E.g.: &quot;input_name1:n1,c1,h1,w1;input_name2:n2,c2,h2,w2&quot;
+                            &quot;input_name1:n1~n2,c1,h1,w1;input_name2:n3~n4,c2,h2,w2&quot;
+  --input_shape_range This option is deprecated and will be removed in future version, please use input_shape instead.Shape range of input data. Separate multiple nodes with semicolons (;).
+                      Use double quotation marks (&quot;) to enclose each argument.
+                      E.g.: &quot;input_name1:[n1~n2,c1,h1,w1];input_name2:[n2,c2~c3,h2,w2]&quot;
+  --dynamic_batch_size Set dynamic batch size. E.g.: &quot;batchsize1,batchsize2,batchsize3&quot;
+  --dynamic_image_size Set dynamic image size. Separate multiple nodes with semicolons (;). Use double quotation marks (&quot;) to enclose each argument.
+                       E.g.: &quot;imagesize1_height,imagesize1_width;imagesize2_height,imagesize2_width&quot;
+  --dynamic_dims      Set dynamic dims. Separate multiple nodes with semicolons (;). Use double quotation marks (&quot;) to enclose each argument.
+                       E.g.: &quot;dims1_n1,dims1_n2;dims2_n1,dims2_n2&quot;
+  --singleop          Single op definition file. atc will generate offline.model(s) for single op if --singleop is set.
+  --shard_model_dir              directory of split models
+  --model_relation_config        relation of split models
+  --enable_graph_parallel        whether to enable parallel
+  --graph_parallel_option_path   parallel strategy configuration file
+  --cluster_config               logic cluster configuration of target environment
+
+[Output]
+  --output            Output file path&amp;name(needn&#39;t suffix, will add .om/.exeom automatically).
+                      If --mode is set to 30, an additional dbg file will be generated.
+                      If --singleop is set, this arg specifies the directory to which the single op offline model will be generated.
+  --output_type       Set net output type. Support FP32, FP16, UINT8, INT8. E.g.: FP16, indicates that all out nodes are set to FP16.
+                      &quot;node1:0:FP16;node2:1:FP32&quot;, indicates setting the datatype of multiple out nodes.
+  --check_report      The pre-checking report file. Default value is: &quot;check_result.json&quot;
+  --json              The output json file path&amp;name which is converted from a model
+  --host_env_os            OS type of the target execution environment.
+                           The parameters that support setting are the OS types of the opp package
+                           Supported host env os as list:
+                           minios linux 
+                           default: linux
+  --host_env_cpu           CPU type of the target execution environment.
+                           The parameters that support setting are the CPU types of the opp package
+                           Supported host env cpu as list:
+                           support cpu: aarch64 , respond to os: minios
+                           support cpu: aarch64 x86_64 , respond to os: linux
+                           default: aarch64
+
+[Target]
+  --soc_version       The soc version.
+  --virtual_type      Set whether offline model can run on the virtual devices under compute capability allocation.
+                      0 (default) : Disable virtualization; 1 : Enable virtualization.
+  --core_type         Set core type AiCore or VectorCore. VectorCore: use vector core. Default value is: AiCore
+  --aicore_num        Set aicore num
+===== Advanced Functionality =====
+[Feature]
+  --out_nodes         Output nodes designated by users. Separate multiple nodes with semicolons (;).Use double quotation marks (&quot;) to enclose each argument.
+                      E.g.: &quot;node_name1:0;node_name1:1;node_name2:0&quot;
+  --input_fp16_nodes  Input node datatype is fp16. Separate multiple nodes with semicolons (;). Use double quotation marks (&quot;) to enclose each argument. E.g.: &quot;node_name1;node_name2&quot;
+  --insert_op_conf    Config file to insert new op
+  --op_name_map       Custom op name mapping file
+                      Note: A semicolon(;) cannot be included in each path, otherwise the resolved path will not match the expected one.
+  --is_input_adjust_hw_layout    Input node datatype is fp16 and format is NC1HWC0, used with input_fp16_nodes. true: enable; false(default): disable. E.g.: &quot;true,true,false,true&quot;
+  --is_output_adjust_hw_layout   Net output node datatype is fp16 and format is NC1HWC0, used with out_nodes. true: enable; false(default): disable. E.g.: &quot;true,true,false,true&quot;
+  --external_weight        Convert const to file constant, and save weight in file.
+                           0 (default): save weight in om.  1: save weight in file.
+
+[Model Tuning]
+  --disable_reuse_memory    The switch of reuse memory. Default value is : 0. 0 means reuse memory, 1 means do not reuse memory.
+  --fusion_switch_file      File for fusion rule(graph fusion and UB fusion).
+                            Enter as the configuration file path, disable specified fusion rules
+  --enable_scope_fusion_passes    validate the non-general scope fusion passes, multiple names can be set and separated by &#39;,&#39;. E.g.: ScopePass1,ScopePass2,...
+  --enable_single_stream    Enable single stream. true: enable; false(default): disable
+  --ac_parallel_enable      Enable engines such as Aicpu to parallel with other engines in dynamic shape graphs. 1: enable; 0(default): disable
+  --tiling_schedule_optimize Enable tiling schedule optimize. 1: enable; 0(default): disable
+  --quant_dumpable          Ensure that the input and output of quant nodes can be dumped. 1: enable; 0(default): disable.
+  --enable_small_channel    Set enable small channel. 0(default): disable; 1: enable
+  --enable_compress_weight  Enable compress weight. true: enable; false(default): disable
+  --compress_weight_conf    Config file to compress weight
+  --compression_optimize_conf    Config file to compress optimize
+  --sparsity                Optional; enable structured sparse. 0(default): disable; 1: enable
+  --buffer_optimize         Set buffer optimize. Support &quot;l2_optimize&quot; (default), &quot;l1_optimize&quot;, &quot;off_optimize&quot;
+  --mdl_bank_path           Set the path of the custom repository generated after model tuning.
+  --oo_level                The graph optimization level. Support &quot;O1&quot;, &quot;O3&quot;(default).
+  --topo_sorting_mode           The option of graph topological sort, 0: BFS; 1: DFS(default); 2: RDFS; 3: StableRDFS(stable topo).
+  --oo_constant_folding           The switch of constant folding, false: disable; true(default): enable.
+  --oo_dead_code_elimination           The switch of dead code elimination, false: disable; true(default): enable.
+
+[Operator Tuning]
+  --op_precision_mode     Set the path of operator precision mode configuration file (.ini)
+  --allow_hf32            enable hf32. false: disable; true: enable. (not support, reserved)
+  --precision_mode        precision mode, support force_fp16(default), force_fp32, cube_fp16in_fp32out, allow_mix_precision, allow_fp32_to_fp16, must_keep_origin_dtype, allow_mix_precision_fp16, allow_mix_precision_bf16, allow_fp32_to_bf16.
+  --precision_mode_v2     precision mode v2, support fp16(default), origin, cube_fp16in_fp32out, mixed_float16, mixed_bfloat16, cube_hif8, mixed_hif8.
+  --modify_mixlist        Set the path of operator mixed precision configuration file.
+  --keep_dtype            Retains the precision of certain operators in inference scenarios by using a configuration file.
+  --customize_dtypes      Set the path of custom dtypes configuration file.
+  --is_weight_clip        Ensure weight is finite by cliped when its datatype is floating-point data, 0: disable; 1(default): enable.
+  --op_bank_path          Set the path of the custom repository generated after operator tuning with Auto Tune.
+  --op_select_implmode    Set op select implmode. Support high_precision, high_performance, high_precision_for_all, high_performance_for_all. default: high_performance
+  --optypelist_for_implmode    Appoint which op to select implmode, cooperated with op_select_implmode.
+                               Separate multiple nodes with commas (,). Use double quotation marks (&quot;) to enclose each argument. E.g.: &quot;node_name1,node_name2&quot;
+
+[Debug]
+  --op_debug_level        Debug enable for TBE operator building.
+                          0 (default): Disable debug; 1: Enable TBE pipe_all, and generate the operator CCE file and Python-CCE mapping file (.json);
+                          2: Enable TBE pipe_all, generate the operator CCE file and Python-CCE mapping file (.json), and enable the CCE compiler -O0-g.
+                          3: Disable debug, and keep generating kernel file (.o and .json)
+                          4: Disable debug, keep generation kernel file (.o and .json) and generate the operator CCE file (.cce) and the UB fusion computing description file (.json)
+  --save_original_model   Control whether to output original model. E.g.: true: output original model
+  --log                   Generate log with level. Support debug, info, warning, error, null(default)
+  --dump_mode             The switch of dump json with shape, to be used with mode 1. 0(default): disable; 1: enable.
+  --debug_dir             Set the save path of operator compilation intermediate files.
+                          Default value: ./kernel_meta
+  --status_check             switch for op status check such as overflow.
+                             0(default): disable; 1: enable.
+  --op_compiler_cache_dir    Set the save path of operator compilation cache files.
+                             Default value: $HOME/atc_data
+  --op_compiler_cache_mode   Set the operator compilation cache mode. Options are disable(default), enable and force(force to refresh the cache)
+  --display_model_info     enable for display model info; 0(default): close display, 1: open display.
+  --shape_generalized_build_mode    For selecting the mode of shape generalization when build graph.
+                                    shape_generalized: Shape will be generalized during graph build
+                                    shape_precise(default): Shape will not be generalized, use precise shape
+  --op_debug_config        Debug enable for Operator memory detection, enter as the configuration file path.
+                           If option is default, debug for Operator memory detection is disable. 
+  --atomic_clean_policy    For selecting the atomic op clean memory policy.
+                           0 (default): centralized clean.  1: separate clean.
+  --deterministic          For deterministic calculation.
+                           0 (default): deterministic off. 1: deterministic on.
+  --export_compile_stat           The option of configuring statistics of the graph compiler, 0: Not Generate; 1: Generated when the program exits(default); 2: Generated when graph compilation complete.
+
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h2>atc<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<p>To show debug messages:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">ASCEND_SLOG_PRINT_TO_STDOUT</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="fix-errors">
+<h2>fix errors<a class="headerlink" href="#fix-errors" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[INFO] acl init success [INFO] open device 0 success [INFO] create new context
+[ACL ERROR] E19999: Inner Error! E19999:
+[PID: 3370899] 2025-10-17-18:40:43.617.804 Invalid opp version [8.3.T14.0.B101] or
+compiler_version [],Please check if it is within the required
+range[FUNC:CheckOsCpuInfoAndOppVersion][FILE:model_helper.cc][LINE:973]
+TraceBack (most recent call last): Assert ((error_code) == ge::SUCCESS)
+failed[FUNC:LoadExecutorFromModelData][FILE:api.cc][LINE:111]
+[Model][FromData]call gert::LoadExecutorFromModelDataWithMem load model from data failed,
+ge result[4294967295][FUNC:ReportCallError][FILE:log_inner.cpp][LINE:161]
+[ERROR] load model from file failed, model file is ./encoder.om
+[WARN] Check failed:processModel-&gt;LoadModelFromFile(modelPath), ret:1
+</pre></div>
+</div>
+<p>I am using  <code class="docutils literal notranslate"><span class="pre">ascendai/cann:latest</span></code> from <a class="reference external" href="https://github.com/Ascend/cann-container-image">https://github.com/Ascend/cann-container-image</a> in GitHub actions
+It shows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Ascend</span><span class="o">/</span><span class="n">ascend</span><span class="o">-</span><span class="n">toolkit</span><span class="o">/</span><span class="n">set_env</span><span class="o">.</span><span class="n">sh</span>
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Ascend</span><span class="o">/</span><span class="n">ascend</span><span class="o">-</span><span class="n">toolkit</span><span class="o">/</span><span class="mf">8.3</span><span class="o">.</span><span class="n">RC1</span><span class="o">.</span><span class="n">alpha003</span><span class="o">/</span><span class="n">fwkacllib</span><span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">libascend_protobuf</span><span class="o">.</span><span class="n">so</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Ascend</span><span class="o">/</span><span class="n">ascend</span><span class="o">-</span><span class="n">toolkit</span><span class="o">/</span><span class="mf">8.3</span><span class="o">.</span><span class="n">RC1</span><span class="o">.</span><span class="n">alpha003</span><span class="o">/</span><span class="n">fwkacllib</span><span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">libascend_dump</span><span class="o">.</span><span class="n">so</span>
+</pre></div>
+</div>
+<p>And on my device, I have:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Ascend</span><span class="o">/</span><span class="n">driver</span><span class="o">/</span><span class="n">version</span><span class="o">.</span><span class="n">info</span>
+
+<span class="n">Version</span><span class="o">=</span><span class="mf">24.1.0</span>
+<span class="n">ascendhal_version</span><span class="o">=</span><span class="mf">7.35.23</span>
+<span class="n">aicpu_version</span><span class="o">=</span><span class="mf">1.0</span>
+<span class="n">tdt_version</span><span class="o">=</span><span class="mf">1.0</span>
+<span class="n">log_version</span><span class="o">=</span><span class="mf">1.0</span>
+<span class="n">prof_version</span><span class="o">=</span><span class="mf">2.0</span>
+<span class="n">dvppkernels_version</span><span class="o">=</span><span class="mf">1.1</span>
+<span class="n">tsfw_version</span><span class="o">=</span><span class="mf">1.0</span>
+<span class="n">Innerversion</span><span class="o">=</span><span class="n">V100R001C19SPC002B226</span>
+<span class="n">compatible_version</span><span class="o">=</span><span class="p">[</span><span class="n">V100R001C13</span><span class="p">],[</span><span class="n">V100R001C15</span><span class="p">],[</span><span class="n">V100R001C17</span><span class="p">],[</span><span class="n">V100R001C18</span><span class="p">],[</span><span class="n">V100R001C19</span><span class="p">]</span>
+<span class="n">compatible_version_fw</span><span class="o">=</span><span class="p">[</span><span class="mf">7.0.0</span><span class="p">,</span><span class="mf">7.6.99</span><span class="p">]</span>
+<span class="n">package_version</span><span class="o">=</span><span class="mf">24.1.0</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">24.1.0</span></code> requires <code class="docutils literal notranslate"><span class="pre">CANN</span> <span class="pre">8.0</span> <span class="pre">/</span> <span class="pre">8.1</span> <span class="pre">LTS</span></code>, but i was using <code class="docutils literal notranslate"><span class="pre">8.3.RC1.alpha003</span></code>, which is too new.</p>
+<p>Switch to <code class="docutils literal notranslate"><span class="pre">8.1.rc1-910b-ubuntu22.04-py3.10</span></code>. See <a class="reference external" href="https://github.com/Ascend/cann-container-image/tree/main/cann/8.1.rc1-910b-ubuntu22.04-py3.10">https://github.com/Ascend/cann-container-image/tree/main/cann/8.1.rc1-910b-ubuntu22.04-py3.10</a></p>
+<ul class="simple">
+<li><p>CANN 7.0.x supports 23.0.x, for 910/310</p></li>
+<li><p>CANN 7.1.x supports 23.1.x and 23.2x, for A310B, 910B</p></li>
+<li><p>CANN 8.0.x/8.1.x supports 24.0.x/24.1.x</p></li>
+<li><p>CANN 8.3.x supports 25.0.x/ 25.1.x</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="ascend" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="paraformer.html" class="btn btn-neutral float-right" title="Paraformer to ascend npu" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basics &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Internals" href="internals.html" />
+    <link rel="prev" title="Install" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ssh/index.html">ssh</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">onnx</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basics.html">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python-notes.html">Python notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python-notes.html#valueinfoproto">ValueInfoProto</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">onnxruntime</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="internals.html">Internals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../protobuf.html">protobuf notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../onnxscript/index.html">onnxscript</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../papers/index.html">Papers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pascal/index.html">Pascal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../llm/index.html">LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ascend/index.html">ascend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../qnn/index.html">qnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">onnx</a></li>
+          <li class="breadcrumb-item"><a href="index.html">onnxruntime</a></li>
+      <li class="breadcrumb-item active">Basics</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/onnx/onnxruntime/basics.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="basics">
+<h1>Basics<a class="headerlink" href="#basics" title="Permalink to this heading"></a></h1>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/Makefile</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nv">CXXFLAGS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>-std<span class="o">=</span>c++17
+<span class="linenos">2</span><span class="nv">CXXFLAGS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-I<span class="w"> </span>/Users/fangjun/Downloads/onnxruntime-osx-x86_64-1.18.0/include
+<span class="linenos">3</span><span class="nv">LDFLAGS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>-L<span class="w"> </span>/Users/fangjun/Downloads/onnxruntime-osx-x86_64-1.18.0/lib
+<span class="linenos">4</span><span class="nv">LDFLAGS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-l<span class="w"> </span>onnxruntime
+<span class="linenos">5</span><span class="nv">LDFLAGS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-Wl,-rpath,/Users/fangjun/Downloads/onnxruntime-osx-x86_64-1.18.0/lib
+<span class="linenos">6</span>
+<span class="linenos">7</span><span class="nf">main</span><span class="o">:</span><span class="w"> </span><span class="n">main</span>.<span class="n">cc</span> <span class="n">c</span>-<span class="n">api</span>-<span class="n">test</span>.<span class="n">cc</span> <span class="n">cpp</span>-<span class="n">api</span>-<span class="n">test</span>.<span class="n">cc</span> ./<span class="n">custom</span>-<span class="n">op</span>.<span class="n">cc</span> ./<span class="n">custom</span>-<span class="n">op</span>-2.<span class="n">cc</span> ./<span class="n">custom</span>-<span class="n">op</span>-3.<span class="n">cc</span>
+<span class="linenos">8</span><span class="w">	</span><span class="k">$(</span>CXX<span class="k">)</span><span class="w"> </span><span class="k">$(</span>CXXFLAGS<span class="k">)</span><span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span><span class="w"> </span>$^<span class="w"> </span><span class="k">$(</span>LDFLAGS<span class="k">)</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">./code/main.cc</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;onnxruntime_cxx_api.h&quot;</span><span class="c1"> // NOLINT</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="kt">void</span><span class="w"> </span><span class="nf">TestCApi</span><span class="p">();</span>
+<span class="linenos"> 6</span><span class="kt">void</span><span class="w"> </span><span class="nf">TestCppApi</span><span class="p">();</span>
+<span class="linenos"> 7</span><span class="kt">void</span><span class="w"> </span><span class="nf">TestCustomModel</span><span class="p">();</span>
+<span class="linenos"> 8</span><span class="kt">void</span><span class="w"> </span><span class="nf">TestCustomModel2</span><span class="p">();</span>
+<span class="linenos"> 9</span><span class="kt">void</span><span class="w"> </span><span class="nf">TestCustomModel3</span><span class="p">();</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">12</span><span class="w">  </span><span class="n">TestCApi</span><span class="p">();</span>
+<span class="linenos">13</span><span class="w">  </span><span class="n">TestCppApi</span><span class="p">();</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;---test custom model---</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="linenos">16</span><span class="w">  </span><span class="n">TestCustomModel</span><span class="p">();</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;---test custom model2---</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="linenos">19</span><span class="w">  </span><span class="n">TestCustomModel2</span><span class="p">();</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;---test custom model3---</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="linenos">22</span><span class="w">  </span><span class="n">TestCustomModel3</span><span class="p">();</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;ORT_API_VERSION: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ORT_API_VERSION</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="linenos">25</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">26</span><span class="p">}</span>
+<span class="linenos">27</span><span class="cm">/*</span>
+<span class="linenos">28</span><span class="cm">GetVersionString(): 1.18.0</span>
+<span class="linenos">29</span><span class="cm">Available providers: CoreMLExecutionProvider, CPUExecutionProvider</span>
+<span class="linenos">30</span><span class="cm">allocator name: Cpu</span>
+<span class="linenos">31</span><span class="cm">---test custom model---</span>
+<span class="linenos">32</span><span class="cm">110</span>
+<span class="linenos">33</span><span class="cm"> 220</span>
+<span class="linenos">34</span><span class="cm"> 330</span>
+<span class="linenos">35</span><span class="cm"> ---test custom model2---</span>
+<span class="linenos">36</span><span class="cm">11.5</span>
+<span class="linenos">37</span><span class="cm"> 2.5</span>
+<span class="linenos">38</span><span class="cm"> 3.5</span>
+<span class="linenos">39</span><span class="cm"> 44.5</span>
+<span class="linenos">40</span><span class="cm"> ---test custom model3---</span>
+<span class="linenos">41</span><span class="cm">11</span>
+<span class="linenos">42</span><span class="cm"> 22</span>
+<span class="linenos">43</span><span class="cm"> ORT_API_VERSION: 18</span>
+<span class="linenos">44</span><span class="cm"> */</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">./code/c-api-test.cc</span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;onnxruntime_c_api.h&quot;</span><span class="c1"> // NOLINT</span>
+<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cassert&gt;</span>
+<span class="linenos"> 3</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">TestOrtStatus</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 6</span><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">OrtApiBase</span><span class="w"> </span><span class="o">*</span><span class="n">api_base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OrtGetApiBase</span><span class="p">();</span>
+<span class="linenos"> 7</span><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">OrtApi</span><span class="w"> </span><span class="o">*</span><span class="n">api</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">api_base</span><span class="o">-&gt;</span><span class="n">GetApi</span><span class="p">(</span><span class="n">ORT_API_VERSION</span><span class="p">);</span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="n">OrtErrorCode</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ORT_OK</span><span class="p">;</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;this is a message&quot;</span><span class="p">;</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="w">  </span><span class="n">OrtStatus</span><span class="w"> </span><span class="o">*</span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">api</span><span class="o">-&gt;</span><span class="n">CreateStatus</span><span class="p">(</span><span class="n">code</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p">);</span>
+<span class="linenos">12</span><span class="w">  </span><span class="n">assert</span><span class="p">(</span><span class="n">api</span><span class="o">-&gt;</span><span class="n">GetErrorCode</span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">code</span><span class="p">);</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">msg2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">api</span><span class="o">-&gt;</span><span class="n">GetErrorMessage</span><span class="p">(</span><span class="n">status</span><span class="p">);</span>
+<span class="linenos">15</span><span class="w">  </span><span class="n">assert</span><span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span><span class="w"> </span><span class="n">msg2</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="w">  </span><span class="c1">// status addr: 0x600001e54040, msg2 addr: 0x600001e54044</span>
+<span class="linenos">18</span><span class="w">  </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;status addr: %p, msg2 addr: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="p">,</span><span class="w"> </span><span class="n">msg2</span><span class="p">);</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="w">  </span><span class="c1">// note that sizeof(code) is 4 in my test</span>
+<span class="linenos">21</span><span class="w">  </span><span class="n">assert</span><span class="p">((</span><span class="kt">intptr_t</span><span class="p">)</span><span class="n">status</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">code</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="kt">intptr_t</span><span class="p">)</span><span class="n">msg2</span><span class="p">);</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span><span class="w">  </span><span class="c1">// we have to free the status to avoid memory leak</span>
+<span class="linenos">24</span><span class="w">  </span><span class="n">api</span><span class="o">-&gt;</span><span class="n">ReleaseStatus</span><span class="p">(</span><span class="n">status</span><span class="p">);</span>
+<span class="linenos">25</span><span class="p">}</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">TestOrtApiBase</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">28</span>
+<span class="linenos">29</span><span class="w">  </span><span class="c1">// OrtApiBase only has two method</span>
+<span class="linenos">30</span><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">OrtApiBase</span><span class="w"> </span><span class="o">*</span><span class="n">api_base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OrtGetApiBase</span><span class="p">();</span>
+<span class="linenos">31</span><span class="w">  </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;GetVersionString(): %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">api_base</span><span class="o">-&gt;</span><span class="n">GetVersionString</span><span class="p">());</span>
+<span class="linenos">32</span>
+<span class="linenos">33</span><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">OrtApi</span><span class="w"> </span><span class="o">*</span><span class="n">api</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">api_base</span><span class="o">-&gt;</span><span class="n">GetApi</span><span class="p">(</span><span class="n">ORT_API_VERSION</span><span class="p">);</span>
+<span class="linenos">34</span><span class="w">  </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;OrtApi: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">api</span><span class="p">);</span>
+<span class="linenos">35</span>
+<span class="linenos">36</span><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">api</span><span class="o">-&gt;</span><span class="n">GetBuildInfoString</span><span class="p">();</span>
+<span class="linenos">37</span><span class="w">  </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;info: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">info</span><span class="p">);</span>
+<span class="linenos">38</span><span class="p">}</span>
+<span class="linenos">39</span>
+<span class="linenos">40</span><span class="kt">void</span><span class="w"> </span><span class="nf">TestCApi</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">41</span><span class="w">  </span><span class="n">TestOrtApiBase</span><span class="p">();</span>
+<span class="linenos">42</span><span class="w">  </span><span class="n">TestOrtStatus</span><span class="p">();</span>
+<span class="linenos">43</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">./code/cpp-api-test.cc</span><a class="headerlink" href="#id4" title="Permalink to this code"></a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;onnxruntime_cxx_api.h&quot;</span><span class="c1"> // NOLINT</span>
+<span class="linenos">  2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;assert.h&gt;</span>
+<span class="linenos">  3</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos">  4</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstream&gt;</span>
+<span class="linenos">  5</span>
+<span class="linenos">  6</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">TestOrtGetApi</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">  7</span><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">OrtApi</span><span class="w"> </span><span class="o">&amp;</span><span class="n">api</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Ort</span><span class="o">::</span><span class="n">GetApi</span><span class="p">();</span><span class="w"> </span><span class="c1">// it returns a const reference</span>
+<span class="linenos">  8</span>
+<span class="linenos">  9</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Ort</span><span class="o">::</span><span class="n">GetVersionString</span><span class="p">();</span>
+<span class="linenos"> 10</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;version: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="linenos"> 11</span><span class="p">}</span>
+<span class="linenos"> 12</span>
+<span class="linenos"> 13</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">PrintAvailableProviders</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 14</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">providers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Ort</span><span class="o">::</span><span class="n">GetAvailableProviders</span><span class="p">();</span>
+<span class="linenos"> 15</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">ostringstream</span><span class="w"> </span><span class="n">os</span><span class="p">;</span>
+<span class="linenos"> 16</span><span class="w">  </span><span class="n">os</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Available providers: &quot;</span><span class="p">;</span>
+<span class="linenos"> 17</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="linenos"> 18</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">providers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 19</span><span class="w">    </span><span class="n">os</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="linenos"> 20</span><span class="w">    </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="p">;</span>
+<span class="linenos"> 21</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos"> 22</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">os</span><span class="p">.</span><span class="n">str</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="linenos"> 23</span><span class="p">}</span>
+<span class="linenos"> 24</span>
+<span class="linenos"> 25</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">TestCreateTensorFromBuffer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 26</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int32_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">};</span>
+<span class="linenos"> 27</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+<span class="linenos"> 28</span><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">memory_info</span><span class="w"> </span><span class="o">=</span>
+<span class="linenos"> 29</span><span class="w">      </span><span class="n">Ort</span><span class="o">::</span><span class="n">MemoryInfo</span><span class="o">::</span><span class="n">CreateCpu</span><span class="p">(</span><span class="n">OrtDeviceAllocator</span><span class="p">,</span><span class="w"> </span><span class="n">OrtMemTypeDefault</span><span class="p">);</span>
+<span class="linenos"> 30</span>
+<span class="linenos"> 31</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">Value</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Ort</span><span class="o">::</span><span class="n">Value</span><span class="o">::</span><span class="n">CreateTensor</span><span class="o">&lt;</span><span class="kt">int32_t</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="linenos"> 32</span><span class="w">      </span><span class="n">memory_info</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span><span class="w"> </span><span class="n">shape</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">shape</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="linenos"> 33</span>
+<span class="linenos"> 34</span><span class="w">  </span><span class="c1">// memory is shared between x and v</span>
+<span class="linenos"> 35</span><span class="w">  </span><span class="kt">int32_t</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">GetTensorMutableData</span><span class="o">&lt;</span><span class="kt">int32_t</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="linenos"> 36</span><span class="w">  </span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="linenos"> 37</span><span class="w">  </span><span class="n">assert</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
+<span class="linenos"> 38</span>
+<span class="linenos"> 39</span><span class="w">  </span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<span class="linenos"> 40</span><span class="w">  </span><span class="n">assert</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span>
+<span class="linenos"> 41</span><span class="p">}</span>
+<span class="linenos"> 42</span>
+<span class="linenos"> 43</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">TestCreateTensor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 44</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">AllocatorWithDefaultOptions</span><span class="w"> </span><span class="n">allocator</span><span class="p">;</span>
+<span class="linenos"> 45</span>
+<span class="linenos"> 46</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+<span class="linenos"> 47</span><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">memory_info</span><span class="w"> </span><span class="o">=</span>
+<span class="linenos"> 48</span><span class="w">      </span><span class="n">Ort</span><span class="o">::</span><span class="n">MemoryInfo</span><span class="o">::</span><span class="n">CreateCpu</span><span class="p">(</span><span class="n">OrtDeviceAllocator</span><span class="p">,</span><span class="w"> </span><span class="n">OrtMemTypeDefault</span><span class="p">);</span>
+<span class="linenos"> 49</span>
+<span class="linenos"> 50</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">Value</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span>
+<span class="linenos"> 51</span><span class="w">      </span><span class="n">Ort</span><span class="o">::</span><span class="n">Value</span><span class="o">::</span><span class="n">CreateTensor</span><span class="o">&lt;</span><span class="kt">int32_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">allocator</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">shape</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="linenos"> 52</span><span class="w">  </span><span class="n">assert</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">IsTensor</span><span class="p">());</span>
+<span class="linenos"> 53</span><span class="w">  </span><span class="n">assert</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">HasValue</span><span class="p">());</span>
+<span class="linenos"> 54</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">TypeInfo</span><span class="w"> </span><span class="n">type_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">GetTypeInfo</span><span class="p">();</span>
+<span class="linenos"> 55</span><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">tensor_type_and_shape_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">type_info</span><span class="p">.</span><span class="n">GetTensorTypeAndShapeInfo</span><span class="p">();</span>
+<span class="linenos"> 56</span><span class="w">  </span><span class="n">assert</span><span class="p">(</span><span class="n">tensor_type_and_shape_info</span><span class="p">.</span><span class="n">GetElementCount</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<span class="linenos"> 57</span><span class="w">  </span><span class="n">assert</span><span class="p">(</span><span class="n">tensor_type_and_shape_info</span><span class="p">.</span><span class="n">GetDimensionsCount</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="linenos"> 58</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">x_shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tensor_type_and_shape_info</span><span class="p">.</span><span class="n">GetShape</span><span class="p">();</span>
+<span class="linenos"> 59</span><span class="w">  </span><span class="n">assert</span><span class="p">(</span><span class="n">x_shape</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">shape</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="linenos"> 60</span><span class="w">  </span><span class="n">assert</span><span class="p">(</span><span class="n">x_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="linenos"> 61</span><span class="w">  </span><span class="n">assert</span><span class="p">(</span><span class="n">x_shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="linenos"> 62</span>
+<span class="linenos"> 63</span><span class="w">  </span><span class="n">assert</span><span class="p">(</span><span class="n">tensor_type_and_shape_info</span><span class="p">.</span><span class="n">GetElementType</span><span class="p">()</span><span class="w"> </span><span class="o">==</span>
+<span class="linenos"> 64</span><span class="w">         </span><span class="n">ONNX_TENSOR_ELEMENT_DATA_TYPE_INT32</span><span class="p">);</span>
+<span class="linenos"> 65</span>
+<span class="linenos"> 66</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">ConstMemoryInfo</span><span class="w"> </span><span class="n">memory_info2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">GetTensorMemoryInfo</span><span class="p">();</span>
+<span class="linenos"> 67</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;allocator name: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">memory_info2</span><span class="p">.</span><span class="n">GetAllocatorName</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="linenos"> 68</span><span class="p">}</span>
+<span class="linenos"> 69</span>
+<span class="linenos"> 70</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">TestDataType</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 71</span><span class="w">  </span><span class="k">static_assert</span><span class="p">(</span><span class="n">Ort</span><span class="o">::</span><span class="n">TypeToTensorType</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;::</span><span class="n">type</span><span class="w"> </span><span class="o">==</span>
+<span class="linenos"> 72</span><span class="w">                </span><span class="n">ONNX_TENSOR_ELEMENT_DATA_TYPE_FLOAT</span><span class="p">);</span>
+<span class="linenos"> 73</span>
+<span class="linenos"> 74</span><span class="w">  </span><span class="k">static_assert</span><span class="p">(</span><span class="n">Ort</span><span class="o">::</span><span class="n">TypeToTensorType</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">type</span><span class="w"> </span><span class="o">==</span>
+<span class="linenos"> 75</span><span class="w">                </span><span class="n">ONNX_TENSOR_ELEMENT_DATA_TYPE_DOUBLE</span><span class="p">);</span>
+<span class="linenos"> 76</span>
+<span class="linenos"> 77</span><span class="w">  </span><span class="k">static_assert</span><span class="p">(</span><span class="n">Ort</span><span class="o">::</span><span class="n">TypeToTensorType</span><span class="o">&lt;</span><span class="kt">int8_t</span><span class="o">&gt;::</span><span class="n">type</span><span class="w"> </span><span class="o">==</span>
+<span class="linenos"> 78</span><span class="w">                </span><span class="n">ONNX_TENSOR_ELEMENT_DATA_TYPE_INT8</span><span class="p">);</span>
+<span class="linenos"> 79</span><span class="w">  </span><span class="k">static_assert</span><span class="p">(</span><span class="n">Ort</span><span class="o">::</span><span class="n">TypeToTensorType</span><span class="o">&lt;</span><span class="kt">int16_t</span><span class="o">&gt;::</span><span class="n">type</span><span class="w"> </span><span class="o">==</span>
+<span class="linenos"> 80</span><span class="w">                </span><span class="n">ONNX_TENSOR_ELEMENT_DATA_TYPE_INT16</span><span class="p">);</span>
+<span class="linenos"> 81</span><span class="w">  </span><span class="k">static_assert</span><span class="p">(</span><span class="n">Ort</span><span class="o">::</span><span class="n">TypeToTensorType</span><span class="o">&lt;</span><span class="kt">int32_t</span><span class="o">&gt;::</span><span class="n">type</span><span class="w"> </span><span class="o">==</span>
+<span class="linenos"> 82</span><span class="w">                </span><span class="n">ONNX_TENSOR_ELEMENT_DATA_TYPE_INT32</span><span class="p">);</span>
+<span class="linenos"> 83</span><span class="w">  </span><span class="k">static_assert</span><span class="p">(</span><span class="n">Ort</span><span class="o">::</span><span class="n">TypeToTensorType</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="o">&gt;::</span><span class="n">type</span><span class="w"> </span><span class="o">==</span>
+<span class="linenos"> 84</span><span class="w">                </span><span class="n">ONNX_TENSOR_ELEMENT_DATA_TYPE_INT64</span><span class="p">);</span>
+<span class="linenos"> 85</span><span class="w">  </span><span class="k">static_assert</span><span class="p">(</span><span class="n">Ort</span><span class="o">::</span><span class="n">TypeToTensorType</span><span class="o">&lt;</span><span class="kt">uint8_t</span><span class="o">&gt;::</span><span class="n">type</span><span class="w"> </span><span class="o">==</span>
+<span class="linenos"> 86</span><span class="w">                </span><span class="n">ONNX_TENSOR_ELEMENT_DATA_TYPE_UINT8</span><span class="p">);</span>
+<span class="linenos"> 87</span><span class="w">  </span><span class="k">static_assert</span><span class="p">(</span><span class="n">Ort</span><span class="o">::</span><span class="n">TypeToTensorType</span><span class="o">&lt;</span><span class="kt">uint16_t</span><span class="o">&gt;::</span><span class="n">type</span><span class="w"> </span><span class="o">==</span>
+<span class="linenos"> 88</span><span class="w">                </span><span class="n">ONNX_TENSOR_ELEMENT_DATA_TYPE_UINT16</span><span class="p">);</span>
+<span class="linenos"> 89</span><span class="w">  </span><span class="k">static_assert</span><span class="p">(</span><span class="n">Ort</span><span class="o">::</span><span class="n">TypeToTensorType</span><span class="o">&lt;</span><span class="kt">uint32_t</span><span class="o">&gt;::</span><span class="n">type</span><span class="w"> </span><span class="o">==</span>
+<span class="linenos"> 90</span><span class="w">                </span><span class="n">ONNX_TENSOR_ELEMENT_DATA_TYPE_UINT32</span><span class="p">);</span>
+<span class="linenos"> 91</span><span class="w">  </span><span class="k">static_assert</span><span class="p">(</span><span class="n">Ort</span><span class="o">::</span><span class="n">TypeToTensorType</span><span class="o">&lt;</span><span class="kt">uint64_t</span><span class="o">&gt;::</span><span class="n">type</span><span class="w"> </span><span class="o">==</span>
+<span class="linenos"> 92</span><span class="w">                </span><span class="n">ONNX_TENSOR_ELEMENT_DATA_TYPE_UINT64</span><span class="p">);</span>
+<span class="linenos"> 93</span><span class="w">  </span><span class="k">static_assert</span><span class="p">(</span><span class="n">Ort</span><span class="o">::</span><span class="n">TypeToTensorType</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;::</span><span class="n">type</span><span class="w"> </span><span class="o">==</span>
+<span class="linenos"> 94</span><span class="w">                </span><span class="n">ONNX_TENSOR_ELEMENT_DATA_TYPE_BOOL</span><span class="p">);</span>
+<span class="linenos"> 95</span><span class="p">}</span>
+<span class="linenos"> 96</span>
+<span class="linenos"> 97</span><span class="kt">void</span><span class="w"> </span><span class="nf">TestCppApi</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 98</span><span class="w">  </span><span class="n">TestOrtGetApi</span><span class="p">();</span>
+<span class="linenos"> 99</span><span class="w">  </span><span class="n">PrintAvailableProviders</span><span class="p">();</span>
+<span class="linenos">100</span><span class="w">  </span><span class="n">TestCreateTensorFromBuffer</span><span class="p">();</span>
+<span class="linenos">101</span><span class="w">  </span><span class="n">TestCreateTensor</span><span class="p">();</span>
+<span class="linenos">102</span><span class="w">  </span><span class="n">TestDataType</span><span class="p">();</span>
+<span class="linenos">103</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">./code/custom-op.cc</span><a class="headerlink" href="#id5" title="Permalink to this code"></a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cm">/*</span>
+<span class="linenos"> 2</span><span class="cm">references:</span>
+<span class="linenos"> 3</span><span class="cm">https://onnxruntime.ai/docs/reference/operators/add-custom-op.html</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="cm"> */</span>
+<span class="linenos"> 6</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;onnxruntime_lite_custom_op.h&quot;</span>
+<span class="linenos"> 7</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos"> 8</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;utility&gt;</span>
+<span class="linenos"> 9</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">KernelOne</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Ort</span><span class="o">::</span><span class="n">Custom</span><span class="o">::</span><span class="n">Tensor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">X</span><span class="p">,</span>
+<span class="linenos">12</span><span class="w">                      </span><span class="k">const</span><span class="w"> </span><span class="n">Ort</span><span class="o">::</span><span class="n">Custom</span><span class="o">::</span><span class="n">Tensor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Y</span><span class="p">,</span>
+<span class="linenos">13</span><span class="w">                      </span><span class="n">Ort</span><span class="o">::</span><span class="n">Custom</span><span class="o">::</span><span class="n">Tensor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Z</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">14</span><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">input_shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="p">.</span><span class="n">Shape</span><span class="p">();</span>
+<span class="linenos">15</span><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">x_raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="p">.</span><span class="n">Data</span><span class="p">();</span>
+<span class="linenos">16</span><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">y_raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y</span><span class="p">.</span><span class="n">Data</span><span class="p">();</span>
+<span class="linenos">17</span><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">z_raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Z</span><span class="p">.</span><span class="n">Allocate</span><span class="p">(</span><span class="n">input_shape</span><span class="p">);</span>
+<span class="linenos">18</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int64_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">Z</span><span class="p">.</span><span class="n">NumberOfElement</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">19</span><span class="w">    </span><span class="n">z_raw</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x_raw</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y_raw</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="linenos">20</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">21</span><span class="p">}</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span><span class="k">static</span><span class="w"> </span><span class="n">Ort</span><span class="o">::</span><span class="n">CustomOpDomain</span><span class="w"> </span><span class="nf">TestCustomOp</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">24</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">CustomOpDomain</span><span class="w"> </span><span class="n">v1_domain</span><span class="p">{</span><span class="s">&quot;com.k2fsa.org&quot;</span><span class="p">};</span>
+<span class="linenos">25</span><span class="w">  </span><span class="c1">// please make sure that custom_op_one has the same lifetime as the consuming</span>
+<span class="linenos">26</span><span class="w">  </span><span class="c1">// session</span>
+<span class="linenos">27</span><span class="w">  </span><span class="c1">//</span>
+<span class="linenos">28</span><span class="w">  </span><span class="c1">// Here we use a static variable so it is never released.</span>
+<span class="linenos">29</span><span class="w">  </span><span class="c1">// in practice, we can move it to a member variable of a class</span>
+<span class="linenos">30</span><span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Ort</span><span class="o">::</span><span class="n">Custom</span><span class="o">::</span><span class="n">OrtLiteCustomOp</span><span class="o">&gt;</span><span class="w"> </span><span class="n">custom_op_one</span><span class="p">{</span>
+<span class="linenos">31</span><span class="w">      </span><span class="n">Ort</span><span class="o">::</span><span class="n">Custom</span><span class="o">::</span><span class="n">CreateLiteCustomOp</span><span class="p">(</span><span class="s">&quot;CustomOpOne&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;CPUExecutionProvider&quot;</span><span class="p">,</span>
+<span class="linenos">32</span><span class="w">                                      </span><span class="n">KernelOne</span><span class="p">)};</span>
+<span class="linenos">33</span><span class="w">  </span><span class="n">v1_domain</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">custom_op_one</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
+<span class="linenos">34</span>
+<span class="linenos">35</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">v1_domain</span><span class="p">;</span>
+<span class="linenos">36</span><span class="p">}</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span><span class="kt">void</span><span class="w"> </span><span class="nf">TestCustomModel</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">39</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">;</span>
+<span class="linenos">40</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">SessionOptions</span><span class="w"> </span><span class="n">sess_opts</span><span class="p">;</span>
+<span class="linenos">41</span><span class="w">  </span><span class="n">sess_opts</span><span class="p">.</span><span class="n">SetIntraOpNumThreads</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="linenos">42</span><span class="w">  </span><span class="n">sess_opts</span><span class="p">.</span><span class="n">SetInterOpNumThreads</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="linenos">43</span>
+<span class="linenos">44</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">CustomOpDomain</span><span class="w"> </span><span class="n">v1_domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestCustomOp</span><span class="p">();</span>
+<span class="linenos">45</span>
+<span class="linenos">46</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">SessionOptions</span><span class="w"> </span><span class="n">session_options</span><span class="p">;</span>
+<span class="linenos">47</span><span class="w">  </span><span class="n">sess_opts</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">v1_domain</span><span class="p">);</span>
+<span class="linenos">48</span><span class="w">  </span><span class="c1">// create a session with the session_options ...</span>
+<span class="linenos">49</span>
+<span class="linenos">50</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Ort</span><span class="o">::</span><span class="n">Session</span><span class="o">&gt;</span><span class="w"> </span><span class="n">sess</span><span class="w"> </span><span class="o">=</span>
+<span class="linenos">51</span><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Ort</span><span class="o">::</span><span class="n">Session</span><span class="o">&gt;</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;./e.onnx&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sess_opts</span><span class="p">);</span>
+<span class="linenos">52</span>
+<span class="linenos">53</span><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">memory_info</span><span class="w"> </span><span class="o">=</span>
+<span class="linenos">54</span><span class="w">      </span><span class="n">Ort</span><span class="o">::</span><span class="n">MemoryInfo</span><span class="o">::</span><span class="n">CreateCpu</span><span class="p">(</span><span class="n">OrtDeviceAllocator</span><span class="p">,</span><span class="w"> </span><span class="n">OrtMemTypeDefault</span><span class="p">);</span>
+<span class="linenos">55</span>
+<span class="linenos">56</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">};</span>
+<span class="linenos">57</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">};</span>
+<span class="linenos">58</span>
+<span class="linenos">59</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">&gt;</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">3</span><span class="p">};</span>
+<span class="linenos">60</span>
+<span class="linenos">61</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">Value</span><span class="w"> </span><span class="n">x_tensor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Ort</span><span class="o">::</span><span class="n">Value</span><span class="o">::</span><span class="n">CreateTensor</span><span class="p">(</span>
+<span class="linenos">62</span><span class="w">      </span><span class="n">memory_info</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span><span class="w"> </span><span class="n">shape</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">shape</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="linenos">63</span>
+<span class="linenos">64</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">Value</span><span class="w"> </span><span class="n">y_tensor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Ort</span><span class="o">::</span><span class="n">Value</span><span class="o">::</span><span class="n">CreateTensor</span><span class="p">(</span>
+<span class="linenos">65</span><span class="w">      </span><span class="n">memory_info</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span><span class="w"> </span><span class="n">shape</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">shape</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="linenos">66</span>
+<span class="linenos">67</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Ort</span><span class="o">::</span><span class="n">Value</span><span class="o">&gt;</span><span class="w"> </span><span class="n">inputs</span><span class="p">;</span>
+<span class="linenos">68</span><span class="w">  </span><span class="n">inputs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">));</span>
+<span class="linenos">69</span><span class="w">  </span><span class="n">inputs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">y_tensor</span><span class="p">));</span>
+<span class="linenos">70</span>
+<span class="linenos">71</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*&gt;</span><span class="w"> </span><span class="n">input_names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;l_x_&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;l_y_&quot;</span><span class="p">};</span>
+<span class="linenos">72</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*&gt;</span><span class="w"> </span><span class="n">output_names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;my_add_op&quot;</span><span class="p">};</span>
+<span class="linenos">73</span><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sess</span><span class="o">-&gt;</span><span class="n">Run</span><span class="p">({},</span><span class="w"> </span><span class="n">input_names</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">inputs</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">inputs</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span>
+<span class="linenos">74</span><span class="w">                       </span><span class="n">output_names</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">output_names</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="linenos">75</span><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">out</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">GetTensorData</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="linenos">76</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">77</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s"> &quot;</span><span class="p">;</span>
+<span class="linenos">78</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">79</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">./code/e.py</span><a class="headerlink" href="#id6" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/usr/bin/env python3</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">from</span> <span class="nn">torch._custom_op</span> <span class="kn">import</span> <span class="n">impl</span> <span class="k">as</span> <span class="n">custom_op</span>
+<span class="linenos"> 4</span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="linenos"> 5</span><span class="kn">import</span> <span class="nn">onnx</span>
+<span class="linenos"> 6</span><span class="kn">import</span> <span class="nn">onnxscript</span>
+<span class="linenos"> 7</span><span class="kn">from</span> <span class="nn">onnxscript</span> <span class="kn">import</span> <span class="n">opset18</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="linenos">10</span><span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="nd">@custom_op</span><span class="o">.</span><span class="n">custom_op</span><span class="p">(</span><span class="s2">&quot;mylibrary::my_add_op&quot;</span><span class="p">)</span>
+<span class="linenos">13</span><span class="k">def</span> <span class="nf">my_add_op</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
+<span class="linenos">14</span>    <span class="c1"># Since we are using mylibrary::my_add_op, so the function</span>
+<span class="linenos">15</span>    <span class="c1"># name must be my_add_op; otherwise, it will throw an error</span>
+<span class="linenos">16</span>    <span class="c1"># when this script is run</span>
+<span class="linenos">17</span>    <span class="k">pass</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="nd">@my_add_op</span><span class="o">.</span><span class="n">impl_abstract</span><span class="p">()</span>
+<span class="linenos">20</span><span class="k">def</span> <span class="nf">my_add_op_impl_abstract_any_name_is_ok</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="linenos">21</span>    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span><span class="nd">@my_add_op</span><span class="o">.</span><span class="n">impl</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+<span class="linenos">24</span><span class="k">def</span> <span class="nf">my_add_op_impl_any_name_is_ok</span><span class="p">(</span><span class="n">tensor_x</span><span class="p">):</span>
+<span class="linenos">25</span>    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">tensor_x</span> <span class="o">+</span> <span class="n">tensor_x</span><span class="p">)</span>  <span class="c1"># add x to itself, and round the result</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span><span class="k">class</span> <span class="nc">CustomFoo</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="linenos">28</span>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="linenos">29</span>        <span class="k">return</span> <span class="n">my_add_op</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="linenos">30</span>
+<span class="linenos">31</span>
+<span class="linenos">32</span><span class="n">custom_opset</span> <span class="o">=</span> <span class="n">onnxscript</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">Opset</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="s2">&quot;com.k2fsa.org&quot;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">33</span>
+<span class="linenos">34</span><span class="nd">@onnxscript</span><span class="o">.</span><span class="n">script</span><span class="p">(</span><span class="n">custom_opset</span><span class="p">)</span>
+<span class="linenos">35</span><span class="k">def</span> <span class="nf">custom_my_add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="linenos">36</span>    <span class="k">return</span> <span class="n">custom_opset</span><span class="o">.</span><span class="n">CustomOpOne</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos">39</span>    <span class="n">torch</span><span class="o">.</span><span class="n">_dynamo</span><span class="o">.</span><span class="n">allow_in_graph</span><span class="p">(</span><span class="n">my_add_op</span><span class="p">)</span>
+<span class="linenos">40</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="linenos">41</span>    <span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="linenos">42</span>    <span class="n">custom_addandround_model</span> <span class="o">=</span> <span class="n">CustomFoo</span><span class="p">()</span>
+<span class="linenos">43</span>    <span class="n">onnx_registry</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">onnx</span><span class="o">.</span><span class="n">OnnxRegistry</span><span class="p">()</span>
+<span class="linenos">44</span>    <span class="n">onnx_registry</span><span class="o">.</span><span class="n">register_op</span><span class="p">(</span>
+<span class="linenos">45</span>        <span class="n">namespace</span><span class="o">=</span><span class="s2">&quot;mylibrary&quot;</span><span class="p">,</span> <span class="n">op_name</span><span class="o">=</span><span class="s2">&quot;my_add_op&quot;</span><span class="p">,</span> <span class="n">overload</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="n">function</span><span class="o">=</span><span class="n">custom_my_add</span>
+<span class="linenos">46</span>        <span class="p">)</span>
+<span class="linenos">47</span>
+<span class="linenos">48</span>    <span class="n">export_options</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">onnx</span><span class="o">.</span><span class="n">ExportOptions</span><span class="p">(</span><span class="n">onnx_registry</span><span class="o">=</span><span class="n">onnx_registry</span><span class="p">)</span>
+<span class="linenos">49</span>    <span class="n">onnx_program</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">onnx</span><span class="o">.</span><span class="n">dynamo_export</span><span class="p">(</span>
+<span class="linenos">50</span>        <span class="n">custom_addandround_model</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">export_options</span><span class="o">=</span><span class="n">export_options</span>
+<span class="linenos">51</span>        <span class="p">)</span>
+<span class="linenos">52</span>    <span class="n">onnx_program</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;./e.onnx&quot;</span><span class="p">)</span>
+<span class="linenos">53</span>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;e.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="linenos">54</span>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">onnx_program</span><span class="o">.</span><span class="n">model_proto</span><span class="p">))</span>
+<span class="linenos">55</span>    <span class="n">onnx_model</span> <span class="o">=</span> <span class="n">onnx</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;e.onnx&quot;</span><span class="p">)</span>
+<span class="linenos">56</span>    <span class="n">onnx</span><span class="o">.</span><span class="n">checker</span><span class="o">.</span><span class="n">check_model</span><span class="p">(</span><span class="n">onnx_model</span><span class="p">)</span>
+<span class="linenos">57</span>
+<span class="linenos">58</span>
+<span class="linenos">59</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">60</span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">./code/e.txt</span><a class="headerlink" href="#id7" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">ir_version</span><span class="p">:</span> <span class="mi">8</span>
+<span class="linenos"> 2</span><span class="n">opset_import</span> <span class="p">{</span>
+<span class="linenos"> 3</span>  <span class="n">domain</span><span class="p">:</span> <span class="s2">&quot;com.k2fsa.org&quot;</span>
+<span class="linenos"> 4</span>  <span class="n">version</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos"> 5</span><span class="p">}</span>
+<span class="linenos"> 6</span><span class="n">opset_import</span> <span class="p">{</span>
+<span class="linenos"> 7</span>  <span class="n">domain</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+<span class="linenos"> 8</span>  <span class="n">version</span><span class="p">:</span> <span class="mi">18</span>
+<span class="linenos"> 9</span><span class="p">}</span>
+<span class="linenos">10</span><span class="n">opset_import</span> <span class="p">{</span>
+<span class="linenos">11</span>  <span class="n">domain</span><span class="p">:</span> <span class="s2">&quot;pkg.onnxscript.torch_lib.common&quot;</span>
+<span class="linenos">12</span>  <span class="n">version</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos">13</span><span class="p">}</span>
+<span class="linenos">14</span><span class="n">producer_name</span><span class="p">:</span> <span class="s2">&quot;pytorch&quot;</span>
+<span class="linenos">15</span><span class="n">producer_version</span><span class="p">:</span> <span class="s2">&quot;2.4.0&quot;</span>
+<span class="linenos">16</span><span class="n">graph</span> <span class="p">{</span>
+<span class="linenos">17</span>  <span class="n">node</span> <span class="p">{</span>
+<span class="linenos">18</span>    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;l_x_&quot;</span>
+<span class="linenos">19</span>    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;l_y_&quot;</span>
+<span class="linenos">20</span>    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;my_add_op&quot;</span>
+<span class="linenos">21</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;custom_my_add_0_n0&quot;</span>
+<span class="linenos">22</span>    <span class="n">op_type</span><span class="p">:</span> <span class="s2">&quot;CustomOpOne&quot;</span>
+<span class="linenos">23</span>    <span class="n">domain</span><span class="p">:</span> <span class="s2">&quot;com.k2fsa.org&quot;</span>
+<span class="linenos">24</span>  <span class="p">}</span>
+<span class="linenos">25</span>  <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;main_graph&quot;</span>
+<span class="linenos">26</span>  <span class="nb">input</span> <span class="p">{</span>
+<span class="linenos">27</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;l_x_&quot;</span>
+<span class="linenos">28</span>    <span class="nb">type</span> <span class="p">{</span>
+<span class="linenos">29</span>      <span class="n">tensor_type</span> <span class="p">{</span>
+<span class="linenos">30</span>        <span class="n">elem_type</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos">31</span>        <span class="n">shape</span> <span class="p">{</span>
+<span class="linenos">32</span>          <span class="n">dim</span> <span class="p">{</span>
+<span class="linenos">33</span>            <span class="n">dim_value</span><span class="p">:</span> <span class="mi">3</span>
+<span class="linenos">34</span>          <span class="p">}</span>
+<span class="linenos">35</span>        <span class="p">}</span>
+<span class="linenos">36</span>      <span class="p">}</span>
+<span class="linenos">37</span>    <span class="p">}</span>
+<span class="linenos">38</span>  <span class="p">}</span>
+<span class="linenos">39</span>  <span class="nb">input</span> <span class="p">{</span>
+<span class="linenos">40</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;l_y_&quot;</span>
+<span class="linenos">41</span>    <span class="nb">type</span> <span class="p">{</span>
+<span class="linenos">42</span>      <span class="n">tensor_type</span> <span class="p">{</span>
+<span class="linenos">43</span>        <span class="n">elem_type</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos">44</span>        <span class="n">shape</span> <span class="p">{</span>
+<span class="linenos">45</span>          <span class="n">dim</span> <span class="p">{</span>
+<span class="linenos">46</span>            <span class="n">dim_value</span><span class="p">:</span> <span class="mi">3</span>
+<span class="linenos">47</span>          <span class="p">}</span>
+<span class="linenos">48</span>        <span class="p">}</span>
+<span class="linenos">49</span>      <span class="p">}</span>
+<span class="linenos">50</span>    <span class="p">}</span>
+<span class="linenos">51</span>  <span class="p">}</span>
+<span class="linenos">52</span>  <span class="n">output</span> <span class="p">{</span>
+<span class="linenos">53</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;my_add_op&quot;</span>
+<span class="linenos">54</span>    <span class="nb">type</span> <span class="p">{</span>
+<span class="linenos">55</span>      <span class="n">tensor_type</span> <span class="p">{</span>
+<span class="linenos">56</span>        <span class="n">elem_type</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos">57</span>        <span class="n">shape</span> <span class="p">{</span>
+<span class="linenos">58</span>          <span class="n">dim</span> <span class="p">{</span>
+<span class="linenos">59</span>            <span class="n">dim_value</span><span class="p">:</span> <span class="mi">3</span>
+<span class="linenos">60</span>          <span class="p">}</span>
+<span class="linenos">61</span>        <span class="p">}</span>
+<span class="linenos">62</span>      <span class="p">}</span>
+<span class="linenos">63</span>    <span class="p">}</span>
+<span class="linenos">64</span>  <span class="p">}</span>
+<span class="linenos">65</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">./code/custom-op-2.cc</span><a class="headerlink" href="#id8" title="Permalink to this code"></a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cm">/*</span>
+<span class="linenos"> 2</span><span class="cm">references:</span>
+<span class="linenos"> 3</span><span class="cm">https://onnxruntime.ai/docs/reference/operators/add-custom-op.html</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="cm"> */</span>
+<span class="linenos"> 6</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;onnxruntime_lite_custom_op.h&quot;</span>
+<span class="linenos"> 7</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos"> 8</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;utility&gt;</span>
+<span class="linenos"> 9</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">KernelOne</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Ort</span><span class="o">::</span><span class="n">Custom</span><span class="o">::</span><span class="n">Tensor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">X</span><span class="p">,</span>
+<span class="linenos">12</span><span class="w">                      </span><span class="k">const</span><span class="w"> </span><span class="n">Ort</span><span class="o">::</span><span class="n">Custom</span><span class="o">::</span><span class="n">Tensor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Y</span><span class="p">,</span>
+<span class="linenos">13</span><span class="w">                      </span><span class="n">Ort</span><span class="o">::</span><span class="n">Custom</span><span class="o">::</span><span class="n">Tensor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Z</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">14</span><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">input_shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="p">.</span><span class="n">Shape</span><span class="p">();</span>
+<span class="linenos">15</span><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">x_raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="p">.</span><span class="n">Data</span><span class="p">();</span>
+<span class="linenos">16</span><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">y_raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y</span><span class="p">.</span><span class="n">Data</span><span class="p">();</span>
+<span class="linenos">17</span><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">z_raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Z</span><span class="p">.</span><span class="n">Allocate</span><span class="p">(</span><span class="n">input_shape</span><span class="p">);</span>
+<span class="linenos">18</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int64_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">Z</span><span class="p">.</span><span class="n">NumberOfElement</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">19</span><span class="w">    </span><span class="n">z_raw</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x_raw</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y_raw</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="linenos">20</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">21</span><span class="p">}</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span><span class="k">static</span><span class="w"> </span><span class="n">Ort</span><span class="o">::</span><span class="n">CustomOpDomain</span><span class="w"> </span><span class="nf">TestCustomOp2</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">24</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">CustomOpDomain</span><span class="w"> </span><span class="n">v1_domain</span><span class="p">{</span><span class="s">&quot;com.k2fsa.org&quot;</span><span class="p">};</span>
+<span class="linenos">25</span><span class="w">  </span><span class="c1">// please make sure that custom_op_one has the same lifetime as the consuming</span>
+<span class="linenos">26</span><span class="w">  </span><span class="c1">// session</span>
+<span class="linenos">27</span><span class="w">  </span><span class="c1">//</span>
+<span class="linenos">28</span><span class="w">  </span><span class="c1">// Here we use a static variable so it is never released.</span>
+<span class="linenos">29</span><span class="w">  </span><span class="c1">// in practice, we can move it to a member variable of a class</span>
+<span class="linenos">30</span><span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Ort</span><span class="o">::</span><span class="n">Custom</span><span class="o">::</span><span class="n">OrtLiteCustomOp</span><span class="o">&gt;</span><span class="w"> </span><span class="n">custom_op_one</span><span class="p">{</span>
+<span class="linenos">31</span><span class="w">      </span><span class="n">Ort</span><span class="o">::</span><span class="n">Custom</span><span class="o">::</span><span class="n">CreateLiteCustomOp</span><span class="p">(</span><span class="s">&quot;CustomOpOne2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;CPUExecutionProvider&quot;</span><span class="p">,</span>
+<span class="linenos">32</span><span class="w">                                      </span><span class="n">KernelOne</span><span class="p">)};</span>
+<span class="linenos">33</span><span class="w">  </span><span class="n">v1_domain</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">custom_op_one</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
+<span class="linenos">34</span>
+<span class="linenos">35</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">v1_domain</span><span class="p">;</span>
+<span class="linenos">36</span><span class="p">}</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span><span class="kt">void</span><span class="w"> </span><span class="nf">TestCustomModel2</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">39</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">;</span>
+<span class="linenos">40</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">SessionOptions</span><span class="w"> </span><span class="n">sess_opts</span><span class="p">;</span>
+<span class="linenos">41</span><span class="w">  </span><span class="n">sess_opts</span><span class="p">.</span><span class="n">SetIntraOpNumThreads</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="linenos">42</span><span class="w">  </span><span class="n">sess_opts</span><span class="p">.</span><span class="n">SetInterOpNumThreads</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="linenos">43</span>
+<span class="linenos">44</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">CustomOpDomain</span><span class="w"> </span><span class="n">v1_domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestCustomOp2</span><span class="p">();</span>
+<span class="linenos">45</span>
+<span class="linenos">46</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">SessionOptions</span><span class="w"> </span><span class="n">session_options</span><span class="p">;</span>
+<span class="linenos">47</span><span class="w">  </span><span class="n">sess_opts</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">v1_domain</span><span class="p">);</span>
+<span class="linenos">48</span><span class="w">  </span><span class="c1">// create a session with the session_options ...</span>
+<span class="linenos">49</span>
+<span class="linenos">50</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Ort</span><span class="o">::</span><span class="n">Session</span><span class="o">&gt;</span><span class="w"> </span><span class="n">sess</span><span class="w"> </span><span class="o">=</span>
+<span class="linenos">51</span><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Ort</span><span class="o">::</span><span class="n">Session</span><span class="o">&gt;</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;./f.onnx&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sess_opts</span><span class="p">);</span>
+<span class="linenos">52</span>
+<span class="linenos">53</span><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">memory_info</span><span class="w"> </span><span class="o">=</span>
+<span class="linenos">54</span><span class="w">      </span><span class="n">Ort</span><span class="o">::</span><span class="n">MemoryInfo</span><span class="o">::</span><span class="n">CreateCpu</span><span class="p">(</span><span class="n">OrtDeviceAllocator</span><span class="p">,</span><span class="w"> </span><span class="n">OrtMemTypeDefault</span><span class="p">);</span>
+<span class="linenos">55</span><span class="w">  </span><span class="c1">// foo is [1.5, 2.5, 3.5, 4.5]</span>
+<span class="linenos">56</span><span class="w">  </span><span class="c1">//</span>
+<span class="linenos">57</span>
+<span class="linenos">58</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">-20</span><span class="p">,</span><span class="w"> </span><span class="mi">-30</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">};</span>
+<span class="linenos">59</span>
+<span class="linenos">60</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">&gt;</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">4</span><span class="p">};</span>
+<span class="linenos">61</span>
+<span class="linenos">62</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">Value</span><span class="w"> </span><span class="n">x_tensor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Ort</span><span class="o">::</span><span class="n">Value</span><span class="o">::</span><span class="n">CreateTensor</span><span class="p">(</span>
+<span class="linenos">63</span><span class="w">      </span><span class="n">memory_info</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span><span class="w"> </span><span class="n">shape</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">shape</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="linenos">64</span>
+<span class="linenos">65</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Ort</span><span class="o">::</span><span class="n">Value</span><span class="o">&gt;</span><span class="w"> </span><span class="n">inputs</span><span class="p">;</span>
+<span class="linenos">66</span><span class="w">  </span><span class="n">inputs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">));</span>
+<span class="linenos">67</span>
+<span class="linenos">68</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*&gt;</span><span class="w"> </span><span class="n">input_names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;l_x_&quot;</span><span class="p">};</span>
+<span class="linenos">69</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*&gt;</span><span class="w"> </span><span class="n">output_names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;my_add_op2&quot;</span><span class="p">};</span>
+<span class="linenos">70</span><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sess</span><span class="o">-&gt;</span><span class="n">Run</span><span class="p">({},</span><span class="w"> </span><span class="n">input_names</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">inputs</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">inputs</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span>
+<span class="linenos">71</span><span class="w">                       </span><span class="n">output_names</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">output_names</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="linenos">72</span><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">out</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">GetTensorData</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="linenos">73</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">74</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s"> &quot;</span><span class="p">;</span>
+<span class="linenos">75</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">76</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">./code/f.py</span><a class="headerlink" href="#id9" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/usr/bin/env python3</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">from</span> <span class="nn">torch._custom_op</span> <span class="kn">import</span> <span class="n">impl</span> <span class="k">as</span> <span class="n">custom_op</span>
+<span class="linenos"> 4</span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="linenos"> 5</span><span class="kn">import</span> <span class="nn">onnx</span>
+<span class="linenos"> 6</span><span class="kn">import</span> <span class="nn">onnxscript</span>
+<span class="linenos"> 7</span><span class="kn">from</span> <span class="nn">onnxscript</span> <span class="kn">import</span> <span class="n">opset18</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="linenos">10</span><span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="nd">@custom_op</span><span class="o">.</span><span class="n">custom_op</span><span class="p">(</span><span class="s2">&quot;mylibrary::my_add_op2&quot;</span><span class="p">)</span>
+<span class="linenos">13</span><span class="k">def</span> <span class="nf">my_add_op2</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
+<span class="linenos">14</span>    <span class="c1"># Since we are using mylibrary::my_add_op2, so the function</span>
+<span class="linenos">15</span>    <span class="c1"># name must be my_add_op2; otherwise, it will throw an error</span>
+<span class="linenos">16</span>    <span class="c1"># when this script is run</span>
+<span class="linenos">17</span>    <span class="k">pass</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="nd">@my_add_op2</span><span class="o">.</span><span class="n">impl_abstract</span><span class="p">()</span>
+<span class="linenos">20</span><span class="k">def</span> <span class="nf">my_add_op_impl_abstract_any_name_is_ok</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="linenos">21</span>    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span><span class="nd">@my_add_op2</span><span class="o">.</span><span class="n">impl</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+<span class="linenos">24</span><span class="k">def</span> <span class="nf">my_add_op_impl_any_name_is_ok</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="linenos">25</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">26</span>    <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>   <span class="c1"># add x to itself, and round the result</span>
+<span class="linenos">27</span>
+<span class="linenos">28</span><span class="k">class</span> <span class="nc">CustomFoo</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="linenos">29</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">30</span>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<span class="linenos">31</span>        <span class="bp">self</span><span class="o">.</span><span class="n">register_parameter</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">])))</span>
+<span class="linenos">32</span>        <span class="bp">self</span><span class="o">.</span><span class="n">relu</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+<span class="linenos">33</span>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="linenos">34</span>        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">35</span>        <span class="k">return</span> <span class="n">my_add_op2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">foo</span><span class="p">)</span>
+<span class="linenos">36</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span><span class="n">custom_opset</span> <span class="o">=</span> <span class="n">onnxscript</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">Opset</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="s2">&quot;com.k2fsa.org&quot;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">39</span>
+<span class="linenos">40</span><span class="nd">@onnxscript</span><span class="o">.</span><span class="n">script</span><span class="p">(</span><span class="n">custom_opset</span><span class="p">)</span>
+<span class="linenos">41</span><span class="k">def</span> <span class="nf">custom_my_add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="linenos">42</span>    <span class="k">return</span> <span class="n">custom_opset</span><span class="o">.</span><span class="n">CustomOpOne2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="linenos">43</span>
+<span class="linenos">44</span><span class="nd">@torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">()</span>
+<span class="linenos">45</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos">46</span>    <span class="n">torch</span><span class="o">.</span><span class="n">_dynamo</span><span class="o">.</span><span class="n">allow_in_graph</span><span class="p">(</span><span class="n">my_add_op2</span><span class="p">)</span>
+<span class="linenos">47</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="linenos">48</span>    <span class="n">custom_addandround_model</span> <span class="o">=</span> <span class="n">CustomFoo</span><span class="p">()</span>
+<span class="linenos">49</span>    <span class="n">onnx_registry</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">onnx</span><span class="o">.</span><span class="n">OnnxRegistry</span><span class="p">()</span>
+<span class="linenos">50</span>    <span class="n">onnx_registry</span><span class="o">.</span><span class="n">register_op</span><span class="p">(</span>
+<span class="linenos">51</span>        <span class="n">namespace</span><span class="o">=</span><span class="s2">&quot;mylibrary&quot;</span><span class="p">,</span> <span class="n">op_name</span><span class="o">=</span><span class="s2">&quot;my_add_op2&quot;</span><span class="p">,</span> <span class="n">overload</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="n">function</span><span class="o">=</span><span class="n">custom_my_add</span>
+<span class="linenos">52</span>        <span class="p">)</span>
+<span class="linenos">53</span>
+<span class="linenos">54</span>    <span class="n">export_options</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">onnx</span><span class="o">.</span><span class="n">ExportOptions</span><span class="p">(</span><span class="n">onnx_registry</span><span class="o">=</span><span class="n">onnx_registry</span><span class="p">)</span>
+<span class="linenos">55</span>    <span class="n">onnx_program</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">onnx</span><span class="o">.</span><span class="n">dynamo_export</span><span class="p">(</span>
+<span class="linenos">56</span>        <span class="n">custom_addandround_model</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span>  <span class="n">export_options</span><span class="o">=</span><span class="n">export_options</span>
+<span class="linenos">57</span>        <span class="p">)</span>
+<span class="linenos">58</span>    <span class="n">onnx_program</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;./f.onnx&quot;</span><span class="p">)</span>
+<span class="linenos">59</span>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;f.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="linenos">60</span>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">onnx_program</span><span class="o">.</span><span class="n">model_proto</span><span class="p">))</span>
+<span class="linenos">61</span>    <span class="n">onnx_model</span> <span class="o">=</span> <span class="n">onnx</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;f.onnx&quot;</span><span class="p">)</span>
+<span class="linenos">62</span>    <span class="n">onnx</span><span class="o">.</span><span class="n">checker</span><span class="o">.</span><span class="n">check_model</span><span class="p">(</span><span class="n">onnx_model</span><span class="p">)</span>
+<span class="linenos">63</span>
+<span class="linenos">64</span>
+<span class="linenos">65</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">66</span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">./code/f.txt</span><a class="headerlink" href="#id10" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">ir_version</span><span class="p">:</span> <span class="mi">8</span>
+<span class="linenos"> 2</span><span class="n">opset_import</span> <span class="p">{</span>
+<span class="linenos"> 3</span>  <span class="n">domain</span><span class="p">:</span> <span class="s2">&quot;pkg.onnxscript.torch_lib&quot;</span>
+<span class="linenos"> 4</span>  <span class="n">version</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos"> 5</span><span class="p">}</span>
+<span class="linenos"> 6</span><span class="n">opset_import</span> <span class="p">{</span>
+<span class="linenos"> 7</span>  <span class="n">domain</span><span class="p">:</span> <span class="s2">&quot;pkg.torch.2.4.0+cpu&quot;</span>
+<span class="linenos"> 8</span>  <span class="n">version</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos"> 9</span><span class="p">}</span>
+<span class="linenos">10</span><span class="n">opset_import</span> <span class="p">{</span>
+<span class="linenos">11</span>  <span class="n">domain</span><span class="p">:</span> <span class="s2">&quot;com.k2fsa.org&quot;</span>
+<span class="linenos">12</span>  <span class="n">version</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos">13</span><span class="p">}</span>
+<span class="linenos">14</span><span class="n">opset_import</span> <span class="p">{</span>
+<span class="linenos">15</span>  <span class="n">domain</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+<span class="linenos">16</span>  <span class="n">version</span><span class="p">:</span> <span class="mi">18</span>
+<span class="linenos">17</span><span class="p">}</span>
+<span class="linenos">18</span><span class="n">opset_import</span> <span class="p">{</span>
+<span class="linenos">19</span>  <span class="n">domain</span><span class="p">:</span> <span class="s2">&quot;pkg.onnxscript.torch_lib.common&quot;</span>
+<span class="linenos">20</span>  <span class="n">version</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos">21</span><span class="p">}</span>
+<span class="linenos">22</span><span class="n">producer_name</span><span class="p">:</span> <span class="s2">&quot;pytorch&quot;</span>
+<span class="linenos">23</span><span class="n">producer_version</span><span class="p">:</span> <span class="s2">&quot;2.4.0&quot;</span>
+<span class="linenos">24</span><span class="n">graph</span> <span class="p">{</span>
+<span class="linenos">25</span>  <span class="n">node</span> <span class="p">{</span>
+<span class="linenos">26</span>    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;l_x_&quot;</span>
+<span class="linenos">27</span>    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;relu_1&quot;</span>
+<span class="linenos">28</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;torch_nn_modules_activation_ReLU_relu_1_0_aten_relu_0_n0&quot;</span>
+<span class="linenos">29</span>    <span class="n">op_type</span><span class="p">:</span> <span class="s2">&quot;Relu&quot;</span>
+<span class="linenos">30</span>  <span class="p">}</span>
+<span class="linenos">31</span>  <span class="n">node</span> <span class="p">{</span>
+<span class="linenos">32</span>    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;relu_1&quot;</span>
+<span class="linenos">33</span>    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;foo&quot;</span>
+<span class="linenos">34</span>    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;my_add_op2&quot;</span>
+<span class="linenos">35</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;custom_my_add_1_n0&quot;</span>
+<span class="linenos">36</span>    <span class="n">op_type</span><span class="p">:</span> <span class="s2">&quot;CustomOpOne2&quot;</span>
+<span class="linenos">37</span>    <span class="n">domain</span><span class="p">:</span> <span class="s2">&quot;com.k2fsa.org&quot;</span>
+<span class="linenos">38</span>  <span class="p">}</span>
+<span class="linenos">39</span>  <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;main_graph&quot;</span>
+<span class="linenos">40</span>  <span class="n">initializer</span> <span class="p">{</span>
+<span class="linenos">41</span>    <span class="n">dims</span><span class="p">:</span> <span class="mi">4</span>
+<span class="linenos">42</span>    <span class="n">data_type</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos">43</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;foo&quot;</span>
+<span class="linenos">44</span>    <span class="n">raw_data</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\000\000\300</span><span class="s2">?</span><span class="se">\000\000</span><span class="s2"> @</span><span class="se">\000\000</span><span class="s2">`@</span><span class="se">\000\000\220</span><span class="s2">@&quot;</span>
+<span class="linenos">45</span>  <span class="p">}</span>
+<span class="linenos">46</span>  <span class="nb">input</span> <span class="p">{</span>
+<span class="linenos">47</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;l_x_&quot;</span>
+<span class="linenos">48</span>    <span class="nb">type</span> <span class="p">{</span>
+<span class="linenos">49</span>      <span class="n">tensor_type</span> <span class="p">{</span>
+<span class="linenos">50</span>        <span class="n">elem_type</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos">51</span>        <span class="n">shape</span> <span class="p">{</span>
+<span class="linenos">52</span>          <span class="n">dim</span> <span class="p">{</span>
+<span class="linenos">53</span>            <span class="n">dim_value</span><span class="p">:</span> <span class="mi">4</span>
+<span class="linenos">54</span>          <span class="p">}</span>
+<span class="linenos">55</span>        <span class="p">}</span>
+<span class="linenos">56</span>      <span class="p">}</span>
+<span class="linenos">57</span>    <span class="p">}</span>
+<span class="linenos">58</span>  <span class="p">}</span>
+<span class="linenos">59</span>  <span class="n">output</span> <span class="p">{</span>
+<span class="linenos">60</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;my_add_op2&quot;</span>
+<span class="linenos">61</span>    <span class="nb">type</span> <span class="p">{</span>
+<span class="linenos">62</span>      <span class="n">tensor_type</span> <span class="p">{</span>
+<span class="linenos">63</span>        <span class="n">elem_type</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos">64</span>        <span class="n">shape</span> <span class="p">{</span>
+<span class="linenos">65</span>          <span class="n">dim</span> <span class="p">{</span>
+<span class="linenos">66</span>            <span class="n">dim_value</span><span class="p">:</span> <span class="mi">4</span>
+<span class="linenos">67</span>          <span class="p">}</span>
+<span class="linenos">68</span>        <span class="p">}</span>
+<span class="linenos">69</span>      <span class="p">}</span>
+<span class="linenos">70</span>    <span class="p">}</span>
+<span class="linenos">71</span>  <span class="p">}</span>
+<span class="linenos">72</span>  <span class="n">value_info</span> <span class="p">{</span>
+<span class="linenos">73</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;relu_1&quot;</span>
+<span class="linenos">74</span>    <span class="nb">type</span> <span class="p">{</span>
+<span class="linenos">75</span>      <span class="n">tensor_type</span> <span class="p">{</span>
+<span class="linenos">76</span>        <span class="n">elem_type</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos">77</span>        <span class="n">shape</span> <span class="p">{</span>
+<span class="linenos">78</span>          <span class="n">dim</span> <span class="p">{</span>
+<span class="linenos">79</span>            <span class="n">dim_value</span><span class="p">:</span> <span class="mi">4</span>
+<span class="linenos">80</span>          <span class="p">}</span>
+<span class="linenos">81</span>        <span class="p">}</span>
+<span class="linenos">82</span>      <span class="p">}</span>
+<span class="linenos">83</span>    <span class="p">}</span>
+<span class="linenos">84</span>  <span class="p">}</span>
+<span class="linenos">85</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">./code/custom-op-3.cc</span><a class="headerlink" href="#id11" title="Permalink to this code"></a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cm">/*</span>
+<span class="linenos"> 2</span><span class="cm">references:</span>
+<span class="linenos"> 3</span><span class="cm">https://onnxruntime.ai/docs/reference/operators/add-custom-op.html</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="cm"> */</span>
+<span class="linenos"> 6</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;onnxruntime_lite_custom_op.h&quot;</span>
+<span class="linenos"> 7</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos"> 8</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;utility&gt;</span>
+<span class="linenos"> 9</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">KernelOne</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Ort</span><span class="o">::</span><span class="n">Custom</span><span class="o">::</span><span class="n">Tensor</span><span class="o">&lt;</span><span class="kt">uint8_t</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">X</span><span class="p">,</span>
+<span class="linenos">12</span><span class="w">                      </span><span class="k">const</span><span class="w"> </span><span class="n">Ort</span><span class="o">::</span><span class="n">Custom</span><span class="o">::</span><span class="n">Tensor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">scale_tensor</span><span class="p">,</span>
+<span class="linenos">13</span><span class="w">                      </span><span class="n">Ort</span><span class="o">::</span><span class="n">Custom</span><span class="o">::</span><span class="n">Tensor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">14</span><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">input_shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="p">.</span><span class="n">Shape</span><span class="p">();</span>
+<span class="linenos">15</span><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">x_raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="p">.</span><span class="n">Data</span><span class="p">();</span>
+<span class="linenos">16</span><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">scale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scale_tensor</span><span class="p">.</span><span class="n">Data</span><span class="p">()[</span><span class="mi">0</span><span class="p">];</span>
+<span class="linenos">17</span><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">y_raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Y</span><span class="p">.</span><span class="n">Allocate</span><span class="p">(</span><span class="n">input_shape</span><span class="p">);</span>
+<span class="linenos">18</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int64_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">Y</span><span class="p">.</span><span class="n">NumberOfElement</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="w">    </span><span class="c1">// scale each uint8 number</span>
+<span class="linenos">21</span><span class="w">    </span><span class="n">y_raw</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x_raw</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">scale</span><span class="p">;</span>
+<span class="linenos">22</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">23</span><span class="p">}</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span><span class="k">static</span><span class="w"> </span><span class="n">Ort</span><span class="o">::</span><span class="n">CustomOpDomain</span><span class="w"> </span><span class="nf">TestCustomOp3</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">26</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">CustomOpDomain</span><span class="w"> </span><span class="n">v1_domain</span><span class="p">{</span><span class="s">&quot;com.k2fsa.org&quot;</span><span class="p">};</span>
+<span class="linenos">27</span><span class="w">  </span><span class="c1">// please make sure that custom_op_one has the same lifetime as the consuming</span>
+<span class="linenos">28</span><span class="w">  </span><span class="c1">// session</span>
+<span class="linenos">29</span><span class="w">  </span><span class="c1">//</span>
+<span class="linenos">30</span><span class="w">  </span><span class="c1">// Here we use a static variable so it is never released.</span>
+<span class="linenos">31</span><span class="w">  </span><span class="c1">// in practice, we can move it to a member variable of a class</span>
+<span class="linenos">32</span><span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Ort</span><span class="o">::</span><span class="n">Custom</span><span class="o">::</span><span class="n">OrtLiteCustomOp</span><span class="o">&gt;</span><span class="w"> </span><span class="n">custom_op_one</span><span class="p">{</span>
+<span class="linenos">33</span><span class="w">      </span><span class="n">Ort</span><span class="o">::</span><span class="n">Custom</span><span class="o">::</span><span class="n">CreateLiteCustomOp</span><span class="p">(</span><span class="s">&quot;MyCast&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;CPUExecutionProvider&quot;</span><span class="p">,</span>
+<span class="linenos">34</span><span class="w">                                      </span><span class="n">KernelOne</span><span class="p">)};</span>
+<span class="linenos">35</span><span class="w">  </span><span class="n">v1_domain</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">custom_op_one</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
+<span class="linenos">36</span>
+<span class="linenos">37</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">v1_domain</span><span class="p">;</span>
+<span class="linenos">38</span><span class="p">}</span>
+<span class="linenos">39</span>
+<span class="linenos">40</span><span class="kt">void</span><span class="w"> </span><span class="nf">TestCustomModel3</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">41</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">Env</span><span class="w"> </span><span class="n">env</span><span class="p">;</span>
+<span class="linenos">42</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">SessionOptions</span><span class="w"> </span><span class="n">sess_opts</span><span class="p">;</span>
+<span class="linenos">43</span><span class="w">  </span><span class="n">sess_opts</span><span class="p">.</span><span class="n">SetIntraOpNumThreads</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="linenos">44</span><span class="w">  </span><span class="n">sess_opts</span><span class="p">.</span><span class="n">SetInterOpNumThreads</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="linenos">45</span>
+<span class="linenos">46</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">CustomOpDomain</span><span class="w"> </span><span class="n">v1_domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestCustomOp3</span><span class="p">();</span>
+<span class="linenos">47</span>
+<span class="linenos">48</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">SessionOptions</span><span class="w"> </span><span class="n">session_options</span><span class="p">;</span>
+<span class="linenos">49</span><span class="w">  </span><span class="n">sess_opts</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">v1_domain</span><span class="p">);</span>
+<span class="linenos">50</span><span class="w">  </span><span class="c1">// create a session with the session_options ...</span>
+<span class="linenos">51</span>
+<span class="linenos">52</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Ort</span><span class="o">::</span><span class="n">Session</span><span class="o">&gt;</span><span class="w"> </span><span class="n">sess</span><span class="w"> </span><span class="o">=</span>
+<span class="linenos">53</span><span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Ort</span><span class="o">::</span><span class="n">Session</span><span class="o">&gt;</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;./g.onnx&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sess_opts</span><span class="p">);</span>
+<span class="linenos">54</span>
+<span class="linenos">55</span><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">memory_info</span><span class="w"> </span><span class="o">=</span>
+<span class="linenos">56</span><span class="w">      </span><span class="n">Ort</span><span class="o">::</span><span class="n">MemoryInfo</span><span class="o">::</span><span class="n">CreateCpu</span><span class="p">(</span><span class="n">OrtDeviceAllocator</span><span class="p">,</span><span class="w"> </span><span class="n">OrtMemTypeDefault</span><span class="p">);</span>
+<span class="linenos">57</span><span class="w">  </span><span class="c1">// foo is [10, 20]</span>
+<span class="linenos">58</span><span class="w">  </span><span class="c1">//</span>
+<span class="linenos">59</span>
+<span class="linenos">60</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">};</span>
+<span class="linenos">61</span>
+<span class="linenos">62</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">&gt;</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">};</span>
+<span class="linenos">63</span>
+<span class="linenos">64</span><span class="w">  </span><span class="n">Ort</span><span class="o">::</span><span class="n">Value</span><span class="w"> </span><span class="n">x_tensor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Ort</span><span class="o">::</span><span class="n">Value</span><span class="o">::</span><span class="n">CreateTensor</span><span class="p">(</span>
+<span class="linenos">65</span><span class="w">      </span><span class="n">memory_info</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span><span class="w"> </span><span class="n">shape</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">shape</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="linenos">66</span>
+<span class="linenos">67</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Ort</span><span class="o">::</span><span class="n">Value</span><span class="o">&gt;</span><span class="w"> </span><span class="n">inputs</span><span class="p">;</span>
+<span class="linenos">68</span><span class="w">  </span><span class="n">inputs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">));</span>
+<span class="linenos">69</span>
+<span class="linenos">70</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*&gt;</span><span class="w"> </span><span class="n">input_names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;l_x_&quot;</span><span class="p">};</span>
+<span class="linenos">71</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*&gt;</span><span class="w"> </span><span class="n">output_names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;add&quot;</span><span class="p">};</span>
+<span class="linenos">72</span><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sess</span><span class="o">-&gt;</span><span class="n">Run</span><span class="p">({},</span><span class="w"> </span><span class="n">input_names</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">inputs</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">inputs</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span>
+<span class="linenos">73</span><span class="w">                       </span><span class="n">output_names</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">output_names</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="linenos">74</span><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">out</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">GetTensorData</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="linenos">75</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">76</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s"> &quot;</span><span class="p">;</span>
+<span class="linenos">77</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">78</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text">./code/g.py</span><a class="headerlink" href="#id12" title="Permalink to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/usr/bin/env python3</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">from</span> <span class="nn">torch._custom_op</span> <span class="kn">import</span> <span class="n">impl</span> <span class="k">as</span> <span class="n">custom_op</span>
+<span class="linenos"> 4</span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="linenos"> 5</span><span class="kn">import</span> <span class="nn">onnx</span>
+<span class="linenos"> 6</span><span class="kn">import</span> <span class="nn">onnxscript</span>
+<span class="linenos"> 7</span><span class="kn">from</span> <span class="nn">onnxscript</span> <span class="kn">import</span> <span class="n">opset18</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="linenos">10</span><span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="nd">@custom_op</span><span class="o">.</span><span class="n">custom_op</span><span class="p">(</span><span class="s2">&quot;mylibrary::my_cast&quot;</span><span class="p">)</span>
+<span class="linenos">13</span><span class="k">def</span> <span class="nf">my_cast</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">scale</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
+<span class="linenos">14</span>    <span class="c1"># Since we are using mylibrary::my_cast, so the function</span>
+<span class="linenos">15</span>    <span class="c1"># name must be my_cast; otherwise, it will throw an error</span>
+<span class="linenos">16</span>    <span class="c1"># when this script is run</span>
+<span class="linenos">17</span>    <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="nd">@my_cast</span><span class="o">.</span><span class="n">impl_abstract</span><span class="p">()</span>
+<span class="linenos">20</span><span class="k">def</span> <span class="nf">my_cast_impl_abstract_any_name_is_ok</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">scale</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">):</span>
+<span class="linenos">21</span>    <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span><span class="nd">@my_cast</span><span class="o">.</span><span class="n">impl</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+<span class="linenos">24</span><span class="k">def</span> <span class="nf">my_cast_impl_any_name_is_ok</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">scale</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">):</span>
+<span class="linenos">25</span>    <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>   <span class="c1"># add x to itself, and round the result</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span><span class="k">class</span> <span class="nc">CustomFoo</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="linenos">28</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">29</span>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<span class="linenos">30</span>        <span class="bp">self</span><span class="o">.</span><span class="n">register_buffer</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">uint8</span><span class="p">))</span>
+<span class="linenos">31</span>        <span class="bp">self</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="mf">0.125</span>
+<span class="linenos">32</span>
+<span class="linenos">33</span>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="linenos">34</span>        <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">my_cast</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">foo</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale</span><span class="p">)</span>
+<span class="linenos">35</span>
+<span class="linenos">36</span>
+<span class="linenos">37</span><span class="n">custom_opset</span> <span class="o">=</span> <span class="n">onnxscript</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">Opset</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="s2">&quot;com.k2fsa.org&quot;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">38</span>
+<span class="linenos">39</span><span class="nd">@onnxscript</span><span class="o">.</span><span class="n">script</span><span class="p">(</span><span class="n">custom_opset</span><span class="p">,</span> <span class="n">default_opset</span><span class="o">=</span><span class="n">opset18</span><span class="p">)</span>
+<span class="linenos">40</span><span class="k">def</span> <span class="nf">custom_my_cast</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">scale</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">):</span>
+<span class="linenos">41</span>    <span class="k">return</span> <span class="n">custom_opset</span><span class="o">.</span><span class="n">MyCast</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">scale</span><span class="p">)</span>
+<span class="linenos">42</span>
+<span class="linenos">43</span><span class="nd">@torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">()</span>
+<span class="linenos">44</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos">45</span>    <span class="n">torch</span><span class="o">.</span><span class="n">_dynamo</span><span class="o">.</span><span class="n">allow_in_graph</span><span class="p">(</span><span class="n">my_cast</span><span class="p">)</span>
+<span class="linenos">46</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">47</span>    <span class="n">custom_addandround_model</span> <span class="o">=</span> <span class="n">CustomFoo</span><span class="p">()</span>
+<span class="linenos">48</span>    <span class="n">onnx_registry</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">onnx</span><span class="o">.</span><span class="n">OnnxRegistry</span><span class="p">()</span>
+<span class="linenos">49</span>    <span class="n">onnx_registry</span><span class="o">.</span><span class="n">register_op</span><span class="p">(</span>
+<span class="linenos">50</span>        <span class="n">namespace</span><span class="o">=</span><span class="s2">&quot;mylibrary&quot;</span><span class="p">,</span> <span class="n">op_name</span><span class="o">=</span><span class="s2">&quot;my_cast&quot;</span><span class="p">,</span> <span class="n">overload</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="n">function</span><span class="o">=</span><span class="n">custom_my_cast</span>
+<span class="linenos">51</span>        <span class="p">)</span>
+<span class="linenos">52</span>
+<span class="linenos">53</span>    <span class="n">export_options</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">onnx</span><span class="o">.</span><span class="n">ExportOptions</span><span class="p">(</span><span class="n">onnx_registry</span><span class="o">=</span><span class="n">onnx_registry</span><span class="p">)</span>
+<span class="linenos">54</span>    <span class="n">onnx_program</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">onnx</span><span class="o">.</span><span class="n">dynamo_export</span><span class="p">(</span>
+<span class="linenos">55</span>        <span class="n">custom_addandround_model</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span>  <span class="n">export_options</span><span class="o">=</span><span class="n">export_options</span>
+<span class="linenos">56</span>        <span class="p">)</span>
+<span class="linenos">57</span>    <span class="n">onnx_program</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;./g.onnx&quot;</span><span class="p">)</span>
+<span class="linenos">58</span>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;g.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="linenos">59</span>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">onnx_program</span><span class="o">.</span><span class="n">model_proto</span><span class="p">))</span>
+<span class="linenos">60</span>    <span class="n">onnx_model</span> <span class="o">=</span> <span class="n">onnx</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;g.onnx&quot;</span><span class="p">)</span>
+<span class="linenos">61</span>    <span class="n">onnx</span><span class="o">.</span><span class="n">checker</span><span class="o">.</span><span class="n">check_model</span><span class="p">(</span><span class="n">onnx_model</span><span class="p">)</span>
+<span class="linenos">62</span>
+<span class="linenos">63</span>
+<span class="linenos">64</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">65</span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text">./code/g.txt</span><a class="headerlink" href="#id13" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="n">ir_version</span><span class="p">:</span> <span class="mi">8</span>
+<span class="linenos">  2</span><span class="n">opset_import</span> <span class="p">{</span>
+<span class="linenos">  3</span>  <span class="n">domain</span><span class="p">:</span> <span class="s2">&quot;com.k2fsa.org&quot;</span>
+<span class="linenos">  4</span>  <span class="n">version</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos">  5</span><span class="p">}</span>
+<span class="linenos">  6</span><span class="n">opset_import</span> <span class="p">{</span>
+<span class="linenos">  7</span>  <span class="n">domain</span><span class="p">:</span> <span class="s2">&quot;pkg.onnxscript.torch_lib&quot;</span>
+<span class="linenos">  8</span>  <span class="n">version</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos">  9</span><span class="p">}</span>
+<span class="linenos"> 10</span><span class="n">opset_import</span> <span class="p">{</span>
+<span class="linenos"> 11</span>  <span class="n">domain</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+<span class="linenos"> 12</span>  <span class="n">version</span><span class="p">:</span> <span class="mi">18</span>
+<span class="linenos"> 13</span><span class="p">}</span>
+<span class="linenos"> 14</span><span class="n">opset_import</span> <span class="p">{</span>
+<span class="linenos"> 15</span>  <span class="n">domain</span><span class="p">:</span> <span class="s2">&quot;pkg.onnxscript.torch_lib.common&quot;</span>
+<span class="linenos"> 16</span>  <span class="n">version</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos"> 17</span><span class="p">}</span>
+<span class="linenos"> 18</span><span class="n">producer_name</span><span class="p">:</span> <span class="s2">&quot;pytorch&quot;</span>
+<span class="linenos"> 19</span><span class="n">producer_version</span><span class="p">:</span> <span class="s2">&quot;2.4.0&quot;</span>
+<span class="linenos"> 20</span><span class="n">graph</span> <span class="p">{</span>
+<span class="linenos"> 21</span>  <span class="n">node</span> <span class="p">{</span>
+<span class="linenos"> 22</span>    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;custom_my_cast_0_scale&quot;</span>
+<span class="linenos"> 23</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;custom_my_cast_0_n0&quot;</span>
+<span class="linenos"> 24</span>    <span class="n">op_type</span><span class="p">:</span> <span class="s2">&quot;Constant&quot;</span>
+<span class="linenos"> 25</span>    <span class="n">attribute</span> <span class="p">{</span>
+<span class="linenos"> 26</span>      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;value_float&quot;</span>
+<span class="linenos"> 27</span>      <span class="nb">type</span><span class="p">:</span> <span class="n">FLOAT</span>
+<span class="linenos"> 28</span>      <span class="n">f</span><span class="p">:</span> <span class="mf">0.125</span>
+<span class="linenos"> 29</span>    <span class="p">}</span>
+<span class="linenos"> 30</span>  <span class="p">}</span>
+<span class="linenos"> 31</span>  <span class="n">node</span> <span class="p">{</span>
+<span class="linenos"> 32</span>    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;foo&quot;</span>
+<span class="linenos"> 33</span>    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;custom_my_cast_0_scale&quot;</span>
+<span class="linenos"> 34</span>    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;my_cast&quot;</span>
+<span class="linenos"> 35</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;custom_my_cast_0_n1&quot;</span>
+<span class="linenos"> 36</span>    <span class="n">op_type</span><span class="p">:</span> <span class="s2">&quot;MyCast&quot;</span>
+<span class="linenos"> 37</span>    <span class="n">domain</span><span class="p">:</span> <span class="s2">&quot;com.k2fsa.org&quot;</span>
+<span class="linenos"> 38</span>  <span class="p">}</span>
+<span class="linenos"> 39</span>  <span class="n">node</span> <span class="p">{</span>
+<span class="linenos"> 40</span>    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;l_x_&quot;</span>
+<span class="linenos"> 41</span>    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;my_cast&quot;</span>
+<span class="linenos"> 42</span>    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;add&quot;</span>
+<span class="linenos"> 43</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;aten_add_1&quot;</span>
+<span class="linenos"> 44</span>    <span class="n">op_type</span><span class="p">:</span> <span class="s2">&quot;aten_add&quot;</span>
+<span class="linenos"> 45</span>    <span class="n">domain</span><span class="p">:</span> <span class="s2">&quot;pkg.onnxscript.torch_lib&quot;</span>
+<span class="linenos"> 46</span>    <span class="n">attribute</span> <span class="p">{</span>
+<span class="linenos"> 47</span>      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;alpha&quot;</span>
+<span class="linenos"> 48</span>      <span class="nb">type</span><span class="p">:</span> <span class="n">FLOAT</span>
+<span class="linenos"> 49</span>      <span class="n">f</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos"> 50</span>    <span class="p">}</span>
+<span class="linenos"> 51</span>  <span class="p">}</span>
+<span class="linenos"> 52</span>  <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;main_graph&quot;</span>
+<span class="linenos"> 53</span>  <span class="n">initializer</span> <span class="p">{</span>
+<span class="linenos"> 54</span>    <span class="n">dims</span><span class="p">:</span> <span class="mi">2</span>
+<span class="linenos"> 55</span>    <span class="n">data_type</span><span class="p">:</span> <span class="mi">2</span>
+<span class="linenos"> 56</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;foo&quot;</span>
+<span class="linenos"> 57</span>    <span class="n">raw_data</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\n\024</span><span class="s2">&quot;</span>
+<span class="linenos"> 58</span>  <span class="p">}</span>
+<span class="linenos"> 59</span>  <span class="nb">input</span> <span class="p">{</span>
+<span class="linenos"> 60</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;l_x_&quot;</span>
+<span class="linenos"> 61</span>    <span class="nb">type</span> <span class="p">{</span>
+<span class="linenos"> 62</span>      <span class="n">tensor_type</span> <span class="p">{</span>
+<span class="linenos"> 63</span>        <span class="n">elem_type</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos"> 64</span>        <span class="n">shape</span> <span class="p">{</span>
+<span class="linenos"> 65</span>          <span class="n">dim</span> <span class="p">{</span>
+<span class="linenos"> 66</span>            <span class="n">dim_value</span><span class="p">:</span> <span class="mi">2</span>
+<span class="linenos"> 67</span>          <span class="p">}</span>
+<span class="linenos"> 68</span>        <span class="p">}</span>
+<span class="linenos"> 69</span>      <span class="p">}</span>
+<span class="linenos"> 70</span>    <span class="p">}</span>
+<span class="linenos"> 71</span>  <span class="p">}</span>
+<span class="linenos"> 72</span>  <span class="n">output</span> <span class="p">{</span>
+<span class="linenos"> 73</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;add&quot;</span>
+<span class="linenos"> 74</span>    <span class="nb">type</span> <span class="p">{</span>
+<span class="linenos"> 75</span>      <span class="n">tensor_type</span> <span class="p">{</span>
+<span class="linenos"> 76</span>        <span class="n">elem_type</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos"> 77</span>        <span class="n">shape</span> <span class="p">{</span>
+<span class="linenos"> 78</span>          <span class="n">dim</span> <span class="p">{</span>
+<span class="linenos"> 79</span>            <span class="n">dim_value</span><span class="p">:</span> <span class="mi">2</span>
+<span class="linenos"> 80</span>          <span class="p">}</span>
+<span class="linenos"> 81</span>        <span class="p">}</span>
+<span class="linenos"> 82</span>      <span class="p">}</span>
+<span class="linenos"> 83</span>    <span class="p">}</span>
+<span class="linenos"> 84</span>  <span class="p">}</span>
+<span class="linenos"> 85</span>  <span class="n">value_info</span> <span class="p">{</span>
+<span class="linenos"> 86</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;custom_my_cast_0_scale&quot;</span>
+<span class="linenos"> 87</span>    <span class="nb">type</span> <span class="p">{</span>
+<span class="linenos"> 88</span>      <span class="n">tensor_type</span> <span class="p">{</span>
+<span class="linenos"> 89</span>        <span class="n">elem_type</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos"> 90</span>        <span class="n">shape</span> <span class="p">{</span>
+<span class="linenos"> 91</span>        <span class="p">}</span>
+<span class="linenos"> 92</span>      <span class="p">}</span>
+<span class="linenos"> 93</span>    <span class="p">}</span>
+<span class="linenos"> 94</span>  <span class="p">}</span>
+<span class="linenos"> 95</span>  <span class="n">value_info</span> <span class="p">{</span>
+<span class="linenos"> 96</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;my_cast&quot;</span>
+<span class="linenos"> 97</span>    <span class="nb">type</span> <span class="p">{</span>
+<span class="linenos"> 98</span>      <span class="n">tensor_type</span> <span class="p">{</span>
+<span class="linenos"> 99</span>        <span class="n">elem_type</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos">100</span>        <span class="n">shape</span> <span class="p">{</span>
+<span class="linenos">101</span>          <span class="n">dim</span> <span class="p">{</span>
+<span class="linenos">102</span>            <span class="n">dim_value</span><span class="p">:</span> <span class="mi">2</span>
+<span class="linenos">103</span>          <span class="p">}</span>
+<span class="linenos">104</span>        <span class="p">}</span>
+<span class="linenos">105</span>      <span class="p">}</span>
+<span class="linenos">106</span>    <span class="p">}</span>
+<span class="linenos">107</span>  <span class="p">}</span>
+<span class="linenos">108</span>  <span class="n">value_info</span> <span class="p">{</span>
+<span class="linenos">109</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;pkg.onnxscript.torch_lib::aten_add/self&quot;</span>
+<span class="linenos">110</span>    <span class="nb">type</span> <span class="p">{</span>
+<span class="linenos">111</span>      <span class="n">tensor_type</span> <span class="p">{</span>
+<span class="linenos">112</span>        <span class="n">elem_type</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos">113</span>        <span class="n">shape</span> <span class="p">{</span>
+<span class="linenos">114</span>          <span class="n">dim</span> <span class="p">{</span>
+<span class="linenos">115</span>            <span class="n">dim_value</span><span class="p">:</span> <span class="mi">2</span>
+<span class="linenos">116</span>          <span class="p">}</span>
+<span class="linenos">117</span>        <span class="p">}</span>
+<span class="linenos">118</span>      <span class="p">}</span>
+<span class="linenos">119</span>    <span class="p">}</span>
+<span class="linenos">120</span>  <span class="p">}</span>
+<span class="linenos">121</span>  <span class="n">value_info</span> <span class="p">{</span>
+<span class="linenos">122</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;pkg.onnxscript.torch_lib::aten_add/other&quot;</span>
+<span class="linenos">123</span>    <span class="nb">type</span> <span class="p">{</span>
+<span class="linenos">124</span>      <span class="n">tensor_type</span> <span class="p">{</span>
+<span class="linenos">125</span>        <span class="n">elem_type</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos">126</span>        <span class="n">shape</span> <span class="p">{</span>
+<span class="linenos">127</span>          <span class="n">dim</span> <span class="p">{</span>
+<span class="linenos">128</span>            <span class="n">dim_value</span><span class="p">:</span> <span class="mi">2</span>
+<span class="linenos">129</span>          <span class="p">}</span>
+<span class="linenos">130</span>        <span class="p">}</span>
+<span class="linenos">131</span>      <span class="p">}</span>
+<span class="linenos">132</span>    <span class="p">}</span>
+<span class="linenos">133</span>  <span class="p">}</span>
+<span class="linenos">134</span>  <span class="n">value_info</span> <span class="p">{</span>
+<span class="linenos">135</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;pkg.onnxscript.torch_lib::aten_add/alpha&quot;</span>
+<span class="linenos">136</span>    <span class="nb">type</span> <span class="p">{</span>
+<span class="linenos">137</span>      <span class="n">tensor_type</span> <span class="p">{</span>
+<span class="linenos">138</span>        <span class="n">elem_type</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos">139</span>        <span class="n">shape</span> <span class="p">{</span>
+<span class="linenos">140</span>        <span class="p">}</span>
+<span class="linenos">141</span>      <span class="p">}</span>
+<span class="linenos">142</span>    <span class="p">}</span>
+<span class="linenos">143</span>  <span class="p">}</span>
+<span class="linenos">144</span>  <span class="n">value_info</span> <span class="p">{</span>
+<span class="linenos">145</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;pkg.onnxscript.torch_lib::aten_add/other_1&quot;</span>
+<span class="linenos">146</span>    <span class="nb">type</span> <span class="p">{</span>
+<span class="linenos">147</span>      <span class="n">tensor_type</span> <span class="p">{</span>
+<span class="linenos">148</span>        <span class="n">elem_type</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos">149</span>        <span class="n">shape</span> <span class="p">{</span>
+<span class="linenos">150</span>          <span class="n">dim</span> <span class="p">{</span>
+<span class="linenos">151</span>            <span class="n">dim_value</span><span class="p">:</span> <span class="mi">2</span>
+<span class="linenos">152</span>          <span class="p">}</span>
+<span class="linenos">153</span>        <span class="p">}</span>
+<span class="linenos">154</span>      <span class="p">}</span>
+<span class="linenos">155</span>    <span class="p">}</span>
+<span class="linenos">156</span>  <span class="p">}</span>
+<span class="linenos">157</span>  <span class="n">value_info</span> <span class="p">{</span>
+<span class="linenos">158</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;pkg.onnxscript.torch_lib::aten_add/return_val&quot;</span>
+<span class="linenos">159</span>    <span class="nb">type</span> <span class="p">{</span>
+<span class="linenos">160</span>      <span class="n">tensor_type</span> <span class="p">{</span>
+<span class="linenos">161</span>        <span class="n">elem_type</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos">162</span>        <span class="n">shape</span> <span class="p">{</span>
+<span class="linenos">163</span>          <span class="n">dim</span> <span class="p">{</span>
+<span class="linenos">164</span>            <span class="n">dim_value</span><span class="p">:</span> <span class="mi">2</span>
+<span class="linenos">165</span>          <span class="p">}</span>
+<span class="linenos">166</span>        <span class="p">}</span>
+<span class="linenos">167</span>      <span class="p">}</span>
+<span class="linenos">168</span>    <span class="p">}</span>
+<span class="linenos">169</span>  <span class="p">}</span>
+<span class="linenos">170</span><span class="p">}</span>
+<span class="linenos">171</span><span class="n">functions</span> <span class="p">{</span>
+<span class="linenos">172</span>  <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;aten_add&quot;</span>
+<span class="linenos">173</span>  <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;self&quot;</span>
+<span class="linenos">174</span>  <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;other&quot;</span>
+<span class="linenos">175</span>  <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;return_val&quot;</span>
+<span class="linenos">176</span>  <span class="n">attribute_proto</span> <span class="p">{</span>
+<span class="linenos">177</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;alpha&quot;</span>
+<span class="linenos">178</span>    <span class="nb">type</span><span class="p">:</span> <span class="n">FLOAT</span>
+<span class="linenos">179</span>    <span class="n">f</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos">180</span>  <span class="p">}</span>
+<span class="linenos">181</span>  <span class="n">node</span> <span class="p">{</span>
+<span class="linenos">182</span>    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;alpha&quot;</span>
+<span class="linenos">183</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;n0&quot;</span>
+<span class="linenos">184</span>    <span class="n">op_type</span><span class="p">:</span> <span class="s2">&quot;Constant&quot;</span>
+<span class="linenos">185</span>    <span class="n">attribute</span> <span class="p">{</span>
+<span class="linenos">186</span>      <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;value_float&quot;</span>
+<span class="linenos">187</span>      <span class="n">ref_attr_name</span><span class="p">:</span> <span class="s2">&quot;alpha&quot;</span>
+<span class="linenos">188</span>      <span class="nb">type</span><span class="p">:</span> <span class="n">FLOAT</span>
+<span class="linenos">189</span>    <span class="p">}</span>
+<span class="linenos">190</span>  <span class="p">}</span>
+<span class="linenos">191</span>  <span class="n">node</span> <span class="p">{</span>
+<span class="linenos">192</span>    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;other&quot;</span>
+<span class="linenos">193</span>    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;alpha&quot;</span>
+<span class="linenos">194</span>    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;other_1&quot;</span>
+<span class="linenos">195</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;n2&quot;</span>
+<span class="linenos">196</span>    <span class="n">op_type</span><span class="p">:</span> <span class="s2">&quot;Mul&quot;</span>
+<span class="linenos">197</span>  <span class="p">}</span>
+<span class="linenos">198</span>  <span class="n">node</span> <span class="p">{</span>
+<span class="linenos">199</span>    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;self&quot;</span>
+<span class="linenos">200</span>    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;other_1&quot;</span>
+<span class="linenos">201</span>    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;return_val&quot;</span>
+<span class="linenos">202</span>    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;n3&quot;</span>
+<span class="linenos">203</span>    <span class="n">op_type</span><span class="p">:</span> <span class="s2">&quot;Add&quot;</span>
+<span class="linenos">204</span>  <span class="p">}</span>
+<span class="linenos">205</span>  <span class="n">doc_string</span><span class="p">:</span> <span class="s2">&quot;add.Tensor(Tensor self, Tensor other, *, Scalar alpha=1) -&gt; Tensor&quot;</span>
+<span class="linenos">206</span>  <span class="n">opset_import</span> <span class="p">{</span>
+<span class="linenos">207</span>    <span class="n">domain</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+<span class="linenos">208</span>    <span class="n">version</span><span class="p">:</span> <span class="mi">18</span>
+<span class="linenos">209</span>  <span class="p">}</span>
+<span class="linenos">210</span>  <span class="n">domain</span><span class="p">:</span> <span class="s2">&quot;pkg.onnxscript.torch_lib&quot;</span>
+<span class="linenos">211</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install.html" class="btn btn-neutral float-left" title="Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="internals.html" class="btn btn-neutral float-right" title="Internals" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

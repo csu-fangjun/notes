@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>qnn-context-binary-generator &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="aimet" href="aimet.html" />
+    <link rel="prev" title="HTP" href="htp.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/index.html">Papers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pascal/index.html">Pascal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llm/index.html">LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ascend/index.html">ascend</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">qnn</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basics.html">basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">Install qnn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sense-voice.html">SenseVoice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qnn-onnx-convert.html">qnn-onnx-converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qnn-model-lib-generator.html">qnn-model-lib-generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qnn-net-run.html">qnn-net-run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qairt-converter.html">qairt-converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qairt-dlc-info.html">qairt-dlc-info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qairt-quantizer.html">qairt-quantizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boards.html">Boards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html">code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="todo.html">TODOs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="onnxruntime.html">onnxruntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="htp.html">HTP</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">qnn-context-binary-generator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#soc-id-and-hexagon-arch-id">soc id and hexagon arch id</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#config-file">config file</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#context-config-json">context_config.json</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htp-backend-extensions-json">htp_backend_extensions.json</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#run-command">Run command</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aimet.html">aimet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="android.html">Android</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">qnn</a></li>
+      <li class="breadcrumb-item active">qnn-context-binary-generator</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/qnn/qnn-context-binary-generator.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="qnn-context-binary-generator">
+<h1>qnn-context-binary-generator<a class="headerlink" href="#qnn-context-binary-generator" title="Permalink to this heading"></a></h1>
+<section id="soc-id-and-hexagon-arch-id">
+<h2>soc id and hexagon arch id<a class="headerlink" href="#soc-id-and-hexagon-arch-id" title="Permalink to this heading"></a></h2>
+<p>See</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/alibaba/MNN/wiki/npu">https://github.com/alibaba/MNN/wiki/npu</a></p></li>
+<li><p><a class="reference external" href="https://github.com/tianxf99/executorch/blob/main/backends/qualcomm/serialization/qc_compiler_spec.fbs">https://github.com/tianxf99/executorch/blob/main/backends/qualcomm/serialization/qc_compiler_spec.fbs</a></p></li>
+<li><p><a class="reference external" href="https://github.com/tianxf99/executorch/blob/main/backends/qualcomm/utils/utils.py#L963">https://github.com/tianxf99/executorch/blob/main/backends/qualcomm/utils/utils.py#L963</a></p></li>
+<li><p><a class="reference external" href="https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-10/QNN_general_overview.html">https://docs.qualcomm.com/bundle/publicresource/topics/80-63442-10/QNN_general_overview.html</a></p></li>
+<li><p>SA: Snapdragon Automotive</p></li>
+<li><p>SM: Snapdragon Mobile</p></li>
+</ul>
+</div></blockquote>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Hardware</p></td>
+<td><p>SOC ID</p></td>
+<td><p>Hexagon arch</p></td>
+</tr>
+<tr class="row-even"><td><p>865 (SM8250)</p></td>
+<td><p>21</p></td>
+<td><p>66</p></td>
+</tr>
+<tr class="row-odd"><td><p>SA8295</p></td>
+<td><p>39</p></td>
+<td><p>68</p></td>
+</tr>
+<tr class="row-even"><td><p>888 (SM8350)</p></td>
+<td><p>28</p></td>
+<td><p>68</p></td>
+</tr>
+<tr class="row-odd"><td><p>8 Gen 1 (SM8450)</p></td>
+<td><p>36</p></td>
+<td><p>69</p></td>
+</tr>
+<tr class="row-even"><td><p>8+ Gen 1 (SM8475)</p></td>
+<td><p>42</p></td>
+<td><p>69</p></td>
+</tr>
+<tr class="row-odd"><td><p>8 Gen 2 (SM8550)</p></td>
+<td><p>43</p></td>
+<td><p>73</p></td>
+</tr>
+<tr class="row-even"><td><p>8 Gen 3 (SM8650)</p></td>
+<td><p>57</p></td>
+<td><p>75</p></td>
+</tr>
+<tr class="row-odd"><td><p>7 Gen 2</p></td>
+<td><p>54</p></td>
+<td><p>75</p></td>
+</tr>
+<tr class="row-even"><td><p>8 Elite (SM8750)</p></td>
+<td><p>69</p></td>
+<td><p>79</p></td>
+</tr>
+<tr class="row-odd"><td><p>8 Gen 5</p></td>
+<td><p>79</p></td>
+<td><p>80</p></td>
+</tr>
+<tr class="row-even"><td><p>8 Elite Gen 5 SM8850</p></td>
+<td><p>87</p></td>
+<td><p>81</p></td>
+</tr>
+<tr class="row-odd"><td><p>SSG2115P</p></td>
+<td><p>46</p></td>
+<td><p>73</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="config-file">
+<h2>config file<a class="headerlink" href="#config-file" title="Permalink to this heading"></a></h2>
+<p>See <a class="reference external" href="https://github.com/alibaba/MNN/blob/6686bed19bf8a1cd61878a82e53d20c482fffdb3/tools/cpp/MNN2QNNModel.cpp#L350">https://github.com/alibaba/MNN/blob/6686bed19bf8a1cd61878a82e53d20c482fffdb3/tools/cpp/MNN2QNNModel.cpp#L350</a></p>
+<p>It generates two json files:</p>
+<section id="context-config-json">
+<h3>context_config.json<a class="headerlink" href="#context-config-json" title="Permalink to this heading"></a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;backend_extensions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;shared_library_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/content/qairt/2.33.0.250327/lib/x86_64-linux-clang/libQnnHtpNetRunExtensions.so&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;config_file_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./htp_backend_extensions.json&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="htp-backend-extensions-json">
+<h3>htp_backend_extensions.json<a class="headerlink" href="#htp-backend-extensions-json" title="Permalink to this heading"></a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;graphs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;vtcm_mb&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;graph_names&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;model_op17_static_93_quantized&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;O&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;fp16_relaxed_precision&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;weights_packing&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;hvx_threads&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;devices&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;soc_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">79</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;dsp_arch&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;v80&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;cores&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;core_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;perf_profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;burst&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;rpc_control_latency&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;weight_sharing_enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="run-command">
+<h2>Run command<a class="headerlink" href="#run-command" title="Permalink to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">QNN_SDK_ROOT</span><span class="si">}</span><span class="s2">/bin/x86_64-linux-clang/qnn-context-binary-generator&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="o">=</span>./libmodel.so<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--backend<span class="o">=</span><span class="si">${</span><span class="nv">QNN_SDK_ROOT</span><span class="si">}</span>/lib/x86_64-linux-clang/libQnnHtp.so<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--binary_file<span class="o">=</span>./model.bin<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--config_file<span class="o">=</span>./context_config.json
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="htp.html" class="btn btn-neutral float-left" title="HTP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="aimet.html" class="btn btn-neutral float-right" title="aimet" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

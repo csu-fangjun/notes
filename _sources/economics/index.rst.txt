@@ -1,0 +1,7 @@
+economics
+=========
+
+.. toctree::
+
+    books
+    todo

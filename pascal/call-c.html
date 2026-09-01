@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Call C &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Basics" href="basics.html" />
+    <link rel="prev" title="fpc -h" href="fpc-help.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/index.html">Papers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Pascal</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hello.html">Hello</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fpc-help.html">fpc -h</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Call C</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ctypes">ctypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linklib">linklib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-1-on-macos">Example 1 on macOS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="char.html">char</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pointers.html">Pointers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class.html">class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditional-compiling.html">Conditional compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiler-options.html">Compiler options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dl.html">dl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lazarus.html">Lazarus</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llm/index.html">LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ascend/index.html">ascend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qnn/index.html">qnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Pascal</a></li>
+      <li class="breadcrumb-item active">Call C</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/pascal/call-c.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="call-c">
+<h1>Call C<a class="headerlink" href="#call-c" title="Permalink to this heading"></a></h1>
+<ul>
+<li><p>7.1 Using external code and variables</p>
+<p><a class="reference external" href="https://www.freepascal.org/docs-html/prog/progse28.html">https://www.freepascal.org/docs-html/prog/progse28.html</a></p>
+<p>The official fpc documentation for calling external functions and variables.</p>
+</li>
+<li><p>Using C object files in Delphi</p>
+<p><a class="reference external" href="http://rvelthuis.de/articles/articles-cobjs.html">http://rvelthuis.de/articles/articles-cobjs.html</a></p>
+</li>
+<li><p>How to use C code in Free Pascal projects</p>
+<p><a class="reference external" href="https://downloads.freepascal.org/fpc/docs-pdf/CinFreePascal-old.pdf">https://downloads.freepascal.org/fpc/docs-pdf/CinFreePascal-old.pdf</a></p>
+</li>
+<li><p>Creating Pascal bindings for C</p>
+<p><a class="reference external" href="https://github.com/csukuangfj/pascal-bindings-for-c/blob/master/docs/Creating%20Pascal%20bindings%20for%20C%20(v1.0).pdf">https://github.com/csukuangfj/pascal-bindings-for-c/blob/master/docs/Creating%20Pascal%20bindings%20for%20C%20(v1.0).pdf</a></p>
+<p>It shows how to use <code class="docutils literal notranslate"><span class="pre">xxx.o</span></code>, <code class="docutils literal notranslate"><span class="pre">libxxx.a</span></code> and <code class="docutils literal notranslate"><span class="pre">libxxx.so</span></code> in free pascal
+It also contains source files hosted on GitHub.</p>
+</li>
+<li><p><a class="reference external" href="https://github.com/PascalGameDevelopment/SDL2-for-Pascal/blob/master/units/sdl2.pas">https://github.com/PascalGameDevelopment/SDL2-for-Pascal/blob/master/units/sdl2.pas</a></p>
+<p>Read it carefully. It has lots of examples!</p>
+</li>
+<li><p>See also <a class="reference external" href="https://github.com/MagicFoundation/Alcinoe/blob/master/Source/ZLibEx.pas">https://github.com/MagicFoundation/Alcinoe/blob/master/Source/ZLibEx.pas</a></p></li>
+<li><p><a class="reference external" href="https://github.com/gidesa/ocvWrapper24/blob/main/Delphi/OPENCVWrapper.pas">https://github.com/gidesa/ocvWrapper24/blob/main/Delphi/OPENCVWrapper.pas</a></p>
+<p>OpenCV wrapper for delphi</p>
+</li>
+<li><p><a class="reference external" href="https://github.com/Kagamma/whisper-pas/blob/master/src/whisper.pas">https://github.com/Kagamma/whisper-pas/blob/master/src/whisper.pas</a></p>
+<p>Wrapper for whisper</p>
+</li>
+<li><p>Manual conversion of C headers to Pascal</p>
+<p><a class="reference external" href="https://wiki.lazarus.freepascal.org/Creating_bindings_for_C_libraries#Manual_conversion_of_C_headers_to_Pascal">https://wiki.lazarus.freepascal.org/Creating_bindings_for_C_libraries#Manual_conversion_of_C_headers_to_Pascal</a></p>
+</li>
+<li><p>See the following link for how to wrap <code class="docutils literal notranslate"><span class="pre">printf</span></code>, which accepts unconstrained number of arguments</p>
+<p><a class="reference external" href="https://www.freepascal.org/docs-html/prog/progsu149.html">https://www.freepascal.org/docs-html/prog/progsu149.html</a></p>
+<p>Note that it proposes two methods.</p>
+</li>
+</ul>
+<section id="ctypes">
+<h2>ctypes<a class="headerlink" href="#ctypes" title="Permalink to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">ctypes.inc</span></code> can be found at <a class="reference external" href="https://github.com/fpc/FPCSource/blob/main/rtl/unix/ctypes.inc">https://github.com/fpc/FPCSource/blob/main/rtl/unix/ctypes.inc</a>.</p>
+<p>It defines commonly used integer types for C/C++.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>cint32, pcint32</p></li>
+<li><p>cfloat, pcfloat</p></li>
+<li><p>cdouble, pcdouble</p></li>
+<li><p>csize_t, pcsize_t</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="linklib">
+<h2>linklib<a class="headerlink" href="#linklib" title="Permalink to this heading"></a></h2>
+<p>To link a lib in the code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{$L xxx}
+// or
+{$LinkLib xxx}
+
+// Note xxx can be on object file, e..g, use {$L foo.o}
+// or it can be a library {$L foo} to link with libfoo.so, libfoo.dylib
+
+// On windows, we have to use {$L foo.dll}
+// See https://www.freepascal.org/docs-html/prog/progsu149.html
+</pre></div>
+</div>
+<p>Or at the commandline use <code class="docutils literal notranslate"><span class="pre">-Flxxx</span></code></p>
+<p>To specify the object file in the commandline, use <code class="docutils literal notranslate"><span class="pre">-Fo</span></code></p>
+</section>
+<section id="example-1-on-macos">
+<h2>Example 1 on macOS<a class="headerlink" href="#example-1-on-macos" title="Permalink to this heading"></a></h2>
+<p>See also <a class="reference external" href="https://www.freepascal.org/docs-html/prog/progsu147.html">https://www.freepascal.org/docs-html/prog/progsu147.html</a></p>
+<p>Things to take away:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>We can link an object file in pascal</p></li>
+<li><p>The c variable name is mangled by adding a leading <cite>_</cite> by the compiler.</p></li>
+<li><p>If we use <code class="docutils literal notranslate"><span class="pre">cvar</span></code> without a <code class="docutils literal notranslate"><span class="pre">name</span></code> after external, then the fpc compiler
+handles the name mangling by ourselves.</p></li>
+<li><p>If we don't use cvar and instead use a <code class="docutils literal notranslate"><span class="pre">name</span></code>, then we must
+add a leading <code class="docutils literal notranslate"><span class="pre">_</span></code>.</p></li>
+<li><p>If we don't use <code class="docutils literal notranslate"><span class="pre">cvar</span></code> and don't use <code class="docutils literal notranslate"><span class="pre">name</span></code>, then the variable
+must be named as the mangled c variable name.</p></li>
+</ol>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">extvar.c</span></code> is given below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span>
+<span class="n">Declare</span> <span class="n">a</span> <span class="n">variable</span><span class="p">,</span> <span class="n">allocate</span> <span class="n">storage</span>
+<span class="o">*/</span>
+<span class="nb">int</span> <span class="n">extvar</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">extdemo.pas</span></code> is given below:</p>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">Program</span><span class="w"> </span><span class="n">ExtDemo</span><span class="o">;</span>
+
+<span class="cm">{$L extvar.o}</span>
+<span class="c1">// {$LinkLib extvar.o} // either one is ok</span>
+<span class="c1">// By default, it tries to find extvar.o in the current directory.</span>
+<span class="c1">// If it is not found, then an error is throw.</span>
+<span class="c1">//</span>
+<span class="c1">// To fix it, we can use -Fl/some/path</span>
+<span class="c1">// where we extvar.o is inside /some/path</span>
+
+<span class="k">var</span>
+<span class="w">  </span><span class="cm">{ Case sensitive declaration }</span>
+<span class="w">  </span><span class="n">extvar</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">longint</span><span class="o">;</span><span class="w"> </span><span class="n">cvar</span><span class="o">;</span><span class="w"> </span><span class="n">external</span><span class="o">;</span>
+<span class="w">  </span><span class="n">_extvar</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">longint</span><span class="o">;</span><span class="w"> </span><span class="n">external</span><span class="o">;</span>
+<span class="w">  </span><span class="n">I</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">longint</span><span class="o">;</span><span class="w"> </span><span class="n">external</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="s">&#39;_extvar&#39;</span><span class="o">;</span>
+
+<span class="k">begin</span>
+<span class="w">  </span><span class="cm">{ Extvar can be used case insensitively }</span>
+<span class="w">  </span><span class="nb">Writeln</span><span class="w"> </span><span class="p">(</span><span class="s">&#39;Variable </span><span class="se">&#39;&#39;</span><span class="s">extvar</span><span class="se">&#39;&#39;</span><span class="s"> has value: &#39;</span><span class="o">,</span><span class="n">ExtVar</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="nb">Writeln</span><span class="w"> </span><span class="p">(</span><span class="s">&#39;Variable </span><span class="se">&#39;&#39;</span><span class="s">_extvar</span><span class="se">&#39;&#39;</span><span class="s"> has value: &#39;</span><span class="o">,</span><span class="n">_ExtVar</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="nb">Writeln</span><span class="w"> </span><span class="p">(</span><span class="s">&#39;Variable </span><span class="se">&#39;&#39;</span><span class="s">I</span><span class="se">&#39;&#39;</span><span class="s">      has value: &#39;</span><span class="o">,</span><span class="n">i</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="n">I</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">13</span><span class="o">;</span>
+<span class="w">  </span><span class="nb">Writeln</span><span class="w"> </span><span class="p">(</span><span class="s">&#39;Variable </span><span class="se">&#39;&#39;</span><span class="s">extvar</span><span class="se">&#39;&#39;</span><span class="s"> has value: &#39;</span><span class="o">,</span><span class="n">ExtVar</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="nb">Writeln</span><span class="w"> </span><span class="p">(</span><span class="s">&#39;Variable </span><span class="se">&#39;&#39;</span><span class="s">_extvar</span><span class="se">&#39;&#39;</span><span class="s"> has value: &#39;</span><span class="o">,</span><span class="n">_ExtVar</span><span class="p">)</span><span class="o">;</span>
+<span class="w">  </span><span class="nb">Writeln</span><span class="w"> </span><span class="p">(</span><span class="s">&#39;Variable </span><span class="se">&#39;&#39;</span><span class="s">I</span><span class="se">&#39;&#39;</span><span class="s">      has value: &#39;</span><span class="o">,</span><span class="n">i</span><span class="p">)</span><span class="o">;</span>
+<span class="k">end</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Build command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gcc</span> <span class="o">-</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">extvar</span><span class="o">.</span><span class="n">o</span> <span class="n">extvar</span><span class="o">.</span><span class="n">c</span>
+<span class="n">fpc</span> <span class="o">./</span><span class="n">extdemo</span><span class="o">.</span><span class="n">pas</span>
+</pre></div>
+</div>
+<p>Output log is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Free</span> <span class="n">Pascal</span> <span class="n">Compiler</span> <span class="n">version</span> <span class="mf">3.2.2</span> <span class="p">[</span><span class="mi">2021</span><span class="o">/</span><span class="mi">05</span><span class="o">/</span><span class="mi">16</span><span class="p">]</span> <span class="k">for</span> <span class="n">x86_64</span>
+<span class="n">Copyright</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="mi">1993</span><span class="o">-</span><span class="mi">2021</span> <span class="n">by</span> <span class="n">Florian</span> <span class="n">Klaempfl</span> <span class="ow">and</span> <span class="n">others</span>
+<span class="n">Target</span> <span class="n">OS</span><span class="p">:</span> <span class="n">Darwin</span> <span class="k">for</span> <span class="n">x86_64</span>
+<span class="n">Compiling</span> <span class="o">./</span><span class="n">extdemo</span><span class="o">.</span><span class="n">pas</span>
+<span class="n">Assembling</span> <span class="n">extdemo</span>
+<span class="n">Linking</span> <span class="n">extdemo</span>
+<span class="n">ld</span><span class="p">:</span> <span class="n">warning</span><span class="p">:</span> <span class="nb">object</span> <span class="n">file</span> <span class="p">(</span><span class="n">extvar</span><span class="o">.</span><span class="n">o</span><span class="p">)</span> <span class="n">was</span> <span class="n">built</span> <span class="k">for</span> <span class="n">newer</span> <span class="n">macOS</span> <span class="n">version</span> <span class="p">(</span><span class="mf">13.0</span><span class="p">)</span> <span class="n">than</span> <span class="n">being</span> <span class="n">linked</span> <span class="p">(</span><span class="mf">10.8</span><span class="p">)</span>
+<span class="mi">17</span> <span class="n">lines</span> <span class="n">compiled</span><span class="p">,</span> <span class="mf">0.6</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<p>The command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nm</span> <span class="o">./</span><span class="n">extvar</span><span class="o">.</span><span class="n">o</span>
+</pre></div>
+</div>
+<p>prints:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0000000000000000</span> <span class="n">D</span> <span class="n">_extvar</span>
+</pre></div>
+</div>
+<p>And:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">extdemo</span>
+</pre></div>
+</div>
+<p>prints:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Variable</span> <span class="s1">&#39;extvar&#39;</span> <span class="n">has</span> <span class="n">value</span><span class="p">:</span> <span class="mi">12</span>
+<span class="n">Variable</span> <span class="s1">&#39;_extvar&#39;</span> <span class="n">has</span> <span class="n">value</span><span class="p">:</span> <span class="mi">12</span>
+<span class="n">Variable</span> <span class="s1">&#39;I&#39;</span>      <span class="n">has</span> <span class="n">value</span><span class="p">:</span> <span class="mi">12</span>
+<span class="n">Variable</span> <span class="s1">&#39;extvar&#39;</span> <span class="n">has</span> <span class="n">value</span><span class="p">:</span> <span class="mi">13</span>
+<span class="n">Variable</span> <span class="s1">&#39;_extvar&#39;</span> <span class="n">has</span> <span class="n">value</span><span class="p">:</span> <span class="mi">13</span>
+<span class="n">Variable</span> <span class="s1">&#39;I&#39;</span>      <span class="n">has</span> <span class="n">value</span><span class="p">:</span> <span class="mi">13</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="fpc-help.html" class="btn btn-neutral float-left" title="fpc -h" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="basics.html" class="btn btn-neutral float-right" title="Basics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

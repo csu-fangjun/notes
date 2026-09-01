@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>hello &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="array" href="array.html" />
+    <link rel="prev" title="Install" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">rust</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="books.html">books</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lecture.html">Lectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">hello</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#naming-convention">naming convention</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comments">comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hello2-using-cargo">hello2 using cargo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hello3">hello3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-hello3">use_hello3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hello-comments">hello_comments</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="array.html">array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="for.html">for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="string.html">String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enum.html">enum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mdbook.html">mdbook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="useful_packages.html">Useful packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cargo.html">cargo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ffi.html">ffi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html">Exercise 1 gcd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="todo.html">TODO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rustfmt.html">rustfmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hello-tauri.html">Hello Tauri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="course.html">Course</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-book.html">The Rust Programming Language - book notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/index.html">Papers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pascal/index.html">Pascal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llm/index.html">LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ascend/index.html">ascend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qnn/index.html">qnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">rust</a></li>
+      <li class="breadcrumb-item active">hello</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/rust/hello.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="hello">
+<h1>hello<a class="headerlink" href="#hello" title="Permalink to this heading"></a></h1>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/hello/hello.rs</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Hello world!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>File extension is <code class="docutils literal notranslate"><span class="pre">.rs</span></code>.</p>
+<p>To build a statically linked executable, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rust</span> <span class="o">./</span><span class="n">hello</span><span class="o">.</span><span class="n">rs</span>
+</pre></div>
+</div>
+<p>It generates an executable <code class="docutils literal notranslate"><span class="pre">hello</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(py38) fangjuns-MacBook-Pro:hello fangjun$ file hello
+hello: Mach-O 64-bit executable x86_64
+
+(py38) fangjuns-MacBook-Pro:hello fangjun$ ls -lh hello
+-rwxr-xr-x  1 fangjun  staff   460K Jun 12 11:41 hello
+
+(py38) fangjuns-MacBook-Pro:hello fangjun$ otool -L ./hello
+./hello:
+        /usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1319.0.0)
+</pre></div>
+</div>
+<section id="naming-convention">
+<h2>naming convention<a class="headerlink" href="#naming-convention" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">my_var</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">my_func</span></code></p></li>
+</ul>
+</section>
+<section id="comments">
+<h2>comments<a class="headerlink" href="#comments" title="Permalink to this heading"></a></h2>
+<p>Like C/C++, it uses <code class="docutils literal notranslate"><span class="pre">/**/</span></code> and <code class="docutils literal notranslate"><span class="pre">//</span></code>.</p>
+</section>
+<section id="hello2-using-cargo">
+<h2>hello2 using cargo<a class="headerlink" href="#hello2-using-cargo" title="Permalink to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cargo<span class="w"> </span>new<span class="w"> </span>hello2
+</pre></div>
+</div>
+<p>It creates a new directory <code class="docutils literal notranslate"><span class="pre">hello2</span></code> inside the current directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(py38) fangjuns-MacBook-Pro:code fangjun$ tree hello2/
+hello2/
+├── Cargo.toml
+└── src
+    └── main.rs
+
+1 directory, 2 files
+</pre></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">./code/hello2/Cargo.toml</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">package</span><span class="p">]</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;hello2&quot;</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;0.1.0&quot;</span>
+<span class="n">edition</span> <span class="o">=</span> <span class="s2">&quot;2024&quot;</span>
+
+<span class="p">[</span><span class="n">dependencies</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">./code/hello2/src/main.rs</span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>fn main() {
+    println!(&quot;Hello, world!&quot;);
+}
+</pre></div>
+</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>hello2
+cargo<span class="w"> </span>build
+tree<span class="w"> </span>.<span class="w"> </span>&gt;<span class="w"> </span>a.txt
+</pre></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">./code/hello2/a.txt</span><a class="headerlink" href="#id4" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.
+├── Cargo.lock
+├── Cargo.toml
+├── a.txt
+├── src
+│   └── main.rs
+└── target
+    ├── CACHEDIR.TAG
+    └── debug
+        ├── build
+        ├── deps
+        │   ├── hello2-517dbf907ca40ba4
+        │   ├── hello2-517dbf907ca40ba4.2ejis4jtcc22k78hwpfevmpn9.rcgu.o
+        │   ├── hello2-517dbf907ca40ba4.2u847h470kx4lrmip8o7wbm3j.rcgu.o
+        │   ├── hello2-517dbf907ca40ba4.5xtf1o3fzpwipxjpgh6vuq5nb.rcgu.o
+        │   ├── hello2-517dbf907ca40ba4.biyzt084nbvwnn6rzalk2kv68.rcgu.o
+        │   ├── hello2-517dbf907ca40ba4.d
+        │   ├── hello2-517dbf907ca40ba4.d4ptlawbgayqhc0mck8d1zb7y.rcgu.o
+        │   └── hello2-517dbf907ca40ba4.ebi7az3oo64vunpcvr2ytqd4k.rcgu.o
+        ├── examples
+        ├── hello2
+        ├── hello2.d
+        └── incremental
+            └── hello2-21n5fdb2vj2ji
+                ├── s-h889axkwsg-0ius9rz-eplmacagf6o0mvmceghnny7ip
+                │   ├── 2ejis4jtcc22k78hwpfevmpn9.o
+                │   ├── 2u847h470kx4lrmip8o7wbm3j.o
+                │   ├── 5xtf1o3fzpwipxjpgh6vuq5nb.o
+                │   ├── biyzt084nbvwnn6rzalk2kv68.o
+                │   ├── d4ptlawbgayqhc0mck8d1zb7y.o
+                │   ├── dep-graph.bin
+                │   ├── ebi7az3oo64vunpcvr2ytqd4k.o
+                │   ├── query-cache.bin
+                │   └── work-products.bin
+                └── s-h889axkwsg-0ius9rz.lock
+
+9 directories, 25 files
+</pre></div>
+</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>hello2
+cargo<span class="w"> </span>build<span class="w"> </span>--release
+tree<span class="w"> </span>.<span class="w"> </span>&gt;<span class="w"> </span>b.txt
+</pre></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">./code/hello2/b.txt</span><a class="headerlink" href="#id5" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.
+├── Cargo.lock
+├── Cargo.toml
+├── a.txt
+├── b.txt
+├── src
+│   └── main.rs
+└── target
+    ├── CACHEDIR.TAG
+    ├── debug
+    │   ├── build
+    │   ├── deps
+    │   │   ├── hello2-517dbf907ca40ba4
+    │   │   ├── hello2-517dbf907ca40ba4.2ejis4jtcc22k78hwpfevmpn9.rcgu.o
+    │   │   ├── hello2-517dbf907ca40ba4.2u847h470kx4lrmip8o7wbm3j.rcgu.o
+    │   │   ├── hello2-517dbf907ca40ba4.5xtf1o3fzpwipxjpgh6vuq5nb.rcgu.o
+    │   │   ├── hello2-517dbf907ca40ba4.biyzt084nbvwnn6rzalk2kv68.rcgu.o
+    │   │   ├── hello2-517dbf907ca40ba4.d
+    │   │   ├── hello2-517dbf907ca40ba4.d4ptlawbgayqhc0mck8d1zb7y.rcgu.o
+    │   │   └── hello2-517dbf907ca40ba4.ebi7az3oo64vunpcvr2ytqd4k.rcgu.o
+    │   ├── examples
+    │   ├── hello2
+    │   ├── hello2.d
+    │   └── incremental
+    │       └── hello2-21n5fdb2vj2ji
+    │           ├── s-h889axkwsg-0ius9rz-eplmacagf6o0mvmceghnny7ip
+    │           │   ├── 2ejis4jtcc22k78hwpfevmpn9.o
+    │           │   ├── 2u847h470kx4lrmip8o7wbm3j.o
+    │           │   ├── 5xtf1o3fzpwipxjpgh6vuq5nb.o
+    │           │   ├── biyzt084nbvwnn6rzalk2kv68.o
+    │           │   ├── d4ptlawbgayqhc0mck8d1zb7y.o
+    │           │   ├── dep-graph.bin
+    │           │   ├── ebi7az3oo64vunpcvr2ytqd4k.o
+    │           │   ├── query-cache.bin
+    │           │   └── work-products.bin
+    │           └── s-h889axkwsg-0ius9rz.lock
+    └── release
+        ├── build
+        ├── deps
+        │   ├── hello2-ae384e63350693e9
+        │   └── hello2-ae384e63350693e9.d
+        ├── examples
+        ├── hello2
+        ├── hello2.d
+        └── incremental
+
+14 directories, 30 files
+</pre></div>
+</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>py38<span class="o">)</span><span class="w"> </span>fangjuns-MacBook-Pro:hello2<span class="w"> </span>fangjun$<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>target/debug/hello2<span class="w"> </span>target/release/hello2
+-rwxr-xr-x<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span>463K<span class="w"> </span>Jun<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">21</span>:35<span class="w"> </span>target/debug/hello2
+-rwxr-xr-x<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span>388K<span class="w"> </span>Jun<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">21</span>:37<span class="w"> </span>target/release/hello2
+
+<span class="o">(</span>py38<span class="o">)</span><span class="w"> </span>fangjuns-MacBook-Pro:hello2<span class="w"> </span>fangjun$<span class="w"> </span>strip<span class="w"> </span>target/debug/hello2<span class="w"> </span>target/release/hello2
+
+<span class="o">(</span>py38<span class="o">)</span><span class="w"> </span>fangjuns-MacBook-Pro:hello2<span class="w"> </span>fangjun$<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>target/debug/hello2<span class="w"> </span>target/release/hello2
+-rwxr-xr-x<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span>325K<span class="w"> </span>Jun<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">21</span>:39<span class="w"> </span>target/debug/hello2
+-rwxr-xr-x<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span>325K<span class="w"> </span>Jun<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">21</span>:39<span class="w"> </span>target/release/hello2
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(py38) fangjuns-MacBook-Pro:hello2 fangjun$ cargo run
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.00s
+     Running `target/debug/hello2`
+Hello, world!
+</pre></div>
+</div>
+</section>
+<section id="hello3">
+<h2>hello3<a class="headerlink" href="#hello3" title="Permalink to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>code
+cargo<span class="w"> </span>new<span class="w"> </span>--lib<span class="w"> </span>hello3
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>py38<span class="o">)</span><span class="w"> </span>fangjuns-MacBook-Pro:code<span class="w"> </span>fangjun$<span class="w"> </span>cargo<span class="w"> </span>new<span class="w"> </span>--lib<span class="w"> </span>hello3
+<span class="w">    </span>Creating<span class="w"> </span>library<span class="w"> </span><span class="sb">`</span>hello3<span class="sb">`</span><span class="w"> </span>package
+note:<span class="w"> </span>see<span class="w"> </span>more<span class="w"> </span><span class="sb">`</span>Cargo.toml<span class="sb">`</span><span class="w"> </span>keys<span class="w"> </span>and<span class="w"> </span>their<span class="w"> </span>definitions<span class="w"> </span>at<span class="w"> </span>https://doc.rust-lang.org/cargo/reference/manifest.html
+
+<span class="o">(</span>py38<span class="o">)</span><span class="w"> </span>fangjuns-MacBook-Pro:code<span class="w"> </span>fangjun$<span class="w"> </span>tree<span class="w"> </span>hello3
+hello3
+├──<span class="w"> </span>Cargo.toml
+└──<span class="w"> </span>src
+<span class="w">    </span>└──<span class="w"> </span>lib.rs
+
+<span class="m">1</span><span class="w"> </span>directory,<span class="w"> </span><span class="m">2</span><span class="w"> </span>files
+</pre></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">./code/hello3/Cargo.toml</span><a class="headerlink" href="#id6" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">package</span><span class="p">]</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;hello3&quot;</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;0.1.0&quot;</span>
+<span class="n">edition</span> <span class="o">=</span> <span class="s2">&quot;2024&quot;</span>
+
+<span class="p">[</span><span class="n">dependencies</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">./code/hello3/src/lib.rs</span><a class="headerlink" href="#id7" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>pub fn add(left: u64, right: u64) -&gt; u64 {
+    left + right
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn it_works() {
+        let result = add(2, 2);
+        assert_eq!(result, 4);
+    }
+}
+</pre></div>
+</div>
+</div>
+<p>Pay attention to the function signature.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>py38<span class="o">)</span><span class="w"> </span>fangjuns-MacBook-Pro:hello3<span class="w"> </span>fangjun$<span class="w"> </span>cargo<span class="w"> </span><span class="nb">test</span>
+<span class="w">   </span>Compiling<span class="w"> </span>hello3<span class="w"> </span>v0.1.0<span class="w"> </span><span class="o">(</span>/Users/fangjun/open-source/notes/docs/source/rust/code/hello3<span class="o">)</span>
+<span class="w">    </span>Finished<span class="w"> </span><span class="sb">`</span><span class="nb">test</span><span class="sb">`</span><span class="w"> </span>profile<span class="w"> </span><span class="o">[</span>unoptimized<span class="w"> </span>+<span class="w"> </span>debuginfo<span class="o">]</span><span class="w"> </span>target<span class="o">(</span>s<span class="o">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.81s
+<span class="w">     </span>Running<span class="w"> </span>unittests<span class="w"> </span>src/lib.rs<span class="w"> </span><span class="o">(</span>target/debug/deps/hello3-b178d4679cda4da3<span class="o">)</span>
+
+running<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="nb">test</span>
+<span class="nb">test</span><span class="w"> </span>tests::it_works<span class="w"> </span>...<span class="w"> </span>ok
+
+<span class="nb">test</span><span class="w"> </span>result:<span class="w"> </span>ok.<span class="w"> </span><span class="m">1</span><span class="w"> </span>passed<span class="p">;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>failed<span class="p">;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>ignored<span class="p">;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>measured<span class="p">;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>filtered<span class="w"> </span>out<span class="p">;</span><span class="w"> </span>finished<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.00s
+
+<span class="w">   </span>Doc-tests<span class="w"> </span>hello3
+
+running<span class="w"> </span><span class="m">0</span><span class="w"> </span>tests
+
+<span class="nb">test</span><span class="w"> </span>result:<span class="w"> </span>ok.<span class="w"> </span><span class="m">0</span><span class="w"> </span>passed<span class="p">;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>failed<span class="p">;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>ignored<span class="p">;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>measured<span class="p">;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>filtered<span class="w"> </span>out<span class="p">;</span><span class="w"> </span>finished<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.00s
+</pre></div>
+</div>
+</section>
+<section id="use-hello3">
+<h2>use_hello3<a class="headerlink" href="#use-hello3" title="Permalink to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>code
+cargo<span class="w"> </span>new<span class="w"> </span>use_hello3
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>py38<span class="o">)</span><span class="w"> </span>fangjuns-MacBook-Pro:use_hello3<span class="w"> </span>fangjun$<span class="w"> </span>vim<span class="w"> </span>Cargo.toml
+<span class="o">(</span>py38<span class="o">)</span><span class="w"> </span>fangjuns-MacBook-Pro:use_hello3<span class="w"> </span>fangjun$<span class="w"> </span>cargo<span class="w"> </span>run
+<span class="w">     </span>Locking<span class="w"> </span><span class="m">1</span><span class="w"> </span>package<span class="w"> </span>to<span class="w"> </span>latest<span class="w"> </span>Rust<span class="w"> </span><span class="m">1</span>.87.0<span class="w"> </span>compatible<span class="w"> </span>version
+<span class="w">   </span>Compiling<span class="w"> </span>hello3<span class="w"> </span>v0.1.0<span class="w"> </span><span class="o">(</span>/Users/fangjun/open-source/notes/docs/source/rust/code/hello3<span class="o">)</span>
+<span class="w">   </span>Compiling<span class="w"> </span>use_hello3<span class="w"> </span>v0.1.0<span class="w"> </span><span class="o">(</span>/Users/fangjun/open-source/notes/docs/source/rust/code/use_hello3<span class="o">)</span>
+<span class="w">    </span>Finished<span class="w"> </span><span class="sb">`</span>dev<span class="sb">`</span><span class="w"> </span>profile<span class="w"> </span><span class="o">[</span>unoptimized<span class="w"> </span>+<span class="w"> </span>debuginfo<span class="o">]</span><span class="w"> </span>target<span class="o">(</span>s<span class="o">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.71s
+<span class="w">     </span>Running<span class="w"> </span><span class="sb">`</span>target/debug/use_hello3<span class="sb">`</span>
+Hello,<span class="w"> </span>world!<span class="w"> </span><span class="m">5</span>
+</pre></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">./code/use_hello3/Cargo.toml</span><a class="headerlink" href="#id8" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">package</span><span class="p">]</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;use_hello3&quot;</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;0.1.0&quot;</span>
+<span class="n">edition</span> <span class="o">=</span> <span class="s2">&quot;2024&quot;</span>
+
+<span class="p">[</span><span class="n">dependencies</span><span class="p">]</span>
+<span class="n">hello3</span><span class="o">=</span><span class="p">{</span><span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;../hello3&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">./code/use_hello3/src/main.rs</span><a class="headerlink" href="#id9" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>fn main() {
+    let result = hello3::add(2, 3);
+    println!(&quot;Hello, world! {}&quot;, result);
+}
+</pre></div>
+</div>
+</div>
+</section>
+<section id="hello-comments">
+<h2>hello_comments<a class="headerlink" href="#hello-comments" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">code</span>
+<span class="n">cargo</span> <span class="n">new</span> <span class="n">hello_comment</span>
+</pre></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">./code/hello_comment/Cargo.toml</span><a class="headerlink" href="#id10" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">package</span><span class="p">]</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;hello_comment&quot;</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;0.1.0&quot;</span>
+<span class="n">edition</span> <span class="o">=</span> <span class="s2">&quot;2024&quot;</span>
+
+<span class="p">[</span><span class="n">dependencies</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">./code/hello_comment/src/main.rs</span><a class="headerlink" href="#id11" title="Permalink to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>//! &lt;b&gt; hello comment &lt;/b&gt;
+//! &lt;p&gt; Author: my name &lt;/p&gt;
+//! &lt;p&gt; Apache 2.0 License&lt;/p&gt;
+
+/// add two numbers
+pub fn add(left: u64, right: u64) -&gt; u64 {
+    left + right
+}
+
+/// this is the main function
+fn main() {
+    println!(&quot;Hello, world!&quot;);
+}
+</pre></div>
+</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>py38<span class="o">)</span><span class="w"> </span>fangjuns-MacBook-Pro:hello_comment<span class="w"> </span>fangjun$<span class="w"> </span>cargo<span class="w"> </span>doc
+<span class="w">    </span>Finished<span class="w"> </span><span class="sb">`</span>dev<span class="sb">`</span><span class="w"> </span>profile<span class="w"> </span><span class="o">[</span>unoptimized<span class="w"> </span>+<span class="w"> </span>debuginfo<span class="o">]</span><span class="w"> </span>target<span class="o">(</span>s<span class="o">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.00s
+<span class="w">   </span>Generated<span class="w"> </span>/Users/fangjun/open-source/notes/docs/source/rust/code/hello_comment/target/doc/hello_comment/index.html
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install.html" class="btn btn-neutral float-left" title="Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="array.html" class="btn btn-neutral float-right" title="array" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

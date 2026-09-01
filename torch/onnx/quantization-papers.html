@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quantization &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Quantization" href="quantization.html" />
+    <link rel="prev" title="References" href="references.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">torch</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../load-and-save.html">torch.load and torch.save</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gather.html">torch.gather</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ddp/index.html">DDP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../torchscript/index.html">TorchScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logical-op.html">Logical operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notes.html">Note</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quantization/index.html">Quantization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../android/index.html">android</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">onnx</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simple-op.html">Simple OPs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hello.html">Hello</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multiple-models.html">Multiple models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Quantization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#to-read">TO READ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#integer-quantization-for-deep-learning-inference-principles-and-empirical-evaluation">2020-Integer quantization for deep learning inference: Principles and empirical evaluation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#a-survey-of-quantization-methods-for-efficient-neural-network-inference">2022-A survey of quantization methods for efficient neural network inference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">1998-Quantization</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="quantization.html">Quantization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="todo.html">TODOs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../triton/index.html">triton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lstm.html">nn.LSTM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../torchvision.html">torchvision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../autograd.html">audograd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../seed.html">seed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../float16.html">float16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dynamo.html">Dynamo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../random.html">random</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compile.html">compile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../benchmark.html">benchmark</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cv2.html">cv2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../einsum.html">einsum</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../papers/index.html">Papers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pascal/index.html">Pascal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../llm/index.html">LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ascend/index.html">ascend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../qnn/index.html">qnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">torch</a></li>
+          <li class="breadcrumb-item"><a href="index.html">onnx</a></li>
+      <li class="breadcrumb-item active">Quantization</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/torch/onnx/quantization-papers.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="quantization">
+<h1>Quantization<a class="headerlink" href="#quantization" title="Permalink to this heading"></a></h1>
+<section id="to-read">
+<h2>TO READ<a class="headerlink" href="#to-read" title="Permalink to this heading"></a></h2>
+<blockquote>
+<div><ul>
+<li><p>2017-Mixed precision training, See <span id="id1">[<a class="reference internal" href="#id10" title="Paulius Micikevicius, Sharan Narang, Jonah Alben, Gregory Diamos, Erich Elsen, David Garcia, Boris Ginsburg, Michael Houston, Oleksii Kuchaiev, Ganesh Venkatesh, and others. Mixed precision training. arXiv preprint arXiv:1710.03740, 2017. URL: https://openreview.net/pdf?id=r1gs9JgRZ.">MNA+17</a>]</span>.</p></li>
+<li><p>Achieving FP32 Accuracy for INT8 Inference Using Quantization Aware Training with NVIDIA TensorRT</p>
+<p>A blog, <a class="reference external" href="https://developer.nvidia.com/blog/achieving-fp32-accuracy-for-int8-inference-using-quantization-aware-training-with-tensorrt/">https://developer.nvidia.com/blog/achieving-fp32-accuracy-for-int8-inference-using-quantization-aware-training-with-tensorrt/</a></p>
+</li>
+<li><p>2019-Neural network distiller: A python package for dnn compression research</p>
+<p>See :cite:p`zmora2019neural`. It is from Intel.</p>
+<p>It also has a github repo at <a class="reference external" href="https://github.com/IntelLabs/distiller">https://github.com/IntelLabs/distiller</a></p>
+<p>Read its code about quantization! It has 4.3k stars!</p>
+</li>
+<li><p>2011-Improving the speed of neural networks on CPUs</p>
+<p>See <span id="id2">[<a class="reference internal" href="#id8" title="Vincent Vanhoucke, Andrew Senior, Mark Z Mao, and others. Improving the speed of neural networks on cpus. In Proc. deep learning and unsupervised feature learning NIPS workshop, volume 1, 4. 2011. URL: https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/37631.pdf.">VSM+11</a>]</span>. It is from Google.</p>
+<p>Has stuff about SSE.</p>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<section id="integer-quantization-for-deep-learning-inference-principles-and-empirical-evaluation">
+<h2>2020-Integer quantization for deep learning inference: Principles and empirical evaluation<a class="headerlink" href="#integer-quantization-for-deep-learning-inference-principles-and-empirical-evaluation" title="Permalink to this heading"></a></h2>
+<p>See <span id="id3">[<a class="reference internal" href="#id11" title="Hao Wu, Patrick Judd, Xiaojie Zhang, Mikhail Isaev, and Paulius Micikevicius. Integer quantization for deep learning inference: principles and empirical evaluation. arXiv preprint arXiv:2004.09602, 2020. URL: https://arxiv.org/pdf/2004.09602.">WJZ+20</a>]</span>.</p>
+<p>This paper is from NVidia. It lists a table comparing throughput of fp16, int8, int4, int1
+on NVIDIA Turing GPUs.</p>
+<p>An example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
+
+
+<span class="k">def</span> <span class="nf">test_asymmetric_quant</span><span class="p">():</span>
+    <span class="c1"># We use the notation from</span>
+    <span class="c1"># https://arxiv.org/pdf/2004.09602</span>
+    <span class="c1"># equation 1 and 2</span>
+    <span class="c1">#</span>
+    <span class="c1"># f(x) = sx + z</span>
+    <span class="c1"># it is called asymmetric because</span>
+    <span class="c1"># float_low != -float_high</span>
+    <span class="c1"># and</span>
+    <span class="c1"># int_low != -int_high</span>
+    <span class="c1">#</span>
+    <span class="c1"># It is also called affine quantization in this paper</span>
+
+    <span class="n">float_low</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
+    <span class="n">float_high</span> <span class="o">=</span> <span class="mi">4</span>
+
+    <span class="n">int_low</span> <span class="o">=</span> <span class="o">-</span><span class="mi">128</span>
+    <span class="n">int_high</span> <span class="o">=</span> <span class="mi">127</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">int_high</span> <span class="o">-</span> <span class="n">int_low</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">float_high</span> <span class="o">-</span> <span class="n">float_low</span><span class="p">)</span>  <span class="c1"># 36.4285</span>
+    <span class="n">z1</span> <span class="o">=</span> <span class="o">-</span><span class="n">float_low</span> <span class="o">*</span> <span class="n">s</span> <span class="o">-</span> <span class="mi">127</span>  <span class="c1"># -17.71</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="o">-</span><span class="nb">round</span><span class="p">(</span><span class="n">float_low</span> <span class="o">*</span> <span class="n">s</span><span class="p">)</span> <span class="o">-</span> <span class="mi">127</span>  <span class="c1"># -18</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+
+    <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">z</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">float_low</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="n">float_high</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>  <span class="c1"># -127, 128, 18</span>
+
+
+<span class="k">def</span> <span class="nf">test_symmetric_quant</span><span class="p">():</span>
+    <span class="c1"># We use the notation from</span>
+    <span class="c1"># https://arxiv.org/pdf/2004.09602</span>
+    <span class="c1"># equation 1 and 2</span>
+    <span class="c1">#</span>
+    <span class="c1"># f(x) = sx + z, where z is 0</span>
+    <span class="c1"># it is called symmetric because</span>
+    <span class="c1"># float_low == -float_high</span>
+    <span class="c1"># and</span>
+    <span class="c1"># int_low == -int_high</span>
+    <span class="c1">#</span>
+    <span class="c1"># It is also called affine quantization in this paper</span>
+
+    <span class="n">float_low</span> <span class="o">=</span> <span class="o">-</span><span class="mi">4</span>
+    <span class="n">float_high</span> <span class="o">=</span> <span class="mi">4</span>
+
+    <span class="n">int_low</span> <span class="o">=</span> <span class="o">-</span><span class="mi">127</span>
+    <span class="n">int_high</span> <span class="o">=</span> <span class="mi">127</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">int_high</span> <span class="o">-</span> <span class="n">int_low</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">float_high</span> <span class="o">-</span> <span class="n">float_low</span><span class="p">)</span>  <span class="c1"># 36.4285</span>
+    <span class="n">z1</span> <span class="o">=</span> <span class="o">-</span><span class="n">float_low</span> <span class="o">*</span> <span class="n">s</span> <span class="o">-</span> <span class="mi">127</span>  <span class="c1"># -17.71</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="o">-</span><span class="nb">round</span><span class="p">(</span><span class="n">float_low</span> <span class="o">*</span> <span class="n">s</span><span class="p">)</span> <span class="o">-</span> <span class="mi">127</span>  <span class="c1"># -18</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>  <span class="c1"># 31.75  0.0 0</span>
+
+    <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">z</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">float_low</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="n">float_high</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>  <span class="c1"># -127, 127, 32</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---asymmetric---&quot;</span><span class="p">)</span>
+    <span class="n">test_asymmetric_quant</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---symmetric---&quot;</span><span class="p">)</span>
+    <span class="n">test_symmetric_quant</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="a-survey-of-quantization-methods-for-efficient-neural-network-inference">
+<h2>2022-A survey of quantization methods for efficient neural network inference<a class="headerlink" href="#a-survey-of-quantization-methods-for-efficient-neural-network-inference" title="Permalink to this heading"></a></h2>
+<p>See <span id="id4">[<a class="reference internal" href="#id12" title="Amir Gholami, Sehoon Kim, Zhen Dong, Zhewei Yao, Michael W Mahoney, and Kurt Keutzer. A survey of quantization methods for efficient neural network inference. In Low-Power Computer Vision, pages 291–326. Chapman and Hall/CRC, 2022. URL: https://arxiv.org/pdf/2103.13630.">GKD+22</a>]</span></p>
+</section>
+<section id="id5">
+<h2>1998-Quantization<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<p>See <span id="id6">[<a class="reference internal" href="#id13" title="Robert M. Gray and David L. Neuhoff. Quantization. IEEE transactions on information theory, 44(6):2325–2383, 1998. URL: https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=720541.">GN98</a>]</span>.</p>
+<p class="rubric">Quantization</p>
+<div class="docutils container" id="id7">
+<dl class="citation">
+<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id4">GKD+22</a></span></dt>
+<dd><p>Amir Gholami, Sehoon Kim, Zhen Dong, Zhewei Yao, Michael W Mahoney, and Kurt Keutzer. A survey of quantization methods for efficient neural network inference. In <em>Low-Power Computer Vision</em>, pages 291–326. Chapman and Hall/CRC, 2022. URL: <a class="reference external" href="https://arxiv.org/pdf/2103.13630">https://arxiv.org/pdf/2103.13630</a>.</p>
+</dd>
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id6">GN98</a></span></dt>
+<dd><p>Robert M. Gray and David L. Neuhoff. Quantization. <em>IEEE transactions on information theory</em>, 44(6):2325–2383, 1998. URL: <a class="reference external" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=720541">https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=720541</a>.</p>
+</dd>
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id1">MNA+17</a></span></dt>
+<dd><p>Paulius Micikevicius, Sharan Narang, Jonah Alben, Gregory Diamos, Erich Elsen, David Garcia, Boris Ginsburg, Michael Houston, Oleksii Kuchaiev, Ganesh Venkatesh, and others. Mixed precision training. <em>arXiv preprint arXiv:1710.03740</em>, 2017. URL: <a class="reference external" href="https://openreview.net/pdf?id=r1gs9JgRZ">https://openreview.net/pdf?id=r1gs9JgRZ</a>.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id2">VSM+11</a></span></dt>
+<dd><p>Vincent Vanhoucke, Andrew Senior, Mark Z Mao, and others. Improving the speed of neural networks on cpus. In <em>Proc. deep learning and unsupervised feature learning NIPS workshop</em>, volume 1, 4. 2011. URL: <a class="reference external" href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/37631.pdf">https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/37631.pdf</a>.</p>
+</dd>
+<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id3">WJZ+20</a></span></dt>
+<dd><p>Hao Wu, Patrick Judd, Xiaojie Zhang, Mikhail Isaev, and Paulius Micikevicius. Integer quantization for deep learning inference: principles and empirical evaluation. <em>arXiv preprint arXiv:2004.09602</em>, 2020. URL: <a class="reference external" href="https://arxiv.org/pdf/2004.09602">https://arxiv.org/pdf/2004.09602</a>.</p>
+</dd>
+</dl>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="references.html" class="btn btn-neutral float-left" title="References" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="quantization.html" class="btn btn-neutral float-right" title="Quantization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

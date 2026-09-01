@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paraformer to ascend npu &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="acl" href="acl.html" />
+    <link rel="prev" title="Basics" href="basics.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/index.html">Papers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pascal/index.html">Pascal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llm/index.html">LLM</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ascend</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Basics</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Paraformer to ascend npu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#v1-static-shape">V1: Static shape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#v2-static-shape-simplified-api">V2: Static shape + simplified API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="acl.html">acl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cann.html">cann</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orange-pi-aipro.html">orange pi ai pro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html">samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ais_bench.html">ais_bench</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hi-dev-lab.html">HiDevLab</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../qnn/index.html">qnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">ascend</a></li>
+      <li class="breadcrumb-item active">Paraformer to ascend npu</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/ascend/paraformer.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="paraformer-to-ascend-npu">
+<h1>Paraformer to ascend npu<a class="headerlink" href="#paraformer-to-ascend-npu" title="Permalink to this heading"></a></h1>
+<section id="v1-static-shape">
+<h2>V1: Static shape<a class="headerlink" href="#v1-static-shape" title="Permalink to this heading"></a></h2>
+<p>The following code is from ChatGPT:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">acl</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">librosa</span>
+<span class="kn">import</span> <span class="nn">kaldi_native_fbank</span> <span class="k">as</span> <span class="nn">knf</span>
+
+<span class="c1"># -----------------------------</span>
+<span class="c1"># 特征提取</span>
+<span class="c1"># -----------------------------</span>
+<span class="k">def</span> <span class="nf">compute_feat</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="n">sample_rate</span> <span class="o">=</span> <span class="mi">16000</span>
+    <span class="n">samples</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sample_rate</span><span class="p">)</span>
+    <span class="n">opts</span> <span class="o">=</span> <span class="n">knf</span><span class="o">.</span><span class="n">FbankOptions</span><span class="p">()</span>
+    <span class="n">opts</span><span class="o">.</span><span class="n">frame_opts</span><span class="o">.</span><span class="n">dither</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">opts</span><span class="o">.</span><span class="n">frame_opts</span><span class="o">.</span><span class="n">snip_edges</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">opts</span><span class="o">.</span><span class="n">frame_opts</span><span class="o">.</span><span class="n">samp_freq</span> <span class="o">=</span> <span class="n">sample_rate</span>
+    <span class="n">opts</span><span class="o">.</span><span class="n">mel_opts</span><span class="o">.</span><span class="n">num_bins</span> <span class="o">=</span> <span class="mi">80</span>
+
+    <span class="n">online_fbank</span> <span class="o">=</span> <span class="n">knf</span><span class="o">.</span><span class="n">OnlineFbank</span><span class="p">(</span><span class="n">opts</span><span class="p">)</span>
+    <span class="n">online_fbank</span><span class="o">.</span><span class="n">accept_waveform</span><span class="p">(</span><span class="n">sample_rate</span><span class="p">,</span> <span class="p">(</span><span class="n">samples</span> <span class="o">*</span> <span class="mi">32768</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+    <span class="n">online_fbank</span><span class="o">.</span><span class="n">input_finished</span><span class="p">()</span>
+
+    <span class="n">features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">online_fbank</span><span class="o">.</span><span class="n">get_frame</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">online_fbank</span><span class="o">.</span><span class="n">num_frames_ready</span><span class="p">)])</span>
+    <span class="k">assert</span> <span class="n">features</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">contiguous</span> <span class="ow">is</span> <span class="kc">True</span>
+    <span class="k">assert</span> <span class="n">features</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span>
+
+    <span class="n">window_size</span> <span class="o">=</span> <span class="mi">7</span>
+    <span class="n">window_shift</span> <span class="o">=</span> <span class="mi">6</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="p">(</span><span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">window_size</span><span class="p">)</span> <span class="o">//</span> <span class="n">window_shift</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">stride_tricks</span><span class="o">.</span><span class="n">as_strided</span><span class="p">(</span>
+        <span class="n">features</span><span class="p">,</span>
+        <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">window_size</span><span class="p">),</span>
+        <span class="n">strides</span><span class="o">=</span><span class="p">((</span><span class="n">window_shift</span> <span class="o">*</span> <span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+
+<span class="c1"># -----------------------------</span>
+<span class="c1"># Acoustic embedding</span>
+<span class="c1"># -----------------------------</span>
+<span class="k">def</span> <span class="nf">get_acoustic_embedding</span><span class="p">(</span><span class="n">alpha</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">hidden</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">):</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">acc</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">embeddings</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">cur_embedding</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">hidden</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">alpha</span><span class="p">):</span>
+        <span class="n">acc</span> <span class="o">+=</span> <span class="n">w</span>
+        <span class="k">if</span> <span class="n">acc</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">overflow</span> <span class="o">=</span> <span class="n">acc</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="n">remain</span> <span class="o">=</span> <span class="n">w</span> <span class="o">-</span> <span class="n">overflow</span>
+            <span class="n">cur_embedding</span> <span class="o">+=</span> <span class="n">remain</span> <span class="o">*</span> <span class="n">hidden</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">embeddings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cur_embedding</span><span class="p">)</span>
+            <span class="n">cur_embedding</span> <span class="o">=</span> <span class="n">overflow</span> <span class="o">*</span> <span class="n">hidden</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">acc</span> <span class="o">=</span> <span class="n">overflow</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cur_embedding</span> <span class="o">+=</span> <span class="n">w</span> <span class="o">*</span> <span class="n">hidden</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">embeddings</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No speech in the audio file&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">embeddings</span><span class="p">)</span>
+
+<span class="c1"># -----------------------------</span>
+<span class="c1"># Tokens</span>
+<span class="c1"># -----------------------------</span>
+<span class="k">def</span> <span class="nf">load_tokens</span><span class="p">():</span>
+    <span class="n">ans</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;tokens.txt&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">ans</span>
+
+<span class="c1"># -----------------------------</span>
+<span class="c1"># ACL 模型加载</span>
+<span class="c1"># -----------------------------</span>
+<span class="n">ACL_MEM_MALLOC_NORMAL_ONLY</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">ACL_MEMCPY_HOST_TO_DEVICE</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">ACL_MEMCPY_DEVICE_TO_HOST</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">load_om_model</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="n">model_id</span><span class="p">,</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">mdl</span><span class="o">.</span><span class="n">load_from_file</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ret</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Load model failed: </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">, ret=</span><span class="si">{</span><span class="n">ret</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">model_desc</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">mdl</span><span class="o">.</span><span class="n">create_desc</span><span class="p">()</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">mdl</span><span class="o">.</span><span class="n">get_desc</span><span class="p">(</span><span class="n">model_desc</span><span class="p">,</span> <span class="n">model_id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">model_id</span><span class="p">,</span> <span class="n">model_desc</span>
+
+<span class="c1"># -----------------------------</span>
+<span class="c1"># 单输入模型推理</span>
+<span class="c1"># -----------------------------</span>
+<span class="k">def</span> <span class="nf">run_model_single_input</span><span class="p">(</span><span class="n">model_id</span><span class="p">,</span> <span class="n">model_desc</span><span class="p">,</span> <span class="n">input_array</span><span class="p">):</span>
+    <span class="n">input_size</span> <span class="o">=</span> <span class="n">input_array</span><span class="o">.</span><span class="n">nbytes</span>
+    <span class="n">input_buf</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">malloc</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">ACL_MEM_MALLOC_NORMAL_ONLY</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">memcpy</span><span class="p">(</span><span class="n">input_buf</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">input_array</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">ACL_MEMCPY_HOST_TO_DEVICE</span><span class="p">)</span>
+
+    <span class="n">input_dataset</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">mdl</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">()</span>
+    <span class="n">input_db</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">create_data_buffer</span><span class="p">(</span><span class="n">input_buf</span><span class="p">,</span> <span class="n">input_size</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">mdl</span><span class="o">.</span><span class="n">add_dataset_buffer</span><span class="p">(</span><span class="n">input_dataset</span><span class="p">,</span> <span class="n">input_db</span><span class="p">)</span>
+
+    <span class="n">output_size</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">mdl</span><span class="o">.</span><span class="n">get_output_size_by_index</span><span class="p">(</span><span class="n">model_desc</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">output_buf</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">malloc</span><span class="p">(</span><span class="n">output_size</span><span class="p">,</span> <span class="n">ACL_MEM_MALLOC_NORMAL_ONLY</span><span class="p">)</span>
+    <span class="n">output_dataset</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">mdl</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">()</span>
+    <span class="n">output_db</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">create_data_buffer</span><span class="p">(</span><span class="n">output_buf</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">mdl</span><span class="o">.</span><span class="n">add_dataset_buffer</span><span class="p">(</span><span class="n">output_dataset</span><span class="p">,</span> <span class="n">output_db</span><span class="p">)</span>
+
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">mdl</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">model_id</span><span class="p">,</span> <span class="n">input_dataset</span><span class="p">,</span> <span class="n">output_dataset</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ret</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Execute failed, ret=</span><span class="si">{</span><span class="n">ret</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">output_host</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">malloc_host</span><span class="p">(</span><span class="n">output_size</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">memcpy</span><span class="p">(</span><span class="n">output_host</span><span class="p">,</span> <span class="n">output_size</span><span class="p">,</span> <span class="n">output_buf</span><span class="p">,</span> <span class="n">output_size</span><span class="p">,</span> <span class="n">ACL_MEMCPY_DEVICE_TO_HOST</span><span class="p">)</span>
+    <span class="n">output_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">acl</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">ptr_to_bytes</span><span class="p">(</span><span class="n">output_host</span><span class="p">,</span> <span class="n">output_size</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+    <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">free</span><span class="p">(</span><span class="n">input_buf</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">free</span><span class="p">(</span><span class="n">output_buf</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">free_host</span><span class="p">(</span><span class="n">output_host</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">mdl</span><span class="o">.</span><span class="n">destroy_dataset</span><span class="p">(</span><span class="n">input_dataset</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">mdl</span><span class="o">.</span><span class="n">destroy_dataset</span><span class="p">(</span><span class="n">output_dataset</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">output_data</span>
+
+<span class="c1"># -----------------------------</span>
+<span class="c1"># 多输入 decoder 推理</span>
+<span class="c1"># -----------------------------</span>
+<span class="k">def</span> <span class="nf">run_model_decoder</span><span class="p">(</span><span class="n">model_id</span><span class="p">,</span> <span class="n">model_desc</span><span class="p">,</span> <span class="n">encoder_out</span><span class="p">,</span> <span class="n">acoustic_embedding</span><span class="p">,</span> <span class="n">mask</span><span class="p">):</span>
+    <span class="c1"># 准备输入 Dataset</span>
+    <span class="n">input_dataset</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">mdl</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">()</span>
+
+    <span class="c1"># encoder_out</span>
+    <span class="n">buf1</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">malloc</span><span class="p">(</span><span class="n">encoder_out</span><span class="o">.</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">ACL_MEM_MALLOC_NORMAL_ONLY</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">memcpy</span><span class="p">(</span><span class="n">buf1</span><span class="p">,</span> <span class="n">encoder_out</span><span class="o">.</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">encoder_out</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">encoder_out</span><span class="o">.</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">ACL_MEMCPY_HOST_TO_DEVICE</span><span class="p">)</span>
+    <span class="n">db1</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">create_data_buffer</span><span class="p">(</span><span class="n">buf1</span><span class="p">,</span> <span class="n">encoder_out</span><span class="o">.</span><span class="n">nbytes</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">mdl</span><span class="o">.</span><span class="n">add_dataset_buffer</span><span class="p">(</span><span class="n">input_dataset</span><span class="p">,</span> <span class="n">db1</span><span class="p">)</span>
+
+    <span class="c1"># acoustic_embedding</span>
+    <span class="n">buf2</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">malloc</span><span class="p">(</span><span class="n">acoustic_embedding</span><span class="o">.</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">ACL_MEM_MALLOC_NORMAL_ONLY</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">memcpy</span><span class="p">(</span><span class="n">buf2</span><span class="p">,</span> <span class="n">acoustic_embedding</span><span class="o">.</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">acoustic_embedding</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">acoustic_embedding</span><span class="o">.</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">ACL_MEMCPY_HOST_TO_DEVICE</span><span class="p">)</span>
+    <span class="n">db2</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">create_data_buffer</span><span class="p">(</span><span class="n">buf2</span><span class="p">,</span> <span class="n">acoustic_embedding</span><span class="o">.</span><span class="n">nbytes</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">mdl</span><span class="o">.</span><span class="n">add_dataset_buffer</span><span class="p">(</span><span class="n">input_dataset</span><span class="p">,</span> <span class="n">db2</span><span class="p">)</span>
+
+    <span class="c1"># mask</span>
+    <span class="n">buf3</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">malloc</span><span class="p">(</span><span class="n">mask</span><span class="o">.</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">ACL_MEM_MALLOC_NORMAL_ONLY</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">memcpy</span><span class="p">(</span><span class="n">buf3</span><span class="p">,</span> <span class="n">mask</span><span class="o">.</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">mask</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">mask</span><span class="o">.</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">ACL_MEMCPY_HOST_TO_DEVICE</span><span class="p">)</span>
+    <span class="n">db3</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">create_data_buffer</span><span class="p">(</span><span class="n">buf3</span><span class="p">,</span> <span class="n">mask</span><span class="o">.</span><span class="n">nbytes</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">mdl</span><span class="o">.</span><span class="n">add_dataset_buffer</span><span class="p">(</span><span class="n">input_dataset</span><span class="p">,</span> <span class="n">db3</span><span class="p">)</span>
+
+    <span class="c1"># 输出</span>
+    <span class="n">output_size</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">mdl</span><span class="o">.</span><span class="n">get_output_size_by_index</span><span class="p">(</span><span class="n">model_desc</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">output_buf</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">malloc</span><span class="p">(</span><span class="n">output_size</span><span class="p">,</span> <span class="n">ACL_MEM_MALLOC_NORMAL_ONLY</span><span class="p">)</span>
+    <span class="n">output_dataset</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">mdl</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">()</span>
+    <span class="n">output_db</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">create_data_buffer</span><span class="p">(</span><span class="n">output_buf</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">mdl</span><span class="o">.</span><span class="n">add_dataset_buffer</span><span class="p">(</span><span class="n">output_dataset</span><span class="p">,</span> <span class="n">output_db</span><span class="p">)</span>
+
+    <span class="c1"># 执行</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">mdl</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">model_id</span><span class="p">,</span> <span class="n">input_dataset</span><span class="p">,</span> <span class="n">output_dataset</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ret</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Decoder execute failed, ret=</span><span class="si">{</span><span class="n">ret</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># 拷贝回 host</span>
+    <span class="n">output_host</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">malloc_host</span><span class="p">(</span><span class="n">output_size</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">memcpy</span><span class="p">(</span><span class="n">output_host</span><span class="p">,</span> <span class="n">output_size</span><span class="p">,</span> <span class="n">output_buf</span><span class="p">,</span> <span class="n">output_size</span><span class="p">,</span> <span class="n">ACL_MEMCPY_DEVICE_TO_HOST</span><span class="p">)</span>
+    <span class="n">output_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">acl</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">ptr_to_bytes</span><span class="p">(</span><span class="n">output_host</span><span class="p">,</span> <span class="n">output_size</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+    <span class="c1"># 释放</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">free</span><span class="p">(</span><span class="n">buf1</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">free</span><span class="p">(</span><span class="n">buf2</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">free</span><span class="p">(</span><span class="n">buf3</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">free</span><span class="p">(</span><span class="n">output_buf</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">free_host</span><span class="p">(</span><span class="n">output_host</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">mdl</span><span class="o">.</span><span class="n">destroy_dataset</span><span class="p">(</span><span class="n">input_dataset</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">mdl</span><span class="o">.</span><span class="n">destroy_dataset</span><span class="p">(</span><span class="n">output_dataset</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">output_data</span>
+
+<span class="c1"># -----------------------------</span>
+<span class="c1"># 主函数</span>
+<span class="c1"># -----------------------------</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+    <span class="n">device_id</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">set_device</span><span class="p">(</span><span class="n">device_id</span><span class="p">)</span>
+    <span class="n">context</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">create_context</span><span class="p">(</span><span class="n">device_id</span><span class="p">)</span>
+
+    <span class="c1"># 特征</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="n">compute_feat</span><span class="p">(</span><span class="s2">&quot;./1.wav&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">83</span><span class="p">:</span>
+        <span class="n">features</span> <span class="o">=</span> <span class="n">features</span><span class="p">[:</span><span class="mi">83</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">padding</span> <span class="o">=</span> <span class="n">features</span><span class="p">[</span><span class="o">-</span><span class="p">(</span><span class="mi">83</span> <span class="o">-</span> <span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):]</span>
+        <span class="n">features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">features</span><span class="p">,</span> <span class="n">padding</span><span class="p">])</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="n">features</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>  <span class="c1"># batch=1</span>
+
+    <span class="c1"># 加载 OM 模型</span>
+    <span class="n">enc_id</span><span class="p">,</span> <span class="n">enc_desc</span> <span class="o">=</span> <span class="n">load_om_model</span><span class="p">(</span><span class="s2">&quot;encoder.om&quot;</span><span class="p">)</span>
+    <span class="n">pred_id</span><span class="p">,</span> <span class="n">pred_desc</span> <span class="o">=</span> <span class="n">load_om_model</span><span class="p">(</span><span class="s2">&quot;predictor.om&quot;</span><span class="p">)</span>
+    <span class="n">dec_id</span><span class="p">,</span> <span class="n">dec_desc</span> <span class="o">=</span> <span class="n">load_om_model</span><span class="p">(</span><span class="s2">&quot;decoder.om&quot;</span><span class="p">)</span>
+
+    <span class="c1"># encoder</span>
+    <span class="n">encoder_out</span> <span class="o">=</span> <span class="n">run_model_single_input</span><span class="p">(</span><span class="n">enc_id</span><span class="p">,</span> <span class="n">enc_desc</span><span class="p">,</span> <span class="n">features</span><span class="p">)</span>
+    <span class="n">encoder_out</span> <span class="o">=</span> <span class="n">encoder_out</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">512</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;encoder_out&quot;</span><span class="p">,</span> <span class="n">encoder_out</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">encoder_out</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">encoder_out</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+    <span class="c1"># predictor</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="n">run_model_single_input</span><span class="p">(</span><span class="n">pred_id</span><span class="p">,</span> <span class="n">pred_desc</span><span class="p">,</span> <span class="n">encoder_out</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;alpha&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">alpha</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">alpha</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+    <span class="c1"># acoustic embedding</span>
+    <span class="n">acoustic_embedding</span> <span class="o">=</span> <span class="n">get_acoustic_embedding</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">encoder_out</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;acoustic_embedding&#39;</span><span class="p">,</span> <span class="n">acoustic_embedding</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">num_tokens</span> <span class="o">=</span> <span class="n">acoustic_embedding</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;num_tokens&#39;</span><span class="p">,</span> <span class="n">num_tokens</span><span class="p">)</span>
+    <span class="n">padding</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">83</span> <span class="o">-</span> <span class="n">num_tokens</span><span class="p">,</span> <span class="mi">512</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="n">acoustic_embedding</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">acoustic_embedding</span><span class="p">,</span> <span class="n">padding</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">83</span><span class="p">,),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="n">mask</span><span class="p">[:</span><span class="n">num_tokens</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mask&#39;</span><span class="p">,</span> <span class="n">mask</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">mask</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+    <span class="n">decoder_input</span> <span class="o">=</span> <span class="n">acoustic_embedding</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+
+    <span class="c1"># decoder</span>
+    <span class="n">decoder_out</span> <span class="o">=</span> <span class="n">run_model_decoder</span><span class="p">(</span><span class="n">dec_id</span><span class="p">,</span> <span class="n">dec_desc</span><span class="p">,</span> <span class="n">encoder_out</span><span class="p">,</span> <span class="n">decoder_input</span><span class="p">,</span> <span class="n">mask</span><span class="p">)</span>
+    <span class="n">decoder_out</span> <span class="o">=</span> <span class="n">decoder_out</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">83</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;decoder_out&quot;</span><span class="p">,</span> <span class="n">decoder_out</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">decoder_out</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">decoder_out</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+    <span class="c1"># 输出文字</span>
+    <span class="n">yseq</span> <span class="o">=</span> <span class="n">decoder_out</span><span class="p">[:</span><span class="n">num_tokens</span><span class="p">]</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;yseq&#39;</span><span class="p">,</span> <span class="n">yseq</span><span class="p">)</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">load_tokens</span><span class="p">()</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">yseq</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)]</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Recognized text:&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+
+    <span class="c1"># 卸载模型 &amp; 清理</span>
+    <span class="k">for</span> <span class="n">mid</span><span class="p">,</span> <span class="n">mdesc</span> <span class="ow">in</span> <span class="p">[(</span><span class="n">enc_id</span><span class="p">,</span> <span class="n">enc_desc</span><span class="p">),</span> <span class="p">(</span><span class="n">pred_id</span><span class="p">,</span> <span class="n">pred_desc</span><span class="p">),</span> <span class="p">(</span><span class="n">dec_id</span><span class="p">,</span> <span class="n">dec_desc</span><span class="p">)]:</span>
+        <span class="n">acl</span><span class="o">.</span><span class="n">mdl</span><span class="o">.</span><span class="n">unload</span><span class="p">(</span><span class="n">mid</span><span class="p">)</span>
+        <span class="n">acl</span><span class="o">.</span><span class="n">mdl</span><span class="o">.</span><span class="n">destroy_desc</span><span class="p">(</span><span class="n">mdesc</span><span class="p">)</span>
+
+    <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">destroy_context</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">rt</span><span class="o">.</span><span class="n">reset_device</span><span class="p">(</span><span class="n">device_id</span><span class="p">)</span>
+    <span class="n">acl</span><span class="o">.</span><span class="n">finalize</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="v2-static-shape-simplified-api">
+<h2>V2: Static shape + simplified API<a class="headerlink" href="#v2-static-shape-simplified-api" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># Copyright (c)  2025  Xiaomi Corporation</span>
+
+<span class="kn">import</span> <span class="nn">kaldi_native_fbank</span> <span class="k">as</span> <span class="nn">knf</span>
+<span class="kn">import</span> <span class="nn">librosa</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">ais_bench.infer.interface</span> <span class="kn">import</span> <span class="n">InferSession</span>
+
+
+<span class="k">class</span> <span class="nc">SinusoidalPositionEncoder</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">encode</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">positions</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">depth</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">dtype</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">dtype</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Args:</span>
+<span class="sd">          positions: (batch_size, )</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">batch_size</span> <span class="o">=</span> <span class="n">positions</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">positions</span> <span class="o">=</span> <span class="n">positions</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="n">device</span> <span class="o">=</span> <span class="n">positions</span><span class="o">.</span><span class="n">device</span>
+        <span class="n">log_timescale_increment</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span>
+            <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">10000</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+        <span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">depth</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">inv_timescales</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span>
+            <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">depth</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+            <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="n">log_timescale_increment</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">inv_timescales</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">inv_timescales</span><span class="p">,</span> <span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">scaled_time</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span>
+            <span class="n">inv_timescales</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="n">encoding</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">torch</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">scaled_time</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">scaled_time</span><span class="p">)],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">encoding</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">timesteps</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">):</span>
+        <span class="n">positions</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">timesteps</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="n">position_encoding</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">position_encoding</span>
+
+
+<span class="k">def</span> <span class="nf">compute_feat</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="n">sample_rate</span> <span class="o">=</span> <span class="mi">16000</span>
+    <span class="n">samples</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sample_rate</span><span class="p">)</span>
+    <span class="n">opts</span> <span class="o">=</span> <span class="n">knf</span><span class="o">.</span><span class="n">FbankOptions</span><span class="p">()</span>
+    <span class="n">opts</span><span class="o">.</span><span class="n">frame_opts</span><span class="o">.</span><span class="n">dither</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">opts</span><span class="o">.</span><span class="n">frame_opts</span><span class="o">.</span><span class="n">snip_edges</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">opts</span><span class="o">.</span><span class="n">frame_opts</span><span class="o">.</span><span class="n">samp_freq</span> <span class="o">=</span> <span class="n">sample_rate</span>
+    <span class="n">opts</span><span class="o">.</span><span class="n">mel_opts</span><span class="o">.</span><span class="n">num_bins</span> <span class="o">=</span> <span class="mi">80</span>
+
+    <span class="n">online_fbank</span> <span class="o">=</span> <span class="n">knf</span><span class="o">.</span><span class="n">OnlineFbank</span><span class="p">(</span><span class="n">opts</span><span class="p">)</span>
+    <span class="n">online_fbank</span><span class="o">.</span><span class="n">accept_waveform</span><span class="p">(</span><span class="n">sample_rate</span><span class="p">,</span> <span class="p">(</span><span class="n">samples</span> <span class="o">*</span> <span class="mi">32768</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+    <span class="n">online_fbank</span><span class="o">.</span><span class="n">input_finished</span><span class="p">()</span>
+
+    <span class="n">features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">online_fbank</span><span class="o">.</span><span class="n">get_frame</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">online_fbank</span><span class="o">.</span><span class="n">num_frames_ready</span><span class="p">)]</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">features</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">contiguous</span> <span class="ow">is</span> <span class="kc">True</span>
+    <span class="k">assert</span> <span class="n">features</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">features</span><span class="o">.</span><span class="n">dtype</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;features sum&quot;</span><span class="p">,</span> <span class="n">features</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+    <span class="n">window_size</span> <span class="o">=</span> <span class="mi">7</span>  <span class="c1"># lfr_m</span>
+    <span class="n">window_shift</span> <span class="o">=</span> <span class="mi">6</span>  <span class="c1"># lfr_n</span>
+
+    <span class="n">T</span> <span class="o">=</span> <span class="p">(</span><span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">window_size</span><span class="p">)</span> <span class="o">//</span> <span class="n">window_shift</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">stride_tricks</span><span class="o">.</span><span class="n">as_strided</span><span class="p">(</span>
+        <span class="n">features</span><span class="p">,</span>
+        <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">window_size</span><span class="p">),</span>
+        <span class="n">strides</span><span class="o">=</span><span class="p">((</span><span class="n">window_shift</span> <span class="o">*</span> <span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">load_tokens</span><span class="p">():</span>
+    <span class="n">ans</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;tokens.txt&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">ans</span>
+
+
+<span class="k">class</span> <span class="nc">OmModel</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;init encoder&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span> <span class="o">=</span> <span class="n">InferSession</span><span class="p">(</span><span class="n">device_id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">model_path</span><span class="o">=</span><span class="s1">&#39;./encoder.om&#39;</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span> <span class="o">=</span> <span class="n">InferSession</span><span class="p">(</span><span class="n">device_id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">model_path</span><span class="o">=</span><span class="s1">&#39;./decoder.om&#39;</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">predictor</span> <span class="o">=</span> <span class="n">InferSession</span><span class="p">(</span><span class="n">device_id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">model_path</span><span class="o">=</span><span class="s1">&#39;./predictor.om&#39;</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---encoder---&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span><span class="o">.</span><span class="n">get_inputs</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----&quot;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span><span class="o">.</span><span class="n">get_outputs</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---decoder---&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span><span class="o">.</span><span class="n">get_inputs</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----&quot;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span><span class="o">.</span><span class="n">get_outputs</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---predictor---&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">predictor</span><span class="o">.</span><span class="n">get_inputs</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----&quot;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">predictor</span><span class="o">.</span><span class="n">get_outputs</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+    <span class="c1">#  def run_encoder(self, features, pos_emb):</span>
+    <span class="k">def</span> <span class="nf">run_encoder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">features</span><span class="p">):</span>
+        <span class="n">encoder_out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span><span class="o">.</span><span class="n">infer</span><span class="p">([</span><span class="n">features</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;static&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">encoder_out</span>
+
+    <span class="k">def</span> <span class="nf">run_predictor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">encoder_out</span><span class="p">):</span>
+        <span class="n">alphas</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">predictor</span><span class="o">.</span><span class="n">infer</span><span class="p">([</span><span class="n">encoder_out</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;static&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">alphas</span>
+
+    <span class="c1">#  def run_decoder(self, encoder_out, acoustic_embedding, mask):</span>
+    <span class="k">def</span> <span class="nf">run_decoder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">encoder_out</span><span class="p">,</span> <span class="n">acoustic_embedding</span><span class="p">,</span> <span class="n">mask</span><span class="p">):</span>
+        <span class="n">decoder_out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span><span class="o">.</span><span class="n">infer</span><span class="p">([</span><span class="n">encoder_out</span><span class="p">,</span> <span class="n">acoustic_embedding</span><span class="p">,</span> <span class="n">mask</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;static&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">decoder_out</span>
+
+
+<span class="k">def</span> <span class="nf">get_acoustic_embedding</span><span class="p">(</span><span class="n">alpha</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">hidden</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Args:</span>
+<span class="sd">      alpha: (T,)</span>
+<span class="sd">      hidden: (T, C)</span>
+<span class="sd">    Returns:</span>
+<span class="sd">      acoustic_embeds: (num_tokens, C)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">acc</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">num_tokens</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">embeddings</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">cur_embedding</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">hidden</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">alpha</span><span class="p">):</span>
+        <span class="n">acc</span> <span class="o">+=</span> <span class="n">w</span>
+        <span class="k">if</span> <span class="n">acc</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">overflow</span> <span class="o">=</span> <span class="n">acc</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="n">remain</span> <span class="o">=</span> <span class="n">w</span> <span class="o">-</span> <span class="n">overflow</span>
+            <span class="n">cur_embedding</span> <span class="o">+=</span> <span class="n">remain</span> <span class="o">*</span> <span class="n">hidden</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">embeddings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cur_embedding</span><span class="p">)</span>
+
+            <span class="n">cur_embedding</span> <span class="o">=</span> <span class="n">overflow</span> <span class="o">*</span> <span class="n">hidden</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">acc</span> <span class="o">=</span> <span class="n">overflow</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cur_embedding</span> <span class="o">+=</span> <span class="n">w</span> <span class="o">*</span> <span class="n">hidden</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">embeddings</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No speech in the audio file&quot;</span><span class="p">)</span>
+
+    <span class="n">embeddings</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">embeddings</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">embeddings</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="n">compute_feat</span><span class="p">(</span><span class="s2">&quot;./1.wav&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;here&quot;</span><span class="p">,</span> <span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">83</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">83</span><span class="p">:</span>
+        <span class="n">features</span> <span class="o">=</span> <span class="n">features</span><span class="p">[:</span><span class="mi">83</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">padding</span> <span class="o">=</span> <span class="n">features</span><span class="p">[</span><span class="o">-</span><span class="p">(</span><span class="mi">83</span> <span class="o">-</span> <span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">:]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;padding&quot;</span><span class="p">,</span> <span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">padding</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+        <span class="n">features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">features</span><span class="p">,</span> <span class="n">padding</span><span class="p">])</span>
+
+    <span class="n">pos_emb</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">SinusoidalPositionEncoder</span><span class="p">()(</span><span class="mi">1</span><span class="p">,</span> <span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;features.shape&quot;</span><span class="p">,</span> <span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">pos_emb</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sum&quot;</span><span class="p">,</span> <span class="n">features</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">features</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">pos_emb</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">pos_emb</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">OmModel</span><span class="p">()</span>
+
+    <span class="c1">#  encoder_out = model.run_encoder(features[None], pos_emb[None])</span>
+    <span class="n">encoder_out</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">run_encoder</span><span class="p">(</span><span class="n">features</span><span class="p">[</span><span class="kc">None</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;encoder_out.shape&quot;</span><span class="p">,</span> <span class="n">encoder_out</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;encoder_out.sum&quot;</span><span class="p">,</span> <span class="n">encoder_out</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">encoder_out</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+    <span class="n">alpha</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">run_predictor</span><span class="p">(</span><span class="n">encoder_out</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;alpha.shape&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;alpha.sum()&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">alpha</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+    <span class="n">acoustic_embedding</span> <span class="o">=</span> <span class="n">get_acoustic_embedding</span><span class="p">(</span><span class="n">alpha</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">encoder_out</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;acoustic_embedding.shape&quot;</span><span class="p">,</span> <span class="n">acoustic_embedding</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">num_tokens</span> <span class="o">=</span> <span class="n">acoustic_embedding</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">padding</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">83</span> <span class="o">-</span> <span class="n">acoustic_embedding</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">512</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;padding.shape&quot;</span><span class="p">,</span> <span class="n">padding</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">acoustic_embedding</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+    <span class="n">acoustic_embedding</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">acoustic_embedding</span><span class="p">,</span> <span class="n">padding</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;acoustic_embedding.shape&quot;</span><span class="p">,</span> <span class="n">acoustic_embedding</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;acoustic_embedding.sum&quot;</span><span class="p">,</span> <span class="n">acoustic_embedding</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">acoustic_embedding</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">83</span><span class="p">,),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="n">mask</span><span class="p">[:</span><span class="n">num_tokens</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
+
+    <span class="n">decoder_out</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">run_decoder</span><span class="p">(</span><span class="n">encoder_out</span><span class="p">,</span> <span class="n">acoustic_embedding</span><span class="p">[</span><span class="kc">None</span><span class="p">],</span> <span class="n">mask</span><span class="p">)</span>
+    <span class="c1">#  decoder_out = model.run_decoder(encoder_out, acoustic_embedding[None])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;decoder_out&quot;</span><span class="p">,</span> <span class="n">decoder_out</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;decoder_out.sum&quot;</span><span class="p">,</span> <span class="n">decoder_out</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">decoder_out</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+    <span class="n">yseq</span> <span class="o">=</span> <span class="n">decoder_out</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:</span><span class="n">num_tokens</span><span class="p">]</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">yseq</span><span class="p">,</span> <span class="s2">&quot;--&gt;&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">yseq</span><span class="p">))</span>
+
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">load_tokens</span><span class="p">()</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">yseq</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="basics.html" class="btn btn-neutral float-left" title="Basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="acl.html" class="btn btn-neutral float-right" title="acl" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

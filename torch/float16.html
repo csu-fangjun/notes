@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>float16 &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Dynamo" href="dynamo.html" />
+    <link rel="prev" title="seed" href="seed.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">torch</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="load-and-save.html">torch.load and torch.save</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gather.html">torch.gather</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ddp/index.html">DDP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="torchscript/index.html">TorchScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logical-op.html">Logical operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notes.html">Note</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quantization/index.html">Quantization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="android/index.html">android</a></li>
+<li class="toctree-l2"><a class="reference internal" href="onnx/index.html">onnx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="triton/index.html">triton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lstm.html">nn.LSTM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="torchvision.html">torchvision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autograd.html">audograd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seed.html">seed</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">float16</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ieee-754-float16">IEEE 754 float16</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bfloat16-brain-float16">bfloat16 (brain float16)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dynamo.html">Dynamo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="random.html">random</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compile.html">compile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmark.html">benchmark</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cv2.html">cv2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="einsum.html">einsum</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/index.html">Papers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pascal/index.html">Pascal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llm/index.html">LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ascend/index.html">ascend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qnn/index.html">qnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">torch</a></li>
+      <li class="breadcrumb-item active">float16</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/torch/float16.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="float16">
+<h1>float16<a class="headerlink" href="#float16" title="Permalink to this heading"></a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">torch</span>
+
+
+<span class="c1"># sign: 1</span>
+<span class="c1"># exp: 5</span>
+<span class="c1"># significand: 10</span>
+<span class="k">def</span> <span class="nf">test_f16_subnormal</span><span class="p">():</span>
+    <span class="c1"># For subnormal numbers, the exponent is always 0</span>
+    <span class="c1">#</span>
+    <span class="c1"># (-1)**sign_bit * 2**(-14) * 0.significantbits</span>
+
+    <span class="c1"># use little endian</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00\x00</span><span class="s2">&quot;</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span>
+
+    <span class="c1"># the smallest positive subnormal number</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x01\x00</span><span class="s2">&quot;</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="n">expected</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">14</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">t</span> <span class="o">==</span> <span class="n">expected</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">expected</span><span class="p">,</span> <span class="n">t</span> <span class="o">-</span> <span class="n">expected</span><span class="p">)</span>
+    <span class="c1"># t is about 0.000000059604645 = 5.9604645*1e-8</span>
+
+    <span class="c1"># Use little endian, \x80 means the sign bit is 1</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x01\x80</span><span class="s2">&quot;</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="n">expected</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">14</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">t</span> <span class="o">==</span> <span class="n">expected</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">expected</span><span class="p">,</span> <span class="n">t</span> <span class="o">-</span> <span class="n">expected</span><span class="p">)</span>
+
+    <span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xff\x03</span><span class="s2">&quot;</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="n">expected</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">14</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">1023</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">t</span> <span class="o">==</span> <span class="n">expected</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">expected</span><span class="p">,</span> <span class="n">t</span> <span class="o">-</span> <span class="n">expected</span><span class="p">)</span>
+    <span class="c1"># t is about 0.000060975552 = 6.0975552*1e-5</span>
+
+    <span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xff\x83</span><span class="s2">&quot;</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="n">expected</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">14</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">1023</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">t</span> <span class="o">==</span> <span class="n">expected</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">expected</span><span class="p">,</span> <span class="n">t</span> <span class="o">-</span> <span class="n">expected</span><span class="p">)</span>
+    <span class="c1"># -6.097555160522461e-05</span>
+
+
+<span class="c1"># sign: 1</span>
+<span class="c1"># exp: 5</span>
+<span class="c1"># significand: 10</span>
+<span class="k">def</span> <span class="nf">test_f16_normal</span><span class="p">():</span>
+    <span class="c1"># smallest positive normal number</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00\x04</span><span class="s2">&quot;</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="n">expected</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">14</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">)</span>  <span class="c1"># 6.103515625e-05</span>
+    <span class="k">assert</span> <span class="n">t</span> <span class="o">==</span> <span class="n">expected</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">expected</span><span class="p">,</span> <span class="n">t</span> <span class="o">-</span> <span class="n">expected</span><span class="p">)</span>
+
+    <span class="c1"># largest number less than 1</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xff\x3b</span><span class="s2">&quot;</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="n">expected</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1023</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">)</span>  <span class="c1"># 0.99951171875</span>
+    <span class="k">assert</span> <span class="n">t</span> <span class="o">==</span> <span class="n">expected</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">expected</span><span class="p">,</span> <span class="n">t</span> <span class="o">-</span> <span class="n">expected</span><span class="p">)</span>
+
+    <span class="c1"># 1</span>
+    <span class="c1"># 0b 0 01111 0000000000</span>
+    <span class="c1"># 0b 0011 1100 0000 0000</span>
+    <span class="c1"># 0x 3c00</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00\x3c</span><span class="s2">&quot;</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="n">expected</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">assert</span> <span class="n">t</span> <span class="o">==</span> <span class="n">expected</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">expected</span><span class="p">,</span> <span class="n">t</span> <span class="o">-</span> <span class="n">expected</span><span class="p">)</span>
+
+    <span class="c1"># smallest number larger than 1</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x01\x3c</span><span class="s2">&quot;</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="n">expected</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">**</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">)</span>  <span class="c1"># 1.0009765625</span>
+    <span class="k">assert</span> <span class="n">t</span> <span class="o">==</span> <span class="n">expected</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">expected</span><span class="p">,</span> <span class="n">t</span> <span class="o">-</span> <span class="n">expected</span><span class="p">)</span>
+
+    <span class="c1"># largest normal number</span>
+    <span class="c1"># 0b 0 11110 1111111111</span>
+    <span class="c1"># 0b 0111 1011 1111 1111</span>
+    <span class="c1"># 0x7c ff</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xff\x7b</span><span class="s2">&quot;</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="n">expected</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">**</span> <span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1023</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">)</span>  <span class="c1"># 65504</span>
+    <span class="k">assert</span> <span class="n">t</span> <span class="o">==</span> <span class="n">expected</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">expected</span><span class="p">,</span> <span class="n">t</span> <span class="o">-</span> <span class="n">expected</span><span class="p">)</span>
+
+    <span class="c1"># -2</span>
+    <span class="c1"># 0b 1 10000 0000000000</span>
+    <span class="c1"># 0b 1100 0000 0000 0000</span>
+    <span class="c1"># 0xc0 00</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00\xc0</span><span class="s2">&quot;</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="n">expected</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+    <span class="k">assert</span> <span class="n">t</span> <span class="o">==</span> <span class="n">expected</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">expected</span><span class="p">,</span> <span class="n">t</span> <span class="o">-</span> <span class="n">expected</span><span class="p">)</span>
+
+    <span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xff\xfb</span><span class="s2">&quot;</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="n">expected</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">**</span> <span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1023</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">)</span>  <span class="c1"># -65504</span>
+    <span class="k">assert</span> <span class="n">t</span> <span class="o">==</span> <span class="n">expected</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">expected</span><span class="p">,</span> <span class="n">t</span> <span class="o">-</span> <span class="n">expected</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">test_f16_subnormal</span><span class="p">()</span>
+    <span class="n">test_f16_normal</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<section id="ieee-754-float16">
+<h2>IEEE 754 float16<a class="headerlink" href="#ieee-754-float16" title="Permalink to this heading"></a></h2>
+<p>Please see <a class="reference external" href="https://en.wikipedia.org/wiki/Half-precision_floating-point_format">https://en.wikipedia.org/wiki/Half-precision_floating-point_format</a></p>
+<ul class="simple">
+<li><p>sign: 1</p></li>
+<li><p>exponent: 5</p></li>
+<li><p>significand: 10</p></li>
+</ul>
+<p>exponent offset is 15.</p>
+</section>
+<section id="bfloat16-brain-float16">
+<h2>bfloat16 (brain float16)<a class="headerlink" href="#bfloat16-brain-float16" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>sign: 1</p></li>
+<li><p>exponent: 8</p></li>
+<li><p>significand: 7</p></li>
+</ul>
+<p>exponent offset is 127.</p>
+<p>See <a class="reference external" href="https://en.wikipedia.org/wiki/Bfloat16_floating-point_format">https://en.wikipedia.org/wiki/Bfloat16_floating-point_format</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="seed.html" class="btn btn-neutral float-left" title="seed" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dynamo.html" class="btn btn-neutral float-right" title="Dynamo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>npm &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="module" href="module.html" />
+    <link rel="prev" title="TODOs" href="todo.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">javascript</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers.html">Numbers in javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boolean.html">Boolean in javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">Strings in javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="array.html">array in javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typed_array.html">typed array in javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regular_expression.html">Regular expressions in javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="node.html">node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="todo.html">TODOs</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">npm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#todo">TODO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#npm-init-y">npm init -y</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mirror">mirror</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#to-publish-a-new-package-for-the-first-time">To publish a new package for the first time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#to-pack-a-folder-as-a-package-and-install-it-later">To pack a folder as a package and install it later</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="module.html">module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="object.html">object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="node-addon-api.html">node-addon-api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vue.html">vue</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/index.html">Papers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pascal/index.html">Pascal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llm/index.html">LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ascend/index.html">ascend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qnn/index.html">qnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">javascript</a></li>
+      <li class="breadcrumb-item active">npm</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/javascript/npm.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="npm">
+<h1>npm<a class="headerlink" href="#npm" title="Permalink to this heading"></a></h1>
+<p>All packages can be found at <a class="reference external" href="https://npmjs.org/">https://npmjs.org/</a>.</p>
+<section id="todo">
+<h2>TODO<a class="headerlink" href="#todo" title="Permalink to this heading"></a></h2>
+<p>Read the following packages:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/martinandert/date-names">https://github.com/martinandert/date-names</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dcousens/ordinal.js">https://github.com/dcousens/ordinal.js</a></p></li>
+<li><p><a class="reference external" href="https://github.com/TooTallNate/node-wav">https://github.com/TooTallNate/node-wav</a></p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="npm-init-y">
+<h2>npm init -y<a class="headerlink" href="#npm-init-y" title="Permalink to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>t
+<span class="nb">cd</span><span class="w"> </span>t
+npm<span class="w"> </span>init<span class="w"> </span>-y
+</pre></div>
+</div>
+<p>will generate a file <code class="docutils literal notranslate"><span class="pre">package.json</span></code>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;t&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;main&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;index.js&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;test&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;keywords&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;license&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ISC&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="mirror">
+<h2>mirror<a class="headerlink" href="#mirror" title="Permalink to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>registry<span class="w"> </span>https://registry.npmmirror.com
+npm<span class="w"> </span>config<span class="w"> </span>get<span class="w"> </span>registry
+</pre></div>
+</div>
+</section>
+<section id="to-publish-a-new-package-for-the-first-time">
+<h2>To publish a new package for the first time<a class="headerlink" href="#to-publish-a-new-package-for-the-first-time" title="Permalink to this heading"></a></h2>
+<p>Available files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/Users/fangjun/open-source/piper-phonemize/scripts/npm
+(py312) fangjuns-MacBook-Pro:npm fangjun$ ls
+index.js                         package.json-2                   piper-phonemize-wasm-nodejs.wasm README.md
+package.json                     piper-phonemize-wasm-nodejs.js   piper-phonemize.node.js
+</pre></div>
+</div>
+<p>Now run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">scripts</span><span class="o">/</span><span class="n">npm</span>
+
+<span class="n">npm</span> <span class="n">pack</span> <span class="o">--</span><span class="n">dry</span><span class="o">-</span><span class="n">run</span>
+
+<span class="n">npm</span> <span class="n">login</span>
+<span class="c1"># It prints a URL, click it to open a browser</span>
+
+<span class="n">npm</span> <span class="n">publish</span> <span class="o">--</span><span class="n">access</span> <span class="n">public</span>
+<span class="c1"># Now you are ready to configure to publish it via github workflows</span>
+</pre></div>
+</div>
+</section>
+<section id="to-pack-a-folder-as-a-package-and-install-it-later">
+<h2>To pack a folder as a package and install it later<a class="headerlink" href="#to-pack-a-folder-as-a-package-and-install-it-later" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">scripts</span><span class="o">/</span><span class="n">npm</span>
+<span class="n">npm</span> <span class="n">pack</span>
+</pre></div>
+</div>
+<p>It will generate <cite>&lt;package-name&gt;-&lt;version&gt;.tgz</cite> inside the current package directory.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">install</span> <span class="o">./</span><span class="n">xxx</span><span class="o">.</span><span class="n">tgz</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="todo.html" class="btn btn-neutral float-left" title="TODOs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="module.html" class="btn btn-neutral float-right" title="module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

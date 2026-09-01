@@ -1,0 +1,7 @@
+MNN
+===
+
+.. toctree::
+
+    install
+    hello

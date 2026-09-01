@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ffi &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Flutter" href="flutter.html" />
+    <link rel="prev" title="ToDo" href="todo.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colab/index.html">Colab</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Dart</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="package.html">Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="todo.html">ToDo</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ffi</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#types">types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="flutter.html">Flutter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/index.html">Papers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pascal/index.html">Pascal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llm/index.html">LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ascend/index.html">ascend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qnn/index.html">qnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Dart</a></li>
+      <li class="breadcrumb-item active">ffi</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/dart/ffi.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ffi">
+<h1>ffi<a class="headerlink" href="#ffi" title="Permalink to this heading"></a></h1>
+<p>Note there are two ffi packages:</p>
+<blockquote>
+<div><ul class="simple">
+<li><ol class="arabic simple">
+<li><p>One is builtin: <code class="docutils literal notranslate"><span class="pre">dart:ffi</span></code></p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>One is <code class="docutils literal notranslate"><span class="pre">package:ffi/ffi.dart</span></code> <a class="reference external" href="https://pub.dev/documentation/ffi/latest/ffi/ffi-library.html">https://pub.dev/documentation/ffi/latest/ffi/ffi-library.html</a></p></li>
+</ol>
+</li>
+</ul>
+</div></blockquote>
+<p>Doc for <code class="docutils literal notranslate"><span class="pre">dart:io</span></code>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://dart.dev/libraries/dart-io">https://dart.dev/libraries/dart-io</a></p></li>
+<li><p><a class="reference external" href="https://api.dart.dev/stable/3.4.0/dart-io/dart-io-library.html">https://api.dart.dev/stable/3.4.0/dart-io/dart-io-library.html</a></p></li>
+</ul>
+</div></blockquote>
+<p>Doc for <code class="docutils literal notranslate"><span class="pre">dart:ffi</span></code>: <a class="reference external" href="https://api.dart.dev/stable/3.4.0/dart-ffi/dart-ffi-library.html">https://api.dart.dev/stable/3.4.0/dart-ffi/dart-ffi-library.html</a></p>
+<p>Examples for <code class="docutils literal notranslate"><span class="pre">ffi</span></code>: <a class="reference external" href="https://github.com/dart-lang/samples/tree/main/ffi">https://github.com/dart-lang/samples/tree/main/ffi</a></p>
+<section id="types">
+<h2>types<a class="headerlink" href="#types" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">-&gt;</span> <span class="pre">Char</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">-&gt;</span> <span class="pre">Double</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">float</span> <span class="pre">-&gt;</span> <span class="pre">Float</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">-&gt;</span> <span class="pre">Int</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int8</span> <span class="pre">-&gt;</span> <span class="pre">Int8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int16</span> <span class="pre">-&gt;</span> <span class="pre">Int16</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int32</span> <span class="pre">-&gt;</span> <span class="pre">Int32</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int64</span> <span class="pre">-&gt;</span> <span class="pre">Int64</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">intptr_t</span> <span class="pre">-&gt;</span> <span class="pre">IntPtr</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">-&gt;</span> <span class="pre">Long</span></code></p></li>
+</ul>
+<div class="highlight-dart notranslate"><div class="highlight"><pre><span></span><span class="c1">// void xxx();</span>
+<span class="kd">typedef</span><span class="w"> </span><span class="n">HelloWorldFunc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ffi</span><span class="p">.</span><span class="n">Void</span><span class="w"> </span><span class="kt">Function</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a pluggin</span>
+flutter<span class="w"> </span>create<span class="w"> </span>--template<span class="o">=</span>plugin<span class="w"> </span>--platforms<span class="o">=</span>android,ios<span class="w"> </span>mybatteryplugin
+</pre></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">./code/ffi/a.h</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
+<div class="highlight-dart notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">extern</span><span class="w"> </span><span class="s2">&quot;C&quot;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">./code/ffi/a.cc</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
+<div class="highlight-dart notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>#include &quot;a.h&quot;
+<span class="linenos">2</span>int add(int a, int b) { return a + b; }
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">./code/ffi/hello.dart</span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
+<div class="highlight-dart notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">import</span><span class="w"> </span><span class="s1">&#39;dart:ffi&#39;</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">ffi</span><span class="p">;</span>
+<span class="linenos"> 2</span><span class="k">import</span><span class="w"> </span><span class="s1">&#39;dart:io&#39;</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="n">Platform</span><span class="p">,</span><span class="w"> </span><span class="n">Directory</span><span class="p">;</span>
+<span class="linenos"> 3</span><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:path/path.dart&#39;</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">path</span><span class="p">;</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="kd">typedef</span><span class="w"> </span><span class="n">HelloWorldFunc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ffi</span><span class="p">.</span><span class="n">Int</span><span class="w"> </span><span class="kt">Function</span><span class="p">(</span><span class="n">ffi</span><span class="p">.</span><span class="n">Int</span><span class="p">,</span><span class="w"> </span><span class="n">ffi</span><span class="p">.</span><span class="n">Int</span><span class="p">);</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="kd">typedef</span><span class="w"> </span><span class="n">HelloWorld</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="kt">Function</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">);</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">10</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">libraryPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">Directory</span><span class="p">.</span><span class="n">current</span><span class="p">.</span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;libfoo.so&#39;</span><span class="p">);</span>
+<span class="linenos">11</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Platform</span><span class="p">.</span><span class="n">isMacOS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">12</span><span class="w">    </span><span class="n">libraryPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">Directory</span><span class="p">.</span><span class="n">current</span><span class="p">.</span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;libfoo.dylib&#39;</span><span class="p">);</span>
+<span class="linenos">13</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">14</span><span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">dylib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ffi</span><span class="p">.</span><span class="n">DynamicLibrary</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">libraryPath</span><span class="p">);</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="w">  </span><span class="c1">// Look up the C function &#39;hello_world&#39;</span>
+<span class="linenos">17</span><span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">HelloWorld</span><span class="w"> </span><span class="n">hello</span><span class="w"> </span><span class="o">=</span>
+<span class="linenos">18</span><span class="w">      </span><span class="n">dylib</span><span class="p">.</span><span class="n">lookup</span><span class="o">&lt;</span><span class="n">ffi</span><span class="p">.</span><span class="n">NativeFunction</span><span class="o">&lt;</span><span class="n">HelloWorldFunc</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="s1">&#39;add&#39;</span><span class="p">).</span><span class="n">asFunction</span><span class="p">();</span>
+<span class="linenos">19</span><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">hello</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">));</span>
+<span class="linenos">20</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">./code/ffi/pubspec.yaml</span><a class="headerlink" href="#id4" title="Permalink to this code"></a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hello_ffi</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nt">environment</span><span class="p">:</span>
+<span class="linenos">4</span><span class="w">  </span><span class="nt">sdk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^3.4.0</span>
+<span class="linenos">5</span>
+<span class="linenos">6</span><span class="nt">dependencies</span><span class="p">:</span>
+<span class="linenos">7</span><span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^1.8.0</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">./code/ffi/run.sh</span><a class="headerlink" href="#id5" title="Permalink to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="ch">#!/usr/bin/env bash</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span>g++<span class="w"> </span>-c<span class="w"> </span>-fPIC<span class="w"> </span>-o<span class="w"> </span>a.o<span class="w"> </span>a.cc
+<span class="linenos">4</span>g++<span class="w"> </span>-shared<span class="w"> </span>-o<span class="w"> </span>libfoo.dylib<span class="w"> </span>./a.o
+<span class="linenos">5</span>ls<span class="w"> </span>-lh
+<span class="linenos">6</span>nm<span class="w"> </span>libfoo.dylib
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="todo.html" class="btn btn-neutral float-left" title="ToDo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="flutter.html" class="btn btn-neutral float-right" title="Flutter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

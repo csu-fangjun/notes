@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conditional compiling &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Compiler options" href="compiler-options.html" />
+    <link rel="prev" title="class" href="class.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/index.html">Papers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Pascal</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hello.html">Hello</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fpc-help.html">fpc -h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call-c.html">Call C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="char.html">char</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pointers.html">Pointers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class.html">class</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Conditional compiling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#predefined-symbols">predefined symbols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#user-defined-symbols">user defined symbols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#if-and-else">if and else</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="compiler-options.html">Compiler options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dl.html">dl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lazarus.html">Lazarus</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llm/index.html">LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ascend/index.html">ascend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qnn/index.html">qnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Pascal</a></li>
+      <li class="breadcrumb-item active">Conditional compiling</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/pascal/conditional-compiling.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="conditional-compiling">
+<h1>Conditional compiling<a class="headerlink" href="#conditional-compiling" title="Permalink to this heading"></a></h1>
+<section id="predefined-symbols">
+<h2>predefined symbols<a class="headerlink" href="#predefined-symbols" title="Permalink to this heading"></a></h2>
+<p>Please see <a class="reference external" href="https://www.freepascal.org/docs-html/3.0.0/prog/progap7.html#x333-348000G">https://www.freepascal.org/docs-html/3.0.0/prog/progap7.html#x333-348000G</a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">unix</span></code> is defined for both macos and unbuntu.</p>
+<p><code class="docutils literal notranslate"><span class="pre">darwin</span></code> is defined only for macos.</p>
+<p><code class="docutils literal notranslate"><span class="pre">windows</span></code> is for both 32-bit and 64-bit windows.</p>
+</section>
+<section id="user-defined-symbols">
+<h2>user defined symbols<a class="headerlink" href="#user-defined-symbols" title="Permalink to this heading"></a></h2>
+<p>To pass from the commandline:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fpc</span> <span class="o">-</span><span class="n">dmy_symbol</span>
+</pre></div>
+</div>
+<p>that is, use <code class="docutils literal notranslate"><span class="pre">-d</span></code> option. It is equivalent to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{$define my_symbol}
+</pre></div>
+</div>
+<p>in the code.</p>
+<p>To un-define a symbol from the commandline:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fpc</span> <span class="o">-</span><span class="n">umy_symbol</span>
+</pre></div>
+</div>
+<p>That is, use <code class="docutils literal notranslate"><span class="pre">-u</span></code> option. It is equivalent to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="c1">#undef my_symbol}</span>
+</pre></div>
+</div>
+<p>in the code.</p>
+</section>
+<section id="if-and-else">
+<h2>if and else<a class="headerlink" href="#if-and-else" title="Permalink to this heading"></a></h2>
+<p>There are multiple forms:</p>
+<p><strong>Example 1</strong></p>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="cm">{$ifdef my_symbol}</span>
+<span class="w">  </span><span class="cm">{some code}</span>
+<span class="cm">{$endif}</span>
+
+<span class="cm">{$ifdef my_symbol with some comments}</span>
+<span class="w">  </span><span class="cm">{some code}</span>
+<span class="w">  </span><span class="cm">{everything after my_symbol is a comment}</span>
+<span class="cm">{$endif}</span>
+
+<span class="cm">{$ifdef my_symbol}</span>
+<span class="w">  </span><span class="cm">{some code}</span>
+<span class="cm">{$else}</span>
+<span class="w">  </span><span class="cm">{some other code}</span>
+<span class="cm">{$endif}</span>
+
+<span class="cm">{$ifdef my_symbol}</span>
+<span class="w">  </span><span class="cm">{some code}</span>
+<span class="cm">{$elseif defined(foo)}</span>
+<span class="w">  </span><span class="cm">{some code}</span>
+<span class="cm">{$endif}</span>
+
+<span class="cm">{$if defined(foo) or defined(bar)}</span>
+<span class="cm">{$endif}</span>
+
+<span class="cm">{$if defined(foo) and defined(bar)}</span>
+<span class="cm">{$endif}</span>
+
+
+<span class="cm">{$if defined(my_symbol)}</span>
+<span class="w">  </span><span class="cm">{some code}</span>
+<span class="cm">{$elseif defined(foo)}</span>
+<span class="w">  </span><span class="cm">{some code}</span>
+<span class="cm">{$endif}</span>
+
+<span class="cm">{$if defined(my_symbol)}</span>
+<span class="w">  </span><span class="cm">{some code}</span>
+<span class="cm">{$elseif defined(foo) or defined(bar) or defined(foobar)}</span>
+<span class="w">  </span><span class="cm">{some code}</span>
+<span class="cm">{$endif}</span>
+</pre></div>
+</div>
+<p><strong>Example2</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{$ifndef foo}
+  {code}
+{$endif}
+
+{$if not defined(foo)}
+  {code}
+{$endif}
+</pre></div>
+</div>
+<p>To summarize, we can use</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ifdef</span></code>, <code class="docutils literal notranslate"><span class="pre">endif</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ifndef</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">else</span></code>, <code class="docutils literal notranslate"><span class="pre">elseif</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code> (we can use conditions, e.g., <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">defined()</span> <span class="pre">or</span> <span class="pre">defined()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">defined</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">undef</span></code></p></li>
+</ul>
+</div></blockquote>
+<p>Some more examples from <a class="reference external" href="https://github.com/fpc/FPCSource/blob/main/rtl/unix/dl.pp">https://github.com/fpc/FPCSource/blob/main/rtl/unix/dl.pp</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span><span class="nv">$if</span><span class="w"> </span>defined<span class="o">(</span>linux<span class="o">)</span><span class="w"> </span>or<span class="w"> </span>defined<span class="o">(</span>freebsd<span class="o">)</span><span class="w"> </span>or<span class="w"> </span>defined<span class="o">(</span>openbsd<span class="o">)</span><span class="w"> </span>or<span class="w"> </span>defined<span class="o">(</span>dragonfly<span class="o">)}</span>
+<span class="w">  </span><span class="o">{</span><span class="nv">$define</span><span class="w"> </span>ELF<span class="o">}</span><span class="w"> </span>//<span class="w"> </span>ELF<span class="w"> </span>symbol<span class="w"> </span>versioning.
+<span class="o">{</span><span class="nv">$endif</span><span class="o">}</span>
+
+<span class="o">{</span><span class="nv">$if</span><span class="w"> </span>defined<span class="o">(</span>linux<span class="o">)}</span>
+<span class="w">    </span><span class="o">{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span>libc<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>linked<span class="w"> </span>explicitly,<span class="w"> </span>FPC<span class="w"> </span>might<span class="w"> </span>chose<span class="w"> </span>the<span class="w"> </span>wrong<span class="w"> </span>startup<span class="w"> </span>code,<span class="w"> </span>as
+<span class="w">      </span>libdl<span class="w"> </span>depends<span class="w"> </span>on<span class="w"> </span>libc<span class="w"> </span>on<span class="w"> </span>linux,<span class="w"> </span>this<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>hurt<span class="w"> </span><span class="o">}</span>
+<span class="w">    </span><span class="o">{</span><span class="nv">$linklib</span><span class="w"> </span>c<span class="o">}</span>
+<span class="o">{</span><span class="nv">$endif</span><span class="o">}</span>
+
+<span class="k">function</span><span class="w"> </span>dladdr<span class="o">(</span>Lib:<span class="w"> </span>pointer<span class="p">;</span><span class="w"> </span>info:<span class="w"> </span>Pdl_info<span class="o">)</span>:<span class="w"> </span>Longint<span class="p">;</span><span class="w"> </span>cdecl<span class="p">;</span><span class="w"> </span><span class="o">{</span><span class="nv">$if</span><span class="w"> </span>not<span class="w"> </span>defined<span class="o">(</span>aix<span class="o">)</span><span class="w"> </span>and<span class="w"> </span>not<span class="w"> </span>defined<span class="o">(</span>android<span class="o">)}</span><span class="w"> </span>external<span class="p">;</span><span class="w"> </span><span class="o">{</span><span class="nv">$endif</span><span class="o">}</span>
+
+const
+<span class="o">{</span><span class="nv">$ifdef</span><span class="w"> </span>BSD<span class="o">}</span><span class="w">   </span>//<span class="w"> </span>dlopen<span class="w"> </span>is<span class="w"> </span><span class="k">in</span><span class="w"> </span>libc<span class="w"> </span>on<span class="w"> </span>FreeBSD.
+<span class="w">  </span><span class="nv">LibDL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;c&#39;</span><span class="p">;</span>
+<span class="o">{</span><span class="nv">$else</span><span class="o">}</span>
+<span class="w">  </span><span class="o">{</span><span class="nv">$ifdef</span><span class="w"> </span>HAIKU<span class="o">}</span>
+<span class="w">    </span><span class="nv">LibDL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="o">{</span><span class="nv">$else</span><span class="o">}</span>
+<span class="w">    </span><span class="nv">LibDL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;dl&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="o">{</span><span class="nv">$endif</span><span class="o">}</span>
+<span class="o">{</span><span class="nv">$endif</span><span class="o">}</span>
+</pre></div>
+</div>
+<p>Some more examples from <a class="reference external" href="https://github.com/fpc/FPCSource/blob/main/rtl/inc/ctypes.pp">https://github.com/fpc/FPCSource/blob/main/rtl/inc/ctypes.pp</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{$ifdef FPC}
+  {$inline on}
+  {$ifndef DISABLE_INLINE}
+     {$define CTYPES_INLINE}
+  {$endif}
+  {$define dummy}
+{$endif}
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="class.html" class="btn btn-neutral float-left" title="class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="compiler-options.html" class="btn btn-neutral float-right" title="Compiler options" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

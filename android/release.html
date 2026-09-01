@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Release &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Coroutine" href="coroutine.html" />
+    <link rel="prev" title="Resources" href="resources.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Android</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="kotlin/index.html">kotlin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cmake.html">cmake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hello.html">hello</a></li>
+<li class="toctree-l2"><a class="reference internal" href="android_mk.html">Android.mk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adb.html">adb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tts.html">tts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html">jetpack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html">Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html">Resources</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coroutine.html">Coroutine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run-cpp-on-android.html">Run CPP on Android</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gradle.html">gradle</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/index.html">Papers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pascal/index.html">Pascal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llm/index.html">LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ascend/index.html">ascend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qnn/index.html">qnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Android</a></li>
+      <li class="breadcrumb-item active">Release</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/android/release.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="release">
+<h1>Release<a class="headerlink" href="#release" title="Permalink to this heading"></a></h1>
+<p>See also</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://developer.android.com/build/building-cmdline">https://developer.android.com/build/building-cmdline</a></p></li>
+<li><p><a class="reference external" href="https://developer.android.com/build/building-cmdline#sign_cmdline">https://developer.android.com/build/building-cmdline#sign_cmdline</a></p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>android/SherpaOnnxTtsEngine
+./gradlew<span class="w"> </span>assembleRelease
+ls<span class="w"> </span>-lh<span class="w"> </span>app/build/outputs/apk/release/*.apk
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-rw-r--r--@<span class="w"> </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span>257M<span class="w"> </span>Mar<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">15</span>:39<span class="w"> </span>app/build/outputs/apk/release/app-release-unsigned.apk
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which<span class="w"> </span>keytool
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/Users/fangjun/software/jdk-19.0.1.jdk/Contents/Home/bin/keytool
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>keytool<span class="w"> </span>-genkey<span class="w"> </span>-v<span class="w"> </span>-keystore<span class="w"> </span>my-release-key.jks<span class="w"> </span>-keyalg<span class="w"> </span>RSA<span class="w"> </span>-keysize<span class="w"> </span><span class="m">2048</span><span class="w"> </span>-validity<span class="w"> </span><span class="m">10000</span><span class="w"> </span>-alias<span class="w"> </span>my-alias
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Enter<span class="w"> </span>keystore<span class="w"> </span>password:<span class="w"> </span>&lt;entery<span class="w"> </span>the<span class="w"> </span>password,<span class="w"> </span>see<span class="w"> </span>my<span class="w"> </span>email&gt;
+Re-enter<span class="w"> </span>new<span class="w"> </span>password:<span class="w"> </span>&lt;enter<span class="w"> </span>the<span class="w"> </span>password,<span class="w"> </span>see<span class="w"> </span>my<span class="w"> </span>email&gt;
+Enter<span class="w"> </span>the<span class="w"> </span>distinguished<span class="w"> </span>name.<span class="w"> </span>Provide<span class="w"> </span>a<span class="w"> </span>single<span class="w"> </span>dot<span class="w"> </span><span class="o">(</span>.<span class="o">)</span><span class="w"> </span>to<span class="w"> </span>leave<span class="w"> </span>a<span class="w"> </span>sub-component<span class="w"> </span>empty<span class="w"> </span>or<span class="w"> </span>press<span class="w"> </span>ENTER<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span>value<span class="w"> </span><span class="k">in</span><span class="w"> </span>braces.
+What<span class="w"> </span>is<span class="w"> </span>your<span class="w"> </span>first<span class="w"> </span>and<span class="w"> </span>last<span class="w"> </span>name?
+<span class="w">  </span><span class="o">[</span>Unknown<span class="o">]</span>:<span class="w"> </span>k2-fsa
+What<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>your<span class="w"> </span>organizational<span class="w"> </span>unit?
+<span class="w">  </span><span class="o">[</span>Unknown<span class="o">]</span>:<span class="w"> </span>k2-fsa
+What<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>your<span class="w"> </span>organization?
+<span class="w">  </span><span class="o">[</span>Unknown<span class="o">]</span>:<span class="w"> </span>k2-fsa
+What<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>your<span class="w"> </span>City<span class="w"> </span>or<span class="w"> </span>Locality?
+<span class="w">  </span><span class="o">[</span>Unknown<span class="o">]</span>:<span class="w"> </span>Peking
+What<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>your<span class="w"> </span>State<span class="w"> </span>or<span class="w"> </span>Province?
+<span class="w">  </span><span class="o">[</span>Unknown<span class="o">]</span>:<span class="w"> </span>Peking
+What<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>two-letter<span class="w"> </span>country<span class="w"> </span>code<span class="w"> </span><span class="k">for</span><span class="w"> </span>this<span class="w"> </span>unit?
+<span class="w">  </span><span class="o">[</span>Unknown<span class="o">]</span>:<span class="w"> </span>cn
+Is<span class="w"> </span><span class="nv">CN</span><span class="o">=</span>k2-fsa,<span class="w"> </span><span class="nv">OU</span><span class="o">=</span>k2-fsa,<span class="w"> </span><span class="nv">O</span><span class="o">=</span>k2-fsa,<span class="w"> </span><span class="nv">L</span><span class="o">=</span>Peking,<span class="w"> </span><span class="nv">ST</span><span class="o">=</span>Peking,<span class="w"> </span><span class="nv">C</span><span class="o">=</span>cn<span class="w"> </span>correct?
+<span class="w">  </span><span class="o">[</span>no<span class="o">]</span>:<span class="w"> </span>yes
+Generating<span class="w"> </span><span class="m">2</span>,048<span class="w"> </span>bit<span class="w"> </span>RSA<span class="w"> </span>key<span class="w"> </span>pair<span class="w"> </span>and<span class="w"> </span>self-signed<span class="w"> </span>certificate<span class="w"> </span><span class="o">(</span>SHA384withRSA<span class="o">)</span><span class="w"> </span>with<span class="w"> </span>a<span class="w"> </span>validity<span class="w"> </span>of<span class="w"> </span><span class="m">10</span>,000<span class="w"> </span>days
+<span class="w">       </span><span class="k">for</span>:<span class="w"> </span><span class="nv">CN</span><span class="o">=</span>k2-fsa,<span class="w"> </span><span class="nv">OU</span><span class="o">=</span>k2-fsa,<span class="w"> </span><span class="nv">O</span><span class="o">=</span>k2-fsa,<span class="w"> </span><span class="nv">L</span><span class="o">=</span>Peking,<span class="w"> </span><span class="nv">ST</span><span class="o">=</span>Unknown,<span class="w"> </span><span class="nv">C</span><span class="o">=</span>cn
+<span class="o">[</span>Storing<span class="w"> </span>my-release-key.js<span class="o">]</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-lh<span class="w"> </span>my-release-key
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">   </span><span class="m">2</span>.7K<span class="w"> </span>Mar<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">16</span>:10<span class="w"> </span>my-release-key
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>file<span class="w"> </span>my-release-key
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>my-release-key:<span class="w"> </span>data
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l<span class="w"> </span>my-release-key
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">  </span><span class="m">2732</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">16</span>:10<span class="w"> </span>my-release-key
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>android/SherpaOnnxTtsEngine/app/build/outputs/apk/release
+cp<span class="w"> </span>../../../../../my-release-key<span class="w"> </span>./
+ls<span class="w"> </span>-l<span class="w"> </span>app-release-unsigned.apk
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-rw-r--r--@<span class="w"> </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">  </span><span class="m">269073239</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">15</span>:39<span class="w"> </span>app-release-unsigned.apk
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/Users/fangjun/software/my-android/build-tools/34.0.0/zipalign<span class="w"> </span>-v<span class="w"> </span>-p<span class="w"> </span><span class="m">4</span><span class="w"> </span>./app-release-unsigned.apk<span class="w"> </span>./app-release-unsigned-aligned.apk
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l<span class="w"> </span>app-release-unsigned-aligned.apk
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-rw-r--r--@<span class="w"> </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">  </span><span class="m">269073239</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">16</span>:16<span class="w"> </span>app-release-unsigned-aligned.apk
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/Users/fangjun/software/my-android/build-tools/34.0.0/apksigner<span class="w"> </span>sign<span class="w"> </span>--ks<span class="w"> </span>./my-release-key<span class="w"> </span>--out<span class="w"> </span>app-release.apk<span class="w"> </span>./app-release-unsigned-aligned.apk
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Keystore<span class="w"> </span>password<span class="w"> </span><span class="k">for</span><span class="w"> </span>signer<span class="w"> </span><span class="c1">#1: &lt;enter the password for the keystore&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l<span class="w"> </span>./*.apk
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-rw-r--r--@<span class="w"> </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">  </span><span class="m">269073239</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">16</span>:16<span class="w"> </span>app-release-unsigned-aligned.apk
+-rw-r--r--@<span class="w"> </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">  </span><span class="m">269073239</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">15</span>:39<span class="w"> </span>app-release-unsigned.apk
+-rw-r--r--@<span class="w"> </span><span class="m">1</span><span class="w"> </span>fangjun<span class="w">  </span>staff<span class="w">  </span><span class="m">269181994</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">16</span>:19<span class="w"> </span>app-release.apk
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which<span class="w"> </span>jarsigner
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/Users/fangjun/software/jdk-19.0.1.jdk/Contents/Home/bin/jarsigner
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jarsigner<span class="w"> </span>--verify<span class="w"> </span>-certs<span class="w"> </span>-verbose<span class="w"> </span>./app-release.apk<span class="w"> </span>&gt;<span class="w"> </span>a.txt
+</pre></div>
+</div>
+<p>To use it with GitHub actions, see <a class="reference external" href="https://github.com/marketplace/actions/sign-android-release">https://github.com/marketplace/actions/sign-android-release</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>openssl<span class="w"> </span>base64<span class="w"> </span>&lt;<span class="w"> </span>./my-release-key.js<span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>./my-release-key.base64.txt
+</pre></div>
+</div>
+<p>Set the following secrets:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>ANDROID_SIGNING_KEY: the content base64.txt</p></li>
+<li><p>ANDROID_SIGNING_KEY_ALIAS: my-alias</p></li>
+<li><p>ANDROID_SIGNING_KEY_STORE_PASSWORD: see my email</p></li>
+</ul>
+</div></blockquote>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="resources.html" class="btn btn-neutral float-left" title="Resources" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="coroutine.html" class="btn btn-neutral float-right" title="Coroutine" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

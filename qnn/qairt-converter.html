@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>qairt-converter &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="qairt-dlc-info" href="qairt-dlc-info.html" />
+    <link rel="prev" title="qnn-net-run" href="qnn-net-run.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/index.html">Papers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pascal/index.html">Pascal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llm/index.html">LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ascend/index.html">ascend</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">qnn</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basics.html">basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">Install qnn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sense-voice.html">SenseVoice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qnn-onnx-convert.html">qnn-onnx-converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qnn-model-lib-generator.html">qnn-model-lib-generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qnn-net-run.html">qnn-net-run</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">qairt-converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qairt-dlc-info.html">qairt-dlc-info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qairt-quantizer.html">qairt-quantizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boards.html">Boards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html">code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="todo.html">TODOs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="onnxruntime.html">onnxruntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="htp.html">HTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qnn-context-binary-generator.html">qnn-context-binary-generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aimet.html">aimet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="android.html">Android</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">qnn</a></li>
+      <li class="breadcrumb-item active">qairt-converter</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/qnn/qairt-converter.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="qairt-converter">
+<h1>qairt-converter<a class="headerlink" href="#qairt-converter" title="Permalink to this heading"></a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;Maintained by k2-fsa&quot;</span> <span class="o">&gt;</span> <span class="n">copyright</span><span class="o">.</span><span class="n">txt</span>
+
+<span class="n">qairt</span><span class="o">-</span><span class="n">converter</span> \
+  <span class="o">--</span><span class="n">set_model_version</span> <span class="s2">&quot;2025-10-31&quot;</span> \
+  <span class="o">--</span><span class="n">copyright_file</span> <span class="o">./</span><span class="n">copyright</span><span class="o">.</span><span class="n">txt</span> \
+  <span class="o">--</span><span class="n">input_network</span> <span class="o">./</span><span class="n">model</span><span class="o">-</span><span class="n">opset</span><span class="o">-</span><span class="mf">17.</span><span class="n">onnx</span> \
+  <span class="o">--</span><span class="n">source_model_input_shape</span> <span class="s1">&#39;x&#39;</span> <span class="mi">1</span><span class="p">,</span><span class="mi">93</span><span class="p">,</span><span class="mi">560</span> \
+  <span class="o">--</span><span class="n">source_model_input_shape</span> <span class="s1">&#39;prompt&#39;</span> <span class="mi">1</span><span class="p">,</span><span class="mi">4</span> \
+  <span class="o">--</span><span class="n">source_model_input_datatype</span> <span class="s1">&#39;x&#39;</span> <span class="n">float32</span> \
+  <span class="o">--</span><span class="n">source_model_input_datatype</span> <span class="s1">&#39;prompt&#39;</span> <span class="n">int32</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">qairt</span><span class="o">-</span><span class="n">converter</span> <span class="p">[</span><span class="o">--</span><span class="n">source_model_input_shape</span> <span class="n">INPUT_NAME</span> <span class="n">INPUT_DIM</span><span class="p">]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">out_tensor_node</span> <span class="n">OUT_NAMES</span><span class="p">]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">source_model_input_datatype</span> <span class="n">INPUT_NAME</span> <span class="n">INPUT_DTYPE</span><span class="p">]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">source_model_input_layout</span> <span class="n">INPUT_NAME</span> <span class="n">INPUT_LAYOUT</span><span class="p">]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">desired_input_layout</span> <span class="n">INPUT_NAME</span> <span class="n">DESIRED_INPUT_LAYOUT</span><span class="p">]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">source_model_output_layout</span> <span class="n">OUTPUT_NAME</span> <span class="n">OUTPUT_LAYOUT</span><span class="p">]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">desired_output_layout</span> <span class="n">OUTPUT_NAME</span> <span class="n">DESIRED_OUTPUT_LAYOUT</span><span class="p">]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">desired_input_color_encoding</span>  <span class="o">...</span><span class="p">]]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">preserve_io_datatype</span> <span class="p">[</span><span class="n">PRESERVE_IO_DATATYPE</span> <span class="o">...</span><span class="p">]]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">dump_config_template</span> <span class="n">DUMP_IO_CONFIG_TEMPLATE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">config</span> <span class="n">IO_CONFIG</span><span class="p">]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">dry_run</span> <span class="p">[</span><span class="n">DRY_RUN</span><span class="p">]]</span> <span class="p">[</span><span class="o">--</span><span class="n">enable_framework_trace</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">gguf_config</span> <span class="n">GGUF_CONFIG</span><span class="p">]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">quantization_overrides</span> <span class="n">QUANTIZATION_OVERRIDES</span><span class="p">]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">lora_weight_list</span> <span class="n">LORA_WEIGHT_LIST</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">onnx_skip_simplification</span><span class="p">]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">onnx_override_batch</span> <span class="n">BATCH</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">onnx_define_symbol</span> <span class="n">SYMBOL_NAME</span> <span class="n">VALUE</span><span class="p">]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">onnx_validate_models</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">onnx_summary</span><span class="p">]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">onnx_perform_sequence_construct_optimizer</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">tf_summary</span><span class="p">]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">tf_disable_optimization</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">tf_show_unconsumed_nodes</span><span class="p">]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">tf_saved_model_tag</span> <span class="n">SAVED_MODEL_TAG</span><span class="p">]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">tf_saved_model_signature_key</span> <span class="n">SAVED_MODEL_SIGNATURE_KEY</span><span class="p">]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">tf_validate_models</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">tflite_signature_name</span> <span class="n">SIGNATURE_NAME</span><span class="p">]</span>
+                       <span class="o">--</span><span class="n">input_network</span> <span class="n">INPUT_NETWORK</span> <span class="p">[</span><span class="o">--</span><span class="n">debug</span> <span class="p">[</span><span class="n">DEBUG</span><span class="p">]]</span> <span class="p">[</span><span class="o">--</span><span class="n">output_path</span> <span class="n">OUTPUT_PATH</span><span class="p">]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">copyright_file</span> <span class="n">COPYRIGHT_FILE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">float_bitwidth</span> <span class="n">FLOAT_BITWIDTH</span><span class="p">]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">float_bias_bitwidth</span> <span class="n">FLOAT_BIAS_BITWIDTH</span><span class="p">]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">set_model_version</span> <span class="n">MODEL_VERSION</span><span class="p">]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">converter_op_package_lib</span> <span class="n">CONVERTER_OP_PACKAGE_LIB</span><span class="p">]</span>
+                       <span class="p">[</span><span class="o">--</span><span class="n">package_name</span> <span class="n">PACKAGE_NAME</span> <span class="o">|</span> <span class="o">--</span><span class="n">op_package_config</span> <span class="n">CUSTOM_OP_CONFIG_PATHS</span> <span class="p">[</span><span class="n">CUSTOM_OP_CONFIG_PATHS</span> <span class="o">...</span><span class="p">]]</span>
+                       <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">target_backend</span> <span class="n">BACKEND</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">target_soc_model</span> <span class="n">SOC_MODEL</span><span class="p">]</span>
+
+<span class="n">required</span> <span class="n">arguments</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">input_network</span> <span class="n">INPUT_NETWORK</span><span class="p">,</span> <span class="o">-</span><span class="n">i</span> <span class="n">INPUT_NETWORK</span>
+                        <span class="n">Path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">source</span> <span class="n">framework</span> <span class="n">model</span><span class="o">.</span>
+
+<span class="n">optional</span> <span class="n">arguments</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">source_model_input_shape</span> <span class="n">INPUT_NAME</span> <span class="n">INPUT_DIM</span><span class="p">,</span> <span class="o">-</span><span class="n">s</span> <span class="n">INPUT_NAME</span> <span class="n">INPUT_DIM</span>
+                        <span class="n">The</span> <span class="n">name</span> <span class="ow">and</span> <span class="n">dimension</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">buffers</span> <span class="n">to</span> <span class="n">the</span> <span class="n">network</span> <span class="n">specified</span> <span class="ow">in</span>
+                        <span class="n">the</span> <span class="nb">format</span> <span class="p">[</span><span class="n">input_name</span> <span class="n">comma</span><span class="o">-</span><span class="n">separated</span><span class="o">-</span><span class="n">dimensions</span><span class="p">],</span>
+                        <span class="k">for</span> <span class="n">example</span><span class="p">:</span> <span class="o">--</span><span class="n">source_model_input_shape</span> <span class="s1">&#39;data&#39;</span> <span class="mi">1</span><span class="p">,</span><span class="mi">224</span><span class="p">,</span><span class="mi">224</span><span class="p">,</span><span class="mf">3.</span>
+                        <span class="n">Note</span> <span class="n">that</span> <span class="n">the</span> <span class="n">quotes</span> <span class="n">should</span> <span class="n">always</span> <span class="n">be</span> <span class="n">included</span> <span class="ow">in</span> <span class="n">order</span> <span class="n">to</span> <span class="n">handle</span> <span class="n">special</span>
+                        <span class="n">characters</span><span class="p">,</span> <span class="n">spaces</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span>
+                        <span class="n">NOTE</span><span class="p">:</span> <span class="n">Required</span> <span class="k">for</span> <span class="n">TensorFlow</span> <span class="ow">and</span> <span class="n">PyTorch</span><span class="o">.</span> <span class="n">Optional</span> <span class="k">for</span> <span class="n">Onnx</span> <span class="ow">and</span> <span class="n">Tflite</span>
+                        <span class="n">In</span> <span class="n">case</span> <span class="n">of</span> <span class="n">Onnx</span><span class="p">,</span> <span class="n">this</span> <span class="n">feature</span> <span class="n">works</span> <span class="n">only</span> <span class="k">with</span> <span class="n">Onnx</span> <span class="mf">1.6.0</span> <span class="ow">and</span> <span class="n">above</span>
+  <span class="o">--</span><span class="n">out_tensor_node</span> <span class="n">OUT_NAMES</span><span class="p">,</span> <span class="o">--</span><span class="n">out_tensor_name</span> <span class="n">OUT_NAMES</span>
+                        <span class="n">Name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">graph</span><span class="s1">&#39;s output Tensor Names. Multiple output names should be</span>
+                        <span class="n">provided</span> <span class="n">separately</span> <span class="n">like</span><span class="p">:</span>
+                            <span class="o">--</span><span class="n">out_tensor_name</span> <span class="n">out_1</span> <span class="o">--</span><span class="n">out_tensor_name</span> <span class="n">out_2</span>
+                        <span class="n">NOTE</span><span class="p">:</span> <span class="n">Required</span> <span class="k">for</span> <span class="n">TensorFlow</span><span class="o">.</span> <span class="n">Optional</span> <span class="k">for</span> <span class="n">Onnx</span><span class="p">,</span> <span class="n">Tflite</span> <span class="ow">and</span> <span class="n">PyTorch</span>
+  <span class="o">--</span><span class="n">source_model_input_datatype</span> <span class="n">INPUT_NAME</span> <span class="n">INPUT_DTYPE</span>
+                        <span class="n">The</span> <span class="n">names</span> <span class="ow">and</span> <span class="n">datatype</span> <span class="n">of</span> <span class="n">the</span> <span class="n">network</span> <span class="nb">input</span> <span class="n">layers</span> <span class="n">specified</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">format</span>
+                        <span class="p">[</span><span class="n">input_name</span> <span class="n">datatype</span><span class="p">],</span> <span class="k">for</span> <span class="n">example</span><span class="p">:</span>
+                            <span class="s1">&#39;data&#39;</span> <span class="s1">&#39;float32&#39;</span>
+                        <span class="n">Default</span> <span class="ow">is</span> <span class="n">float32</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">specified</span>
+                        <span class="n">Note</span> <span class="n">that</span> <span class="n">the</span> <span class="n">quotes</span> <span class="n">should</span> <span class="n">always</span> <span class="n">be</span> <span class="n">included</span> <span class="ow">in</span> <span class="n">order</span> <span class="n">to</span> <span class="n">handlespecial</span>
+                        <span class="n">characters</span><span class="p">,</span> <span class="n">spaces</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span>
+                        <span class="n">For</span> <span class="n">multiple</span> <span class="n">inputs</span> <span class="n">specify</span> <span class="n">multiple</span> <span class="o">--</span><span class="n">source_model_input_datatype</span> <span class="n">on</span> <span class="n">the</span>
+                        <span class="n">command</span> <span class="n">line</span> <span class="n">like</span><span class="p">:</span>
+                            <span class="o">--</span><span class="n">source_model_input_datatype</span> <span class="s1">&#39;data1&#39;</span> <span class="s1">&#39;float32&#39;</span>
+                        <span class="o">--</span><span class="n">source_model_input_datatype</span> <span class="s1">&#39;data2&#39;</span> <span class="s1">&#39;float32&#39;</span>
+  <span class="o">--</span><span class="n">source_model_input_layout</span> <span class="n">INPUT_NAME</span> <span class="n">INPUT_LAYOUT</span>
+                        <span class="n">Layout</span> <span class="n">of</span> <span class="n">each</span> <span class="nb">input</span> <span class="n">tensor</span><span class="o">.</span> <span class="n">If</span> <span class="ow">not</span> <span class="n">specified</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span> <span class="n">use</span> <span class="n">the</span> <span class="n">default</span> <span class="n">based</span>
+                        <span class="n">on</span> <span class="n">the</span> <span class="n">Source</span> <span class="n">Framework</span><span class="p">,</span> <span class="n">shape</span> <span class="n">of</span> <span class="nb">input</span> <span class="ow">and</span> <span class="nb">input</span> <span class="n">encoding</span><span class="o">.</span>
+                        <span class="n">Accepted</span> <span class="n">values</span> <span class="n">are</span><span class="o">-</span>
+                            <span class="n">NCDHW</span><span class="p">,</span> <span class="n">NDHWC</span><span class="p">,</span> <span class="n">NCHW</span><span class="p">,</span> <span class="n">NHWC</span><span class="p">,</span> <span class="n">HWIO</span><span class="p">,</span> <span class="n">OIHW</span><span class="p">,</span> <span class="n">NFC</span><span class="p">,</span> <span class="n">NCF</span><span class="p">,</span> <span class="n">NTF</span><span class="p">,</span> <span class="n">TNF</span><span class="p">,</span> <span class="n">NF</span><span class="p">,</span> <span class="n">NC</span><span class="p">,</span> <span class="n">F</span>
+                        <span class="n">N</span> <span class="o">=</span> <span class="n">Batch</span><span class="p">,</span> <span class="n">C</span> <span class="o">=</span> <span class="n">Channels</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="n">Depth</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="n">Height</span><span class="p">,</span> <span class="n">W</span> <span class="o">=</span> <span class="n">Width</span><span class="p">,</span> <span class="n">F</span> <span class="o">=</span> <span class="n">Feature</span><span class="p">,</span>
+                        <span class="n">T</span> <span class="o">=</span> <span class="n">Time</span><span class="p">,</span> <span class="n">I</span> <span class="o">=</span> <span class="n">Input</span><span class="p">,</span> <span class="n">O</span> <span class="o">=</span> <span class="n">Output</span>
+                        <span class="n">NDHWC</span><span class="o">/</span><span class="n">NCDHW</span> <span class="n">used</span> <span class="k">for</span> <span class="mi">5</span><span class="n">d</span> <span class="n">inputs</span>
+                        <span class="n">NHWC</span><span class="o">/</span><span class="n">NCHW</span> <span class="n">used</span> <span class="k">for</span> <span class="mi">4</span><span class="n">d</span> <span class="n">image</span><span class="o">-</span><span class="n">like</span> <span class="n">inputs</span>
+                        <span class="n">HWIO</span><span class="o">/</span><span class="n">IOHW</span> <span class="n">used</span> <span class="k">for</span> <span class="n">Weights</span> <span class="n">of</span> <span class="n">Conv</span> <span class="n">Ops</span>
+                        <span class="n">NFC</span><span class="o">/</span><span class="n">NCF</span> <span class="n">used</span> <span class="k">for</span> <span class="n">inputs</span> <span class="n">to</span> <span class="n">Conv1D</span> <span class="ow">or</span> <span class="n">other</span> <span class="mi">1</span><span class="n">D</span> <span class="n">ops</span>
+                        <span class="n">NTF</span><span class="o">/</span><span class="n">TNF</span> <span class="n">used</span> <span class="k">for</span> <span class="n">inputs</span> <span class="k">with</span> <span class="n">time</span> <span class="n">steps</span> <span class="n">like</span> <span class="n">the</span> <span class="n">ones</span> <span class="n">used</span> <span class="k">for</span> <span class="n">LSTM</span> <span class="n">op</span>
+                        <span class="n">NF</span> <span class="n">used</span> <span class="k">for</span> <span class="mi">2</span><span class="n">D</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">like</span> <span class="n">the</span> <span class="n">inputs</span> <span class="n">to</span> <span class="n">Dense</span><span class="o">/</span><span class="n">FullyConnected</span> <span class="n">layers</span>
+                        <span class="n">NC</span> <span class="n">used</span> <span class="k">for</span> <span class="mi">2</span><span class="n">D</span> <span class="n">inputs</span> <span class="k">with</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">batch</span> <span class="ow">and</span> <span class="n">other</span> <span class="k">for</span> <span class="n">Channels</span> <span class="p">(</span><span class="n">rarely</span> <span class="n">used</span><span class="p">)</span>
+                        <span class="n">F</span> <span class="n">used</span> <span class="k">for</span> <span class="mi">1</span><span class="n">D</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">Bias</span> <span class="n">tensor</span>
+                        <span class="n">For</span> <span class="n">multiple</span> <span class="n">inputs</span> <span class="n">specify</span> <span class="n">multiple</span> <span class="o">--</span><span class="n">source_model_input_layout</span> <span class="n">on</span> <span class="n">the</span>
+                        <span class="n">command</span> <span class="n">line</span><span class="o">.</span>
+                        <span class="n">Eg</span><span class="p">:</span>
+                            <span class="o">--</span><span class="n">source_model_input_layout</span> <span class="s2">&quot;data1&quot;</span> <span class="n">NCHW</span> <span class="o">--</span><span class="n">source_model_input_layout</span>
+                        <span class="s2">&quot;data2&quot;</span> <span class="n">NCHW</span>
+  <span class="o">--</span><span class="n">desired_input_layout</span> <span class="n">INPUT_NAME</span> <span class="n">DESIRED_INPUT_LAYOUT</span>
+                        <span class="n">Desired</span> <span class="n">Layout</span> <span class="n">of</span> <span class="n">each</span> <span class="nb">input</span> <span class="n">tensor</span><span class="o">.</span> <span class="n">If</span> <span class="ow">not</span> <span class="n">specified</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span> <span class="n">use</span> <span class="n">the</span>
+                        <span class="n">default</span> <span class="n">based</span> <span class="n">on</span> <span class="n">the</span> <span class="n">Source</span> <span class="n">Framework</span><span class="p">,</span> <span class="n">shape</span> <span class="n">of</span> <span class="nb">input</span> <span class="ow">and</span> <span class="nb">input</span> <span class="n">encoding</span><span class="o">.</span>
+                        <span class="n">Accepted</span> <span class="n">values</span> <span class="n">are</span><span class="o">-</span>
+                            <span class="n">NCDHW</span><span class="p">,</span> <span class="n">NDHWC</span><span class="p">,</span> <span class="n">NCHW</span><span class="p">,</span> <span class="n">NHWC</span><span class="p">,</span> <span class="n">HWIO</span><span class="p">,</span> <span class="n">OIHW</span><span class="p">,</span> <span class="n">NFC</span><span class="p">,</span> <span class="n">NCF</span><span class="p">,</span> <span class="n">NTF</span><span class="p">,</span> <span class="n">TNF</span><span class="p">,</span> <span class="n">NF</span><span class="p">,</span> <span class="n">NC</span><span class="p">,</span> <span class="n">F</span>
+                        <span class="n">N</span> <span class="o">=</span> <span class="n">Batch</span><span class="p">,</span> <span class="n">C</span> <span class="o">=</span> <span class="n">Channels</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="n">Depth</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="n">Height</span><span class="p">,</span> <span class="n">W</span> <span class="o">=</span> <span class="n">Width</span><span class="p">,</span> <span class="n">F</span> <span class="o">=</span> <span class="n">Feature</span><span class="p">,</span>
+                        <span class="n">T</span> <span class="o">=</span> <span class="n">Time</span><span class="p">,</span> <span class="n">I</span> <span class="o">=</span> <span class="n">Input</span><span class="p">,</span> <span class="n">O</span> <span class="o">=</span> <span class="n">Output</span>
+                        <span class="n">NDHWC</span><span class="o">/</span><span class="n">NCDHW</span> <span class="n">used</span> <span class="k">for</span> <span class="mi">5</span><span class="n">d</span> <span class="n">inputs</span>
+                        <span class="n">NHWC</span><span class="o">/</span><span class="n">NCHW</span> <span class="n">used</span> <span class="k">for</span> <span class="mi">4</span><span class="n">d</span> <span class="n">image</span><span class="o">-</span><span class="n">like</span> <span class="n">inputs</span>
+                        <span class="n">HWIO</span><span class="o">/</span><span class="n">IOHW</span> <span class="n">used</span> <span class="k">for</span> <span class="n">Weights</span> <span class="n">of</span> <span class="n">Conv</span> <span class="n">Ops</span>
+                        <span class="n">NFC</span><span class="o">/</span><span class="n">NCF</span> <span class="n">used</span> <span class="k">for</span> <span class="n">inputs</span> <span class="n">to</span> <span class="n">Conv1D</span> <span class="ow">or</span> <span class="n">other</span> <span class="mi">1</span><span class="n">D</span> <span class="n">ops</span>
+                        <span class="n">NTF</span><span class="o">/</span><span class="n">TNF</span> <span class="n">used</span> <span class="k">for</span> <span class="n">inputs</span> <span class="k">with</span> <span class="n">time</span> <span class="n">steps</span> <span class="n">like</span> <span class="n">the</span> <span class="n">ones</span> <span class="n">used</span> <span class="k">for</span> <span class="n">LSTM</span> <span class="n">op</span>
+                        <span class="n">NF</span> <span class="n">used</span> <span class="k">for</span> <span class="mi">2</span><span class="n">D</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">like</span> <span class="n">the</span> <span class="n">inputs</span> <span class="n">to</span> <span class="n">Dense</span><span class="o">/</span><span class="n">FullyConnected</span> <span class="n">layers</span>
+                        <span class="n">NC</span> <span class="n">used</span> <span class="k">for</span> <span class="mi">2</span><span class="n">D</span> <span class="n">inputs</span> <span class="k">with</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">batch</span> <span class="ow">and</span> <span class="n">other</span> <span class="k">for</span> <span class="n">Channels</span> <span class="p">(</span><span class="n">rarely</span> <span class="n">used</span><span class="p">)</span>
+                        <span class="n">F</span> <span class="n">used</span> <span class="k">for</span> <span class="mi">1</span><span class="n">D</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">Bias</span> <span class="n">tensor</span>
+                        <span class="n">For</span> <span class="n">multiple</span> <span class="n">inputs</span> <span class="n">specify</span> <span class="n">multiple</span> <span class="o">--</span><span class="n">desired_input_layout</span> <span class="n">on</span> <span class="n">the</span> <span class="n">command</span>
+                        <span class="n">line</span><span class="o">.</span>
+                        <span class="n">Eg</span><span class="p">:</span>
+                            <span class="o">--</span><span class="n">desired_input_layout</span> <span class="s2">&quot;data1&quot;</span> <span class="n">NCHW</span> <span class="o">--</span><span class="n">desired_input_layout</span> <span class="s2">&quot;data2&quot;</span> <span class="n">NCHW</span>
+  <span class="o">--</span><span class="n">source_model_output_layout</span> <span class="n">OUTPUT_NAME</span> <span class="n">OUTPUT_LAYOUT</span>
+                        <span class="n">Layout</span> <span class="n">of</span> <span class="n">each</span> <span class="n">output</span> <span class="n">tensor</span><span class="o">.</span> <span class="n">If</span> <span class="ow">not</span> <span class="n">specified</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span> <span class="n">use</span> <span class="n">the</span> <span class="n">default</span>
+                        <span class="n">based</span> <span class="n">on</span> <span class="n">the</span> <span class="n">Source</span> <span class="n">Framework</span><span class="p">,</span> <span class="n">shape</span> <span class="n">of</span> <span class="nb">input</span> <span class="ow">and</span> <span class="nb">input</span> <span class="n">encoding</span><span class="o">.</span>
+                        <span class="n">Accepted</span> <span class="n">values</span> <span class="n">are</span><span class="o">-</span>
+                            <span class="n">NCDHW</span><span class="p">,</span> <span class="n">NDHWC</span><span class="p">,</span> <span class="n">NCHW</span><span class="p">,</span> <span class="n">NHWC</span><span class="p">,</span> <span class="n">HWIO</span><span class="p">,</span> <span class="n">OIHW</span><span class="p">,</span> <span class="n">NFC</span><span class="p">,</span> <span class="n">NCF</span><span class="p">,</span> <span class="n">NTF</span><span class="p">,</span> <span class="n">TNF</span><span class="p">,</span> <span class="n">NF</span><span class="p">,</span> <span class="n">NC</span><span class="p">,</span> <span class="n">F</span>
+                        <span class="n">N</span> <span class="o">=</span> <span class="n">Batch</span><span class="p">,</span> <span class="n">C</span> <span class="o">=</span> <span class="n">Channels</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="n">Depth</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="n">Height</span><span class="p">,</span> <span class="n">W</span> <span class="o">=</span> <span class="n">Width</span><span class="p">,</span> <span class="n">F</span> <span class="o">=</span> <span class="n">Feature</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span>
+                        <span class="n">Time</span>
+                        <span class="n">NDHWC</span><span class="o">/</span><span class="n">NCDHW</span> <span class="n">used</span> <span class="k">for</span> <span class="mi">5</span><span class="n">d</span> <span class="n">inputs</span>
+                        <span class="n">NHWC</span><span class="o">/</span><span class="n">NCHW</span> <span class="n">used</span> <span class="k">for</span> <span class="mi">4</span><span class="n">d</span> <span class="n">image</span><span class="o">-</span><span class="n">like</span> <span class="n">inputs</span>
+                        <span class="n">NFC</span><span class="o">/</span><span class="n">NCF</span> <span class="n">used</span> <span class="k">for</span> <span class="n">inputs</span> <span class="n">to</span> <span class="n">Conv1D</span> <span class="ow">or</span> <span class="n">other</span> <span class="mi">1</span><span class="n">D</span> <span class="n">ops</span>
+                        <span class="n">NTF</span><span class="o">/</span><span class="n">TNF</span> <span class="n">used</span> <span class="k">for</span> <span class="n">inputs</span> <span class="k">with</span> <span class="n">time</span> <span class="n">steps</span> <span class="n">like</span> <span class="n">the</span> <span class="n">ones</span> <span class="n">used</span> <span class="k">for</span> <span class="n">LSTM</span> <span class="n">op</span>
+                        <span class="n">NF</span> <span class="n">used</span> <span class="k">for</span> <span class="mi">2</span><span class="n">D</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">like</span> <span class="n">the</span> <span class="n">inputs</span> <span class="n">to</span> <span class="n">Dense</span><span class="o">/</span><span class="n">FullyConnected</span> <span class="n">layers</span>
+                        <span class="n">NC</span> <span class="n">used</span> <span class="k">for</span> <span class="mi">2</span><span class="n">D</span> <span class="n">inputs</span> <span class="k">with</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">batch</span> <span class="ow">and</span> <span class="n">other</span> <span class="k">for</span> <span class="n">Channels</span> <span class="p">(</span><span class="n">rarely</span> <span class="n">used</span><span class="p">)</span>
+                        <span class="n">F</span> <span class="n">used</span> <span class="k">for</span> <span class="mi">1</span><span class="n">D</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">Bias</span> <span class="n">tensor</span>
+                        <span class="n">For</span> <span class="n">multiple</span> <span class="n">inputs</span> <span class="n">specify</span> <span class="n">multiple</span> <span class="o">--</span><span class="n">source_model_output_layout</span> <span class="n">on</span> <span class="n">the</span>
+                        <span class="n">command</span> <span class="n">line</span><span class="o">.</span>
+                        <span class="n">Eg</span><span class="p">:</span>
+                            <span class="o">--</span><span class="n">source_model_output_layout</span> <span class="s2">&quot;data1&quot;</span> <span class="n">NCHW</span> <span class="o">--</span><span class="n">source_model_output_layout</span>
+                        <span class="s2">&quot;data2&quot;</span> <span class="n">NCHW</span>
+  <span class="o">--</span><span class="n">desired_output_layout</span> <span class="n">OUTPUT_NAME</span> <span class="n">DESIRED_OUTPUT_LAYOUT</span>
+                        <span class="n">Desired</span> <span class="n">Layout</span> <span class="n">of</span> <span class="n">each</span> <span class="n">output</span> <span class="n">tensor</span><span class="o">.</span> <span class="n">If</span> <span class="ow">not</span> <span class="n">specified</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span> <span class="n">use</span> <span class="n">the</span>
+                        <span class="n">default</span> <span class="n">based</span> <span class="n">on</span> <span class="n">the</span> <span class="n">Source</span> <span class="n">Framework</span><span class="o">.</span>
+                        <span class="n">Accepted</span> <span class="n">values</span> <span class="n">are</span><span class="o">-</span>
+                            <span class="n">NCDHW</span><span class="p">,</span> <span class="n">NDHWC</span><span class="p">,</span> <span class="n">NCHW</span><span class="p">,</span> <span class="n">NHWC</span><span class="p">,</span> <span class="n">HWIO</span><span class="p">,</span> <span class="n">OIHW</span><span class="p">,</span> <span class="n">NFC</span><span class="p">,</span> <span class="n">NCF</span><span class="p">,</span> <span class="n">NTF</span><span class="p">,</span> <span class="n">TNF</span><span class="p">,</span> <span class="n">NF</span><span class="p">,</span> <span class="n">NC</span><span class="p">,</span> <span class="n">F</span>
+                        <span class="n">N</span> <span class="o">=</span> <span class="n">Batch</span><span class="p">,</span> <span class="n">C</span> <span class="o">=</span> <span class="n">Channels</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="n">Depth</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="n">Height</span><span class="p">,</span> <span class="n">W</span> <span class="o">=</span> <span class="n">Width</span><span class="p">,</span> <span class="n">F</span> <span class="o">=</span> <span class="n">Feature</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span>
+                        <span class="n">Time</span>
+                        <span class="n">NDHWC</span><span class="o">/</span><span class="n">NCDHW</span> <span class="n">used</span> <span class="k">for</span> <span class="mi">5</span><span class="n">d</span> <span class="n">outputs</span>
+                        <span class="n">NHWC</span><span class="o">/</span><span class="n">NCHW</span> <span class="n">used</span> <span class="k">for</span> <span class="mi">4</span><span class="n">d</span> <span class="n">image</span><span class="o">-</span><span class="n">like</span> <span class="n">outputs</span>
+                        <span class="n">NFC</span><span class="o">/</span><span class="n">NCF</span> <span class="n">used</span> <span class="k">for</span> <span class="n">outputs</span> <span class="n">to</span> <span class="n">Conv1D</span> <span class="ow">or</span> <span class="n">other</span> <span class="mi">1</span><span class="n">D</span> <span class="n">ops</span>
+                        <span class="n">NTF</span><span class="o">/</span><span class="n">TNF</span> <span class="n">used</span> <span class="k">for</span> <span class="n">outputs</span> <span class="k">with</span> <span class="n">time</span> <span class="n">steps</span> <span class="n">like</span> <span class="n">the</span> <span class="n">ones</span> <span class="n">used</span> <span class="k">for</span> <span class="n">LSTM</span> <span class="n">op</span>
+                        <span class="n">NF</span> <span class="n">used</span> <span class="k">for</span> <span class="mi">2</span><span class="n">D</span> <span class="n">outputs</span><span class="p">,</span> <span class="n">like</span> <span class="n">the</span> <span class="n">outputs</span> <span class="n">to</span> <span class="n">Dense</span><span class="o">/</span><span class="n">FullyConnected</span> <span class="n">layers</span>
+                        <span class="n">NC</span> <span class="n">used</span> <span class="k">for</span> <span class="mi">2</span><span class="n">D</span> <span class="n">outputs</span> <span class="k">with</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">batch</span> <span class="ow">and</span> <span class="n">other</span> <span class="k">for</span> <span class="n">Channels</span> <span class="p">(</span><span class="n">rarely</span> <span class="n">used</span><span class="p">)</span>
+                        <span class="n">F</span> <span class="n">used</span> <span class="k">for</span> <span class="mi">1</span><span class="n">D</span> <span class="n">outputs</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">Bias</span> <span class="n">tensor</span>
+                        <span class="n">For</span> <span class="n">multiple</span> <span class="n">outputs</span> <span class="n">specify</span> <span class="n">multiple</span> <span class="o">--</span><span class="n">desired_output_layout</span> <span class="n">on</span> <span class="n">the</span> <span class="n">command</span>
+                        <span class="n">line</span><span class="o">.</span>
+                        <span class="n">Eg</span><span class="p">:</span>
+                            <span class="o">--</span><span class="n">desired_output_layout</span> <span class="s2">&quot;data1&quot;</span> <span class="n">NCHW</span> <span class="o">--</span><span class="n">desired_output_layout</span> <span class="s2">&quot;data2&quot;</span>
+                        <span class="n">NCHW</span>
+  <span class="o">--</span><span class="n">desired_input_color_encoding</span>  <span class="o">...</span><span class="p">],</span> <span class="o">-</span><span class="n">e</span>  <span class="o">...</span><span class="p">]</span>
+                        <span class="n">Usage</span><span class="p">:</span>     <span class="o">--</span><span class="n">input_color_encoding</span> <span class="s2">&quot;INPUT_NAME&quot;</span> <span class="n">INPUT_ENCODING_IN</span>
+                        <span class="p">[</span><span class="n">INPUT_ENCODING_OUT</span><span class="p">]</span>
+                        <span class="n">Input</span> <span class="n">encoding</span> <span class="n">of</span> <span class="n">the</span> <span class="n">network</span> <span class="n">inputs</span><span class="o">.</span> <span class="n">Default</span> <span class="ow">is</span> <span class="n">bgr</span><span class="o">.</span>
+                        <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span>
+                           <span class="o">--</span><span class="n">input_color_encoding</span> <span class="s2">&quot;data&quot;</span> <span class="n">rgba</span>
+                        <span class="n">Quotes</span> <span class="n">must</span> <span class="n">wrap</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">node</span> <span class="n">name</span> <span class="n">to</span> <span class="n">handle</span> <span class="n">special</span> <span class="n">characters</span><span class="p">,</span>
+                        <span class="n">spaces</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span> <span class="n">To</span> <span class="n">specify</span> <span class="n">encodings</span> <span class="k">for</span> <span class="n">multiple</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">invoke</span>
+                        <span class="o">--</span><span class="n">input_color_encoding</span> <span class="k">for</span> <span class="n">each</span> <span class="n">one</span><span class="o">.</span>
+                        <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span>
+                            <span class="o">--</span><span class="n">input_color_encoding</span> <span class="s2">&quot;data1&quot;</span> <span class="n">rgba</span> <span class="o">--</span><span class="n">input_color_encoding</span> <span class="s2">&quot;data2&quot;</span> <span class="n">other</span>
+                        <span class="n">Optionally</span><span class="p">,</span> <span class="n">an</span> <span class="n">output</span> <span class="n">encoding</span> <span class="n">may</span> <span class="n">be</span> <span class="n">specified</span> <span class="k">for</span> <span class="n">an</span> <span class="nb">input</span> <span class="n">node</span> <span class="n">by</span>
+                        <span class="n">providing</span> <span class="n">a</span> <span class="n">second</span> <span class="n">encoding</span><span class="o">.</span> <span class="n">The</span> <span class="n">default</span> <span class="n">output</span> <span class="n">encoding</span> <span class="ow">is</span> <span class="n">bgr</span><span class="o">.</span>
+                        <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span>
+                            <span class="o">--</span><span class="n">input_color_encoding</span> <span class="s2">&quot;data3&quot;</span> <span class="n">rgba</span> <span class="n">rgb</span>
+                        <span class="n">Input</span> <span class="n">encoding</span> <span class="n">types</span><span class="p">:</span>
+                             <span class="n">image</span> <span class="n">color</span> <span class="n">encodings</span><span class="p">:</span> <span class="n">bgr</span><span class="p">,</span><span class="n">rgb</span><span class="p">,</span> <span class="n">nv21</span><span class="p">,</span> <span class="n">nv12</span><span class="p">,</span> <span class="o">...</span>
+                            <span class="n">time_series</span><span class="p">:</span> <span class="k">for</span> <span class="n">inputs</span> <span class="n">of</span> <span class="n">rnn</span> <span class="n">models</span><span class="p">;</span>
+                            <span class="n">other</span><span class="p">:</span> <span class="ow">not</span> <span class="n">available</span> <span class="n">above</span> <span class="ow">or</span> <span class="ow">is</span> <span class="n">unknown</span><span class="o">.</span>
+                        <span class="n">Supported</span> <span class="n">encodings</span><span class="p">:</span>
+                           <span class="n">bgr</span>
+                           <span class="n">rgb</span>
+                           <span class="n">rgba</span>
+                           <span class="n">argb32</span>
+                           <span class="n">nv21</span>
+                           <span class="n">nv12</span>
+  <span class="o">--</span><span class="n">preserve_io_datatype</span> <span class="p">[</span><span class="n">PRESERVE_IO_DATATYPE</span> <span class="o">...</span><span class="p">]</span>
+                        <span class="n">Use</span> <span class="n">this</span> <span class="n">option</span> <span class="n">to</span> <span class="n">preserve</span> <span class="n">IO</span> <span class="n">datatype</span><span class="o">.</span> <span class="n">The</span> <span class="n">different</span> <span class="n">ways</span> <span class="n">of</span> <span class="n">using</span> <span class="n">this</span>
+                        <span class="n">option</span> <span class="n">are</span> <span class="k">as</span> <span class="n">follows</span><span class="p">:</span>
+                            <span class="o">--</span><span class="n">preserve_io_datatype</span> <span class="o">&lt;</span><span class="n">space</span> <span class="n">separated</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">names</span> <span class="n">of</span> <span class="n">inputs</span> <span class="ow">and</span>
+                        <span class="n">outputs</span> <span class="n">of</span> <span class="n">the</span> <span class="n">graph</span><span class="o">&gt;</span>
+                        <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span>
+                            <span class="o">--</span><span class="n">preserve_io_datatype</span> <span class="n">input1</span> <span class="n">input2</span> <span class="n">output1</span>
+                        <span class="n">The</span> <span class="n">user</span> <span class="n">may</span> <span class="n">choose</span> <span class="n">to</span> <span class="n">preserve</span> <span class="n">the</span> <span class="n">datatype</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">inputs</span> <span class="ow">and</span> <span class="n">outputs</span>
+                        <span class="n">of</span> <span class="n">the</span> <span class="n">graph</span><span class="o">.</span>
+                            <span class="o">--</span><span class="n">preserve_io_datatype</span>
+                        <span class="n">Note</span><span class="p">:</span> <span class="o">--</span><span class="n">config</span> <span class="n">gets</span> <span class="n">higher</span> <span class="n">precedence</span> <span class="n">than</span> <span class="o">--</span><span class="n">preserve_io_datatype</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">dump_config_template</span> <span class="n">DUMP_IO_CONFIG_TEMPLATE</span>
+                        <span class="n">Dumps</span> <span class="n">the</span> <span class="n">yaml</span> <span class="n">template</span> <span class="k">for</span> <span class="n">I</span><span class="o">/</span><span class="n">O</span> <span class="n">configuration</span><span class="o">.</span> <span class="n">This</span> <span class="n">file</span> <span class="n">can</span> <span class="n">be</span> <span class="n">edited</span> <span class="k">as</span>
+                        <span class="n">per</span> <span class="n">the</span> <span class="n">custom</span> <span class="n">requirements</span> <span class="ow">and</span> <span class="n">passed</span> <span class="n">using</span> <span class="n">the</span> <span class="n">option</span> <span class="o">--</span><span class="n">configUse</span> <span class="n">this</span>
+                        <span class="n">option</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">a</span> <span class="n">yaml</span> <span class="n">file</span> <span class="n">to</span> <span class="n">which</span> <span class="n">the</span> <span class="n">IO</span> <span class="n">config</span> <span class="n">template</span> <span class="ow">is</span> <span class="n">dumped</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">config</span> <span class="n">IO_CONFIG</span>    <span class="n">Use</span> <span class="n">this</span> <span class="n">option</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">a</span> <span class="n">yaml</span> <span class="n">file</span> <span class="k">for</span> <span class="nb">input</span> <span class="ow">and</span> <span class="n">output</span> <span class="n">options</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">dry_run</span> <span class="p">[</span><span class="n">DRY_RUN</span><span class="p">]</span>   <span class="n">Evaluates</span> <span class="n">the</span> <span class="n">model</span> <span class="n">without</span> <span class="n">actually</span> <span class="n">converting</span> <span class="nb">any</span> <span class="n">ops</span><span class="p">,</span> <span class="ow">and</span> <span class="n">returns</span>
+                        <span class="n">unsupported</span> <span class="n">ops</span><span class="o">/</span><span class="n">attributes</span> <span class="k">as</span> <span class="n">well</span> <span class="k">as</span> <span class="n">unused</span> <span class="n">inputs</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="n">outputs</span> <span class="k">if</span> <span class="nb">any</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">enable_framework_trace</span>
+                        <span class="n">Use</span> <span class="n">this</span> <span class="n">option</span> <span class="n">to</span> <span class="n">enable</span> <span class="n">converter</span> <span class="n">to</span> <span class="n">trace</span> <span class="n">the</span> <span class="n">op</span><span class="o">/</span><span class="n">tensor</span> <span class="n">change</span>
+                        <span class="n">information</span><span class="o">.</span>
+                        <span class="n">Currently</span> <span class="n">framework</span> <span class="n">op</span> <span class="n">trace</span> <span class="ow">is</span> <span class="n">supported</span> <span class="n">only</span> <span class="k">for</span> <span class="n">ONNX</span> <span class="n">converter</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">gguf_config</span> <span class="n">GGUF_CONFIG</span>
+                        <span class="n">This</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">optional</span> <span class="n">argument</span> <span class="n">that</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="n">when</span> <span class="nb">input</span> <span class="n">network</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">GGUF</span>
+                        <span class="n">File</span><span class="o">.</span><span class="n">It</span> <span class="n">specifies</span> <span class="n">the</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">config</span> <span class="n">file</span> <span class="k">for</span> <span class="n">building</span> <span class="n">GenAI</span> <span class="n">model</span><span class="o">.</span><span class="p">(</span><span class="n">the</span>
+                        <span class="n">config</span><span class="o">.</span><span class="n">json</span> <span class="n">file</span> <span class="n">generated</span> <span class="n">when</span> <span class="n">saving</span> <span class="n">the</span> <span class="n">huggingface</span> <span class="n">model</span><span class="p">)</span>
+  <span class="o">--</span><span class="n">debug</span> <span class="p">[</span><span class="n">DEBUG</span><span class="p">]</span>       <span class="n">Run</span> <span class="n">the</span> <span class="n">converter</span> <span class="ow">in</span> <span class="n">debug</span> <span class="n">mode</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">output_path</span> <span class="n">OUTPUT_PATH</span><span class="p">,</span> <span class="o">-</span><span class="n">o</span> <span class="n">OUTPUT_PATH</span>
+                        <span class="n">Path</span> <span class="n">where</span> <span class="n">the</span> <span class="n">converted</span> <span class="n">Output</span> <span class="n">model</span> <span class="n">should</span> <span class="n">be</span> <span class="n">saved</span><span class="o">.</span><span class="n">If</span> <span class="ow">not</span> <span class="n">specified</span><span class="p">,</span> <span class="n">the</span>
+                        <span class="n">converter</span> <span class="n">model</span> <span class="n">will</span> <span class="n">be</span> <span class="n">written</span> <span class="n">to</span> <span class="n">a</span> <span class="n">file</span> <span class="k">with</span> <span class="n">same</span> <span class="n">name</span> <span class="k">as</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">model</span>
+  <span class="o">--</span><span class="n">copyright_file</span> <span class="n">COPYRIGHT_FILE</span>
+                        <span class="n">Path</span> <span class="n">to</span> <span class="n">copyright</span> <span class="n">file</span><span class="o">.</span> <span class="n">If</span> <span class="n">provided</span><span class="p">,</span> <span class="n">the</span> <span class="n">content</span> <span class="n">of</span> <span class="n">the</span> <span class="n">file</span> <span class="n">will</span> <span class="n">be</span> <span class="n">added</span>
+                        <span class="n">to</span> <span class="n">the</span> <span class="n">output</span> <span class="n">model</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">float_bitwidth</span> <span class="n">FLOAT_BITWIDTH</span>
+                        <span class="n">Use</span> <span class="n">the</span> <span class="o">--</span><span class="n">float_bitwidth</span> <span class="n">option</span> <span class="n">to</span> <span class="n">convert</span> <span class="n">the</span> <span class="n">graph</span> <span class="n">to</span> <span class="n">the</span> <span class="n">specified</span> <span class="nb">float</span>
+                        <span class="n">bitwidth</span><span class="p">,</span> <span class="n">either</span> <span class="mi">32</span> <span class="p">(</span><span class="n">default</span><span class="p">)</span> <span class="ow">or</span> <span class="mf">16.</span>
+  <span class="o">--</span><span class="n">float_bias_bitwidth</span> <span class="n">FLOAT_BIAS_BITWIDTH</span>
+                        <span class="n">Use</span> <span class="n">the</span> <span class="o">--</span><span class="n">float_bias_bitwidth</span> <span class="n">option</span> <span class="n">to</span> <span class="n">select</span> <span class="n">the</span> <span class="n">bitwidth</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span> <span class="nb">float</span>
+                        <span class="n">bias</span> <span class="n">tensor</span><span class="p">,</span> <span class="n">either</span> <span class="mi">32</span> <span class="ow">or</span> <span class="mi">16</span> <span class="p">(</span><span class="n">default</span> <span class="s1">&#39;0&#39;</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">provided</span><span class="p">)</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">set_model_version</span> <span class="n">MODEL_VERSION</span>
+                        <span class="n">User</span><span class="o">-</span><span class="n">defined</span> <span class="n">ASCII</span> <span class="n">string</span> <span class="n">to</span> <span class="n">identify</span> <span class="n">the</span> <span class="n">model</span><span class="p">,</span> <span class="n">only</span> <span class="n">first</span> <span class="mi">64</span> <span class="nb">bytes</span> <span class="n">will</span> <span class="n">be</span>
+                        <span class="n">stored</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+
+<span class="n">Custom</span> <span class="n">Op</span> <span class="n">Package</span> <span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">converter_op_package_lib</span> <span class="n">CONVERTER_OP_PACKAGE_LIB</span><span class="p">,</span> <span class="o">-</span><span class="n">cpl</span> <span class="n">CONVERTER_OP_PACKAGE_LIB</span>
+                        <span class="n">Absolute</span> <span class="n">path</span> <span class="n">to</span> <span class="n">converter</span> <span class="n">op</span> <span class="n">package</span> <span class="n">library</span> <span class="n">compiled</span> <span class="n">by</span> <span class="n">the</span> <span class="n">OpPackage</span>
+                        <span class="n">generator</span><span class="o">.</span> <span class="n">Must</span> <span class="n">be</span> <span class="n">separated</span> <span class="n">by</span> <span class="n">a</span> <span class="n">comma</span> <span class="k">for</span> <span class="n">multiple</span> <span class="n">package</span> <span class="n">libraries</span><span class="o">.</span>
+                        <span class="n">Note</span><span class="p">:</span> <span class="n">Order</span> <span class="n">of</span> <span class="n">converter</span> <span class="n">op</span> <span class="n">package</span> <span class="n">libraries</span> <span class="n">must</span> <span class="n">follow</span> <span class="n">the</span> <span class="n">order</span> <span class="n">of</span> <span class="n">xmls</span><span class="o">.</span>
+                        <span class="n">Ex1</span><span class="p">:</span> <span class="o">--</span><span class="n">converter_op_package_lib</span> <span class="n">absolute_path_to</span><span class="o">/</span><span class="n">libExample</span><span class="o">.</span><span class="n">so</span>
+                        <span class="n">Ex2</span><span class="p">:</span> <span class="o">-</span><span class="n">cpl</span> <span class="n">absolute_path_to</span><span class="o">/</span><span class="n">libExample1</span><span class="o">.</span><span class="n">so</span><span class="p">,</span><span class="n">absolute_path_to</span><span class="o">/</span><span class="n">libExample2</span><span class="o">.</span><span class="n">so</span>
+  <span class="o">--</span><span class="n">package_name</span> <span class="n">PACKAGE_NAME</span><span class="p">,</span> <span class="o">-</span><span class="n">p</span> <span class="n">PACKAGE_NAME</span>
+                        <span class="n">A</span> <span class="k">global</span> <span class="n">package</span> <span class="n">name</span> <span class="n">to</span> <span class="n">be</span> <span class="n">used</span> <span class="k">for</span> <span class="n">each</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Model</span><span class="o">.</span><span class="n">cpp</span> <span class="n">file</span><span class="o">.</span>
+                        <span class="n">Defaults</span> <span class="n">to</span> <span class="n">Qnn</span> <span class="n">header</span> <span class="n">defined</span> <span class="n">package</span> <span class="n">name</span>
+  <span class="o">--</span><span class="n">op_package_config</span> <span class="n">CUSTOM_OP_CONFIG_PATHS</span> <span class="p">[</span><span class="n">CUSTOM_OP_CONFIG_PATHS</span> <span class="o">...</span><span class="p">],</span> <span class="o">-</span><span class="n">opc</span> <span class="n">CUSTOM_OP_CONFIG_PATHS</span> <span class="p">[</span><span class="n">CUSTOM_OP_CONFIG_PATHS</span> <span class="o">...</span><span class="p">]</span>
+                        <span class="n">Path</span> <span class="n">to</span> <span class="n">a</span> <span class="n">Qnn</span> <span class="n">Op</span> <span class="n">Package</span> <span class="n">XML</span> <span class="n">configuration</span> <span class="n">file</span> <span class="n">that</span> <span class="n">contains</span> <span class="n">user</span> <span class="n">defined</span>
+                        <span class="n">custom</span> <span class="n">operations</span><span class="o">.</span>
+
+<span class="n">Quantizer</span> <span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">quantization_overrides</span> <span class="n">QUANTIZATION_OVERRIDES</span><span class="p">,</span> <span class="o">-</span><span class="n">q</span> <span class="n">QUANTIZATION_OVERRIDES</span>
+                        <span class="n">Use</span> <span class="n">this</span> <span class="n">option</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">a</span> <span class="n">json</span> <span class="n">file</span> <span class="k">with</span> <span class="n">parameters</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span>
+                        <span class="n">quantization</span><span class="o">.</span> <span class="n">These</span> <span class="n">will</span> <span class="n">override</span> <span class="nb">any</span> <span class="n">quantization</span> <span class="n">data</span> <span class="n">carried</span> <span class="kn">from</span>
+                        <span class="nn">conversion</span> <span class="p">(</span><span class="n">eg</span> <span class="n">TF</span> <span class="n">fake</span> <span class="n">quantization</span><span class="p">)</span> <span class="ow">or</span> <span class="n">calculated</span> <span class="n">during</span> <span class="n">the</span> <span class="n">normal</span>
+                        <span class="n">quantization</span> <span class="n">process</span><span class="o">.</span> <span class="n">Format</span> <span class="n">defined</span> <span class="k">as</span> <span class="n">per</span> <span class="n">AIMET</span> <span class="n">specification</span><span class="o">.</span>
+
+<span class="n">LoRA</span> <span class="n">Converter</span> <span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">lora_weight_list</span> <span class="n">LORA_WEIGHT_LIST</span>
+                        <span class="n">Path</span> <span class="n">to</span> <span class="n">a</span> <span class="n">file</span> <span class="n">specifying</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">tensor</span> <span class="n">names</span> <span class="n">that</span> <span class="n">should</span> <span class="n">be</span> <span class="n">updateable</span><span class="o">.</span>
+
+<span class="n">Onnx</span> <span class="n">Converter</span> <span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">onnx_skip_simplification</span><span class="p">,</span> <span class="o">-</span><span class="n">oss</span>
+                        <span class="n">Do</span> <span class="ow">not</span> <span class="n">attempt</span> <span class="n">to</span> <span class="n">simplify</span> <span class="n">the</span> <span class="n">model</span> <span class="n">automatically</span><span class="o">.</span> <span class="n">This</span> <span class="n">may</span> <span class="n">prevent</span> <span class="n">some</span>
+                        <span class="n">models</span> <span class="kn">from</span>
+                        <span class="nn">properly</span> <span class="n">converting</span>  <span class="n">when</span> <span class="n">sequences</span> <span class="n">of</span> <span class="n">unsupported</span> <span class="n">static</span> <span class="n">operations</span> <span class="n">are</span>
+                        <span class="n">present</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">onnx_override_batch</span> <span class="n">BATCH</span>
+                        <span class="n">The</span> <span class="n">batch</span> <span class="n">dimension</span> <span class="n">override</span><span class="o">.</span> <span class="n">This</span> <span class="n">will</span> <span class="n">take</span> <span class="n">the</span> <span class="n">first</span> <span class="n">dimension</span> <span class="n">of</span> <span class="nb">all</span>
+                        <span class="n">inputs</span> <span class="ow">and</span> <span class="n">treat</span> <span class="n">it</span> <span class="k">as</span> <span class="n">a</span> <span class="n">batch</span> <span class="n">dim</span><span class="p">,</span> <span class="n">overriding</span> <span class="n">it</span> <span class="k">with</span> <span class="n">the</span> <span class="n">value</span> <span class="n">provided</span>
+                        <span class="n">here</span><span class="o">.</span> <span class="n">For</span> <span class="n">example</span><span class="p">:</span>
+                        <span class="o">--</span><span class="n">onnx_override_batch</span> <span class="mi">6</span>
+                        <span class="n">will</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">shape</span> <span class="n">change</span> <span class="kn">from</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">224</span><span class="p">,</span><span class="mi">224</span><span class="p">]</span> <span class="n">to</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">224</span><span class="p">,</span><span class="mi">224</span><span class="p">]</span><span class="o">.</span>
+                        <span class="n">If</span> <span class="n">there</span> <span class="n">are</span> <span class="n">inputs</span> <span class="n">without</span> <span class="n">batch</span> <span class="n">dim</span> <span class="n">this</span> <span class="n">should</span> <span class="ow">not</span> <span class="n">be</span> <span class="n">used</span> <span class="ow">and</span> <span class="n">each</span> <span class="nb">input</span>
+                        <span class="n">should</span> <span class="n">be</span> <span class="n">overridden</span> <span class="n">independently</span> <span class="n">using</span> <span class="o">-</span><span class="n">d</span> <span class="n">option</span> <span class="k">for</span> <span class="nb">input</span> <span class="n">dimension</span>
+                        <span class="n">overrides</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">onnx_define_symbol</span> <span class="n">SYMBOL_NAME</span> <span class="n">VALUE</span>
+                        <span class="n">This</span> <span class="n">option</span> <span class="n">allows</span> <span class="n">overriding</span> <span class="n">specific</span> <span class="nb">input</span> <span class="n">dimension</span> <span class="n">symbols</span><span class="o">.</span> <span class="n">For</span> <span class="n">instance</span>
+                        <span class="n">you</span> <span class="n">might</span> <span class="n">see</span> <span class="nb">input</span> <span class="n">shapes</span> <span class="n">specified</span> <span class="k">with</span> <span class="n">variables</span> <span class="n">such</span> <span class="k">as</span> <span class="p">:</span>
+                        <span class="n">data</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">height</span><span class="p">,</span><span class="n">width</span><span class="p">]</span>
+                        <span class="n">To</span> <span class="n">override</span> <span class="n">these</span> <span class="n">simply</span> <span class="k">pass</span> <span class="n">the</span> <span class="n">option</span> <span class="k">as</span><span class="p">:</span>
+                        <span class="o">--</span><span class="n">onnx_define_symbol</span> <span class="n">height</span> <span class="mi">224</span> <span class="o">--</span><span class="n">onnx_define_symbol</span> <span class="n">width</span> <span class="mi">448</span>
+                        <span class="n">which</span> <span class="n">results</span> <span class="ow">in</span> <span class="n">dimensions</span> <span class="n">that</span> <span class="n">look</span> <span class="n">like</span><span class="p">:</span>
+                        <span class="n">data</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">224</span><span class="p">,</span><span class="mi">448</span><span class="p">]</span>
+  <span class="o">--</span><span class="n">onnx_validate_models</span>
+                        <span class="n">Validate</span> <span class="n">the</span> <span class="n">original</span> <span class="n">ONNX</span> <span class="n">model</span> <span class="n">against</span> <span class="n">optimized</span> <span class="n">ONNX</span> <span class="n">model</span><span class="o">.</span>
+                        <span class="n">Constant</span> <span class="n">inputs</span> <span class="k">with</span> <span class="nb">all</span> <span class="n">value</span> <span class="mi">1</span><span class="n">s</span> <span class="n">will</span> <span class="n">be</span> <span class="n">generated</span> <span class="ow">and</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span>
+                        <span class="n">by</span> <span class="n">both</span> <span class="n">models</span> <span class="ow">and</span> <span class="n">their</span> <span class="n">outputs</span> <span class="n">are</span> <span class="n">checked</span> <span class="n">against</span> <span class="n">each</span> <span class="n">other</span><span class="o">.</span>
+                        <span class="n">The</span> <span class="o">%</span> <span class="n">average</span> <span class="n">error</span> <span class="ow">and</span> <span class="mi">90</span><span class="n">th</span> <span class="n">percentile</span> <span class="n">of</span> <span class="n">output</span> <span class="n">differences</span> <span class="n">will</span> <span class="n">be</span>
+                        <span class="n">calculated</span> <span class="k">for</span> <span class="n">this</span><span class="o">.</span>
+                        <span class="n">Note</span><span class="p">:</span> <span class="n">Usage</span> <span class="n">of</span> <span class="n">this</span> <span class="n">flag</span> <span class="n">will</span> <span class="n">incur</span> <span class="n">extra</span> <span class="n">time</span> <span class="n">due</span> <span class="n">to</span> <span class="n">inference</span> <span class="n">of</span> <span class="n">the</span>
+                        <span class="n">models</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">onnx_summary</span>        <span class="n">Summarize</span> <span class="n">the</span> <span class="n">original</span> <span class="n">onnx</span> <span class="n">model</span> <span class="ow">and</span> <span class="n">optimized</span> <span class="n">onnx</span> <span class="n">model</span><span class="o">.</span>
+                        <span class="n">Summary</span> <span class="n">will</span> <span class="nb">print</span> <span class="n">the</span> <span class="n">model</span> <span class="n">information</span> <span class="n">such</span> <span class="k">as</span> <span class="n">number</span> <span class="n">of</span> <span class="n">parameters</span><span class="p">,</span>
+                        <span class="n">number</span> <span class="n">of</span> <span class="n">operators</span> <span class="ow">and</span> <span class="n">their</span> <span class="n">count</span><span class="p">,</span> <span class="nb">input</span><span class="o">-</span><span class="n">output</span> <span class="n">tensor</span> <span class="n">name</span><span class="p">,</span> <span class="n">shape</span> <span class="ow">and</span>
+                        <span class="n">dtypes</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">onnx_perform_sequence_construct_optimizer</span>
+                        <span class="n">This</span> <span class="n">option</span> <span class="n">allows</span> <span class="n">optimization</span> <span class="n">on</span> <span class="n">SequenceConstruct</span> <span class="n">Op</span><span class="o">.</span>
+                        <span class="n">When</span> <span class="n">SequenceConstruct</span> <span class="n">op</span> <span class="ow">is</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">outputs</span> <span class="n">of</span> <span class="n">the</span> <span class="n">graph</span><span class="p">,</span> <span class="n">it</span> <span class="n">removes</span>
+                        <span class="n">SequenceConstruct</span> <span class="n">op</span> <span class="ow">and</span> <span class="n">makes</span> <span class="n">its</span> <span class="n">inputs</span> <span class="k">as</span> <span class="n">graph</span> <span class="n">outputs</span> <span class="n">to</span> <span class="n">replace</span> <span class="n">the</span>
+                        <span class="n">original</span> <span class="n">output</span> <span class="n">of</span> <span class="n">SequenceConstruct</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">tf_summary</span>          <span class="n">Summarize</span> <span class="n">the</span> <span class="n">original</span> <span class="n">TF</span> <span class="n">model</span> <span class="ow">and</span> <span class="n">optimized</span> <span class="n">TF</span> <span class="n">model</span><span class="o">.</span>
+                        <span class="n">Summary</span> <span class="n">will</span> <span class="nb">print</span> <span class="n">the</span> <span class="n">model</span> <span class="n">information</span> <span class="n">such</span> <span class="k">as</span> <span class="n">number</span> <span class="n">of</span> <span class="n">parameters</span><span class="p">,</span>
+                        <span class="n">number</span> <span class="n">of</span> <span class="n">operators</span> <span class="ow">and</span> <span class="n">their</span> <span class="n">count</span><span class="p">,</span> <span class="nb">input</span><span class="o">-</span><span class="n">output</span> <span class="n">tensor</span> <span class="n">name</span><span class="p">,</span> <span class="n">shape</span> <span class="ow">and</span>
+                        <span class="n">dtypes</span><span class="o">.</span>
+
+<span class="n">TensorFlow</span> <span class="n">Converter</span> <span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">tf_disable_optimization</span>
+                        <span class="n">Do</span> <span class="ow">not</span> <span class="n">attempt</span> <span class="n">to</span> <span class="n">optimize</span> <span class="n">the</span> <span class="n">model</span> <span class="n">automatically</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">tf_show_unconsumed_nodes</span>
+                        <span class="n">Displays</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">unconsumed</span> <span class="n">nodes</span><span class="p">,</span> <span class="k">if</span> <span class="n">there</span> <span class="nb">any</span> <span class="n">are</span> <span class="n">found</span><span class="o">.</span> <span class="n">Nodeswhich</span> <span class="n">are</span>
+                        <span class="n">unconsumed</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">violate</span> <span class="n">the</span> <span class="n">structural</span> <span class="n">fidelity</span> <span class="n">of</span> <span class="n">thegenerated</span> <span class="n">graph</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">tf_saved_model_tag</span> <span class="n">SAVED_MODEL_TAG</span>
+                        <span class="n">Specify</span> <span class="n">the</span> <span class="n">tag</span> <span class="n">to</span> <span class="n">seletet</span> <span class="n">a</span> <span class="n">MetaGraph</span> <span class="kn">from</span> <span class="nn">savedmodel.</span> <span class="n">ex</span><span class="p">:</span>
+                        <span class="o">--</span><span class="n">saved_model_tag</span> <span class="n">serve</span><span class="o">.</span> <span class="n">Default</span> <span class="n">value</span> <span class="n">will</span> <span class="n">be</span> <span class="s1">&#39;serve&#39;</span> <span class="n">when</span> <span class="n">it</span> <span class="ow">is</span> <span class="ow">not</span>
+                        <span class="n">assigned</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">tf_saved_model_signature_key</span> <span class="n">SAVED_MODEL_SIGNATURE_KEY</span>
+                        <span class="n">Specify</span> <span class="n">signature</span> <span class="n">key</span> <span class="n">to</span> <span class="n">select</span> <span class="nb">input</span> <span class="ow">and</span> <span class="n">output</span> <span class="n">of</span> <span class="n">the</span> <span class="n">model</span><span class="o">.</span> <span class="n">ex</span><span class="p">:</span>
+                        <span class="o">--</span><span class="n">tf_saved_model_signature_key</span> <span class="n">serving_default</span><span class="o">.</span> <span class="n">Default</span> <span class="n">value</span> <span class="n">will</span> <span class="n">be</span>
+                        <span class="s1">&#39;serving_default&#39;</span> <span class="n">when</span> <span class="n">it</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">assigned</span>
+  <span class="o">--</span><span class="n">tf_validate_models</span>  <span class="n">Validate</span> <span class="n">the</span> <span class="n">original</span> <span class="n">TF</span> <span class="n">model</span> <span class="n">against</span> <span class="n">optimized</span> <span class="n">TF</span> <span class="n">model</span><span class="o">.</span>
+                        <span class="n">Constant</span> <span class="n">inputs</span> <span class="k">with</span> <span class="nb">all</span> <span class="n">value</span> <span class="mi">1</span><span class="n">s</span> <span class="n">will</span> <span class="n">be</span> <span class="n">generated</span> <span class="ow">and</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span>
+                        <span class="n">by</span> <span class="n">both</span> <span class="n">models</span> <span class="ow">and</span> <span class="n">their</span> <span class="n">outputs</span> <span class="n">are</span> <span class="n">checked</span> <span class="n">against</span> <span class="n">each</span> <span class="n">other</span><span class="o">.</span>
+                        <span class="n">The</span> <span class="o">%</span> <span class="n">average</span> <span class="n">error</span> <span class="ow">and</span> <span class="mi">90</span><span class="n">th</span> <span class="n">percentile</span> <span class="n">of</span> <span class="n">output</span> <span class="n">differences</span> <span class="n">will</span> <span class="n">be</span>
+                        <span class="n">calculated</span> <span class="k">for</span> <span class="n">this</span><span class="o">.</span>
+                        <span class="n">Note</span><span class="p">:</span> <span class="n">Usage</span> <span class="n">of</span> <span class="n">this</span> <span class="n">flag</span> <span class="n">will</span> <span class="n">incur</span> <span class="n">extra</span> <span class="n">time</span> <span class="n">due</span> <span class="n">to</span> <span class="n">inference</span> <span class="n">of</span> <span class="n">the</span>
+                        <span class="n">models</span><span class="o">.</span>
+
+<span class="n">Tflite</span> <span class="n">Converter</span> <span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">tflite_signature_name</span> <span class="n">SIGNATURE_NAME</span>
+                        <span class="n">Use</span> <span class="n">this</span> <span class="n">option</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">a</span> <span class="n">specific</span> <span class="n">Subgraph</span> <span class="n">signature</span> <span class="n">to</span> <span class="n">convert</span>
+
+<span class="n">Backend</span> <span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">target_backend</span> <span class="n">BACKEND</span>
+                        <span class="n">Use</span> <span class="n">this</span> <span class="n">option</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">the</span> <span class="n">backend</span> <span class="n">on</span> <span class="n">which</span> <span class="n">the</span> <span class="n">model</span> <span class="n">needs</span> <span class="n">to</span> <span class="n">run</span><span class="o">.</span>
+                        <span class="n">Providing</span> <span class="n">this</span> <span class="n">option</span> <span class="n">will</span> <span class="n">generate</span> <span class="n">a</span> <span class="n">graph</span> <span class="n">optimized</span> <span class="k">for</span> <span class="n">the</span> <span class="n">given</span> <span class="n">backend</span>
+                        <span class="ow">and</span> <span class="n">this</span> <span class="n">graph</span> <span class="n">may</span> <span class="ow">not</span> <span class="n">run</span> <span class="n">on</span> <span class="n">other</span> <span class="n">backends</span><span class="o">.</span>
+                        <span class="n">Supported</span> <span class="n">backends</span> <span class="n">are</span> <span class="n">CPU</span><span class="p">,</span><span class="n">GPU</span><span class="p">,</span><span class="n">DSP</span><span class="p">,</span><span class="n">HTP</span><span class="p">,</span><span class="n">HTA</span><span class="p">,</span><span class="n">LPAI</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">target_soc_model</span> <span class="n">SOC_MODEL</span>
+                        <span class="n">Use</span> <span class="n">this</span> <span class="n">option</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">the</span> <span class="n">SOC</span> <span class="n">on</span> <span class="n">which</span> <span class="n">the</span> <span class="n">model</span> <span class="n">needs</span> <span class="n">to</span> <span class="n">run</span><span class="o">.</span>
+                        <span class="n">This</span> <span class="n">can</span> <span class="n">be</span> <span class="n">found</span> <span class="kn">from</span> <span class="nn">SOC</span> <span class="n">info</span> <span class="n">of</span> <span class="n">the</span> <span class="n">device</span> <span class="ow">and</span> <span class="n">it</span> <span class="n">starts</span> <span class="k">with</span> <span class="n">strings</span>
+                        <span class="n">such</span> <span class="k">as</span> <span class="n">SDM</span><span class="p">,</span> <span class="n">SM</span><span class="p">,</span> <span class="n">QCS</span><span class="p">,</span> <span class="n">IPQ</span><span class="p">,</span> <span class="n">SA</span><span class="p">,</span> <span class="n">QC</span><span class="p">,</span> <span class="n">SC</span><span class="p">,</span> <span class="n">SXR</span><span class="p">,</span> <span class="n">SSG</span><span class="p">,</span> <span class="n">STP</span><span class="p">,</span> <span class="n">QRB</span><span class="p">,</span> <span class="ow">or</span> <span class="n">AIC</span><span class="o">.</span>
+                        <span class="n">NOTE</span><span class="p">:</span> <span class="o">--</span><span class="n">target_backend</span> <span class="n">option</span> <span class="n">must</span> <span class="n">be</span> <span class="n">provided</span> <span class="n">to</span> <span class="n">use</span> <span class="o">--</span><span class="n">target_soc_model</span>
+                        <span class="n">option</span><span class="o">.</span>
+
+<span class="n">Note</span><span class="p">:</span> <span class="n">Only</span> <span class="n">one</span> <span class="n">of</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;op_package_config&#39;</span><span class="p">,</span> <span class="s1">&#39;package_name&#39;</span><span class="p">}</span> <span class="n">can</span> <span class="n">be</span> <span class="n">specified</span> <span class="n">Note</span><span class="p">:</span> <span class="n">Only</span> <span class="n">one</span> <span class="n">of</span><span class="p">:</span>
+<span class="p">{</span><span class="s1">&#39;op_package_config&#39;</span><span class="p">,</span> <span class="s1">&#39;package_name&#39;</span><span class="p">}</span> <span class="n">can</span> <span class="n">be</span> <span class="n">specified</span>
+
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="qnn-net-run.html" class="btn btn-neutral float-left" title="qnn-net-run" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="qairt-dlc-info.html" class="btn btn-neutral float-right" title="qairt-dlc-info" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

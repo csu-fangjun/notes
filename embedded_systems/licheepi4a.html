@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lichee Pi 4A &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ai-pro" href="ai-pro.html" />
+    <link rel="prev" title="star visionfive 2" href="visionfive.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Embedded systems</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="m3axpi.html">m3axpi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raspberry_pi.html">Raspberry PI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alsa.html">ALSA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nano-pi.html">nano-pi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visionfive.html">star visionfive 2</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lichee Pi 4A</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#openkylin">openKylin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ai-pro.html">ai-pro</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/index.html">Papers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pascal/index.html">Pascal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llm/index.html">LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ascend/index.html">ascend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qnn/index.html">qnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Embedded systems</a></li>
+      <li class="breadcrumb-item active">Lichee Pi 4A</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/embedded_systems/licheepi4a.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="lichee-pi-4a">
+<h1>Lichee Pi 4A<a class="headerlink" href="#lichee-pi-4a" title="Permalink to this heading"></a></h1>
+<p>Refer to <a class="reference internal" href="raspberry_pi.html#raspberry-pi"><span class="std std-ref">Raspberry PI</span></a> to setup a DHCP server</p>
+<p>After the board gets an IP, ssh to it.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/sbin/ifconfig
+</pre></div>
+</div>
+<p>It shows two interfaces: <code class="docutils literal notranslate"><span class="pre">end0</span></code> and <code class="docutils literal notranslate"><span class="pre">end1</span></code>. We don't use <code class="docutils literal notranslate"><span class="pre">lo</span></code> and <code class="docutils literal notranslate"><span class="pre">wlan0</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">end0</span></code> is for Ehternet0 and <code class="docutils literal notranslate"><span class="pre">end1</span></code> for Ethernet1.</p>
+<p>Now we assign a static address to <code class="docutils literal notranslate"><span class="pre">end0</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>vim<span class="w"> </span>/etc/network/interfaces
+</pre></div>
+</div>
+<p>The default content is:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/etc/network/interfaces.d/*
+</pre></div>
+</div>
+<p>We append the following to <code class="docutils literal notranslate"><span class="pre">/etc/network/interfaces</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is a comment line</span>
+<span class="c1"># iface eth0 inet dhcp</span>
+auto<span class="w"> </span>end0
+iface<span class="w"> </span>eth0<span class="w"> </span>inet<span class="w"> </span>static
+<span class="w">    </span>address<span class="w"> </span><span class="m">192</span>.168.1.8
+<span class="w">    </span>netmask<span class="w"> </span><span class="m">255</span>.255.255.0
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>/etc/init.d/networking<span class="w"> </span>restart
+</pre></div>
+</div>
+<p>Power off the board and connect <code class="docutils literal notranslate"><span class="pre">end0</span></code> to my mac.</p>
+<p>Create a user:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>adduser<span class="w"> </span>fangjun
+sudo<span class="w"> </span>usermod<span class="w"> </span>-a<span class="w"> </span>-G<span class="w"> </span>sudo<span class="w"> </span>fangjun
+</pre></div>
+</div>
+<section id="openkylin">
+<h2>openKylin<a class="headerlink" href="#openkylin" title="Permalink to this heading"></a></h2>
+<p><a class="reference external" href="https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/3_images.html#openKylin">https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/3_images.html#openKylin</a></p>
+<p>Download address <a class="reference external" href="https://www.openkylin.top/downloads/index-cn.html">https://www.openkylin.top/downloads/index-cn.html</a>. Select
+<code class="docutils literal notranslate"><span class="pre">openKylin</span> <span class="pre">2.0</span> <span class="pre">alpha</span> <span class="pre">RISC-V</span></code> for LiCheePi4A.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">fangjun</span> <span class="n">fangjun</span> <span class="mf">2.8</span><span class="n">G</span> <span class="n">Mar</span>  <span class="mi">7</span> <span class="mi">04</span><span class="p">:</span><span class="mi">06</span> <span class="n">openKylin</span><span class="o">-</span><span class="mf">2.0</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">licheepi4a</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">xz</span>
+</pre></div>
+</div>
+<p>Power off the board, press the <code class="docutils literal notranslate"><span class="pre">BOOT</span></code> key and don't release it, power on, and then
+release it. In virtual box, select the USB device <code class="docutils literal notranslate"><span class="pre">T-HEAD</span> <span class="pre">USB</span> <span class="pre">download</span> <span class="pre">gadget</span> <span class="pre">[0223]</span></code>.</p>
+<p>scp <code class="docutils literal notranslate"><span class="pre">openKylin-2.0-alpha-licheepi4a.tar.xz</span></code> to my virtual machine.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scp<span class="w"> </span>-P<span class="w"> </span><span class="m">1234</span><span class="w"> </span>openKylin-2.0-alpha-licheepi4a.tar.xz<span class="w"> </span>localhost:/mnt/sdb/shared
+</pre></div>
+</div>
+<p>Refer to
+<a class="reference external" href="https://docs.openkylin.top/zh/%E7%A4%BE%E5%8C%BA%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/riscv%E4%B8%8A%E5%AE%89%E8%A3%85openKylin">https://docs.openkylin.top/zh/%E7%A4%BE%E5%8C%BA%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/riscv%E4%B8%8A%E5%AE%89%E8%A3%85openKylin</a></p>
+<p>On virtual machine:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">t</span>
+<span class="n">cd</span> <span class="n">t</span>
+<span class="n">tar</span> <span class="n">xf</span> <span class="o">../</span><span class="n">openKylin</span><span class="o">-</span><span class="mf">2.0</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">licheepi4a</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">xz</span>
+<span class="n">cd</span> <span class="n">openkylin</span><span class="o">-</span><span class="mf">2.0</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">licheepi4a</span><span class="o">/</span><span class="n">fastboot</span><span class="o">/</span><span class="n">linux</span><span class="o">/</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>lsusb
+Bus<span class="w"> </span><span class="m">002</span><span class="w"> </span>Device<span class="w"> </span><span class="m">003</span>:<span class="w"> </span>ID<span class="w"> </span><span class="m">2345</span>:7654<span class="w"> </span>T-HEAD<span class="w"> </span>USB<span class="w"> </span>download<span class="w"> </span>gadget
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>./fastboot/linux/fastboot<span class="w"> </span>flash<span class="w"> </span>ram<span class="w"> </span>./images/8G/u-boot-nonsec-2020.10-r0-noswap.bin
+
+<span class="w"> </span>Warning:<span class="w"> </span>skip<span class="w"> </span>copying<span class="w"> </span>ram<span class="w"> </span>image<span class="w"> </span>avb<span class="w"> </span>footer<span class="w"> </span><span class="o">(</span>ram<span class="w"> </span>partition<span class="w"> </span>size:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>ram<span class="w"> </span>image<span class="w"> </span>size:<span class="w"> </span><span class="m">957544</span><span class="o">)</span>.
+<span class="w"> </span>Sending<span class="w"> </span><span class="s1">&#39;ram&#39;</span><span class="w"> </span><span class="o">(</span><span class="m">935</span><span class="w"> </span>KB<span class="o">)</span><span class="w">                             </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.384s<span class="o">]</span>
+<span class="w"> </span>Writing<span class="w"> </span><span class="s1">&#39;ram&#39;</span><span class="w">                                      </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.008s<span class="o">]</span>
+<span class="w"> </span>Finished.<span class="w"> </span>Total<span class="w"> </span>time:<span class="w"> </span><span class="m">0</span>.444s
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>./fastboot/linux/fastboot<span class="w"> </span>reboot
+
+<span class="w"> </span>Rebooting<span class="w">                                          </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.031s<span class="o">]</span>
+<span class="w"> </span>Finished.<span class="w"> </span>Total<span class="w"> </span>time:<span class="w"> </span><span class="m">1</span>.451s
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sleep<span class="w"> </span><span class="m">1</span>
+
+sudo<span class="w"> </span>./fastboot/linux/fastboot<span class="w"> </span>flash<span class="w"> </span>uboot<span class="w"> </span>./images/8G/u-boot-nonsec-2020.10-r0-noswap.bin
+
+<span class="w"> </span>Warning:<span class="w"> </span>skip<span class="w"> </span>copying<span class="w"> </span>uboot<span class="w"> </span>image<span class="w"> </span>avb<span class="w"> </span>footer<span class="w"> </span><span class="o">(</span>uboot<span class="w"> </span>partition<span class="w"> </span>size:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>uboot<span class="w"> </span>image<span class="w"> </span>size:<span class="w"> </span><span class="m">957544</span><span class="o">)</span>.
+<span class="w"> </span>Sending<span class="w"> </span><span class="s1">&#39;uboot&#39;</span><span class="w"> </span><span class="o">(</span><span class="m">935</span><span class="w"> </span>KB<span class="o">)</span><span class="w">                           </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.259s<span class="o">]</span>
+<span class="w"> </span>Writing<span class="w"> </span><span class="s1">&#39;uboot&#39;</span><span class="w">                                    </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.081s<span class="o">]</span>
+<span class="w"> </span>Finished.<span class="w"> </span>Total<span class="w"> </span>time:<span class="w"> </span><span class="m">0</span>.403s
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>./fastboot/linux/fastboot<span class="w"> </span>flash<span class="w"> </span>boot<span class="w"> </span>./images/8G/boot.ext4
+
+<span class="w"> </span>Warning:<span class="w"> </span>skip<span class="w"> </span>copying<span class="w"> </span>boot<span class="w"> </span>image<span class="w"> </span>avb<span class="w"> </span>footer<span class="w"> </span><span class="o">(</span>boot<span class="w"> </span>partition<span class="w"> </span>size:<span class="w"> </span><span class="m">409600</span>,<span class="w"> </span>boot<span class="w"> </span>image<span class="w"> </span>size:<span class="w"> </span><span class="m">61440000</span><span class="o">)</span>.
+<span class="w"> </span>Sending<span class="w"> </span><span class="s1">&#39;boot&#39;</span><span class="w"> </span><span class="o">(</span><span class="m">60000</span><span class="w"> </span>KB<span class="o">)</span><span class="w">                          </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">14</span>.813s<span class="o">]</span>
+<span class="w"> </span>Writing<span class="w"> </span><span class="s1">&#39;boot&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.462s<span class="o">]</span>
+<span class="w"> </span>Finished.<span class="w"> </span>Total<span class="w"> </span>time:<span class="w"> </span><span class="m">15</span>.335s
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>./fastboot/linux/fastboot<span class="w"> </span>flash<span class="w"> </span>root<span class="w"> </span>./images/openkylin-2.0-alpha-licheepi4a-riscv64.ext4
+
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">1</span>/64<span class="w"> </span><span class="o">(</span><span class="m">113621</span><span class="w"> </span>KB<span class="o">)</span><span class="w">             </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.396s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.437s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">2</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114573</span><span class="w"> </span>KB<span class="o">)</span><span class="w">             </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.678s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.119s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">3</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114465</span><span class="w"> </span>KB<span class="o">)</span><span class="w">             </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">31</span>.803s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">3</span>.088s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">4</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114687</span><span class="w"> </span>KB<span class="o">)</span><span class="w">             </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">29</span>.581s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.332s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">5</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114686</span><span class="w"> </span>KB<span class="o">)</span><span class="w">             </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">29</span>.088s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.243s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">6</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114684</span><span class="w"> </span>KB<span class="o">)</span><span class="w">             </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.922s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.926s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">7</span>/64<span class="w"> </span><span class="o">(</span><span class="m">110724</span><span class="w"> </span>KB<span class="o">)</span><span class="w">             </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">27</span>.861s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.868s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">8</span>/64<span class="w"> </span><span class="o">(</span><span class="m">106020</span><span class="w"> </span>KB<span class="o">)</span><span class="w">             </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">26</span>.523s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.905s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">9</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114685</span><span class="w"> </span>KB<span class="o">)</span><span class="w">             </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">29</span>.080s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.990s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">10</span>/64<span class="w"> </span><span class="o">(</span><span class="m">113701</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.919s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.000s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">11</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114152</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">29</span>.780s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.916s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">12</span>/64<span class="w"> </span><span class="o">(</span><span class="m">113537</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">29</span>.624s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.600s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">13</span>/64<span class="w"> </span><span class="o">(</span><span class="m">113881</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">29</span>.739s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.634s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">14</span>/64<span class="w"> </span><span class="o">(</span><span class="m">113118</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.989s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.169s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">15</span>/64<span class="w"> </span><span class="o">(</span><span class="m">106670</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">27</span>.178s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.157s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">16</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114685</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">29</span>.728s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.656s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">17</span>/64<span class="w"> </span><span class="o">(</span><span class="m">112204</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.763s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.990s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">18</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114547</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">30</span>.126s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.495s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">19</span>/64<span class="w"> </span><span class="o">(</span><span class="m">111451</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.567s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.276s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">20</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114651</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">29</span>.283s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.380s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">21</span>/64<span class="w"> </span><span class="o">(</span><span class="m">104981</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">27</span>.260s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.565s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">22</span>/64<span class="w"> </span><span class="o">(</span><span class="m">108444</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.772s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.958s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">23</span>/64<span class="w"> </span><span class="o">(</span><span class="m">112916</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">27</span>.882s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.964s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">24</span>/64<span class="w"> </span><span class="o">(</span><span class="m">110055</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.402s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.373s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">25</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114686</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">29</span>.349s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.308s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">26</span>/64<span class="w"> </span><span class="o">(</span><span class="m">109020</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.892s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.883s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">27</span>/64<span class="w"> </span><span class="o">(</span><span class="m">113813</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">30</span>.411s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">2</span>.091s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">27</span>/64<span class="w"> </span><span class="o">(</span><span class="m">113813</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">30</span>.411s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">2</span>.091s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">28</span>/64<span class="w"> </span><span class="o">(</span><span class="m">112541</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.959s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.048s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">29</span>/64<span class="w"> </span><span class="o">(</span><span class="m">108317</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">27</span>.795s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.927s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">30</span>/64<span class="w"> </span><span class="o">(</span><span class="m">103881</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">26</span>.063s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.883s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">31</span>/64<span class="w"> </span><span class="o">(</span><span class="m">112380</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.106s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.923s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">32</span>/64<span class="w"> </span><span class="o">(</span><span class="m">113912</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.863s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.887s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">33</span>/64<span class="w"> </span><span class="o">(</span><span class="m">107545</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">27</span>.507s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.901s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">34</span>/64<span class="w"> </span><span class="o">(</span><span class="m">108964</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">27</span>.396s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.924s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">35</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114685</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.831s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.052s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">36</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114635</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">29</span>.927s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.857s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">37</span>/64<span class="w"> </span><span class="o">(</span><span class="m">106582</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">34</span>.001s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">4</span>.941s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">38</span>/64<span class="w"> </span><span class="o">(</span><span class="m">112349</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.087s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.019s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">39</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114597</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.444s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.003s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">40</span>/64<span class="w"> </span><span class="o">(</span><span class="m">113833</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.063s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.955s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">41</span>/64<span class="w"> </span><span class="o">(</span><span class="m">111932</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">27</span>.982s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.852s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">42</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114656</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">29</span>.274s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.919s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">43</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114409</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.753s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.011s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">44</span>/64<span class="w"> </span><span class="o">(</span><span class="m">112007</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.708s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.232s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">45</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114687</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">29</span>.922s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.978s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">46</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114684</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.482s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.903s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">47</span>/64<span class="w"> </span><span class="o">(</span><span class="m">111932</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.518s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.917s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">48</span>/64<span class="w"> </span><span class="o">(</span><span class="m">106984</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">26</span>.597s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.869s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">49</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114684</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.722s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.888s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">50</span>/64<span class="w"> </span><span class="o">(</span><span class="m">113296</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">27</span>.990s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.901s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">51</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114685</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.955s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.035s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">52</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114684</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.549s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.906s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">53</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114685</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">29</span>.215s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.025s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">54</span>/64<span class="w"> </span><span class="o">(</span><span class="m">102348</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">24</span>.596s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">1</span>.030s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">55</span>/64<span class="w"> </span><span class="o">(</span><span class="m">113644</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.859s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.899s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">56</span>/64<span class="w"> </span><span class="o">(</span><span class="m">111648</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.154s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.940s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">57</span>/64<span class="w"> </span><span class="o">(</span><span class="m">105900</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">26</span>.766s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.832s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">58</span>/64<span class="w"> </span><span class="o">(</span><span class="m">104752</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">26</span>.516s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.832s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">59</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114684</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.399s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.963s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">60</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114684</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.732s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.912s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">61</span>/64<span class="w"> </span><span class="o">(</span><span class="m">110325</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">27</span>.705s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.991s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">62</span>/64<span class="w"> </span><span class="o">(</span><span class="m">114684</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">28</span>.856s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.897s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">63</span>/64<span class="w"> </span><span class="o">(</span><span class="m">109388</span><span class="w"> </span>KB<span class="o">)</span><span class="w">            </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="m">27</span>.435s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.860s<span class="o">]</span>
+Sending<span class="w"> </span>sparse<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span><span class="m">64</span>/64<span class="w"> </span><span class="o">(</span><span class="m">24856</span><span class="w"> </span>KB<span class="o">)</span><span class="w">             </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">6</span>.347s<span class="o">]</span>
+Writing<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w">                                     </span>OKAY<span class="w"> </span><span class="o">[</span><span class="w">  </span><span class="m">0</span>.205s<span class="o">]</span>
+Finished.<span class="w"> </span>Total<span class="w"> </span>time:<span class="w"> </span><span class="m">1929</span>.583s
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">username</span><span class="p">:</span> <span class="n">openkylin</span>
+<span class="n">password</span><span class="p">:</span> <span class="n">openkylin</span>
+</pre></div>
+</div>
+<p>The network interfaces on openKylin is <code class="docutils literal notranslate"><span class="pre">eth0</span></code> and <code class="docutils literal notranslate"><span class="pre">eth1</span></code>. The oringial
+content of <code class="docutils literal notranslate"><span class="pre">/etc/network/interfaces</span></code> are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">auto</span> <span class="n">lo</span> <span class="n">iface</span> <span class="n">lo</span> <span class="n">inet</span> <span class="n">loopback</span>
+<span class="n">auto</span> <span class="n">eth0</span> <span class="n">iface</span> <span class="n">eth0</span> <span class="n">inet</span> <span class="n">dhcp</span>
+</pre></div>
+</div>
+<p>Change it to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">auto</span> <span class="n">lo</span> <span class="n">iface</span> <span class="n">lo</span> <span class="n">inet</span> <span class="n">loopback</span>
+<span class="c1"># auto eth0 iface eth0 inet dhcp</span>
+<span class="n">iface</span> <span class="n">eth0</span> <span class="n">inet</span> <span class="n">static</span>
+  <span class="n">address</span> <span class="mf">192.168.1.8</span>
+  <span class="n">netmask</span> <span class="mf">255.255.255.0</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="visionfive.html" class="btn btn-neutral float-left" title="star visionfive 2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ai-pro.html" class="btn btn-neutral float-right" title="ai-pro" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

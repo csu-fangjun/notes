@@ -1,0 +1,96 @@
+.. notes documentation master file, created by
+   sphinx-quickstart on Wed Apr  6 20:05:00 2022.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to notes's documentation!
+=================================
+
+Download this website in a single `pdf file <./_static/notes.pdf>`_.
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Contents:
+
+   cpp/index
+   sphinx/index
+   git/index
+   docker/index
+   latex/index
+   kaldi/index
+   bash/index
+   cuda/index
+   torch/index
+   python/index
+   java/index
+   javascript/index
+   html/index
+   css/index
+   pybind11/index
+   protobuf/index
+   grpc/index
+   lwn_net/index
+   linker_and_loader/index
+   espnet/index
+   cmake/index
+   huggingface/index
+   e6870/index
+   ncnn/index
+   llvm/index
+   android/index
+   qemu/index
+   sox/index
+   mnn/index
+   simd/index
+   asio/index
+   websocketpp/index
+   os/index
+   encoding/index
+   ios/index
+   embedded_systems/index
+   ssh/index
+   onnx/index
+   csharp/index
+   flask/index
+   arm/index
+   vitualbox/index
+   go/index
+   whisper/index
+   windows/index
+   qt/index
+   webassembly/index
+   spleeter/index
+   django/index
+   react/index
+   tts/index
+   rust/index
+   elf/index
+   ros2/index
+   openfst/index
+   colab/index
+   dart/index
+   flutter/index
+   kws/index
+   papers/index
+   ./pascal/index
+   ./ggml/index
+   ./amphion/index
+   ./harmonyos/index
+   ./icefall/index
+   ./rknn/index
+   ./axera/index
+   ./lhotse/index
+   ./ffmpeg/index
+   ./vlc/index
+   ./mlx/index
+   ./mba/index
+   ./llm/index
+   ./ascend/index.rst
+   ./qnn/index.rst
+   ./reverse-engineering/index.rst
+   ./economics/index.rst
+   ./funasr/index.rst
+   ./amd-npu/index.rst
+
+
+.. github/index

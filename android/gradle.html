@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gradle &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="qemu" href="../qemu/index.html" />
+    <link rel="prev" title="Run CPP on Android" href="run-cpp-on-android.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Android</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="kotlin/index.html">kotlin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cmake.html">cmake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hello.html">hello</a></li>
+<li class="toctree-l2"><a class="reference internal" href="android_mk.html">Android.mk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adb.html">adb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tts.html">tts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jetpack.html">jetpack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html">Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.html">Release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coroutine.html">Coroutine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run-cpp-on-android.html">Run CPP on Android</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">gradle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install">Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-book-get-going-with-gradle">A book: Get going with gradle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basics">Basics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/index.html">Papers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pascal/index.html">Pascal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llm/index.html">LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ascend/index.html">ascend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qnn/index.html">qnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Android</a></li>
+      <li class="breadcrumb-item active">gradle</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/android/gradle.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="gradle">
+<h1>gradle<a class="headerlink" href="#gradle" title="Permalink to this heading"></a></h1>
+<section id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">gradle</span>
+
+<span class="n">which</span> <span class="n">grade</span>
+
+<span class="c1"># /opt/homebrew/bin/gradle</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cat $(which gradle)
+
+#!/bin/bash
+JAVA_HOME=&quot;${JAVA_HOME:-/opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home}&quot; exec &quot;/opt/homebrew/Cellar/gradle/9.6.1/libexec/bin/gradle&quot;  &quot;$@&quot;
+</pre></div>
+</div>
+<p>Content of <cite>/opt/homebrew/Cellar/gradle/9.6.1/libexec/bin/gradle</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+
+#
+# Copyright © 2015 the original authors.
+#
+# Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+##############################################################################
+#
+#   Gradle start up script for POSIX generated by Gradle.
+#
+#   Important for running:
+#
+#   (1) You need a POSIX-compliant shell to run this script. If your /bin/sh is
+#       noncompliant, but you have some other compliant shell such as ksh or
+#       bash, then to run this script, type that shell name before the whole
+#       command line, like:
+#
+#           ksh Gradle
+#
+#       Busybox and similar reduced shells will NOT work, because this script
+#       requires all of these POSIX shell features:
+#         * functions;
+#         * expansions «$var», «${var}», «${var:-default}», «${var+SET}»,
+#           «${var#prefix}», «${var%suffix}», and «$( cmd )»;
+#         * compound commands having a testable exit status, especially «case»;
+#         * various built-in commands including «command», «set», and «ulimit».
+#
+#   Important for patching:
+#
+#   (2) This script targets any POSIX shell, so it avoids extensions provided
+#       by Bash, Ksh, etc; in particular arrays are avoided.
+#
+#       The &quot;traditional&quot; practice of packing multiple parameters into a
+#       space-separated string is a well documented source of bugs and security
+#       problems, so this is (mostly) avoided, by progressively accumulating
+#       options in &quot;$@&quot;, and eventually passing that to Java.
+#
+#       Where the inherited environment variables (DEFAULT_JVM_OPTS, JAVA_OPTS,
+#       and GRADLE_OPTS) rely on word-splitting, this is performed explicitly;
+#       see the in-line comments for details.
+#
+#       There are tweaks for specific operating systems such as AIX, CygWin,
+#       Darwin, MinGW, and NonStop.
+#
+#   (3) This script is generated from the Groovy template
+#       https://github.com/gradle/gradle/blob/3d91ce3b8caaf77ad09f381f43615b715b53f72c/platforms/jvm/plugins-application/src/main/resources/org/gradle/api/internal/plugins/unixStartScript.txt
+#       within the Gradle project.
+#
+#       You can find Gradle at https://github.com/gradle/gradle/.
+#
+##############################################################################
+
+# Attempt to set APP_HOME
+
+# Resolve links: $0 may be a link
+app_path=$0
+
+# Need this for daisy-chained symlinks.
+while
+    APP_HOME=${app_path%&quot;${app_path##*/}&quot;}  # leaves a trailing /; empty if no leading path
+    [ -h &quot;$app_path&quot; ]
+do
+    ls=$( ls -ld &quot;$app_path&quot; )
+    link=${ls#*&#39; -&gt; &#39;}
+    case $link in             #(
+      /*)   app_path=$link ;; #(
+      *)    app_path=$APP_HOME$link ;;
+    esac
+done
+
+# This is normally unused
+# shellcheck disable=SC2034
+APP_BASE_NAME=${0##*/}
+# Discard cd standard output in case $CDPATH is set (https://github.com/gradle/gradle/issues/25036)
+APP_HOME=$( cd -P &quot;${APP_HOME:-./}..&quot; &gt; /dev/null &amp;&amp; printf &#39;%s\n&#39; &quot;$PWD&quot; ) || exit
+
+# Use the maximum available, or set MAX_FD != -1 to use that value.
+MAX_FD=maximum
+
+warn () {
+    echo &quot;$*&quot;
+} &gt;&amp;2
+
+die () {
+    echo
+    echo &quot;$*&quot;
+    echo
+    exit 1
+} &gt;&amp;2
+
+# OS specific support (must be &#39;true&#39; or &#39;false&#39;).
+cygwin=false
+msys=false
+darwin=false
+nonstop=false
+case &quot;$( uname )&quot; in                #(
+  CYGWIN* )         cygwin=true  ;; #(
+  Darwin* )         darwin=true  ;; #(
+  MSYS* | MINGW* )  msys=true    ;; #(
+  NONSTOP* )        nonstop=true ;;
+esac
+
+
+
+# Determine the Java command to use to start the JVM.
+if [ -n &quot;$JAVA_HOME&quot; ] ; then
+    if [ -x &quot;$JAVA_HOME/jre/sh/java&quot; ] ; then
+        # IBM&#39;s JDK on AIX uses strange locations for the executables
+        JAVACMD=$JAVA_HOME/jre/sh/java
+    else
+        JAVACMD=$JAVA_HOME/bin/java
+    fi
+    if [ ! -x &quot;$JAVACMD&quot; ] ; then
+        die &quot;ERROR: JAVA_HOME is set to an invalid directory: $JAVA_HOME
+
+Please set the JAVA_HOME variable in your environment to match the
+location of your Java installation.&quot;
+    fi
+else
+    JAVACMD=java
+    if ! command -v java &gt;/dev/null 2&gt;&amp;1
+    then
+        die &quot;ERROR: JAVA_HOME is not set and no &#39;java&#39; command could be found in your PATH.
+
+Please set the JAVA_HOME variable in your environment to match the
+location of your Java installation.&quot;
+    fi
+fi
+
+# Increase the maximum file descriptors if we can.
+if ! &quot;$cygwin&quot; &amp;&amp; ! &quot;$darwin&quot; &amp;&amp; ! &quot;$nonstop&quot; ; then
+    case $MAX_FD in #(
+      max*)
+        # In POSIX sh, ulimit -H is undefined. That&#39;s why the result is checked to see if it worked.
+        # shellcheck disable=SC2039,SC3045
+        MAX_FD=$( ulimit -H -n ) ||
+            warn &quot;Could not query maximum file descriptor limit&quot;
+    esac
+    case $MAX_FD in  #(
+      &#39;&#39; | soft) :;; #(
+      *)
+        # In POSIX sh, ulimit -n is undefined. That&#39;s why the result is checked to see if it worked.
+        # shellcheck disable=SC2039,SC3045
+        ulimit -n &quot;$MAX_FD&quot; ||
+            warn &quot;Could not set maximum file descriptor limit to $MAX_FD&quot;
+    esac
+fi
+
+# Collect all arguments for the java command, stacking in reverse order:
+#   * args from the command line
+#   * the main class name
+#   * -classpath
+#   * -D...appname settings
+#   * --module-path (only if needed)
+#   * DEFAULT_JVM_OPTS, JAVA_OPTS, and GRADLE_OPTS environment variables.
+
+# For Cygwin or MSYS, switch paths to Windows format before running java
+if &quot;$cygwin&quot; || &quot;$msys&quot; ; then
+    APP_HOME=$( cygpath --path --mixed &quot;$APP_HOME&quot; )
+
+    JAVACMD=$( cygpath --unix &quot;$JAVACMD&quot; )
+
+    # Now convert the arguments - kludge to limit ourselves to /bin/sh
+    for arg do
+        if
+            case $arg in                                #(
+              -*)   false ;;                            # don&#39;t mess with options #(
+              /?*)  t=${arg#/} t=/${t%%/*}              # looks like a POSIX filepath
+                    [ -e &quot;$t&quot; ] ;;                      #(
+              *)    false ;;
+            esac
+        then
+            arg=$( cygpath --path --ignore --mixed &quot;$arg&quot; )
+        fi
+        # Roll the args list around exactly as many times as the number of
+        # args, so each arg winds up back in the position where it started, but
+        # possibly modified.
+        #
+        # NB: a `for` loop captures its iteration list before it begins, so
+        # changing the positional parameters here affects neither the number of
+        # iterations, nor the values presented in `arg`.
+        shift                   # remove old arg
+        set -- &quot;$@&quot; &quot;$arg&quot;      # push replacement arg
+    done
+fi
+
+
+# Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
+DEFAULT_JVM_OPTS=&#39;&quot;-Xmx64m&quot; &quot;-Xms64m&quot;&#39;&quot; \&quot;-javaagent:$APP_HOME/lib/agents/gradle-instrumentation-agent-9.6.1.jar\&quot;&quot;
+
+# Collect all arguments for the java command:
+#   * DEFAULT_JVM_OPTS, JAVA_OPTS, and optsEnvironmentVar are not allowed to contain shell fragments,
+#     and any embedded shellness will be escaped.
+#   * For example: A user cannot expect ${Hostname} to be expanded, as it is an environment variable and will be
+#     treated as &#39;${Hostname}&#39; itself on the command line.
+
+set -- \
+        &quot;-Dorg.gradle.appname=$APP_BASE_NAME&quot; \
+        -jar &quot;$APP_HOME/lib/gradle-gradle-cli-main-9.6.1.jar&quot; \
+        &quot;$@&quot;
+
+# Stop when &quot;xargs&quot; is not available.
+if ! command -v xargs &gt;/dev/null 2&gt;&amp;1
+then
+    die &quot;xargs is not available&quot;
+fi
+
+# Use &quot;xargs&quot; to parse quoted args.
+#
+# With -n1 it outputs one arg per line, with the quotes and backslashes removed.
+#
+# In Bash we could simply go:
+#
+#   readarray ARGS &lt; &lt;( xargs -n1 &lt;&lt;&lt;&quot;$var&quot; ) &amp;&amp;
+#   set -- &quot;${ARGS[@]}&quot; &quot;$@&quot;
+#
+# but POSIX shell has neither arrays nor command substitution, so instead we
+# post-process each arg (as a line of input to sed) to backslash-escape any
+# character that might be a shell metacharacter, then use eval to reverse
+# that process (while maintaining the separation between arguments), and wrap
+# the whole thing up as a single &quot;set&quot; statement.
+#
+# This will of course break if any of these variables contains a newline or
+# an unmatched quote.
+#
+
+eval &quot;set -- $(
+        printf &#39;%s\n&#39; &quot;$DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS&quot; |
+        xargs -n1 |
+        sed &#39; s~[^-[:alnum:]+,./:=@_]~\\&amp;~g; &#39; |
+        tr &#39;\n&#39; &#39; &#39;
+    )&quot; &#39;&quot;$@&quot;&#39;
+
+exec &quot;$JAVACMD&quot; &quot;$@&quot;
+</pre></div>
+</div>
+</section>
+<section id="a-book-get-going-with-gradle">
+<h2>A book: Get going with gradle<a class="headerlink" href="#a-book-get-going-with-gradle" title="Permalink to this heading"></a></h2>
+<p>A book <a class="reference external" href="https://assets.tomgregory.com/get-going-with-gradle/get-going-with-gradle-book.pdf">https://assets.tomgregory.com/get-going-with-gradle/get-going-with-gradle-book.pdf</a></p>
+</section>
+<section id="basics">
+<h2>Basics<a class="headerlink" href="#basics" title="Permalink to this heading"></a></h2>
+<p>If a project uses gradle, run the following command to build it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">gradlew</span> <span class="n">build</span>
+
+<span class="c1"># on windows, use</span>
+<span class="o">./</span><span class="n">gradlew</span><span class="o">.</span><span class="n">bat</span> <span class="n">build</span>
+</pre></div>
+</div>
+<p><cite>./build.gradle.kts</cite> in the project contains the build script</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">kts</span></code>: kotlin script</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DSL</span></code>: domain specific language.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># show a list of available tasks</span>
+<span class="o">./</span><span class="n">gradlew</span> <span class="n">tasks</span>
+
+<span class="c1"># show version</span>
+<span class="o">./</span><span class="n">gradlew</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>On macos, it prints:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">gradlew</span> <span class="o">--</span><span class="n">version</span>
+
+<span class="o">------------------------------------------------------------</span>
+<span class="n">Gradle</span> <span class="mf">9.1.0</span>
+<span class="o">------------------------------------------------------------</span>
+
+<span class="n">Build</span> <span class="n">time</span><span class="p">:</span>    <span class="mi">2025</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">18</span> <span class="mi">13</span><span class="p">:</span><span class="mi">05</span><span class="p">:</span><span class="mi">56</span> <span class="n">UTC</span>
+<span class="n">Revision</span><span class="p">:</span>      <span class="n">e45a8dbf2470c2e2474ccc25be9f49331406a07e</span>
+
+<span class="n">Kotlin</span><span class="p">:</span>        <span class="mf">2.2.0</span>
+<span class="n">Groovy</span><span class="p">:</span>        <span class="mf">4.0.28</span>
+<span class="n">Ant</span><span class="p">:</span>           <span class="n">Apache</span> <span class="n">Ant</span><span class="p">(</span><span class="n">TM</span><span class="p">)</span> <span class="n">version</span> <span class="mf">1.10.15</span> <span class="n">compiled</span> <span class="n">on</span> <span class="n">August</span> <span class="mi">25</span> <span class="mi">2024</span>
+<span class="n">Launcher</span> <span class="n">JVM</span><span class="p">:</span>  <span class="mf">25.0.1</span> <span class="p">(</span><span class="n">Oracle</span> <span class="n">Corporation</span> <span class="mf">25.0.1</span><span class="o">+</span><span class="mi">8</span><span class="o">-</span><span class="n">LTS</span><span class="o">-</span><span class="mi">27</span><span class="p">)</span>
+<span class="n">Daemon</span> <span class="n">JVM</span><span class="p">:</span>    <span class="n">Compatible</span> <span class="k">with</span> <span class="n">Java</span> <span class="mi">21</span><span class="p">,</span> <span class="n">Azul</span> <span class="n">Zulu</span><span class="p">,</span> <span class="n">nativeImageCapable</span><span class="o">=</span><span class="n">false</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">gradle</span><span class="o">/</span><span class="n">gradle</span><span class="o">-</span><span class="n">daemon</span><span class="o">-</span><span class="n">jvm</span><span class="o">.</span><span class="n">properties</span><span class="p">)</span>
+<span class="n">OS</span><span class="p">:</span>            <span class="n">Mac</span> <span class="n">OS</span> <span class="n">X</span> <span class="mf">15.5</span> <span class="n">aarch64</span>
+</pre></div>
+</div>
+<p>On windows, it prints:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span>\<span class="n">gradlew</span><span class="o">.</span><span class="n">bat</span> <span class="o">--</span><span class="n">version</span>
+
+<span class="o">------------------------------------------------------------</span>
+<span class="n">Gradle</span> <span class="mf">9.6.1</span>
+<span class="o">------------------------------------------------------------</span>
+
+<span class="n">Build</span> <span class="n">time</span><span class="p">:</span>    <span class="mi">2026</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">26</span> <span class="mi">14</span><span class="p">:</span><span class="mi">25</span><span class="p">:</span><span class="mi">50</span> <span class="n">UTC</span>
+<span class="n">Revision</span><span class="p">:</span>      <span class="mi">309</span><span class="n">d128bd9fe8c0b71311878fc660b9cbaa07c51</span>
+
+<span class="n">Kotlin</span><span class="p">:</span>        <span class="mf">2.3.21</span>
+<span class="n">Groovy</span><span class="p">:</span>        <span class="mf">4.0.32</span>
+<span class="n">Ant</span><span class="p">:</span>           <span class="n">Apache</span> <span class="n">Ant</span><span class="p">(</span><span class="n">TM</span><span class="p">)</span> <span class="n">version</span> <span class="mf">1.10.17</span> <span class="n">compiled</span> <span class="n">on</span> <span class="n">April</span> <span class="mi">6</span> <span class="mi">2026</span>
+<span class="n">Launcher</span> <span class="n">JVM</span><span class="p">:</span>  <span class="mf">21.0.7</span> <span class="p">(</span><span class="n">Oracle</span> <span class="n">Corporation</span> <span class="mf">21.0.7</span><span class="o">+</span><span class="mi">8</span><span class="o">-</span><span class="n">LTS</span><span class="o">-</span><span class="mi">245</span><span class="p">)</span>
+<span class="n">Daemon</span> <span class="n">JVM</span><span class="p">:</span>    <span class="n">D</span><span class="p">:</span>\<span class="n">software</span>\<span class="n">jdk</span><span class="o">-</span><span class="mf">21.0.7</span> <span class="p">(</span><span class="n">no</span> <span class="n">Daemon</span> <span class="n">JVM</span> <span class="n">specified</span><span class="p">,</span> <span class="n">using</span> <span class="n">current</span> <span class="n">Java</span> <span class="n">home</span><span class="p">)</span>
+<span class="n">OS</span><span class="p">:</span>            <span class="n">Windows</span> <span class="mi">10</span> <span class="mf">10.0</span> <span class="n">amd64</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="run-cpp-on-android.html" class="btn btn-neutral float-left" title="Run CPP on Android" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../qemu/index.html" class="btn btn-neutral float-right" title="qemu" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

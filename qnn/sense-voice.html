@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SenseVoice &mdash; notes  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="qnn-onnx-converter" href="qnn-onnx-convert.html" />
+    <link rel="prev" title="Install qnn" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            notes
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaldi/index.html">Kaldi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bash/index.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cuda/index.html">CUDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../torch/index.html">torch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../java/index.html">java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">css</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pybind11/index.html">pybind11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protobuf/index.html">Protocol Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grpc/index.html">gRPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lwn_net/index.html">lwn.net</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linker_and_loader/index.html">Linker and Loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../espnet/index.html">espnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cmake/index.html">cmake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../huggingface/index.html">huggingface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e6870/index.html">EECS E6870 Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ncnn/index.html">ncnn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llvm/index.html">LLVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../android/index.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qemu/index.html">qemu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sox/index.html">sox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnn/index.html">MNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simd/index.html">SIMD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asio/index.html">asio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../websocketpp/index.html">websocketpp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../os/index.html">Operating systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding/index.html">encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ios/index.html">ios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embedded_systems/index.html">Embedded systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onnx/index.html">onnx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csharp/index.html">csharp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flask/index.html">Flask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">ARM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vitualbox/index.html">VirtualBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../go/index.html">Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whisper/index.html">Whisper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qt/index.html">qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webassembly/index.html">webassembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spleeter/index.html">spleeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react/index.html">React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tts/index.html">tts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rust/index.html">rust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elf/index.html">ELF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2/index.html">ROS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openfst/index.html">OpenFst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../colab/index.html">Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dart/index.html">Dart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flutter/index.html">Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kws/index.html">Keyword spotting (KWS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers/index.html">Papers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pascal/index.html">Pascal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ggml/index.html">ggml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amphion/index.html">Amphion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../harmonyos/index.html">HarmonyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../icefall/index.html">icefall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rknn/index.html">RKNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../axera/index.html">Axera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lhotse/index.html">lhotse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ffmpeg/index.html">ffmpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vlc/index.html">vlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mlx/index.html">mlx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mba/index.html">mba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../llm/index.html">LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ascend/index.html">ascend</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">qnn</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basics.html">basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">Install qnn</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">SenseVoice</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#first-working-version">First working version</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="qnn-onnx-convert.html">qnn-onnx-converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qnn-model-lib-generator.html">qnn-model-lib-generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qnn-net-run.html">qnn-net-run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qairt-converter.html">qairt-converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qairt-dlc-info.html">qairt-dlc-info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qairt-quantizer.html">qairt-quantizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boards.html">Boards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html">code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="todo.html">TODOs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="onnxruntime.html">onnxruntime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="htp.html">HTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qnn-context-binary-generator.html">qnn-context-binary-generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aimet.html">aimet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="android.html">Android</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reverse-engineering/index.html">Reverse engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../economics/index.html">economics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../funasr/index.html">Funasr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../amd-npu/index.html">AMD NPU</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">qnn</a></li>
+      <li class="breadcrumb-item active">SenseVoice</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/csu-fangjun/notes/blob/master/docs/source/qnn/sense-voice.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sensevoice">
+<h1>SenseVoice<a class="headerlink" href="#sensevoice" title="Permalink to this heading"></a></h1>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qnn-onnx-converter<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input_network<span class="w"> </span>./model.onnx<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output_path<span class="w"> </span>./qnn_model_dynamic<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--out_node<span class="w"> </span>logits<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input_dtype<span class="w"> </span>x<span class="w"> </span>float32<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input_dtype<span class="w"> </span>prompt<span class="w"> </span>int32<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input_dim<span class="w"> </span>x<span class="w"> </span><span class="m">1</span>,300,560<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input_dim<span class="w"> </span>prompt<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--float_bitwidth<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--use_per_channel_quantization
+
+qnn-onnx-converter<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input_network<span class="w"> </span>./model.onnx<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output_path<span class="w"> </span>./qnn_model_dynamic<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--out_node<span class="w"> </span>logits<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input_dtype<span class="w"> </span>x<span class="w"> </span>float32<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input_dtype<span class="w"> </span>prompt<span class="w"> </span>int32<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input_layout<span class="w"> </span>x<span class="w"> </span>NTF<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--define_symbol<span class="w"> </span>N<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--define_symbol<span class="w"> </span>T<span class="w"> </span><span class="m">93</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--float_bitwidth<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--float_fallback<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--use_per_row_quantization<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input_dim<span class="w"> </span>x<span class="w"> </span><span class="m">1</span>,93,560<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input_dim<span class="w"> </span>prompt<span class="w"> </span><span class="m">4</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">2025</span>-10-29<span class="w"> </span><span class="m">05</span>:45:28,229<span class="w"> </span>-<span class="w"> </span><span class="m">240</span><span class="w"> </span>-<span class="w"> </span>WARNING<span class="w"> </span>-<span class="w"> </span>Symbolic<span class="w"> </span>shape<span class="w"> </span>inference<span class="w"> </span>Failed.<span class="w"> </span>Exception:<span class="w"> </span>Incomplete<span class="w"> </span>symbolic<span class="w"> </span>shape<span class="w"> </span>inference.<span class="w"> </span>Running<span class="w"> </span>normal<span class="w"> </span>shape<span class="w"> </span>inference.
+<span class="m">2025</span>-10-29<span class="w"> </span><span class="m">05</span>:45:44,439<span class="w"> </span>-<span class="w"> </span><span class="m">240</span><span class="w"> </span>-<span class="w"> </span>WARNING<span class="w"> </span>-<span class="w"> </span>Shape<span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span><span class="k">for</span><span class="w"> </span>tensor:<span class="w"> </span>/ctc_lo/MatMul_output_0
+WARNING:<span class="w"> </span>The<span class="w"> </span>argument<span class="w"> </span><span class="sb">`</span>input_shapes<span class="sb">`</span><span class="w"> </span>is<span class="w"> </span>deprecated.<span class="w"> </span>Please<span class="w"> </span>use
+<span class="sb">`</span>overwrite_input_shapes<span class="sb">`</span><span class="w"> </span>and/or<span class="w"> </span><span class="sb">`</span>test_input_shapes<span class="sb">`</span><span class="w"> </span>instead.<span class="w"> </span>An<span class="w"> </span>error<span class="w"> </span>will<span class="w"> </span>be
+raised<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>future.
+WARNING:<span class="w"> </span>the<span class="w"> </span>simplification<span class="w"> </span>stopped<span class="w"> </span>because<span class="w"> </span>of<span class="w"> </span>timeout.<span class="w"> </span>Please<span class="w"> </span><span class="nb">set</span><span class="w"> </span>environment<span class="w"> </span>variable<span class="w"> </span><span class="sb">`</span>ONNXSIM_FIXED_POINT_ITERS<span class="sb">`</span><span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>number<span class="w"> </span>higher<span class="w"> </span>than<span class="w"> </span>50if<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>further<span class="w"> </span>simplification.
+<span class="m">2025</span>-10-29<span class="w"> </span><span class="m">05</span>:56:30,769<span class="w"> </span>-<span class="w"> </span><span class="m">235</span><span class="w"> </span>-<span class="w"> </span>INFO<span class="w"> </span>-<span class="w"> </span>Simplified<span class="w"> </span>model<span class="w"> </span>validation<span class="w"> </span>is<span class="w"> </span>successful
+<span class="m">2025</span>-10-29<span class="w"> </span><span class="m">05</span>:58:56,511<span class="w"> </span>-<span class="w"> </span><span class="m">235</span><span class="w"> </span>-<span class="w"> </span>INFO<span class="w"> </span>-<span class="w"> </span>Skipping<span class="w"> </span>quantization,<span class="w"> </span>no<span class="w"> </span>input_list<span class="w"> </span>provided
+<span class="m">2025</span>-10-29<span class="w"> </span><span class="m">05</span>:58:56,511<span class="w"> </span>-<span class="w"> </span><span class="m">235</span><span class="w"> </span>-<span class="w"> </span>INFO<span class="w"> </span>-<span class="w"> </span>Saving<span class="w"> </span>QNN<span class="w"> </span>Model...
+<span class="m">2025</span>-10-29<span class="w"> </span><span class="m">05</span>:59:02,856<span class="w"> </span>-<span class="w"> </span><span class="m">235</span><span class="w"> </span>-<span class="w"> </span>INFO<span class="w"> </span>-<span class="w"> </span>Model<span class="w"> </span>CPP<span class="w"> </span>saved<span class="w"> </span>at:<span class="w"> </span>./qnn_model_dynamic
+<span class="m">2025</span>-10-29<span class="w"> </span><span class="m">05</span>:59:02,857<span class="w"> </span>-<span class="w"> </span><span class="m">235</span><span class="w"> </span>-<span class="w"> </span>INFO<span class="w"> </span>-<span class="w"> </span>Model<span class="w"> </span>BIN<span class="w"> </span>saved<span class="w"> </span>at:<span class="w"> </span>/content/qnn_model_dynamic.bin
+<span class="m">2025</span>-10-29<span class="w"> </span><span class="m">05</span>:59:02,978<span class="w"> </span>-<span class="w"> </span><span class="m">235</span><span class="w"> </span>-<span class="w"> </span>INFO<span class="w"> </span>-<span class="w"> </span>Conversion<span class="w"> </span>complete!
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="n">qnn_model_dynamic</span>
+
+<span class="n">qnn_model_dynamic</span><span class="p">:</span> <span class="n">C</span> <span class="n">source</span><span class="p">,</span> <span class="n">ASCII</span> <span class="n">text</span><span class="p">,</span> <span class="k">with</span> <span class="n">very</span> <span class="n">long</span> <span class="n">lines</span> <span class="p">(</span><span class="mi">2378</span><span class="p">)</span>
+
+<span class="n">file</span> <span class="n">qnn_model_dynamic</span><span class="o">.</span><span class="n">bin</span>
+
+<span class="n">qnn_model_dynamic</span><span class="o">.</span><span class="n">bin</span><span class="p">:</span> <span class="n">POSIX</span> <span class="n">tar</span> <span class="n">archive</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">lh</span> <span class="n">qnn_model_dynamic</span><span class="o">*</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">root</span> <span class="n">root</span> <span class="mf">9.2</span><span class="n">M</span> <span class="n">Oct</span> <span class="mi">29</span> <span class="mi">05</span><span class="p">:</span><span class="mi">59</span> <span class="n">qnn_model_dynamic</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">root</span> <span class="n">root</span> <span class="mi">444</span><span class="n">M</span> <span class="n">Oct</span> <span class="mi">29</span> <span class="mi">05</span><span class="p">:</span><span class="mi">59</span> <span class="n">qnn_model_dynamic</span><span class="o">.</span><span class="n">bin</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">root</span> <span class="n">root</span> <span class="mf">4.4</span><span class="n">M</span> <span class="n">Oct</span> <span class="mi">29</span> <span class="mi">05</span><span class="p">:</span><span class="mi">59</span> <span class="n">qnn_model_dynamic_net</span><span class="o">.</span><span class="n">json</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="n">qnn_model_dynamic</span> <span class="n">qnn_model_dynamic</span><span class="o">.</span><span class="n">cpp</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export QNN_TARGET_ARCH=&quot;x86_64-linux-clang&quot;
+
+python3 &quot;${QNN_SDK_ROOT}/bin/x86_64-linux-clang/qnn-model-lib-generator&quot; \
+    -c &quot;qnn_model_dynamic.cpp&quot; \
+    -b &quot;qnn_model_dynamic.bin&quot; \
+    -o model_libs \
+    -t ${QNN_TARGET_ARCH}
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">lh</span> <span class="n">model_libs</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">clang</span><span class="o">/</span>
+
+<span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">1</span> <span class="n">root</span> <span class="n">root</span> <span class="mi">448</span><span class="n">M</span> <span class="n">Oct</span> <span class="mi">29</span> <span class="mi">06</span><span class="p">:</span><span class="mi">18</span> <span class="n">libqnn_model_dynamic</span><span class="o">.</span><span class="n">so</span>
+</pre></div>
+</div>
+<p>If we don't specify the <code class="docutils literal notranslate"><span class="pre">-t</span></code>, it will show:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2025</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">29</span> <span class="mi">10</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span><span class="mi">757</span> <span class="o">-</span>    <span class="n">INFO</span> <span class="o">-</span> <span class="n">qnn</span><span class="o">-</span><span class="n">model</span><span class="o">-</span><span class="n">lib</span><span class="o">-</span><span class="n">generator</span><span class="p">:</span> <span class="n">Target</span><span class="p">:</span> <span class="n">x86_64</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">clang</span>       <span class="n">Library</span><span class="p">:</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">model_libs</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">clang</span><span class="o">/</span><span class="n">libqnn_model_dynamic</span><span class="o">.</span><span class="n">so</span>
+<span class="mi">2025</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">29</span> <span class="mi">10</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span><span class="mi">757</span> <span class="o">-</span>    <span class="n">INFO</span> <span class="o">-</span> <span class="n">qnn</span><span class="o">-</span><span class="n">model</span><span class="o">-</span><span class="n">lib</span><span class="o">-</span><span class="n">generator</span><span class="p">:</span> <span class="n">Target</span><span class="p">:</span> <span class="n">aarch64</span><span class="o">-</span><span class="n">android</span>  <span class="n">Library</span><span class="p">:</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">model_libs</span><span class="o">/</span><span class="n">aarch64</span><span class="o">-</span><span class="n">android</span><span class="o">/</span><span class="n">libqnn_model_dynamic</span><span class="o">.</span><span class="n">so</span>
+</pre></div>
+</div>
+<section id="first-working-version">
+<h2>First working version<a class="headerlink" href="#first-working-version" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>wget https://hf-mirror.com/csukuangfj/qnn-toolkit/resolve/main/tmp/model-op17-static-93.onnx
+
+if [ ! -f input0-en.raw ]; then
+wget https://modelscope.cn/models/csukuangfj/2025-10-14/resolve/master/2025-10-29-qnn/input0-en.raw
+wget https://modelscope.cn/models/csukuangfj/2025-10-14/resolve/master/2025-10-29-qnn/input1-en.raw
+fi
+
+if [ ! -f input0.raw ]; then
+wget https://modelscope.cn/models/csukuangfj/2025-10-14/resolve/master/2025-10-29-qnn/input0.raw
+wget https://modelscope.cn/models/csukuangfj/2025-10-14/resolve/master/2025-10-29-qnn/input1.raw
+fi
+
+echo &quot;/content/input0-en.raw /content/input1-en.raw&quot; &gt; input_list.txt
+
+echo &quot;./input0-en.raw ./input1-en.raw&quot; &gt; input_list.txt
+
+#echo &quot;/content/input0.raw /content/input1.raw&quot; &gt;&gt; input_list.txt
+
+cat input_list.txt
+
+source py310/bin/activate
+
+pushd  qairt/2.33.0.250327/bin
+source envsetup.sh
+popd
+
+qnn-onnx-converter \
+  --input_network ./model-op17-static-93.onnx \
+  --output_path ./model-op17-static-93-quantized \
+  --out_node logits \
+  --input_list ./input_list.txt \
+  --use_native_input_files  \
+  --input_dtype x float32 \
+  --input_dtype prompt int32 \
+  --act_bitwidth 16 \
+  --bias_bitwidth 32 \
+  --input_layout x NTF
+
+mv model-op17-static-93-quantized model-op17-static-93-quantized.cpp
+
+python3 &quot;${QNN_SDK_ROOT}/bin/x86_64-linux-clang/qnn-model-lib-generator&quot; \
+    -c &quot;model-op17-static-93-quantized.cpp&quot; \
+    -b &quot;model-op17-static-93-quantized.bin&quot; \
+    -o model_libs_quantized \
+    -t aarch64-android
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">1</span> <span class="n">root</span> <span class="n">root</span> <span class="mi">228</span><span class="n">M</span> <span class="n">Nov</span>  <span class="mi">4</span> <span class="mi">04</span><span class="p">:</span><span class="mi">29</span> <span class="n">model_libs_quantized</span><span class="o">/</span><span class="n">aarch64</span><span class="o">-</span><span class="n">android</span><span class="o">/</span><span class="n">libmodel</span><span class="o">-</span><span class="n">op17</span><span class="o">-</span><span class="n">static</span><span class="o">-</span><span class="mi">93</span><span class="o">-</span><span class="n">quantized</span><span class="o">.</span><span class="n">so</span>
+</pre></div>
+</div>
+<p>In <code class="docutils literal notranslate"><span class="pre">model-op17-static-93-quantized_net.json</span></code>, we have:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="s2">&quot;dataFormat&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="s2">&quot;data_type&quot;</span><span class="p">:</span> <span class="mi">1046</span><span class="p">,</span>
+          <span class="s2">&quot;unquantized_data_type&quot;</span><span class="p">:</span> <span class="mi">562</span><span class="p">,</span>
+          <span class="s2">&quot;permute_order_to_src&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="mi">0</span><span class="p">,</span>
+                  <span class="mi">1</span><span class="p">,</span>
+                  <span class="mi">2</span>
+          <span class="p">],</span>
+          <span class="s2">&quot;quant_params&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="s2">&quot;definition&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                  <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="s2">&quot;is_overridden&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+                  <span class="s2">&quot;scale_offset&quot;</span><span class="p">:</span> <span class="p">{</span>
+                          <span class="s2">&quot;bitwidth&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+                          <span class="s2">&quot;minimum&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.078358769416809</span><span class="p">,</span>
+                          <span class="s2">&quot;maximum&quot;</span><span class="p">:</span> <span class="mf">24.36089515686035</span><span class="p">,</span>
+                          <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="mf">0.00038817813037894666</span><span class="p">,</span>
+                          <span class="s2">&quot;offset&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">2778</span><span class="p">,</span>
+                          <span class="s2">&quot;is_symmetric&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+                          <span class="s2">&quot;is_fixed_point&quot;</span><span class="p">:</span> <span class="n">true</span>
+                  <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="s2">&quot;dims&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="mi">1</span><span class="p">,</span>
+                  <span class="mi">93</span><span class="p">,</span>
+                  <span class="mi">560</span>
+          <span class="p">],</span>
+          <span class="s2">&quot;is_dynamic_dims&quot;</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="s2">&quot;is_quantizable&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+          <span class="s2">&quot;is_updateable&quot;</span><span class="p">:</span> <span class="n">false</span>
+  <span class="p">}</span>
+
+  <span class="s2">&quot;prompt&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+          <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="s2">&quot;dataFormat&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="s2">&quot;data_type&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+          <span class="s2">&quot;unquantized_data_type&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+          <span class="s2">&quot;permute_order_to_src&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="mi">0</span><span class="p">,</span>
+                  <span class="mi">1</span>
+          <span class="p">],</span>
+          <span class="s2">&quot;quant_params&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="s2">&quot;definition&quot;</span><span class="p">:</span> <span class="mi">2147483647</span><span class="p">,</span>
+                  <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="mi">2147483647</span><span class="p">,</span>
+                  <span class="s2">&quot;is_overridden&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+                  <span class="s2">&quot;scale_offset&quot;</span><span class="p">:</span> <span class="p">{</span>
+                          <span class="s2">&quot;bitwidth&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                          <span class="s2">&quot;minimum&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+                          <span class="s2">&quot;maximum&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+                          <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+                          <span class="s2">&quot;offset&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                          <span class="s2">&quot;is_symmetric&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+                          <span class="s2">&quot;is_fixed_point&quot;</span><span class="p">:</span> <span class="n">true</span>
+                  <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="s2">&quot;dims&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="mi">1</span><span class="p">,</span>
+                  <span class="mi">4</span>
+          <span class="p">],</span>
+          <span class="s2">&quot;is_dynamic_dims&quot;</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="s2">&quot;is_quantizable&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+          <span class="s2">&quot;is_updateable&quot;</span><span class="p">:</span> <span class="n">false</span>
+  <span class="p">},</span>
+
+<span class="s2">&quot;logits&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">4700</span><span class="p">,</span>
+          <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">&quot;dataFormat&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="s2">&quot;data_type&quot;</span><span class="p">:</span> <span class="mi">1046</span><span class="p">,</span>
+          <span class="s2">&quot;unquantized_data_type&quot;</span><span class="p">:</span> <span class="mi">562</span><span class="p">,</span>
+          <span class="s2">&quot;permute_order_to_src&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="mi">0</span><span class="p">,</span>
+                  <span class="mi">1</span><span class="p">,</span>
+                  <span class="mi">2</span>
+          <span class="p">],</span>
+          <span class="s2">&quot;quant_params&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="s2">&quot;definition&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                  <span class="s2">&quot;encoding&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="s2">&quot;is_overridden&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+                  <span class="s2">&quot;scale_offset&quot;</span><span class="p">:</span> <span class="p">{</span>
+                          <span class="s2">&quot;bitwidth&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+                          <span class="s2">&quot;minimum&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">33.50352096557617</span><span class="p">,</span>
+                          <span class="s2">&quot;maximum&quot;</span><span class="p">:</span> <span class="mf">38.97942352294922</span><span class="p">,</span>
+                          <span class="s2">&quot;scale&quot;</span><span class="p">:</span> <span class="mf">0.0011060187825933099</span><span class="p">,</span>
+                          <span class="s2">&quot;offset&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">30292</span><span class="p">,</span>
+                          <span class="s2">&quot;is_symmetric&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+                          <span class="s2">&quot;is_fixed_point&quot;</span><span class="p">:</span> <span class="n">true</span>
+                  <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="s2">&quot;dims&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="mi">1</span><span class="p">,</span>
+                  <span class="mi">97</span><span class="p">,</span>
+                  <span class="mi">25055</span>
+          <span class="p">],</span>
+          <span class="s2">&quot;is_dynamic_dims&quot;</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="s2">&quot;is_quantizable&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+          <span class="s2">&quot;is_updateable&quot;</span><span class="p">:</span> <span class="n">false</span>
+  <span class="p">},</span>
+</pre></div>
+</div>
+<p>Output from my <code class="docutils literal notranslate"><span class="pre">qnn-demo</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">input</span> <span class="n">tensor</span> <span class="mi">0</span><span class="p">,</span> <span class="n">version</span> <span class="mi">2</span>
+  <span class="nb">id</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="n">name</span><span class="p">:</span> <span class="n">x</span>
+  <span class="nb">type</span><span class="p">:</span> <span class="n">QNN_TENSOR_TYPE_APP_WRITE</span>
+  <span class="n">data</span> <span class="nb">format</span><span class="p">:</span> <span class="mi">0</span>
+  <span class="n">data</span> <span class="nb">type</span><span class="p">:</span> <span class="n">QNN_DATATYPE_UFIXED_POINT_16</span>
+  <span class="n">quantize</span> <span class="n">info</span><span class="p">:</span>
+    <span class="n">encodingDefinition</span><span class="p">:</span> <span class="mh">0x1</span>
+    <span class="n">quantizationEncoding</span><span class="p">:</span> <span class="n">QNN_QUANTIZATION_ENCODING_SCALE_OFFSET</span>
+     <span class="n">scale</span><span class="p">:</span> <span class="mf">0.000388178</span>
+     <span class="n">offset</span><span class="p">:</span> <span class="o">-</span><span class="mi">2778</span>
+  <span class="n">rank</span><span class="p">:</span> <span class="mi">3</span>
+  <span class="n">dimensions</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">560</span><span class="p">,</span>
+<span class="nb">input</span> <span class="n">tensor</span> <span class="mi">1</span><span class="p">,</span> <span class="n">version</span> <span class="mi">2</span>
+  <span class="nb">id</span><span class="p">:</span> <span class="mi">2</span>
+  <span class="n">name</span><span class="p">:</span> <span class="n">prompt</span>
+  <span class="nb">type</span><span class="p">:</span> <span class="n">QNN_TENSOR_TYPE_APP_WRITE</span>
+  <span class="n">data</span> <span class="nb">format</span><span class="p">:</span> <span class="mi">0</span>
+  <span class="n">data</span> <span class="nb">type</span><span class="p">:</span> <span class="n">QNN_DATATYPE_INT_32</span>
+  <span class="n">quantize</span> <span class="n">info</span><span class="p">:</span>
+    <span class="n">encodingDefinition</span><span class="p">:</span> <span class="mh">0x7fffffff</span>
+    <span class="n">quantizationEncoding</span><span class="p">:</span> <span class="n">QNN_QUANTIZATION_ENCODING_UNDEFINED</span>
+  <span class="n">rank</span><span class="p">:</span> <span class="mi">2</span>
+  <span class="n">dimensions</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span>
+<span class="n">output</span> <span class="n">tensor</span> <span class="mi">2940</span><span class="p">,</span> <span class="n">version</span> <span class="mi">2</span>
+  <span class="nb">id</span><span class="p">:</span> <span class="mi">4840</span>
+  <span class="n">name</span><span class="p">:</span> <span class="n">logits</span>
+  <span class="nb">type</span><span class="p">:</span> <span class="n">QNN_TENSOR_TYPE_APP_READ</span>
+  <span class="n">data</span> <span class="nb">format</span><span class="p">:</span> <span class="mi">0</span>
+  <span class="n">data</span> <span class="nb">type</span><span class="p">:</span> <span class="n">QNN_DATATYPE_UFIXED_POINT_16</span>
+  <span class="n">quantize</span> <span class="n">info</span><span class="p">:</span>
+    <span class="n">encodingDefinition</span><span class="p">:</span> <span class="mh">0x1</span>
+    <span class="n">quantizationEncoding</span><span class="p">:</span> <span class="n">QNN_QUANTIZATION_ENCODING_SCALE_OFFSET</span>
+     <span class="n">scale</span><span class="p">:</span> <span class="mf">0.00110602</span>
+     <span class="n">offset</span><span class="p">:</span> <span class="o">-</span><span class="mi">30292</span>
+  <span class="n">rank</span><span class="p">:</span> <span class="mi">3</span>
+  <span class="n">dimensions</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">25055</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>To generate test data for <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="n">compute_feat</span><span class="p">(</span>
+    <span class="n">samples</span><span class="o">=</span><span class="n">samples</span><span class="p">,</span>
+    <span class="n">sample_rate</span><span class="o">=</span><span class="n">sample_rate</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;features.shape&quot;</span><span class="p">,</span> <span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">args</span><span class="o">.</span><span class="n">num_frames</span><span class="p">:</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="n">features</span><span class="p">[:</span> <span class="n">args</span><span class="o">.</span><span class="n">num_frames</span><span class="p">]</span>
+<span class="k">elif</span> <span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">args</span><span class="o">.</span><span class="n">num_frames</span><span class="p">:</span>
+    <span class="n">pad_width</span> <span class="o">=</span> <span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">num_frames</span> <span class="o">-</span> <span class="n">features</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">padding</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(())</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">pad_width</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;constant&quot;</span><span class="p">,</span> <span class="n">constant_values</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">scale</span> <span class="o">=</span> <span class="mf">0.000388178</span>
+<span class="n">offset</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2778</span>
+<span class="n">features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">features</span> <span class="o">/</span> <span class="n">scale</span> <span class="o">-</span> <span class="n">offset</span><span class="p">)</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">65535</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">)</span>
+
+<span class="n">features</span><span class="o">.</span><span class="n">tofile</span><span class="p">(</span><span class="s2">&quot;input0.raw&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To generate test data for <code class="docutils literal notranslate"><span class="pre">prompt</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">language_auto</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">language_zh</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">language_en</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">language_yue</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">language_ya</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="n">language_ko</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">language_nospeech</span> <span class="o">=</span> <span class="mi">13</span>
+
+<span class="n">language</span> <span class="o">=</span> <span class="n">language_auto</span>
+
+<span class="n">with_itn</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="n">without_itn</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="n">text_norm</span> <span class="o">=</span> <span class="n">with_itn</span>
+
+<span class="n">prompt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">language</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">text_norm</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+<span class="n">prompt</span><span class="o">.</span><span class="n">tofile</span><span class="p">(</span><span class="s2">&quot;input1.raw&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Test with qnn-net-run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">qnn</span><span class="o">-</span><span class="n">net</span><span class="o">-</span><span class="n">run</span> <span class="o">--</span><span class="n">log_level</span> <span class="n">verbose</span> <span class="o">--</span><span class="n">model</span> <span class="o">./</span><span class="n">libmodel</span><span class="o">-</span><span class="n">op17</span><span class="o">-</span><span class="n">static</span><span class="o">-</span><span class="mi">93</span><span class="o">-</span><span class="n">quantized</span><span class="o">.</span><span class="n">so</span> <span class="o">--</span><span class="n">backend</span> <span class="o">./</span><span class="n">libQnnHtp</span><span class="o">.</span><span class="n">so</span> <span class="o">--</span><span class="n">input_list</span> <span class="o">./</span><span class="n">input_list</span><span class="o">.</span><span class="n">txt</span>  <span class="o">--</span><span class="n">output_dir</span> <span class="o">./</span><span class="n">out</span> <span class="o">--</span><span class="n">use_native_input_files</span><span class="o">=</span><span class="n">true</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pandora:/data/local/tmp<span class="w"> </span>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>out/Result_0/logits.raw
+-rw-rw-rw-<span class="w"> </span><span class="m">1</span><span class="w"> </span>shell<span class="w"> </span>shell<span class="w"> </span><span class="m">9721340</span><span class="w"> </span><span class="m">2025</span>-11-04<span class="w"> </span><span class="m">12</span>:52<span class="w"> </span>out/Result_0/logits.raw
+pandora:/data/local/tmp<span class="w"> </span>$<span class="w"> </span>bc
+&gt;&gt;&gt;<span class="w"> </span><span class="m">9721340</span>/25055/4
+<span class="m">97</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">load_tokens</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="n">ans</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">ans</span>
+
+
+<span class="n">logits</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="s2">&quot;./logits.raw&quot;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">25055</span><span class="p">))</span>
+
+<span class="n">idx</span> <span class="o">=</span> <span class="n">logits</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;idx&quot;</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
+<span class="n">prev</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">ids</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">idx</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">prev</span><span class="p">:</span>
+        <span class="n">ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">prev</span> <span class="o">=</span> <span class="n">i</span>
+<span class="n">ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ids</span> <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span>
+
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">load_tokens</span><span class="p">(</span><span class="s2">&quot;./tokens.txt&quot;</span><span class="p">)</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ids</span><span class="p">])</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install.html" class="btn btn-neutral float-left" title="Install qnn" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="qnn-onnx-convert.html" class="btn btn-neutral float-right" title="qnn-onnx-converter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, fangjun.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
